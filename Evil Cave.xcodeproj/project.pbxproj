@@ -11,6 +11,7 @@
 		A703875C1A17BD5E0053A9E6 /* LWFTile.m in Sources */ = {isa = PBXBuildFile; fileRef = A703875B1A17BD5E0053A9E6 /* LWFTile.m */; };
 		A703875F1A17BEB00053A9E6 /* LWFTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = A703875E1A17BEB00053A9E6 /* LWFTileMap.m */; };
 		A70387611A17D1250053A9E6 /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = A70387601A17D1250053A9E6 /* grass.png */; };
+		A7D8BEDC1A190A5B005B0599 /* LWFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8BEDB1A190A5B005B0599 /* LWFPlayer.m */; };
 		A7F5BB881A16EFBC005BAB63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F5BB871A16EFBC005BAB63 /* Foundation.framework */; };
 		A7F5BB8A1A16EFBC005BAB63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F5BB891A16EFBC005BAB63 /* CoreGraphics.framework */; };
 		A7F5BB8C1A16EFBC005BAB63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F5BB8B1A16EFBC005BAB63 /* UIKit.framework */; };
@@ -49,6 +50,8 @@
 		A703875D1A17BEB00053A9E6 /* LWFTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFTileMap.h; sourceTree = "<group>"; };
 		A703875E1A17BEB00053A9E6 /* LWFTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFTileMap.m; sourceTree = "<group>"; };
 		A70387601A17D1250053A9E6 /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
+		A7D8BEDA1A190A5B005B0599 /* LWFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPlayer.h; sourceTree = "<group>"; };
+		A7D8BEDB1A190A5B005B0599 /* LWFPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPlayer.m; sourceTree = "<group>"; };
 		A7F5BB841A16EFBC005BAB63 /* Evil Cave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Evil Cave.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F5BB871A16EFBC005BAB63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A7F5BB891A16EFBC005BAB63 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -199,6 +202,8 @@
 				A7F5BBD01A16F831005BAB63 /* LWFMap.m */,
 				A703875A1A17BD5E0053A9E6 /* LWFTile.h */,
 				A703875B1A17BD5E0053A9E6 /* LWFTile.m */,
+				A7D8BEDA1A190A5B005B0599 /* LWFPlayer.h */,
+				A7D8BEDB1A190A5B005B0599 /* LWFPlayer.m */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7F5BBA31A16EFBE005BAB63 /* LWFMyScene.m in Sources */,
+				A7D8BEDC1A190A5B005B0599 /* LWFPlayer.m in Sources */,
 				A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */,
 				A7F5BB9A1A16EFBC005BAB63 /* LWFAppDelegate.m in Sources */,
 				A703875C1A17BD5E0053A9E6 /* LWFTile.m in Sources */,

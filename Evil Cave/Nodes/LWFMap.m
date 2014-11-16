@@ -11,6 +11,7 @@
 #import "LWFMapDimension.h"
 #import "LWFTileMap.h"
 #import "LWFTile.h"
+#import "LWFPlayer.h"
 
 @implementation LWFMap
 
@@ -42,9 +43,22 @@
     NSInteger row = (rowPoint + 0.5);
     NSInteger column = (columnPoint + 0.5);
     
+    if (column < 0 || row < 0 || column >= self.mapDimension.numberTilesHorizontal || row >= self.mapDimension.numberTilesVertical) {
+        return nil;
+    }
+    
     LWFTile *tile = [self.tileMap tileForVertical:row andHorizontal:column];
     
     return tile;
+}
+
+- (void)userTouchedPoint:(CGPoint)point {
+    LWFTile *tile = [self tileForPoint:point];
+    
+    if (tile != nil) {
+        [self.player moveToTile:tile];
+    }
+    
 }
 
 @end

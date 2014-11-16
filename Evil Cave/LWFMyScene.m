@@ -11,9 +11,10 @@
 #import "LWFMap.h"
 #import "LWFMapDimension.h"
 #import "LWFTile.h"
+#import "LWFPlayer.h"
 
 @interface LWFMyScene () {
-    SKSpriteNode *_player;
+    LWFPlayer *_player;
     LWFMap *_map;
 }
 @end
@@ -31,9 +32,11 @@
         _map = [[LWFMap alloc]initWithMapDimension:mapDimension];
         [_map addTiles];
         
-        _player = [SKSpriteNode spriteNodeWithImageNamed:@"grass"];
+        _player = [[LWFPlayer alloc]initWithImageNamed:@"grass"];
         _player.size = mapDimension.tileSize;
         _player.position = CGPointMake(size.width /2,size.height/2);
+        
+        _map.player = _player;
         
         [_map addChild:_player];
         [self addChild:_map];
@@ -50,9 +53,7 @@
     for (UITouch *touch in touches) {
         CGPoint touchPoint = [touch locationInNode:_map];
         
-        LWFTile *tile = [_map tileForPoint:touchPoint];
-        
-        _player.position = tile.position;
+        [_map userTouchedPoint:touchPoint];
         
     }
 }
