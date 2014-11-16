@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = A70387581A17BC620053A9E6 /* LWFMapDimension.m */; };
+		A703875C1A17BD5E0053A9E6 /* LWFTile.m in Sources */ = {isa = PBXBuildFile; fileRef = A703875B1A17BD5E0053A9E6 /* LWFTile.m */; };
+		A703875F1A17BEB00053A9E6 /* LWFTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = A703875E1A17BEB00053A9E6 /* LWFTileMap.m */; };
+		A70387611A17D1250053A9E6 /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = A70387601A17D1250053A9E6 /* grass.png */; };
+		A7F5BB881A16EFBC005BAB63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F5BB871A16EFBC005BAB63 /* Foundation.framework */; };
+		A7F5BB8A1A16EFBC005BAB63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F5BB891A16EFBC005BAB63 /* CoreGraphics.framework */; };
+		A7F5BB8C1A16EFBC005BAB63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F5BB8B1A16EFBC005BAB63 /* UIKit.framework */; };
+		A7F5BB8E1A16EFBC005BAB63 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F5BB8D1A16EFBC005BAB63 /* SpriteKit.framework */; };
+		A7F5BB941A16EFBC005BAB63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7F5BB921A16EFBC005BAB63 /* InfoPlist.strings */; };
+		A7F5BB961A16EFBC005BAB63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F5BB951A16EFBC005BAB63 /* main.m */; };
+		A7F5BB9A1A16EFBC005BAB63 /* LWFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F5BB991A16EFBC005BAB63 /* LWFAppDelegate.m */; };
+		A7F5BB9D1A16EFBD005BAB63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7F5BB9B1A16EFBD005BAB63 /* Main.storyboard */; };
+		A7F5BBA01A16EFBD005BAB63 /* LWFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F5BB9F1A16EFBD005BAB63 /* LWFViewController.m */; };
+		A7F5BBA31A16EFBE005BAB63 /* LWFMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F5BBA21A16EFBE005BAB63 /* LWFMyScene.m */; };
+		A7F5BBA51A16EFBE005BAB63 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F5BBA41A16EFBE005BAB63 /* Spaceship.png */; };
+		A7F5BBA71A16EFBE005BAB63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7F5BBA61A16EFBE005BAB63 /* Images.xcassets */; };
+		A7F5BBAE1A16EFBF005BAB63 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F5BBAD1A16EFBF005BAB63 /* XCTest.framework */; };
+		A7F5BBAF1A16EFBF005BAB63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F5BB871A16EFBC005BAB63 /* Foundation.framework */; };
+		A7F5BBB01A16EFBF005BAB63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F5BB8B1A16EFBC005BAB63 /* UIKit.framework */; };
+		A7F5BBB81A16EFBF005BAB63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7F5BBB61A16EFBF005BAB63 /* InfoPlist.strings */; };
+		A7F5BBBA1A16EFBF005BAB63 /* Evil_CaveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F5BBB91A16EFBF005BAB63 /* Evil_CaveTests.m */; };
+		A7F5BBD11A16F831005BAB63 /* LWFMap.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F5BBD01A16F831005BAB63 /* LWFMap.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A7F5BBB11A16EFBF005BAB63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7F5BB7C1A16EFBC005BAB63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7F5BB831A16EFBC005BAB63;
+			remoteInfo = "Evil Cave";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A70387571A17BC620053A9E6 /* LWFMapDimension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFMapDimension.h; sourceTree = "<group>"; };
+		A70387581A17BC620053A9E6 /* LWFMapDimension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFMapDimension.m; sourceTree = "<group>"; };
+		A703875A1A17BD5E0053A9E6 /* LWFTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFTile.h; sourceTree = "<group>"; };
+		A703875B1A17BD5E0053A9E6 /* LWFTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFTile.m; sourceTree = "<group>"; };
+		A703875D1A17BEB00053A9E6 /* LWFTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFTileMap.h; sourceTree = "<group>"; };
+		A703875E1A17BEB00053A9E6 /* LWFTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFTileMap.m; sourceTree = "<group>"; };
+		A70387601A17D1250053A9E6 /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
+		A7F5BB841A16EFBC005BAB63 /* Evil Cave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Evil Cave.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7F5BB871A16EFBC005BAB63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A7F5BB891A16EFBC005BAB63 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A7F5BB8B1A16EFBC005BAB63 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A7F5BB8D1A16EFBC005BAB63 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		A7F5BB911A16EFBC005BAB63 /* Evil Cave-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Evil Cave-Info.plist"; sourceTree = "<group>"; };
+		A7F5BB931A16EFBC005BAB63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A7F5BB951A16EFBC005BAB63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A7F5BB971A16EFBC005BAB63 /* Evil Cave-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Evil Cave-Prefix.pch"; sourceTree = "<group>"; };
+		A7F5BB981A16EFBC005BAB63 /* LWFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWFAppDelegate.h; sourceTree = "<group>"; };
+		A7F5BB991A16EFBC005BAB63 /* LWFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LWFAppDelegate.m; sourceTree = "<group>"; };
+		A7F5BB9C1A16EFBD005BAB63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A7F5BB9E1A16EFBD005BAB63 /* LWFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWFViewController.h; sourceTree = "<group>"; };
+		A7F5BB9F1A16EFBD005BAB63 /* LWFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LWFViewController.m; sourceTree = "<group>"; };
+		A7F5BBA11A16EFBE005BAB63 /* LWFMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWFMyScene.h; sourceTree = "<group>"; };
+		A7F5BBA21A16EFBE005BAB63 /* LWFMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LWFMyScene.m; sourceTree = "<group>"; };
+		A7F5BBA41A16EFBE005BAB63 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		A7F5BBA61A16EFBE005BAB63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A7F5BBAC1A16EFBF005BAB63 /* Evil CaveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Evil CaveTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7F5BBAD1A16EFBF005BAB63 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A7F5BBB51A16EFBF005BAB63 /* Evil CaveTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Evil CaveTests-Info.plist"; sourceTree = "<group>"; };
+		A7F5BBB71A16EFBF005BAB63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A7F5BBB91A16EFBF005BAB63 /* Evil_CaveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Evil_CaveTests.m; sourceTree = "<group>"; };
+		A7F5BBCF1A16F831005BAB63 /* LWFMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFMap.h; sourceTree = "<group>"; };
+		A7F5BBD01A16F831005BAB63 /* LWFMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFMap.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A7F5BB811A16EFBC005BAB63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7F5BB8A1A16EFBC005BAB63 /* CoreGraphics.framework in Frameworks */,
+				A7F5BB8C1A16EFBC005BAB63 /* UIKit.framework in Frameworks */,
+				A7F5BB8E1A16EFBC005BAB63 /* SpriteKit.framework in Frameworks */,
+				A7F5BB881A16EFBC005BAB63 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7F5BBA91A16EFBF005BAB63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7F5BBAE1A16EFBF005BAB63 /* XCTest.framework in Frameworks */,
+				A7F5BBB01A16EFBF005BAB63 /* UIKit.framework in Frameworks */,
+				A7F5BBAF1A16EFBF005BAB63 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A70387561A17BC480053A9E6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A70387571A17BC620053A9E6 /* LWFMapDimension.h */,
+				A70387581A17BC620053A9E6 /* LWFMapDimension.m */,
+				A703875D1A17BEB00053A9E6 /* LWFTileMap.h */,
+				A703875E1A17BEB00053A9E6 /* LWFTileMap.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A7F5BB7B1A16EFBC005BAB63 = {
+			isa = PBXGroup;
+			children = (
+				A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */,
+				A7F5BBB31A16EFBF005BAB63 /* Evil CaveTests */,
+				A7F5BB861A16EFBC005BAB63 /* Frameworks */,
+				A7F5BB851A16EFBC005BAB63 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A7F5BB851A16EFBC005BAB63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A7F5BB841A16EFBC005BAB63 /* Evil Cave.app */,
+				A7F5BBAC1A16EFBF005BAB63 /* Evil CaveTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A7F5BB861A16EFBC005BAB63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7F5BB871A16EFBC005BAB63 /* Foundation.framework */,
+				A7F5BB891A16EFBC005BAB63 /* CoreGraphics.framework */,
+				A7F5BB8B1A16EFBC005BAB63 /* UIKit.framework */,
+				A7F5BB8D1A16EFBC005BAB63 /* SpriteKit.framework */,
+				A7F5BBAD1A16EFBF005BAB63 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */ = {
+			isa = PBXGroup;
+			children = (
+				A70387561A17BC480053A9E6 /* Utils */,
+				A7F5BBCE1A16F831005BAB63 /* Nodes */,
+				A7F5BB981A16EFBC005BAB63 /* LWFAppDelegate.h */,
+				A7F5BB991A16EFBC005BAB63 /* LWFAppDelegate.m */,
+				A7F5BB9B1A16EFBD005BAB63 /* Main.storyboard */,
+				A7F5BB9E1A16EFBD005BAB63 /* LWFViewController.h */,
+				A7F5BB9F1A16EFBD005BAB63 /* LWFViewController.m */,
+				A7F5BBA11A16EFBE005BAB63 /* LWFMyScene.h */,
+				A7F5BBA21A16EFBE005BAB63 /* LWFMyScene.m */,
+				A7F5BBA41A16EFBE005BAB63 /* Spaceship.png */,
+				A70387601A17D1250053A9E6 /* grass.png */,
+				A7F5BBA61A16EFBE005BAB63 /* Images.xcassets */,
+				A7F5BB901A16EFBC005BAB63 /* Supporting Files */,
+			);
+			path = "Evil Cave";
+			sourceTree = "<group>";
+		};
+		A7F5BB901A16EFBC005BAB63 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A7F5BB911A16EFBC005BAB63 /* Evil Cave-Info.plist */,
+				A7F5BB921A16EFBC005BAB63 /* InfoPlist.strings */,
+				A7F5BB951A16EFBC005BAB63 /* main.m */,
+				A7F5BB971A16EFBC005BAB63 /* Evil Cave-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A7F5BBB31A16EFBF005BAB63 /* Evil CaveTests */ = {
+			isa = PBXGroup;
+			children = (
+				A7F5BBB91A16EFBF005BAB63 /* Evil_CaveTests.m */,
+				A7F5BBB41A16EFBF005BAB63 /* Supporting Files */,
+			);
+			path = "Evil CaveTests";
+			sourceTree = "<group>";
+		};
+		A7F5BBB41A16EFBF005BAB63 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A7F5BBB51A16EFBF005BAB63 /* Evil CaveTests-Info.plist */,
+				A7F5BBB61A16EFBF005BAB63 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A7F5BBCE1A16F831005BAB63 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				A7F5BBCF1A16F831005BAB63 /* LWFMap.h */,
+				A7F5BBD01A16F831005BAB63 /* LWFMap.m */,
+				A703875A1A17BD5E0053A9E6 /* LWFTile.h */,
+				A703875B1A17BD5E0053A9E6 /* LWFTile.m */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A7F5BB831A16EFBC005BAB63 /* Evil Cave */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7F5BBBD1A16EFBF005BAB63 /* Build configuration list for PBXNativeTarget "Evil Cave" */;
+			buildPhases = (
+				A7F5BB801A16EFBC005BAB63 /* Sources */,
+				A7F5BB811A16EFBC005BAB63 /* Frameworks */,
+				A7F5BB821A16EFBC005BAB63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Evil Cave";
+			productName = "Evil Cave";
+			productReference = A7F5BB841A16EFBC005BAB63 /* Evil Cave.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A7F5BBAB1A16EFBF005BAB63 /* Evil CaveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7F5BBC01A16EFBF005BAB63 /* Build configuration list for PBXNativeTarget "Evil CaveTests" */;
+			buildPhases = (
+				A7F5BBA81A16EFBF005BAB63 /* Sources */,
+				A7F5BBA91A16EFBF005BAB63 /* Frameworks */,
+				A7F5BBAA1A16EFBF005BAB63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A7F5BBB21A16EFBF005BAB63 /* PBXTargetDependency */,
+			);
+			name = "Evil CaveTests";
+			productName = "Evil CaveTests";
+			productReference = A7F5BBAC1A16EFBF005BAB63 /* Evil CaveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A7F5BB7C1A16EFBC005BAB63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LWF;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = leonardowistuba;
+				TargetAttributes = {
+					A7F5BBAB1A16EFBF005BAB63 = {
+						TestTargetID = A7F5BB831A16EFBC005BAB63;
+					};
+				};
+			};
+			buildConfigurationList = A7F5BB7F1A16EFBC005BAB63 /* Build configuration list for PBXProject "Evil Cave" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A7F5BB7B1A16EFBC005BAB63;
+			productRefGroup = A7F5BB851A16EFBC005BAB63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A7F5BB831A16EFBC005BAB63 /* Evil Cave */,
+				A7F5BBAB1A16EFBF005BAB63 /* Evil CaveTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A7F5BB821A16EFBC005BAB63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7F5BB941A16EFBC005BAB63 /* InfoPlist.strings in Resources */,
+				A7F5BBA71A16EFBE005BAB63 /* Images.xcassets in Resources */,
+				A70387611A17D1250053A9E6 /* grass.png in Resources */,
+				A7F5BBA51A16EFBE005BAB63 /* Spaceship.png in Resources */,
+				A7F5BB9D1A16EFBD005BAB63 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7F5BBAA1A16EFBF005BAB63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7F5BBB81A16EFBF005BAB63 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A7F5BB801A16EFBC005BAB63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7F5BBA31A16EFBE005BAB63 /* LWFMyScene.m in Sources */,
+				A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */,
+				A7F5BB9A1A16EFBC005BAB63 /* LWFAppDelegate.m in Sources */,
+				A703875C1A17BD5E0053A9E6 /* LWFTile.m in Sources */,
+				A703875F1A17BEB00053A9E6 /* LWFTileMap.m in Sources */,
+				A7F5BB961A16EFBC005BAB63 /* main.m in Sources */,
+				A7F5BBA01A16EFBD005BAB63 /* LWFViewController.m in Sources */,
+				A7F5BBD11A16F831005BAB63 /* LWFMap.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7F5BBA81A16EFBF005BAB63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7F5BBBA1A16EFBF005BAB63 /* Evil_CaveTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A7F5BBB21A16EFBF005BAB63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A7F5BB831A16EFBC005BAB63 /* Evil Cave */;
+			targetProxy = A7F5BBB11A16EFBF005BAB63 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A7F5BB921A16EFBC005BAB63 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7F5BB931A16EFBC005BAB63 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A7F5BB9B1A16EFBD005BAB63 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7F5BB9C1A16EFBD005BAB63 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A7F5BBB61A16EFBF005BAB63 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7F5BBB71A16EFBF005BAB63 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A7F5BBBB1A16EFBF005BAB63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A7F5BBBC1A16EFBF005BAB63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A7F5BBBE1A16EFBF005BAB63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Evil Cave/Evil Cave-Prefix.pch";
+				INFOPLIST_FILE = "Evil Cave/Evil Cave-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A7F5BBBF1A16EFBF005BAB63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Evil Cave/Evil Cave-Prefix.pch";
+				INFOPLIST_FILE = "Evil Cave/Evil Cave-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A7F5BBC11A16EFBF005BAB63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Evil Cave.app/Evil Cave";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Evil Cave/Evil Cave-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Evil CaveTests/Evil CaveTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A7F5BBC21A16EFBF005BAB63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Evil Cave.app/Evil Cave";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Evil Cave/Evil Cave-Prefix.pch";
+				INFOPLIST_FILE = "Evil CaveTests/Evil CaveTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A7F5BB7F1A16EFBC005BAB63 /* Build configuration list for PBXProject "Evil Cave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7F5BBBB1A16EFBF005BAB63 /* Debug */,
+				A7F5BBBC1A16EFBF005BAB63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7F5BBBD1A16EFBF005BAB63 /* Build configuration list for PBXNativeTarget "Evil Cave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7F5BBBE1A16EFBF005BAB63 /* Debug */,
+				A7F5BBBF1A16EFBF005BAB63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7F5BBC01A16EFBF005BAB63 /* Build configuration list for PBXNativeTarget "Evil CaveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7F5BBC11A16EFBF005BAB63 /* Debug */,
+				A7F5BBC21A16EFBF005BAB63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A7F5BB7C1A16EFBC005BAB63 /* Project object */;
+}
