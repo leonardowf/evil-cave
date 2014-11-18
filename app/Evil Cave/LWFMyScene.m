@@ -27,7 +27,7 @@
         
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
-        LWFMapDimension *mapDimension = [[LWFMapDimension alloc]initWithGridSize:size numberTilesVertical:30 numberTilesHorizontal:30 andTileSize:32];
+        LWFMapDimension *mapDimension = [[LWFMapDimension alloc]initWithGridSize:size numberTilesVertical:40 numberTilesHorizontal:40 andTileSize:32];
         
         _map = [[LWFMap alloc]initWithMapDimension:mapDimension];
         [_map addTiles];

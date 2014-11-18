@@ -12,6 +12,12 @@
 		A703875F1A17BEB00053A9E6 /* LWFTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = A703875E1A17BEB00053A9E6 /* LWFTileMap.m */; };
 		A70387611A17D1250053A9E6 /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = A70387601A17D1250053A9E6 /* grass.png */; };
 		A7D8BEDC1A190A5B005B0599 /* LWFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8BEDB1A190A5B005B0599 /* LWFPlayer.m */; };
+		A7D8BEE11A19883A005B0599 /* LWFCaveGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8BEE01A19883A005B0599 /* LWFCaveGenerator.m */; };
+		A7D8BEE41A1988BC005B0599 /* LWFCaveGeneratorConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8BEE31A1988BC005B0599 /* LWFCaveGeneratorConstants.m */; };
+		A7D8BEE71A198C67005B0599 /* LWFCaveGeneratorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8BEE61A198C67005B0599 /* LWFCaveGeneratorCell.m */; };
+		A7D8BEEA1A1AB598005B0599 /* LWFRandomUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8BEE91A1AB598005B0599 /* LWFRandomUtils.m */; };
+		A7D8BEED1A1AB909005B0599 /* LWFRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8BEEC1A1AB909005B0599 /* LWFRoom.m */; };
+		A7D8BEF01A1ABAFC005B0599 /* LWFRoomBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8BEEF1A1ABAFC005B0599 /* LWFRoomBuilder.m */; };
 		A7F5BB881A16EFBC005BAB63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F5BB871A16EFBC005BAB63 /* Foundation.framework */; };
 		A7F5BB8A1A16EFBC005BAB63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F5BB891A16EFBC005BAB63 /* CoreGraphics.framework */; };
 		A7F5BB8C1A16EFBC005BAB63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F5BB8B1A16EFBC005BAB63 /* UIKit.framework */; };
@@ -52,6 +58,18 @@
 		A70387601A17D1250053A9E6 /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
 		A7D8BEDA1A190A5B005B0599 /* LWFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPlayer.h; sourceTree = "<group>"; };
 		A7D8BEDB1A190A5B005B0599 /* LWFPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPlayer.m; sourceTree = "<group>"; };
+		A7D8BEDF1A19883A005B0599 /* LWFCaveGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFCaveGenerator.h; sourceTree = "<group>"; };
+		A7D8BEE01A19883A005B0599 /* LWFCaveGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFCaveGenerator.m; sourceTree = "<group>"; };
+		A7D8BEE21A1988BC005B0599 /* LWFCaveGeneratorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFCaveGeneratorConstants.h; sourceTree = "<group>"; };
+		A7D8BEE31A1988BC005B0599 /* LWFCaveGeneratorConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFCaveGeneratorConstants.m; sourceTree = "<group>"; };
+		A7D8BEE51A198C67005B0599 /* LWFCaveGeneratorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFCaveGeneratorCell.h; sourceTree = "<group>"; };
+		A7D8BEE61A198C67005B0599 /* LWFCaveGeneratorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFCaveGeneratorCell.m; sourceTree = "<group>"; };
+		A7D8BEE81A1AB598005B0599 /* LWFRandomUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRandomUtils.h; sourceTree = "<group>"; };
+		A7D8BEE91A1AB598005B0599 /* LWFRandomUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRandomUtils.m; sourceTree = "<group>"; };
+		A7D8BEEB1A1AB909005B0599 /* LWFRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRoom.h; sourceTree = "<group>"; };
+		A7D8BEEC1A1AB909005B0599 /* LWFRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRoom.m; sourceTree = "<group>"; };
+		A7D8BEEE1A1ABAFC005B0599 /* LWFRoomBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRoomBuilder.h; sourceTree = "<group>"; };
+		A7D8BEEF1A1ABAFC005B0599 /* LWFRoomBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRoomBuilder.m; sourceTree = "<group>"; };
 		A7F5BB841A16EFBC005BAB63 /* Evil Cave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Evil Cave.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F5BB871A16EFBC005BAB63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A7F5BB891A16EFBC005BAB63 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -111,8 +129,27 @@
 				A70387581A17BC620053A9E6 /* LWFMapDimension.m */,
 				A703875D1A17BEB00053A9E6 /* LWFTileMap.h */,
 				A703875E1A17BEB00053A9E6 /* LWFTileMap.m */,
+				A7D8BEE81A1AB598005B0599 /* LWFRandomUtils.h */,
+				A7D8BEE91A1AB598005B0599 /* LWFRandomUtils.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		A7D8BEDE1A198820005B0599 /* Generators */ = {
+			isa = PBXGroup;
+			children = (
+				A7D8BEDF1A19883A005B0599 /* LWFCaveGenerator.h */,
+				A7D8BEE01A19883A005B0599 /* LWFCaveGenerator.m */,
+				A7D8BEE21A1988BC005B0599 /* LWFCaveGeneratorConstants.h */,
+				A7D8BEE31A1988BC005B0599 /* LWFCaveGeneratorConstants.m */,
+				A7D8BEE51A198C67005B0599 /* LWFCaveGeneratorCell.h */,
+				A7D8BEE61A198C67005B0599 /* LWFCaveGeneratorCell.m */,
+				A7D8BEEB1A1AB909005B0599 /* LWFRoom.h */,
+				A7D8BEEC1A1AB909005B0599 /* LWFRoom.m */,
+				A7D8BEEE1A1ABAFC005B0599 /* LWFRoomBuilder.h */,
+				A7D8BEEF1A1ABAFC005B0599 /* LWFRoomBuilder.m */,
+			);
+			path = Generators;
 			sourceTree = "<group>";
 		};
 		A7F5BB7B1A16EFBC005BAB63 = {
@@ -149,6 +186,7 @@
 		A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */ = {
 			isa = PBXGroup;
 			children = (
+				A7D8BEDE1A198820005B0599 /* Generators */,
 				A70387561A17BC480053A9E6 /* Utils */,
 				A7F5BBCE1A16F831005BAB63 /* Nodes */,
 				A7F5BB981A16EFBC005BAB63 /* LWFAppDelegate.h */,
@@ -308,13 +346,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D8BEE71A198C67005B0599 /* LWFCaveGeneratorCell.m in Sources */,
+				A7D8BEE11A19883A005B0599 /* LWFCaveGenerator.m in Sources */,
 				A7F5BBA31A16EFBE005BAB63 /* LWFMyScene.m in Sources */,
 				A7D8BEDC1A190A5B005B0599 /* LWFPlayer.m in Sources */,
 				A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */,
 				A7F5BB9A1A16EFBC005BAB63 /* LWFAppDelegate.m in Sources */,
+				A7D8BEED1A1AB909005B0599 /* LWFRoom.m in Sources */,
 				A703875C1A17BD5E0053A9E6 /* LWFTile.m in Sources */,
 				A703875F1A17BEB00053A9E6 /* LWFTileMap.m in Sources */,
 				A7F5BB961A16EFBC005BAB63 /* main.m in Sources */,
+				A7D8BEF01A1ABAFC005B0599 /* LWFRoomBuilder.m in Sources */,
+				A7D8BEE41A1988BC005B0599 /* LWFCaveGeneratorConstants.m in Sources */,
+				A7D8BEEA1A1AB598005B0599 /* LWFRandomUtils.m in Sources */,
 				A7F5BBA01A16EFBD005BAB63 /* LWFViewController.m in Sources */,
 				A7F5BBD11A16F831005BAB63 /* LWFMap.m in Sources */,
 			);

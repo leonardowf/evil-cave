@@ -14,6 +14,7 @@
 @interface LWFTileMap : NSObject
 
 @property (nonatomic, strong) NSMutableArray *tiles;
+@property (nonatomic, strong) NSMutableArray *gridModel;
 
 - (instancetype)initWithMapDimension:(LWFMapDimension *)mapDimension;
 - (LWFTile *)tileForVertical:(NSInteger)vertical andHorizontal:(NSInteger)horizontal;
