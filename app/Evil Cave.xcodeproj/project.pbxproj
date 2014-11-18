@@ -18,6 +18,8 @@
 		A7D8BEEA1A1AB598005B0599 /* LWFRandomUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8BEE91A1AB598005B0599 /* LWFRandomUtils.m */; };
 		A7D8BEED1A1AB909005B0599 /* LWFRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8BEEC1A1AB909005B0599 /* LWFRoom.m */; };
 		A7D8BEF01A1ABAFC005B0599 /* LWFRoomBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8BEEF1A1ABAFC005B0599 /* LWFRoomBuilder.m */; };
+		A7D8BEF21A1AD98C005B0599 /* cobble_blood1.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D8BEF11A1AD98C005B0599 /* cobble_blood1.png */; };
+		A7D8BEF41A1ADA6E005B0599 /* goblin.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D8BEF31A1ADA6E005B0599 /* goblin.png */; };
 		A7F5BB881A16EFBC005BAB63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F5BB871A16EFBC005BAB63 /* Foundation.framework */; };
 		A7F5BB8A1A16EFBC005BAB63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F5BB891A16EFBC005BAB63 /* CoreGraphics.framework */; };
 		A7F5BB8C1A16EFBC005BAB63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F5BB8B1A16EFBC005BAB63 /* UIKit.framework */; };
@@ -70,6 +72,8 @@
 		A7D8BEEC1A1AB909005B0599 /* LWFRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRoom.m; sourceTree = "<group>"; };
 		A7D8BEEE1A1ABAFC005B0599 /* LWFRoomBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRoomBuilder.h; sourceTree = "<group>"; };
 		A7D8BEEF1A1ABAFC005B0599 /* LWFRoomBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRoomBuilder.m; sourceTree = "<group>"; };
+		A7D8BEF11A1AD98C005B0599 /* cobble_blood1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cobble_blood1.png; sourceTree = "<group>"; };
+		A7D8BEF31A1ADA6E005B0599 /* goblin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goblin.png; sourceTree = "<group>"; };
 		A7F5BB841A16EFBC005BAB63 /* Evil Cave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Evil Cave.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F5BB871A16EFBC005BAB63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A7F5BB891A16EFBC005BAB63 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -186,6 +190,8 @@
 		A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */ = {
 			isa = PBXGroup;
 			children = (
+				A7D8BEF11A1AD98C005B0599 /* cobble_blood1.png */,
+				A7D8BEF31A1ADA6E005B0599 /* goblin.png */,
 				A7D8BEDE1A198820005B0599 /* Generators */,
 				A70387561A17BC480053A9E6 /* Utils */,
 				A7F5BBCE1A16F831005BAB63 /* Nodes */,
@@ -327,7 +333,9 @@
 				A7F5BBA71A16EFBE005BAB63 /* Images.xcassets in Resources */,
 				A70387611A17D1250053A9E6 /* grass.png in Resources */,
 				A7F5BBA51A16EFBE005BAB63 /* Spaceship.png in Resources */,
+				A7D8BEF41A1ADA6E005B0599 /* goblin.png in Resources */,
 				A7F5BB9D1A16EFBD005BAB63 /* Main.storyboard in Resources */,
+				A7D8BEF21A1AD98C005B0599 /* cobble_blood1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,4 +16,14 @@
 
 @implementation LWFRoom
 
+- (CGPoint)midCoordinate {
+    NSInteger midX = ((self.width / 2) + 0.5);
+    midX = midX + self.x;
+    
+    NSUInteger midY = ((self.heigth / 2) + 0.5);
+    midY = midY + self.y;
+    
+    return CGPointMake(midX, midY);
+}
+
 @end

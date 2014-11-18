@@ -34,7 +34,7 @@
         _width = width;
         _grid = [NSMutableArray arrayWithCapacity:width];
         _randomUtils = [[LWFRandomUtils alloc]init];
-        _roomBuilder = [[LWFRoomBuilder alloc]initWithMinWidth:3 maxWidth:10 minHeigth:3 andMaxHeigth:10];
+        _roomBuilder = [[LWFRoomBuilder alloc]initWithMinWidth:3 maxWidth:5 minHeigth:3 andMaxHeigth:5];
         _rooms = [NSMutableArray array];
 
         for (NSUInteger i = 0; i < width; i++) {
@@ -49,7 +49,22 @@
 
 - (NSMutableArray *)generate {
     [self generateRooms];
+    [self addRooms];
     
+    [self generateConnectionBetweenRooms];
+    
+    return _grid;
+}
+
+- (void)generateRooms {
+    for (NSUInteger i = 0; i < 30; i++) {
+        LWFRoom *room = [_roomBuilder build];
+        [_rooms addObject:room];
+    }
+    
+}
+
+- (void)addRooms {
     for (LWFRoom *room in _rooms) {
         NSUInteger maxRoomX = _width - room.width;
         NSUInteger maxRoomY = _heigth - room.heigth;
@@ -67,15 +82,50 @@
         }
         
     }
-    
-    return _grid;
 }
 
-- (void)generateRooms {
-    for (NSUInteger i = 0; i < 20; i++) {
-        LWFRoom *room = [_roomBuilder build];
-        [_rooms addObject:room];
+- (void)generateConnectionBetweenRooms {
+    for (NSUInteger i = 0; i < _rooms.count -1; i++) {
+        LWFRoom *room1 = _rooms[i];
+        LWFRoom *room2 = _rooms[i + 1];
+        
+        [self generatePathBetweenRoom1:room1 andRoom2:room2];
     }
+    
+}
+
+- (void)generatePathBetweenRoom1:(LWFRoom *)room1 andRoom2:(LWFRoom *)room2 {
+    CGPoint midRoom1 = [room1 midCoordinate];
+    CGPoint midRoom2 = [room2 midCoordinate];
+    
+    NSUInteger pathY = midRoom1.y;
+    NSUInteger pathX = midRoom1.x;
+    NSInteger increment;
+    
+    // TODO: inverter a geração
+    
+    if (pathY < midRoom2.y) {
+        increment = 1;
+    } else {
+        increment = -1;
+    }
+    while (pathY != midRoom2.y) {
+        _grid[pathX][pathY] = [[LWFCaveGeneratorCell alloc]initWithX:midRoom1.x y:pathY andType:CaveCellTypeFloor];
+        pathY = pathY + increment;
+    }
+    
+    if (pathX < midRoom2.x) {
+        increment = 1;
+    } else {
+        increment = -1;
+    }
+    
+    while (pathX != midRoom2.x) {
+        _grid[pathX][pathY] = [[LWFCaveGeneratorCell alloc]initWithX:pathX y:pathY andType:CaveCellTypeFloor];
+        pathX = pathX + increment;
+    }
+    
+    
 }
 
 

@@ -34,11 +34,12 @@
                     tile = [[LWFTile alloc]initWithColor:[UIColor blackColor] size:mapDimension.tileSize];
                 }
                 else if (cell.cellType == CaveCellTypeFloor) {
-                   tile = [[LWFTile alloc]initWithColor:[UIColor brownColor] size:mapDimension.tileSize];
+                    tile = [[LWFTile alloc]initWithImageNamed:@"cobble_blood1"];
                 } else {
                     tile = [[LWFTile alloc]initWithColor:[UIColor blackColor] size:mapDimension.tileSize];
                 }
                 
+                tile.size = mapDimension.tileSize;
                 tile.position = CGPointMake(j * mapDimension.tileSize.height, i * mapDimension.tileSize.height);
                 
                 self.tiles[i][j] = tile;

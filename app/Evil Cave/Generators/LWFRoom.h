@@ -15,5 +15,6 @@
 @property NSUInteger x;
 @property NSUInteger y;
 
+- (CGPoint)midCoordinate;
 
 @end
