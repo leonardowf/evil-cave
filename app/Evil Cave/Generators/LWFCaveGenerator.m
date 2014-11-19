@@ -57,7 +57,7 @@
 }
 
 - (void)generateRooms {
-    for (NSUInteger i = 0; i < 30; i++) {
+    for (NSUInteger i = 0; i < 40; i++) {
         LWFRoom *room = [_roomBuilder build];
         [_rooms addObject:room];
     }
@@ -85,13 +85,46 @@
 }
 
 - (void)generateConnectionBetweenRooms {
+    LWFRoom *roomStart = [_rooms objectAtIndex:0];
+    roomStart.mstVisited = YES;
+    
     for (NSUInteger i = 0; i < _rooms.count -1; i++) {
-        LWFRoom *room1 = _rooms[i];
-        LWFRoom *room2 = _rooms[i + 1];
+        LWFRoom *nearestRoom = [self findNearestRoomOfRoom:roomStart inArray:_rooms];
         
-        [self generatePathBetweenRoom1:room1 andRoom2:room2];
+        [self generatePathBetweenRoom1:roomStart andRoom2:nearestRoom];
+        roomStart = nearestRoom;
     }
     
+}
+
+- (LWFRoom *)findNearestRoomOfRoom:(LWFRoom *)originRoom inArray:(NSArray *)availableRooms {
+    NSUInteger bestDistance = 9999;
+    LWFRoom *bestRoom;
+    
+    for (LWFRoom *room in availableRooms) {
+        if (room.mstVisited == NO) {
+            NSUInteger distance = [self distanceBetweenRoom:originRoom andRoom:room];
+            if (distance < bestDistance) {
+                bestDistance = distance;
+                bestRoom = room;
+            }
+        }
+    }
+    
+    bestRoom.mstVisited = YES;
+    return bestRoom;
+}
+
+- (NSUInteger)distanceBetweenRoom:(LWFRoom *)room1 andRoom:(LWFRoom *)room2 {
+    NSInteger x = room1.x - room2.x;
+    NSInteger y = room1.y - room2.y;
+    
+    NSInteger distance = (x + y) / 2;
+    
+    if (distance < 0) {
+        return -distance;
+    }
+    return distance;
 }
 
 - (void)generatePathBetweenRoom1:(LWFRoom *)room1 andRoom2:(LWFRoom *)room2 {

@@ -15,6 +15,8 @@
 @property NSUInteger x;
 @property NSUInteger y;
 
+@property BOOL mstVisited;
+
 - (CGPoint)midCoordinate;
 
 @end
