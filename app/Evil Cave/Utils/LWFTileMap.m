@@ -35,6 +35,11 @@
                 }
                 else if (cell.cellType == CaveCellTypeFloor) {
                     tile = [[LWFTile alloc]initWithImageNamed:@"cobble_blood1"];
+                } else if (cell.cellType == CaveCellTypeStart) {
+                    tile = [[LWFTile alloc]initWithColor:[UIColor redColor] size:mapDimension.tileSize];
+                } else if (cell.cellType == CaveCellTypeEnd) {
+                    tile = [[LWFTile alloc]initWithColor:[UIColor greenColor] size:mapDimension.tileSize];
+                    
                 } else {
                     tile = [[LWFTile alloc]initWithColor:[UIColor blackColor] size:mapDimension.tileSize];
                 }

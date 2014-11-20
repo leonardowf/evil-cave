@@ -11,6 +11,9 @@
 		A703875C1A17BD5E0053A9E6 /* LWFTile.m in Sources */ = {isa = PBXBuildFile; fileRef = A703875B1A17BD5E0053A9E6 /* LWFTile.m */; };
 		A703875F1A17BEB00053A9E6 /* LWFTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = A703875E1A17BEB00053A9E6 /* LWFTileMap.m */; };
 		A70387611A17D1250053A9E6 /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = A70387601A17D1250053A9E6 /* grass.png */; };
+		A7D83B911A1D738A0054C022 /* HSAIPathFinding.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D83B901A1D738A0054C022 /* HSAIPathFinding.m */; };
+		A7D83B941A1D73E70054C022 /* LWFPathFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D83B931A1D73E70054C022 /* LWFPathFinder.m */; };
+		A7D83B971A1D74F20054C022 /* LWFModelGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D83B961A1D74F20054C022 /* LWFModelGrid.m */; };
 		A7D8BEDC1A190A5B005B0599 /* LWFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8BEDB1A190A5B005B0599 /* LWFPlayer.m */; };
 		A7D8BEE11A19883A005B0599 /* LWFCaveGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8BEE01A19883A005B0599 /* LWFCaveGenerator.m */; };
 		A7D8BEE41A1988BC005B0599 /* LWFCaveGeneratorConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8BEE31A1988BC005B0599 /* LWFCaveGeneratorConstants.m */; };
@@ -58,6 +61,12 @@
 		A703875D1A17BEB00053A9E6 /* LWFTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFTileMap.h; sourceTree = "<group>"; };
 		A703875E1A17BEB00053A9E6 /* LWFTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFTileMap.m; sourceTree = "<group>"; };
 		A70387601A17D1250053A9E6 /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
+		A7D83B8F1A1D738A0054C022 /* HSAIPathFinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSAIPathFinding.h; sourceTree = "<group>"; };
+		A7D83B901A1D738A0054C022 /* HSAIPathFinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSAIPathFinding.m; sourceTree = "<group>"; };
+		A7D83B921A1D73E70054C022 /* LWFPathFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPathFinder.h; sourceTree = "<group>"; };
+		A7D83B931A1D73E70054C022 /* LWFPathFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPathFinder.m; sourceTree = "<group>"; };
+		A7D83B951A1D74F20054C022 /* LWFModelGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFModelGrid.h; sourceTree = "<group>"; };
+		A7D83B961A1D74F20054C022 /* LWFModelGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFModelGrid.m; sourceTree = "<group>"; };
 		A7D8BEDA1A190A5B005B0599 /* LWFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPlayer.h; sourceTree = "<group>"; };
 		A7D8BEDB1A190A5B005B0599 /* LWFPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPlayer.m; sourceTree = "<group>"; };
 		A7D8BEDF1A19883A005B0599 /* LWFCaveGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFCaveGenerator.h; sourceTree = "<group>"; };
@@ -139,6 +148,17 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		A7D83B8B1A1D73640054C022 /* Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				A7D83B8F1A1D738A0054C022 /* HSAIPathFinding.h */,
+				A7D83B901A1D738A0054C022 /* HSAIPathFinding.m */,
+				A7D83B921A1D73E70054C022 /* LWFPathFinder.h */,
+				A7D83B931A1D73E70054C022 /* LWFPathFinder.m */,
+			);
+			path = Algorithms;
+			sourceTree = "<group>";
+		};
 		A7D8BEDE1A198820005B0599 /* Generators */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +172,8 @@
 				A7D8BEEC1A1AB909005B0599 /* LWFRoom.m */,
 				A7D8BEEE1A1ABAFC005B0599 /* LWFRoomBuilder.h */,
 				A7D8BEEF1A1ABAFC005B0599 /* LWFRoomBuilder.m */,
+				A7D83B951A1D74F20054C022 /* LWFModelGrid.h */,
+				A7D83B961A1D74F20054C022 /* LWFModelGrid.m */,
 			);
 			path = Generators;
 			sourceTree = "<group>";
@@ -190,6 +212,7 @@
 		A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */ = {
 			isa = PBXGroup;
 			children = (
+				A7D83B8B1A1D73640054C022 /* Algorithms */,
 				A7D8BEF11A1AD98C005B0599 /* cobble_blood1.png */,
 				A7D8BEF31A1ADA6E005B0599 /* goblin.png */,
 				A7D8BEDE1A198820005B0599 /* Generators */,
@@ -360,13 +383,16 @@
 				A7D8BEDC1A190A5B005B0599 /* LWFPlayer.m in Sources */,
 				A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */,
 				A7F5BB9A1A16EFBC005BAB63 /* LWFAppDelegate.m in Sources */,
+				A7D83B941A1D73E70054C022 /* LWFPathFinder.m in Sources */,
 				A7D8BEED1A1AB909005B0599 /* LWFRoom.m in Sources */,
 				A703875C1A17BD5E0053A9E6 /* LWFTile.m in Sources */,
 				A703875F1A17BEB00053A9E6 /* LWFTileMap.m in Sources */,
 				A7F5BB961A16EFBC005BAB63 /* main.m in Sources */,
 				A7D8BEF01A1ABAFC005B0599 /* LWFRoomBuilder.m in Sources */,
 				A7D8BEE41A1988BC005B0599 /* LWFCaveGeneratorConstants.m in Sources */,
+				A7D83B971A1D74F20054C022 /* LWFModelGrid.m in Sources */,
 				A7D8BEEA1A1AB598005B0599 /* LWFRandomUtils.m in Sources */,
+				A7D83B911A1D738A0054C022 /* HSAIPathFinding.m in Sources */,
 				A7F5BBA01A16EFBD005BAB63 /* LWFViewController.m in Sources */,
 				A7F5BBD11A16F831005BAB63 /* LWFMap.m in Sources */,
 			);

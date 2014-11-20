@@ -12,8 +12,10 @@
 #import "LWFRoomBuilder.h"
 #import "LWFRoom.h"
 
+#import "LWFModelGrid.h"
 
 @interface LWFCaveGenerator () {
+    LWFModelGrid *_modelGrid;
     NSMutableArray *_grid;
     NSUInteger _heigth;
     NSUInteger _width;
@@ -32,10 +34,11 @@
     if (self) {
         _heigth = heigth;
         _width = width;
-        _grid = [NSMutableArray arrayWithCapacity:width];
+        _modelGrid = [[LWFModelGrid alloc]init];
+        _grid = _modelGrid.model;
+        _rooms = _modelGrid.rooms;
         _randomUtils = [[LWFRandomUtils alloc]init];
         _roomBuilder = [[LWFRoomBuilder alloc]initWithMinWidth:3 maxWidth:5 minHeigth:3 andMaxHeigth:5];
-        _rooms = [NSMutableArray array];
 
         for (NSUInteger i = 0; i < width; i++) {
             _grid[i] = [NSMutableArray arrayWithCapacity:heigth];
@@ -52,12 +55,31 @@
     [self addRooms];
     
     [self generateConnectionBetweenRooms];
+    [self generateStartAndEnd];
     
     return _grid;
 }
 
+- (void)generateStartAndEnd {
+    LWFRoom *firstRoom = _rooms.firstObject;
+    LWFRoom *fasthestRoom = [self findFarthestRoomOf:firstRoom inArray:_rooms];
+    
+    _modelGrid.startLevelPosition = firstRoom.midCoordinate;
+    _modelGrid.endLevelPosition = fasthestRoom.midCoordinate;
+    
+    NSInteger startPositionX = _modelGrid.startLevelPosition.x;
+    NSInteger startPositionY = _modelGrid.startLevelPosition.y;
+    NSInteger endPositionX = _modelGrid.endLevelPosition.x;
+    NSInteger endPositionY = _modelGrid.endLevelPosition.y;
+    
+    _grid[startPositionX][startPositionY] = [[LWFCaveGeneratorCell alloc]initWithX:startPositionX y:startPositionY andType:CaveCellTypeStart];
+    
+    _grid[endPositionX][endPositionY] = [[LWFCaveGeneratorCell alloc]initWithX:endPositionX y:endPositionY andType:CaveCellTypeEnd];
+
+}
+
 - (void)generateRooms {
-    for (NSUInteger i = 0; i < 40; i++) {
+    for (NSUInteger i = 0; i < 50; i++) {
         LWFRoom *room = [_roomBuilder build];
         [_rooms addObject:room];
     }
@@ -94,7 +116,6 @@
         [self generatePathBetweenRoom1:roomStart andRoom2:nearestRoom];
         roomStart = nearestRoom;
     }
-    
 }
 
 - (LWFRoom *)findNearestRoomOfRoom:(LWFRoom *)originRoom inArray:(NSArray *)availableRooms {
@@ -112,6 +133,20 @@
     }
     
     bestRoom.mstVisited = YES;
+    return bestRoom;
+}
+
+- (LWFRoom *)findFarthestRoomOf:(LWFRoom *)originRoom inArray:(NSArray *)availableRooms {
+    NSUInteger bestDistance = 0;
+    LWFRoom *bestRoom;
+    
+    for (LWFRoom *room in availableRooms) {
+        NSUInteger distance = [self distanceBetweenRoom:originRoom andRoom:room];
+        if (distance > bestDistance) {
+            bestDistance = distance;
+            bestRoom = room;
+        }
+    }
     return bestRoom;
 }
 
@@ -160,8 +195,5 @@
     
     
 }
-
-
-
 
 @end
