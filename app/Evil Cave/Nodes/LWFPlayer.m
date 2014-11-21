@@ -11,9 +11,4 @@
 
 @implementation LWFPlayer
 
-- (void)moveToTile:(LWFTile *)tile {
-    SKAction *moveAction = [SKAction moveTo:tile.position duration:0.2];
-    [self runAction: moveAction];
-}
-
 @end

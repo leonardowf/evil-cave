@@ -12,6 +12,7 @@
 #import "LWFTileMap.h"
 #import "LWFTile.h"
 #import "LWFPlayer.h"
+#import "LWFMovementManager.h"
 
 @implementation LWFMap
 
@@ -21,6 +22,7 @@
     if (self) {
         _mapDimension = mapDimension;
         _tileMap = [[LWFTileMap alloc]initWithMapDimension:mapDimension];
+        _movementManager = [[LWFMovementManager alloc]initWithTileMap:_tileMap];
         
     }
     return self;
@@ -37,11 +39,10 @@
 }
 
 - (LWFTile *)tileForPoint:(CGPoint)point {
-    CGFloat rowPoint = point.y / self.mapDimension.tileSize.height;
-    CGFloat columnPoint = point.x / self.mapDimension.tileSize.width;
+    CGPoint tileCoordinate = [self tileCoordinateForTouchPoint:point];
     
-    NSInteger row = (rowPoint + 0.5);
-    NSInteger column = (columnPoint + 0.5);
+    NSInteger row = tileCoordinate.y;
+    NSInteger column = tileCoordinate.x;
     
     if (column < 0 || row < 0 || column >= self.mapDimension.numberTilesHorizontal || row >= self.mapDimension.numberTilesVertical) {
         return nil;
@@ -52,13 +53,33 @@
     return tile;
 }
 
+- (CGPoint)tileCoordinateForTouchPoint:(CGPoint)touchPoint {
+    CGFloat rowPoint = touchPoint.y / self.mapDimension.tileSize.height;
+    CGFloat columnPoint = touchPoint.x / self.mapDimension.tileSize.width;
+    
+    NSInteger row = (rowPoint + 0.5);
+    NSInteger column = (columnPoint + 0.5);
+    
+    return CGPointMake(column, row);
+}
+
+- (void)addPlayer:(LWFPlayer *)player {
+    self.player = player;
+    self.player.position = self.tileMap.startTile.position;
+    
+    [self addChild:self.player];
+}
+
+
 - (void)userTouchedPoint:(CGPoint)point {
+    
+
     LWFTile *tile = [self tileForPoint:point];
     
     if (tile != nil) {
-        [self.player moveToTile:tile];
+        CGPoint tileCoordinate = [self tileCoordinateForTouchPoint:point];
+        [self.movementManager moveable:self.player requestMoveToTileAtX:tileCoordinate.x andY:tileCoordinate.y];
     }
-    
 }
 
 @end

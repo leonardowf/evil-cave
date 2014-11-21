@@ -12,15 +12,18 @@
 @class LWFTileMap;
 @class LWFTile;
 @class LWFPlayer;
+@class LWFMovementManager;
 
 @interface LWFMap : SKNode
 
 @property (nonatomic, readonly, strong) LWFMapDimension *mapDimension;
 @property (nonatomic, readonly, strong) LWFTileMap *tileMap;
 @property (nonatomic, strong) LWFPlayer *player;
+@property (nonatomic, strong) LWFMovementManager *movementManager;
 
 - (instancetype)initWithMapDimension:(LWFMapDimension *)mapDimension;
 - (void)addTiles;
+- (void)addPlayer:(LWFPlayer *)player;
 - (LWFTile *)tileForPoint:(CGPoint)point;
 - (void)userTouchedPoint:(CGPoint)point;
 

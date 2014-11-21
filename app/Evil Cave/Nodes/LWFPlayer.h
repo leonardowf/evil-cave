@@ -7,10 +7,11 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "LWFMoveable.h"
+#import "LWFCreature.h"
+
 @class LWFTile;
 
-@interface LWFPlayer : SKSpriteNode
-
-- (void)moveToTile:(LWFTile *)tile;
+@interface LWFPlayer : LWFCreature
 
 @end

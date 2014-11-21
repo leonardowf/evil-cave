@@ -27,18 +27,16 @@
         
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
-        LWFMapDimension *mapDimension = [[LWFMapDimension alloc]initWithGridSize:size numberTilesVertical:45 numberTilesHorizontal:45 andTileSize:6];
+        LWFMapDimension *mapDimension = [[LWFMapDimension alloc]initWithGridSize:size numberTilesVertical:45 numberTilesHorizontal:45 andTileSize:32];
         
         _map = [[LWFMap alloc]initWithMapDimension:mapDimension];
         [_map addTiles];
         
         _player = [[LWFPlayer alloc]initWithImageNamed:@"goblin"];
         _player.size = mapDimension.tileSize;
-        _player.position = CGPointMake(size.width /2,size.height/2);
         
-        _map.player = _player;
+        [_map addPlayer:_player];
         
-        [_map addChild:_player];
         [self addChild:_map];
         
     }

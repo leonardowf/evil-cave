@@ -10,4 +10,8 @@
 
 @implementation LWFTile
 
+- (BOOL)isPassable {
+    return [self isWalkable];
+}
+
 @end

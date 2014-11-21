@@ -15,6 +15,8 @@
 
 @property (nonatomic, strong) NSMutableArray *tiles;
 @property (nonatomic, strong) NSMutableArray *gridModel;
+@property (nonatomic, strong) LWFTile *startTile;
+@property (nonatomic, strong) LWFTile *endTile;
 
 - (instancetype)initWithMapDimension:(LWFMapDimension *)mapDimension;
 - (LWFTile *)tileForVertical:(NSInteger)vertical andHorizontal:(NSInteger)horizontal;
