@@ -54,6 +54,7 @@
 		
 		if((currentNode->nodeX == endX) && (currentNode->nodeY == endY))
 		{
+            aNode = currentNode;
             NSMutableArray *resultPath = [NSMutableArray array];
             while(aNode->parentNode != nil)
 			{
@@ -83,7 +84,7 @@
 				for(x=-1;x<=1;x++)
 				{
 					newX = currentX+x;
-					if(y || x) //avoid 0,0
+					if((x == -1 && y == 0) || (x == 0 && y == -1) || (x == 1 && y == 0) || (x == 0 && y == 1)) //avoid 0,0
 					{
 						//simple bounds check for the demo app's array
 						if((newX>=0)&&(newY>=0)&&(newX<self.tileMap.mapDimension.numberTilesHorizontal)&&(newY<self.tileMap.mapDimension.numberTilesVertical))
