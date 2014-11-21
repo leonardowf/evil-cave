@@ -12,6 +12,9 @@
 		A703875F1A17BEB00053A9E6 /* LWFTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = A703875E1A17BEB00053A9E6 /* LWFTileMap.m */; };
 		A70387611A17D1250053A9E6 /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = A70387601A17D1250053A9E6 /* grass.png */; };
 		A78443A91A1EB2220029995D /* LWFCreature.m in Sources */ = {isa = PBXBuildFile; fileRef = A78443A81A1EB2220029995D /* LWFCreature.m */; };
+		A78443AC1A1EEF7B0029995D /* LWFHumbleBeeFindPath.m in Sources */ = {isa = PBXBuildFile; fileRef = A78443AB1A1EEF7B0029995D /* LWFHumbleBeeFindPath.m */; };
+		A78443B01A1EEFCC0029995D /* PathFindNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A78443AF1A1EEFCC0029995D /* PathFindNode.m */; };
+		A78443B21A1F010C0029995D /* dngn_shoals_shallow_water_disturbance3.png in Resources */ = {isa = PBXBuildFile; fileRef = A78443B11A1F010C0029995D /* dngn_shoals_shallow_water_disturbance3.png */; };
 		A7D83B911A1D738A0054C022 /* HSAIPathFinding.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D83B901A1D738A0054C022 /* HSAIPathFinding.m */; };
 		A7D83B941A1D73E70054C022 /* LWFPathFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D83B931A1D73E70054C022 /* LWFPathFinder.m */; };
 		A7D83B971A1D74F20054C022 /* LWFModelGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D83B961A1D74F20054C022 /* LWFModelGrid.m */; };
@@ -65,6 +68,11 @@
 		A70387601A17D1250053A9E6 /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
 		A78443A71A1EB2220029995D /* LWFCreature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFCreature.h; sourceTree = "<group>"; };
 		A78443A81A1EB2220029995D /* LWFCreature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFCreature.m; sourceTree = "<group>"; };
+		A78443AA1A1EEF7B0029995D /* LWFHumbleBeeFindPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFHumbleBeeFindPath.h; sourceTree = "<group>"; };
+		A78443AB1A1EEF7B0029995D /* LWFHumbleBeeFindPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFHumbleBeeFindPath.m; sourceTree = "<group>"; };
+		A78443AE1A1EEFCC0029995D /* PathFindNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathFindNode.h; sourceTree = "<group>"; };
+		A78443AF1A1EEFCC0029995D /* PathFindNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathFindNode.m; sourceTree = "<group>"; };
+		A78443B11A1F010C0029995D /* dngn_shoals_shallow_water_disturbance3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dngn_shoals_shallow_water_disturbance3.png; sourceTree = "<group>"; };
 		A7D83B8F1A1D738A0054C022 /* HSAIPathFinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSAIPathFinding.h; sourceTree = "<group>"; };
 		A7D83B901A1D738A0054C022 /* HSAIPathFinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSAIPathFinding.m; sourceTree = "<group>"; };
 		A7D83B921A1D73E70054C022 /* LWFPathFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPathFinder.h; sourceTree = "<group>"; };
@@ -158,6 +166,17 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		A78443AD1A1EEFAA0029995D /* humblebee */ = {
+			isa = PBXGroup;
+			children = (
+				A78443AA1A1EEF7B0029995D /* LWFHumbleBeeFindPath.h */,
+				A78443AB1A1EEF7B0029995D /* LWFHumbleBeeFindPath.m */,
+				A78443AE1A1EEFCC0029995D /* PathFindNode.h */,
+				A78443AF1A1EEFCC0029995D /* PathFindNode.m */,
+			);
+			name = humblebee;
+			sourceTree = "<group>";
+		};
 		A7D83B8B1A1D73640054C022 /* Algorithms */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +184,7 @@
 				A7D83B901A1D738A0054C022 /* HSAIPathFinding.m */,
 				A7D83B921A1D73E70054C022 /* LWFPathFinder.h */,
 				A7D83B931A1D73E70054C022 /* LWFPathFinder.m */,
+				A78443AD1A1EEFAA0029995D /* humblebee */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -222,6 +242,7 @@
 		A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */ = {
 			isa = PBXGroup;
 			children = (
+				A78443B11A1F010C0029995D /* dngn_shoals_shallow_water_disturbance3.png */,
 				A7D83B8B1A1D73640054C022 /* Algorithms */,
 				A7D8BEF11A1AD98C005B0599 /* cobble_blood1.png */,
 				A7D8BEF31A1ADA6E005B0599 /* goblin.png */,
@@ -370,6 +391,7 @@
 				A7F5BBA51A16EFBE005BAB63 /* Spaceship.png in Resources */,
 				A7D8BEF41A1ADA6E005B0599 /* goblin.png in Resources */,
 				A7F5BB9D1A16EFBD005BAB63 /* Main.storyboard in Resources */,
+				A78443B21A1F010C0029995D /* dngn_shoals_shallow_water_disturbance3.png in Resources */,
 				A7D8BEF21A1AD98C005B0599 /* cobble_blood1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +418,7 @@
 				A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */,
 				A7F5BB9A1A16EFBC005BAB63 /* LWFAppDelegate.m in Sources */,
 				A7D83B941A1D73E70054C022 /* LWFPathFinder.m in Sources */,
+				A78443B01A1EEFCC0029995D /* PathFindNode.m in Sources */,
 				A7D8BEED1A1AB909005B0599 /* LWFRoom.m in Sources */,
 				A78443A91A1EB2220029995D /* LWFCreature.m in Sources */,
 				A703875C1A17BD5E0053A9E6 /* LWFTile.m in Sources */,
@@ -409,6 +432,7 @@
 				A7F5BBA01A16EFBD005BAB63 /* LWFViewController.m in Sources */,
 				A7D83B9A1A1EACC80054C022 /* LWFMovementManager.m in Sources */,
 				A7F5BBD11A16F831005BAB63 /* LWFMap.m in Sources */,
+				A78443AC1A1EEF7B0029995D /* LWFHumbleBeeFindPath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

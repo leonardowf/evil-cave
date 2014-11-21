@@ -26,6 +26,10 @@
     
 }
 
+- (void)updateCurrentTile:(LWFTile *)currentTile {
+    self.currentTile = currentTile;
+}
+
 - (void)moveToTile:(LWFTile *)tile {
     SKAction *moveAction = [SKAction moveTo:tile.position duration:0.2];
     [self runAction: moveAction];

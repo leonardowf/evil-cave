@@ -26,6 +26,7 @@
     if (tile.isPassable) {
         [moveable willMoveToTile:tile atX:x andY:y];
         [moveable moveToTile:tile];
+        [moveable updateCurrentTile:tile];
         [moveable didMoveToTile:tile atX:x andY:y];
     } else {
         [moveable failedToMoveToTile:tile atX:x andY:y];

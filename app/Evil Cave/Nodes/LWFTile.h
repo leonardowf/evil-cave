@@ -11,6 +11,8 @@
 @interface LWFTile : SKSpriteNode
 
 @property (getter = isWalkable, setter = setWalkable:) BOOL walkable;
+@property NSUInteger x;
+@property NSUInteger y;
 
 - (BOOL)isPassable;
 

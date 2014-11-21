@@ -29,7 +29,14 @@
 
 - (BOOL) isEqualTo:(HSAIPathFindingNode *)object
 {
-  if (self.point.x == object.point.x && self.point.y == object.point.y)
+    NSInteger selfX = self.point.x;
+    NSInteger selfY = self.point.y;
+    
+    NSInteger objectX = object.point.x;
+    NSInteger objectY = object.point.y;
+    
+    
+  if (selfX == objectX && selfY == objectY)
     return true;
   else
     return false;
@@ -61,6 +68,8 @@
 
 - (NSArray *)findPathFrom:(CGPoint)start to:(CGPoint)goal
 {
+    NSArray *neighbors;
+    
   if (_heuristic == 0) {
     _heuristic = [HSAIPathFindingHeuristic diagonalHeuristic];
   }
@@ -80,12 +89,18 @@
   _closedList = [[NSMutableArray alloc] init];
   
   HSAIPathFindingNode *current = [self cheapestNode];
+    if (current == nil) {
+        neighbors = neighbors;
+        current = startNode;
+    }
   
   while (![current isEqualTo: endNode]) {
     [_closedList addObject: current];
     [self removeNode: current fromList: _openList];
+      
+      neighbors = [_delegate neighborsFor: current];
     
-    for (HSAIPathFindingNode * neighbor in [_delegate neighborsFor: current]) {
+    for (HSAIPathFindingNode * neighbor in neighbors) {
       if ([_delegate nodeIsPassable: neighbor])
       {
         
@@ -135,6 +150,16 @@
 
 - (HSAIPathFindingNode *) cheapestNode
 {
+    if (self.openList == nil) {
+        NSLog(@":(");
+        return nil;
+    }
+    
+    if (self.openList.count == 0) {
+        NSLog(@":(");
+        return nil;
+    }
+    
   HSAIPathFindingNode *cheapest = [self.openList objectAtIndex:0];
   
   for (HSAIPathFindingNode * node in self.openList) {

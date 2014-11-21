@@ -9,10 +9,15 @@
 #import <SpriteKit/SpriteKit.h>
 #import "LWFMoveable.h"
 
+@class LWFTile;
+@class LWFMap;
+
 @class LWFMovementManager;
 
 @interface LWFCreature : SKSpriteNode <LWFMoveable>
 
 @property (nonatomic, strong) LWFMovementManager *movementManager;
+@property (nonatomic, strong) LWFTile *currentTile;
+@property (nonatomic, strong) LWFMap *map;
 
 @end

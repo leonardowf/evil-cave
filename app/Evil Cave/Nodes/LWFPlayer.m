@@ -8,7 +8,12 @@
 
 #import "LWFPlayer.h"
 #import "LWFTile.h"
+#import "LWFMap.h"
 
 @implementation LWFPlayer
+
+- (void)didMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
+    [self.map playerMoved];
+}
 
 @end

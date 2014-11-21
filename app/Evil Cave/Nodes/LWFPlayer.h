@@ -14,4 +14,6 @@
 
 @interface LWFPlayer : LWFCreature
 
+
+
 @end

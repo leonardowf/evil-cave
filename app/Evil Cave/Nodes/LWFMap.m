@@ -13,6 +13,13 @@
 #import "LWFTile.h"
 #import "LWFPlayer.h"
 #import "LWFMovementManager.h"
+#import "LWFPathFinder.h"
+#import "LWFHumbleBeeFindPath.h"
+
+@interface LWFMap () {
+    NSArray *_path;
+}
+@end
 
 @implementation LWFMap
 
@@ -66,19 +73,53 @@
 - (void)addPlayer:(LWFPlayer *)player {
     self.player = player;
     self.player.position = self.tileMap.startTile.position;
+    [self.player setCurrentTile:self.tileMap.startTile];
+    self.player.map = self;
     
     [self addChild:self.player];
 }
 
-
-- (void)userTouchedPoint:(CGPoint)point {
+- (void)pathForPlayerToExit {
+    LWFHumbleBeeFindPath *fp = [[LWFHumbleBeeFindPath alloc]init];
+    fp.tileMap = self.tileMap;
+    
+    if (_path != nil) {
+        [self resetTiles];
+    }
+    
+    _path = [fp findPath:self.player.currentTile.x :self.player.currentTile.y :self.tileMap.endTile.x :self.tileMap.endTile.y];
+    
+    if (_path != nil) {
+        [self paintPath];
+    }
     
 
+}
+
+- (void)resetTiles {
+    for (LWFTile *tile in _path) {
+        [tile setTexture:[SKTexture textureWithImage:[UIImage imageNamed:@"cobble_blood1"]]];
+    }
+}
+
+- (void)paintPath {
+    for (LWFTile *tile in _path) {
+        [tile setTexture:[SKTexture textureWithImage:[UIImage imageNamed:@"dngn_shoals_shallow_water_disturbance3"]]];
+    }
+}
+
+- (void)playerMoved {
+    [self pathForPlayerToExit];
+}
+
+- (void)userTouchedPoint:(CGPoint)point {
     LWFTile *tile = [self tileForPoint:point];
     
     if (tile != nil) {
-        CGPoint tileCoordinate = [self tileCoordinateForTouchPoint:point];
-        [self.movementManager moveable:self.player requestMoveToTileAtX:tileCoordinate.x andY:tileCoordinate.y];
+        if (tile != self.player.currentTile) {
+            CGPoint tileCoordinate = [self tileCoordinateForTouchPoint:point];
+            [self.movementManager moveable:self.player requestMoveToTileAtX:tileCoordinate.x andY:tileCoordinate.y];
+        }
     }
 }
 

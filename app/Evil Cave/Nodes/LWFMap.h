@@ -27,4 +27,6 @@
 - (LWFTile *)tileForPoint:(CGPoint)point;
 - (void)userTouchedPoint:(CGPoint)point;
 
+- (void)playerMoved;
+
 @end

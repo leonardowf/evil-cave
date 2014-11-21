@@ -9,6 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "HSAIPathFinding.h"
 
+@class LWFTileMap;
+@class LWFCreature;
+@class LWFTile;
+
 @interface LWFPathFinder : NSObject <HSAIPathFindingDelegate>
+
+@property LWFCreature *creature;
+@property LWFTile *endTile;
+@property LWFTileMap *tileMap;
+
+- (void) findPathFrom:(CGPoint)start to:(CGPoint)end;
 
 @end

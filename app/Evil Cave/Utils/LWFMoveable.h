@@ -16,5 +16,6 @@
 - (void)didMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y;
 - (void)willMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y;
 - (void)moveToTile:(LWFTile *)tile;
+- (void)updateCurrentTile:(LWFTile *)currentTile;
 
 @end
