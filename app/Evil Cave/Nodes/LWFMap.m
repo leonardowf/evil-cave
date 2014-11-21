@@ -36,9 +36,9 @@
 }
 
 - (void)addTiles {
-    for (NSInteger i = 0; i < self.mapDimension.numberTilesVertical; i++) {
-        for (NSInteger j = 0; j < self.mapDimension.numberTilesHorizontal; j++) {
-            LWFTile *tile = [self.tileMap tileForVertical:i andHorizontal:j];
+    for (NSInteger x = 0; x < self.mapDimension.numberTilesHorizontal; x++) {
+        for (NSInteger y = 0; y < self.mapDimension.numberTilesVertical; y++) {
+            LWFTile *tile = [self.tileMap tileForVertical:y andHorizontal:x];
             
             [self addChild:(SKSpriteNode *)tile];
         }
@@ -48,26 +48,26 @@
 - (LWFTile *)tileForPoint:(CGPoint)point {
     CGPoint tileCoordinate = [self tileCoordinateForTouchPoint:point];
     
-    NSInteger row = tileCoordinate.y;
-    NSInteger column = tileCoordinate.x;
+    NSInteger x = tileCoordinate.x;
+    NSInteger y = tileCoordinate.y;
     
-    if (column < 0 || row < 0 || column >= self.mapDimension.numberTilesHorizontal || row >= self.mapDimension.numberTilesVertical) {
+    if (x < 0 || y < 0 || x >= self.mapDimension.numberTilesHorizontal || y >= self.mapDimension.numberTilesVertical) {
         return nil;
     }
     
-    LWFTile *tile = [self.tileMap tileForVertical:row andHorizontal:column];
+    LWFTile *tile = [self.tileMap tileForVertical:y andHorizontal:x];
     
     return tile;
 }
 
 - (CGPoint)tileCoordinateForTouchPoint:(CGPoint)touchPoint {
-    CGFloat rowPoint = touchPoint.y / self.mapDimension.tileSize.height;
-    CGFloat columnPoint = touchPoint.x / self.mapDimension.tileSize.width;
+    CGFloat x = touchPoint.x / self.mapDimension.tileSize.width;
+    CGFloat y = touchPoint.y / self.mapDimension.tileSize.height;
     
-    NSInteger row = (rowPoint + 0.5);
-    NSInteger column = (columnPoint + 0.5);
+    NSInteger xi = (x + 0.5);
+    NSInteger yi = (y + 0.5);
     
-    return CGPointMake(column, row);
+    return CGPointMake(xi, yi);
 }
 
 - (void)addPlayer:(LWFPlayer *)player {

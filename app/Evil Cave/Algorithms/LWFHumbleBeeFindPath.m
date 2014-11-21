@@ -57,7 +57,7 @@
             NSMutableArray *resultPath = [NSMutableArray array];
             while(aNode->parentNode != nil)
 			{
-                LWFTile *tile = [self.tileMap tileForVertical:aNode->nodeX andHorizontal:aNode->nodeY];
+                LWFTile *tile = [self.tileMap tileForVertical:aNode->nodeY andHorizontal:aNode->nodeX];
                 [resultPath addObject:tile];
                 aNode = aNode->parentNode;
 			}
@@ -178,7 +178,7 @@
         return YES;
     }
     
-    LWFTile *checkingTile = [self.tileMap tileForVertical:x andHorizontal:y];
+    LWFTile *checkingTile = [self.tileMap tileForVertical:y andHorizontal:x];
     
     if (checkingTile == nil) {
         return YES;

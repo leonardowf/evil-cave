@@ -20,16 +20,16 @@
     if (self) {
         self.mapDimension = mapDimension;
         
-        LWFCaveGenerator *generator = [[LWFCaveGenerator alloc]initWithHeight:mapDimension.numberTilesHorizontal width:mapDimension.numberTilesVertical];
+        LWFCaveGenerator *generator = [[LWFCaveGenerator alloc]initWithHeight:mapDimension.numberTilesVertical width:mapDimension.numberTilesHorizontal];
         self.gridModel = [generator generate];
         
-        self.tiles = [[NSMutableArray alloc]initWithCapacity:mapDimension.numberTilesVertical];
-        NSInteger i = 0;
-        for (i = 0; i < mapDimension.numberTilesVertical; i++) {
-            self.tiles[i] = [[NSMutableArray alloc]initWithCapacity:mapDimension.numberTilesHorizontal];
+        self.tiles = [[NSMutableArray alloc]initWithCapacity:mapDimension.numberTilesHorizontal];
+        NSInteger x = 0;
+        for (x = 0; x < mapDimension.numberTilesHorizontal; x++) {
+            self.tiles[x] = [[NSMutableArray alloc]initWithCapacity:mapDimension.numberTilesVertical];
             
-            for (NSInteger j = 0; j < mapDimension.numberTilesHorizontal; j++) {
-                LWFCaveGeneratorCell *cell = _gridModel[i][j];
+            for (NSInteger y = 0; y < mapDimension.numberTilesVertical; y++) {
+                LWFCaveGeneratorCell *cell = _gridModel[x][y];
                 
                 LWFTile *tile;
                 if (cell == nil) {
@@ -54,25 +54,25 @@
                 }
                 
                 tile.size = mapDimension.tileSize;
-                tile.position = CGPointMake(j * mapDimension.tileSize.height, i * mapDimension.tileSize.height);
-                tile.x = i;
-                tile.y = j;
+                tile.position = CGPointMake(x * mapDimension.tileSize.height, y * mapDimension.tileSize.height);
+                tile.x = x;
+                tile.y = y;
                 
-                self.tiles[i][j] = tile;
+                self.tiles[x][y] = tile;
             }
         }
     }
     return self;
 }
 
-- (LWFTile *)tileForVertical:(NSInteger)vertical andHorizontal:(NSInteger)horizontal {
+- (LWFTile *)tileForVertical:(NSInteger)y andHorizontal:(NSInteger)x {
     LWFTile *result;
     
-    if (vertical < 0 || vertical >= self.mapDimension.numberTilesVertical || horizontal < 0 || horizontal >= self.mapDimension.numberTilesHorizontal) {
+    if (x < 0 || x >= self.mapDimension.numberTilesHorizontal || y < 0 || y >= self.mapDimension.numberTilesVertical) {
         return nil;
     }
     
-    result = self.tiles[vertical][horizontal];
+    result = self.tiles[x][y];
     
     return result;
 }
