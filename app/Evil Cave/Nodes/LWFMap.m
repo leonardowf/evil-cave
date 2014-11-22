@@ -13,7 +13,6 @@
 #import "LWFTile.h"
 #import "LWFPlayer.h"
 #import "LWFMovementManager.h"
-#import "LWFPathFinder.h"
 #import "LWFHumbleBeeFindPath.h"
 
 @interface LWFMap () {

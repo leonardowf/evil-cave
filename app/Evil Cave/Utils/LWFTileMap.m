@@ -10,7 +10,6 @@
 #import "LWFMapDimension.h"
 #import "LWFTile.h"
 #import "LWFCaveGenerator.h"
-#import "LWFPathFinder.h"
 
 @implementation LWFTileMap
 
