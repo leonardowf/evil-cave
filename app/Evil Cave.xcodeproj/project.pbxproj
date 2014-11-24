@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		322DB6AA1A229A0C0085AC68 /* LWFCreatureBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 322DB6A91A229A0C0085AC68 /* LWFCreatureBuilder.m */; };
 		322DB6AE1A229E320085AC68 /* LWFRat.m in Sources */ = {isa = PBXBuildFile; fileRef = 322DB6AD1A229E320085AC68 /* LWFRat.m */; };
+		32CD39D61A22CBCC000ADD95 /* LWFGoblin.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CD39D51A22CBCC000ADD95 /* LWFGoblin.m */; };
 		A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = A70387581A17BC620053A9E6 /* LWFMapDimension.m */; };
 		A703875C1A17BD5E0053A9E6 /* LWFTile.m in Sources */ = {isa = PBXBuildFile; fileRef = A703875B1A17BD5E0053A9E6 /* LWFTile.m */; };
 		A703875F1A17BEB00053A9E6 /* LWFTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = A703875E1A17BEB00053A9E6 /* LWFTileMap.m */; };
@@ -63,6 +64,8 @@
 		322DB6A91A229A0C0085AC68 /* LWFCreatureBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFCreatureBuilder.m; sourceTree = "<group>"; };
 		322DB6AC1A229E320085AC68 /* LWFRat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRat.h; sourceTree = "<group>"; };
 		322DB6AD1A229E320085AC68 /* LWFRat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRat.m; sourceTree = "<group>"; };
+		32CD39D41A22CBCC000ADD95 /* LWFGoblin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFGoblin.h; sourceTree = "<group>"; };
+		32CD39D51A22CBCC000ADD95 /* LWFGoblin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFGoblin.m; sourceTree = "<group>"; };
 		A70387571A17BC620053A9E6 /* LWFMapDimension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFMapDimension.h; sourceTree = "<group>"; };
 		A70387581A17BC620053A9E6 /* LWFMapDimension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFMapDimension.m; sourceTree = "<group>"; };
 		A703875A1A17BD5E0053A9E6 /* LWFTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFTile.h; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 				A78443A81A1EB2220029995D /* LWFCreature.m */,
 				322DB6AC1A229E320085AC68 /* LWFRat.h */,
 				322DB6AD1A229E320085AC68 /* LWFRat.m */,
+				32CD39D41A22CBCC000ADD95 /* LWFGoblin.h */,
+				32CD39D51A22CBCC000ADD95 /* LWFGoblin.m */,
 			);
 			name = Creatures;
 			path = ../Utils/Creatures;
@@ -429,6 +434,7 @@
 				A78443B01A1EEFCC0029995D /* PathFindNode.m in Sources */,
 				A7D8BEED1A1AB909005B0599 /* LWFRoom.m in Sources */,
 				A78443A91A1EB2220029995D /* LWFCreature.m in Sources */,
+				32CD39D61A22CBCC000ADD95 /* LWFGoblin.m in Sources */,
 				322DB6AE1A229E320085AC68 /* LWFRat.m in Sources */,
 				A703875C1A17BD5E0053A9E6 /* LWFTile.m in Sources */,
 				A703875F1A17BEB00053A9E6 /* LWFTileMap.m in Sources */,

@@ -35,5 +35,10 @@
     [self runAction: moveAction];
 }
 
+- (void)build {
+    [self setTexture:[SKTexture textureWithImage:[UIImage imageNamed:self.spriteImageName]]];
+    [self setSize:CGSizeMake(32, 32)];
+}
+
 
 @end

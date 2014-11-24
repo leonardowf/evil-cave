@@ -20,4 +20,8 @@
 @property (nonatomic, strong) LWFTile *currentTile;
 @property (nonatomic, strong) LWFMap *map;
 
+@property (nonatomic, copy) NSString *spriteImageName;
+
+- (void)build;
+
 @end

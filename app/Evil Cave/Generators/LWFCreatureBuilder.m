@@ -8,7 +8,9 @@
 
 #import "LWFCreatureBuilder.h"
 #import "LWFCreature.h"
+
 #import "LWFRat.h"
+#import "LWFGoblin.h"
 
 @implementation LWFCreatureBuilder
 
@@ -17,6 +19,13 @@
     
     if (creatureType == LWFCreatureTypeRat) {
         creature = [[LWFRat alloc]init];
+    } else if (creatureType == LWFCreatureTypeGoblin) {
+        creature = [[LWFGoblin alloc]init];
+    }
+    
+    
+    if (creature != nil) {
+        [creature build];
     }
     
     return creature;

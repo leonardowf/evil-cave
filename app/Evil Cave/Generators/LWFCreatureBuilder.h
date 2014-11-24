@@ -8,12 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class LWFCreature;
+
 typedef enum : NSUInteger {
     LWFCreatureTypePlayer,
     LWFCreatureTypeRat,
     LWFCreatureTypeSpider,
+    LWFCreatureTypeGoblin
 } LWFCreatureType;
 
 @interface LWFCreatureBuilder : NSObject
+
+- (LWFCreature *)buildWithType:(LWFCreatureType)creatureType;
 
 @end
