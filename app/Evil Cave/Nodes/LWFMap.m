@@ -84,6 +84,7 @@
     self.player.map = self;
     
     [_turnList.creatures addObject:player];
+    player.turnList = _turnList;
     
     [self addChild:self.player];
 }

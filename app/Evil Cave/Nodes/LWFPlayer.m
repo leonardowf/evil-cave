@@ -9,11 +9,14 @@
 #import "LWFPlayer.h"
 #import "LWFTile.h"
 #import "LWFMap.h"
+#import "LWFTurnList.h"
 
 @implementation LWFPlayer
 
 - (void)didMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
     [self.map playerMoved];
+    
+    [self.turnList creatureFinishedTurn:self];
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "LWFTurnList.h"
+#import "LWFPlayer.h"
 
 @implementation LWFTurnList
 
@@ -17,6 +18,34 @@
         self.creatures = [NSMutableArray array];
     }
     return self;
+}
+
+- (void)creatureFinishedTurn:(LWFCreature *)creature {
+    LWFCreature *nextCreature = [self creatureAfterThis:creature];
+    
+    [self processTurnForCreature:nextCreature];
+}
+
+- (LWFCreature *)creatureAfterThis:(LWFCreature *)creature {
+    NSUInteger creatureIndex = [self.creatures indexOfObject:creature];
+    creatureIndex++;
+    
+    if (creatureIndex == [self.creatures count]) {
+        creatureIndex = 0;
+    }
+    
+    LWFCreature *creatureAfter = [self.creatures objectAtIndex:creatureIndex];
+    return creatureAfter;
+}
+
+- (void)processTurnForCreature:(LWFCreature *)creature {
+    Class playerClass = [LWFPlayer class];
+    
+    if ([creature isKindOfClass:playerClass]) {
+        // espera por input
+    } else {
+        [creature processTurn];
+    }
 }
 
 @end

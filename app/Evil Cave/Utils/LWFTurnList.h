@@ -12,4 +12,6 @@
 
 @property NSMutableArray *creatures;
 
+- (void)creatureFinishedTurn:(LWFCreature *)creature;
+
 @end

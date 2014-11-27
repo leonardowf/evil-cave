@@ -11,6 +11,7 @@
 
 @class LWFTile;
 @class LWFMap;
+@class LWFTurnList;
 
 @class LWFMovementManager;
 
@@ -19,9 +20,12 @@
 @property (nonatomic, strong) LWFMovementManager *movementManager;
 @property (nonatomic, strong) LWFTile *currentTile;
 @property (nonatomic, strong) LWFMap *map;
+@property (nonatomic, strong) LWFTurnList *turnList;
+@property (nonatomic, strong) NSMutableArray *tilePath;
 
 @property (nonatomic, copy) NSString *spriteImageName;
 
 - (void)build;
+- (void)processTurn;
 
 @end

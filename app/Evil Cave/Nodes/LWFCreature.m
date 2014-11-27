@@ -8,6 +8,16 @@
 
 #import "LWFCreature.h"
 #import "LWFMovementManager.h"
+#import "LWFTurnList.h"
+#import "LWFMap.h"
+#import "LWFTileMap.h"
+#import "LWFHumbleBeeFindPath.h"
+
+@interface LWFCreature () {
+    LWFHumbleBeeFindPath *_pathFinder;
+
+}
+@end
 
 @implementation LWFCreature
 
@@ -20,14 +30,22 @@
 }
 
 - (void)failedToMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
-    
+    LWFTile *destinyTile = [self.tilePath firstObject];
+    [self.tilePath removeAllObjects];
+    [self buildPathToTile:destinyTile];
 }
 - (void)didMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
+    [self.tilePath removeObject:tile];
+    [self.turnList creatureFinishedTurn:self];
     
 }
 
 - (void)updateCurrentTile:(LWFTile *)currentTile {
+    LWFTile *previousTile = self.currentTile;
+    previousTile.creatureOnTile = nil;
+    
     self.currentTile = currentTile;
+    currentTile.creatureOnTile = self;
 }
 
 - (void)moveToTile:(LWFTile *)tile {
@@ -39,6 +57,32 @@
     [self setTexture:[SKTexture textureWithImage:[UIImage imageNamed:self.spriteImageName]]];
     [self setSize:CGSizeMake(32, 32)];
 }
+
+- (void)processTurn {
+    if (self.tilePath == nil || [self.tilePath count] == 0) {
+        [self buildPathToSomeDestiny];
+    }
+    
+    LWFTile *nextTile = [self.tilePath lastObject];
+    [self requestMoveToTileAtX:nextTile.x andY:nextTile.y];
+}
+
+- (void)buildPathToSomeDestiny {
+    LWFTileMap *tileMap = self.map.tileMap;
+    LWFTile *destinyTile = [tileMap randomEmptyWalkableTile];
+    [self buildPathToTile:destinyTile];
+}
+
+- (void)buildPathToTile:(LWFTile *)tile {
+    LWFTileMap *tileMap = self.map.tileMap;
+    if (_pathFinder == nil) {
+        _pathFinder = [[LWFHumbleBeeFindPath alloc]init];
+        _pathFinder.tileMap = tileMap;
+    }
+    
+    NSArray *path = [_pathFinder findPath:self.currentTile.x :self.currentTile.y :tile.x :tile.y];
+    
+    self.tilePath = [NSMutableArray arrayWithArray:path];}
 
 
 @end

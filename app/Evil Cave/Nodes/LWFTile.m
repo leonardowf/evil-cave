@@ -11,7 +11,7 @@
 @implementation LWFTile
 
 - (BOOL)isPassable {
-    return [self isWalkable];
+    return [self isWalkable] && self.creatureOnTile == nil;
 }
 
 @end
