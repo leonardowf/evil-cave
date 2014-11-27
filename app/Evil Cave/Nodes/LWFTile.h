@@ -7,12 +7,14 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+@class LWFCreature;
 
 @interface LWFTile : SKSpriteNode
 
 @property (getter = isWalkable, setter = setWalkable:) BOOL walkable;
 @property NSUInteger x;
 @property NSUInteger y;
+@property LWFCreature *creatureOnTile;
 
 - (BOOL)isPassable;
 

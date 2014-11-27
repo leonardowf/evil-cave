@@ -28,5 +28,6 @@
 - (void)userTouchedPoint:(CGPoint)point;
 
 - (void)playerMoved;
+- (void)loadGame;
 
 @end

@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @class LWFCreature;
+@class LWFMovementManager;
+@class LWFMapDimension;
+@class LWFMap;
 
 typedef enum : NSUInteger {
     LWFCreatureTypePlayer,
@@ -19,6 +22,8 @@ typedef enum : NSUInteger {
 
 @interface LWFCreatureBuilder : NSObject
 
+- (instancetype)initWithMap:(LWFMap *)map movementManager:(LWFMovementManager *)movementManager andMapDimension:(LWFMapDimension *)mapDimension;
 - (LWFCreature *)buildWithType:(LWFCreatureType)creatureType;
+- (LWFCreature *)buildWithType:(LWFCreatureType)creatureType andSize:(CGSize)size;
 
 @end

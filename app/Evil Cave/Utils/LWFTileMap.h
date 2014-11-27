@@ -22,5 +22,6 @@
 - (instancetype)initWithMapDimension:(LWFMapDimension *)mapDimension;
 - (LWFTile *)tileForVertical:(NSInteger)vertical andHorizontal:(NSInteger)horizontal;
 - (NSArray *)neighborsForTile:(LWFTile *)tile;
+- (LWFTile *)randomEmptyWalkableTile;
 
 @end

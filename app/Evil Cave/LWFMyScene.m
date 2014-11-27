@@ -36,6 +36,7 @@
         _player.size = mapDimension.tileSize;
         
         [_map addPlayer:_player];
+        [_map loadGame];
         
         [self addChild:_map];
         

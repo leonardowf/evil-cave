@@ -14,9 +14,15 @@
 #import "LWFPlayer.h"
 #import "LWFMovementManager.h"
 #import "LWFHumbleBeeFindPath.h"
+#import "LWFTurnList.h"
+#import "LWFCreatureBuilder.h"
+#import "LWFPlayer.h"
 
 @interface LWFMap () {
     NSArray *_path;
+    LWFTurnList *_turnList;
+    LWFCreatureBuilder *_creatureBuilder;
+
 }
 @end
 
@@ -29,6 +35,8 @@
         _mapDimension = mapDimension;
         _tileMap = [[LWFTileMap alloc]initWithMapDimension:mapDimension];
         _movementManager = [[LWFMovementManager alloc]initWithTileMap:_tileMap];
+        _turnList = [[LWFTurnList alloc]init];
+        _creatureBuilder = [[LWFCreatureBuilder alloc]initWithMap:self movementManager:_movementManager andMapDimension:_mapDimension];
         
     }
     return self;
@@ -75,6 +83,8 @@
     [self.player setCurrentTile:self.tileMap.startTile];
     self.player.map = self;
     
+    [_turnList.creatures addObject:player];
+    
     [self addChild:self.player];
 }
 
@@ -118,6 +128,29 @@
         if (tile != self.player.currentTile) {
             CGPoint tileCoordinate = [self tileCoordinateForTouchPoint:point];
             [self.movementManager moveable:self.player requestMoveToTileAtX:tileCoordinate.x andY:tileCoordinate.y];
+        }
+    }
+}
+
+- (void)loadGame {
+    [self createCreatures];
+    [self chooseCreaturePositions];
+}
+
+- (void)createCreatures {
+    LWFCreature *creature = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
+    [_turnList.creatures addObject:creature];
+}
+
+- (void)chooseCreaturePositions {
+    for (LWFCreature *creature in _turnList.creatures) {
+        if (creature != _player) {
+            LWFTile *tile = [_tileMap randomEmptyWalkableTile];
+            tile.creatureOnTile = creature;
+            creature.position = tile.position;
+            creature.currentTile = tile;
+            
+            [self addChild:creature];
         }
     }
 }

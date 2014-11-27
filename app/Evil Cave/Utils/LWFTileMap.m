@@ -10,6 +10,7 @@
 #import "LWFMapDimension.h"
 #import "LWFTile.h"
 #import "LWFCaveGenerator.h"
+#import "LWFRandomUtils.h"
 
 @implementation LWFTileMap
 
@@ -117,6 +118,21 @@
     }
     
     return neighbors;
+}
+
+- (LWFTile *)randomEmptyWalkableTile {
+    LWFRandomUtils *randomUtils = [[LWFRandomUtils alloc]init];
+    
+    LWFTile *tile;
+    
+    while (tile == nil || ![tile isWalkable] || tile.creatureOnTile != nil) {
+        NSUInteger x = [randomUtils randomIntegerBetween:0 and:_mapDimension.numberTilesHorizontal];
+        NSUInteger y = [randomUtils randomIntegerBetween:0 and:_mapDimension.numberTilesVertical];
+        
+        tile = [self tileForVertical:y andHorizontal:x];
+    }
+    
+    return tile;
 }
 
 
