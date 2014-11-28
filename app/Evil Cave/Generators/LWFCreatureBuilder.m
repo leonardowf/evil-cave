@@ -12,23 +12,26 @@
 #import "LWFRat.h"
 #import "LWFGoblin.h"
 #import "LWFMapDimension.h"
+#import "LWFTurnList.h"
 
 @interface LWFCreatureBuilder () {
     LWFMovementManager *_movementManager;
     LWFMap *_map;
     LWFMapDimension *_mapDimension;
+    LWFTurnList *_turnList;
 
 }
 @end
 @implementation LWFCreatureBuilder
 
-- (instancetype)initWithMap:(LWFMap *)map movementManager:(LWFMovementManager *)movementManager andMapDimension:(LWFMapDimension *)mapDimension
+- (instancetype)initWithMap:(LWFMap *)map movementManager:(LWFMovementManager *)movementManager andMapDimension:(LWFMapDimension *)mapDimension andTurnList:(LWFTurnList *)turnList
 {
     self = [super init];
     if (self) {
         _movementManager = movementManager;
         _map = map;
         _mapDimension = mapDimension;
+        _turnList = turnList;
     }
     return self;
 }
@@ -46,6 +49,7 @@
         [creature build];
         creature.map = _map;
         creature.movementManager = _movementManager;
+        creature.turnList = _turnList;
         creature.size = _mapDimension.tileSize;
     }
     

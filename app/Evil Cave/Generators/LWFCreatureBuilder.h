@@ -12,6 +12,7 @@
 @class LWFMovementManager;
 @class LWFMapDimension;
 @class LWFMap;
+@class LWFTurnList;
 
 typedef enum : NSUInteger {
     LWFCreatureTypePlayer,
@@ -22,7 +23,7 @@ typedef enum : NSUInteger {
 
 @interface LWFCreatureBuilder : NSObject
 
-- (instancetype)initWithMap:(LWFMap *)map movementManager:(LWFMovementManager *)movementManager andMapDimension:(LWFMapDimension *)mapDimension;
+- (instancetype)initWithMap:(LWFMap *)map movementManager:(LWFMovementManager *)movementManager andMapDimension:(LWFMapDimension *)mapDimension andTurnList:(LWFTurnList *)turnList;
 - (LWFCreature *)buildWithType:(LWFCreatureType)creatureType;
 - (LWFCreature *)buildWithType:(LWFCreatureType)creatureType andSize:(CGSize)size;
 

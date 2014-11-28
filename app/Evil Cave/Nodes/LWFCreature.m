@@ -15,6 +15,7 @@
 
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
+    NSUInteger _failedMovements;
 
 }
 @end
@@ -30,13 +31,24 @@
 }
 
 - (void)failedToMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
-    LWFTile *destinyTile = [self.tilePath firstObject];
-    [self.tilePath removeAllObjects];
-    [self buildPathToTile:destinyTile];
+    _failedMovements++;
+    
+    if (_failedMovements > 3) {
+        _failedMovements = 0;
+        [self.turnList creatureFinishedTurn:self];
+    } else {
+        LWFTile *destinyTile = [self.tilePath firstObject];
+        [self.tilePath removeAllObjects];
+        [self buildPathToTile:destinyTile];
+        
+        LWFTile *nextTile = [self.tilePath lastObject];
+        [self requestMoveToTileAtX:nextTile.x andY:nextTile.y];
+    }
 }
 - (void)didMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
     [self.tilePath removeObject:tile];
     [self.turnList creatureFinishedTurn:self];
+    _failedMovements = 0;
     
 }
 

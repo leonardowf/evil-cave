@@ -36,7 +36,7 @@
         _tileMap = [[LWFTileMap alloc]initWithMapDimension:mapDimension];
         _movementManager = [[LWFMovementManager alloc]initWithTileMap:_tileMap];
         _turnList = [[LWFTurnList alloc]init];
-        _creatureBuilder = [[LWFCreatureBuilder alloc]initWithMap:self movementManager:_movementManager andMapDimension:_mapDimension];
+        _creatureBuilder = [[LWFCreatureBuilder alloc]initWithMap:self movementManager:_movementManager andMapDimension:_mapDimension andTurnList:_turnList];
         
     }
     return self;
@@ -126,7 +126,7 @@
     LWFTile *tile = [self tileForPoint:point];
     
     if (tile != nil) {
-        if (tile != self.player.currentTile) {
+        if (tile != self.player.currentTile && [tile isPassable]) {
             CGPoint tileCoordinate = [self tileCoordinateForTouchPoint:point];
             [self.movementManager moveable:self.player requestMoveToTileAtX:tileCoordinate.x andY:tileCoordinate.y];
         }
@@ -139,8 +139,32 @@
 }
 
 - (void)createCreatures {
-    LWFCreature *creature = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
-    [_turnList.creatures addObject:creature];
+    LWFCreature *creature1 = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
+    [_turnList.creatures addObject:creature1];
+    
+    LWFCreature *creature2 = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
+    [_turnList.creatures addObject:creature2];
+    
+    LWFCreature *creature3 = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
+    [_turnList.creatures addObject:creature3];
+    
+    LWFCreature *creature4 = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
+    [_turnList.creatures addObject:creature4];
+    
+    LWFCreature *creature5 = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
+    [_turnList.creatures addObject:creature5];
+    
+    LWFCreature *creature6 = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
+    [_turnList.creatures addObject:creature6];
+    
+    LWFCreature *creature7 = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
+    [_turnList.creatures addObject:creature7];
+    
+    LWFCreature *creature8 = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
+    [_turnList.creatures addObject:creature8];
+    
+    LWFCreature *creature9 = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
+    [_turnList.creatures addObject:creature9];
 }
 
 - (void)chooseCreaturePositions {
