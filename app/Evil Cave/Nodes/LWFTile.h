@@ -17,5 +17,6 @@
 @property LWFCreature *creatureOnTile;
 
 - (BOOL)isPassable;
+- (NSUInteger)distanceToTile:(LWFTile *)tile;
 
 @end

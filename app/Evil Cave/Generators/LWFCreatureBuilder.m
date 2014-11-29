@@ -13,6 +13,7 @@
 #import "LWFGoblin.h"
 #import "LWFMapDimension.h"
 #import "LWFTurnList.h"
+#import "LWFMap.h"
 
 @interface LWFCreatureBuilder () {
     LWFMovementManager *_movementManager;
@@ -51,6 +52,7 @@
         creature.movementManager = _movementManager;
         creature.turnList = _turnList;
         creature.size = _mapDimension.tileSize;
+        creature.player = _map.player;
     }
     
     return creature;

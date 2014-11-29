@@ -14,4 +14,14 @@
     return [self isWalkable] && self.creatureOnTile == nil;
 }
 
+- (NSUInteger)distanceToTile:(LWFTile *)tile {
+    NSInteger dx = self.x - tile.x;
+    NSInteger dy = self.y - tile.y;
+    
+    dx = dx * dx;
+    dy = dy * dy;
+    
+    return sqrt(dx + dy);
+}
+
 @end

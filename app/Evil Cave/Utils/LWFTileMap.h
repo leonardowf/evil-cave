@@ -23,5 +23,6 @@
 - (LWFTile *)tileForVertical:(NSInteger)vertical andHorizontal:(NSInteger)horizontal;
 - (NSArray *)neighborsForTile:(LWFTile *)tile;
 - (LWFTile *)randomEmptyWalkableTile;
+- (LWFTile *)closestNeighborFromTile:(LWFTile *)origin toTile:(LWFTile *)destiny;
 
 @end

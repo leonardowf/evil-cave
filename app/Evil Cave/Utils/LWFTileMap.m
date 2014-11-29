@@ -135,6 +135,23 @@
     return tile;
 }
 
+- (LWFTile *)closestNeighborFromTile:(LWFTile *)origin toTile:(LWFTile *)destiny {
+    NSArray *neighbors = [self neighborsForTile:destiny];
+    
+    LWFTile *result;
+    NSUInteger closest = 9999;
+    
+    for(LWFTile *neighbor in neighbors) {
+        NSUInteger distanceToTile = [origin distanceToTile:neighbor];
+        if (distanceToTile < closest && [neighbor isPassable]) {
+            closest = distanceToTile;
+            result = neighbor;
+        }
+    }
+    
+    return result;
+}
+
 
 
 @end

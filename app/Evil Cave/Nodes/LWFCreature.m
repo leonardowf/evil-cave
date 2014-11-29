@@ -12,6 +12,8 @@
 #import "LWFMap.h"
 #import "LWFTileMap.h"
 #import "LWFHumbleBeeFindPath.h"
+#import "LWFPlayer.h"
+#import "LWFTileMap.h"
 
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
@@ -71,12 +73,36 @@
 }
 
 - (void)processTurn {
-    if (self.tilePath == nil || [self.tilePath count] == 0) {
+    if ([self shouldFollowPlayer]) {
+        LWFTile *closestTile = [self closestNeighborToPlayer];
+        if (closestTile != nil) {
+            [self buildPathToTile:closestTile];
+        } else {
+            [self finishTurn];
+        }
+    } else if (self.tilePath == nil || [self.tilePath count] == 0) {
         [self buildPathToSomeDestiny];
     }
     
     LWFTile *nextTile = [self.tilePath lastObject];
     [self requestMoveToTileAtX:nextTile.x andY:nextTile.y];
+}
+
+- (LWFTile *)closestNeighborToPlayer {
+    LWFTile *originTile = self.currentTile;
+    LWFTile *destinyTile = _player.currentTile;
+    
+    LWFTile *closest = [self.map.tileMap closestNeighborFromTile:originTile toTile:destinyTile];
+    
+    return closest;
+}
+
+- (BOOL)shouldFollowPlayer {
+    NSUInteger distanceToPlayer = [self.currentTile distanceToTile:self.player.currentTile];
+    if (distanceToPlayer < 5) {
+        return YES;
+    }
+    return NO;
 }
 
 - (void)buildPathToSomeDestiny {
@@ -94,7 +120,12 @@
     
     NSArray *path = [_pathFinder findPath:self.currentTile.x :self.currentTile.y :tile.x :tile.y];
     
-    self.tilePath = [NSMutableArray arrayWithArray:path];}
+    self.tilePath = [NSMutableArray arrayWithArray:path];
+}
+
+- (void)finishTurn {
+    [self.turnList creatureFinishedTurn:self];
+}
 
 
 @end
