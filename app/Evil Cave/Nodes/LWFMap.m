@@ -129,6 +129,8 @@
         if (tile != self.player.currentTile && [tile isPassable]) {
             CGPoint tileCoordinate = [self tileCoordinateForTouchPoint:point];
             [self.movementManager moveable:self.player requestMoveToTileAtX:tileCoordinate.x andY:tileCoordinate.y];
+        } else if (tile == self.player.currentTile) {
+            [self.player finishTurn];
         }
     }
 }

@@ -29,5 +29,6 @@
 
 - (void)build;
 - (void)processTurn;
+- (void)finishTurn;
 
 @end

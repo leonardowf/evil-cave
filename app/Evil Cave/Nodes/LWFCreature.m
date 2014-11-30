@@ -74,6 +74,11 @@
 
 - (void)processTurn {
     if ([self shouldFollowPlayer]) {
+        if ([self isAdjacentToPlayer]) {
+            [self finishTurn];
+            return;
+        }
+        
         LWFTile *closestTile = [self closestNeighborToPlayer];
         if (closestTile != nil) {
             [self buildPathToTile:closestTile];
@@ -86,6 +91,18 @@
     
     LWFTile *nextTile = [self.tilePath lastObject];
     [self requestMoveToTileAtX:nextTile.x andY:nextTile.y];
+}
+
+- (BOOL)isAdjacentToPlayer {
+    NSArray *adjacentsToPlayer = [self.map.tileMap neighborsForTile:self.player.currentTile];
+    
+    for (LWFTile *tile in adjacentsToPlayer) {
+        if (tile.x == self.currentTile.x && tile.y == self.currentTile.y) {
+            return YES;
+        }
+    }
+    
+    return NO;
 }
 
 - (LWFTile *)closestNeighborToPlayer {

@@ -40,7 +40,6 @@
 		A7F5BB9D1A16EFBD005BAB63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7F5BB9B1A16EFBD005BAB63 /* Main.storyboard */; };
 		A7F5BBA01A16EFBD005BAB63 /* LWFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F5BB9F1A16EFBD005BAB63 /* LWFViewController.m */; };
 		A7F5BBA31A16EFBE005BAB63 /* LWFMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F5BBA21A16EFBE005BAB63 /* LWFMyScene.m */; };
-		A7F5BBA51A16EFBE005BAB63 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F5BBA41A16EFBE005BAB63 /* Spaceship.png */; };
 		A7F5BBA71A16EFBE005BAB63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7F5BBA61A16EFBE005BAB63 /* Images.xcassets */; };
 		A7F5BBAE1A16EFBF005BAB63 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F5BBAD1A16EFBF005BAB63 /* XCTest.framework */; };
 		A7F5BBAF1A16EFBF005BAB63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F5BB871A16EFBC005BAB63 /* Foundation.framework */; };
@@ -120,7 +119,6 @@
 		A7F5BB9F1A16EFBD005BAB63 /* LWFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LWFViewController.m; sourceTree = "<group>"; };
 		A7F5BBA11A16EFBE005BAB63 /* LWFMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWFMyScene.h; sourceTree = "<group>"; };
 		A7F5BBA21A16EFBE005BAB63 /* LWFMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LWFMyScene.m; sourceTree = "<group>"; };
-		A7F5BBA41A16EFBE005BAB63 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		A7F5BBA61A16EFBE005BAB63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A7F5BBAC1A16EFBF005BAB63 /* Evil CaveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Evil CaveTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F5BBAD1A16EFBF005BAB63 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -278,7 +276,6 @@
 				A7F5BB9F1A16EFBD005BAB63 /* LWFViewController.m */,
 				A7F5BBA11A16EFBE005BAB63 /* LWFMyScene.h */,
 				A7F5BBA21A16EFBE005BAB63 /* LWFMyScene.m */,
-				A7F5BBA41A16EFBE005BAB63 /* Spaceship.png */,
 				A70387601A17D1250053A9E6 /* grass.png */,
 				A7F5BBA61A16EFBE005BAB63 /* Images.xcassets */,
 				A7F5BB901A16EFBC005BAB63 /* Supporting Files */,
@@ -407,7 +404,6 @@
 				A7F5BB941A16EFBC005BAB63 /* InfoPlist.strings in Resources */,
 				A7F5BBA71A16EFBE005BAB63 /* Images.xcassets in Resources */,
 				A70387611A17D1250053A9E6 /* grass.png in Resources */,
-				A7F5BBA51A16EFBE005BAB63 /* Spaceship.png in Resources */,
 				A7D8BEF41A1ADA6E005B0599 /* goblin.png in Resources */,
 				A7F5BB9D1A16EFBD005BAB63 /* Main.storyboard in Resources */,
 				A78443B21A1F010C0029995D /* dngn_shoals_shallow_water_disturbance3.png in Resources */,
