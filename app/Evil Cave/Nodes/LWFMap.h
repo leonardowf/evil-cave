@@ -13,6 +13,7 @@
 @class LWFTile;
 @class LWFPlayer;
 @class LWFMovementManager;
+@class LWFAttackManager;
 
 @interface LWFMap : SKNode
 
@@ -20,6 +21,7 @@
 @property (nonatomic, readonly, strong) LWFTileMap *tileMap;
 @property (nonatomic, strong) LWFPlayer *player;
 @property (nonatomic, strong) LWFMovementManager *movementManager;
+@property (nonatomic, strong) LWFAttackManager *attackManager;
 
 - (instancetype)initWithMapDimension:(LWFMapDimension *)mapDimension;
 - (void)addTiles;

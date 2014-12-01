@@ -8,6 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "LWFMoveable.h"
+#import "LWFAttackable.h"
 
 @class LWFTile;
 @class LWFMap;
@@ -15,15 +16,20 @@
 @class LWFPlayer;
 
 @class LWFMovementManager;
+@class LWFAttackManager;
 
-@interface LWFCreature : SKSpriteNode <LWFMoveable>
+@interface LWFCreature : SKSpriteNode <LWFMoveable, LWFAttackable>
 
 @property (nonatomic, strong) LWFMovementManager *movementManager;
+@property (nonatomic, strong) LWFAttackManager *attackManager;
+
 @property (nonatomic, strong) LWFTile *currentTile;
 @property (nonatomic, strong) LWFMap *map;
 @property (nonatomic, strong) LWFTurnList *turnList;
 @property (nonatomic, strong) NSMutableArray *tilePath;
 @property (nonatomic, strong) LWFPlayer *player;
+
+@property (nonatomic, strong) NSMutableArray *attacks;
 
 @property (nonatomic, copy) NSString *spriteImageName;
 

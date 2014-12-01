@@ -14,6 +14,7 @@
 #import "LWFHumbleBeeFindPath.h"
 #import "LWFPlayer.h"
 #import "LWFTileMap.h"
+#import "LWFAttackManager.h"
 
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
@@ -23,6 +24,15 @@
 @end
 
 @implementation LWFCreature
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.attacks = [NSMutableArray array];
+    }
+    return self;
+}
 
 - (void)requestMoveToTileAtX:(NSUInteger)x andY:(NSUInteger)y {
     [self.movementManager moveable:self requestMoveToTileAtX:x andY:y];
@@ -35,7 +45,7 @@
 - (void)failedToMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
     _failedMovements++;
     
-    if (_failedMovements > 3) {
+    if (_failedMovements > MAX_NUMBER_PATH_FIND_TRIES) {
         _failedMovements = 0;
         [self.turnList creatureFinishedTurn:self];
     } else {
@@ -76,6 +86,7 @@
     if ([self shouldFollowPlayer]) {
         if ([self isAdjacentToPlayer]) {
             // por ataque melee
+            [self attackPlayerWithMelee];
             [self finishTurn];
             return;
         } else {
@@ -167,6 +178,34 @@
     
     return YES;
 }
+#pragma - mark attacks
+- (void)attackPlayerWithMelee {
+    LWFAttack *attack = [self.attacks firstObject];
+    [self requestAttackToTile:self.player.currentTile withAttack:attack];
+}
 
+#pragma - mark ATTACKABLE
+- (void)requestAttackToTile:(LWFTile *)tile
+                 withAttack:(LWFAttack *)attack {
+    
+    [self.attackManager attackable:self requestedAttackToTile:tile withAttack:attack];
+    
+}
+
+- (void)failedToAttackTile:(LWFTile *)tile
+                withAttack:(LWFAttack *)attack
+                   because:(FailedAttackReason)reason {
+    
+}
+
+- (void)willAttackTile:(LWFTile *)tile
+            withAttack:(LWFAttack *)attack {
+    
+}
+
+- (void)didAttackTile:(LWFTile *)tile
+           withAttack:(LWFAttack *)attack {
+    
+}
 
 @end

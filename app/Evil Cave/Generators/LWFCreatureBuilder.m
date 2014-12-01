@@ -15,17 +15,23 @@
 #import "LWFTurnList.h"
 #import "LWFMap.h"
 
+#import "LWFMelee.h"
+
 @interface LWFCreatureBuilder () {
     LWFMovementManager *_movementManager;
     LWFMap *_map;
     LWFMapDimension *_mapDimension;
     LWFTurnList *_turnList;
+    LWFAttackManager *_attackManager;
+    
+    
+    LWFMelee *_meleeAttack;
 
 }
 @end
 @implementation LWFCreatureBuilder
 
-- (instancetype)initWithMap:(LWFMap *)map movementManager:(LWFMovementManager *)movementManager andMapDimension:(LWFMapDimension *)mapDimension andTurnList:(LWFTurnList *)turnList
+- (instancetype)initWithMap:(LWFMap *)map movementManager:(LWFMovementManager *)movementManager andMapDimension:(LWFMapDimension *)mapDimension andTurnList:(LWFTurnList *)turnList andAttackManager:(LWFAttackManager *)attackManager
 {
     self = [super init];
     if (self) {
@@ -33,6 +39,10 @@
         _map = map;
         _mapDimension = mapDimension;
         _turnList = turnList;
+        _attackManager = attackManager;
+
+        
+        _meleeAttack = [[LWFMelee alloc]init];
     }
     return self;
 }
@@ -50,9 +60,11 @@
         [creature build];
         creature.map = _map;
         creature.movementManager = _movementManager;
+        creature.attackManager = _attackManager;
         creature.turnList = _turnList;
         creature.size = _mapDimension.tileSize;
         creature.player = _map.player;
+        [creature.attacks addObject:_meleeAttack];
     }
     
     return creature;

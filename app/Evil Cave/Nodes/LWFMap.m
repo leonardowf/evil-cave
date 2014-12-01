@@ -17,6 +17,7 @@
 #import "LWFTurnList.h"
 #import "LWFCreatureBuilder.h"
 #import "LWFPlayer.h"
+#import "LWFAttackManager.h"
 
 @interface LWFMap () {
     NSArray *_path;
@@ -36,7 +37,10 @@
         _tileMap = [[LWFTileMap alloc]initWithMapDimension:mapDimension];
         _movementManager = [[LWFMovementManager alloc]initWithTileMap:_tileMap];
         _turnList = [[LWFTurnList alloc]init];
-        _creatureBuilder = [[LWFCreatureBuilder alloc]initWithMap:self movementManager:_movementManager andMapDimension:_mapDimension andTurnList:_turnList];
+
+        _attackManager = [[LWFAttackManager alloc]initWithTileMap:_tileMap];
+        
+        _creatureBuilder = [[LWFCreatureBuilder alloc]initWithMap:self movementManager:_movementManager andMapDimension:_mapDimension andTurnList:_turnList andAttackManager:_attackManager];
         
     }
     return self;

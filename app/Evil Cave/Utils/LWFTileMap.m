@@ -78,45 +78,24 @@
 }
 
 - (NSArray *)neighborsForTile:(LWFTile *)tile {
+    LWFTile *checkingTile;
     NSMutableArray *neighbors = [NSMutableArray array];
+    NSInteger currentX = tile.x;
+    NSInteger currentY = tile.y;
+    NSInteger x, y, newX, newY;
     
-    NSUInteger x = tile.x;
-    NSUInteger y = tile.y;
-    
-    NSInteger northX = x;
-    NSInteger northY = y + 1;
-    
-    NSInteger southX = x;
-    NSInteger southY = y - 1;
-    
-    NSInteger eastX = x + 1;
-    NSInteger eastY = y;
-    
-    NSInteger westX = x - 1;
-    NSInteger westY = y;
-    
-    LWFTile *chekingTile;
-    
-    if (southY >= 0) {
-        chekingTile = self.tiles[southX][southY];
-        [neighbors addObject:chekingTile];
+    for(y = -1; y <= 1; y++) {
+        newY = currentY + y;
+        for(x = -1; x <= 1; x++) {
+            newX = currentX + x;
+            if(x || y) { // pula 0,0
+                if((newX >= 0) && (newY >= 0) && (newX < self.mapDimension.numberTilesHorizontal) && (newY < self.mapDimension.numberTilesVertical)) {
+                    checkingTile = self.tiles[newX][newY];
+                    [neighbors addObject:checkingTile];
+                }
+            }
+        }
     }
-    
-    if (northY < self.mapDimension.numberTilesVertical) {
-        chekingTile = self.tiles[northX][northY];
-        [neighbors addObject:chekingTile];
-    }
-    
-    if (eastX < self.mapDimension.numberTilesHorizontal) {
-        chekingTile = self.tiles[eastX][eastY];
-        [neighbors addObject:chekingTile];
-    }
-    
-    if (westX >= 0) {
-        chekingTile = self.tiles[westX][westY];
-        [neighbors addObject:chekingTile];
-    }
-    
     return neighbors;
 }
 

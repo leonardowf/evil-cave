@@ -11,6 +11,9 @@
 		322DB6AA1A229A0C0085AC68 /* LWFCreatureBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 322DB6A91A229A0C0085AC68 /* LWFCreatureBuilder.m */; };
 		322DB6AE1A229E320085AC68 /* LWFRat.m in Sources */ = {isa = PBXBuildFile; fileRef = 322DB6AD1A229E320085AC68 /* LWFRat.m */; };
 		32CD39D61A22CBCC000ADD95 /* LWFGoblin.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CD39D51A22CBCC000ADD95 /* LWFGoblin.m */; };
+		32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */; };
+		32FFE83E1A2C0BDD003D02A4 /* LWFAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFE83D1A2C0BDD003D02A4 /* LWFAttack.m */; };
+		32FFE8411A2C0BF0003D02A4 /* LWFMelee.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFE8401A2C0BF0003D02A4 /* LWFMelee.m */; };
 		A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = A70387581A17BC620053A9E6 /* LWFMapDimension.m */; };
 		A703875C1A17BD5E0053A9E6 /* LWFTile.m in Sources */ = {isa = PBXBuildFile; fileRef = A703875B1A17BD5E0053A9E6 /* LWFTile.m */; };
 		A703875F1A17BEB00053A9E6 /* LWFTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = A703875E1A17BEB00053A9E6 /* LWFTileMap.m */; };
@@ -68,6 +71,14 @@
 		322DB6AD1A229E320085AC68 /* LWFRat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRat.m; sourceTree = "<group>"; };
 		32CD39D41A22CBCC000ADD95 /* LWFGoblin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFGoblin.h; sourceTree = "<group>"; };
 		32CD39D51A22CBCC000ADD95 /* LWFGoblin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFGoblin.m; sourceTree = "<group>"; };
+		32D0BE6E1A2D13D8000EC0E1 /* LWFAttackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttackManager.h; sourceTree = "<group>"; };
+		32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAttackManager.m; sourceTree = "<group>"; };
+		32D0BE711A2D177B000EC0E1 /* LWFAttackable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttackable.h; sourceTree = "<group>"; };
+		32FFE83A1A2BF6E2003D02A4 /* LWFConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWFConstants.h; sourceTree = "<group>"; };
+		32FFE83C1A2C0BDD003D02A4 /* LWFAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttack.h; sourceTree = "<group>"; };
+		32FFE83D1A2C0BDD003D02A4 /* LWFAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAttack.m; sourceTree = "<group>"; };
+		32FFE83F1A2C0BF0003D02A4 /* LWFMelee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFMelee.h; sourceTree = "<group>"; };
+		32FFE8401A2C0BF0003D02A4 /* LWFMelee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFMelee.m; sourceTree = "<group>"; };
 		A70387571A17BC620053A9E6 /* LWFMapDimension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFMapDimension.h; sourceTree = "<group>"; };
 		A70387581A17BC620053A9E6 /* LWFMapDimension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFMapDimension.m; sourceTree = "<group>"; };
 		A703875A1A17BD5E0053A9E6 /* LWFTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFTile.h; sourceTree = "<group>"; };
@@ -158,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				A7EF149B1A1EAFDE005F13DF /* LWFMoveable.h */,
+				32D0BE711A2D177B000EC0E1 /* LWFAttackable.h */,
 				A7D8BEDA1A190A5B005B0599 /* LWFPlayer.h */,
 				A7D8BEDB1A190A5B005B0599 /* LWFPlayer.m */,
 				A78443A71A1EB2220029995D /* LWFCreature.h */,
@@ -169,6 +181,17 @@
 			);
 			name = Creatures;
 			path = ../Utils/Creatures;
+			sourceTree = "<group>";
+		};
+		32FFE83B1A2C0BCE003D02A4 /* Attacks */ = {
+			isa = PBXGroup;
+			children = (
+				32FFE83C1A2C0BDD003D02A4 /* LWFAttack.h */,
+				32FFE83D1A2C0BDD003D02A4 /* LWFAttack.m */,
+				32FFE83F1A2C0BF0003D02A4 /* LWFMelee.h */,
+				32FFE8401A2C0BF0003D02A4 /* LWFMelee.m */,
+			);
+			path = Attacks;
 			sourceTree = "<group>";
 		};
 		A70387561A17BC480053A9E6 /* Utils */ = {
@@ -184,6 +207,9 @@
 				A7D83B991A1EACC80054C022 /* LWFMovementManager.m */,
 				321EC9A51A26A5C400F06B77 /* LWFTurnList.h */,
 				321EC9A61A26A5C400F06B77 /* LWFTurnList.m */,
+				32FFE83A1A2BF6E2003D02A4 /* LWFConstants.h */,
+				32D0BE6E1A2D13D8000EC0E1 /* LWFAttackManager.h */,
+				32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -262,6 +288,7 @@
 		A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */ = {
 			isa = PBXGroup;
 			children = (
+				32FFE83B1A2C0BCE003D02A4 /* Attacks */,
 				A78443B11A1F010C0029995D /* dngn_shoals_shallow_water_disturbance3.png */,
 				A7D83B8B1A1D73640054C022 /* Algorithms */,
 				A7D8BEF11A1AD98C005B0599 /* cobble_blood1.png */,
@@ -428,6 +455,7 @@
 			files = (
 				A7D8BEE71A198C67005B0599 /* LWFCaveGeneratorCell.m in Sources */,
 				A7D8BEE11A19883A005B0599 /* LWFCaveGenerator.m in Sources */,
+				32FFE8411A2C0BF0003D02A4 /* LWFMelee.m in Sources */,
 				A7F5BBA31A16EFBE005BAB63 /* LWFMyScene.m in Sources */,
 				A7D8BEDC1A190A5B005B0599 /* LWFPlayer.m in Sources */,
 				A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */,
@@ -441,11 +469,13 @@
 				A703875F1A17BEB00053A9E6 /* LWFTileMap.m in Sources */,
 				A7F5BB961A16EFBC005BAB63 /* main.m in Sources */,
 				321EC9A71A26A5C400F06B77 /* LWFTurnList.m in Sources */,
+				32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */,
 				A7D8BEF01A1ABAFC005B0599 /* LWFRoomBuilder.m in Sources */,
 				322DB6AA1A229A0C0085AC68 /* LWFCreatureBuilder.m in Sources */,
 				A7D8BEE41A1988BC005B0599 /* LWFCaveGeneratorConstants.m in Sources */,
 				A7D83B971A1D74F20054C022 /* LWFModelGrid.m in Sources */,
 				A7D8BEEA1A1AB598005B0599 /* LWFRandomUtils.m in Sources */,
+				32FFE83E1A2C0BDD003D02A4 /* LWFAttack.m in Sources */,
 				A7F5BBA01A16EFBD005BAB63 /* LWFViewController.m in Sources */,
 				A7D83B9A1A1EACC80054C022 /* LWFMovementManager.m in Sources */,
 				A7F5BBD11A16F831005BAB63 /* LWFMap.m in Sources */,
