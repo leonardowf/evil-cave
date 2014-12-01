@@ -8,6 +8,7 @@
 
 #import "LWFTurnList.h"
 #import "LWFPlayer.h"
+#import "LWFMap.h"
 
 @implementation LWFTurnList
 
@@ -32,6 +33,7 @@
     
     if (creatureIndex == [self.creatures count]) {
         creatureIndex = 0;
+        [self.map newTurnCycleStarted];
     }
     
     LWFCreature *creatureAfter = [self.creatures objectAtIndex:creatureIndex];

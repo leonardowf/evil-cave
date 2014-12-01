@@ -30,5 +30,6 @@
 - (void)build;
 - (void)processTurn;
 - (void)finishTurn;
+- (BOOL)isSurrounded;
 
 @end

@@ -85,6 +85,7 @@
     
     [_turnList.creatures addObject:player];
     player.turnList = _turnList;
+    _turnList.map = self;
     
     [self addChild:self.player];
 }
@@ -118,7 +119,7 @@
     }
 }
 
-- (void)playerMoved {
+- (void)newTurnCycleStarted {
     [self pathForPlayerToExit];
 }
 

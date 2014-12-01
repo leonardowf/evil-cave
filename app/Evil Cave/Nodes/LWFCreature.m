@@ -75,8 +75,14 @@
 - (void)processTurn {
     if ([self shouldFollowPlayer]) {
         if ([self isAdjacentToPlayer]) {
+            // por ataque melee
             [self finishTurn];
             return;
+        } else {
+            if ([self.player isSurrounded]) {
+                [self finishTurn];
+                return;
+            }
         }
         
         LWFTile *closestTile = [self closestNeighborToPlayer];
@@ -89,6 +95,12 @@
         [self buildPathToSomeDestiny];
     }
     
+    [self walkToExistingPath];
+    
+
+}
+
+- (void)walkToExistingPath {
     LWFTile *nextTile = [self.tilePath lastObject];
     [self requestMoveToTileAtX:nextTile.x andY:nextTile.y];
 }
@@ -142,6 +154,18 @@
 
 - (void)finishTurn {
     [self.turnList creatureFinishedTurn:self];
+}
+
+- (BOOL)isSurrounded {
+    NSArray *neighbors = [self.map.tileMap neighborsForTile:self.currentTile];
+    
+    for (LWFTile* tile in neighbors) {
+        if ([tile isPassable]) {
+            return NO;
+        }
+    }
+    
+    return YES;
 }
 
 
