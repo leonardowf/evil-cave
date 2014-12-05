@@ -23,4 +23,6 @@
 requestedAttackToTile:(LWFTile *)tile
         withAttack:(LWFAttack *)attack;
 
+- (void)didShowDamage;
+
 @end

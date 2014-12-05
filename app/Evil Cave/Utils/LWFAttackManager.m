@@ -9,6 +9,15 @@
 #import "LWFAttackManager.h"
 
 #import "LWFDamageDisplayer.h"
+
+@interface LWFAttackManager () {
+    LWFDamageDisplayer *_damagerDisplayer;
+    
+    id<LWFAttackable> _currentAttackable;
+}
+
+@end
+
 @implementation LWFAttackManager
 
 - (instancetype)initWithTileMap:(LWFTileMap *)tileMap
@@ -16,6 +25,7 @@
     self = [super init];
     if (self) {
         self.tileMap = tileMap;
+        _damagerDisplayer = [LWFDamageDisplayer sharedLWFDamageDisplayer];
     }
     return self;
 }
@@ -24,10 +34,15 @@
 requestedAttackToTile:(LWFTile *)tile
         withAttack:(LWFAttack *)attack {
     
-    LWFDamageDisplayer *ddlayer = [LWFDamageDisplayer sharedLWFDamageDisplayer];
-    [ddlayer showString:@"oi" atTile:tile];
+    
+    _currentAttackable = attackable;
+    [_damagerDisplayer showString:@"oi" atTile:tile andDelegate:self];
     
     
+}
+
+- (void)didShowDamage {
+    [_currentAttackable didAttackTile:nil withAttack:nil];
 }
 
 @end

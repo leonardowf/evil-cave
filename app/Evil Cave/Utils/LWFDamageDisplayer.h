@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 @class LWFMap;
 @class LWFTile;
+@class LWFAttackManager;
 
 @interface LWFDamageDisplayer : NSObject
 
@@ -17,6 +18,6 @@
 @property NSString *name;
 @property LWFMap *map;
 
-- (void)showString:(NSString *)string atTile:(LWFTile *)tile;
+- (void)showString:(NSString *)string atTile:(LWFTile *)tile andDelegate:(LWFAttackManager *)delegate;
 
 @end

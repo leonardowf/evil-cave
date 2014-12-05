@@ -12,11 +12,20 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+#import "LWFAttackManager.h"
+
+@interface LWFDamageDisplayer () {
+    LWFAttackManager *_delegate;
+}
+
+@end
+
 @implementation LWFDamageDisplayer
 
 SINGLETON_FOR_CLASS(LWFDamageDisplayer)
 
-- (void)showString:(NSString *)string atTile:(LWFTile *)tile {
+- (void)showString:(NSString *)string atTile:(LWFTile *)tile andDelegate:(LWFAttackManager *)delegate {
+    _delegate = delegate;
     SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
     [label setFontColor:[UIColor redColor]];
 
@@ -25,14 +34,20 @@ SINGLETON_FOR_CLASS(LWFDamageDisplayer)
     label.position = tile.position;
     
     [self.map addChild:label];
+    
     SKAction *action = [SKAction moveByX:0 y:20 duration:0.1];
     [label runAction:action completion:^{
         SKAction *action = [SKAction fadeAlphaTo:0 duration:0.2];
         [label runAction:action completion:^{
 //            [_map rem]
+            [self completed];
         }];
         
     }];
+}
+
+- (void)completed {
+    [_delegate didShowDamage];
 }
 
 @end

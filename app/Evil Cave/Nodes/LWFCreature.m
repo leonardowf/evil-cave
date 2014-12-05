@@ -87,7 +87,7 @@
         if ([self isAdjacentToPlayer]) {
             // por ataque melee
             [self attackPlayerWithMelee];
-            [self finishTurn];
+
             return;
         } else {
             if ([self.player isSurrounded]) {
@@ -205,6 +205,7 @@
 
 - (void)didAttackTile:(LWFTile *)tile
            withAttack:(LWFAttack *)attack {
+    [self finishTurn];
     
 }
 
