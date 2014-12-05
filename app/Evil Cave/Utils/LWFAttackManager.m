@@ -8,6 +8,7 @@
 
 #import "LWFAttackManager.h"
 
+#import "LWFDamageDisplayer.h"
 @implementation LWFAttackManager
 
 - (instancetype)initWithTileMap:(LWFTileMap *)tileMap
@@ -22,6 +23,10 @@
 - (void)attackable:(id<LWFAttackable>)attackable
 requestedAttackToTile:(LWFTile *)tile
         withAttack:(LWFAttack *)attack {
+    
+    LWFDamageDisplayer *ddlayer = [LWFDamageDisplayer sharedLWFDamageDisplayer];
+    [ddlayer showString:@"oi" atTile:tile];
+    
     
 }
 

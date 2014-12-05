@@ -14,5 +14,17 @@
 #define MAX_NUMBER_PATH_FIND_TRIES 3
 // Define a quantidade de vezes que a inteligência artifical tenta se mover até encontrar
 
+#define SINGLETON_FOR_CLASS(classname)\
++ (id) shared##classname {\
+static dispatch_once_t pred = 0;\
+__strong static id _sharedObject = nil;\
+dispatch_once(&pred, ^{\
+_sharedObject = [[self alloc] init];\
+});\
+return _sharedObject;\
+}
+
 
 #endif
+
+

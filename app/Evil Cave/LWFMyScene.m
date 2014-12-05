@@ -13,6 +13,8 @@
 #import "LWFTile.h"
 #import "LWFPlayer.h"
 
+#import "LWFDamageDisplayer.h"
+
 @interface LWFMyScene () {
     LWFPlayer *_player;
     LWFMap *_map;
@@ -37,6 +39,12 @@
         
         [_map addPlayer:_player];
         [_map loadGame];
+        
+        
+        LWFDamageDisplayer *ddlayer = [LWFDamageDisplayer sharedLWFDamageDisplayer];
+        ddlayer.name = @"LEonardo";
+        ddlayer.map = _map;
+        
         
         [self addChild:_map];
         
