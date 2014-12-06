@@ -124,7 +124,7 @@
 }
 
 - (void)newTurnCycleStarted {
-    [self pathForPlayerToExit];
+//    [self pathForPlayerToExit];
 }
 
 - (void)userTouchedPoint:(CGPoint)point {

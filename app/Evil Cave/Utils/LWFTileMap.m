@@ -37,7 +37,9 @@
                     [tile setWalkable:NO];
                 }
                 else if (cell.cellType == CaveCellTypeFloor) {
-                    tile = [[LWFTile alloc]initWithImageNamed:@"cobble_blood1"];
+                    SKTexture *texture = [SKTexture textureWithImageNamed:@"rock_tile"];
+                    texture.filteringMode = SKTextureFilteringNearest;
+                    tile = [LWFTile spriteNodeWithTexture:texture];
                     [tile setWalkable:YES];
                 } else if (cell.cellType == CaveCellTypeStart) {
                     tile = [[LWFTile alloc]initWithColor:[UIColor redColor] size:mapDimension.tileSize];

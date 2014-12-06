@@ -34,7 +34,10 @@
         _map = [[LWFMap alloc]initWithMapDimension:mapDimension];
         [_map addTiles];
         
-        _player = [[LWFPlayer alloc]initWithImageNamed:@"goblin"];
+        SKTexture *texture = [SKTexture textureWithImageNamed:@"warrior"];
+        texture.filteringMode = SKTextureFilteringNearest;
+        _player = [LWFPlayer spriteNodeWithTexture:texture];
+        
         _player.size = mapDimension.tileSize;
         
         [_map addPlayer:_player];

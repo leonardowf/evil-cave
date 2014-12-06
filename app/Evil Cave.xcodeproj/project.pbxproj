@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320E45981A3284AD00B91858 /* rock_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 320E45971A3284AD00B91858 /* rock_tile.png */; };
 		321EC9A71A26A5C400F06B77 /* LWFTurnList.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EC9A61A26A5C400F06B77 /* LWFTurnList.m */; };
 		322DB6AA1A229A0C0085AC68 /* LWFCreatureBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 322DB6A91A229A0C0085AC68 /* LWFCreatureBuilder.m */; };
 		322DB6AE1A229E320085AC68 /* LWFRat.m in Sources */ = {isa = PBXBuildFile; fileRef = 322DB6AD1A229E320085AC68 /* LWFRat.m */; };
 		323B6D071A2FEC7C00627147 /* LWFDamageDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 323B6D061A2FEC7C00627147 /* LWFDamageDisplayer.m */; };
 		32CD39D61A22CBCC000ADD95 /* LWFGoblin.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CD39D51A22CBCC000ADD95 /* LWFGoblin.m */; };
 		32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */; };
+		32D7B6361A31D1FD00A0A570 /* warrior.png in Resources */ = {isa = PBXBuildFile; fileRef = 32D7B6351A31D1FD00A0A570 /* warrior.png */; };
 		32FFE83E1A2C0BDD003D02A4 /* LWFAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFE83D1A2C0BDD003D02A4 /* LWFAttack.m */; };
 		32FFE8411A2C0BF0003D02A4 /* LWFMelee.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFE8401A2C0BF0003D02A4 /* LWFMelee.m */; };
 		A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = A70387581A17BC620053A9E6 /* LWFMapDimension.m */; };
@@ -63,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		320E45971A3284AD00B91858 /* rock_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rock_tile.png; sourceTree = "<group>"; };
 		321EC9A51A26A5C400F06B77 /* LWFTurnList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFTurnList.h; sourceTree = "<group>"; };
 		321EC9A61A26A5C400F06B77 /* LWFTurnList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFTurnList.m; sourceTree = "<group>"; };
 		322DB6A81A229A0C0085AC68 /* LWFCreatureBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFCreatureBuilder.h; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 		32D0BE6E1A2D13D8000EC0E1 /* LWFAttackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttackManager.h; sourceTree = "<group>"; };
 		32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAttackManager.m; sourceTree = "<group>"; };
 		32D0BE711A2D177B000EC0E1 /* LWFAttackable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttackable.h; sourceTree = "<group>"; };
+		32D7B6351A31D1FD00A0A570 /* warrior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warrior.png; sourceTree = "<group>"; };
 		32FFE83A1A2BF6E2003D02A4 /* LWFConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWFConstants.h; sourceTree = "<group>"; };
 		32FFE83C1A2C0BDD003D02A4 /* LWFAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttack.h; sourceTree = "<group>"; };
 		32FFE83D1A2C0BDD003D02A4 /* LWFAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAttack.m; sourceTree = "<group>"; };
@@ -291,6 +295,8 @@
 		A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */ = {
 			isa = PBXGroup;
 			children = (
+				32D7B6351A31D1FD00A0A570 /* warrior.png */,
+				320E45971A3284AD00B91858 /* rock_tile.png */,
 				32FFE83B1A2C0BCE003D02A4 /* Attacks */,
 				A78443B11A1F010C0029995D /* dngn_shoals_shallow_water_disturbance3.png */,
 				A7D83B8B1A1D73640054C022 /* Algorithms */,
@@ -433,6 +439,8 @@
 				A7F5BB941A16EFBC005BAB63 /* InfoPlist.strings in Resources */,
 				A7F5BBA71A16EFBE005BAB63 /* Images.xcassets in Resources */,
 				A7D8BEF41A1ADA6E005B0599 /* goblin.png in Resources */,
+				32D7B6361A31D1FD00A0A570 /* warrior.png in Resources */,
+				320E45981A3284AD00B91858 /* rock_tile.png in Resources */,
 				A7F5BB9D1A16EFBD005BAB63 /* Main.storyboard in Resources */,
 				A78443B21A1F010C0029995D /* dngn_shoals_shallow_water_disturbance3.png in Resources */,
 				A7D8BEF21A1AD98C005B0599 /* cobble_blood1.png in Resources */,
