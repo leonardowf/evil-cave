@@ -18,7 +18,7 @@
 }
 
 - (void)moveToTile:(LWFTile *)tile {
-    SKAction *moveAction = [SKAction moveTo:tile.position duration:0.2];
+    SKAction *moveAction = [SKAction moveTo:tile.position duration:0.3];
     [self runAction: moveAction completion:^{
         [self didMoveToTile:tile atX:tile.x andY:tile.y];
     }];

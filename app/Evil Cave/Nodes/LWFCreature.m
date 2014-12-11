@@ -78,7 +78,9 @@
 }
 
 - (void)build {
-    [self setTexture:[SKTexture textureWithImage:[UIImage imageNamed:self.spriteImageName]]];
+    SKTexture *texture = [SKTexture textureWithImageNamed:self.spriteImageName];
+    texture.filteringMode = SKTextureFilteringNearest;
+    [self setTexture:texture];
     [self setSize:CGSizeMake(32, 32)];
 }
 
