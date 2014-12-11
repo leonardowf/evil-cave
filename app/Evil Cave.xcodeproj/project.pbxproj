@@ -12,6 +12,7 @@
 		322DB6AA1A229A0C0085AC68 /* LWFCreatureBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 322DB6A91A229A0C0085AC68 /* LWFCreatureBuilder.m */; };
 		322DB6AE1A229E320085AC68 /* LWFRat.m in Sources */ = {isa = PBXBuildFile; fileRef = 322DB6AD1A229E320085AC68 /* LWFRat.m */; };
 		323B6D071A2FEC7C00627147 /* LWFDamageDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 323B6D061A2FEC7C00627147 /* LWFDamageDisplayer.m */; };
+		32C511F31A37A5DB00F0B955 /* LWFGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C511F21A37A5DB00F0B955 /* LWFGeometry.m */; };
 		32CD39D61A22CBCC000ADD95 /* LWFGoblin.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CD39D51A22CBCC000ADD95 /* LWFGoblin.m */; };
 		32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */; };
 		32D7B6361A31D1FD00A0A570 /* warrior.png in Resources */ = {isa = PBXBuildFile; fileRef = 32D7B6351A31D1FD00A0A570 /* warrior.png */; };
@@ -74,6 +75,8 @@
 		322DB6AD1A229E320085AC68 /* LWFRat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRat.m; sourceTree = "<group>"; };
 		323B6D051A2FEC7C00627147 /* LWFDamageDisplayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFDamageDisplayer.h; sourceTree = "<group>"; };
 		323B6D061A2FEC7C00627147 /* LWFDamageDisplayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFDamageDisplayer.m; sourceTree = "<group>"; };
+		32C511F11A37A5DB00F0B955 /* LWFGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFGeometry.h; sourceTree = "<group>"; };
+		32C511F21A37A5DB00F0B955 /* LWFGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFGeometry.m; sourceTree = "<group>"; };
 		32CD39D41A22CBCC000ADD95 /* LWFGoblin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFGoblin.h; sourceTree = "<group>"; };
 		32CD39D51A22CBCC000ADD95 /* LWFGoblin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFGoblin.m; sourceTree = "<group>"; };
 		32D0BE6E1A2D13D8000EC0E1 /* LWFAttackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttackManager.h; sourceTree = "<group>"; };
@@ -188,6 +191,15 @@
 			path = ../Utils/Creatures;
 			sourceTree = "<group>";
 		};
+		32C511F01A37A5BD00F0B955 /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				32C511F11A37A5DB00F0B955 /* LWFGeometry.h */,
+				32C511F21A37A5DB00F0B955 /* LWFGeometry.m */,
+			);
+			path = Geometry;
+			sourceTree = "<group>";
+		};
 		32FFE83B1A2C0BCE003D02A4 /* Attacks */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +307,7 @@
 		A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */ = {
 			isa = PBXGroup;
 			children = (
+				32C511F01A37A5BD00F0B955 /* Geometry */,
 				32D7B6351A31D1FD00A0A570 /* warrior.png */,
 				320E45971A3284AD00B91858 /* rock_tile.png */,
 				32FFE83B1A2C0BCE003D02A4 /* Attacks */,
@@ -463,6 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				323B6D071A2FEC7C00627147 /* LWFDamageDisplayer.m in Sources */,
+				32C511F31A37A5DB00F0B955 /* LWFGeometry.m in Sources */,
 				A7D8BEE71A198C67005B0599 /* LWFCaveGeneratorCell.m in Sources */,
 				A7D8BEE11A19883A005B0599 /* LWFCaveGenerator.m in Sources */,
 				32FFE8411A2C0BF0003D02A4 /* LWFMelee.m in Sources */,

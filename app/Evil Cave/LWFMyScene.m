@@ -12,12 +12,17 @@
 #import "LWFMapDimension.h"
 #import "LWFTile.h"
 #import "LWFPlayer.h"
+#import "LWFGeometry.h"
 
 #import "LWFDamageDisplayer.h"
 
 @interface LWFMyScene () {
     LWFPlayer *_player;
     LWFMap *_map;
+    UIPinchGestureRecognizer *_pinchGestureRecognizer;
+    UIPanGestureRecognizer *_panGestureRecognizer;
+    
+    BOOL _pinching;
 }
 @end
 
@@ -51,6 +56,8 @@
         
         [self addChild:_map];
         
+        [_map moveCameraToTile:_player.currentTile];
+        
     }
     return self;
 }
@@ -68,7 +75,74 @@
 }
 
 - (void)didSimulatePhysics {
-    _map.position = CGPointMake(-(_player.position.x-(self.size.width/2)), -(_player.position.y-(self.size.height/2)));
+    
+//    _map.position = CGPointMake(-(_player.position.x-(self.size.width/2)), -(_player.position.y-(self.size.height/2)));
+    
 }
+
+- (void)didMoveToView:(SKView *)view {
+    _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanFrom:)];
+    [[self view] addGestureRecognizer:_panGestureRecognizer];
+    
+    _pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handleZoomFrom:)];
+    [[self view] addGestureRecognizer:_pinchGestureRecognizer];
+    
+    
+}
+
+
+- (void)handlePanFrom:(UIPanGestureRecognizer *)recognizer
+{
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+        
+        [recognizer setTranslation:CGPointZero inView:recognizer.view];
+        
+    } else if (recognizer.state == UIGestureRecognizerStateChanged) {
+        
+        CGPoint translation = [recognizer translationInView:recognizer.view];
+        translation = CGPointMake(-translation.x, translation.y);
+        
+        
+        _map.position = CGPointSubtract(_map.position, translation);
+        
+        [recognizer setTranslation:CGPointZero inView:recognizer.view];
+        
+    } else if (recognizer.state == UIGestureRecognizerStateEnded) {
+        
+        // No code needed for panning.
+    }
+}
+
+// Method that is called by my UIPinchGestureRecognizer.
+- (void)handleZoomFrom:(UIPinchGestureRecognizer *)recognizer
+{
+    CGPoint anchorPoint = [recognizer locationInView:recognizer.view];
+    anchorPoint = [self convertPointFromView:anchorPoint];
+    
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+        
+        // No code needed for zooming...
+        
+    } else if (recognizer.state == UIGestureRecognizerStateChanged) {
+        
+        CGPoint anchorPointInMySkNode = [_map convertPoint:anchorPoint fromNode:self];
+        
+        [_map setScale:(_map.xScale * recognizer.scale)];
+        
+        CGPoint mySkNodeAnchorPointInScene = [self convertPoint:anchorPointInMySkNode fromNode:_map];
+        CGPoint translationOfAnchorInScene = CGPointSubtract(anchorPoint, mySkNodeAnchorPointInScene);
+        
+        _map.position = CGPointAdd(_map.position, translationOfAnchorInScene);
+        
+        recognizer.scale = 1.0;
+        
+    } else if (recognizer.state == UIGestureRecognizerStateEnded) {
+        
+        // No code needed here for zooming...
+        
+    }
+}
+
+
 
 @end

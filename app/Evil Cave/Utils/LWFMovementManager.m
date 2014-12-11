@@ -8,6 +8,7 @@
 
 #import "LWFMovementManager.h"
 #import "LWFTileMap.h"
+#import "LWFPlayer.h"
 
 @implementation LWFMovementManager
 
@@ -27,7 +28,11 @@
         [moveable willMoveToTile:tile atX:x andY:y];
         [moveable moveToTile:tile];
         [moveable updateCurrentTile:tile];
-        [moveable didMoveToTile:tile atX:x andY:y];
+        
+        if (![moveable isKindOfClass:[LWFPlayer class]]) {
+            [moveable didMoveToTile:tile atX:x andY:y];
+        }
+        
     } else {
         [moveable failedToMoveToTile:tile atX:x andY:y];
     }

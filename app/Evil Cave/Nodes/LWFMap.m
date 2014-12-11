@@ -92,6 +92,8 @@
     _turnList.map = self;
     
     [self addChild:self.player];
+    
+
 }
 
 - (void)pathForPlayerToExit {
@@ -185,6 +187,15 @@
             [self addChild:creature];
         }
     }
+}
+
+- (void)moveCameraToTile:(LWFTile *)tile {
+    SKScene *scene = [self scene];
+    
+    CGPoint newCameraPosition = CGPointMake(-(tile.position.x-(scene.size.width/2)), -(tile.position.y-(scene.size.height/2)));
+    
+    SKAction *moveCameraAction = [SKAction moveTo:newCameraPosition duration:0.2];
+    [self runAction:moveCameraAction];
 }
 
 @end

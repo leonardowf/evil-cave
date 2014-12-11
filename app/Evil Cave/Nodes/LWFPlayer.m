@@ -14,8 +14,20 @@
 @implementation LWFPlayer
 
 - (void)didMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
-    
     [self.turnList creatureFinishedTurn:self];
+}
+
+- (void)moveToTile:(LWFTile *)tile {
+    SKAction *moveAction = [SKAction moveTo:tile.position duration:0.2];
+    [self runAction: moveAction completion:^{
+        [self didMoveToTile:tile atX:tile.x andY:tile.y];
+    }];
+    
+    [self moveCameraToTile:tile];
+}
+
+- (void)moveCameraToTile:(LWFTile *)tile {
+    [self.map moveCameraToTile:tile];
 }
 
 @end
