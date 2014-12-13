@@ -67,17 +67,11 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    for (UITouch *touch in touches) {
+    if (touches.count == 1) {
+        UITouch *touch = [touches anyObject];
         CGPoint touchPoint = [touch locationInNode:_map];
-        
         [_map userTouchedPoint:touchPoint];
     }
-}
-
-- (void)didSimulatePhysics {
-    
-//    _map.position = CGPointMake(-(_player.position.x-(self.size.width/2)), -(_player.position.y-(self.size.height/2)));
-    
 }
 
 - (void)didMoveToView:(SKView *)view {
@@ -86,10 +80,7 @@
     
     _pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handleZoomFrom:)];
     [[self view] addGestureRecognizer:_pinchGestureRecognizer];
-    
-    
 }
-
 
 - (void)handlePanFrom:(UIPanGestureRecognizer *)recognizer
 {
@@ -142,7 +133,4 @@
         
     }
 }
-
-
-
 @end
