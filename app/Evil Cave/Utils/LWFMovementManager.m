@@ -24,12 +24,29 @@
 - (void)moveable:(id<LWFMoveable>)moveable requestMoveToTileAtX:(NSUInteger)x andY:(NSUInteger)y {
     LWFTile *tile = [self.tileMap tileForVertical:y andHorizontal:x];
     
+    BOOL moveableIsPlayer = [moveable isKindOfClass:[LWFPlayer class]];
+    
+    if (moveableIsPlayer) {
+//        LWFPlayer
+        LWFPlayer *player = (LWFPlayer *)moveable;
+        NSUInteger distanceFromTiles = [tile distanceToTile:player.currentTile];
+        
+        if (distanceFromTiles > 1) {
+            [player buildPathToTile:tile];
+            [player processTurn];
+            return;
+        }
+        
+        
+
+    }
+    
     if (tile.isPassable) {
         [moveable willMoveToTile:tile atX:x andY:y];
         [moveable moveToTile:tile];
         [moveable updateCurrentTile:tile];
         
-        if (![moveable isKindOfClass:[LWFPlayer class]]) {
+        if (!moveableIsPlayer) {
             [moveable didMoveToTile:tile atX:x andY:y];
         }
         

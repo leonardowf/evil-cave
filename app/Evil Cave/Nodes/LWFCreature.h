@@ -37,5 +37,7 @@
 - (void)processTurn;
 - (void)finishTurn;
 - (BOOL)isSurrounded;
+- (void)buildPathToTile:(LWFTile *)tile;
+- (void)walkToExistingPath;
 
 @end

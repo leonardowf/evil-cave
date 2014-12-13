@@ -90,6 +90,7 @@
     [_turnList.creatures addObject:player];
     player.turnList = _turnList;
     _turnList.map = self;
+    _player.movementManager = _movementManager;
     
     [self addChild:self.player];
     

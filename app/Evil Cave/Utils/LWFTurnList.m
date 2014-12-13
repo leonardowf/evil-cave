@@ -43,11 +43,7 @@
 - (void)processTurnForCreature:(LWFCreature *)creature {
     Class playerClass = [LWFPlayer class];
     
-    if ([creature isKindOfClass:playerClass]) {
-        // espera por input
-    } else {
-        [creature processTurn];
-    }
+    [creature processTurn];
 }
 
 @end
