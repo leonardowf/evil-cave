@@ -149,19 +149,19 @@
 }
 
 - (void)createCreatures {
-    LWFCreature *creature1 = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
+    LWFCreature *creature1 = [_creatureBuilder buildWithType:LWFCreatureTypeRat];
     [_turnList.creatures addObject:creature1];
     
-    LWFCreature *creature2 = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
+    LWFCreature *creature2 = [_creatureBuilder buildWithType:LWFCreatureTypeRat];
     [_turnList.creatures addObject:creature2];
     
-    LWFCreature *creature3 = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
+    LWFCreature *creature3 = [_creatureBuilder buildWithType:LWFCreatureTypeRat];
     [_turnList.creatures addObject:creature3];
     
-    LWFCreature *creature4 = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
+    LWFCreature *creature4 = [_creatureBuilder buildWithType:LWFCreatureTypeRat];
     [_turnList.creatures addObject:creature4];
     
-    LWFCreature *creature5 = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
+    LWFCreature *creature5 = [_creatureBuilder buildWithType:LWFCreatureTypeRadioactiveRat];
     [_turnList.creatures addObject:creature5];
     
     LWFCreature *creature6 = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];

@@ -15,6 +15,12 @@
 		32C511F31A37A5DB00F0B955 /* LWFGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C511F21A37A5DB00F0B955 /* LWFGeometry.m */; };
 		32CD39D61A22CBCC000ADD95 /* LWFGoblin.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CD39D51A22CBCC000ADD95 /* LWFGoblin.m */; };
 		32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */; };
+		32D50BC41A3CFB60002D3098 /* LWFStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BC31A3CFB60002D3098 /* LWFStats.m */; };
+		32D50BC71A3D018D002D3098 /* LWFAttacksBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BC61A3D018D002D3098 /* LWFAttacksBuilder.m */; };
+		32D50BCA1A3D2002002D3098 /* rat.png in Resources */ = {isa = PBXBuildFile; fileRef = 32D50BC91A3D2002002D3098 /* rat.png */; };
+		32D50BCD1A3D227C002D3098 /* LWFRadioactiveRat.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BCC1A3D227C002D3098 /* LWFRadioactiveRat.m */; };
+		32D50BD01A3D22D6002D3098 /* radioactive_rat.png in Resources */ = {isa = PBXBuildFile; fileRef = 32D50BCF1A3D22D6002D3098 /* radioactive_rat.png */; };
+		32D50BD31A3DFDF3002D3098 /* LWFPointObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */; };
 		32D7B6361A31D1FD00A0A570 /* warrior.png in Resources */ = {isa = PBXBuildFile; fileRef = 32D7B6351A31D1FD00A0A570 /* warrior.png */; };
 		32FFE83E1A2C0BDD003D02A4 /* LWFAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFE83D1A2C0BDD003D02A4 /* LWFAttack.m */; };
 		32FFE8411A2C0BF0003D02A4 /* LWFMelee.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFE8401A2C0BF0003D02A4 /* LWFMelee.m */; };
@@ -82,6 +88,16 @@
 		32D0BE6E1A2D13D8000EC0E1 /* LWFAttackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttackManager.h; sourceTree = "<group>"; };
 		32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAttackManager.m; sourceTree = "<group>"; };
 		32D0BE711A2D177B000EC0E1 /* LWFAttackable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttackable.h; sourceTree = "<group>"; };
+		32D50BC21A3CFB60002D3098 /* LWFStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFStats.h; sourceTree = "<group>"; };
+		32D50BC31A3CFB60002D3098 /* LWFStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFStats.m; sourceTree = "<group>"; };
+		32D50BC51A3D018D002D3098 /* LWFAttacksBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttacksBuilder.h; sourceTree = "<group>"; };
+		32D50BC61A3D018D002D3098 /* LWFAttacksBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAttacksBuilder.m; sourceTree = "<group>"; };
+		32D50BC91A3D2002002D3098 /* rat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rat.png; sourceTree = "<group>"; };
+		32D50BCB1A3D227C002D3098 /* LWFRadioactiveRat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRadioactiveRat.h; sourceTree = "<group>"; };
+		32D50BCC1A3D227C002D3098 /* LWFRadioactiveRat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRadioactiveRat.m; sourceTree = "<group>"; };
+		32D50BCF1A3D22D6002D3098 /* radioactive_rat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radioactive_rat.png; sourceTree = "<group>"; };
+		32D50BD11A3DFDF3002D3098 /* LWFPointObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPointObject.h; sourceTree = "<group>"; };
+		32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPointObject.m; sourceTree = "<group>"; };
 		32D7B6351A31D1FD00A0A570 /* warrior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warrior.png; sourceTree = "<group>"; };
 		32FFE83A1A2BF6E2003D02A4 /* LWFConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWFConstants.h; sourceTree = "<group>"; };
 		32FFE83C1A2C0BDD003D02A4 /* LWFAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttack.h; sourceTree = "<group>"; };
@@ -186,6 +202,12 @@
 				322DB6AD1A229E320085AC68 /* LWFRat.m */,
 				32CD39D41A22CBCC000ADD95 /* LWFGoblin.h */,
 				32CD39D51A22CBCC000ADD95 /* LWFGoblin.m */,
+				32D50BC21A3CFB60002D3098 /* LWFStats.h */,
+				32D50BC31A3CFB60002D3098 /* LWFStats.m */,
+				32D50BC51A3D018D002D3098 /* LWFAttacksBuilder.h */,
+				32D50BC61A3D018D002D3098 /* LWFAttacksBuilder.m */,
+				32D50BCB1A3D227C002D3098 /* LWFRadioactiveRat.h */,
+				32D50BCC1A3D227C002D3098 /* LWFRadioactiveRat.m */,
 			);
 			name = Creatures;
 			path = ../Utils/Creatures;
@@ -198,6 +220,15 @@
 				32C511F21A37A5DB00F0B955 /* LWFGeometry.m */,
 			);
 			path = Geometry;
+			sourceTree = "<group>";
+		};
+		32D50BC81A3D1FE9002D3098 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				32D50BCF1A3D22D6002D3098 /* radioactive_rat.png */,
+				32D50BC91A3D2002002D3098 /* rat.png */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		32FFE83B1A2C0BCE003D02A4 /* Attacks */ = {
@@ -229,6 +260,8 @@
 				32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */,
 				323B6D051A2FEC7C00627147 /* LWFDamageDisplayer.h */,
 				323B6D061A2FEC7C00627147 /* LWFDamageDisplayer.m */,
+				32D50BD11A3DFDF3002D3098 /* LWFPointObject.h */,
+				32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -307,6 +340,7 @@
 		A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */ = {
 			isa = PBXGroup;
 			children = (
+				32D50BC81A3D1FE9002D3098 /* Assets */,
 				32C511F01A37A5BD00F0B955 /* Geometry */,
 				32D7B6351A31D1FD00A0A570 /* warrior.png */,
 				320E45971A3284AD00B91858 /* rock_tile.png */,
@@ -449,6 +483,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32D50BCA1A3D2002002D3098 /* rat.png in Resources */,
+				32D50BD01A3D22D6002D3098 /* radioactive_rat.png in Resources */,
 				A7F5BB941A16EFBC005BAB63 /* InfoPlist.strings in Resources */,
 				A7F5BBA71A16EFBE005BAB63 /* Images.xcassets in Resources */,
 				A7D8BEF41A1ADA6E005B0599 /* goblin.png in Resources */,
@@ -484,8 +520,10 @@
 				A7D8BEDC1A190A5B005B0599 /* LWFPlayer.m in Sources */,
 				A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */,
 				A7F5BB9A1A16EFBC005BAB63 /* LWFAppDelegate.m in Sources */,
+				32D50BCD1A3D227C002D3098 /* LWFRadioactiveRat.m in Sources */,
 				A78443B01A1EEFCC0029995D /* PathFindNode.m in Sources */,
 				A7D8BEED1A1AB909005B0599 /* LWFRoom.m in Sources */,
+				32D50BC41A3CFB60002D3098 /* LWFStats.m in Sources */,
 				A78443A91A1EB2220029995D /* LWFCreature.m in Sources */,
 				32CD39D61A22CBCC000ADD95 /* LWFGoblin.m in Sources */,
 				322DB6AE1A229E320085AC68 /* LWFRat.m in Sources */,
@@ -493,6 +531,7 @@
 				A703875F1A17BEB00053A9E6 /* LWFTileMap.m in Sources */,
 				A7F5BB961A16EFBC005BAB63 /* main.m in Sources */,
 				321EC9A71A26A5C400F06B77 /* LWFTurnList.m in Sources */,
+				32D50BC71A3D018D002D3098 /* LWFAttacksBuilder.m in Sources */,
 				32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */,
 				A7D8BEF01A1ABAFC005B0599 /* LWFRoomBuilder.m in Sources */,
 				322DB6AA1A229A0C0085AC68 /* LWFCreatureBuilder.m in Sources */,
@@ -503,6 +542,7 @@
 				A7F5BBA01A16EFBD005BAB63 /* LWFViewController.m in Sources */,
 				A7D83B9A1A1EACC80054C022 /* LWFMovementManager.m in Sources */,
 				A7F5BBD11A16F831005BAB63 /* LWFMap.m in Sources */,
+				32D50BD31A3DFDF3002D3098 /* LWFPointObject.m in Sources */,
 				A78443AC1A1EEF7B0029995D /* LWFHumbleBeeFindPath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

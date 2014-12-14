@@ -10,7 +10,11 @@
 
 @implementation LWFAttack
 
-- (NSArray *)tilesInRangeForTile:(LWFTile *)tile {
+- (NSArray *)tilesInRangeForTile:(LWFTile *)tile withTileMap:(LWFTileMap *)tileMap {
+    return [NSArray array];
+}
+
+- (NSArray *)range {
     return [NSArray array];
 }
 

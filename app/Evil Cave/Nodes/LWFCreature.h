@@ -33,6 +33,9 @@
 
 @property (nonatomic, copy) NSString *spriteImageName;
 
+@property (nonatomic) NSUInteger currentHP;
+@property (nonatomic) NSUInteger currentActions;
+
 - (void)build;
 - (void)processTurn;
 - (void)finishTurn;

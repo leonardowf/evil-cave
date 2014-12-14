@@ -12,8 +12,6 @@
 
 @implementation LWFMelee
 
-- (NSArray *)tilesInRangeForTile:(LWFTile *)tile {
-    return [self.tileMap neighborsForTile:tile];
-}
+
 
 @end
