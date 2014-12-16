@@ -20,6 +20,7 @@
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
     NSUInteger _failedMovements;
+    NSArray *_walkFramesArray;
 
 }
 @end
@@ -83,6 +84,22 @@
     texture.filteringMode = SKTextureFilteringNearest;
     [self setTexture:texture];
     [self setSize:CGSizeMake(32, 32)];
+    
+}
+
+- (void)startAnimating {
+    _walkFramesArray = [self getWalkFrames];
+    
+    if (_walkFramesArray != nil && _walkFramesArray.count > 0) {
+        SKAction *animate = [SKAction animateWithTextures:_walkFramesArray timePerFrame:0.3f];
+        SKAction *action = [SKAction repeatActionForever:animate];
+        
+        [self runAction:action];
+    }
+}
+
+- (NSArray *)getWalkFrames {
+    return nil;
 }
 
 - (void)processTurn {

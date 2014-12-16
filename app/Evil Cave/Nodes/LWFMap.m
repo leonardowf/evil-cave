@@ -186,6 +186,7 @@
             creature.currentTile = tile;
             
             [self addChild:creature];
+            [creature startAnimating];
         }
     }
 }
