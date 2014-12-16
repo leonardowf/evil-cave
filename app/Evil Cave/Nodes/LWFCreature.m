@@ -15,6 +15,7 @@
 #import "LWFPlayer.h"
 #import "LWFTileMap.h"
 #import "LWFAttackManager.h"
+#import "LWFAttack.h"
 
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
@@ -85,6 +86,9 @@
 }
 
 - (void)processTurn {
+    LWFAttack *melee = [self.attacks firstObject];
+    NSMutableArray *range = [melee tilesInRangeForTile:self.currentTile withTileMap:self.map.tileMap];
+    
     if ([self shouldFollowPlayer]) {
         if ([self isAdjacentToPlayer]) {
             // por ataque melee
@@ -180,6 +184,7 @@
     
     return YES;
 }
+
 #pragma - mark attacks
 - (void)attackPlayerWithMelee {
     LWFAttack *attack = [self.attacks firstObject];

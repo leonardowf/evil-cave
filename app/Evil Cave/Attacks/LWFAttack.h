@@ -12,6 +12,6 @@
 
 @interface LWFAttack : NSObject
 
-- (NSArray *)tilesInRangeForTile:(LWFTile *)tile withTileMap:(LWFTileMap *)tileMap;
+- (NSMutableArray *)tilesInRangeForTile:(LWFTile *)tile withTileMap:(LWFTileMap *)tileMap;
 
 @end

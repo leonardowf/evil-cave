@@ -24,5 +24,6 @@
 - (NSArray *)neighborsForTile:(LWFTile *)tile;
 - (LWFTile *)randomEmptyWalkableTile;
 - (LWFTile *)closestNeighborFromTile:(LWFTile *)origin toTile:(LWFTile *)destiny;
+- (BOOL)isInBoundsTheTileWithX:(NSUInteger)x andY:(NSUInteger)y;
 
 @end

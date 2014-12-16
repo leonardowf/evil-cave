@@ -7,15 +7,37 @@
 //
 
 #import "LWFAttack.h"
+#import "LWFPointObject.h"
+#import "LWFTile.h"
+#import "LWFPointObject.h"
+#import "LWFTileMap.h"
 
 @implementation LWFAttack
 
-- (NSArray *)tilesInRangeForTile:(LWFTile *)tile withTileMap:(LWFTileMap *)tileMap {
-    return [NSArray array];
+- (NSMutableArray *)tilesInRangeForTile:(LWFTile *)tile withTileMap:(LWFTileMap *)tileMap {
+    NSMutableArray *range = [self range];
+    NSMutableArray *tiles = [NSMutableArray array];
+    
+    for (LWFPointObject *point in range) {
+        LWFTile *possibleTile;
+        
+        NSInteger x = tile.x + point.x;
+        NSInteger y = tile.y + point.y;
+        
+        if ([tileMap isInBoundsTheTileWithX:x andY:y]) {
+            possibleTile = [tileMap tileForVertical:y andHorizontal:x];
+            
+            if ([possibleTile isWalkable]) {
+                [tiles addObject:possibleTile];
+            }
+        }
+    }
+    
+    return tiles;
 }
 
-- (NSArray *)range {
-    return [NSArray array];
+- (NSMutableArray *)range {
+    return nil;
 }
 
 @end
