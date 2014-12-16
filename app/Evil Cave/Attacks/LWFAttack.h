@@ -12,8 +12,6 @@
 
 @interface LWFAttack : NSObject
 
-@property (nonatomic, strong) LWFTileMap *tileMap;
-
-- (NSArray *)tilesInRangeForTile:(LWFTile *)tile;
+- (NSMutableArray *)tilesInRangeForTile:(LWFTile *)tile withTileMap:(LWFTileMap *)tileMap;
 
 @end

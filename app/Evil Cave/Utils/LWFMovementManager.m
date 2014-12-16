@@ -27,7 +27,6 @@
     BOOL moveableIsPlayer = [moveable isKindOfClass:[LWFPlayer class]];
     
     if (moveableIsPlayer) {
-//        LWFPlayer
         LWFPlayer *player = (LWFPlayer *)moveable;
         NSUInteger distanceFromTiles = [tile distanceToTile:player.currentTile];
         
@@ -36,9 +35,6 @@
             [player processTurn];
             return;
         }
-        
-        
-
     }
     
     if (tile.isPassable) {

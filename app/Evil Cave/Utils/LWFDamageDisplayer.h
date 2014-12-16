@@ -15,7 +15,6 @@
 
 + (id)sharedLWFDamageDisplayer;
 
-@property NSString *name;
 @property LWFMap *map;
 
 - (void)showString:(NSString *)string atTile:(LWFTile *)tile andDelegate:(LWFAttackManager *)delegate;

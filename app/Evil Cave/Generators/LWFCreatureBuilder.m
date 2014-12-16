@@ -11,9 +11,12 @@
 
 #import "LWFRat.h"
 #import "LWFGoblin.h"
+#import "LWFRadioactiveRat.h"
+
 #import "LWFMapDimension.h"
 #import "LWFTurnList.h"
 #import "LWFMap.h"
+#import "LWFAttacksBuilder.h"
 
 #import "LWFMelee.h"
 
@@ -23,9 +26,8 @@
     LWFMapDimension *_mapDimension;
     LWFTurnList *_turnList;
     LWFAttackManager *_attackManager;
+    LWFAttacksBuilder *_attacksBuilder;
     
-    
-    LWFMelee *_meleeAttack;
 
 }
 @end
@@ -40,9 +42,8 @@
         _mapDimension = mapDimension;
         _turnList = turnList;
         _attackManager = attackManager;
+        _attacksBuilder = [[LWFAttacksBuilder alloc]init];
 
-        
-        _meleeAttack = [[LWFMelee alloc]init];
     }
     return self;
 }
@@ -54,6 +55,8 @@
         creature = [[LWFRat alloc]init];
     } else if (creatureType == LWFCreatureTypeGoblin) {
         creature = [[LWFGoblin alloc]init];
+    } else if (creatureType == LWFCreatureTypeRadioactiveRat) {
+        creature = [[LWFRadioactiveRat alloc]init];
     }
     
     if (creature != nil) {
@@ -64,7 +67,7 @@
         creature.turnList = _turnList;
         creature.size = _mapDimension.tileSize;
         creature.player = _map.player;
-        [creature.attacks addObject:_meleeAttack];
+        creature.attacks = [_attacksBuilder attacksForCreatureType:creatureType];
     }
     
     return creature;

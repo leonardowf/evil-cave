@@ -9,11 +9,37 @@
 #import "LWFMelee.h"
 #import "LWFTile.h"
 #import "LWFTileMap.h"
+#import "LWFPointObject.h"
 
 @implementation LWFMelee
 
-- (NSArray *)tilesInRangeForTile:(LWFTile *)tile {
-    return [self.tileMap neighborsForTile:tile];
+- (NSMutableArray *)range {
+    // (-1, 1)( 0, 1)( 1, 1)
+    // (-1, 0)( 0, 0)( 1, 0)
+    // (-1,-1)( 0,-1)( 1,-1)
+    
+    NSMutableArray *range = [NSMutableArray array];
+    
+    LWFPointObject *pointObject;
+    
+    pointObject = [LWFPointObject pointWithX:-1 andY:1];
+    [range addObject:pointObject];
+    pointObject = [LWFPointObject pointWithX:0 andY:1];
+    [range addObject:pointObject];
+    pointObject = [LWFPointObject pointWithX:1 andY:1];
+    [range addObject:pointObject];
+    pointObject = [LWFPointObject pointWithX:-1 andY:0];
+    [range addObject:pointObject];
+    pointObject = [LWFPointObject pointWithX:1 andY:0];
+    [range addObject:pointObject];
+    pointObject = [LWFPointObject pointWithX:-1 andY:-1];
+    [range addObject:pointObject];
+    pointObject = [LWFPointObject pointWithX:0 andY:-1];
+    [range addObject:pointObject];
+    pointObject = [LWFPointObject pointWithX:1 andY:-1];
+    [range addObject:pointObject];
+    
+    return range;
 }
 
 @end

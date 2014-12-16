@@ -48,11 +48,8 @@
         [_map addPlayer:_player];
         [_map loadGame];
         
-        
-        LWFDamageDisplayer *ddlayer = [LWFDamageDisplayer sharedLWFDamageDisplayer];
-        ddlayer.name = @"LEonardo";
-        ddlayer.map = _map;
-        
+        LWFDamageDisplayer *damageDisplayer = [LWFDamageDisplayer sharedLWFDamageDisplayer];
+        damageDisplayer.map = _map;
         
         [self addChild:_map];
         

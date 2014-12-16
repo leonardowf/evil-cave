@@ -133,6 +133,13 @@
     return result;
 }
 
+- (BOOL)isInBoundsTheTileWithX:(NSUInteger)x andY:(NSUInteger)y {
+    BOOL horizontalOk = x < _mapDimension.numberTilesHorizontal;
+    BOOL verticalOk = y < _mapDimension.numberTilesVertical;
+    
+    return horizontalOk && verticalOk;
+}
+
 
 
 @end

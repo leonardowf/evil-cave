@@ -13,6 +13,10 @@
 
 @implementation LWFPlayer
 
+- (void)failedToMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
+    [self.tilePath removeAllObjects];
+}
+
 - (void)didMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
     [self.tilePath removeObject:tile];
     [self.turnList creatureFinishedTurn:self];
@@ -30,8 +34,6 @@
 - (void)moveCameraToTile:(LWFTile *)tile {
     [self.map moveCameraToTile:tile];
 }
-
-
 
 - (void)processTurn {
     if (self.tilePath.count > 0) {
