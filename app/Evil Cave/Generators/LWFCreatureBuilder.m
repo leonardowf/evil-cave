@@ -19,6 +19,7 @@
 #import "LWFAttacksBuilder.h"
 
 #import "LWFMelee.h"
+#import "LWFGameController.h"
 
 @interface LWFCreatureBuilder () {
     LWFMovementManager *_movementManager;
@@ -37,12 +38,16 @@
 {
     self = [super init];
     if (self) {
+        LWFGameController *gameController = [LWFGameController sharedGameController];
+        
         _movementManager = movementManager;
         _map = map;
         _mapDimension = mapDimension;
         _turnList = turnList;
         _attackManager = attackManager;
         _attacksBuilder = [[LWFAttacksBuilder alloc]init];
+        
+        gameController.tileMap = map.tileMap;
 
     }
     return self;

@@ -8,8 +8,23 @@
 
 #import "LWFAttacksBuilder.h"
 #import "LWFMelee.h"
+#import "LWFGameController.h"
+
+@interface LWFAttacksBuilder () {
+    LWFGameController *_gameController;
+}
+@end
 
 @implementation LWFAttacksBuilder
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _gameController = [LWFGameController sharedGameController];
+    }
+    return self;
+}
 
 - (NSMutableArray *)attacksForCreatureType:(LWFCreatureType)creatureType {
     NSMutableArray *attacks = nil;

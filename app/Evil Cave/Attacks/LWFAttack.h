@@ -9,9 +9,14 @@
 #import <Foundation/Foundation.h>
 @class LWFTile;
 @class LWFTileMap;
+@class LWFGameController;
+@class LWFCreature;
 
 @interface LWFAttack : NSObject
 
-- (NSMutableArray *)tilesInRangeForTile:(LWFTile *)tile withTileMap:(LWFTileMap *)tileMap;
+- (NSMutableArray *)tilesInRangeForTile:(LWFTile *)tile;
+- (NSArray *)creaturesInRangeOfTile:(LWFTile *)tile;
+- (BOOL)isCreature:(LWFCreature *)creature inRangeOfTile:(LWFTile *)tile;
+- (NSMutableArray *)range;
 
 @end

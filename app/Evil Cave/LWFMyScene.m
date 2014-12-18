@@ -39,7 +39,7 @@
         _map = [[LWFMap alloc]initWithMapDimension:mapDimension];
         [_map addTiles];
         
-        SKTexture *texture = [SKTexture textureWithImageNamed:@"warrior"];
+        SKTexture *texture = [SKTexture textureWithImageNamed:@"warrior_right"];
         texture.filteringMode = SKTextureFilteringNearest;
         _player = [LWFPlayer spriteNodeWithTexture:texture];
         

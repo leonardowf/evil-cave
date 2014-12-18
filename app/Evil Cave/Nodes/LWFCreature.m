@@ -104,7 +104,10 @@
 
 - (void)processTurn {
     LWFAttack *melee = [self.attacks firstObject];
-    NSMutableArray *range = [melee tilesInRangeForTile:self.currentTile withTileMap:self.map.tileMap];
+    
+    if ([melee isCreature:_player inRangeOfTile:self.currentTile]) {
+        NSLog(@"player tá no range bro");
+    }
     
     if ([self shouldFollowPlayer]) {
         if ([self isAdjacentToPlayer]) {
