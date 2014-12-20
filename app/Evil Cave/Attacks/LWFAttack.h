@@ -14,6 +14,9 @@
 
 @interface LWFAttack : NSObject
 
+@property (nonatomic) NSUInteger minimumDamage;
+@property (nonatomic) NSUInteger maximumDamage;
+
 - (NSMutableArray *)tilesInRangeForTile:(LWFTile *)tile;
 - (NSArray *)creaturesInRangeOfTile:(LWFTile *)tile;
 - (BOOL)isCreature:(LWFCreature *)creature inRangeOfTile:(LWFTile *)tile;

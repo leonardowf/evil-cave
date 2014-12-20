@@ -25,7 +25,6 @@
 		32D50BCD1A3D227C002D3098 /* LWFRadioactiveRat.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BCC1A3D227C002D3098 /* LWFRadioactiveRat.m */; };
 		32D50BD01A3D22D6002D3098 /* radioactive_rat.png in Resources */ = {isa = PBXBuildFile; fileRef = 32D50BCF1A3D22D6002D3098 /* radioactive_rat.png */; };
 		32D50BD31A3DFDF3002D3098 /* LWFPointObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */; };
-		32D7B6361A31D1FD00A0A570 /* warrior.png in Resources */ = {isa = PBXBuildFile; fileRef = 32D7B6351A31D1FD00A0A570 /* warrior.png */; };
 		32FFE83E1A2C0BDD003D02A4 /* LWFAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFE83D1A2C0BDD003D02A4 /* LWFAttack.m */; };
 		32FFE8411A2C0BF0003D02A4 /* LWFMelee.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFE8401A2C0BF0003D02A4 /* LWFMelee.m */; };
 		A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = A70387581A17BC620053A9E6 /* LWFMapDimension.m */; };
@@ -76,7 +75,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		320E45971A3284AD00B91858 /* rock_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rock_tile.png; sourceTree = "<group>"; };
+		320E45971A3284AD00B91858 /* rock_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rock_tile.png; path = ../rock_tile.png; sourceTree = "<group>"; };
 		321EC9A51A26A5C400F06B77 /* LWFTurnList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFTurnList.h; sourceTree = "<group>"; };
 		321EC9A61A26A5C400F06B77 /* LWFTurnList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFTurnList.m; sourceTree = "<group>"; };
 		322DB6A81A229A0C0085AC68 /* LWFCreatureBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFCreatureBuilder.h; sourceTree = "<group>"; };
@@ -107,7 +106,6 @@
 		32D50BCF1A3D22D6002D3098 /* radioactive_rat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radioactive_rat.png; sourceTree = "<group>"; };
 		32D50BD11A3DFDF3002D3098 /* LWFPointObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPointObject.h; sourceTree = "<group>"; };
 		32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPointObject.m; sourceTree = "<group>"; };
-		32D7B6351A31D1FD00A0A570 /* warrior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warrior.png; sourceTree = "<group>"; };
 		32FFE83A1A2BF6E2003D02A4 /* LWFConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWFConstants.h; sourceTree = "<group>"; };
 		32FFE83C1A2C0BDD003D02A4 /* LWFAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttack.h; sourceTree = "<group>"; };
 		32FFE83D1A2C0BDD003D02A4 /* LWFAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAttack.m; sourceTree = "<group>"; };
@@ -234,6 +232,7 @@
 		32D50BC81A3D1FE9002D3098 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				320E45971A3284AD00B91858 /* rock_tile.png */,
 				32BEBFB51A3FD4F7000C77AA /* warrior_right.png */,
 				32A9827B1A3FCC1A006449E8 /* rat1.png */,
 				32A9827C1A3FCC1A006449E8 /* rat2.png */,
@@ -356,8 +355,6 @@
 			children = (
 				32D50BC81A3D1FE9002D3098 /* Assets */,
 				32C511F01A37A5BD00F0B955 /* Geometry */,
-				32D7B6351A31D1FD00A0A570 /* warrior.png */,
-				320E45971A3284AD00B91858 /* rock_tile.png */,
 				32FFE83B1A2C0BCE003D02A4 /* Attacks */,
 				A78443B11A1F010C0029995D /* dngn_shoals_shallow_water_disturbance3.png */,
 				A7D83B8B1A1D73640054C022 /* Algorithms */,
@@ -502,7 +499,6 @@
 				A7F5BB941A16EFBC005BAB63 /* InfoPlist.strings in Resources */,
 				A7F5BBA71A16EFBE005BAB63 /* Images.xcassets in Resources */,
 				A7D8BEF41A1ADA6E005B0599 /* goblin.png in Resources */,
-				32D7B6361A31D1FD00A0A570 /* warrior.png in Resources */,
 				32BEBFB61A3FD4F7000C77AA /* warrior_right.png in Resources */,
 				320E45981A3284AD00B91858 /* rock_tile.png in Resources */,
 				32A9827D1A3FCC1A006449E8 /* rat1.png in Resources */,

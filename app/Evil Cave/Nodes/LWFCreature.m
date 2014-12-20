@@ -32,6 +32,7 @@
     self = [super init];
     if (self) {
         self.attacks = [NSMutableArray array];
+        self.currentFacingDirection = @"right";
     }
     return self;
 }
@@ -80,11 +81,26 @@
 }
 
 - (void)build {
-    SKTexture *texture = [SKTexture textureWithImageNamed:self.spriteImageName];
-    texture.filteringMode = SKTextureFilteringNearest;
+    SKTexture *texture = [self getTexture];
     [self setTexture:texture];
     [self setSize:CGSizeMake(32, 32)];
     
+}
+
+- (SKTexture *)getTexture {
+    NSString *textureWithDirection = [NSString stringWithFormat:@"%@_%@", self.spriteImageName, self.currentFacingDirection];
+    
+    SKTexture *texture = nil;
+    
+    texture = [SKTexture textureWithImageNamed:textureWithDirection];
+    
+    if (texture == nil) {
+        texture = [SKTexture textureWithImageNamed:self.spriteImageName];
+    }
+    
+    texture.filteringMode = SKTextureFilteringNearest;
+    
+    return texture;
 }
 
 - (void)startAnimating {

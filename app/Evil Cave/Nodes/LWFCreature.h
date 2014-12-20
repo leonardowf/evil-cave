@@ -32,9 +32,11 @@
 @property (nonatomic, strong) NSMutableArray *attacks;
 
 @property (nonatomic, copy) NSString *spriteImageName;
+@property (nonatomic, copy) NSString *currentFacingDirection;
 
 @property (nonatomic) NSUInteger currentHP;
 @property (nonatomic) NSUInteger currentActions;
+
 
 - (void)build;
 - (void)processTurn;
