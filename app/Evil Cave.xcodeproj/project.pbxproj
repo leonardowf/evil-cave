@@ -13,7 +13,7 @@
 		323B6D071A2FEC7C00627147 /* LWFDamageDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 323B6D061A2FEC7C00627147 /* LWFDamageDisplayer.m */; };
 		32BEBFB91A42476D000C77AA /* LWFGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BEBFB81A42476D000C77AA /* LWFGameController.m */; };
 		32BEBFEF1A470AAB000C77AA /* rock_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEBFEE1A470AAB000C77AA /* rock_tile.png */; };
-		32BEBFF91A470B68000C77AA /* radioactive_rat.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEBFF21A470B68000C77AA /* radioactive_rat.png */; };
+		32BEBFF91A470B68000C77AA /* radioactive_rat_standing_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEBFF21A470B68000C77AA /* radioactive_rat_standing_left.png */; };
 		32BEBFFD1A470B68000C77AA /* warrior_standing_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEBFF81A470B68000C77AA /* warrior_standing_right.png */; };
 		32BEC0051A470F5F000C77AA /* warrior_walking_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32BEC0041A470F5F000C77AA /* warrior_walking_right.atlas */; };
 		32BEC0071A470FFD000C77AA /* warrior_walking_left.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32BEC0061A470FFD000C77AA /* warrior_walking_left.atlas */; };
@@ -21,6 +21,7 @@
 		32BEC00E1A4714DC000C77AA /* rat_standing_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEC00A1A4714DC000C77AA /* rat_standing_left.png */; };
 		32BEC00F1A4714DC000C77AA /* rat_standing_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32BEC00B1A4714DC000C77AA /* rat_standing_right.atlas */; };
 		32BEC0101A4714DC000C77AA /* rat_standing_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEC00C1A4714DC000C77AA /* rat_standing_right.png */; };
+		32BEC0121A472DA8000C77AA /* radioactive_rat_standing_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEC0111A472DA8000C77AA /* radioactive_rat_standing_right.png */; };
 		32C511F31A37A5DB00F0B955 /* LWFGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C511F21A37A5DB00F0B955 /* LWFGeometry.m */; };
 		32CD39D61A22CBCC000ADD95 /* LWFGoblin.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CD39D51A22CBCC000ADD95 /* LWFGoblin.m */; };
 		32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */; };
@@ -86,7 +87,7 @@
 		32BEBFB71A42476D000C77AA /* LWFGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LWFGameController.h; path = "Evil Cave/LWFGameController.h"; sourceTree = "<group>"; };
 		32BEBFB81A42476D000C77AA /* LWFGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LWFGameController.m; path = "Evil Cave/LWFGameController.m"; sourceTree = "<group>"; };
 		32BEBFEE1A470AAB000C77AA /* rock_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rock_tile.png; sourceTree = "<group>"; };
-		32BEBFF21A470B68000C77AA /* radioactive_rat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radioactive_rat.png; sourceTree = "<group>"; };
+		32BEBFF21A470B68000C77AA /* radioactive_rat_standing_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radioactive_rat_standing_left.png; sourceTree = "<group>"; };
 		32BEBFF81A470B68000C77AA /* warrior_standing_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warrior_standing_right.png; sourceTree = "<group>"; };
 		32BEC0041A470F5F000C77AA /* warrior_walking_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_walking_right.atlas; sourceTree = "<group>"; };
 		32BEC0061A470FFD000C77AA /* warrior_walking_left.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_walking_left.atlas; sourceTree = "<group>"; };
@@ -94,6 +95,7 @@
 		32BEC00A1A4714DC000C77AA /* rat_standing_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rat_standing_left.png; sourceTree = "<group>"; };
 		32BEC00B1A4714DC000C77AA /* rat_standing_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = rat_standing_right.atlas; sourceTree = "<group>"; };
 		32BEC00C1A4714DC000C77AA /* rat_standing_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rat_standing_right.png; sourceTree = "<group>"; };
+		32BEC0111A472DA8000C77AA /* radioactive_rat_standing_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radioactive_rat_standing_right.png; sourceTree = "<group>"; };
 		32C511F11A37A5DB00F0B955 /* LWFGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFGeometry.h; sourceTree = "<group>"; };
 		32C511F21A37A5DB00F0B955 /* LWFGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFGeometry.m; sourceTree = "<group>"; };
 		32CD39D41A22CBCC000ADD95 /* LWFGoblin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFGoblin.h; sourceTree = "<group>"; };
@@ -241,7 +243,8 @@
 		32BEBFF11A470B68000C77AA /* Radioactive Rat */ = {
 			isa = PBXGroup;
 			children = (
-				32BEBFF21A470B68000C77AA /* radioactive_rat.png */,
+				32BEC0111A472DA8000C77AA /* radioactive_rat_standing_right.png */,
+				32BEBFF21A470B68000C77AA /* radioactive_rat_standing_left.png */,
 			);
 			path = "Radioactive Rat";
 			sourceTree = "<group>";
@@ -535,9 +538,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				32BEBFFD1A470B68000C77AA /* warrior_standing_right.png in Resources */,
-				32BEBFF91A470B68000C77AA /* radioactive_rat.png in Resources */,
+				32BEBFF91A470B68000C77AA /* radioactive_rat_standing_left.png in Resources */,
 				32BEC00F1A4714DC000C77AA /* rat_standing_right.atlas in Resources */,
 				A7F5BB941A16EFBC005BAB63 /* InfoPlist.strings in Resources */,
+				32BEC0121A472DA8000C77AA /* radioactive_rat_standing_right.png in Resources */,
 				32BEC0051A470F5F000C77AA /* warrior_walking_right.atlas in Resources */,
 				A7F5BBA71A16EFBE005BAB63 /* Images.xcassets in Resources */,
 				32BEC00D1A4714DC000C77AA /* rat_standing_left.atlas in Resources */,

@@ -44,7 +44,6 @@
 - (BOOL)isSurrounded;
 - (void)buildPathToTile:(LWFTile *)tile;
 - (void)walkToExistingPath;
-- (NSArray *)getWalkFrames;
-- (void)startAnimating;
+- (void)startStandingAnimation;
 
 @end

@@ -20,7 +20,6 @@
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
     NSUInteger _failedMovements;
-    NSArray *_walkFramesArray;
 
 }
 @end
@@ -42,7 +41,13 @@
 }
 
 - (void)willMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y; {
+    if (x < self.currentTile.x) { // tá movendo pra esquerda
+        self.currentFacingDirection = @"left";
+    } else if (x > self.currentTile.x) { // tá movendo pra direita
+        self.currentFacingDirection = @"right";
+    }
     
+    [self startStandingAnimation];
 }
 
 - (void)failedToMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
@@ -103,19 +108,34 @@
     return texture;
 }
 
-- (void)startAnimating {
-    _walkFramesArray = [self getWalkFrames];
+- (void)startStandingAnimation {
+    NSArray *standingFramesAnimation = [self getStandingFramesAnimation];
     
-    if (_walkFramesArray != nil && _walkFramesArray.count > 0) {
-        SKAction *animate = [SKAction animateWithTextures:_walkFramesArray timePerFrame:0.3f];
+    [self removeActionForKey:@"standing_action"];
+    
+    if (standingFramesAnimation != nil && standingFramesAnimation.count > 0) {
+        SKAction *animate = [SKAction animateWithTextures:standingFramesAnimation timePerFrame:0.3f];
         SKAction *action = [SKAction repeatActionForever:animate];
         
-        [self runAction:action];
+        [self runAction:action withKey:@"standing_action"];
     }
 }
 
-- (NSArray *)getWalkFrames {
-    return nil;
+- (NSArray *)getStandingFramesAnimation {
+    NSMutableArray *standingAtlasArray = [NSMutableArray array];
+    
+    NSString *standingAtlasName = [NSString stringWithFormat:@"%@_standing_%@", self.spriteImageName, self.currentFacingDirection];
+    
+    SKTextureAtlas *standingAtlas = [SKTextureAtlas atlasNamed:standingAtlasName];
+    
+    int numImages = standingAtlas.textureNames.count;
+    for (int i=1; i <= numImages; i++) {
+        NSString *textureName = [NSString stringWithFormat:@"%@_%d", standingAtlasName, i];
+        SKTexture *texture = [standingAtlas textureNamed:textureName];
+        texture.filteringMode = SKTextureFilteringNearest;
+        [standingAtlasArray addObject:texture];
+    }
+    return standingAtlasArray;
 }
 
 - (void)processTurn {

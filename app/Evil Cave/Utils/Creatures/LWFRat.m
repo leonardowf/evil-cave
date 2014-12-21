@@ -23,18 +23,4 @@
     [super build];
     
 }
-
-- (NSArray *)getWalkFrames {
-    NSMutableArray *walkFrames = [NSMutableArray array];
-    
-    for (int i = 1; i <= 2; i++) {
-        NSString *textureName = [NSString stringWithFormat:@"rat%d", i];
-        SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
-        texture.filteringMode = SKTextureFilteringNearest;
-        [walkFrames addObject:texture];
-    }
-    
-    return walkFrames;
-}
-
 @end
