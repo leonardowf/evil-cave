@@ -47,7 +47,10 @@
         self.currentFacingDirection = @"right";
     }
     
-    [self startStandingAnimation];
+    [self startWalkingAnimation:^{
+        [self startStandingAnimation];
+    }];
+
 }
 
 - (void)failedToMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
@@ -121,6 +124,37 @@
     }
 }
 
+- (void)startWalkingAnimation:(void(^)(void))someBlock {
+    NSArray *walkingFramesAnimation = [self getWalkingFramesAnimation];
+    
+    [self removeActionForKey:@"walking_action"];
+    
+    if (walkingFramesAnimation != nil && walkingFramesAnimation.count > 0) {
+        SKAction *animate = [SKAction animateWithTextures:walkingFramesAnimation timePerFrame:0.05f];
+        SKAction *action = [SKAction repeatAction:animate count:2];
+        
+        [self runAction:action completion:someBlock];
+    } else {
+        [someBlock invoke];
+    }
+}
+
+- (NSArray *)getWalkingFramesAnimation {
+    NSMutableArray *walkingAtlasArray = [NSMutableArray array];
+    NSString *walkingAtlasName = [NSString stringWithFormat:@"%@_walking_%@", self.spriteImageName, self.currentFacingDirection];
+    SKTextureAtlas *walkingAtlas = [SKTextureAtlas atlasNamed:walkingAtlasName];
+    
+    NSUInteger numImages = walkingAtlas.textureNames.count;
+    for (int i=1; i <= numImages; i++) {
+        NSString *textureName = [NSString stringWithFormat:@"%@_%d", walkingAtlasName, i];
+        SKTexture *texture = [walkingAtlas textureNamed:textureName];
+        texture.filteringMode = SKTextureFilteringNearest;
+        [walkingAtlasArray addObject:texture];
+    }
+    
+    return walkingAtlasArray;
+}
+
 - (NSArray *)getStandingFramesAnimation {
     NSMutableArray *standingAtlasArray = [NSMutableArray array];
     
@@ -128,7 +162,7 @@
     
     SKTextureAtlas *standingAtlas = [SKTextureAtlas atlasNamed:standingAtlasName];
     
-    int numImages = standingAtlas.textureNames.count;
+    NSUInteger numImages = standingAtlas.textureNames.count;
     for (int i=1; i <= numImages; i++) {
         NSString *textureName = [NSString stringWithFormat:@"%@_%d", standingAtlasName, i];
         SKTexture *texture = [standingAtlas textureNamed:textureName];
