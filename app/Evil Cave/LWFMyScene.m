@@ -17,7 +17,6 @@
 #import "LWFDamageDisplayer.h"
 
 @interface LWFMyScene () {
-    LWFPlayer *_player;
     LWFMap *_map;
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
     UIPanGestureRecognizer *_panGestureRecognizer;
@@ -38,22 +37,13 @@
         
         _map = [[LWFMap alloc]initWithMapDimension:mapDimension];
         [_map addTiles];
-        
-        SKTexture *texture = [SKTexture textureWithImageNamed:@"warrior_right"];
-        texture.filteringMode = SKTextureFilteringNearest;
-        _player = [LWFPlayer spriteNodeWithTexture:texture];
-        
-        _player.size = mapDimension.tileSize;
-        
-        [_map addPlayer:_player];
         [_map loadGame];
         
         LWFDamageDisplayer *damageDisplayer = [LWFDamageDisplayer sharedLWFDamageDisplayer];
         damageDisplayer.map = _map;
         
         [self addChild:_map];
-        
-        [_map moveCameraToTile:_player.currentTile];
+        [_map moveCameraToTile:_map.player.currentTile];
         
     }
     return self;

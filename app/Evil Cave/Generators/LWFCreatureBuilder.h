@@ -16,7 +16,7 @@
 @class LWFTurnList;
 
 typedef enum : NSUInteger {
-    LWFCreatureTypePlayer,
+    LWFCreatureTypeWarrior,
     LWFCreatureTypeRat,
     LWFCreatureTypeSpider,
     LWFCreatureTypeGoblin,

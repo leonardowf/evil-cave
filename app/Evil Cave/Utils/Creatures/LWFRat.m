@@ -14,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        self.spriteImageName = @"rat1";
+        self.spriteImageName = @"rat";
     }
     return self;
 }

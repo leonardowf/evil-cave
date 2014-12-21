@@ -93,8 +93,6 @@
     _player.movementManager = _movementManager;
     
     [self addChild:self.player];
-    
-
 }
 
 - (void)pathForPlayerToExit {
@@ -144,8 +142,14 @@
 }
 
 - (void)loadGame {
+    [self createPlayer];
     [self createCreatures];
     [self chooseCreaturePositions];
+}
+
+- (void)createPlayer {
+    LWFPlayer *player = (LWFPlayer *)[_creatureBuilder buildWithType:LWFCreatureTypeWarrior];
+    [self addPlayer:player];
 }
 
 - (void)createCreatures {
@@ -164,17 +168,18 @@
     LWFCreature *creature5 = [_creatureBuilder buildWithType:LWFCreatureTypeRadioactiveRat];
     [_turnList.creatures addObject:creature5];
     
-    LWFCreature *creature6 = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
+    LWFCreature *creature6 = [_creatureBuilder buildWithType:LWFCreatureTypeRat];
     [_turnList.creatures addObject:creature6];
     
-    LWFCreature *creature7 = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
+    LWFCreature *creature7 = [_creatureBuilder buildWithType:LWFCreatureTypeRat];
     [_turnList.creatures addObject:creature7];
     
-    LWFCreature *creature8 = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
+    LWFCreature *creature8 = [_creatureBuilder buildWithType:LWFCreatureTypeRat];
     [_turnList.creatures addObject:creature8];
     
-    LWFCreature *creature9 = [_creatureBuilder buildWithType:LWFCreatureTypeGoblin];
+    LWFCreature *creature9 = [_creatureBuilder buildWithType:LWFCreatureTypeRat];
     [_turnList.creatures addObject:creature9];
+    
 }
 
 - (void)chooseCreaturePositions {

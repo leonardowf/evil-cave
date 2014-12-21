@@ -9,6 +9,7 @@
 #import "LWFCreatureBuilder.h"
 #import "LWFCreature.h"
 
+#import "LWFPlayer.h"
 #import "LWFRat.h"
 #import "LWFGoblin.h"
 #import "LWFRadioactiveRat.h"
@@ -62,6 +63,9 @@
         creature = [[LWFGoblin alloc]init];
     } else if (creatureType == LWFCreatureTypeRadioactiveRat) {
         creature = [[LWFRadioactiveRat alloc]init];
+    } else if (creatureType == LWFCreatureTypeWarrior) {
+        creature = [[LWFPlayer alloc]init];
+        creature.spriteImageName = @"warrior";
     }
     
     if (creature != nil) {

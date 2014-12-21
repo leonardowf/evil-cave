@@ -88,7 +88,7 @@
 }
 
 - (SKTexture *)getTexture {
-    NSString *textureWithDirection = [NSString stringWithFormat:@"%@_%@", self.spriteImageName, self.currentFacingDirection];
+    NSString *textureWithDirection = [NSString stringWithFormat:@"%@_standing_%@", self.spriteImageName, self.currentFacingDirection];
     
     SKTexture *texture = nil;
     
