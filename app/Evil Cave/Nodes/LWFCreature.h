@@ -14,6 +14,7 @@
 @class LWFMap;
 @class LWFTurnList;
 @class LWFPlayer;
+@class LWFMelee;
 
 @class LWFMovementManager;
 @class LWFAttackManager;
@@ -45,5 +46,7 @@
 - (void)buildPathToTile:(LWFTile *)tile;
 - (void)walkToExistingPath;
 - (void)startStandingAnimation;
+- (BOOL)isInTheMeleeRangeTheCreature:(LWFCreature *)creature;
+- (LWFMelee *)getMelee;
 
 @end

@@ -32,7 +32,13 @@
         
         if (distanceFromTiles > 1) {
             [player buildPathToTile:tile];
-            [player processTurn];
+            
+            if (player.tilePath == nil || player.tilePath.count == 0) {
+                [player movementRequestIsInvalid];
+            } else {
+                [player processTurn];
+            }
+            
             return;
         }
     }

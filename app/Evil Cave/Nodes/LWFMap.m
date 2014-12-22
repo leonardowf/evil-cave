@@ -23,6 +23,8 @@
     NSArray *_path;
     LWFTurnList *_turnList;
     LWFCreatureBuilder *_creatureBuilder;
+    
+    BOOL _blockUserInteraction;
 
 }
 @end
@@ -109,7 +111,6 @@
         [self paintPath];
     }
     
-
 }
 
 - (void)resetTiles {
@@ -126,19 +127,40 @@
 
 - (void)newTurnCycleStarted {
 //    [self pathForPlayerToExit];
+    _blockUserInteraction = NO;
 }
 
 - (void)userTouchedPoint:(CGPoint)point {
+    if (_blockUserInteraction) { return; }
+    
     LWFTile *tile = [self tileForPoint:point];
+    
+    LWFCreature *creatureOnTile = tile.creatureOnTile;
+    
+    if (creatureOnTile != nil && creatureOnTile != self.player) {
+        
+        if ([self.player isInTheMeleeRangeTheCreature:creatureOnTile]) {
+            NSLog(@"A criatura está no range");
+            [self.player requestAttackToTile:tile withAttack:[self.player getMelee]];
+        } else {
+            NSLog(@"A criatura não está no range");
+        }
+        
+    }
     
     if (tile != nil) {
         if (tile != self.player.currentTile && [tile isPassable]) {
+            _blockUserInteraction = YES;
             CGPoint tileCoordinate = [self tileCoordinateForTouchPoint:point];
             [self.movementManager moveable:self.player requestMoveToTileAtX:tileCoordinate.x andY:tileCoordinate.y];
         } else if (tile == self.player.currentTile) {
             [self.player finishTurn];
         }
     }
+}
+
+- (void)movementRequestIsInvalid {
+    _blockUserInteraction = NO;
 }
 
 - (void)loadGame {

@@ -40,9 +40,7 @@
     return creatureAfter;
 }
 
-- (void)processTurnForCreature:(LWFCreature *)creature {
-    Class playerClass = [LWFPlayer class];
-    
+- (void)processTurnForCreature:(LWFCreature *)creature {    
     [creature processTurn];
 }
 

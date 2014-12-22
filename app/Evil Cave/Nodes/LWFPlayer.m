@@ -41,4 +41,8 @@
     }
 }
 
+- (void)movementRequestIsInvalid {
+    [self.map movementRequestIsInvalid];
+}
+
 @end

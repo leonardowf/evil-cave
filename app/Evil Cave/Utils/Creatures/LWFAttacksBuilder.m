@@ -35,12 +35,23 @@
         return [self goblinAttacks];
     } else if (creatureType == LWFCreatureTypeRadioactiveRat) {
         return [self radioactiveRatAttacks];
+    } else if (creatureType == LWFCreatureTypeWarrior) {
+        return [self warriorAttacks];
     }
     
     return attacks;
 }
 
 - (NSMutableArray *)ratAttacks {
+    LWFMelee *melee = [[LWFMelee alloc]init];
+    
+    NSMutableArray *attacks = [NSMutableArray array];
+    [attacks addObject:melee];
+    
+    return attacks;
+}
+
+- (NSMutableArray *)warriorAttacks {
     LWFMelee *melee = [[LWFMelee alloc]init];
     
     NSMutableArray *attacks = [NSMutableArray array];

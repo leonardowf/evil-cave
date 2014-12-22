@@ -33,4 +33,6 @@
 - (void)newTurnCycleStarted;
 - (void)loadGame;
 
+- (void)movementRequestIsInvalid;
+
 @end

@@ -14,6 +14,6 @@
 
 @interface LWFPlayer : LWFCreature
 
-
+- (void)movementRequestIsInvalid;
 
 @end

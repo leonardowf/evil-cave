@@ -16,6 +16,7 @@
 #import "LWFTileMap.h"
 #import "LWFAttackManager.h"
 #import "LWFAttack.h"
+#import "LWFMelee.h"
 
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
@@ -273,6 +274,25 @@
     }
     
     return YES;
+}
+
+- (LWFMelee *)getMelee {
+    for (LWFAttack *attack in self.attacks) {
+        if ([attack isKindOfClass:[LWFMelee class]]) {
+            return (LWFMelee *)attack;
+        }
+    }
+             
+    return nil;
+}
+
+/// A criatura passada como parâmetro está no meu range de melee?
+- (BOOL)isInTheMeleeRangeTheCreature:(LWFCreature *)creature {
+    LWFMelee *melee = [self getMelee];
+    
+    if (melee == nil) { return NO; }
+    
+    return [melee isCreature:creature inRangeOfTile:self.currentTile];
 }
 
 #pragma - mark attacks
