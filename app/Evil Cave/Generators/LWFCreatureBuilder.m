@@ -22,6 +22,8 @@
 #import "LWFMelee.h"
 #import "LWFGameController.h"
 
+#import "LWFStats.h"
+
 @interface LWFCreatureBuilder () {
     LWFMovementManager *_movementManager;
     LWFMap *_map;
@@ -29,6 +31,7 @@
     LWFTurnList *_turnList;
     LWFAttackManager *_attackManager;
     LWFAttacksBuilder *_attacksBuilder;
+    NSDictionary *_creatureStats;
     
 
 }
@@ -49,9 +52,22 @@
         _attacksBuilder = [[LWFAttacksBuilder alloc]init];
         
         gameController.tileMap = map.tileMap;
+        
+        _creatureStats = [self getStatsDictionary];
 
     }
     return self;
+}
+
+- (NSDictionary *)getStatsDictionary {
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"creature_stats" ofType:@"json"];
+    NSString *myJSON = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
+    NSError *error =  nil;
+    NSDictionary *jsonDataDict = [NSJSONSerialization JSONObjectWithData:[myJSON dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:&error];
+    
+    return jsonDataDict;
+    
+    
 }
 
 - (LWFCreature *)buildWithType:(LWFCreatureType)creatureType {
@@ -77,6 +93,9 @@
         creature.size = _mapDimension.tileSize;
         creature.player = _map.player;
         creature.attacks = [_attacksBuilder attacksForCreatureType:creatureType];
+        creature.stats = [self statsForCreatureType:creatureType];
+        creature.currentHP = creature.stats.maxHP;
+        creature.currentActions = creature.stats.actionPoints;
     }
     
     return creature;
@@ -86,6 +105,23 @@
     LWFCreature *creature = [self buildWithType:creatureType];
     creature.size = size;
     return creature;
+}
+
+- (LWFStats *)statsForCreatureType:(LWFCreatureType)creatureType {
+    NSDictionary *creatureStatsDictionary = nil;
+    if (creatureType == LWFCreatureTypeWarrior) {
+        creatureStatsDictionary = [_creatureStats objectForKey:@"warrior"];
+    } else if (creatureType == LWFCreatureTypeRat) {
+        creatureStatsDictionary = [_creatureStats objectForKey:@"rat"];
+    }
+
+    return [self statsForDictionary:creatureStatsDictionary];
+}
+
+- (LWFStats *)statsForDictionary:(NSDictionary *)dictionary {
+    LWFStats *stats = [[LWFStats alloc]initWithDictionary:dictionary];
+    
+    return stats;
 }
 
 @end

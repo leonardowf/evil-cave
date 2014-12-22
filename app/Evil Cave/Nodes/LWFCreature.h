@@ -15,6 +15,7 @@
 @class LWFTurnList;
 @class LWFPlayer;
 @class LWFMelee;
+@class LWFStats;
 
 @class LWFMovementManager;
 @class LWFAttackManager;
@@ -35,6 +36,7 @@
 @property (nonatomic, copy) NSString *spriteImageName;
 @property (nonatomic, copy) NSString *currentFacingDirection;
 
+@property (nonatomic, strong) LWFStats *stats;
 @property (nonatomic) NSUInteger currentHP;
 @property (nonatomic) NSUInteger currentActions;
 

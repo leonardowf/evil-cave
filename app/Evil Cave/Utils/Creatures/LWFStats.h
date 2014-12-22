@@ -10,8 +10,12 @@
 
 @interface LWFStats : NSObject
 
-@property NSUInteger maximumHP;
-@property NSUInteger maximumActions;
+@property NSUInteger maxHP;
+@property NSUInteger actionPoints;
 @property NSUInteger strength;
+@property NSUInteger chanceToHit;
+@property NSUInteger baseArmor;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end

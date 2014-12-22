@@ -22,6 +22,7 @@
 		32BEC00F1A4714DC000C77AA /* rat_standing_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32BEC00B1A4714DC000C77AA /* rat_standing_right.atlas */; };
 		32BEC0101A4714DC000C77AA /* rat_standing_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEC00C1A4714DC000C77AA /* rat_standing_right.png */; };
 		32BEC0121A472DA8000C77AA /* radioactive_rat_standing_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEC0111A472DA8000C77AA /* radioactive_rat_standing_right.png */; };
+		32BEC0141A48A7C4000C77AA /* creature_stats.json in Resources */ = {isa = PBXBuildFile; fileRef = 32BEC0131A48A7C3000C77AA /* creature_stats.json */; };
 		32C511F31A37A5DB00F0B955 /* LWFGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C511F21A37A5DB00F0B955 /* LWFGeometry.m */; };
 		32CD39D61A22CBCC000ADD95 /* LWFGoblin.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CD39D51A22CBCC000ADD95 /* LWFGoblin.m */; };
 		32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */; };
@@ -96,6 +97,7 @@
 		32BEC00B1A4714DC000C77AA /* rat_standing_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = rat_standing_right.atlas; sourceTree = "<group>"; };
 		32BEC00C1A4714DC000C77AA /* rat_standing_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rat_standing_right.png; sourceTree = "<group>"; };
 		32BEC0111A472DA8000C77AA /* radioactive_rat_standing_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radioactive_rat_standing_right.png; sourceTree = "<group>"; };
+		32BEC0131A48A7C3000C77AA /* creature_stats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = creature_stats.json; sourceTree = "<group>"; };
 		32C511F11A37A5DB00F0B955 /* LWFGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFGeometry.h; sourceTree = "<group>"; };
 		32C511F21A37A5DB00F0B955 /* LWFGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFGeometry.m; sourceTree = "<group>"; };
 		32CD39D41A22CBCC000ADD95 /* LWFGoblin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFGoblin.h; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 		32BEBFF01A470B68000C77AA /* Creatures */ = {
 			isa = PBXGroup;
 			children = (
+				32BEC0131A48A7C3000C77AA /* creature_stats.json */,
 				32BEC0081A4714DC000C77AA /* Rat */,
 				32BEBFF11A470B68000C77AA /* Radioactive Rat */,
 				32BEBFF71A470B68000C77AA /* Warrior */,
@@ -541,6 +544,7 @@
 				32BEBFF91A470B68000C77AA /* radioactive_rat_standing_left.png in Resources */,
 				32BEC00F1A4714DC000C77AA /* rat_standing_right.atlas in Resources */,
 				A7F5BB941A16EFBC005BAB63 /* InfoPlist.strings in Resources */,
+				32BEC0141A48A7C4000C77AA /* creature_stats.json in Resources */,
 				32BEC0121A472DA8000C77AA /* radioactive_rat_standing_right.png in Resources */,
 				32BEC0051A470F5F000C77AA /* warrior_walking_right.atlas in Resources */,
 				A7F5BBA71A16EFBE005BAB63 /* Images.xcassets in Resources */,

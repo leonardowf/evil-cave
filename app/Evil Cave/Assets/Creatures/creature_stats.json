@@ -1,0 +1,16 @@
+{
+  "warrior": {
+      "strength": 10,
+      "chance_to_hit": 95,
+      "base_armor": 0,
+      "max_hp" : 20,
+      "action_points": 1
+    },
+    "rat": {
+      "strength": 5,
+      "chance_to_hit": 60,
+      "base_armor": 0,
+      "max_hp" : 10,
+      "action_points": 1
+    }
+}
