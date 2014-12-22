@@ -12,5 +12,12 @@
       "base_armor": 0,
       "max_hp" : 10,
       "action_points": 1
+    },
+    "radioactive_rat": {
+        "strength": 7,
+        "chance_to_hit": 80,
+        "base_armor": 0,
+        "max_hp" : 15,
+        "action_points": 1
     }
 }

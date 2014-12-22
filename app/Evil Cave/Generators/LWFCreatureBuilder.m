@@ -60,14 +60,16 @@
 }
 
 - (NSDictionary *)getStatsDictionary {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"creature_stats" ofType:@"json"];
-    NSString *myJSON = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"creature_stats"
+                                                         ofType:@"json"];
+    NSString *myJSON = [[NSString alloc] initWithContentsOfFile:filePath
+                                                       encoding:NSUTF8StringEncoding error:NULL];
     NSError *error =  nil;
-    NSDictionary *jsonDataDict = [NSJSONSerialization JSONObjectWithData:[myJSON dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:&error];
+    NSData *jsonData = [myJSON dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *jsonDataDict = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                                 options:kNilOptions error:&error];
     
     return jsonDataDict;
-    
-    
 }
 
 - (LWFCreature *)buildWithType:(LWFCreatureType)creatureType {
@@ -93,6 +95,7 @@
         creature.size = _mapDimension.tileSize;
         creature.player = _map.player;
         creature.attacks = [_attacksBuilder attacksForCreatureType:creatureType];
+        
         creature.stats = [self statsForCreatureType:creatureType];
         creature.currentHP = creature.stats.maxHP;
         creature.currentActions = creature.stats.actionPoints;
@@ -113,6 +116,8 @@
         creatureStatsDictionary = [_creatureStats objectForKey:@"warrior"];
     } else if (creatureType == LWFCreatureTypeRat) {
         creatureStatsDictionary = [_creatureStats objectForKey:@"rat"];
+    } else if (creatureType == LWFCreatureTypeRadioactiveRat) {
+        creatureStatsDictionary = [_creatureStats objectForKey:@"radioactive_rat"];
     }
 
     return [self statsForDictionary:creatureStatsDictionary];

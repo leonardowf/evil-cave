@@ -26,9 +26,13 @@ typedef enum : NSUInteger {
                    because:(FailedAttackReason)reason;
 
 - (void)willAttackTile:(LWFTile *)tile
-            withAttack:(LWFAttack *)attack;
+            withAttack:(LWFAttack *)attack completion:(void(^)(void))someBlock;
 
 - (void)didAttackTile:(LWFTile *)tile
            withAttack:(LWFAttack *)attack;
+
+- (void)willBeAttackedByAttackable:(id<LWFAttackable>)attacker
+                        withAttack:(LWFAttack *)attack completion:(void(^)(void))someBlock;
+
 
 @end

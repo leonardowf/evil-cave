@@ -39,7 +39,6 @@ SINGLETON_FOR_CLASS(LWFDamageDisplayer)
     [label runAction:action completion:^{
         SKAction *action = [SKAction fadeAlphaTo:0 duration:0.2];
         [label runAction:action completion:^{
-//            [_map rem]
             [self completed];
         }];
         

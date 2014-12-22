@@ -316,14 +316,19 @@
 }
 
 - (void)willAttackTile:(LWFTile *)tile
-            withAttack:(LWFAttack *)attack {
-    
+            withAttack:(LWFAttack *)attack completion:(void(^)(void))someBlock {
+    [someBlock invoke];
 }
 
 - (void)didAttackTile:(LWFTile *)tile
            withAttack:(LWFAttack *)attack {
     [self finishTurn];
     
+}
+
+- (void)willBeAttackedByAttackable:(id<LWFAttackable>)attacker
+                        withAttack:(LWFAttack *)attack completion:(void(^)(void))someBlock {
+    [someBlock invoke];
 }
 
 @end
