@@ -16,6 +16,7 @@
 @class LWFPlayer;
 @class LWFMelee;
 @class LWFStats;
+@class LWFEquips;
 
 @class LWFMovementManager;
 @class LWFAttackManager;
@@ -37,9 +38,7 @@
 @property (nonatomic, copy) NSString *currentFacingDirection;
 
 @property (nonatomic, strong) LWFStats *stats;
-@property (nonatomic) NSUInteger currentHP;
-@property (nonatomic) NSUInteger currentActions;
-
+@property (nonatomic, strong) LWFEquips *equips;
 
 - (void)build;
 - (void)processTurn;

@@ -97,8 +97,6 @@
         creature.attacks = [_attacksBuilder attacksForCreatureType:creatureType];
         
         creature.stats = [self statsForCreatureType:creatureType];
-        creature.currentHP = creature.stats.maxHP;
-        creature.currentActions = creature.stats.actionPoints;
     }
     
     return creature;

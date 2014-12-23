@@ -17,6 +17,7 @@
 #import "LWFAttackManager.h"
 #import "LWFAttack.h"
 #import "LWFMelee.h"
+#import "LWFEquips.h"
 
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
@@ -329,6 +330,28 @@
 - (void)willBeAttackedByAttackable:(id<LWFAttackable>)attacker
                         withAttack:(LWFAttack *)attack completion:(void(^)(void))someBlock {
     [someBlock invoke];
+}
+
+- (void)attacksAttackable:(id<LWFAttackable>)target
+               withAttack:(LWFAttack *)attack
+               completion:(void(^)(void))someBlock {
+    [someBlock invoke];
+    
+}
+
+- (void)isBeingAttackedBy:(id<LWFAttackable>)attacker
+               withAttack:(LWFAttack *)attack
+               completion:(void(^)(void))someBlock {
+    [someBlock invoke];
+    
+}
+
+- (LWFStats *)getStats {
+    return self.stats;
+}
+
+- (LWFEquips *)getEquips {
+    return self.equips;
 }
 
 @end

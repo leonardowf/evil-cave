@@ -16,6 +16,9 @@
 @property NSUInteger chanceToHit;
 @property NSUInteger baseArmor;
 
+@property (nonatomic) NSUInteger currentHP;
+@property (nonatomic) NSUInteger currentActions;
+
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end

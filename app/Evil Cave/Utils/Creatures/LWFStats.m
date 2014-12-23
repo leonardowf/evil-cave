@@ -25,6 +25,9 @@
         self.strength = [strength unsignedIntegerValue];
         self.chanceToHit = [chanceToHit unsignedIntegerValue];
         self.baseArmor = [baseArmor unsignedIntegerValue];
+        
+        self.currentActions = self.actionPoints;
+        self.currentHP = self.maxHP;
     }
     return self;
 }

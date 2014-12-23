@@ -15,24 +15,36 @@ typedef enum : NSUInteger {
 #import <Foundation/Foundation.h>
 @class LWFTile;
 @class LWFAttack;
+@class LWFStats;
+@class LWFEquips;
 
 @protocol LWFAttackable <NSObject>
 
 - (void)requestAttackToTile:(LWFTile *)tile
                  withAttack:(LWFAttack *)attack;
 
-- (void)failedToAttackTile:(LWFTile *)tile
-                withAttack:(LWFAttack *)attack
-                   because:(FailedAttackReason)reason;
-
 - (void)willAttackTile:(LWFTile *)tile
             withAttack:(LWFAttack *)attack completion:(void(^)(void))someBlock;
-
-- (void)didAttackTile:(LWFTile *)tile
-           withAttack:(LWFAttack *)attack;
 
 - (void)willBeAttackedByAttackable:(id<LWFAttackable>)attacker
                         withAttack:(LWFAttack *)attack completion:(void(^)(void))someBlock;
 
+- (void)attacksAttackable:(id<LWFAttackable>)target
+               withAttack:(LWFAttack *)attack
+               completion:(void(^)(void))someBlock;
+
+- (void)isBeingAttackedBy:(id<LWFAttackable>)attacker
+               withAttack:(LWFAttack *)attack
+               completion:(void(^)(void))someBlock;
+
+- (void)didAttackTile:(LWFTile *)tile
+           withAttack:(LWFAttack *)attack;
+
+- (void)failedToAttackTile:(LWFTile *)tile
+                withAttack:(LWFAttack *)attack
+                   because:(FailedAttackReason)reason;
+
+- (LWFStats *)getStats;
+- (LWFEquips *)getEquips;
 
 @end
