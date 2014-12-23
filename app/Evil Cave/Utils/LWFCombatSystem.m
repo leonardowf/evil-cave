@@ -11,19 +11,44 @@
 
 #import "LWFAttackable.h"
 
+#import "LWFStats.h"
+#import "LWFAttack.h"
+
+#import "LWFRandomUtils.h"
+
 @implementation LWFCombatSystem
 
-+ (LWFCombatOutput *)calculateForAttacker:(id<LWFAttackable>)attacker target:(id<LWFAttackable>)target {
++ (LWFCombatOutput *)calculateForAttacker:(id<LWFAttackable>)attacker
+                                   target:(id<LWFAttackable>)target
+                               withAttack:(LWFAttack *)attack {
+    
+    // TODO: por equips e chance de miss
+    
     LWFStats *attackerStats = [attacker getStats];
     LWFEquips *attackerEquips = [attacker getEquips];
     
     LWFStats *targetStats = [target getStats];
     LWFEquips *targetEquips = [target getEquips];
     
+    NSUInteger strModifier = 100 + attackerStats.strength;
+    float newMinimum = (strModifier * attack.minimumDamage) / 100;
+    float newMaximum = (strModifier * attack.maximumDamage) / 100;
     
+    NSUInteger newMinimumInt = (newMinimum + 0.5);
+    NSUInteger newMaximumInt = (newMaximum + 0.5);
     
+    LWFRandomUtils *randomizer = [[LWFRandomUtils alloc]init];
     
-    return nil;
+    NSUInteger randomized = [randomizer randomIntegerBetween:newMinimumInt and:newMaximumInt];
+    
+    NSInteger damage = randomized - [targetStats baseArmor];
+    
+    if (damage < 0) damage = 0;
+    
+    LWFCombatOutput *combatOutput = [[LWFCombatOutput alloc]init];
+    combatOutput.damage = damage;
+    
+    return combatOutput;
 
 }
 

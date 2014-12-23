@@ -12,6 +12,7 @@
 #import "LWFTile.h"
 #import "LWFCreature.h"
 #import "LWFCombatSystem.h"
+#import "LWFCombatOutput.h"
 
 @interface LWFAttackManager () {
     LWFDamageDisplayer *_damagerDisplayer;
@@ -49,6 +50,8 @@ requestedAttackToTile:(LWFTile *)tile
     
     LWFCreature *creatureOnTile = tile.creatureOnTile;
     
+    _currentAttackable = attackable;
+    
     if (creatureOnTile != nil) {
         [creatureOnTile willBeAttackedByAttackable:attackable withAttack:attack completion:^{
             _attackedAllowedAttack = YES;
@@ -61,8 +64,9 @@ requestedAttackToTile:(LWFTile *)tile
         }];
     }
     
-    _currentAttackable = attackable;
-    [_damagerDisplayer showString:@"oi" atTile:tile andDelegate:self];
+
+
+    
 }
 
 - (void)proceedAttack:(id<LWFAttackable>)attacker target:(id<LWFAttackable>)target attack:(LWFAttack *)attack {
@@ -85,8 +89,12 @@ requestedAttackToTile:(LWFTile *)tile
 - (void)combatOutputForAttacker:(id<LWFAttackable>)attacker target:(id<LWFAttackable>)target attack:(LWFAttack *)attack {
     if (_attackedDidStartReceivingAttack && _attackerDidStartAttack) {
         NSLog(@"animação de ataque terminou hue");
-        LWFCombatOutput *result = [LWFCombatSystem calculateForAttacker:attacker target:target];
+        LWFCombatOutput *result = [LWFCombatSystem calculateForAttacker:attacker target:target withAttack:attack];
         
+        LWFCreature *creature = (LWFCreature *)target; // :(
+        NSString *damage = [NSString stringWithFormat:@"%d", result.damage];
+        
+        [_damagerDisplayer showString:damage atTile:creature.currentTile andDelegate:self];
         
     }
 }

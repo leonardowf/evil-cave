@@ -29,7 +29,7 @@ SINGLETON_FOR_CLASS(LWFDamageDisplayer)
     SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"Munro"];
     [label setFontColor:[UIColor redColor]];
 
-    label.text = @"1";
+    label.text = string;
     label.fontSize = 16;
     label.position = tile.position;
     

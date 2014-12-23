@@ -13,6 +13,8 @@
 
 @interface LWFCombatSystem : NSObject
 
-+ (LWFCombatOutput *)calculateForAttacker:(id<LWFAttackable>)attacker target:(id<LWFAttackable>)target;
++ (LWFCombatOutput *)calculateForAttacker:(id<LWFAttackable>)attacker
+                                   target:(id<LWFAttackable>)target
+                               withAttack:(LWFAttack *)attack;
 
 @end

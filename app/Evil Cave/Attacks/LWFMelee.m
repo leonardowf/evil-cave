@@ -13,6 +13,16 @@
 
 @implementation LWFMelee
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.minimumDamage = 1;
+        self.maximumDamage = 5;
+    }
+    return self;
+}
+
 - (NSMutableArray *)range {
     // (-1, 1)( 0, 1)( 1, 1)
     // (-1, 0)( 0, 0)( 1, 0)
