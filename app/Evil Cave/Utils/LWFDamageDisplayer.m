@@ -26,7 +26,7 @@ SINGLETON_FOR_CLASS(LWFDamageDisplayer)
 
 - (void)showString:(NSString *)string atTile:(LWFTile *)tile andDelegate:(LWFAttackManager *)delegate {
     _delegate = delegate;
-    SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+    SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"Munro"];
     [label setFontColor:[UIColor redColor]];
 
     label.text = @"1";
