@@ -342,7 +342,13 @@
 - (void)isBeingAttackedBy:(id<LWFAttackable>)attacker
                withAttack:(LWFAttack *)attack
                completion:(void(^)(void))someBlock {
-    [someBlock invoke];
+    
+    
+    SKAction *pulseRed = [SKAction sequence:@[
+                                              [SKAction colorizeWithColor:[SKColor redColor] colorBlendFactor:0.3 duration:0.15],
+                                              [SKAction waitForDuration:0.1],
+                                              [SKAction colorizeWithColorBlendFactor:0.0 duration:0.15]]];
+    [self runAction: pulseRed completion:someBlock];
     
 }
 
