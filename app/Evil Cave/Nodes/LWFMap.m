@@ -141,6 +141,7 @@
         
         if ([self.player isInTheMeleeRangeTheCreature:creatureOnTile]) {
             NSLog(@"A criatura está no range");
+            _blockUserInteraction = YES;
             [self.player requestAttackToTile:tile withAttack:(LWFAttack *)[self.player getMelee]];
         } else {
             NSLog(@"A criatura não está no range");
