@@ -341,6 +341,7 @@
 
 - (void)isBeingAttackedBy:(id<LWFAttackable>)attacker
                withAttack:(LWFAttack *)attack
+          forCombatOutput:(LWFCombatOutput *)combatOutput
                completion:(void(^)(void))someBlock {
     
     
@@ -348,9 +349,36 @@
                                               [SKAction colorizeWithColor:[SKColor redColor] colorBlendFactor:0.3 duration:0.15],
                                               [SKAction waitForDuration:0.1],
                                               [SKAction colorizeWithColorBlendFactor:0.0 duration:0.15]]];
-    [self runAction: pulseRed];
     
-    [someBlock invoke];
+    
+    
+    SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"Munro"];
+    [label setFontColor:[UIColor redColor]];
+    
+    label.text = @"banana";
+    label.fontSize = 16;
+    label.position = self.currentTile.position;
+    
+    [self.map addChild:label];
+    
+    SKAction *action = [SKAction moveByX:0 y:50 duration:1.0];
+    [label runAction:action completion:^{
+        SKAction *action = [SKAction fadeAlphaTo:0 duration:0.2];
+        [label runAction:action completion:^{
+
+            
+        }];
+        
+    }];
+    
+    
+    
+    
+    
+    
+    [self runAction: pulseRed completion:someBlock];
+    
+//    [someBlock invoke];
     
 }
 

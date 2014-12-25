@@ -17,6 +17,7 @@ typedef enum : NSUInteger {
 @class LWFAttack;
 @class LWFStats;
 @class LWFEquips;
+@class LWFCombatOutput;
 
 @protocol LWFAttackable <NSObject>
 
@@ -35,6 +36,7 @@ typedef enum : NSUInteger {
 
 - (void)isBeingAttackedBy:(id<LWFAttackable>)attacker
                withAttack:(LWFAttack *)attack
+          forCombatOutput:(LWFCombatOutput *)combatOutput
                completion:(void(^)(void))someBlock;
 
 - (void)didAttackTile:(LWFTile *)tile

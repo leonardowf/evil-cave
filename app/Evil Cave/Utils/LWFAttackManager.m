@@ -73,29 +73,25 @@ requestedAttackToTile:(LWFTile *)tile
     if (_attackedAllowedAttack && _attackerAllowedAttack) {
         _attackedDidStartReceivingAttack = _attackerDidStartAttack = NO;
         
+        LWFCombatOutput *result = [LWFCombatSystem calculateForAttacker:attacker target:target withAttack:attack];
+        
         [attacker attacksAttackable:target withAttack:attack completion:^{
             _attackerDidStartAttack = YES;
-            [self combatOutputForAttacker:attacker target:target attack:attack];
+            [self attackFinished:attacker target:target attack:attack];
         }];
         
-        [target isBeingAttackedBy:attacker withAttack:attack completion:^{
+        [target isBeingAttackedBy:attacker withAttack:attack forCombatOutput:result completion:^{
             _attackedDidStartReceivingAttack = YES;
-            [self combatOutputForAttacker:attacker target:target attack:attack];
+            [self attackFinished:attacker target:target attack:attack];
             
         }];
     }
 }
 
-- (void)combatOutputForAttacker:(id<LWFAttackable>)attacker target:(id<LWFAttackable>)target attack:(LWFAttack *)attack {
+- (void)attackFinished:(id<LWFAttackable>)attacker target:(id<LWFAttackable>)target attack:(LWFAttack *)attack {
     if (_attackedDidStartReceivingAttack && _attackerDidStartAttack) {
         NSLog(@"animação de ataque terminou hue");
-        LWFCombatOutput *result = [LWFCombatSystem calculateForAttacker:attacker target:target withAttack:attack];
-        
-        LWFCreature *creature = (LWFCreature *)target; // :(
-        NSString *damage = [NSString stringWithFormat:@"%d", result.damage];
-        
-        [_damagerDisplayer showString:damage atTile:creature.currentTile andDelegate:self];
-        
+        [self didShowDamage];
     }
 }
 
