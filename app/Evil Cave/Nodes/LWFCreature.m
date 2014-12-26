@@ -467,23 +467,52 @@
 
 #pragma - mark LWFKillable
 - (void)willDieWithCompletion:(void(^)(void))someBlock {
+    [self replaceTile];
+    self.currentTile.creatureOnTile = nil;
+    self.currentTile = nil;
     [someBlock invoke];
     
 }
 
 - (void)isDyingWithCompletion:(void(^)(void))someBlock {
-    SKAction *action = [SKAction fadeAlphaTo:0 duration:0.2];
-    [self runAction:action completion:^{
+    NSArray *dyingFramesAnimation = [self getDyingFramesAnimation];
+    
+    [self removeActionForKey:@"dying_action"];
+    
+    if (dyingFramesAnimation != nil && dyingFramesAnimation.count > 0) {
+        SKAction *animate = [SKAction animateWithTextures:dyingFramesAnimation timePerFrame:0.4f resize:NO restore:NO];
+        SKAction *action = [SKAction repeatAction:animate count:1];
         
-    }];
-    [someBlock invoke];
+        [self runAction:action completion:^{
+            [self removeFromParent];
+            [someBlock invoke];
+        }];
+
+    } else {
+        SKAction *disappearAction = [SKAction fadeAlphaTo:0 duration:0.3];
+        [self runAction:disappearAction];
+        [someBlock invoke];
+    }
+}
+
+- (NSArray *)getDyingFramesAnimation {
+    NSMutableArray *dyingAtlasArray = [NSMutableArray array];
+    NSString *dyingAtlasName = [NSString stringWithFormat:@"%@_dying_%@", self.spriteImageName, self.currentFacingDirection];
+    SKTextureAtlas *dyingAtlas = [SKTextureAtlas atlasNamed:dyingAtlasName];
+    
+    NSUInteger numImages = dyingAtlas.textureNames.count;
+    for (int i=1; i <= numImages; i++) {
+        NSString *textureName = [NSString stringWithFormat:@"%@_%d", dyingAtlasName, i];
+        SKTexture *texture = [dyingAtlas textureNamed:textureName];
+        texture.filteringMode = SKTextureFilteringNearest;
+        [dyingAtlasArray addObject:texture];
+    }
+    
+    return dyingAtlasArray;
 }
 
 - (void)diedWithCompletion:(void(^)(void))someBlock {
-    [self replaceTile];
-    
-    self.currentTile.creatureOnTile = nil;
-    self.currentTile = nil;
+
     [someBlock invoke];
 }
 
