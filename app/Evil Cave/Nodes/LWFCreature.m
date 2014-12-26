@@ -127,19 +127,6 @@
     }
 }
 
-- (void)startAttackingAnimation {
-    NSArray *attackingFramesAnimation = [self getAttackingFramesAnimation];
-    
-    [self removeActionForKey:@"attacking_action"];
-    
-    if (attackingFramesAnimation != nil && attackingFramesAnimation.count > 0) {
-        SKAction *animate = [SKAction animateWithTextures:attackingFramesAnimation timePerFrame:0.3f];
-        SKAction *action = [SKAction repeatActionForever:animate];
-        
-        [self runAction:action withKey:@"attacking_action"];
-    }
-}
-
 - (void)startWalkingAnimation:(void(^)(void))someBlock {
     NSArray *walkingFramesAnimation = [self getWalkingFramesAnimation];
     
@@ -349,9 +336,43 @@
 - (void)willAttackTile:(LWFTile *)tile
             withAttack:(LWFAttack *)attack completion:(void(^)(void))someBlock {
     
+    NSInteger moveOffsetX = tile.position.x - self.position.x;
+    NSInteger moveOffsetY = tile.position.y - self.position.y;
     
-    [self startAttackingAnimation];
+    if (moveOffsetY < 0) {
+        moveOffsetY = moveOffsetY + 40;
+    } else if (moveOffsetY > 0) {
+        moveOffsetY = moveOffsetY - 40;
+    }
+    
+    if (moveOffsetX < 0) {
+        self.currentFacingDirection = @"left";
+        moveOffsetX = moveOffsetX + 40;
+    } else if (moveOffsetX > 0) {
+        self.currentFacingDirection = @"right";
+        moveOffsetX = moveOffsetX - 40;
+    }
+    
+    [self startStandingAnimation];
+    
+    [self moveDistanceHorizontal:moveOffsetX andVertical:moveOffsetY inTime:0.1];
+    
     [someBlock invoke];
+}
+
+- (void)moveDistanceHorizontal:(NSInteger)horizontal andVertical:(NSInteger)vertical inTime:(float)time {
+    
+    CGVector vector = CGVectorMake(horizontal, vertical);
+    
+    SKAction *action = [SKAction moveBy:vector duration:time];
+    [self runAction:action completion:^{
+        CGVector vector = CGVectorMake(-horizontal, -vertical);
+        
+        SKAction *backAction = [SKAction moveBy:vector duration:time];
+        [self runAction:backAction completion:^{
+
+        }];
+    }];
 }
 
 - (void)didAttackTile:(LWFTile *)tile
