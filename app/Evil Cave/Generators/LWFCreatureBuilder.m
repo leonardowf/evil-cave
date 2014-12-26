@@ -96,7 +96,10 @@
         creature.player = _map.player;
         creature.attacks = [_attacksBuilder attacksForCreatureType:creatureType];
         
-        creature.stats = [self statsForCreatureType:creatureType];
+        LWFStats *stats = [self statsForCreatureType:creatureType];
+        stats.killable = creature;
+        
+        creature.stats = stats;
     }
     
     return creature;

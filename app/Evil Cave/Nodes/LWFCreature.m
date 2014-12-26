@@ -19,6 +19,7 @@
 #import "LWFMelee.h"
 #import "LWFEquips.h"
 #import "LWFCombatOutput.h"
+#import "LWFStats.h"
 
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
@@ -192,6 +193,11 @@
 }
 
 - (void)processTurn {
+    if ([self isDead]) {
+        [self finishTurn];
+        return;
+    }
+    
     LWFAttack *melee = [self.attacks firstObject];
     
     if ([melee isCreature:_player inRangeOfTile:self.currentTile]) {
@@ -319,7 +325,7 @@
     [self requestAttackToTile:self.player.currentTile withAttack:attack];
 }
 
-#pragma - mark ATTACKABLE
+#pragma - mark LWFAttackable
 - (void)requestAttackToTile:(LWFTile *)tile
                  withAttack:(LWFAttack *)attack {
     
@@ -404,10 +410,22 @@
                                               [SKAction waitForDuration:0.1],
                                               [SKAction colorizeWithColorBlendFactor:0.0 duration:0.15]]];
     
+    [self.stats receivesCombatOutput:combatOutput];
+    
     [self displayDamageForCombatOutput:combatOutput];
     
     [self runAction: pulseRed completion:someBlock];
     
+}
+
+- (void)replaceTile {
+    
+    LWFTile *tile = self.currentTile;
+    
+    SKTexture *texture = [SKTexture textureWithImageNamed:@"bloody_rock_tile"];
+    texture.filteringMode = SKTextureFilteringNearest;
+    
+    [tile setTexture:texture];
 }
 
 - (void)displayDamageForCombatOutput:(LWFCombatOutput *)combatOutput {
@@ -437,6 +455,40 @@
 
 - (LWFEquips *)getEquips {
     return self.equips;
+}
+
+- (BOOL)isAlive {
+    return self.stats.currentHP > 0;
+}
+
+- (BOOL)isDead {
+    return ![self isAlive];
+}
+
+#pragma - mark LWFKillable
+- (void)willDieWithCompletion:(void(^)(void))someBlock {
+    [someBlock invoke];
+    
+}
+
+- (void)isDyingWithCompletion:(void(^)(void))someBlock {
+    SKAction *action = [SKAction fadeAlphaTo:0 duration:0.2];
+    [self runAction:action completion:^{
+        
+    }];
+    [someBlock invoke];
+}
+
+- (void)diedWithCompletion:(void(^)(void))someBlock {
+    [self replaceTile];
+    
+    self.currentTile.creatureOnTile = nil;
+    self.currentTile = nil;
+    [someBlock invoke];
+}
+
+- (void)statsChanged {
+    
 }
 
 @end

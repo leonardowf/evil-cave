@@ -156,7 +156,7 @@
         } else {
             NSLog(@"A criatura não está no range");
         }
-        
+        return;
     }
     
     if (tile != nil) {

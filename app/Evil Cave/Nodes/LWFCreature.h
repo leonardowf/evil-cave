@@ -7,8 +7,10 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+
 #import "LWFMoveable.h"
 #import "LWFAttackable.h"
+#import "LWFKillable.h"
 
 @class LWFTile;
 @class LWFMap;
@@ -21,7 +23,7 @@
 @class LWFMovementManager;
 @class LWFAttackManager;
 
-@interface LWFCreature : SKSpriteNode <LWFMoveable, LWFAttackable>
+@interface LWFCreature : SKSpriteNode <LWFMoveable, LWFAttackable, LWFKillable>
 
 @property (nonatomic, strong) LWFMovementManager *movementManager;
 @property (nonatomic, strong) LWFAttackManager *attackManager;
@@ -49,5 +51,7 @@
 - (void)startStandingAnimation;
 - (BOOL)isInTheMeleeRangeTheCreature:(LWFCreature *)creature;
 - (LWFMelee *)getMelee;
+- (BOOL)isDead;
+- (BOOL)isAlive;
 
 @end

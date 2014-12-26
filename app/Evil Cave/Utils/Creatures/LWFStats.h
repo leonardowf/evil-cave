@@ -7,18 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LWFKillable.h"
+
+@class LWFCombatOutput;
 
 @interface LWFStats : NSObject
 
-@property NSUInteger maxHP;
-@property NSUInteger actionPoints;
-@property NSUInteger strength;
-@property NSUInteger chanceToHit;
-@property NSUInteger baseArmor;
+@property NSInteger maxHP;
+@property NSInteger actionPoints;
+@property NSInteger strength;
+@property NSInteger chanceToHit;
+@property NSInteger baseArmor;
 
-@property (nonatomic) NSUInteger currentHP;
-@property (nonatomic) NSUInteger currentActions;
+@property (nonatomic) NSInteger currentHP;
+@property (nonatomic) NSInteger currentActions;
+
+@property (nonatomic, strong) id<LWFKillable> killable;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
-
+- (void)receivesCombatOutput:(LWFCombatOutput *)combatOutput;
 @end

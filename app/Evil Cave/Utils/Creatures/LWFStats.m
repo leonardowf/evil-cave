@@ -7,6 +7,7 @@
 //
 
 #import "LWFStats.h"
+#import "LWFCombatOutput.h"
 
 @implementation LWFStats
 
@@ -31,5 +32,24 @@
     }
     return self;
 }
+
+- (void)receivesCombatOutput:(LWFCombatOutput *)combatOutput {
+    self.currentHP = self.currentHP - combatOutput.damage;
+    [self.killable statsChanged];
+    
+    if (self.currentHP <= 0) {
+        [self.killable willDieWithCompletion:^{
+            [self.killable isDyingWithCompletion:^{
+               [self.killable diedWithCompletion:^{
+                   
+               }];
+            }];
+        }];
+    }
+    
+    
+}
+
+
 
 @end

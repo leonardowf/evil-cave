@@ -63,10 +63,6 @@ requestedAttackToTile:(LWFTile *)tile
             [self proceedAttack:attackable target:creatureOnTile attack:attack];
         }];
     }
-    
-
-
-    
 }
 
 - (void)proceedAttack:(id<LWFAttackable>)attacker target:(id<LWFAttackable>)target attack:(LWFAttack *)attack {
