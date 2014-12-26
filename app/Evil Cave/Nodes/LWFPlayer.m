@@ -59,7 +59,7 @@
     [self removeActionForKey:@"attacking_action"];
     
     if (attackingFramesAnimation != nil && attackingFramesAnimation.count > 0) {
-        SKAction *animate = [SKAction animateWithTextures:attackingFramesAnimation timePerFrame:0.05f];
+        SKAction *animate = [SKAction animateWithTextures:attackingFramesAnimation timePerFrame:0.15f resize:NO restore:YES];
         SKAction *action = [SKAction repeatAction:animate count:2];
         
         [self runAction:action];
