@@ -18,6 +18,7 @@
 #import "LWFCreatureBuilder.h"
 #import "LWFPlayer.h"
 #import "LWFAttackManager.h"
+#import "LWFPointObject.h"
 
 @interface LWFMap () {
     NSArray *_path;
@@ -25,6 +26,7 @@
     LWFCreatureBuilder *_creatureBuilder;
     
     BOOL _blockUserInteraction;
+    LWFPointObject *_touchQueue;
 
 }
 @end
@@ -128,10 +130,18 @@
 - (void)newTurnCycleStarted {
 //    [self pathForPlayerToExit];
     _blockUserInteraction = NO;
+    if (_touchQueue != nil) {
+        CGPoint point = CGPointMake(_touchQueue.x, _touchQueue.y);
+        _touchQueue = nil;
+        [self userTouchedPoint:point];
+    }
 }
 
 - (void)userTouchedPoint:(CGPoint)point {
-    if (_blockUserInteraction) { return; }
+    if (_blockUserInteraction) {
+        _touchQueue = [LWFPointObject pointWithX:point.x andY:point.y];
+        return;
+    }
     
     LWFTile *tile = [self tileForPoint:point];
     

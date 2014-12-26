@@ -2,7 +2,7 @@
   "warrior": {
       "strength": 0,
       "chance_to_hit": 95,
-      "base_armor": 500,
+      "base_armor": 0,
       "max_hp" : 20,
       "action_points": 1
     },

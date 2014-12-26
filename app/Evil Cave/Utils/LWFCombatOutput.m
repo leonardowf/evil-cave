@@ -10,6 +10,8 @@
 
 @implementation LWFCombatOutput
 
-
+- (NSString *)getDamageString {
+    return [NSString stringWithFormat:@"%d", self.damage];
+}
 
 @end

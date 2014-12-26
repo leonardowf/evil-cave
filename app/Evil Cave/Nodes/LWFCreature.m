@@ -18,6 +18,7 @@
 #import "LWFAttack.h"
 #import "LWFMelee.h"
 #import "LWFEquips.h"
+#import "LWFCombatOutput.h"
 
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
@@ -350,36 +351,31 @@
                                               [SKAction waitForDuration:0.1],
                                               [SKAction colorizeWithColorBlendFactor:0.0 duration:0.15]]];
     
+    [self displayDamageForCombatOutput:combatOutput];
     
+    [self runAction: pulseRed completion:someBlock];
     
+}
+
+- (void)displayDamageForCombatOutput:(LWFCombatOutput *)combatOutput {
     SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"Munro"];
-    [label setFontColor:[UIColor redColor]];
+    [label setFontColor:[UIColor whiteColor]];
     
-    label.text = @"banana";
-    label.fontSize = 16;
+    label.text = [combatOutput getDamageString];
+    label.fontSize = 20;
     label.position = self.currentTile.position;
     
     [self.map addChild:label];
     
-    SKAction *action = [SKAction moveByX:0 y:50 duration:1.0];
+    SKAction *action = [SKAction moveByX:0 y:70 duration:1.2];
     [label runAction:action completion:^{
         SKAction *action = [SKAction fadeAlphaTo:0 duration:0.2];
         [label runAction:action completion:^{
-
+            
             
         }];
         
     }];
-    
-    
-    
-    
-    
-    
-    [self runAction: pulseRed completion:someBlock];
-    
-//    [someBlock invoke];
-    
 }
 
 - (LWFStats *)getStats {

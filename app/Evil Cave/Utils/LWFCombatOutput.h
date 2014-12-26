@@ -12,4 +12,6 @@
 
 @property (nonatomic) NSUInteger damage;
 
+- (NSString *)getDamageString;
+
 @end
