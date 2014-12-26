@@ -52,7 +52,7 @@
     }
     
     [self startWalkingAnimation:^{
-        [self startStandingAnimation];
+//        [self startStandingAnimation];
     }];
 
 }
@@ -76,6 +76,8 @@
     [self.tilePath removeObject:tile];
     [self.turnList creatureFinishedTurn:self];
     _failedMovements = 0;
+    
+    [self startStandingAnimation];
     
 }
 
@@ -131,7 +133,7 @@
 - (void)startWalkingAnimation:(void(^)(void))someBlock {
     NSArray *walkingFramesAnimation = [self getWalkingFramesAnimation];
     
-    [self removeActionForKey:@"walking_action"];
+//    [self removeActionForKey:@"walking_action"];
     
     if (walkingFramesAnimation != nil && walkingFramesAnimation.count > 0) {
         SKAction *animate = [SKAction animateWithTextures:walkingFramesAnimation timePerFrame:0.05f];

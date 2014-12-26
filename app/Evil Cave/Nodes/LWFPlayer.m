@@ -20,6 +20,10 @@
 - (void)didMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
     [self.tilePath removeObject:tile];
     [self.turnList creatureFinishedTurn:self];
+    
+    if (self.tilePath.count == 0) {
+        [self startStandingAnimation];
+    }
 }
 
 - (void)moveToTile:(LWFTile *)tile {
