@@ -21,6 +21,8 @@
 		324527921A4DE73000AFF9A7 /* bloody_rock_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 324527911A4DE73000AFF9A7 /* bloody_rock_tile.png */; };
 		324527941A4DEEF100AFF9A7 /* rat_dying_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527931A4DEEF100AFF9A7 /* rat_dying_right.atlas */; };
 		324527981A4DF83A00AFF9A7 /* rat_dying_left.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527971A4DF83A00AFF9A7 /* rat_dying_left.atlas */; };
+		3245279A1A4EEF5500AFF9A7 /* creature_lifebar.png in Resources */ = {isa = PBXBuildFile; fileRef = 324527991A4EEF5500AFF9A7 /* creature_lifebar.png */; };
+		3245279D1A4EF1DB00AFF9A7 /* LWFLifeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3245279C1A4EF1DB00AFF9A7 /* LWFLifeBar.m */; };
 		32BEBFB91A42476D000C77AA /* LWFGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BEBFB81A42476D000C77AA /* LWFGameController.m */; };
 		32BEBFEF1A470AAB000C77AA /* rock_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEBFEE1A470AAB000C77AA /* rock_tile.png */; };
 		32BEBFF91A470B68000C77AA /* radioactive_rat_standing_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEBFF21A470B68000C77AA /* radioactive_rat_standing_left.png */; };
@@ -110,6 +112,9 @@
 		324527911A4DE73000AFF9A7 /* bloody_rock_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bloody_rock_tile.png; sourceTree = "<group>"; };
 		324527931A4DEEF100AFF9A7 /* rat_dying_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = rat_dying_right.atlas; sourceTree = "<group>"; };
 		324527971A4DF83A00AFF9A7 /* rat_dying_left.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = rat_dying_left.atlas; sourceTree = "<group>"; };
+		324527991A4EEF5500AFF9A7 /* creature_lifebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = creature_lifebar.png; sourceTree = "<group>"; };
+		3245279B1A4EF1DB00AFF9A7 /* LWFLifeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFLifeBar.h; sourceTree = "<group>"; };
+		3245279C1A4EF1DB00AFF9A7 /* LWFLifeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFLifeBar.m; sourceTree = "<group>"; };
 		32BEBFB71A42476D000C77AA /* LWFGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LWFGameController.h; path = "Evil Cave/LWFGameController.h"; sourceTree = "<group>"; };
 		32BEBFB81A42476D000C77AA /* LWFGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LWFGameController.m; path = "Evil Cave/LWFGameController.m"; sourceTree = "<group>"; };
 		32BEBFEE1A470AAB000C77AA /* rock_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rock_tile.png; sourceTree = "<group>"; };
@@ -330,6 +335,7 @@
 		32D50BC81A3D1FE9002D3098 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				324527991A4EEF5500AFF9A7 /* creature_lifebar.png */,
 				32F09E301A48EFBC000B8797 /* Munro.ttf */,
 				32BEBFF01A470B68000C77AA /* Creatures */,
 				32BEBFED1A470A82000C77AA /* Tiles */,
@@ -509,6 +515,8 @@
 				A7F5BBD01A16F831005BAB63 /* LWFMap.m */,
 				A703875A1A17BD5E0053A9E6 /* LWFTile.h */,
 				A703875B1A17BD5E0053A9E6 /* LWFTile.m */,
+				3245279B1A4EF1DB00AFF9A7 /* LWFLifeBar.h */,
+				3245279C1A4EF1DB00AFF9A7 /* LWFLifeBar.m */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -600,6 +608,7 @@
 				3245278B1A4DCBFB00AFF9A7 /* warrior_attacking_left.atlas in Resources */,
 				32F09E311A48F4FA000B8797 /* Munro.ttf in Resources */,
 				32BEC0141A48A7C4000C77AA /* creature_stats.json in Resources */,
+				3245279A1A4EEF5500AFF9A7 /* creature_lifebar.png in Resources */,
 				32BEC0121A472DA8000C77AA /* radioactive_rat_standing_right.png in Resources */,
 				324527891A4DB60800AFF9A7 /* warrior_standing_right.atlas in Resources */,
 				32BEC0051A470F5F000C77AA /* warrior_walking_right.atlas in Resources */,
@@ -638,6 +647,7 @@
 				A7D8BEE71A198C67005B0599 /* LWFCaveGeneratorCell.m in Sources */,
 				A7D8BEE11A19883A005B0599 /* LWFCaveGenerator.m in Sources */,
 				32FFE8411A2C0BF0003D02A4 /* LWFMelee.m in Sources */,
+				3245279D1A4EF1DB00AFF9A7 /* LWFLifeBar.m in Sources */,
 				A7F5BBA31A16EFBE005BAB63 /* LWFMyScene.m in Sources */,
 				A7D8BEDC1A190A5B005B0599 /* LWFPlayer.m in Sources */,
 				A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */,

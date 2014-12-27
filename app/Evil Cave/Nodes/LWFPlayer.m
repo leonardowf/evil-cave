@@ -40,6 +40,7 @@
 }
 
 - (void)processTurn {
+    [self.map newTurnCycleStarted];
     if (self.tilePath.count > 0) {
         [self walkToExistingPath];
     }

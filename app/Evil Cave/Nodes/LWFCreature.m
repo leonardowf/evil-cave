@@ -20,10 +20,12 @@
 #import "LWFEquips.h"
 #import "LWFCombatOutput.h"
 #import "LWFStats.h"
+#import "LWFLifeBar.h"
 
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
     NSUInteger _failedMovements;
+    LWFLifeBar *_lifeBar;
 
 }
 @end
@@ -62,7 +64,9 @@
     
     if (_failedMovements > MAX_NUMBER_PATH_FIND_TRIES) {
         _failedMovements = 0;
-        [self.turnList creatureFinishedTurn:self];
+        
+        [self finishTurn];
+
     } else {
         LWFTile *destinyTile = [self.tilePath firstObject];
         [self.tilePath removeAllObjects];
@@ -74,7 +78,9 @@
 }
 - (void)didMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
     [self.tilePath removeObject:tile];
-    [self.turnList creatureFinishedTurn:self];
+    
+    [self finishTurn];
+
     _failedMovements = 0;
     
     [self startStandingAnimation];
@@ -99,6 +105,17 @@
     [self setTexture:texture];
     [self setSize:CGSizeMake(32, 32)];
     
+    _lifeBar = [self getLifeBar];
+    _lifeBar.stats = self.stats;
+    
+    [self addChild:_lifeBar];
+}
+
+- (LWFLifeBar *)getLifeBar {
+    LWFLifeBar *lifeBar = [[LWFLifeBar alloc]init];
+    [lifeBar setPosition:CGPointMake(-16, 30)];
+    
+    return lifeBar;
 }
 
 - (SKTexture *)getTexture {
@@ -287,7 +304,9 @@
 }
 
 - (void)finishTurn {
-    [self.turnList creatureFinishedTurn:self];
+//    [self.turnList creatureFinishedTurn:self];
+    
+    [self.nextCreature processTurn];
 }
 
 - (BOOL)isSurrounded {
@@ -482,7 +501,7 @@
     [self removeActionForKey:@"dying_action"];
     
     if (dyingFramesAnimation != nil && dyingFramesAnimation.count > 0) {
-        SKAction *animate = [SKAction animateWithTextures:dyingFramesAnimation timePerFrame:0.4f resize:NO restore:NO];
+        SKAction *animate = [SKAction animateWithTextures:dyingFramesAnimation timePerFrame:0.3f resize:NO restore:NO];
         SKAction *action = [SKAction repeatAction:animate count:1];
         
         [self runAction:action completion:^{
@@ -519,7 +538,8 @@
 }
 
 - (void)statsChanged {
-    
+    [_lifeBar draw];
+
 }
 
 @end

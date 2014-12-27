@@ -42,6 +42,8 @@
 @property (nonatomic, strong) LWFStats *stats;
 @property (nonatomic, strong) LWFEquips *equips;
 
+@property (nonatomic, strong) LWFCreature *nextCreature;
+
 - (void)build;
 - (void)processTurn;
 - (void)finishTurn;
