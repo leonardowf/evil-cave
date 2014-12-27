@@ -1,14 +1,16 @@
 {
   "warrior": {
       "strength": 0,
-      "chance_to_hit": 95,
+      "chance_to_hit": 80,
+      "chance_to_evade": 100,
       "base_armor": 0,
-      "max_hp" : 2000,
+      "max_hp" : 100,
       "action_points": 1
     },
     "rat": {
       "strength": 0,
       "chance_to_hit": 60,
+      "chance_to_evade": 50,
       "base_armor": 0,
       "max_hp" : 10,
       "action_points": 1
@@ -16,6 +18,7 @@
     "radioactive_rat": {
         "strength": 7,
         "chance_to_hit": 80,
+        "chance_to_evade": 50,
         "base_armor": 0,
         "max_hp" : 15,
         "action_points": 1

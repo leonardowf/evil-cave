@@ -8,10 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum : NSUInteger {
+    LWFCombatOutputTypeHit,
+    LWFCombatOutputTypeMiss
+} LWFCombatOutputType;
+
+@class SKLabelNode;
+
 @interface LWFCombatOutput : NSObject
 
 @property (nonatomic) NSUInteger damage;
+@property (nonatomic) LWFCombatOutputType combatOutputType;
 
 - (NSString *)getDamageString;
+- (SKLabelNode *)getLabel;
 
 @end

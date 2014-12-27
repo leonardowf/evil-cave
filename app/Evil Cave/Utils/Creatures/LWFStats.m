@@ -20,12 +20,14 @@
         NSNumber *strength = [dictionary objectForKey:@"strength"];
         NSNumber *chanceToHit = [dictionary objectForKey:@"chance_to_hit"];
         NSNumber *baseArmor = [dictionary objectForKey:@"base_armor"];
+        NSNumber *chanceToEvade = [dictionary objectForKey:@"chance_to_evade"];
         
         self.maxHP = [maxHP unsignedIntegerValue];
         self.actionPoints = [actionPoints unsignedIntegerValue];
         self.strength = [strength unsignedIntegerValue];
         self.chanceToHit = [chanceToHit unsignedIntegerValue];
         self.baseArmor = [baseArmor unsignedIntegerValue];
+        self.chanceToEvade = [chanceToEvade unsignedIntegerValue];
         
         self.currentActions = self.actionPoints;
         self.currentHP = self.maxHP;

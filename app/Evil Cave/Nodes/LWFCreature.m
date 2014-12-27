@@ -450,11 +450,8 @@
 }
 
 - (void)displayDamageForCombatOutput:(LWFCombatOutput *)combatOutput {
-    SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"Munro"];
-    [label setFontColor:[UIColor whiteColor]];
+    SKLabelNode *label = [combatOutput getLabel];
     
-    label.text = [combatOutput getDamageString];
-    label.fontSize = 20;
     label.position = self.currentTile.position;
     
     [self.map addChild:label];

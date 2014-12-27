@@ -18,6 +18,7 @@
 @property NSInteger strength;
 @property NSInteger chanceToHit;
 @property NSInteger baseArmor;
+@property NSInteger chanceToEvade;
 
 @property (nonatomic) NSInteger currentHP;
 @property (nonatomic) NSInteger currentActions;
