@@ -21,4 +21,8 @@
     return self;
 }
 
++ (LWFCaveGeneratorCell *)cellForX:(NSUInteger)x y:(NSUInteger)y andType:(CaveCellType)type {
+    return [[LWFCaveGeneratorCell alloc]initWithX:x y:y andType:type];
+}
+
 @end

@@ -14,6 +14,8 @@
 
 #import "LWFModelGrid.h"
 
+#import "LWFDartDungeonGenerator.h"
+
 @interface LWFCaveGenerator () {
     LWFModelGrid *_modelGrid;
     NSMutableArray *_grid;
@@ -51,13 +53,11 @@
 }
 
 - (NSMutableArray *)generate {
-    [self generateRooms];
-    [self addRooms];
+    LWFDartDungeonGenerator *generator = [[LWFDartDungeonGenerator alloc]initForStageWidth:51 andStageHeigth:51];
     
-    [self generateConnectionBetweenRooms];
-    [self generateStartAndEnd];
+    [generator generate];
     
-    return _grid;
+    return generator.stage;
 }
 
 - (void)generateStartAndEnd {
