@@ -15,6 +15,7 @@
 @property NSUInteger y;
 @property CaveCellType cellType;
 
++ (LWFCaveGeneratorCell *)cellForX:(NSUInteger)x y:(NSUInteger)y andType:(CaveCellType)type;
 - (instancetype)initWithX:(NSUInteger)x y:(NSUInteger)y andType:(CaveCellType)type;
 
 @end

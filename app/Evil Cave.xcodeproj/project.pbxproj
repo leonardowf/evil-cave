@@ -23,6 +23,8 @@
 		324527981A4DF83A00AFF9A7 /* rat_dying_left.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527971A4DF83A00AFF9A7 /* rat_dying_left.atlas */; };
 		3245279A1A4EEF5500AFF9A7 /* creature_lifebar.png in Resources */ = {isa = PBXBuildFile; fileRef = 324527991A4EEF5500AFF9A7 /* creature_lifebar.png */; };
 		3245279D1A4EF1DB00AFF9A7 /* LWFLifeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3245279C1A4EF1DB00AFF9A7 /* LWFLifeBar.m */; };
+		3293698B1A5058DD00ECF705 /* LWFRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3293698A1A5058DD00ECF705 /* LWFRect.m */; };
+		32BCDF791A50455E004A2993 /* LWFDartDungeonGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDF781A50455E004A2993 /* LWFDartDungeonGenerator.m */; };
 		32BEBFB91A42476D000C77AA /* LWFGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BEBFB81A42476D000C77AA /* LWFGameController.m */; };
 		32BEBFEF1A470AAB000C77AA /* rock_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEBFEE1A470AAB000C77AA /* rock_tile.png */; };
 		32BEBFF91A470B68000C77AA /* radioactive_rat_standing_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEBFF21A470B68000C77AA /* radioactive_rat_standing_left.png */; };
@@ -115,6 +117,10 @@
 		324527991A4EEF5500AFF9A7 /* creature_lifebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = creature_lifebar.png; sourceTree = "<group>"; };
 		3245279B1A4EF1DB00AFF9A7 /* LWFLifeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFLifeBar.h; sourceTree = "<group>"; };
 		3245279C1A4EF1DB00AFF9A7 /* LWFLifeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFLifeBar.m; sourceTree = "<group>"; };
+		329369891A5058DD00ECF705 /* LWFRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRect.h; sourceTree = "<group>"; };
+		3293698A1A5058DD00ECF705 /* LWFRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRect.m; sourceTree = "<group>"; };
+		32BCDF771A50455E004A2993 /* LWFDartDungeonGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFDartDungeonGenerator.h; sourceTree = "<group>"; };
+		32BCDF781A50455E004A2993 /* LWFDartDungeonGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFDartDungeonGenerator.m; sourceTree = "<group>"; };
 		32BEBFB71A42476D000C77AA /* LWFGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LWFGameController.h; path = "Evil Cave/LWFGameController.h"; sourceTree = "<group>"; };
 		32BEBFB81A42476D000C77AA /* LWFGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LWFGameController.m; path = "Evil Cave/LWFGameController.m"; sourceTree = "<group>"; };
 		32BEBFEE1A470AAB000C77AA /* rock_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rock_tile.png; sourceTree = "<group>"; };
@@ -264,6 +270,17 @@
 			path = ../Utils/Creatures;
 			sourceTree = "<group>";
 		};
+		329369881A5058C400ECF705 /* dart */ = {
+			isa = PBXGroup;
+			children = (
+				32BCDF771A50455E004A2993 /* LWFDartDungeonGenerator.h */,
+				32BCDF781A50455E004A2993 /* LWFDartDungeonGenerator.m */,
+				329369891A5058DD00ECF705 /* LWFRect.h */,
+				3293698A1A5058DD00ECF705 /* LWFRect.m */,
+			);
+			name = dart;
+			sourceTree = "<group>";
+		};
 		32BEBFED1A470A82000C77AA /* Tiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +421,7 @@
 		A7D8BEDE1A198820005B0599 /* Generators */ = {
 			isa = PBXGroup;
 			children = (
+				329369881A5058C400ECF705 /* dart */,
 				A7D8BEDF1A19883A005B0599 /* LWFCaveGenerator.h */,
 				A7D8BEE01A19883A005B0599 /* LWFCaveGenerator.m */,
 				A7D8BEE21A1988BC005B0599 /* LWFCaveGeneratorConstants.h */,
@@ -642,6 +660,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32BCDF791A50455E004A2993 /* LWFDartDungeonGenerator.m in Sources */,
 				323B6D071A2FEC7C00627147 /* LWFDamageDisplayer.m in Sources */,
 				32C511F31A37A5DB00F0B955 /* LWFGeometry.m in Sources */,
 				A7D8BEE71A198C67005B0599 /* LWFCaveGeneratorCell.m in Sources */,
@@ -652,6 +671,7 @@
 				A7D8BEDC1A190A5B005B0599 /* LWFPlayer.m in Sources */,
 				A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */,
 				A7F5BB9A1A16EFBC005BAB63 /* LWFAppDelegate.m in Sources */,
+				3293698B1A5058DD00ECF705 /* LWFRect.m in Sources */,
 				32D50BCD1A3D227C002D3098 /* LWFRadioactiveRat.m in Sources */,
 				A78443B01A1EEFCC0029995D /* PathFindNode.m in Sources */,
 				A7D8BEED1A1AB909005B0599 /* LWFRoom.m in Sources */,
