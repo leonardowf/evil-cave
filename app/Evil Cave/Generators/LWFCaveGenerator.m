@@ -53,7 +53,7 @@
 }
 
 - (NSMutableArray *)generate {
-    LWFDartDungeonGenerator *generator = [[LWFDartDungeonGenerator alloc]initForStageWidth:51 andStageHeigth:51];
+    LWFDartDungeonGenerator *generator = [[LWFDartDungeonGenerator alloc]initForStageWidth:_width andStageHeigth:_heigth];
     
     [generator generate];
     

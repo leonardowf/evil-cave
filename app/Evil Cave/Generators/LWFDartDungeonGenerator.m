@@ -10,6 +10,7 @@
 #import "LWFCaveGeneratorCell.h"
 #import "LWFRandomUtils.h"
 #import "LWFRect.h"
+#import "LWFPointObject.h"
 
 @interface LWFDartDungeonGenerator () {
     int numRoomTries;
@@ -82,6 +83,15 @@
     
 }
 
+- (NSArray *)directions {
+    LWFPointObject *left = [LWFPointObject pointWithX:-1 andY:0];
+    LWFPointObject *right = [LWFPointObject pointWithX:1 andY:0];
+    LWFPointObject *up = [LWFPointObject pointWithX:0 andY:1];
+    LWFPointObject *down = [LWFPointObject pointWithX:0 andY:-1];
+    
+    return @[left, right, up, down];
+}
+
 - (void)generate {
     if (_stageWidth % 2 == 0 || _stageHeight % 2 == 0) {
         NSLog(@"The stage must be odd-sized.");
@@ -92,7 +102,105 @@
     
     [self addRooms];
     
+    // Fill in all of the empty space with mazes.
+    for (int y = 1; y < _stageHeight; y += 2) {
+        for (int x = 1; x < _stageWidth; x += 2) {
+            LWFCaveGeneratorCell *cell = _stage[x][y];
+            
+            if (cell.cellType != CaveCellTypeWall) continue;
+            [self growMazeForX:x y:y];
+        }
+    }
+    
+    
     NSLog(@"preenchi");
+}
+
+- (void)growMazeForX:(NSInteger)x y:(NSUInteger)y {
+    NSArray *directions = [self directions];
+    
+    NSMutableArray *cells = [NSMutableArray array];
+    
+    LWFPointObject *start = [LWFPointObject pointWithX:x andY:y];
+    
+    LWFPointObject *lastDir;
+    
+    [self startRegion];
+    
+    [self carveX:start.x y:start.y type:CaveCellTypeFloor];
+    
+    [cells addObject:start];
+    
+    while ([cells count] > 0) {
+        LWFPointObject *cell = [cells lastObject];
+        
+        // See which adjacent cells are open.
+        NSMutableArray *unmadeCells = [NSMutableArray array];
+        
+        for (LWFPointObject *dir in directions) {
+            if ([self canCarve:cell direction:dir]) {
+                [unmadeCells addObject:dir];
+            }
+        }
+        
+        if ([unmadeCells count] > 0) {
+            LWFPointObject *dir;
+            
+            NSUInteger randomized = [_randomizer randomIntegerBetween:1 and:101];
+            
+            if ([unmadeCells containsObject:lastDir] && randomized > windingPercent) {
+                dir = lastDir;
+            } else {
+                NSInteger dirIndex = [_randomizer randomIntegerBetween:0 and:unmadeCells.count];
+                dir = [unmadeCells objectAtIndex:dirIndex];
+            }
+            
+            int summedX = cell.x + dir.x;
+            int summedY = cell.y + dir.y;
+            
+            int summedXDouble = (dir.x * 2) + cell.x;
+            int summedYDouble = (dir.y * 2) + cell.y;
+            
+            [self carveX:summedX y:summedY type:CaveCellTypeFloor];
+            [self carveX:summedXDouble y:summedYDouble type:CaveCellTypeFloor];
+            
+            LWFPointObject *toAdd = [LWFPointObject pointWithX:summedXDouble andY:summedYDouble];
+            [cells addObject:toAdd];
+            lastDir = dir;
+        } else {
+            // No adjacent uncarved cells
+            [cells removeLastObject];
+            lastDir = nil;
+        }
+    }
+}
+
+- (BOOL)canCarve:(LWFPointObject *)pos direction:(LWFPointObject *)dir {
+    int directionX = dir.x * 3;
+    int directionY = dir.y * 3;
+    
+    directionX = directionX + pos.x;
+    directionY = directionY + pos.y;
+    
+    LWFPointObject *newPoint = [LWFPointObject pointWithX:directionX andY:directionY];
+    
+    if (newPoint.x >= _stageWidth || newPoint.y >= _stageHeight) {
+        return false;
+    }
+    
+    if (newPoint.x < 0 || newPoint.y < 0) {
+        return false;
+    }
+    
+    int doubleX = dir.x * 2;
+    doubleX = doubleX + pos.x;
+    
+    int doubleY = dir.y * 2;
+    doubleY = doubleY + pos.y;
+    
+    LWFCaveGeneratorCell *cell = self.stage[doubleX][doubleY];
+    
+    return cell.cellType == CaveCellTypeWall;
 }
 
 - (void)fill {
@@ -107,7 +215,7 @@
     for (int i = 0; i < numRoomTries; i++) {
         int sizeMax = 3 + roomExtraSize;
         NSInteger size = [_randomizer randomIntegerBetween:1 and:sizeMax];
-        size = size * 3 + 1;
+        size = size * 2 + 1;
         
         int rectangularityMax = 1 + size / 2;
         
