@@ -80,8 +80,6 @@
         self.stage[i] = [NSMutableArray arrayWithCapacity:_stageHeight];
         
     }
-    
-    
 }
 
 - (NSArray *)directions {
@@ -115,7 +113,53 @@
     
     [self connectRegions];
     
+    [self removeDeadEnds];
+    
     NSLog(@"preenchi");
+}
+
+- (void)removeDeadEnds {
+    BOOL done = NO;
+    
+    NSArray *directions = [self directions];
+    
+    while (!done) {
+        done = YES;
+        
+        NSInteger inflatedX = _stageWidth - 1;
+        NSInteger inflatedY = _stageHeight - 1;
+        
+        for (int x = 1; x < inflatedX; x++) {
+            for (int y = 1; y < inflatedY; y++) {
+                LWFPointObject *pos = [LWFPointObject pointWithX:x andY:y];
+                
+                LWFCaveGeneratorCell *tile = self.stage[pos.x][pos.y];
+                if (tile.cellType == CaveCellTypeWall) {
+                    continue;
+                }
+                
+                int exits = 0;
+                
+                for (LWFPointObject *dir in directions) {
+                    LWFPointObject *posPlusDir = [LWFPointObject point:pos plus:dir];
+                    
+                    LWFCaveGeneratorCell *checkingTile = self.stage[posPlusDir.x][posPlusDir.y];
+                    
+                    if (checkingTile.cellType != CaveCellTypeWall) {
+                        exits++;
+                    }
+                    
+                }
+                
+                if (exits != 1) continue;
+                
+                done = NO;
+                
+                self.stage[pos.x][pos.y] = [LWFCaveGeneratorCell cellForX:pos.x y:pos.y andType:CaveCellTypeWall];
+                
+            }
+        }
+    }
 }
 
 - (void)connectRegions {
@@ -265,7 +309,7 @@
 - (void)addJunction:(LWFPointObject *)pos {
     // TODO: portas
     
-    [self carveX:pos.x y:pos.y type:CaveCellTypeDoor];
+    self.stage[pos.x][pos.y] = [LWFCaveGeneratorCell cellForX:pos.x y:pos.y andType:CaveCellTypeDoor];
     
 }
 
