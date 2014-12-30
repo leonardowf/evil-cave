@@ -24,6 +24,11 @@
 }
 
 - (NSInteger)randomIntegerBetween:(NSInteger)low and:(NSInteger)high {
+    if (high == low) {
+        return high;
+    }
+    
+    
     int rndValue = low + arc4random() % (high - low);
     return rndValue;
 }

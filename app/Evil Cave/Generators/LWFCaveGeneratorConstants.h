@@ -14,6 +14,7 @@ typedef NS_ENUM(NSInteger, CaveCellType) {
     CaveCellTypeInvalid = -1,
     CaveCellTypeWall,
     CaveCellTypeFloor,
+    CaveCellTypeDoor,
     CaveCellTypeStart,
     CaveCellTypeEnd,
     CaveCellTypeMax

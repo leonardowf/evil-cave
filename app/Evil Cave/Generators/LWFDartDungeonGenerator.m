@@ -33,6 +33,7 @@
     
     /// The index of the current region being carved.
     int _currentRegion;
+    NSNumber *_currentRegionNumber;
     
     int _stageWidth;
     int _stageHeight;
@@ -112,8 +113,160 @@
         }
     }
     
+    [self connectRegions];
     
     NSLog(@"preenchi");
+}
+
+- (void)connectRegions {
+    NSMutableDictionary *connectorRegions = [NSMutableDictionary dictionary];
+    
+    NSInteger inflatedX = _stageWidth - 1;
+    NSInteger inflatedY = _stageHeight - 1;
+    
+    NSArray *directions = [self directions];
+    
+    for (int x = 1; x < inflatedX; x++) {
+        for (int y = 1; y < inflatedY; y++) {
+            LWFPointObject *pos = [LWFPointObject pointWithX:x andY:y];
+            
+            LWFCaveGeneratorCell *tile = self.stage[pos.x][pos.y];
+            if (tile.cellType != CaveCellTypeWall) continue;
+            
+            NSMutableSet *regions = [NSMutableSet set];
+
+            for (LWFPointObject *dir in directions) {
+                LWFPointObject *posPlusDir = [LWFPointObject point:pos plus:dir];
+                
+                NSNumber *region = _regions[posPlusDir.x][posPlusDir.y];
+                
+                if (region != nil && region != [NSNull null]) {
+                    [regions addObject:region];
+                }
+            }
+            
+            if ([regions count] < 2) continue;
+            
+            [connectorRegions setObject:regions forKey:[pos toString]];
+        }
+    }
+    
+    NSMutableArray *connectors = [NSMutableArray arrayWithArray:[connectorRegions allKeys]];
+    
+    NSMutableDictionary *merged = [NSMutableDictionary dictionary];
+    
+    NSMutableSet *openRegions = [NSMutableSet set];
+    
+    for (int i = 0; i <= _currentRegion; i++) {
+        NSNumber *iNumber = [NSNumber numberWithInt:i];
+        [merged setObject:iNumber forKey:iNumber];
+        [openRegions addObject:iNumber];
+    }
+    
+    while (openRegions.count > 1) {
+        
+        if (connectors.count == 0) return;
+        
+        NSInteger randomized = [_randomizer randomIntegerBetween:0 and:connectors.count];
+        NSString *connectorString = [connectors objectAtIndex:randomized];
+        
+        LWFPointObject *connector = [LWFPointObject pointWithString:connectorString];
+        
+        [self addJunction:connector];
+        
+        NSMutableSet *regions1 = [connectorRegions objectForKey:[connector toString]];
+        NSMutableArray *regions = [NSMutableArray array];
+        for (NSNumber *region in regions1) {
+            id lol = [merged objectForKey:region];
+            [regions addObject:lol];
+        }
+        
+        NSNumber *dest = [regions firstObject];
+        NSMutableArray *temp = [NSMutableArray arrayWithArray:regions];
+        [temp removeObject:dest];
+        NSArray *sources = temp;
+        
+        for (int i = 0; i <= _currentRegion; i++) {
+            if ([self sources:sources containsMerged:merged withInt:i]) {
+                NSNumber *iNumber = [NSNumber numberWithInt:i];
+                [merged setObject:dest forKey:iNumber];
+            }
+        }
+        
+        
+        [self openRegions:openRegions removeAll:sources];
+        
+        NSMutableArray *toRemove = [NSMutableArray array];
+        
+        for (NSString *posString in connectors) {
+            LWFPointObject *pos = [LWFPointObject pointWithString:posString];
+            
+            if ([pos isItFuckingNear:connector]) {
+                [toRemove addObject:pos];
+                continue;
+            }
+            
+            NSMutableArray *regions1 = [connectorRegions objectForKey:[pos toString]];
+            NSMutableSet *regions = [NSMutableSet set];
+            for (NSNumber *region in regions1) {
+                id lol = [merged objectForKey:region];
+                [regions addObject:lol];
+            }
+            
+            if (regions.count > 1) {
+                continue;
+            }
+            
+//            todo: extra connector
+            [toRemove addObject:pos];
+            
+        }
+        
+        
+//        [connectors removeObjectsInArray:toRemove];
+        
+        [self connectors:connectors removeObjects:toRemove];
+        
+        NSLog(@"removeu");
+    }
+    
+    
+    
+    
+}
+
+- (void)connectors:(NSMutableArray *)connectors removeObjects:(NSMutableArray *)toRemove {
+    for (LWFPointObject *objectToRemove in toRemove) {
+        [connectors removeObject:[objectToRemove toString]];
+    }
+}
+
+- (void)openRegions:(NSMutableSet *)openRegions removeAll:(NSArray *)sources {
+    NSLog(@"to fudidinho");
+    for (NSNumber *number in sources) {
+        [openRegions removeObject:number];
+    }
+    
+}
+
+- (BOOL)sources:(NSArray *)sources containsMerged:(NSMutableDictionary *)merged withInt:(int)i {
+    NSNumber *iNumber = [NSNumber numberWithInt:i];
+    NSNumber *target = [merged objectForKey:iNumber];
+    
+    for (NSNumber *number in sources) {
+        if ([number intValue] == [target intValue]) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+- (void)addJunction:(LWFPointObject *)pos {
+    // TODO: portas
+    
+    [self carveX:pos.x y:pos.y type:CaveCellTypeDoor];
+    
 }
 
 - (void)growMazeForX:(NSInteger)x y:(NSUInteger)y {
@@ -270,10 +423,11 @@
 
 - (void)startRegion {
     _currentRegion++;
+    _currentRegionNumber = [NSNumber numberWithInteger:_currentRegion];
 }
 
 - (void)carveX:(NSInteger)x y:(NSInteger)y type:(CaveCellType)type {
-    _regions[x][y] = [NSNumber numberWithInteger:_currentRegion];
+    _regions[x][y] = _currentRegionNumber;
     
     self.stage[x][y] = [LWFCaveGeneratorCell cellForX:x y:y andType:type];
 }

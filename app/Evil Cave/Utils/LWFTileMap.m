@@ -50,6 +50,10 @@
                     [tile setWalkable:YES];
                     self.endTile = tile;
                     
+                } else if (cell.cellType == CaveCellTypeDoor) {
+                    tile = [[LWFTile alloc]initWithColor:[UIColor yellowColor] size:mapDimension.tileSize];
+                    [tile setWalkable:YES];
+                    
                 } else {
                     tile = [[LWFTile alloc]initWithColor:[UIColor blackColor] size:mapDimension.tileSize];
                     [tile setWalkable:NO];

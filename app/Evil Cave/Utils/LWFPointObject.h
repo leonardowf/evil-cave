@@ -14,5 +14,11 @@
 @property (nonatomic) NSInteger y;
 
 + (LWFPointObject *)pointWithX:(NSInteger)x andY:(NSInteger)y;
++ (LWFPointObject *)point:(LWFPointObject *)point1 plus:(LWFPointObject *)point2;
++ (LWFPointObject *)point:(LWFPointObject *)point1 minus:(LWFPointObject *)point2;
++ (LWFPointObject *)pointWithString:(NSString *)pointRepresentation;
+- (BOOL)isItFuckingNear:(LWFPointObject *)other;
 
+- (CGFloat)distanceTo:(LWFPointObject *)other;
+- (NSString *)toString;
 @end
