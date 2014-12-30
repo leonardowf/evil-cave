@@ -65,7 +65,9 @@
         y = -1 * y;
     }
     
-    return (x == 1 || y == 1);
+    return NO;
+    
+//    return (x == 1 || y == 1);
 }
 
 
