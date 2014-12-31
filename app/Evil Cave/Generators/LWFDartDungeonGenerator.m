@@ -62,7 +62,7 @@
 
 - (void)initializeVariables {
     numRoomTries = 200;
-    extraConnectorChance = 20;
+    extraConnectorChance = 10;
     roomExtraSize = 0;
     windingPercent = 0;
     _rooms = [NSMutableArray array];
@@ -261,13 +261,17 @@
                 continue;
             }
             
-//            todo: extra connector
+            int randomized = [_randomizer randomIntegerBetween:1 and:101];
+            
+            if (randomized <= extraConnectorChance) {
+                [self addJunction:pos];
+            }
+            
+            
+            
             [toRemove addObject:pos];
             
         }
-        
-        
-//        [connectors removeObjectsInArray:toRemove];
         
         [self connectors:connectors removeObjects:toRemove];
         

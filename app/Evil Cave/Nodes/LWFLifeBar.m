@@ -23,30 +23,30 @@
     self = [super init];
     if (self) {
         
-        SKTexture *lifebarTexture = [SKTexture textureWithImageNamed:@"creature_lifebar"];
-        lifebarTexture.filteringMode = SKTextureFilteringNearest;
-        [self setTexture:lifebarTexture];
-        [self setSize:lifebarTexture.size];
-        
-        self.anchorPoint = CGPointMake(0, 0);
-        
-        _fillGreen = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(28, 2)];
-        _fillGreen.anchorPoint =CGPointMake(0, 0);
-        [_fillGreen setPosition:CGPointMake(2, 1)];
-        
-        [self addChild:_fillGreen];
-        
-        _fillLeftCorner = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(1, 1)];
-        _fillLeftCorner.anchorPoint = CGPointMake(0, 0);
-        [_fillLeftCorner setPosition:CGPointMake(1, 1)];
-        
-        [self addChild:_fillLeftCorner];
-        
-        _fillRightCorner = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(1, 1)];
-        _fillRightCorner.anchorPoint =CGPointMake(0, 0);
-        [_fillRightCorner setPosition:CGPointMake(self.size.width -2, 2)];
-        
-        [self addChild:_fillRightCorner];
+//        SKTexture *lifebarTexture = [SKTexture textureWithImageNamed:@"creature_lifebar"];
+//        lifebarTexture.filteringMode = SKTextureFilteringNearest;
+//        [self setTexture:lifebarTexture];
+//        [self setSize:lifebarTexture.size];
+//        
+//        self.anchorPoint = CGPointMake(0, 0);
+//        
+//        _fillGreen = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(28, 2)];
+//        _fillGreen.anchorPoint =CGPointMake(0, 0);
+//        [_fillGreen setPosition:CGPointMake(2, 1)];
+//        
+//        [self addChild:_fillGreen];
+//        
+//        _fillLeftCorner = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(1, 1)];
+//        _fillLeftCorner.anchorPoint = CGPointMake(0, 0);
+//        [_fillLeftCorner setPosition:CGPointMake(1, 1)];
+//        
+//        [self addChild:_fillLeftCorner];
+//        
+//        _fillRightCorner = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(1, 1)];
+//        _fillRightCorner.anchorPoint =CGPointMake(0, 0);
+//        [_fillRightCorner setPosition:CGPointMake(self.size.width -2, 2)];
+//        
+//        [self addChild:_fillRightCorner];
 
     }
     return self;
