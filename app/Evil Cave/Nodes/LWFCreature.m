@@ -487,7 +487,7 @@
 - (void)willDieWithCompletion:(void(^)(void))someBlock {
     [self replaceTile];
     self.currentTile.creatureOnTile = nil;
-    self.currentTile = nil;
+
     [someBlock invoke];
     
 }
@@ -530,7 +530,7 @@
 }
 
 - (void)diedWithCompletion:(void(^)(void))someBlock {
-
+    self.currentTile = nil;
     [someBlock invoke];
 }
 

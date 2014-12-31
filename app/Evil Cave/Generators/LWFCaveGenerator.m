@@ -16,6 +16,8 @@
 
 #import "LWFDartDungeonGenerator.h"
 
+#import "LWFRect.h"
+
 @interface LWFCaveGenerator () {
     LWFModelGrid *_modelGrid;
     NSMutableArray *_grid;
@@ -57,143 +59,44 @@
     
     [generator generate];
     
+    [self generateStartAndEndForModelGrid:generator.stage andRooms:generator.rooms];
+    
     return generator.stage;
 }
 
-- (void)generateStartAndEnd {
-    LWFRoom *firstRoom = _rooms.firstObject;
-    LWFRoom *fasthestRoom = [self findFarthestRoomOf:firstRoom inArray:_rooms];
+- (void)generateStartAndEndForModelGrid:(NSMutableArray *)modelGrid andRooms:(NSMutableArray *)rooms {
+    int randomized = [_randomUtils randomIntegerBetween:0 and:rooms.count];
     
-    _modelGrid.startLevelPosition = firstRoom.midCoordinate;
-    _modelGrid.endLevelPosition = fasthestRoom.midCoordinate;
+    LWFRect *firstRoom = [rooms objectAtIndex:randomized];
     
-    NSInteger startPositionX = _modelGrid.startLevelPosition.x;
-    NSInteger startPositionY = _modelGrid.startLevelPosition.y;
-    NSInteger endPositionX = _modelGrid.endLevelPosition.x;
-    NSInteger endPositionY = _modelGrid.endLevelPosition.y;
+    CGFloat highest = 0;
+    LWFRect *lastRoom = firstRoom;
     
-    _grid[startPositionX][startPositionY] = [[LWFCaveGeneratorCell alloc]initWithX:startPositionX y:startPositionY andType:CaveCellTypeStart];
     
-    _grid[endPositionX][endPositionY] = [[LWFCaveGeneratorCell alloc]initWithX:endPositionX y:endPositionY andType:CaveCellTypeEnd];
-
-}
-
-- (void)generateRooms {
-    for (NSUInteger i = 0; i < 50; i++) {
-        LWFRoom *room = [_roomBuilder build];
-        [_rooms addObject:room];
-    }
-    
-}
-
-- (void)addRooms {
-    for (LWFRoom *room in _rooms) {
-        NSUInteger maxRoomX = _width - room.width;
-        NSUInteger maxRoomY = _heigth - room.heigth;
+    for (LWFRect *testRoom in rooms) {
+        CGFloat distance = [testRoom distanceTo:firstRoom];
         
-        NSUInteger roomPosX = [_randomUtils randomIntegerBetween:0 and:maxRoomX];
-        NSUInteger roomPosY = [_randomUtils randomIntegerBetween:0 and:maxRoomY];
-        
-        room.x = roomPosX;
-        room.y = roomPosY;
-        
-        for (NSUInteger i = room.x; i < room.x + room.width; i++) {
-            for (NSUInteger j = room.y; j < room.y + room.heigth; j++) {
-                _grid[i][j] = [[LWFCaveGeneratorCell alloc]initWithX:i y:j andType:CaveCellTypeFloor];
-            }
-        }
-        
-    }
-}
-
-- (void)generateConnectionBetweenRooms {
-    LWFRoom *roomStart = [_rooms objectAtIndex:0];
-    roomStart.mstVisited = YES;
-    
-    for (NSUInteger i = 0; i < _rooms.count -1; i++) {
-        LWFRoom *nearestRoom = [self findNearestRoomOfRoom:roomStart inArray:_rooms];
-        
-        [self generatePathBetweenRoom1:roomStart andRoom2:nearestRoom];
-        roomStart = nearestRoom;
-    }
-}
-
-- (LWFRoom *)findNearestRoomOfRoom:(LWFRoom *)originRoom inArray:(NSArray *)availableRooms {
-    NSUInteger bestDistance = 9999;
-    LWFRoom *bestRoom;
-    
-    for (LWFRoom *room in availableRooms) {
-        if (room.mstVisited == NO) {
-            NSUInteger distance = [self distanceBetweenRoom:originRoom andRoom:room];
-            if (distance < bestDistance) {
-                bestDistance = distance;
-                bestRoom = room;
-            }
+        if (distance > highest) {
+            lastRoom = testRoom;
+            highest = distance;
         }
     }
     
-    bestRoom.mstVisited = YES;
-    return bestRoom;
-}
-
-- (LWFRoom *)findFarthestRoomOf:(LWFRoom *)originRoom inArray:(NSArray *)availableRooms {
-    NSUInteger bestDistance = 0;
-    LWFRoom *bestRoom;
+    CGPoint startCoord = [firstRoom middleCoordinate];
+    CGPoint endCoord = [lastRoom middleCoordinate];
     
-    for (LWFRoom *room in availableRooms) {
-        NSUInteger distance = [self distanceBetweenRoom:originRoom andRoom:room];
-        if (distance > bestDistance) {
-            bestDistance = distance;
-            bestRoom = room;
-        }
-    }
-    return bestRoom;
-}
-
-- (NSUInteger)distanceBetweenRoom:(LWFRoom *)room1 andRoom:(LWFRoom *)room2 {
-    NSInteger x = room1.x - room2.x;
-    NSInteger y = room1.y - room2.y;
+    int x = startCoord.x;
+    int y = startCoord.y;
     
-    NSInteger distance = (x + y) / 2;
+    modelGrid[x][y] = [LWFCaveGeneratorCell cellForX:x y:y andType:CaveCellTypeStart];
     
-    if (distance < 0) {
-        return -distance;
-    }
-    return distance;
-}
-
-- (void)generatePathBetweenRoom1:(LWFRoom *)room1 andRoom2:(LWFRoom *)room2 {
-    CGPoint midRoom1 = [room1 midCoordinate];
-    CGPoint midRoom2 = [room2 midCoordinate];
+    x = endCoord.x;
+    y = endCoord.y;
     
-    NSUInteger pathY = midRoom1.y;
-    NSUInteger pathX = midRoom1.x;
-    NSInteger increment;
-    
-    // TODO: inverter a geração
-    
-    if (pathY < midRoom2.y) {
-        increment = 1;
-    } else {
-        increment = -1;
-    }
-    while (pathY != midRoom2.y) {
-        _grid[pathX][pathY] = [[LWFCaveGeneratorCell alloc]initWithX:midRoom1.x y:pathY andType:CaveCellTypeFloor];
-        pathY = pathY + increment;
-    }
-    
-    if (pathX < midRoom2.x) {
-        increment = 1;
-    } else {
-        increment = -1;
-    }
-    
-    while (pathX != midRoom2.x) {
-        _grid[pathX][pathY] = [[LWFCaveGeneratorCell alloc]initWithX:pathX y:pathY andType:CaveCellTypeFloor];
-        pathX = pathX + increment;
-    }
+    modelGrid[x][y] = [LWFCaveGeneratorCell cellForX:x y:y andType:CaveCellTypeEnd];
     
     
+    NSLog(@"to aqi");
 }
 
 @end

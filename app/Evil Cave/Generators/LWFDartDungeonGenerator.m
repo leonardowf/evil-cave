@@ -67,7 +67,7 @@
     windingPercent = 0;
     _rooms = [NSMutableArray array];
     _regions = [NSMutableArray arrayWithCapacity:_stageWidth];
-    for (int i = 0; i < _stageHeight; i++) {
+    for (int i = 0; i < _stageWidth; i++) {
         _regions[i] = [NSMutableArray arrayWithCapacity:_stageHeight];
         for (int j = 0; j < _stageHeight; j++) {
             _regions[i][j] = [NSNull null];
@@ -76,7 +76,7 @@
     _currentRegion = -1;
     
     self.stage = [NSMutableArray arrayWithCapacity:_stageWidth];
-    for (int i = 0; i < _stageHeight; i++) {
+    for (int i = 0; i < _stageWidth; i++) {
         self.stage[i] = [NSMutableArray arrayWithCapacity:_stageHeight];
         
     }
@@ -115,7 +115,7 @@
     
     [self removeDeadEnds];
     
-    NSLog(@"preenchi");
+    self.rooms = _rooms;
 }
 
 - (void)removeDeadEnds {
@@ -184,7 +184,7 @@
                 
                 NSNumber *region = _regions[posPlusDir.x][posPlusDir.y];
                 
-                if (region != nil && region != [NSNull null]) {
+                if (region != nil && (id)region != [NSNull null]) {
                     [regions addObject:region];
                 }
             }
@@ -267,20 +267,11 @@
                 [self addJunction:pos];
             }
             
-            
-            
             [toRemove addObject:pos];
-            
         }
         
         [self connectors:connectors removeObjects:toRemove];
-        
-        NSLog(@"removeu");
     }
-    
-    
-    
-    
 }
 
 - (void)connectors:(NSMutableArray *)connectors removeObjects:(NSMutableArray *)toRemove {
@@ -290,11 +281,9 @@
 }
 
 - (void)openRegions:(NSMutableSet *)openRegions removeAll:(NSArray *)sources {
-    NSLog(@"to fudidinho");
     for (NSNumber *number in sources) {
         [openRegions removeObject:number];
     }
-    
 }
 
 - (BOOL)sources:(NSArray *)sources containsMerged:(NSMutableDictionary *)merged withInt:(int)i {

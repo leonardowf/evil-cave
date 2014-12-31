@@ -16,5 +16,7 @@
 @property NSInteger height;
 
 + (LWFRect *)rectWithX:(NSInteger)x y:(NSInteger)y width:(NSInteger)width andHeight:(NSInteger)height;
+
 - (CGFloat)distanceTo:(LWFRect *)other;
+- (CGPoint)middleCoordinate;
 @end

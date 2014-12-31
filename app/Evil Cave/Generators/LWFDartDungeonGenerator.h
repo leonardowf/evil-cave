@@ -16,5 +16,7 @@
 - (void)generate;
 
 @property (nonatomic, strong) NSMutableArray *stage;
+@property (nonatomic, strong) NSMutableArray *rooms;
+
 
 @end
