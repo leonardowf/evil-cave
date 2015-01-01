@@ -530,7 +530,6 @@
 }
 
 - (void)diedWithCompletion:(void(^)(void))someBlock {
-    self.currentTile = nil;
     [someBlock invoke];
 }
 
