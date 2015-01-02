@@ -55,7 +55,9 @@
                     [tile setWalkable:YES];
                     
                 } else {
-                    tile = [[LWFTile alloc]initWithColor:[UIColor blackColor] size:mapDimension.tileSize];
+                    SKTexture *texture = [SKTexture textureWithImageNamed:@"wall"];
+                    texture.filteringMode = SKTextureFilteringNearest;
+                    tile = [LWFTile spriteNodeWithTexture:texture];
                     [tile setWalkable:NO];
                 }
                 

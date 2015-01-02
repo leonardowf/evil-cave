@@ -49,6 +49,8 @@
 		32F09E2F1A48EBB1000B8797 /* LWFEquips.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F09E2E1A48EBB1000B8797 /* LWFEquips.m */; };
 		32F09E311A48F4FA000B8797 /* Munro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32F09E301A48EFBC000B8797 /* Munro.ttf */; };
 		32F1CDC61A575A2F00A0D9F5 /* LWFInventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F1CDC51A575A2F00A0D9F5 /* LWFInventory.m */; };
+		32F1CDCA1A575C6600A0D9F5 /* LWFItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F1CDC91A575C6600A0D9F5 /* LWFItem.m */; };
+		32F1CDCC1A57603800A0D9F5 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F1CDCB1A57603800A0D9F5 /* wall.png */; };
 		32FFE83E1A2C0BDD003D02A4 /* LWFAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFE83D1A2C0BDD003D02A4 /* LWFAttack.m */; };
 		32FFE8411A2C0BF0003D02A4 /* LWFMelee.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFE8401A2C0BF0003D02A4 /* LWFMelee.m */; };
 		A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = A70387581A17BC620053A9E6 /* LWFMapDimension.m */; };
@@ -158,6 +160,9 @@
 		32F09E301A48EFBC000B8797 /* Munro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Munro.ttf; sourceTree = "<group>"; };
 		32F1CDC41A575A2F00A0D9F5 /* LWFInventory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFInventory.h; sourceTree = "<group>"; };
 		32F1CDC51A575A2F00A0D9F5 /* LWFInventory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFInventory.m; sourceTree = "<group>"; };
+		32F1CDC81A575C6600A0D9F5 /* LWFItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFItem.h; sourceTree = "<group>"; };
+		32F1CDC91A575C6600A0D9F5 /* LWFItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFItem.m; sourceTree = "<group>"; };
+		32F1CDCB1A57603800A0D9F5 /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
 		32FFE83A1A2BF6E2003D02A4 /* LWFConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWFConstants.h; sourceTree = "<group>"; };
 		32FFE83C1A2C0BDD003D02A4 /* LWFAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttack.h; sourceTree = "<group>"; };
 		32FFE83D1A2C0BDD003D02A4 /* LWFAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAttack.m; sourceTree = "<group>"; };
@@ -286,6 +291,7 @@
 		32BEBFED1A470A82000C77AA /* Tiles */ = {
 			isa = PBXGroup;
 			children = (
+				32F1CDCB1A57603800A0D9F5 /* wall.png */,
 				324527911A4DE73000AFF9A7 /* bloody_rock_tile.png */,
 				32BEBFEE1A470AAB000C77AA /* rock_tile.png */,
 				324AD7201A50E7EE000EED96 /* wall_tile.png */,
@@ -361,6 +367,15 @@
 				32BEBFED1A470A82000C77AA /* Tiles */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		32F1CDC71A575BCB00A0D9F5 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				32F1CDC81A575C6600A0D9F5 /* LWFItem.h */,
+				32F1CDC91A575C6600A0D9F5 /* LWFItem.m */,
+			);
+			path = Items;
 			sourceTree = "<group>";
 		};
 		32FFE83B1A2C0BCE003D02A4 /* Attacks */ = {
@@ -479,6 +494,7 @@
 		A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */ = {
 			isa = PBXGroup;
 			children = (
+				32F1CDC71A575BCB00A0D9F5 /* Items */,
 				32D50BC81A3D1FE9002D3098 /* Assets */,
 				32C511F01A37A5BD00F0B955 /* Geometry */,
 				32FFE83B1A2C0BCE003D02A4 /* Attacks */,
@@ -646,6 +662,7 @@
 				324527871A4DB5F400AFF9A7 /* warrior_standing_left.atlas in Resources */,
 				324527941A4DEEF100AFF9A7 /* rat_dying_right.atlas in Resources */,
 				324527921A4DE73000AFF9A7 /* bloody_rock_tile.png in Resources */,
+				32F1CDCC1A57603800A0D9F5 /* wall.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,6 +703,7 @@
 				A703875C1A17BD5E0053A9E6 /* LWFTile.m in Sources */,
 				32F09E2F1A48EBB1000B8797 /* LWFEquips.m in Sources */,
 				A703875F1A17BEB00053A9E6 /* LWFTileMap.m in Sources */,
+				32F1CDCA1A575C6600A0D9F5 /* LWFItem.m in Sources */,
 				A7F5BB961A16EFBC005BAB63 /* main.m in Sources */,
 				321EC9A71A26A5C400F06B77 /* LWFTurnList.m in Sources */,
 				32D50BC71A3D018D002D3098 /* LWFAttacksBuilder.m in Sources */,

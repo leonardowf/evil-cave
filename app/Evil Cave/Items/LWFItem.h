@@ -1,5 +1,5 @@
 //
-//  LWFInventory.h
+//  LWFItem.h
 //  Evil Cave
 //
 //  Created by Leonardo Wistuba de França on 1/2/15.
@@ -8,8 +8,6 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface LWFInventory : SKSpriteNode
-
-- (id)sharedInventory;
+@interface LWFItem : SKSpriteNode
 
 @end

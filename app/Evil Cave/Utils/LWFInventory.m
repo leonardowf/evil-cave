@@ -10,6 +10,6 @@
 
 @implementation LWFInventory
 
-
+SINGLETON_FOR_CLASS(Invetory)
 
 @end
