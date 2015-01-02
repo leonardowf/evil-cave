@@ -8,15 +8,12 @@
 
 #import "LWFAttackManager.h"
 
-#import "LWFDamageDisplayer.h"
 #import "LWFTile.h"
 #import "LWFCreature.h"
 #import "LWFCombatSystem.h"
 #import "LWFCombatOutput.h"
 
 @interface LWFAttackManager () {
-    LWFDamageDisplayer *_damagerDisplayer;
-    
     id<LWFAttackable> _currentAttackable;
     
     BOOL _attackedAllowedAttack;
@@ -35,7 +32,6 @@
     self = [super init];
     if (self) {
         self.tileMap = tileMap;
-        _damagerDisplayer = [LWFDamageDisplayer sharedLWFDamageDisplayer];
     }
     return self;
 }

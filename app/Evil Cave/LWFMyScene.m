@@ -14,8 +14,6 @@
 #import "LWFPlayer.h"
 #import "LWFGeometry.h"
 
-#import "LWFDamageDisplayer.h"
-
 @interface LWFMyScene () {
     LWFMap *_map;
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
@@ -38,9 +36,6 @@
         _map = [[LWFMap alloc]initWithMapDimension:mapDimension];
         [_map addTiles];
         [_map loadGame];
-        
-        LWFDamageDisplayer *damageDisplayer = [LWFDamageDisplayer sharedLWFDamageDisplayer];
-        damageDisplayer.map = _map;
         
         [self addChild:_map];
         [_map moveCameraToTile:_map.player.currentTile];
