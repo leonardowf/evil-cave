@@ -8,8 +8,16 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+@class LWFPlayer;
+
 @interface LWFInventory : SKSpriteNode
 
-- (id)sharedInventory;
+@property (nonatomic, strong) NSMutableArray *items;
+@property (nonatomic, strong) LWFPlayer *player;
+ 
++ (id)sharedInventory;
+
+- (void)show;
+- (void)hide;
 
 @end

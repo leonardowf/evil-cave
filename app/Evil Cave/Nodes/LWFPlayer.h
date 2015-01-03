@@ -11,8 +11,11 @@
 #import "LWFCreature.h"
 
 @class LWFTile;
+@class LWFInventory;
 
 @interface LWFPlayer : LWFCreature
+
+@property (nonatomic, strong) LWFInventory *inventory;
 
 - (void)movementRequestIsInvalid;
 

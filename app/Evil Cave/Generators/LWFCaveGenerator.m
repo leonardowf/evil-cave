@@ -94,9 +94,6 @@
     y = endCoord.y;
     
     modelGrid[x][y] = [LWFCaveGeneratorCell cellForX:x y:y andType:CaveCellTypeEnd];
-    
-    
-    NSLog(@"to aqi");
 }
 
 @end

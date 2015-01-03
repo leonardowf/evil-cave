@@ -10,8 +10,15 @@
 #import "LWFTile.h"
 #import "LWFMap.h"
 #import "LWFTurnList.h"
+#import "LWFInventory.h"
 
 @implementation LWFPlayer
+
+- (void)build {
+    [super build];
+    
+    self.inventory = [LWFInventory sharedInventory];
+}
 
 - (void)failedToMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
     [self.tilePath removeAllObjects];
