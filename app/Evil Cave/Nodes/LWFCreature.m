@@ -243,12 +243,11 @@
             [self finishTurn];
         }
     } else if (self.tilePath == nil || [self.tilePath count] == 0) {
-        [self buildPathToSomeDestiny];
+//        [self buildPathToSomeDestiny];
     }
     
     [self walkToExistingPath];
     
-
 }
 
 - (void)walkToExistingPath {
