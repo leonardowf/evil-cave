@@ -443,6 +443,10 @@
     
     LWFTile *tile = self.currentTile;
     
+    if (tile.cellType == CaveCellTypeDoor) {
+        return;
+    }
+    
     SKTexture *texture = [SKTexture textureWithImageNamed:@"bloody_rock_tile"];
     texture.filteringMode = SKTextureFilteringNearest;
     

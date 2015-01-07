@@ -63,6 +63,7 @@
                     [tile setWalkable:NO];
                 }
                 
+                tile.cellType = cell.cellType;
                 tile.size = mapDimension.tileSize;
                 tile.position = CGPointMake(x * mapDimension.tileSize.height, y * mapDimension.tileSize.height);
                 tile.x = x;

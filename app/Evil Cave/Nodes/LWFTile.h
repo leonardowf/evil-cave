@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "LWFCaveGeneratorConstants.h"
 @class LWFCreature;
 
 @interface LWFTile : SKSpriteNode
@@ -15,6 +16,7 @@
 @property NSUInteger x;
 @property NSUInteger y;
 @property LWFCreature *creatureOnTile;
+@property (nonatomic) CaveCellType cellType;
 
 - (BOOL)isPassable;
 - (NSUInteger)distanceToTile:(LWFTile *)tile;
