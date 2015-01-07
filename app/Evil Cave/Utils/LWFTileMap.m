@@ -51,7 +51,9 @@
                     self.endTile = tile;
                     
                 } else if (cell.cellType == CaveCellTypeDoor) {
-                    tile = [[LWFTile alloc]initWithColor:[UIColor yellowColor] size:mapDimension.tileSize];
+                    SKTexture *texture = [SKTexture textureWithImageNamed:@"door"];
+                    texture.filteringMode = SKTextureFilteringNearest;
+                    tile = [LWFTile spriteNodeWithTexture:texture];
                     [tile setWalkable:YES];
                     
                 } else {
