@@ -20,28 +20,6 @@
     self.inventory = [LWFInventory sharedInventory];
 }
 
-- (void)failedToMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
-    [self.tilePath removeAllObjects];
-}
-
-- (void)didMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
-    [self.tilePath removeObject:tile];
-    [self.turnList creatureFinishedTurn:self];
-    
-    if (self.tilePath.count == 0) {
-        [self startStandingAnimation];
-    }
-}
-
-- (void)moveToTile:(LWFTile *)tile {
-    SKAction *moveAction = [SKAction moveTo:tile.position duration:0.3];
-    [self runAction: moveAction completion:^{
-        [self didMoveToTile:tile atX:tile.x andY:tile.y];
-    }];
-    
-    [self moveCameraToTile:tile];
-}
-
 - (void)moveCameraToTile:(LWFTile *)tile {
     [self.map moveCameraToTile:tile];
 }
@@ -51,6 +29,12 @@
     if (self.tilePath.count > 0) {
         [self walkToExistingPath];
     }
+}
+
+- (void)moveToTile:(LWFTile *)tile completion:(void(^)(void))someBlock {
+    [super moveToTile:tile completion:someBlock];
+    [self moveCameraToTile:tile];
+
 }
 
 - (void)movementRequestIsInvalid {

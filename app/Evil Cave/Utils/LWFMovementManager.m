@@ -45,7 +45,7 @@
     
     if (tile.isPassable) {
         [moveable willMoveToTile:tile atX:x andY:y];
-        [moveable moveToTile:tile];
+//        [moveable moveToTile:tile];
         [moveable updateCurrentTile:tile];
         
         if (!moveableIsPlayer) {

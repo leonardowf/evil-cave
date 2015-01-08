@@ -163,7 +163,7 @@
         if (tile != self.player.currentTile && [tile isPassable]) {
             _blockUserInteraction = YES;
             CGPoint tileCoordinate = [self tileCoordinateForTouchPoint:point];
-            [self.movementManager moveable:self.player requestMoveToTileAtX:tileCoordinate.x andY:tileCoordinate.y];
+            [_player willMoveToTile:tile atX:tile.x andY:tile.y];
         } else if (tile == self.player.currentTile) {
             [self.player finishTurn];
         }

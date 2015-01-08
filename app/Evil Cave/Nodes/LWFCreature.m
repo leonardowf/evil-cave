@@ -53,8 +53,14 @@
         self.currentFacingDirection = @"right";
     }
     
+    [self moveToTile:tile completion:^{
+
+    }];
+    
+    [self didMoveToTile:tile atX:x andY:y];
+    
     [self startWalkingAnimation:^{
-//        [self startStandingAnimation];
+
     }];
 
 }
@@ -77,13 +83,15 @@
     }
 }
 - (void)didMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
+    [self updateCurrentTile:tile];
+    
     [self.tilePath removeObject:tile];
     
-    [self finishTurn];
-
     _failedMovements = 0;
     
     [self startStandingAnimation];
+    
+    [self finishTurn];
     
 }
 
@@ -95,9 +103,9 @@
     currentTile.creatureOnTile = self;
 }
 
-- (void)moveToTile:(LWFTile *)tile {
+- (void)moveToTile:(LWFTile *)tile completion:(void(^)(void))someBlock {
     SKAction *moveAction = [SKAction moveTo:tile.position duration:0.2];
-    [self runAction: moveAction];
+    [self runAction: moveAction completion:someBlock];
 }
 
 - (void)build {
@@ -153,8 +161,8 @@
 //    [self removeActionForKey:@"walking_action"];
     
     if (walkingFramesAnimation != nil && walkingFramesAnimation.count > 0) {
-        SKAction *animate = [SKAction animateWithTextures:walkingFramesAnimation timePerFrame:0.05f];
-        SKAction *action = [SKAction repeatAction:animate count:2];
+        SKAction *animate = [SKAction animateWithTextures:walkingFramesAnimation timePerFrame:0.06f];
+        SKAction *action = [SKAction repeatAction:animate count:1];
         
         [self runAction:action completion:someBlock];
     } else {
@@ -239,20 +247,30 @@
         LWFTile *closestTile = [self closestNeighborToPlayer];
         if (closestTile != nil) {
             [self buildPathToTile:closestTile];
+            
+            if (self.tilePath == nil || self.tilePath.count == 0) {
+                [self finishTurn];
+                return;
+            } else {
+                [self walkToExistingPath];
+            }
+            return;
         } else {
             [self finishTurn];
+            return;
         }
     } else if (self.tilePath == nil || [self.tilePath count] == 0) {
 //        [self buildPathToSomeDestiny];
     }
     
-    [self walkToExistingPath];
+//    [self walkToExistingPath];
+    [self finishTurn];
     
 }
 
 - (void)walkToExistingPath {
     LWFTile *nextTile = [self.tilePath lastObject];
-    [self requestMoveToTileAtX:nextTile.x andY:nextTile.y];
+    [self willMoveToTile:nextTile atX:nextTile.x andY:nextTile.y];
 }
 
 - (BOOL)isAdjacentToPlayer {
