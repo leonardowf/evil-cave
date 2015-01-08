@@ -12,7 +12,6 @@
 #import "LWFTileMap.h"
 #import "LWFTile.h"
 #import "LWFPlayer.h"
-#import "LWFMovementManager.h"
 #import "LWFHumbleBeeFindPath.h"
 #import "LWFTurnList.h"
 #import "LWFCreatureBuilder.h"
@@ -39,7 +38,6 @@
     if (self) {
         _mapDimension = mapDimension;
         _tileMap = [[LWFTileMap alloc]initWithMapDimension:mapDimension];
-        _movementManager = [[LWFMovementManager alloc]initWithTileMap:_tileMap];
         _turnList = [[LWFTurnList alloc]init];
 
         _attackManager = [[LWFAttackManager alloc]initWithTileMap:_tileMap];

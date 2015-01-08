@@ -60,7 +60,6 @@
 		A78443AC1A1EEF7B0029995D /* LWFHumbleBeeFindPath.m in Sources */ = {isa = PBXBuildFile; fileRef = A78443AB1A1EEF7B0029995D /* LWFHumbleBeeFindPath.m */; };
 		A78443B01A1EEFCC0029995D /* PathFindNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A78443AF1A1EEFCC0029995D /* PathFindNode.m */; };
 		A7D83B971A1D74F20054C022 /* LWFModelGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D83B961A1D74F20054C022 /* LWFModelGrid.m */; };
-		A7D83B9A1A1EACC80054C022 /* LWFMovementManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D83B991A1EACC80054C022 /* LWFMovementManager.m */; };
 		A7D8BEDC1A190A5B005B0599 /* LWFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8BEDB1A190A5B005B0599 /* LWFPlayer.m */; };
 		A7D8BEE11A19883A005B0599 /* LWFCaveGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8BEE01A19883A005B0599 /* LWFCaveGenerator.m */; };
 		A7D8BEE41A1988BC005B0599 /* LWFCaveGeneratorConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8BEE31A1988BC005B0599 /* LWFCaveGeneratorConstants.m */; };
@@ -182,8 +181,6 @@
 		A78443AF1A1EEFCC0029995D /* PathFindNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathFindNode.m; sourceTree = "<group>"; };
 		A7D83B951A1D74F20054C022 /* LWFModelGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFModelGrid.h; sourceTree = "<group>"; };
 		A7D83B961A1D74F20054C022 /* LWFModelGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFModelGrid.m; sourceTree = "<group>"; };
-		A7D83B981A1EACC80054C022 /* LWFMovementManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFMovementManager.h; sourceTree = "<group>"; };
-		A7D83B991A1EACC80054C022 /* LWFMovementManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFMovementManager.m; sourceTree = "<group>"; };
 		A7D8BEDA1A190A5B005B0599 /* LWFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LWFPlayer.h; path = ../../Nodes/LWFPlayer.h; sourceTree = "<group>"; };
 		A7D8BEDB1A190A5B005B0599 /* LWFPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LWFPlayer.m; path = ../../Nodes/LWFPlayer.m; sourceTree = "<group>"; };
 		A7D8BEDF1A19883A005B0599 /* LWFCaveGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFCaveGenerator.h; sourceTree = "<group>"; };
@@ -400,8 +397,6 @@
 				A703875E1A17BEB00053A9E6 /* LWFTileMap.m */,
 				A7D8BEE81A1AB598005B0599 /* LWFRandomUtils.h */,
 				A7D8BEE91A1AB598005B0599 /* LWFRandomUtils.m */,
-				A7D83B981A1EACC80054C022 /* LWFMovementManager.h */,
-				A7D83B991A1EACC80054C022 /* LWFMovementManager.m */,
 				321EC9A51A26A5C400F06B77 /* LWFTurnList.h */,
 				321EC9A61A26A5C400F06B77 /* LWFTurnList.m */,
 				32FFE83A1A2BF6E2003D02A4 /* LWFConstants.h */,
@@ -717,7 +712,6 @@
 				A7D8BEEA1A1AB598005B0599 /* LWFRandomUtils.m in Sources */,
 				32FFE83E1A2C0BDD003D02A4 /* LWFAttack.m in Sources */,
 				A7F5BBA01A16EFBD005BAB63 /* LWFViewController.m in Sources */,
-				A7D83B9A1A1EACC80054C022 /* LWFMovementManager.m in Sources */,
 				32F09E2C1A48E6B4000B8797 /* LWFCombatOutput.m in Sources */,
 				A7F5BBD11A16F831005BAB63 /* LWFMap.m in Sources */,
 				32D50BD31A3DFDF3002D3098 /* LWFPointObject.m in Sources */,

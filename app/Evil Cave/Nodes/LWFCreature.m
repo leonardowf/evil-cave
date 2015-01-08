@@ -7,7 +7,6 @@
 //
 
 #import "LWFCreature.h"
-#import "LWFMovementManager.h"
 #import "LWFTurnList.h"
 #import "LWFMap.h"
 #import "LWFTileMap.h"
@@ -42,10 +41,6 @@
     return self;
 }
 
-- (void)requestMoveToTileAtX:(NSUInteger)x andY:(NSUInteger)y {
-    [self.movementManager moveable:self requestMoveToTileAtX:x andY:y];
-}
-
 - (void)willMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y; {
     if (x < self.currentTile.x) { // tá movendo pra esquerda
         self.currentFacingDirection = @"left";
@@ -53,16 +48,35 @@
         self.currentFacingDirection = @"right";
     }
     
-    [self moveToTile:tile completion:^{
+    LWFTile *nextTile = tile;
+    
+    NSUInteger distanceFromTiles = [tile distanceToTile:self.currentTile];
+    
+    if (distanceFromTiles > 1) {
+        [self buildPathToTile:tile];
+        if (self.tilePath == nil || self.tilePath.count == 0) {
+            [self finishTurn];
+            return;
+        } else {
+            nextTile = [self.tilePath lastObject];
+        }
+        
+    }
+    
+    [self moveableToTile:nextTile];
 
+}
+
+- (void)moveableToTile:(LWFTile *)tile {
+    [self moveToTile:tile completion:^{
+        
     }];
     
-    [self didMoveToTile:tile atX:x andY:y];
+    [self didMoveToTile:tile atX:tile.x andY:tile.y];
     
     [self startWalkingAnimation:^{
-
+        
     }];
-
 }
 
 - (void)failedToMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {

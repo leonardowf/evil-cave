@@ -17,5 +17,7 @@
 - (void)willMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y;
 - (void)moveToTile:(LWFTile *)tile completion:(void(^)(void))someBlock;
 - (void)updateCurrentTile:(LWFTile *)currentTile;
+- (void)moveableToTile:(LWFTile *)tile;
+- (void)startWalkingAnimation:(void(^)(void))someBlock;
 
 @end

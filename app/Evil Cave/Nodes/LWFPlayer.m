@@ -31,6 +31,17 @@
     }
 }
 
+- (void)moveableToTile:(LWFTile *)tile {
+    [self moveToTile:tile completion:^{
+        [self didMoveToTile:tile atX:tile.x andY:tile.y];
+    }];
+    
+    
+    [self startWalkingAnimation:^{
+        
+    }];
+}
+
 - (void)moveToTile:(LWFTile *)tile completion:(void(^)(void))someBlock {
     [super moveToTile:tile completion:someBlock];
     [self moveCameraToTile:tile];
