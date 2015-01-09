@@ -48,6 +48,8 @@
         self.currentFacingDirection = @"right";
     }
     
+    [self startStandingAnimation];
+    
     LWFTile *nextTile = tile;
     
     NSUInteger distanceFromTiles = [tile distanceToTile:self.currentTile];
@@ -121,10 +123,6 @@
 - (void)moveToTile:(LWFTile *)tile completion:(void(^)(void))someBlock {
     CGFloat movementDuration = 0.3;
     
-    if (self.tilePath != nil && self.tilePath.count > 0) {
-        movementDuration = 0.3;
-    }
-    
     SKAction *moveAction = [SKAction moveTo:tile.position duration:movementDuration];
     [self runAction: moveAction completion:someBlock];
 }
@@ -166,7 +164,7 @@
 - (void)startStandingAnimation {
     NSArray *standingFramesAnimation = [self getStandingFramesAnimation];
     
-    [self removeActionForKey:@"standing_action"];
+//    [self removeActionForKey:@"standing_action"];
     
     if (standingFramesAnimation != nil && standingFramesAnimation.count > 0) {
         SKAction *animate = [SKAction animateWithTextures:standingFramesAnimation timePerFrame:0.3f];
@@ -179,7 +177,7 @@
 - (void)startWalkingAnimation:(void(^)(void))someBlock {
     NSArray *walkingFramesAnimation = [self getWalkingFramesAnimation];
     
-    [self removeActionForKey:@"standing_action"];
+//    [self removeActionForKey:@"standing_action"];
     
     if (walkingFramesAnimation != nil && walkingFramesAnimation.count > 0) {
         SKAction *animate = [SKAction animateWithTextures:walkingFramesAnimation timePerFrame:0.06f];
