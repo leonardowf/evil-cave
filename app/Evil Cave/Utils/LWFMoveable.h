@@ -18,4 +18,7 @@
 - (void)moveableToTile:(LWFTile *)tile;
 - (void)startWalkingAnimation:(void(^)(void))someBlock;
 
+- (BOOL)shouldFinishTurnOnFailedMovement;
+- (void)notifyMovementFailure;
+
 @end

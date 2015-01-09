@@ -126,13 +126,11 @@
 }
 
 - (void)newTurnCycleStarted {
-//    [self pathForPlayerToExit];
+
+}
+
+- (void)unlockUserInteraction  {
     _blockUserInteraction = NO;
-//    if (_touchQueue != nil) {
-//        CGPoint point = CGPointMake(_touchQueue.x, _touchQueue.y);
-//        _touchQueue = nil;
-//        [self userTouchedPoint:point];
-//    }
 }
 
 - (void)userTouchedPoint:(CGPoint)point {

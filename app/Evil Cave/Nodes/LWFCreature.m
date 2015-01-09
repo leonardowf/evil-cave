@@ -64,12 +64,25 @@
     }
     
     if (![nextTile isPassable]) {
-        [self finishTurn];
-        return;
+        if ([self shouldFinishTurnOnFailedMovement]) {
+            [self finishTurn];
+            return;
+        }
+        
+        [self notifyMovementFailure];
+        
     } else {
         [self moveableToTile:nextTile];
     }
     
+}
+
+- (void)notifyMovementFailure {
+    NSLog(@"Criatura falhou na hora de mover");
+}
+
+- (BOOL)shouldFinishTurnOnFailedMovement {
+    return YES;
 }
 
 - (void)moveableToTile:(LWFTile *)tile {

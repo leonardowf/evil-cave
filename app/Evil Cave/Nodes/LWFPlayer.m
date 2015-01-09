@@ -24,9 +24,21 @@
     [self.map moveCameraToTile:tile];
 }
 
+- (BOOL)shouldFinishTurnOnFailedMovement {
+    return NO;
+}
+
+- (void)notifyMovementFailure {
+    NSLog(@"Player falhou na hora de mover");
+    [self.map unlockUserInteraction];
+}
+
 - (void)processTurn {
     [self.map newTurnCycleStarted];
-    if (self.tilePath.count > 0) {
+    
+    if (self.tilePath == nil || self.tilePath.count == 0) {
+        [self.map unlockUserInteraction];
+    } else if (self.tilePath.count > 0) {
         [self walkToExistingPath];
     }
 }

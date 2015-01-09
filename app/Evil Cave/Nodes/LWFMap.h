@@ -35,4 +35,6 @@
 
 - (void)movementRequestIsInvalid;
 
+- (void)unlockUserInteraction;
+
 @end
