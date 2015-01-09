@@ -11,8 +11,6 @@
 
 @protocol LWFMoveable <NSObject>
 
-- (void)requestMoveToTileAtX:(NSUInteger)x andY:(NSUInteger)y;
-- (void)failedToMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y;
 - (void)didMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y;
 - (void)willMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y;
 - (void)moveToTile:(LWFTile *)tile completion:(void(^)(void))someBlock;

@@ -63,8 +63,13 @@
         
     }
     
-    [self moveableToTile:nextTile];
-
+    if (![nextTile isPassable]) {
+        [self finishTurn];
+        return;
+    } else {
+        [self moveableToTile:nextTile];
+    }
+    
 }
 
 - (void)moveableToTile:(LWFTile *)tile {
@@ -75,27 +80,10 @@
     [self didMoveToTile:tile atX:tile.x andY:tile.y];
     
     [self startWalkingAnimation:^{
-        
+        [self startStandingAnimation];
     }];
 }
 
-- (void)failedToMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
-    _failedMovements++;
-    
-    if (_failedMovements > MAX_NUMBER_PATH_FIND_TRIES) {
-        _failedMovements = 0;
-        
-        [self finishTurn];
-
-    } else {
-        LWFTile *destinyTile = [self.tilePath firstObject];
-        [self.tilePath removeAllObjects];
-        [self buildPathToTile:destinyTile];
-        
-        LWFTile *nextTile = [self.tilePath lastObject];
-        [self requestMoveToTileAtX:nextTile.x andY:nextTile.y];
-    }
-}
 - (void)didMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
     [self updateCurrentTile:tile];
     
@@ -118,7 +106,7 @@
 }
 
 - (void)moveToTile:(LWFTile *)tile completion:(void(^)(void))someBlock {
-    CGFloat movementDuration = 0.2;
+    CGFloat movementDuration = 0.3;
     
     if (self.tilePath != nil && self.tilePath.count > 0) {
         movementDuration = 0.3;
@@ -178,7 +166,7 @@
 - (void)startWalkingAnimation:(void(^)(void))someBlock {
     NSArray *walkingFramesAnimation = [self getWalkingFramesAnimation];
     
-//    [self removeActionForKey:@"walking_action"];
+    [self removeActionForKey:@"standing_action"];
     
     if (walkingFramesAnimation != nil && walkingFramesAnimation.count > 0) {
         SKAction *animate = [SKAction animateWithTextures:walkingFramesAnimation timePerFrame:0.06f];
