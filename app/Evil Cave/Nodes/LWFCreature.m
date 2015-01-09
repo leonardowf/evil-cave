@@ -118,7 +118,13 @@
 }
 
 - (void)moveToTile:(LWFTile *)tile completion:(void(^)(void))someBlock {
-    SKAction *moveAction = [SKAction moveTo:tile.position duration:0.2];
+    CGFloat movementDuration = 0.2;
+    
+    if (self.tilePath != nil && self.tilePath.count > 0) {
+        movementDuration = 0.3;
+    }
+    
+    SKAction *moveAction = [SKAction moveTo:tile.position duration:movementDuration];
     [self runAction: moveAction completion:someBlock];
 }
 
