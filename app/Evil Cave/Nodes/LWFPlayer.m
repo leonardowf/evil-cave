@@ -49,9 +49,9 @@
     }];
     
     
-    [self startWalkingAnimation:^{
-        
-    }];
+//    [self startWalkingAnimation:^{
+//        
+//    }];
 }
 
 - (void)moveToTile:(LWFTile *)tile completion:(void(^)(void))someBlock {

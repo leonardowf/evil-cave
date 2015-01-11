@@ -48,7 +48,7 @@
         self.currentFacingDirection = @"right";
     }
     
-    [self startStandingAnimation];
+//    [self startStandingAnimation];
     
     LWFTile *nextTile = tile;
     
@@ -94,9 +94,9 @@
     
     [self didMoveToTile:tile atX:tile.x andY:tile.y];
     
-    [self startWalkingAnimation:^{
-        [self startStandingAnimation];
-    }];
+//    [self startWalkingAnimation:^{
+//        [self startStandingAnimation];
+//    }];
 }
 
 - (void)didMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
@@ -106,7 +106,7 @@
     
     _failedMovements = 0;
     
-    [self startStandingAnimation];
+//    [self startStandingAnimation];
     
     [self finishTurn];
     
@@ -416,7 +416,7 @@
         moveOffsetX = moveOffsetX - 40;
     }
     
-    [self startStandingAnimation];
+//    [self startStandingAnimation];
     
     [self moveDistanceHorizontal:moveOffsetX andVertical:moveOffsetY inTime:0.1];
     
