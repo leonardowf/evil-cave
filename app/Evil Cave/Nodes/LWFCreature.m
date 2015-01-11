@@ -48,8 +48,6 @@
         self.currentFacingDirection = @"right";
     }
     
-//    [self startStandingAnimation];
-    
     LWFTile *nextTile = tile;
     
     NSUInteger distanceFromTiles = [tile distanceToTile:self.currentTile];
@@ -74,6 +72,7 @@
         [self notifyMovementFailure];
         
     } else {
+        [self updateCurrentTile:nextTile];
         [self moveableToTile:nextTile];
     }
     
@@ -93,20 +92,12 @@
     }];
     
     [self didMoveToTile:tile atX:tile.x andY:tile.y];
-    
-//    [self startWalkingAnimation:^{
-//        [self startStandingAnimation];
-//    }];
 }
 
 - (void)didMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
-    [self updateCurrentTile:tile];
-    
     [self.tilePath removeObject:tile];
     
     _failedMovements = 0;
-    
-//    [self startStandingAnimation];
     
     [self finishTurn];
     
@@ -122,6 +113,10 @@
 
 - (void)moveToTile:(LWFTile *)tile completion:(void(^)(void))someBlock {
     CGFloat movementDuration = 0.3;
+    
+    [self startWalkingAnimation:^{
+        [self startStandingAnimation];
+    }];
     
     SKAction *moveAction = [SKAction moveTo:tile.position duration:movementDuration];
     [self runAction: moveAction completion:someBlock];
@@ -164,7 +159,7 @@
 - (void)startStandingAnimation {
     NSArray *standingFramesAnimation = [self getStandingFramesAnimation];
     
-//    [self removeActionForKey:@"standing_action"];
+    [self removeActionForKey:@"standing_action"];
     
     if (standingFramesAnimation != nil && standingFramesAnimation.count > 0) {
         SKAction *animate = [SKAction animateWithTextures:standingFramesAnimation timePerFrame:0.3f];
@@ -177,9 +172,8 @@
 - (void)startWalkingAnimation:(void(^)(void))someBlock {
     NSArray *walkingFramesAnimation = [self getWalkingFramesAnimation];
     
-//    [self removeActionForKey:@"standing_action"];
-    
     if (walkingFramesAnimation != nil && walkingFramesAnimation.count > 0) {
+        [self removeActionForKey:@"standing_action"];
         SKAction *animate = [SKAction animateWithTextures:walkingFramesAnimation timePerFrame:0.06f];
         SKAction *action = [SKAction repeatAction:animate count:1];
         
@@ -416,7 +410,7 @@
         moveOffsetX = moveOffsetX - 40;
     }
     
-//    [self startStandingAnimation];
+    [self startStandingAnimation];
     
     [self moveDistanceHorizontal:moveOffsetX andVertical:moveOffsetY inTime:0.1];
     

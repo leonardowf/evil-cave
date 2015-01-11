@@ -179,6 +179,7 @@
 - (void)createPlayer {
     LWFPlayer *player = (LWFPlayer *)[_creatureBuilder buildWithType:LWFCreatureTypeWarrior];
     [self addPlayer:player];
+    [player startStandingAnimation];
 }
 
 - (void)createCreatures {
