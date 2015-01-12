@@ -42,12 +42,6 @@
 }
 
 - (void)willMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y; {
-    if (x < self.currentTile.x) { // tá movendo pra esquerda
-        self.currentFacingDirection = @"left";
-    } else if (x > self.currentTile.x) { // tá movendo pra direita
-        self.currentFacingDirection = @"right";
-    }
-    
     LWFTile *nextTile = tile;
     
     NSUInteger distanceFromTiles = [tile distanceToTile:self.currentTile];
@@ -62,6 +56,13 @@
         }
         
     }
+    
+    if (nextTile.x < self.currentTile.x) { // tá movendo pra esquerda
+        self.currentFacingDirection = @"left";
+    } else if (nextTile.x > self.currentTile.x) { // tá movendo pra direita
+        self.currentFacingDirection = @"right";
+    }
+    
     
     if (![nextTile isPassable]) {
         if ([self shouldFinishTurnOnFailedMovement]) {
