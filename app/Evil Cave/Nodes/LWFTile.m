@@ -24,4 +24,12 @@
     return sqrt(dx + dy);
 }
 
+- (void)steppedOnTile:(LWFCreature *)creature {
+    if (self.cellType == CaveCellTypeDoor) {
+        SKTexture *texture = [SKTexture textureWithImageNamed:@"door_open"];
+        texture.filteringMode = SKTextureFilteringNearest;
+        [self setTexture:texture];
+    }
+}
+
 @end

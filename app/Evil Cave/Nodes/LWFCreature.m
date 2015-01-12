@@ -96,6 +96,8 @@
 }
 
 - (void)didMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
+    [tile steppedOnTile:self];
+    
     [self.tilePath removeObject:tile];
     
     _failedMovements = 0;

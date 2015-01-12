@@ -20,5 +20,5 @@
 
 - (BOOL)isPassable;
 - (NSUInteger)distanceToTile:(LWFTile *)tile;
-
+- (void)steppedOnTile:(LWFCreature *)creature;
 @end

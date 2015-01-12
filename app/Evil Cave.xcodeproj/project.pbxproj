@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		321A60601A6354DF0060517E /* door_open.png in Resources */ = {isa = PBXBuildFile; fileRef = 321A605F1A6354DF0060517E /* door_open.png */; };
 		321EC9A71A26A5C400F06B77 /* LWFTurnList.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EC9A61A26A5C400F06B77 /* LWFTurnList.m */; };
 		322DB6AA1A229A0C0085AC68 /* LWFCreatureBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 322DB6A91A229A0C0085AC68 /* LWFCreatureBuilder.m */; };
 		322DB6AE1A229E320085AC68 /* LWFRat.m in Sources */ = {isa = PBXBuildFile; fileRef = 322DB6AD1A229E320085AC68 /* LWFRat.m */; };
@@ -97,6 +98,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		321A605F1A6354DF0060517E /* door_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door_open.png; sourceTree = "<group>"; };
 		321EC9A51A26A5C400F06B77 /* LWFTurnList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFTurnList.h; sourceTree = "<group>"; };
 		321EC9A61A26A5C400F06B77 /* LWFTurnList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFTurnList.m; sourceTree = "<group>"; };
 		322DB6A81A229A0C0085AC68 /* LWFCreatureBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFCreatureBuilder.h; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 		32BEBFED1A470A82000C77AA /* Tiles */ = {
 			isa = PBXGroup;
 			children = (
+				321A605F1A6354DF0060517E /* door_open.png */,
 				3254E6D61A5CB49400BD7D13 /* door.png */,
 				32F1CDCB1A57603800A0D9F5 /* wall.png */,
 				324527911A4DE73000AFF9A7 /* bloody_rock_tile.png */,
@@ -650,6 +653,7 @@
 				32BEBFEF1A470AAB000C77AA /* rock_tile.png in Resources */,
 				32BEC0101A4714DC000C77AA /* rat_standing_right.png in Resources */,
 				3254E6D71A5CB49400BD7D13 /* door.png in Resources */,
+				321A60601A6354DF0060517E /* door_open.png in Resources */,
 				32BEC0071A470FFD000C77AA /* warrior_walking_left.atlas in Resources */,
 				32BEC00E1A4714DC000C77AA /* rat_standing_left.png in Resources */,
 				A7F5BB9D1A16EFBD005BAB63 /* Main.storyboard in Resources */,
