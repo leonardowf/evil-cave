@@ -458,6 +458,7 @@
           forCombatOutput:(LWFCombatOutput *)combatOutput
                completion:(void(^)(void))someBlock {
     
+    [self.tilePath removeAllObjects];
     
     SKAction *pulseRed = [SKAction sequence:@[
                                               [SKAction colorizeWithColor:[SKColor redColor] colorBlendFactor:0.3 duration:0.15],
