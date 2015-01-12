@@ -244,7 +244,6 @@
     LWFAttack *melee = [self.attacks firstObject];
     
     if ([melee isCreature:_player inRangeOfTile:self.currentTile]) {
-        NSLog(@"player tá no range bro");
     }
     
     if ([self shouldFollowPlayer]) {

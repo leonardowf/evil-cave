@@ -82,7 +82,6 @@ requestedAttackToTile:(LWFTile *)tile
 
 - (void)attackFinished:(id<LWFAttackable>)attacker target:(id<LWFAttackable>)target attack:(LWFAttack *)attack {
     if (_attackedDidStartReceivingAttack && _attackerDidStartAttack) {
-        NSLog(@"animação de ataque terminou hue");
         [self didShowDamage];
     }
 }

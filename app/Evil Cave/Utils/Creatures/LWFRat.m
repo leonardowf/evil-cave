@@ -24,5 +24,13 @@
     
 }
 
+- (NSArray *)getWalkingFramesAnimation {
+    return nil;
+}
+
+- (NSArray *)getAttackingFramesAnimation {
+    return nil;
+}
+
 
 @end

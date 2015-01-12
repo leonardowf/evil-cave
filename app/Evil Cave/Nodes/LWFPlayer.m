@@ -98,4 +98,8 @@
 
 }
 
+- (NSArray *)getDyingFramesAnimation {
+    return nil;
+}
+
 @end

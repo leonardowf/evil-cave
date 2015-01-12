@@ -14,5 +14,6 @@
 - (void)willDieWithCompletion:(void(^)(void))someBlock;
 - (void)isDyingWithCompletion:(void(^)(void))someBlock;
 - (void)diedWithCompletion:(void(^)(void))someBlock;
+- (NSArray *)getDyingFramesAnimation;
 
 @end

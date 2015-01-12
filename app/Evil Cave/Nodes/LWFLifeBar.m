@@ -72,8 +72,6 @@
     }
     
     [_fillGreen setSize:CGSizeMake(greenSizeWidth, _fillGreen.size.height)];
-    
-    NSLog(@"current: %d, maximum: %d", self.stats.currentHP, self.stats.maxHP);
 }
 
 @end

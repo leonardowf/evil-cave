@@ -23,4 +23,16 @@
     [super build];
 }
 
+- (NSArray *)getDyingFramesAnimation {
+    return nil;
+}
+
+- (NSArray *)getWalkingFramesAnimation {
+    return nil;
+}
+
+- (NSArray *)getAttackingFramesAnimation {
+    return nil;
+}
+
 @end

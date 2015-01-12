@@ -17,6 +17,7 @@
 - (void)updateCurrentTile:(LWFTile *)currentTile;
 - (void)moveableToTile:(LWFTile *)tile;
 - (void)startWalkingAnimation:(void(^)(void))someBlock;
+- (NSArray *)getWalkingFramesAnimation;
 
 - (BOOL)shouldFinishTurnOnFailedMovement;
 - (void)notifyMovementFailure;

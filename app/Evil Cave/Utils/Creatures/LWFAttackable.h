@@ -48,5 +48,6 @@ typedef enum : NSUInteger {
 
 - (LWFStats *)getStats;
 - (LWFEquips *)getEquips;
+- (NSArray *)getAttackingFramesAnimation;
 
 @end
