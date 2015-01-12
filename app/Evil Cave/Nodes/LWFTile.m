@@ -7,6 +7,7 @@
 //
 
 #import "LWFTile.h"
+#import "LWFRandomUtils.h"
 
 @implementation LWFTile
 
@@ -30,6 +31,25 @@
         texture.filteringMode = SKTextureFilteringNearest;
         [self setTexture:texture];
     }
+}
+
+- (void)diedOnTile:(LWFCreature *)creature {
+    LWFRandomUtils *randomUtils = [[LWFRandomUtils alloc]init];
+    
+    NSString *bloodAtlasName = [NSString stringWithFormat:@"blood"];
+    SKTextureAtlas *dyingAtlas = [SKTextureAtlas atlasNamed:bloodAtlasName];
+    NSUInteger numImages = dyingAtlas.textureNames.count;
+    
+    NSInteger randomized = [randomUtils randomIntegerBetween:1 and:numImages + 1];
+    
+    NSString *textureName = [NSString stringWithFormat:@"blood_%d", randomized];
+    SKTexture *texture = [dyingAtlas textureNamed:textureName];
+    texture.filteringMode = SKTextureFilteringNearest;
+    
+    SKSpriteNode *bloodNode = [SKSpriteNode spriteNodeWithTexture:texture];
+    
+    [self addChild:bloodNode];
+    
 }
 
 @end

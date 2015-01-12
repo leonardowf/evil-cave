@@ -480,10 +480,7 @@
         return;
     }
     
-    SKTexture *texture = [SKTexture textureWithImageNamed:@"bloody_rock_tile"];
-    texture.filteringMode = SKTextureFilteringNearest;
-    
-    [tile setTexture:texture];
+    [tile diedOnTile:self];
 }
 
 - (void)displayDamageForCombatOutput:(LWFCombatOutput *)combatOutput {
