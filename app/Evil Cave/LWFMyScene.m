@@ -112,6 +112,7 @@
 
 - (void)didMoveToView:(SKView *)view {
     _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanFrom:)];
+    [_panGestureRecognizer setMinimumNumberOfTouches:2];
     [[self view] addGestureRecognizer:_panGestureRecognizer];
     
     _pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handleZoomFrom:)];
