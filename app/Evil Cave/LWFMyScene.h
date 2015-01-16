@@ -8,6 +8,6 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface LWFMyScene : SKScene
+@interface LWFMyScene : SKScene <UIGestureRecognizerDelegate>
 
 @end

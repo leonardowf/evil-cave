@@ -19,9 +19,11 @@
     LWFMap *_map;
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
     UIPanGestureRecognizer *_panGestureRecognizer;
+    UITapGestureRecognizer *_tapGestureRecognizer;
     
     BOOL _pinching;
     
+    UITouch *_lastTouch;
     
     SKSpriteNode *_inventoryButton;
 }
@@ -92,32 +94,44 @@
 
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    if (touches.count == 1) {
-        UITouch *touch = [touches anyObject];
-        CGPoint positionInScene = [touch locationInNode:self];
-        
-        NSArray *nodes = [self nodesAtPoint:positionInScene];
-        
-        if ([nodes containsObject:_inventoryButton]) {
-            [self openInventory];
-            return;
-        }
-        
-        CGPoint touchPoint = [touch locationInNode:_map];
-        
-        [_map userTouchedPoint:touchPoint];
-    }
-}
-
 - (void)didMoveToView:(SKView *)view {
     _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanFrom:)];
-    [_panGestureRecognizer setMinimumNumberOfTouches:2];
+    [_panGestureRecognizer setMinimumNumberOfTouches:1];
     [[self view] addGestureRecognizer:_panGestureRecognizer];
     
     _pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handleZoomFrom:)];
     [[self view] addGestureRecognizer:_pinchGestureRecognizer];
+    
+    _tapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTap:)];
+    _tapGestureRecognizer.delegate = self;
+    [self.view addGestureRecognizer:_tapGestureRecognizer];
+    
 }
+
+- (void)handleTap:(UIGestureRecognizer *)sender {
+    UITouch *touch = _lastTouch;
+    CGPoint positionInScene = [touch locationInNode:self];
+
+    NSArray *nodes = [self nodesAtPoint:positionInScene];
+
+    if ([nodes containsObject:_inventoryButton]) {
+        [self openInventory];
+        return;
+    }
+
+    CGPoint touchPoint = [touch locationInNode:_map];
+
+    [_map userTouchedPoint:touchPoint];
+}
+
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if (gestureRecognizer == _tapGestureRecognizer) {
+        _lastTouch = touch;
+    }
+    
+    return YES;
+}
+
 
 - (void)handlePanFrom:(UIPanGestureRecognizer *)recognizer
 {
