@@ -87,6 +87,7 @@
     self.player = player;
     self.player.position = self.tileMap.startTile.position;
     [self.player setCurrentTile:self.tileMap.startTile];
+    self.player.currentTile.creatureOnTile = player;
     self.player.map = self;
     
     [_turnList.creatures addObject:player];
