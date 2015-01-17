@@ -80,6 +80,10 @@
 //    return (x == 1 || y == 1);
 }
 
+- (CGPoint)toPoint {
+    return CGPointMake(self.x, self.y);
+}
+
 
 
 @end

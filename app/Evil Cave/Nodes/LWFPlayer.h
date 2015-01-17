@@ -18,5 +18,6 @@
 @property (nonatomic, strong) LWFInventory *inventory;
 
 - (void)movementRequestIsInvalid;
+- (void)cancelPreExistingActions;
 
 @end

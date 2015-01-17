@@ -127,7 +127,11 @@
 }
 
 - (void)newTurnCycleStarted {
-
+    if (_touchQueue != nil) {
+        [_player cancelPreExistingActions];
+        [self playerInteractionWithPoint:[_touchQueue toPoint]];
+        _touchQueue = nil;
+    }
 }
 
 - (void)unlockUserInteraction  {
@@ -140,6 +144,10 @@
         return;
     }
     
+    [self playerInteractionWithPoint:point];
+}
+
+- (void)playerInteractionWithPoint:(CGPoint)point {
     LWFTile *tile = [self tileForPoint:point];
     
     LWFCreature *creatureOnTile = tile.creatureOnTile;
@@ -160,7 +168,7 @@
             CGPoint tileCoordinate = [self tileCoordinateForTouchPoint:point];
             [_player willMoveToTile:tile atX:tile.x andY:tile.y];
         } else if (tile == self.player.currentTile) {
-            [self.player finishTurn];
+            [self.player cancelPreExistingActions];
         }
     }
 }
@@ -215,8 +223,6 @@
     LWFCreature *creature8 = [_creatureBuilder buildWithType:LWFCreatureTypeRat];
     [_turnList.creatures addObject:creature8];
     creature7.nextCreature = creature8;
-    
-    
     
     LWFCreature *creature9 = [_creatureBuilder buildWithType:LWFCreatureTypeRat];
     [_turnList.creatures addObject:creature9];

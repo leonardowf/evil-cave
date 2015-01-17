@@ -102,4 +102,8 @@
     return nil;
 }
 
+- (void)cancelPreExistingActions {
+    self.tilePath = nil;
+}
+
 @end

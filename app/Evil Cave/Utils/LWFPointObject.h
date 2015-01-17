@@ -21,4 +21,5 @@
 
 - (CGFloat)distanceTo:(LWFPointObject *)other;
 - (NSString *)toString;
+- (CGPoint)toPoint;
 @end
