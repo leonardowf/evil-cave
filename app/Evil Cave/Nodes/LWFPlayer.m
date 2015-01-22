@@ -41,6 +41,8 @@
     } else if (self.tilePath.count > 0) {
         [self walkToExistingPath];
     }
+    
+    [self.map processTouchQueue];
 }
 
 - (void)moveableToTile:(LWFTile *)tile {

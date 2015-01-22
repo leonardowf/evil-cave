@@ -129,9 +129,13 @@
 - (void)newTurnCycleStarted {
     if (_touchQueue != nil) {
         [_player cancelPreExistingActions];
-        [self playerInteractionWithPoint:[_touchQueue toPoint]];
-        _touchQueue = nil;
     }
+}
+
+- (void)processTouchQueue {
+    CGPoint point = [_touchQueue toPoint];
+    _touchQueue = nil;
+    [self playerInteractionWithPoint:point];
 }
 
 - (void)unlockUserInteraction  {

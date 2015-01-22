@@ -36,5 +36,6 @@
 - (void)movementRequestIsInvalid;
 
 - (void)unlockUserInteraction;
+- (void)processTouchQueue;
 
 @end
