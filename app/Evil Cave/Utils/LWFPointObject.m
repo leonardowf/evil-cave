@@ -65,8 +65,6 @@
         y = -1 * y;
     }
     
-    CGFloat distance = sqrt(self.x * other.x + self.y * other.y);
-    
     if (self.x == other.x && y < 2) {
         return YES;
     }

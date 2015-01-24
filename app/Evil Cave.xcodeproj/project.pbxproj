@@ -19,7 +19,6 @@
 		3245278B1A4DCBFB00AFF9A7 /* warrior_attacking_left.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3245278A1A4DCBFB00AFF9A7 /* warrior_attacking_left.atlas */; };
 		3245278D1A4DCC0E00AFF9A7 /* radioactive_rat_standing_left.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3245278C1A4DCC0E00AFF9A7 /* radioactive_rat_standing_left.atlas */; };
 		3245278F1A4DCC1700AFF9A7 /* radioactive_rat_standing_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3245278E1A4DCC1700AFF9A7 /* radioactive_rat_standing_right.atlas */; };
-		324527921A4DE73000AFF9A7 /* bloody_rock_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 324527911A4DE73000AFF9A7 /* bloody_rock_tile.png */; };
 		324527941A4DEEF100AFF9A7 /* rat_dying_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527931A4DEEF100AFF9A7 /* rat_dying_right.atlas */; };
 		324527981A4DF83A00AFF9A7 /* rat_dying_left.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527971A4DF83A00AFF9A7 /* rat_dying_left.atlas */; };
 		3245279A1A4EEF5500AFF9A7 /* creature_lifebar.png in Resources */ = {isa = PBXBuildFile; fileRef = 324527991A4EEF5500AFF9A7 /* creature_lifebar.png */; };
@@ -115,7 +114,6 @@
 		3245278C1A4DCC0E00AFF9A7 /* radioactive_rat_standing_left.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = radioactive_rat_standing_left.atlas; sourceTree = "<group>"; };
 		3245278E1A4DCC1700AFF9A7 /* radioactive_rat_standing_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = radioactive_rat_standing_right.atlas; sourceTree = "<group>"; };
 		324527901A4DD21A00AFF9A7 /* LWFKillable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFKillable.h; sourceTree = "<group>"; };
-		324527911A4DE73000AFF9A7 /* bloody_rock_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bloody_rock_tile.png; sourceTree = "<group>"; };
 		324527931A4DEEF100AFF9A7 /* rat_dying_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = rat_dying_right.atlas; sourceTree = "<group>"; };
 		324527971A4DF83A00AFF9A7 /* rat_dying_left.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = rat_dying_left.atlas; sourceTree = "<group>"; };
 		324527991A4EEF5500AFF9A7 /* creature_lifebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = creature_lifebar.png; sourceTree = "<group>"; };
@@ -304,7 +302,6 @@
 				321A605F1A6354DF0060517E /* door_open.png */,
 				3254E6D61A5CB49400BD7D13 /* door.png */,
 				32F1CDCB1A57603800A0D9F5 /* wall.png */,
-				324527911A4DE73000AFF9A7 /* bloody_rock_tile.png */,
 				32BEBFEE1A470AAB000C77AA /* rock_tile.png */,
 			);
 			path = Tiles;
@@ -672,7 +669,6 @@
 				324527851A4DB5E600AFF9A7 /* warrior_walking_left.atlas in Resources */,
 				324527871A4DB5F400AFF9A7 /* warrior_standing_left.atlas in Resources */,
 				324527941A4DEEF100AFF9A7 /* rat_dying_right.atlas in Resources */,
-				324527921A4DE73000AFF9A7 /* bloody_rock_tile.png in Resources */,
 				32F1CDCC1A57603800A0D9F5 /* wall.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

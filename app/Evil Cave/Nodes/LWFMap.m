@@ -20,7 +20,6 @@
 #import "LWFPointObject.h"
 
 @interface LWFMap () {
-    NSArray *_path;
     LWFTurnList *_turnList;
     LWFCreatureBuilder *_creatureBuilder;
     
@@ -98,34 +97,6 @@
     [self addChild:self.player];
 }
 
-- (void)pathForPlayerToExit {
-    LWFHumbleBeeFindPath *fp = [[LWFHumbleBeeFindPath alloc]init];
-    fp.tileMap = self.tileMap;
-    
-    if (_path != nil) {
-        [self resetTiles];
-    }
-    
-    _path = [fp findPath:self.player.currentTile.x :self.player.currentTile.y :self.tileMap.endTile.x :self.tileMap.endTile.y];
-    
-    if (_path != nil) {
-        [self paintPath];
-    }
-    
-}
-
-- (void)resetTiles {
-    for (LWFTile *tile in _path) {
-        [tile setTexture:[SKTexture textureWithImage:[UIImage imageNamed:@"cobble_blood1"]]];
-    }
-}
-
-- (void)paintPath {
-    for (LWFTile *tile in _path) {
-        [tile setTexture:[SKTexture textureWithImage:[UIImage imageNamed:@"dngn_shoals_shallow_water_disturbance3"]]];
-    }
-}
-
 - (void)newTurnCycleStarted {
     if (_touchQueue != nil) {
         [_player cancelPreExistingActions];
@@ -169,7 +140,6 @@
     if (tile != nil) {
         if (tile != self.player.currentTile && [tile isPassable]) {
             _blockUserInteraction = YES;
-            CGPoint tileCoordinate = [self tileCoordinateForTouchPoint:point];
             [_player willMoveToTile:tile atX:tile.x andY:tile.y];
         } else if (tile == self.player.currentTile) {
             [self.player cancelPreExistingActions];
