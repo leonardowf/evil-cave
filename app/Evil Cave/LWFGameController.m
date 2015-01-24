@@ -7,9 +7,18 @@
 //
 
 #import "LWFGameController.h"
-
+#import "LWFItemPrototypeFactory.h"
 @implementation LWFGameController
 
 SINGLETON_FOR_CLASS(GameController)
 
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.itemPrototypeFactory = [LWFItemPrototypeFactory sharedItemPrototypeFactory];
+    }
+    return self;
+}
 @end

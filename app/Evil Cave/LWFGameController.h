@@ -12,10 +12,12 @@
 @class LWFTurnList;
 @class LWFCreatureBuilder;
 @class LWFAttacksBuilder;
+@class LWFItemPrototypeFactory;
 
 @interface LWFGameController : NSObject
 
 @property (nonatomic, strong) LWFTileMap *tileMap;
+@property (nonatomic, strong) LWFItemPrototypeFactory *itemPrototypeFactory;
 
 + (id)sharedGameController;
 

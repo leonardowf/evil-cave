@@ -1,0 +1,32 @@
+[
+  {
+    "name": "sword",
+    "base_dmg": "3",
+    "min_dmg": "-1",
+    "max_dmg": "2",
+    "base_str": "0",
+    "min_str": "0",
+    "max_str": "0",
+    "base_hp": "0",
+    "max_hp": "0",
+    "min_hp": "0",
+    "base_armor": "0",
+    "min_armor": "0",
+    "max_armor": "0"
+  },
+  {
+    "name": "fine_sword",
+    "base_dmg": "4",
+    "min_dmg": "-1",
+    "max_dmg": "2",
+    "base_str": "0",
+    "min_str": "0",
+    "max_str": "0",
+    "base_hp": "0",
+    "max_hp": "0",
+    "min_hp": "0",
+    "base_armor": "0",
+    "min_armor": "0",
+    "max_armor": "0"
+  }
+]

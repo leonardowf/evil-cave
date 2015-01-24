@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		321A60601A6354DF0060517E /* door_open.png in Resources */ = {isa = PBXBuildFile; fileRef = 321A605F1A6354DF0060517E /* door_open.png */; };
 		321A60631A635DA50060517E /* blood.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 321A60621A635DA50060517E /* blood.atlas */; };
+		321DB10B1A741FF6003354BB /* LWFItemPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 321DB10A1A741FF6003354BB /* LWFItemPrototype.m */; };
+		321DB10E1A742002003354BB /* LWFLootChance.m in Sources */ = {isa = PBXBuildFile; fileRef = 321DB10D1A742002003354BB /* LWFLootChance.m */; };
+		321DB1111A74201D003354BB /* LWFItemPrototypeFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 321DB1101A74201D003354BB /* LWFItemPrototypeFactory.m */; };
 		321EC9A71A26A5C400F06B77 /* LWFTurnList.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EC9A61A26A5C400F06B77 /* LWFTurnList.m */; };
 		322DB6AA1A229A0C0085AC68 /* LWFCreatureBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 322DB6A91A229A0C0085AC68 /* LWFCreatureBuilder.m */; };
 		322DB6AE1A229E320085AC68 /* LWFRat.m in Sources */ = {isa = PBXBuildFile; fileRef = 322DB6AD1A229E320085AC68 /* LWFRat.m */; };
@@ -24,6 +27,7 @@
 		3245279A1A4EEF5500AFF9A7 /* creature_lifebar.png in Resources */ = {isa = PBXBuildFile; fileRef = 324527991A4EEF5500AFF9A7 /* creature_lifebar.png */; };
 		3245279D1A4EF1DB00AFF9A7 /* LWFLifeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3245279C1A4EF1DB00AFF9A7 /* LWFLifeBar.m */; };
 		3254E6D71A5CB49400BD7D13 /* door.png in Resources */ = {isa = PBXBuildFile; fileRef = 3254E6D61A5CB49400BD7D13 /* door.png */; };
+		326524EB1A7448AB00EEA4B2 /* item_prototypes.json in Resources */ = {isa = PBXBuildFile; fileRef = 326524EA1A7448AB00EEA4B2 /* item_prototypes.json */; };
 		3293698B1A5058DD00ECF705 /* LWFRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3293698A1A5058DD00ECF705 /* LWFRect.m */; };
 		32BCDF791A50455E004A2993 /* LWFDartDungeonGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDF781A50455E004A2993 /* LWFDartDungeonGenerator.m */; };
 		32BEBFB91A42476D000C77AA /* LWFGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BEBFB81A42476D000C77AA /* LWFGameController.m */; };
@@ -100,6 +104,12 @@
 /* Begin PBXFileReference section */
 		321A605F1A6354DF0060517E /* door_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door_open.png; sourceTree = "<group>"; };
 		321A60621A635DA50060517E /* blood.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = blood.atlas; sourceTree = "<group>"; };
+		321DB1091A741FF6003354BB /* LWFItemPrototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFItemPrototype.h; sourceTree = "<group>"; };
+		321DB10A1A741FF6003354BB /* LWFItemPrototype.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFItemPrototype.m; sourceTree = "<group>"; };
+		321DB10C1A742002003354BB /* LWFLootChance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFLootChance.h; sourceTree = "<group>"; };
+		321DB10D1A742002003354BB /* LWFLootChance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFLootChance.m; sourceTree = "<group>"; };
+		321DB10F1A74201D003354BB /* LWFItemPrototypeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFItemPrototypeFactory.h; sourceTree = "<group>"; };
+		321DB1101A74201D003354BB /* LWFItemPrototypeFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFItemPrototypeFactory.m; sourceTree = "<group>"; };
 		321EC9A51A26A5C400F06B77 /* LWFTurnList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFTurnList.h; sourceTree = "<group>"; };
 		321EC9A61A26A5C400F06B77 /* LWFTurnList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFTurnList.m; sourceTree = "<group>"; };
 		322DB6A81A229A0C0085AC68 /* LWFCreatureBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFCreatureBuilder.h; sourceTree = "<group>"; };
@@ -120,6 +130,8 @@
 		3245279B1A4EF1DB00AFF9A7 /* LWFLifeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFLifeBar.h; sourceTree = "<group>"; };
 		3245279C1A4EF1DB00AFF9A7 /* LWFLifeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFLifeBar.m; sourceTree = "<group>"; };
 		3254E6D61A5CB49400BD7D13 /* door.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door.png; sourceTree = "<group>"; };
+		326524E91A7433F900EEA4B2 /* LWFLootable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFLootable.h; sourceTree = "<group>"; };
+		326524EA1A7448AB00EEA4B2 /* item_prototypes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = item_prototypes.json; sourceTree = "<group>"; };
 		329369891A5058DD00ECF705 /* LWFRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRect.h; sourceTree = "<group>"; };
 		3293698A1A5058DD00ECF705 /* LWFRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRect.m; sourceTree = "<group>"; };
 		32BCDF771A50455E004A2993 /* LWFDartDungeonGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFDartDungeonGenerator.h; sourceTree = "<group>"; };
@@ -382,6 +394,14 @@
 			children = (
 				32F1CDC81A575C6600A0D9F5 /* LWFItem.h */,
 				32F1CDC91A575C6600A0D9F5 /* LWFItem.m */,
+				321DB1091A741FF6003354BB /* LWFItemPrototype.h */,
+				321DB10A1A741FF6003354BB /* LWFItemPrototype.m */,
+				321DB10C1A742002003354BB /* LWFLootChance.h */,
+				321DB10D1A742002003354BB /* LWFLootChance.m */,
+				321DB10F1A74201D003354BB /* LWFItemPrototypeFactory.h */,
+				321DB1101A74201D003354BB /* LWFItemPrototypeFactory.m */,
+				326524E91A7433F900EEA4B2 /* LWFLootable.h */,
+				326524EA1A7448AB00EEA4B2 /* item_prototypes.json */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -646,6 +666,7 @@
 				32BEC00F1A4714DC000C77AA /* rat_standing_right.atlas in Resources */,
 				324527981A4DF83A00AFF9A7 /* rat_dying_left.atlas in Resources */,
 				A7F5BB941A16EFBC005BAB63 /* InfoPlist.strings in Resources */,
+				326524EB1A7448AB00EEA4B2 /* item_prototypes.json in Resources */,
 				3245278F1A4DCC1700AFF9A7 /* radioactive_rat_standing_right.atlas in Resources */,
 				3245278D1A4DCC0E00AFF9A7 /* radioactive_rat_standing_left.atlas in Resources */,
 				3245278B1A4DCBFB00AFF9A7 /* warrior_attacking_left.atlas in Resources */,
@@ -711,9 +732,11 @@
 				32F09E2F1A48EBB1000B8797 /* LWFEquips.m in Sources */,
 				A703875F1A17BEB00053A9E6 /* LWFTileMap.m in Sources */,
 				32F1CDCA1A575C6600A0D9F5 /* LWFItem.m in Sources */,
+				321DB10B1A741FF6003354BB /* LWFItemPrototype.m in Sources */,
 				A7F5BB961A16EFBC005BAB63 /* main.m in Sources */,
 				321EC9A71A26A5C400F06B77 /* LWFTurnList.m in Sources */,
 				32D50BC71A3D018D002D3098 /* LWFAttacksBuilder.m in Sources */,
+				321DB10E1A742002003354BB /* LWFLootChance.m in Sources */,
 				32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */,
 				32F09E291A48C947000B8797 /* LWFCombatSystem.m in Sources */,
 				A7D8BEF01A1ABAFC005B0599 /* LWFRoomBuilder.m in Sources */,
@@ -722,6 +745,7 @@
 				A7D8BEE41A1988BC005B0599 /* LWFCaveGeneratorConstants.m in Sources */,
 				A7D83B971A1D74F20054C022 /* LWFModelGrid.m in Sources */,
 				A7D8BEEA1A1AB598005B0599 /* LWFRandomUtils.m in Sources */,
+				321DB1111A74201D003354BB /* LWFItemPrototypeFactory.m in Sources */,
 				32FFE83E1A2C0BDD003D02A4 /* LWFAttack.m in Sources */,
 				A7F5BBA01A16EFBD005BAB63 /* LWFViewController.m in Sources */,
 				32F09E2C1A48E6B4000B8797 /* LWFCombatOutput.m in Sources */,
