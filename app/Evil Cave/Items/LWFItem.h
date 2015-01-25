@@ -7,7 +7,19 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+@class LWFItemPrototype;
 
 @interface LWFItem : SKSpriteNode
+
+@property (nonatomic, copy) NSString *name;
+
+@property (nonatomic, strong) NSNumber * damage;
+@property (nonatomic, strong) NSNumber * strength;
+@property (nonatomic, strong) NSNumber * HP;
+@property (nonatomic, strong) NSNumber * armor;
+
+@property (nonatomic, strong) LWFItemPrototype *prototype;
+
+- (instancetype)initWithItemPrototype:(LWFItemPrototype *)prototype;
 
 @end

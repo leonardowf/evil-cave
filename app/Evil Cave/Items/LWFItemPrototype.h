@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class LWFItem;
 
 @interface LWFItemPrototype : NSObject
 
@@ -20,14 +21,14 @@
 @property (nonatomic) NSNumber * minStrength;
 @property (nonatomic) NSNumber * maxStrength;
 
-@property (nonatomic) NSNumber * baseHP;
-@property (nonatomic) NSNumber * minHP;
-@property (nonatomic) NSNumber * maxHP;
+@property (nonatomic) NSNumber * baseHp;
+@property (nonatomic) NSNumber * minHp;
+@property (nonatomic) NSNumber * maxHp;
 
 @property (nonatomic) NSNumber * baseArmor;
 @property (nonatomic) NSNumber * minArmor;
 @property (nonatomic) NSNumber * maxArmor;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
-
+- (LWFItem *)build;
 @end

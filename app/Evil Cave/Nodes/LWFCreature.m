@@ -21,6 +21,10 @@
 #import "LWFStats.h"
 #import "LWFLifeBar.h"
 
+#import "LWFItem.h"
+#import "LWFItemPrototype.h"
+#import "LWFItemPrototypeFactory.h"
+
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
     NSUInteger _failedMovements;

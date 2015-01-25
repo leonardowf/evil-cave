@@ -7,6 +7,7 @@
 //
 
 #import "LWFItemPrototype.h"
+#import "LWFItem.h"
 
 @implementation LWFItemPrototype
 
@@ -21,9 +22,9 @@
         self.baseStrength = [self dict:dict integerForKey:@"base_str"];
         self.minStrength = [self dict:dict integerForKey:@"min_str"];
         self.maxStrength = [self dict:dict integerForKey:@"max_str"];
-        self.baseHP = [self dict:dict integerForKey:@"base_hp"];
-        self.maxHP = [self dict:dict integerForKey:@"max_hp"];
-        self.minHP = [self dict:dict integerForKey:@"min_hp"];
+        self.baseHp = [self dict:dict integerForKey:@"base_hp"];
+        self.maxHp = [self dict:dict integerForKey:@"max_hp"];
+        self.minHp = [self dict:dict integerForKey:@"min_hp"];
         self.baseArmor = [self dict:dict integerForKey:@"base_armor"];
         self.minArmor = [self dict:dict integerForKey:@"min_armor"];
         self.maxArmor = [self dict:dict integerForKey:@"max_armor"];
@@ -37,6 +38,10 @@
     if (object == nil) return nil;
     
     return [NSNumber numberWithInteger:[object integerValue]];
+}
+
+- (LWFItem *)build {
+    return [[LWFItem alloc]initWithItemPrototype:self];
 }
 
 @end

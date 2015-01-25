@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+@class LWFItemPrototype;
 
 @interface LWFItemPrototypeFactory : NSObject
 
 + (id)sharedItemPrototypeFactory;
 
 @property (nonatomic, strong) NSDictionary *prototypes;
+
+- (LWFItemPrototype *)getPrototypeWithName:(NSString *)name;
 
 @end

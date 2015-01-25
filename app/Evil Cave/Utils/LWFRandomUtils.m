@@ -33,4 +33,12 @@
     return rndValue;
 }
 
+- (NSNumber *)randomNumberBetween:(NSNumber *)low and:(NSNumber *)high {
+    NSInteger intLow = [low integerValue];
+    NSInteger intHigh = [high integerValue];
+    
+    NSInteger r = [self randomIntegerBetween:intLow and:intHigh];
+    
+    return [NSNumber numberWithInteger:r];
+}
 @end

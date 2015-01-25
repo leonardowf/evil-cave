@@ -28,6 +28,8 @@
 		3245279D1A4EF1DB00AFF9A7 /* LWFLifeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3245279C1A4EF1DB00AFF9A7 /* LWFLifeBar.m */; };
 		3254E6D71A5CB49400BD7D13 /* door.png in Resources */ = {isa = PBXBuildFile; fileRef = 3254E6D61A5CB49400BD7D13 /* door.png */; };
 		326524EB1A7448AB00EEA4B2 /* item_prototypes.json in Resources */ = {isa = PBXBuildFile; fileRef = 326524EA1A7448AB00EEA4B2 /* item_prototypes.json */; };
+		326524EF1A75406B00EEA4B2 /* item_fine_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 326524ED1A75406B00EEA4B2 /* item_fine_sword.png */; };
+		326524F01A75406B00EEA4B2 /* item_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 326524EE1A75406B00EEA4B2 /* item_sword.png */; };
 		3293698B1A5058DD00ECF705 /* LWFRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3293698A1A5058DD00ECF705 /* LWFRect.m */; };
 		32BCDF791A50455E004A2993 /* LWFDartDungeonGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDF781A50455E004A2993 /* LWFDartDungeonGenerator.m */; };
 		32BEBFB91A42476D000C77AA /* LWFGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BEBFB81A42476D000C77AA /* LWFGameController.m */; };
@@ -132,6 +134,8 @@
 		3254E6D61A5CB49400BD7D13 /* door.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door.png; sourceTree = "<group>"; };
 		326524E91A7433F900EEA4B2 /* LWFLootable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFLootable.h; sourceTree = "<group>"; };
 		326524EA1A7448AB00EEA4B2 /* item_prototypes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = item_prototypes.json; sourceTree = "<group>"; };
+		326524ED1A75406B00EEA4B2 /* item_fine_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_fine_sword.png; sourceTree = "<group>"; };
+		326524EE1A75406B00EEA4B2 /* item_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_sword.png; sourceTree = "<group>"; };
 		329369891A5058DD00ECF705 /* LWFRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRect.h; sourceTree = "<group>"; };
 		3293698A1A5058DD00ECF705 /* LWFRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRect.m; sourceTree = "<group>"; };
 		32BCDF771A50455E004A2993 /* LWFDartDungeonGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFDartDungeonGenerator.h; sourceTree = "<group>"; };
@@ -296,6 +300,15 @@
 			path = ../Utils/Creatures;
 			sourceTree = "<group>";
 		};
+		326524EC1A75405700EEA4B2 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				326524ED1A75406B00EEA4B2 /* item_fine_sword.png */,
+				326524EE1A75406B00EEA4B2 /* item_sword.png */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 		329369881A5058C400ECF705 /* dart */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +394,7 @@
 		32D50BC81A3D1FE9002D3098 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				326524EC1A75405700EEA4B2 /* Items */,
 				324527991A4EEF5500AFF9A7 /* creature_lifebar.png */,
 				32F09E301A48EFBC000B8797 /* Munro.ttf */,
 				32BEBFF01A470B68000C77AA /* Creatures */,
@@ -674,6 +688,7 @@
 				32BEC0141A48A7C4000C77AA /* creature_stats.json in Resources */,
 				3245279A1A4EEF5500AFF9A7 /* creature_lifebar.png in Resources */,
 				32BEC0121A472DA8000C77AA /* radioactive_rat_standing_right.png in Resources */,
+				326524EF1A75406B00EEA4B2 /* item_fine_sword.png in Resources */,
 				324527891A4DB60800AFF9A7 /* warrior_standing_right.atlas in Resources */,
 				32BEC0051A470F5F000C77AA /* warrior_walking_right.atlas in Resources */,
 				321A60631A635DA50060517E /* blood.atlas in Resources */,
@@ -690,6 +705,7 @@
 				324527851A4DB5E600AFF9A7 /* warrior_walking_left.atlas in Resources */,
 				324527871A4DB5F400AFF9A7 /* warrior_standing_left.atlas in Resources */,
 				324527941A4DEEF100AFF9A7 /* rat_dying_right.atlas in Resources */,
+				326524F01A75406B00EEA4B2 /* item_sword.png in Resources */,
 				32F1CDCC1A57603800A0D9F5 /* wall.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

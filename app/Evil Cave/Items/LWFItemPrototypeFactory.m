@@ -8,6 +8,7 @@
 
 #import "LWFItemPrototypeFactory.h"
 #import "LWFItemPrototype.h"
+#import "LWFItem.h"
 
 @implementation LWFItemPrototypeFactory
 
@@ -32,6 +33,10 @@ SINGLETON_FOR_CLASS(ItemPrototypeFactory)
     }
     
     self.prototypes = prototypes;
+}
+
+- (LWFItemPrototype *)getPrototypeWithName:(NSString *)name {
+    return [self.prototypes objectForKey:name];
 }
 
 - (NSArray *)getDictionaryFromJson {
