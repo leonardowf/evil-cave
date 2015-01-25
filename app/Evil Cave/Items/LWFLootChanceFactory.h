@@ -13,7 +13,6 @@
 @property (nonatomic, strong) NSDictionary *lootChances;
 
 + (id)sharedLootChanceFactory;
-
-
+- (NSArray *)getLootChancesForKey:(NSString *)key;
 
 @end

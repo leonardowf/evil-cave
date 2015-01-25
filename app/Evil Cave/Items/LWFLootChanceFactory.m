@@ -51,6 +51,10 @@ SINGLETON_FOR_CLASS(LootChanceFactory)
     self.lootChances = lootChances;
 }
 
+- (NSArray *)getLootChancesForKey:(NSString *)key {
+    return [self.lootChances objectForKey:key];
+}
+
 - (NSDictionary *)getDictionaryFromJson {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"loot_chances"
                                                          ofType:@"json"];

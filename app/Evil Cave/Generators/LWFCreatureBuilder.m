@@ -100,8 +100,6 @@
         creature.size = _mapDimension.tileSize;
         creature.player = _map.player;
         creature.attacks = [_attacksBuilder attacksForCreatureType:creatureType];
-        
-
     }
     
     return creature;

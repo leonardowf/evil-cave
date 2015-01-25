@@ -13,5 +13,6 @@
 - (NSInteger)randomIntegerBetween:(NSInteger)low and:(NSInteger)high;
 - (CGFloat) randomNumberBetween0and1;
 - (NSNumber *)randomNumberBetween:(NSNumber *)low and:(NSNumber *)high;
+- (float)randomFloatBetween:(float)smallNumber and:(float)bigNumber;
 
 @end

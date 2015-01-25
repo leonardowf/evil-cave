@@ -24,11 +24,14 @@
 #import "LWFItem.h"
 #import "LWFItemPrototype.h"
 #import "LWFItemPrototypeFactory.h"
+#import "LWFLootChanceFactory.h"
+#import "LWFLootChance.h"
 
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
     NSUInteger _failedMovements;
     LWFLifeBar *_lifeBar;
+    NSArray *_lootChances;
 
 }
 @end
@@ -136,6 +139,9 @@
     
     _lifeBar = [self getLifeBar];
     _lifeBar.stats = self.stats;
+    
+    LWFLootChanceFactory *lootChanceFactory = [LWFLootChanceFactory sharedLootChanceFactory];
+    _lootChances = [lootChanceFactory getLootChancesForKey:self.spriteImageName];
     
     [self addChild:_lifeBar];
 }
@@ -568,6 +574,15 @@
 }
 
 - (void)diedWithCompletion:(void(^)(void))someBlock {
+    NSArray *loot = [self getLoots];
+    
+    for (LWFItem *item in loot) {
+        [self.currentTile addChild:item];
+    }
+    
+
+    
+    
     [someBlock invoke];
 }
 
@@ -577,11 +592,22 @@
 
 # pragma - mark LWFLootable
 - (NSArray *)getLootChances {
-    return nil;
+    return _lootChances;
 }
 
 - (NSArray *)getLoots {
-    return nil;
+    NSArray *lootChances = [self getLootChances];
+    NSMutableArray *loot = [NSMutableArray array];
+    
+    for (LWFLootChance *lootChance in lootChances) {
+        NSInteger amountDropped = [lootChance amountDropped];
+        LWFItem *drop = [lootChance buildWithQuantity:amountDropped];
+        
+        if (drop != nil) {
+            [loot addObject:drop];
+        }
+    }
+    return loot;
 }
 
 @end
