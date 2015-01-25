@@ -1,0 +1,26 @@
+{
+  "rat": [
+    {
+      "name": "sword",
+      "quantity": 1,
+      "chance": 4.4
+    },
+    {
+      "name": "fine_sword",
+      "quantity": 1,
+      "chance": 5
+    }
+  ],
+  "radioactive_rat": [
+    {
+      "name": "sword",
+      "quantity": 1,
+      "chance": 50
+    },
+    {
+      "name": "fine_sword",
+      "quantity": 1,
+      "chance": 10
+    }
+  ]
+}

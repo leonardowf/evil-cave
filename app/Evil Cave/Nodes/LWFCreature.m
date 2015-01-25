@@ -573,7 +573,15 @@
 
 - (void)statsChanged {
     [_lifeBar draw];
+}
 
+# pragma - mark LWFLootable
+- (NSArray *)getLootChances {
+    return nil;
+}
+
+- (NSArray *)getLoots {
+    return nil;
 }
 
 @end

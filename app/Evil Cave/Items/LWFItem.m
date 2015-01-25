@@ -25,6 +25,8 @@
         [self calculateForKey:@"HP" andPrototype:prototype];
         [self calculateForKey:@"armor" andPrototype:prototype];
         
+        self.quantity = 1;
+        
         self.prototype = prototype;
     }
     return self;

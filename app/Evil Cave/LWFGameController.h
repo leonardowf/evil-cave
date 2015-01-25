@@ -13,11 +13,13 @@
 @class LWFCreatureBuilder;
 @class LWFAttacksBuilder;
 @class LWFItemPrototypeFactory;
+@class LWFLootChanceFactory;
 
 @interface LWFGameController : NSObject
 
 @property (nonatomic, strong) LWFTileMap *tileMap;
 @property (nonatomic, strong) LWFItemPrototypeFactory *itemPrototypeFactory;
+@property (nonatomic, strong) LWFLootChanceFactory *lootChanceFactory;
 
 + (id)sharedGameController;
 

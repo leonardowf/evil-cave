@@ -11,6 +11,7 @@
 #import "LWFMoveable.h"
 #import "LWFAttackable.h"
 #import "LWFKillable.h"
+#import "LWFLootable.h"
 
 @class LWFTile;
 @class LWFMap;
@@ -23,7 +24,7 @@
 @class LWFMovementManager;
 @class LWFAttackManager;
 
-@interface LWFCreature : SKSpriteNode <LWFMoveable, LWFAttackable, LWFKillable>
+@interface LWFCreature : SKSpriteNode <LWFMoveable, LWFAttackable, LWFKillable, LWFLootable>
 
 @property (nonatomic, strong) LWFMovementManager *movementManager;
 @property (nonatomic, strong) LWFAttackManager *attackManager;
@@ -43,6 +44,8 @@
 @property (nonatomic, strong) LWFEquips *equips;
 
 @property (nonatomic, strong) LWFCreature *nextCreature;
+
+@property (nonatomic, strong) NSArray *lootChances;
 
 - (void)build;
 - (void)processTurn;

@@ -30,6 +30,8 @@
 		326524EB1A7448AB00EEA4B2 /* item_prototypes.json in Resources */ = {isa = PBXBuildFile; fileRef = 326524EA1A7448AB00EEA4B2 /* item_prototypes.json */; };
 		326524EF1A75406B00EEA4B2 /* item_fine_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 326524ED1A75406B00EEA4B2 /* item_fine_sword.png */; };
 		326524F01A75406B00EEA4B2 /* item_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 326524EE1A75406B00EEA4B2 /* item_sword.png */; };
+		326524F31A75550600EEA4B2 /* LWFLootChanceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 326524F21A75550600EEA4B2 /* LWFLootChanceFactory.m */; };
+		326524F51A75726900EEA4B2 /* loot_chances.json in Resources */ = {isa = PBXBuildFile; fileRef = 326524F41A75726900EEA4B2 /* loot_chances.json */; };
 		3293698B1A5058DD00ECF705 /* LWFRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3293698A1A5058DD00ECF705 /* LWFRect.m */; };
 		32BCDF791A50455E004A2993 /* LWFDartDungeonGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDF781A50455E004A2993 /* LWFDartDungeonGenerator.m */; };
 		32BEBFB91A42476D000C77AA /* LWFGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BEBFB81A42476D000C77AA /* LWFGameController.m */; };
@@ -136,6 +138,9 @@
 		326524EA1A7448AB00EEA4B2 /* item_prototypes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = item_prototypes.json; sourceTree = "<group>"; };
 		326524ED1A75406B00EEA4B2 /* item_fine_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_fine_sword.png; sourceTree = "<group>"; };
 		326524EE1A75406B00EEA4B2 /* item_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_sword.png; sourceTree = "<group>"; };
+		326524F11A75550600EEA4B2 /* LWFLootChanceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFLootChanceFactory.h; sourceTree = "<group>"; };
+		326524F21A75550600EEA4B2 /* LWFLootChanceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFLootChanceFactory.m; sourceTree = "<group>"; };
+		326524F41A75726900EEA4B2 /* loot_chances.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loot_chances.json; sourceTree = "<group>"; };
 		329369891A5058DD00ECF705 /* LWFRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRect.h; sourceTree = "<group>"; };
 		3293698A1A5058DD00ECF705 /* LWFRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRect.m; sourceTree = "<group>"; };
 		32BCDF771A50455E004A2993 /* LWFDartDungeonGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFDartDungeonGenerator.h; sourceTree = "<group>"; };
@@ -411,11 +416,14 @@
 				321DB1091A741FF6003354BB /* LWFItemPrototype.h */,
 				321DB10A1A741FF6003354BB /* LWFItemPrototype.m */,
 				321DB10C1A742002003354BB /* LWFLootChance.h */,
+				326524F41A75726900EEA4B2 /* loot_chances.json */,
 				321DB10D1A742002003354BB /* LWFLootChance.m */,
 				321DB10F1A74201D003354BB /* LWFItemPrototypeFactory.h */,
 				321DB1101A74201D003354BB /* LWFItemPrototypeFactory.m */,
 				326524E91A7433F900EEA4B2 /* LWFLootable.h */,
 				326524EA1A7448AB00EEA4B2 /* item_prototypes.json */,
+				326524F11A75550600EEA4B2 /* LWFLootChanceFactory.h */,
+				326524F21A75550600EEA4B2 /* LWFLootChanceFactory.m */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -707,6 +715,7 @@
 				324527941A4DEEF100AFF9A7 /* rat_dying_right.atlas in Resources */,
 				326524F01A75406B00EEA4B2 /* item_sword.png in Resources */,
 				32F1CDCC1A57603800A0D9F5 /* wall.png in Resources */,
+				326524F51A75726900EEA4B2 /* loot_chances.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,6 +752,7 @@
 				32D50BC41A3CFB60002D3098 /* LWFStats.m in Sources */,
 				A78443A91A1EB2220029995D /* LWFCreature.m in Sources */,
 				32CD39D61A22CBCC000ADD95 /* LWFGoblin.m in Sources */,
+				326524F31A75550600EEA4B2 /* LWFLootChanceFactory.m in Sources */,
 				322DB6AE1A229E320085AC68 /* LWFRat.m in Sources */,
 				A703875C1A17BD5E0053A9E6 /* LWFTile.m in Sources */,
 				32F09E2F1A48EBB1000B8797 /* LWFEquips.m in Sources */,

@@ -18,6 +18,8 @@
 @property (nonatomic, strong) NSNumber * HP;
 @property (nonatomic, strong) NSNumber * armor;
 
+@property (nonatomic) NSInteger quantity;
+
 @property (nonatomic, strong) LWFItemPrototype *prototype;
 
 - (instancetype)initWithItemPrototype:(LWFItemPrototype *)prototype;

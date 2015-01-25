@@ -8,6 +8,8 @@
 
 #import "LWFGameController.h"
 #import "LWFItemPrototypeFactory.h"
+#import "LWFLootChanceFactory.h"
+
 @implementation LWFGameController
 
 SINGLETON_FOR_CLASS(GameController)
@@ -18,6 +20,7 @@ SINGLETON_FOR_CLASS(GameController)
     self = [super init];
     if (self) {
         self.itemPrototypeFactory = [LWFItemPrototypeFactory sharedItemPrototypeFactory];
+        self.lootChanceFactory = [LWFLootChanceFactory sharedLootChanceFactory];
     }
     return self;
 }

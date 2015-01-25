@@ -10,4 +10,7 @@
 
 @protocol LWFLootable <NSObject>
 
+- (NSArray *)getLootChances;
+- (NSArray *)getLoots;
+
 @end

@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+@class LWFItemPrototype;
 
 @interface LWFLootChance : NSObject
+
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic) NSInteger quantity;
+@property (nonatomic) CGFloat chance;
+
+@property (nonatomic, strong) LWFItemPrototype *prototype;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dict;
 
 @end
