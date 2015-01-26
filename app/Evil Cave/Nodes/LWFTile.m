@@ -8,8 +8,18 @@
 
 #import "LWFTile.h"
 #import "LWFRandomUtils.h"
+#import "LWFItem.h"
 
 @implementation LWFTile
+
+- (instancetype)initWithTexture:(SKTexture *)texture
+{
+    self = [super initWithTexture:texture];
+    if (self) {
+        self.items = [NSMutableArray array];
+    }
+    return self;
+}
 
 - (BOOL)isPassable {
     return [self isWalkable] && self.creatureOnTile == nil;
@@ -50,6 +60,22 @@
     
     [self addChild:bloodNode];
     
+}
+
+- (void)addChild:(SKNode *)node {
+    SKAction *fadeAction = nil;
+    
+    if ([node isKindOfClass:[LWFItem class]]) {
+        node.alpha = 0.0;
+        fadeAction = [SKAction fadeInWithDuration:0.5];
+        [self.items addObject:node];
+    }
+
+    [super addChild:node];
+    
+    if (fadeAction != nil) {
+        [node runAction:fadeAction];
+    }
 }
 
 @end

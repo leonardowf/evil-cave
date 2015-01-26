@@ -17,6 +17,7 @@
 @property NSUInteger y;
 @property LWFCreature *creatureOnTile;
 @property (nonatomic) CaveCellType cellType;
+@property (nonatomic, strong) NSMutableArray *items;
 
 - (BOOL)isPassable;
 - (NSUInteger)distanceToTile:(LWFTile *)tile;
