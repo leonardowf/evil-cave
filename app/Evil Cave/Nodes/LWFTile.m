@@ -44,6 +44,12 @@
 }
 
 - (void)diedOnTile:(LWFCreature *)creature {
+    if (self.isThereBloodAlready) {
+        return;
+    }
+    
+    self.isThereBloodAlready = YES;
+    
     LWFRandomUtils *randomUtils = [[LWFRandomUtils alloc]init];
     
     NSString *bloodAtlasName = [NSString stringWithFormat:@"blood"];

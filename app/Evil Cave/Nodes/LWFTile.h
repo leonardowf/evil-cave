@@ -18,6 +18,8 @@
 @property LWFCreature *creatureOnTile;
 @property (nonatomic) CaveCellType cellType;
 @property (nonatomic, strong) NSMutableArray *items;
+@property (nonatomic) BOOL isThereBloodAlready;
+
 
 - (BOOL)isPassable;
 - (NSUInteger)distanceToTile:(LWFTile *)tile;
