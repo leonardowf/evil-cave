@@ -11,4 +11,11 @@
 
 @interface LWFViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *itemPreview;
+@property (weak, nonatomic) IBOutlet UILabel *labelDamage;
+@property (weak, nonatomic) IBOutlet UILabel *labelStrength;
+@property (weak, nonatomic) IBOutlet UILabel *labelHP;
+@property (weak, nonatomic) IBOutlet UILabel *labelArmor;
+@property (weak, nonatomic) IBOutlet UILabel *labelName;
+
 @end

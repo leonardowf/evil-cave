@@ -8,6 +8,7 @@
 
 #import "LWFViewController.h"
 #import "LWFMyScene.h"
+#import "LWFItem.h"
 
 @implementation LWFViewController
 
@@ -26,6 +27,38 @@
     
     // Present the scene.
     [skView presentScene:scene];
+    
+    [self configureEvents];
+    
+}
+
+- (void)configureEvents {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(steppedOnItemNotification:)
+                                                 name:@"steppedOnTileNotification"
+                                               object:nil];
+}
+
+- (void)steppedOnItemNotification:(NSNotification *)notification {
+    NSMutableArray *itemsStepped = [notification object];
+    
+    if (itemsStepped == nil || itemsStepped.count == 0) {
+        self.itemPreview.alpha = 0;
+        self.itemPreview.hidden = YES;
+    } else {
+        self.itemPreview.alpha = 1.0;
+        self.itemPreview.hidden = NO;
+        
+        LWFItem *item = [itemsStepped firstObject];
+        
+        
+        self.labelName.text = item.name;
+        self.labelDamage.text = [NSString stringWithFormat:@"Damage: %@", [item.damage stringValue]];
+        self.labelHP.text = @"";
+        self.labelStrength.text = @"";
+        self.labelArmor.text = @"";
+    }
+    
 }
 
 - (BOOL)shouldAutorotate
@@ -47,5 +80,10 @@
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
 }
+
+- (IBAction)didTouchItemPreview:(id)sender {
+    
+}
+
 
 @end

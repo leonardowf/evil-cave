@@ -28,6 +28,8 @@
         self.quantity = 1;
         
         self.prototype = prototype;
+        
+        self.name = prototype.name;
     }
     
     self.size = CGSizeMake(TILE_SIZE, TILE_SIZE);

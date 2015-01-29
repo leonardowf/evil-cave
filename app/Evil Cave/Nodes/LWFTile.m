@@ -9,6 +9,8 @@
 #import "LWFTile.h"
 #import "LWFRandomUtils.h"
 #import "LWFItem.h"
+#import "LWFCreature.h"
+#import "LWFPlayer.h"
 
 @implementation LWFTile
 
@@ -40,6 +42,14 @@
         SKTexture *texture = [SKTexture textureWithImageNamed:@"door_open"];
         texture.filteringMode = SKTextureFilteringNearest;
         [self setTexture:texture];
+    }
+    
+    if ([creature isKindOfClass:[LWFPlayer class]]) {
+        
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:@"steppedOnTileNotification"
+         object:self.items];
+        
     }
 }
 
