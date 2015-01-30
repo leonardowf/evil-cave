@@ -9,6 +9,11 @@
       "name": "fine_sword",
       "quantity": 1,
       "chance": 50
+    },
+    {
+      "name": "motherfucking_sword",
+      "quantity": 1,
+      "chance": 5
     }
   ],
   "radioactive_rat": [

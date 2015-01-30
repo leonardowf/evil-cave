@@ -49,7 +49,7 @@
         self.itemPreview.alpha = 1.0;
         self.itemPreview.hidden = NO;
         
-        LWFItem *item = [itemsStepped firstObject];
+        LWFItem *item = [itemsStepped lastObject];
         
         self.labelName.text = item.name;
         self.labelDamage.text = [NSString stringWithFormat:@"Damage: %@-%@", [item.lowdamage stringValue], [item.highdamage stringValue]];

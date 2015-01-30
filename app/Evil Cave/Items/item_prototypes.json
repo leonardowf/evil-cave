@@ -40,5 +40,26 @@
     "identifier": "fine_sword",
     "name": "Fine Sword",
     "category": "weapon"
+  },
+  {
+    "base_str": "0",
+    "min_str": "0",
+    "max_str": "10",
+    "base_hp": "0",
+    "max_hp": "0",
+    "min_hp": "0",
+    "base_armor": "0",
+    "min_armor": "0",
+    "max_armor": "0",
+    "base_lowdamage": "7",
+    "min_lowdamage": "-2",
+    "max_lowdamage": "2",
+    "base_highdamage": "10",
+    "min_highdamage": "-1",
+    "max_highdamage": "3",
+    "image_name": "motherfucking_sword",
+    "identifier": "motherfucking_sword",
+    "name": "Motherfucking Sword",
+    "category": "weapon"
   }
 ]
