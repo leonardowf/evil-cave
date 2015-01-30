@@ -16,9 +16,18 @@
     self = [super init];
     if (self) {
         self.name = [dict objectForKey:@"name"];
-        self.baseDamage = [self dict:dict integerForKey:@"base_dmg"];
-        self.minDamage = [self dict:dict integerForKey:@"min_dmg"];
-        self.maxDamage = [self dict:dict integerForKey:@"max_dmg"];
+        self.imageName = [dict objectForKey:@"image_name"];
+        self.identifier = [dict objectForKey:@"identifier"];
+        self.category = [dict objectForKey:@"category"];
+        
+        self.baseLowdamage = [self dict:dict integerForKey:@"base_lowdamage"];
+        self.minLowdamage = [self dict:dict integerForKey:@"min_lowdamage"];
+        self.maxLowdamage = [self dict:dict integerForKey:@"max_lowdamage"];
+        
+        self.baseHighdamage = [self dict:dict integerForKey:@"base_highdamage"];
+        self.minHighdamage = [self dict:dict integerForKey:@"min_highdamage"];
+        self.maxHighdamage = [self dict:dict integerForKey:@"max_highdamage"];
+        
         self.baseStrength = [self dict:dict integerForKey:@"base_str"];
         self.minStrength = [self dict:dict integerForKey:@"min_str"];
         self.maxStrength = [self dict:dict integerForKey:@"max_str"];

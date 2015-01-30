@@ -12,8 +12,12 @@
 @interface LWFItem : SKSpriteNode
 
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *category;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *imageName;
 
-@property (nonatomic, strong) NSNumber * damage;
+@property (nonatomic, strong) NSNumber * lowdamage;
+@property (nonatomic, strong) NSNumber * highdamage;
 @property (nonatomic, strong) NSNumber * strength;
 @property (nonatomic, strong) NSNumber * HP;
 @property (nonatomic, strong) NSNumber * armor;

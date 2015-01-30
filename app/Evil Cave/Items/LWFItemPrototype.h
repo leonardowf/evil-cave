@@ -12,10 +12,17 @@
 @interface LWFItemPrototype : NSObject
 
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *category;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *imageName;
 
-@property (nonatomic) NSNumber * baseDamage;
-@property (nonatomic) NSNumber * minDamage;
-@property (nonatomic) NSNumber * maxDamage;
+@property (nonatomic) NSNumber * baseLowdamage;
+@property (nonatomic) NSNumber * minLowdamage;
+@property (nonatomic) NSNumber * maxLowdamage;
+
+@property (nonatomic) NSNumber * baseHighdamage;
+@property (nonatomic) NSNumber * minHighdamage;
+@property (nonatomic) NSNumber * maxHighdamage;
 
 @property (nonatomic) NSNumber * baseStrength;
 @property (nonatomic) NSNumber * minStrength;

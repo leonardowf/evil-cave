@@ -29,7 +29,7 @@ SINGLETON_FOR_CLASS(ItemPrototypeFactory)
     
     for (NSDictionary *jsonPrototype in jsonPrototypes) {
         LWFItemPrototype *itemPrototype = [[LWFItemPrototype alloc]initWithDictionary:jsonPrototype];
-        [prototypes setObject:itemPrototype forKey:itemPrototype.name];
+        [prototypes setObject:itemPrototype forKey:itemPrototype.identifier];
     }
     
     self.prototypes = prototypes;

@@ -14,13 +14,14 @@
 
 - (instancetype)initWithItemPrototype:(LWFItemPrototype *)prototype
 {
-    NSString *textureName = [NSString stringWithFormat:@"item_%@", prototype.name];
+    NSString *textureName = [NSString stringWithFormat:@"item_%@", prototype.imageName];
     SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
     texture.filteringMode = SKTextureFilteringNearest;
     
     self = [super initWithTexture:texture];
     if (self) {
-        [self calculateForKey:@"damage" andPrototype:prototype];
+        [self calculateForKey:@"lowdamage" andPrototype:prototype];
+        [self calculateForKey:@"highdamage" andPrototype:prototype];
         [self calculateForKey:@"strength" andPrototype:prototype];
         [self calculateForKey:@"HP" andPrototype:prototype];
         [self calculateForKey:@"armor" andPrototype:prototype];
@@ -30,6 +31,9 @@
         self.prototype = prototype;
         
         self.name = prototype.name;
+        self.category = prototype.category;
+        self.identifier = prototype.identifier;
+        self.imageName = prototype.imageName;
     }
     
     self.size = CGSizeMake(TILE_SIZE, TILE_SIZE);

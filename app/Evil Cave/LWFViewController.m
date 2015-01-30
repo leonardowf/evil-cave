@@ -51,9 +51,8 @@
         
         LWFItem *item = [itemsStepped firstObject];
         
-        
         self.labelName.text = item.name;
-        self.labelDamage.text = [NSString stringWithFormat:@"Damage: %@", [item.damage stringValue]];
+        self.labelDamage.text = [NSString stringWithFormat:@"Damage: %@-%@", [item.lowdamage stringValue], [item.highdamage stringValue]];
         self.labelHP.text = @"";
         self.labelStrength.text = @"";
         self.labelArmor.text = @"";
