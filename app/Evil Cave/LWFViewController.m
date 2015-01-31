@@ -52,10 +52,19 @@
         LWFItem *item = [itemsStepped lastObject];
         
         self.labelName.text = item.name;
-        self.labelDamage.text = [NSString stringWithFormat:@"Damage: %@-%@", [item.lowdamage stringValue], [item.highdamage stringValue]];
-        self.labelHP.text = @"";
-        self.labelStrength.text = @"";
-        self.labelArmor.text = @"";
+        self.labelDamage.text = [item damageText];
+        self.labelHP.text = [item hpText];
+        self.labelStrength.text = [item strengthText];
+        self.labelArmor.text = [item armorText];
+        
+        [self.view layoutIfNeeded];
+        
+        self.topConstraint.constant = 0;
+        [UIView animateWithDuration:5
+                         animations:^{
+                             [self.view layoutIfNeeded]; // Called on parent view
+                         }];
+        
     }
     
 }

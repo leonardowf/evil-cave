@@ -60,4 +60,37 @@
     }
 }
 
+- (NSString *)damageText {
+    if (self.lowdamage != nil && self.highdamage != nil) {
+        return [NSString stringWithFormat:@"Damage: %@-%@", [self.lowdamage stringValue], [self.highdamage stringValue]];
+    }
+    
+    return @"";
+}
+
+- (NSString *)armorText {
+    if (self.armor != nil) {
+        return [NSString stringWithFormat:@"Armor: %@", [self.armor stringValue]];
+    }
+    
+    return @"";
+}
+
+- (NSString *)strengthText {
+    if (self.strength != nil) {
+        return [NSString stringWithFormat:@"Strength: %@", [self.strength stringValue]];
+    }
+    
+    return @"";
+}
+
+- (NSString *)hpText {
+    if (self.HP != nil) {
+        return [NSString stringWithFormat:@"HP: %@", [self.HP stringValue]];
+    }
+    return @"";
+}
+
+
+
 @end

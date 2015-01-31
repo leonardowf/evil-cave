@@ -28,4 +28,9 @@
 
 - (instancetype)initWithItemPrototype:(LWFItemPrototype *)prototype;
 
+- (NSString *)hpText;
+- (NSString *)strengthText;
+- (NSString *)armorText;
+- (NSString *)damageText;
+
 @end
