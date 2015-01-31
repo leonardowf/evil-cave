@@ -46,6 +46,20 @@
     
     if ([creature isKindOfClass:[LWFPlayer class]]) {
         
+        // Decide se é gold, caso sim, pega automaticamente
+        NSMutableArray *toRemove = [NSMutableArray array];
+        
+        for (LWFItem *item in self.items) {
+            if ([item isMoney]) {
+                LWFPlayer *player = (LWFPlayer *)creature;
+                [player takeItem:item];
+                [item removeFromParent];
+                [toRemove addObject:item];
+            }
+        }
+        
+        [self.items removeObjectsInArray:toRemove];
+        
         [[NSNotificationCenter defaultCenter]
          postNotificationName:@"steppedOnTileNotification"
          object:self.items];

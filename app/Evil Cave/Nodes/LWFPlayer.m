@@ -11,6 +11,7 @@
 #import "LWFMap.h"
 #import "LWFTurnList.h"
 #import "LWFInventory.h"
+#import "LWFItem.h"
 
 @implementation LWFPlayer
 
@@ -107,5 +108,28 @@
 - (void)cancelPreExistingActions {
     self.tilePath = nil;
 }
+
+- (void)takeItem:(LWFItem *)item {
+    if ([item isMoney]) {
+        
+        SKLabelNode *label = [item getLabel];
+        
+        label.position = self.currentTile.position;
+        
+        [self.map addChild:label];
+        
+        SKAction *action = [SKAction moveByX:0 y:70 duration:1.2];
+        [label runAction:action completion:^{
+            SKAction *action = [SKAction fadeAlphaTo:0 duration:0.2];
+            [label runAction:action completion:^{
+            }];
+            
+        }];
+        
+        self.inventory.money = self.inventory.money + item.quantity;
+        
+    }
+}
+
 
 @end

@@ -10,6 +10,15 @@
 
 @implementation LWFInventory
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.money = 0;
+    }
+    return self;
+}
+
 SINGLETON_FOR_CLASS(Inventory)
 
 

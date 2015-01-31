@@ -32,6 +32,7 @@
 		326524F31A75550600EEA4B2 /* LWFLootChanceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 326524F21A75550600EEA4B2 /* LWFLootChanceFactory.m */; };
 		326524F51A75726900EEA4B2 /* loot_chances.json in Resources */ = {isa = PBXBuildFile; fileRef = 326524F41A75726900EEA4B2 /* loot_chances.json */; };
 		326524F71A75ABAF00EEA4B2 /* item_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 326524F61A75ABAF00EEA4B2 /* item_sword.png */; };
+		327F1A761A7D10100049AEF2 /* item_gold.png in Resources */ = {isa = PBXBuildFile; fileRef = 327F1A751A7D10100049AEF2 /* item_gold.png */; };
 		3293698B1A5058DD00ECF705 /* LWFRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3293698A1A5058DD00ECF705 /* LWFRect.m */; };
 		32ACD05F1A7B062600970F69 /* item_motherfucking_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */; };
 		32BCDF791A50455E004A2993 /* LWFDartDungeonGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDF781A50455E004A2993 /* LWFDartDungeonGenerator.m */; };
@@ -143,6 +144,7 @@
 		326524F21A75550600EEA4B2 /* LWFLootChanceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFLootChanceFactory.m; sourceTree = "<group>"; };
 		326524F41A75726900EEA4B2 /* loot_chances.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loot_chances.json; sourceTree = "<group>"; };
 		326524F61A75ABAF00EEA4B2 /* item_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_sword.png; sourceTree = "<group>"; };
+		327F1A751A7D10100049AEF2 /* item_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_gold.png; sourceTree = "<group>"; };
 		329369891A5058DD00ECF705 /* LWFRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRect.h; sourceTree = "<group>"; };
 		3293698A1A5058DD00ECF705 /* LWFRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRect.m; sourceTree = "<group>"; };
 		32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_motherfucking_sword.png; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 		326524EC1A75405700EEA4B2 /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				327F1A751A7D10100049AEF2 /* item_gold.png */,
 				32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */,
 				326524F61A75ABAF00EEA4B2 /* item_sword.png */,
 				326524ED1A75406B00EEA4B2 /* item_fine_sword.png */,
@@ -713,6 +716,7 @@
 				32BEC00D1A4714DC000C77AA /* rat_standing_left.atlas in Resources */,
 				32BEBFEF1A470AAB000C77AA /* rock_tile.png in Resources */,
 				32BEC0101A4714DC000C77AA /* rat_standing_right.png in Resources */,
+				327F1A761A7D10100049AEF2 /* item_gold.png in Resources */,
 				3254E6D71A5CB49400BD7D13 /* door.png in Resources */,
 				321A60601A6354DF0060517E /* door_open.png in Resources */,
 				32BEC0071A470FFD000C77AA /* warrior_walking_left.atlas in Resources */,

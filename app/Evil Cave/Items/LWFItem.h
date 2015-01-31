@@ -32,5 +32,7 @@
 - (NSString *)strengthText;
 - (NSString *)armorText;
 - (NSString *)damageText;
+- (BOOL)isMoney;
+- (SKLabelNode *)getLabel;
 
 @end

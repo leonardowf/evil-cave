@@ -43,5 +43,11 @@
     "identifier": "motherfucking_sword",
     "name": "Motherfucking Sword",
     "category": "weapon"
+  },
+  {
+    "image_name": "gold",
+    "identifier": "gold",
+    "name": "Gold",
+    "category": "money"
   }
 ]

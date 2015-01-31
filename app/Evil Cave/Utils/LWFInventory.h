@@ -14,7 +14,8 @@
 
 @property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic, strong) LWFPlayer *player;
- 
+@property (nonatomic) NSInteger money;
+
 + (id)sharedInventory;
 
 - (void)show;

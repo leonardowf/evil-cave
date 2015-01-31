@@ -91,6 +91,30 @@
     return @"";
 }
 
+- (BOOL)isMoney {
+    if ([self.category isEqualToString:@"money"]) {
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (SKLabelNode *)getLabel {
+    if ([self isMoney]) {
+        SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"Munro"];
+        label.fontSize = 20;
+        
+        UIColor *labelColor;
+        labelColor = [UIColor colorWithRed:1.0 green:215.0/255.0 blue:0.0 alpha:1.0];
+
+        [label setFontColor:labelColor];
+        label.text = [NSString stringWithFormat:@"%d", self.quantity];
+        
+        return label;
+        
+    }
+    return nil;
+}
 
 
 @end

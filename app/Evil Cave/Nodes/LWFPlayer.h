@@ -12,6 +12,7 @@
 
 @class LWFTile;
 @class LWFInventory;
+@class LWFItem;
 
 @interface LWFPlayer : LWFCreature
 
@@ -19,5 +20,6 @@
 
 - (void)movementRequestIsInvalid;
 - (void)cancelPreExistingActions;
+- (void)takeItem:(LWFItem *)item;
 
 @end
