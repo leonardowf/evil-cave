@@ -56,15 +56,6 @@
         self.labelHP.text = [item hpText];
         self.labelStrength.text = [item strengthText];
         self.labelArmor.text = [item armorText];
-        
-        [self.view layoutIfNeeded];
-        
-        self.topConstraint.constant = 0;
-        [UIView animateWithDuration:5
-                         animations:^{
-                             [self.view layoutIfNeeded]; // Called on parent view
-                         }];
-        
     }
     
 }
