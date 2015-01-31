@@ -143,6 +143,7 @@
             [_player willMoveToTile:tile atX:tile.x andY:tile.y];
         } else if (tile == self.player.currentTile) {
             [self.player cancelPreExistingActions];
+            [self.player requestTakeItem];
         }
     }
 }

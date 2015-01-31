@@ -128,7 +128,26 @@
         
         self.inventory.money = self.inventory.money + item.quantity;
         
+    } else {
+        // TODO: Potion
+        [self.inventory.items addObject:item];
+        [self.currentTile.items removeObject:item];
+        [item removeFromParent];
     }
+}
+
+- (void)requestTakeItem {
+    if (self.currentTile.items == nil || self.currentTile.items.count == 0) {
+        return;
+    }
+    
+    LWFItem *item = [self.currentTile.items lastObject];
+    
+    if ([self.inventory canTakeItem:item]) {
+        [self takeItem:item];
+    }
+    
+    [self finishTurn];
 }
 
 

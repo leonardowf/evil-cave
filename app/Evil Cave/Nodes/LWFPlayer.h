@@ -21,5 +21,6 @@
 - (void)movementRequestIsInvalid;
 - (void)cancelPreExistingActions;
 - (void)takeItem:(LWFItem *)item;
+- (void)requestTakeItem;
 
 @end

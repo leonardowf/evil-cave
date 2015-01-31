@@ -9,6 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 
 @class LWFPlayer;
+@class LWFItem;
 
 @interface LWFInventory : SKSpriteNode
 
@@ -20,5 +21,6 @@
 
 - (void)show;
 - (void)hide;
+- (BOOL)canTakeItem:(LWFItem *)item;
 
 @end

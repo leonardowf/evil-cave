@@ -7,6 +7,7 @@
 //
 
 #import "LWFInventory.h"
+#import "LWFItem.h"
 
 @implementation LWFInventory
 
@@ -28,5 +29,10 @@ SINGLETON_FOR_CLASS(Inventory)
 
 - (void)show {
     
+}
+
+- (BOOL)canTakeItem:(LWFItem *)item {
+    return YES;
+    // TODO
 }
 @end
