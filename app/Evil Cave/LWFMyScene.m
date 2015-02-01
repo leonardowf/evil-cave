@@ -24,8 +24,6 @@
     BOOL _pinching;
     
     UITouch *_lastTouch;
-    
-    SKSpriteNode *_inventoryButton;
 }
 @end
 
@@ -46,48 +44,8 @@
         [self addChild:_map];
         [_map moveCameraToTile:_map.player.currentTile];
         
-        [self constructHudForSize:size];
-        
     }
     return self;
-}
-
-- (void)constructHudForSize:(CGSize)size {
-    SKSpriteNode *hudNode = [[SKSpriteNode alloc]initWithColor:[UIColor greenColor] size:CGSizeMake(size.width, 60)];
-    _inventoryButton = [[SKSpriteNode alloc]initWithColor:[UIColor redColor] size:CGSizeMake(60, hudNode.size.height)];
-    
-    _inventoryButton.position = CGPointMake(hudNode.size.width/2 - _inventoryButton.size.width/2, 0);
-    
-    [hudNode addChild:_inventoryButton];
-
-    hudNode.position = CGPointMake(hudNode.size.width/2, hudNode.size.height/2);
-    
-    [self addChild:hudNode];
-}
-
-- (void)openInventory {
-    LWFInventory *inventory = [LWFInventory sharedInventory];
-    
-    CGFloat inventHeight = self.size.height - 50;
-    CGFloat inventWidth = self.size.width - 50;
-    
-    CGSize size = CGSizeMake(inventWidth, inventHeight);
-    
-    CGFloat x = self.size.width / 2;
-    CGFloat y = self.size.height / 2;
-    
-    CGPoint position = CGPointMake(x, y);
-    
-    [inventory setSize:size];
-    [inventory setPosition:position];
-    
-    [inventory setColor:[UIColor orangeColor]];
-    
-    if (![self.children containsObject:inventory]) {
-        [self addChild:inventory];
-    } else {
-        [inventory removeFromParent];
-    }
 }
 
 -(void)update:(CFTimeInterval)currentTime {
@@ -113,11 +71,6 @@
     CGPoint positionInScene = [touch locationInNode:self];
 
     NSArray *nodes = [self nodesAtPoint:positionInScene];
-
-    if ([nodes containsObject:_inventoryButton]) {
-        [self openInventory];
-        return;
-    }
 
     CGPoint touchPoint = [touch locationInNode:_map];
 

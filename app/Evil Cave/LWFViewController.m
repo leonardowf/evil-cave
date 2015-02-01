@@ -43,11 +43,26 @@
     NSMutableArray *itemsStepped = [notification object];
     
     if (itemsStepped == nil || itemsStepped.count == 0) {
-        self.itemPreview.alpha = 0;
-        self.itemPreview.hidden = YES;
+//        self.itemPreview.alpha = 0;
+//        self.itemPreview.hidden = YES;
+        
+        
+        [self.view layoutIfNeeded];
+        
+        self.rightConstraint.constant = -16;
+        [UIView animateWithDuration:0.5
+                         animations:^{
+                             [self.view layoutIfNeeded]; // Called on parent view
+                         }];
     } else {
-        self.itemPreview.alpha = 1.0;
-        self.itemPreview.hidden = NO;
+        
+        [self.view layoutIfNeeded];
+        
+        self.rightConstraint.constant = 142;
+        [UIView animateWithDuration:0.5
+                         animations:^{
+                             [self.view layoutIfNeeded]; // Called on parent view
+                         }];
         
         LWFItem *item = [itemsStepped lastObject];
         
