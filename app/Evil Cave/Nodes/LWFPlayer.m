@@ -133,7 +133,12 @@
         [self.inventory.items addObject:item];
         [self.currentTile.items removeObject:item];
         [item removeFromParent];
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:@"notificationShowItemPreview"
+         object:self.currentTile.items];
     }
+    
+
 }
 
 - (void)requestTakeItem {

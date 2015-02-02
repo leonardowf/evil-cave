@@ -580,8 +580,9 @@
         [self.currentTile addChild:item];
     }
     
-
-    
+    if (self.currentTile.creatureOnTile == self.player) {
+        [self.currentTile steppedOnTile:self.player];
+    }
     
     [someBlock invoke];
 }

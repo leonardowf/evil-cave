@@ -34,17 +34,21 @@
 
 - (void)configureEvents {
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(steppedOnItemNotification:)
-                                                 name:@"steppedOnTileNotification"
+                                             selector:@selector(notificationShowItemPreview:)
+                                                 name:@"notificationShowItemPreview"
                                                object:nil];
 }
 
-- (void)steppedOnItemNotification:(NSNotification *)notification {
+- (void)notificationShowItemPreview:(NSNotification *)notification {
     NSMutableArray *itemsStepped = [notification object];
     
+    [self showPreviewForItems:itemsStepped];
+}
+
+- (void)showPreviewForItems:(NSMutableArray *) itemsStepped {
     if (itemsStepped == nil || itemsStepped.count == 0) {
-//        self.itemPreview.alpha = 0;
-//        self.itemPreview.hidden = YES;
+        //        self.itemPreview.alpha = 0;
+        //        self.itemPreview.hidden = YES;
         
         
         [self.view layoutIfNeeded];
@@ -72,7 +76,6 @@
         self.labelStrength.text = [item strengthText];
         self.labelArmor.text = [item armorText];
     }
-    
 }
 
 - (BOOL)shouldAutorotate
@@ -99,5 +102,7 @@
     
 }
 
+- (IBAction)didTapInventoryButton:(id)sender {
+}
 
 @end

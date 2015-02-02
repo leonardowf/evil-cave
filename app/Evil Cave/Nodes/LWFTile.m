@@ -61,7 +61,7 @@
         [self.items removeObjectsInArray:toRemove];
         
         [[NSNotificationCenter defaultCenter]
-         postNotificationName:@"steppedOnTileNotification"
+         postNotificationName:@"notificationShowItemPreview"
          object:self.items];
         
     }

@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="296-NC-TaJ" userLabel="item preview">
-                                <rect key="frame" x="320" y="370.5" width="150" height="117.5"/>
+                                <rect key="frame" x="320" y="370" width="150" height="117.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="item_preview_top.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Qh-tn-RF3">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="10"/>
@@ -41,7 +41,7 @@
                                         <rect key="frame" x="0.0" y="10" width="150" height="97.5"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="item_preview_bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="jXP-rM-hgp">
-                                        <rect key="frame" x="0.0" y="107.5" width="150" height="10"/>
+                                        <rect key="frame" x="0.0" y="107" width="150" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="JfC-YH-iun"/>
                                         </constraints>
@@ -56,7 +56,7 @@
                                                     <constraint firstAttribute="width" constant="30" id="i38-jg-nAr"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGq-V5-YTy" userLabel="item name">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGq-V5-YTy" userLabel="item name">
                                                 <rect key="frame" x="40" y="8" width="100" height="13.5"/>
                                                 <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="14"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -87,16 +87,16 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="previous_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="UZp-VO-D5F">
-                                                <rect key="frame" x="10" y="82.5" width="40" height="15"/>
+                                                <rect key="frame" x="10" y="82" width="40" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="JgD-fe-xyu"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="get_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="0lc-ml-smx">
-                                                <rect key="frame" x="55" y="82.5" width="40" height="15"/>
+                                                <rect key="frame" x="55" y="82" width="40" height="15"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zvo-bs-dHG">
-                                                <rect key="frame" x="100" y="82.5" width="40" height="15"/>
+                                                <rect key="frame" x="100" y="82" width="40" height="15"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -153,11 +153,33 @@
                                     <outletCollection property="gestureRecognizers" destination="cdQ-2N-2DM" appends="YES" id="TUD-La-V3l"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cw0-2s-On6">
+                                <rect key="frame" x="18" y="490" width="60" height="60"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inventory_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="yOv-0K-4OW">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                    </imageView>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="1o3-ha-7OU"/>
+                                    <constraint firstItem="yOv-0K-4OW" firstAttribute="leading" secondItem="cw0-2s-On6" secondAttribute="leading" id="3cz-pw-PU6"/>
+                                    <constraint firstAttribute="bottom" secondItem="yOv-0K-4OW" secondAttribute="bottom" id="52q-xo-JD2"/>
+                                    <constraint firstAttribute="trailing" secondItem="yOv-0K-4OW" secondAttribute="trailing" id="Llr-bw-fNK"/>
+                                    <constraint firstAttribute="height" constant="60" id="NRA-iL-GuB"/>
+                                    <constraint firstItem="yOv-0K-4OW" firstAttribute="top" secondItem="cw0-2s-On6" secondAttribute="top" id="m8o-24-y2r"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Q7p-6t-11K" appends="YES" id="jgG-uT-5qy"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="296-NC-TaJ" secondAttribute="leading" constant="-16" id="2t2-QB-Kbp"/>
                             <constraint firstItem="aVg-JY-jeM" firstAttribute="top" secondItem="296-NC-TaJ" secondAttribute="bottom" constant="80" id="2zg-ej-cea"/>
+                            <constraint firstItem="cw0-2s-On6" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leadingMargin" constant="2" id="CHY-h7-uy3"/>
+                            <constraint firstItem="aVg-JY-jeM" firstAttribute="top" secondItem="cw0-2s-On6" secondAttribute="bottom" constant="18" id="Sn5-cA-EfV"/>
                         </constraints>
                     </view>
                     <connections>
@@ -176,12 +198,18 @@
                         <action selector="didTouchItemPreview:" destination="LVB-YS-i5n" id="3Yn-Fg-reY"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="Q7p-6t-11K">
+                    <connections>
+                        <action selector="didTapInventoryButton:" destination="LVB-YS-i5n" id="HhE-LK-N6v"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="410" y="296"/>
         </scene>
     </scenes>
     <resources>
         <image name="get_button.png" width="40" height="15"/>
+        <image name="inventory_icon.png" width="60" height="60"/>
         <image name="item_fine_sword.png" width="32" height="32"/>
         <image name="item_preview_bottom.png" width="239" height="20"/>
         <image name="item_preview_middle.png" width="239" height="4"/>
