@@ -158,6 +158,8 @@
 }
 
 - (void)requestTakeItem {
+    NSArray *inventoryItems = self.inventory.items;
+    
     if (self.currentTile.items == nil || self.currentTile.items.count == 0) {
         return;
     }

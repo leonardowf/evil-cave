@@ -75,6 +75,12 @@
          object:self.items];
         
     }
+    
+    if (self.cellType == CaveCellTypeEnd) {
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:@"notificationNextLevel"
+         object:nil];
+    }
 }
 
 - (void)diedOnTile:(LWFCreature *)creature {

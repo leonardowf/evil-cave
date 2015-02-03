@@ -24,6 +24,8 @@
     BOOL _pinching;
     
     UITouch *_lastTouch;
+    
+    CGSize _size;
 }
 @end
 
@@ -35,17 +37,44 @@
         
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
-        LWFMapDimension *mapDimension = [[LWFMapDimension alloc]initWithGridSize:size numberTilesVertical:23 numberTilesHorizontal:23 andTileSize:TILE_SIZE];
+        _size = size;
+        [self test];
         
-        _map = [[LWFMap alloc]initWithMapDimension:mapDimension];
-        [_map addTiles];
-        [_map loadGame];
-        
-        [self addChild:_map];
-        [_map moveCameraToTile:_map.player.currentTile];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(test)
+                                                     name:@"notificationNextLevel"
+                                                   object:nil];
+
         
     }
     return self;
+}
+
+- (void)test {
+    CGFloat yScale;
+    CGFloat xScale = yScale = 1.0;
+    
+    if (_map != nil) {
+        xScale = _map.xScale;
+        yScale = _map.yScale;
+    }
+    
+    [_map removeFromParent];
+    
+    LWFMapDimension *mapDimension = [[LWFMapDimension alloc]initWithGridSize:_size numberTilesVertical:13 numberTilesHorizontal:13 andTileSize:TILE_SIZE];
+    
+    _map = [[LWFMap alloc]initWithMapDimension:mapDimension];
+    
+    _map.xScale = xScale;
+    _map.yScale = yScale;
+    
+    [_map addTiles];
+    [_map loadGame];
+    
+    [self addChild:_map];
+    [_map moveCameraToTile:_map.player.currentTile];
+    
+
 }
 
 -(void)update:(CFTimeInterval)currentTime {
