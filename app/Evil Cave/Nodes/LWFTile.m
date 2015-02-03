@@ -51,14 +51,24 @@
         
         for (LWFItem *item in self.items) {
             if ([item isMoney]) {
-                LWFPlayer *player = (LWFPlayer *)creature;
-                [player takeItem:item];
-                [item removeFromParent];
                 [toRemove addObject:item];
             }
         }
         
+        NSInteger totalGold = 0;
+        for (LWFItem *gold in toRemove) {
+            totalGold = totalGold + gold.quantity;
+        }
+        
+        if (totalGold > 0) {
+            LWFItem *pileOfGold = [toRemove firstObject];
+            pileOfGold.quantity = totalGold;
+            LWFPlayer *player = (LWFPlayer *)creature;
+            [player takeItem:pileOfGold];
+        }
+        
         [self.items removeObjectsInArray:toRemove];
+        [self removeChildrenInArray:toRemove];
         
         [[NSNotificationCenter defaultCenter]
          postNotificationName:@"notificationShowItemPreview"
