@@ -62,7 +62,7 @@
         
         [self.view layoutIfNeeded];
         
-        self.rightConstraint.constant = 142;
+        self.rightConstraint.constant = 147;
         [UIView animateWithDuration:0.5
                          animations:^{
                              [self.view layoutIfNeeded]; // Called on parent view

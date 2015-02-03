@@ -131,14 +131,30 @@
     } else {
         // TODO: Potion
         [self.inventory.items addObject:item];
-        [self.currentTile.items removeObject:item];
+        
+        // Esse é um dos comportamentos mais bizarros que já na minha experiên-
+        // cia de programador. Quando chamo o remove object, está sendo removi-
+        // do dois objetos do array .currentTile.items
+        // O workaround foi adicionar pelo arrayTemp WTF
+//        [self.currentTile.items removeObject:item];
+//        NSMutableArray *wtf = [NSMutableArray arrayWithArray:self.currentTile.items];
+        
+        NSMutableArray *wtf = [NSMutableArray array];
+        
+        NSArray *items = self.currentTile.items;
+        for (LWFItem *aItem in items) {
+            if (aItem != item) {
+                [wtf addObject:aItem];
+            }
+        }
+        
+        self.currentTile.items = wtf;
+        
         [item removeFromParent];
         [[NSNotificationCenter defaultCenter]
          postNotificationName:@"notificationShowItemPreview"
          object:self.currentTile.items];
     }
-    
-
 }
 
 - (void)requestTakeItem {

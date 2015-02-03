@@ -16,6 +16,7 @@
     self = [super init];
     if (self) {
         self.money = 0;
+        self.items = [NSMutableArray array];
     }
     return self;
 }
