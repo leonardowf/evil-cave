@@ -41,7 +41,7 @@
         [self test];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(test)
+                                                 selector:@selector(nextLevel)
                                                      name:@"notificationNextLevel"
                                                    object:nil];
 
@@ -50,7 +50,7 @@
     return self;
 }
 
-- (void)test {
+- (void)nextLevel {
     CGFloat yScale;
     CGFloat xScale = yScale = 1.0;
     
