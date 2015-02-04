@@ -38,7 +38,7 @@
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
         _size = size;
-        [self test];
+        [self nextLevel];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(nextLevel)

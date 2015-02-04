@@ -38,13 +38,15 @@
 }
 
 - (void)steppedOnTile:(LWFCreature *)creature {
+    BOOL isPlayer = [creature isKindOfClass:[creature class]];
+    
     if (self.cellType == CaveCellTypeDoor) {
         SKTexture *texture = [SKTexture textureWithImageNamed:@"door_open"];
         texture.filteringMode = SKTextureFilteringNearest;
         [self setTexture:texture];
     }
     
-    if ([creature isKindOfClass:[LWFPlayer class]]) {
+    if (isPlayer) {
         
         // Decide se é gold, caso sim, pega automaticamente
         NSMutableArray *toRemove = [NSMutableArray array];
@@ -76,7 +78,7 @@
         
     }
     
-    if (self.cellType == CaveCellTypeEnd) {
+    if (self.cellType == CaveCellTypeEnd && isPlayer) {
         [[NSNotificationCenter defaultCenter]
          postNotificationName:@"notificationNextLevel"
          object:nil];
