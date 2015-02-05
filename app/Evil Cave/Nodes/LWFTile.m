@@ -38,7 +38,7 @@
 }
 
 - (void)steppedOnTile:(LWFCreature *)creature {
-    BOOL isPlayer = [creature isKindOfClass:[creature class]];
+    BOOL isPlayer = [creature isKindOfClass:[LWFPlayer class]];
     
     if (self.cellType == CaveCellTypeDoor) {
         SKTexture *texture = [SKTexture textureWithImageNamed:@"door_open"];
@@ -82,6 +82,7 @@
         [[NSNotificationCenter defaultCenter]
          postNotificationName:@"notificationNextLevel"
          object:nil];
+        NSLog(@"pisou num tile de end");
     }
 }
 
