@@ -106,10 +106,6 @@
 
 - (void)handleTap:(UIGestureRecognizer *)sender {
     UITouch *touch = _lastTouch;
-    CGPoint positionInScene = [touch locationInNode:self];
-
-    NSArray *nodes = [self nodesAtPoint:positionInScene];
-
     CGPoint touchPoint = [touch locationInNode:_map];
 
     [_map userTouchedPoint:touchPoint];
