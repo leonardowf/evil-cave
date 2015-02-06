@@ -35,7 +35,7 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+        self.backgroundColor = [UIColor blackColor];
         
         _size = size;
         [self nextLevel];
@@ -51,30 +51,39 @@
 }
 
 - (void)nextLevel {
-    CGFloat yScale;
-    CGFloat xScale = yScale = 1.0;
-    
-    if (_map != nil) {
-        xScale = _map.xScale;
-        yScale = _map.yScale;
-    }
-    
-    [_map removeFromParent];
-    
-    LWFMapDimension *mapDimension = [[LWFMapDimension alloc]initWithGridSize:_size numberTilesVertical:13 numberTilesHorizontal:13 andTileSize:TILE_SIZE];
-    
-    _map = [[LWFMap alloc]initWithMapDimension:mapDimension];
-    
-    _map.xScale = xScale;
-    _map.yScale = yScale;
-    
-    [_map addTiles];
-    [_map loadGame];
-    
-    [self addChild:_map];
-    [_map moveCameraToTile:_map.player.currentTile];
-    
-
+    SKSpriteNode *loadingNode = [SKSpriteNode spriteNodeWithColor:[UIColor blackColor] size:_size];
+    loadingNode.position = CGPointMake(_size.width/2, _size.height/2);
+    loadingNode.alpha = 0.0;
+    SKAction *fadeaction = [SKAction fadeAlphaTo:1 duration:0.5];
+    [loadingNode setZPosition:1000];
+    [loadingNode runAction:fadeaction completion:^{
+        CGFloat yScale;
+        CGFloat xScale = yScale = 1.0;
+        
+        if (_map != nil) {
+            xScale = _map.xScale;
+            yScale = _map.yScale;
+        }
+        
+        [_map removeFromParent];
+        
+        LWFMapDimension *mapDimension = [[LWFMapDimension alloc]initWithGridSize:_size numberTilesVertical:17 numberTilesHorizontal:17 andTileSize:TILE_SIZE];
+        
+        _map = [[LWFMap alloc]initWithMapDimension:mapDimension];
+        
+        _map.xScale = xScale;
+        _map.yScale = yScale;
+        
+        [_map addTiles];
+        [_map loadGame];
+        
+        [self addChild:_map];
+        [_map moveCameraToTile:_map.player.currentTile completion:^{
+            SKAction *fadeaction = [SKAction fadeAlphaTo:0 duration:0.5];
+            [loadingNode runAction:fadeaction];
+        }];
+    }];
+    [self addChild:loadingNode];
 }
 
 -(void)update:(CFTimeInterval)currentTime {

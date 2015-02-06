@@ -37,5 +37,6 @@
 
 - (void)unlockUserInteraction;
 - (void)processTouchQueue;
+- (void)moveCameraToTile:(LWFTile *)tile completion:(void(^)(void))someBlock;
 
 @end
