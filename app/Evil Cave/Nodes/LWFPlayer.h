@@ -18,6 +18,8 @@
 
 @property (nonatomic, strong) LWFInventory *inventory;
 
++ (id)sharedPlayer;
+
 - (void)movementRequestIsInvalid;
 - (void)cancelPreExistingActions;
 - (void)takeItem:(LWFItem *)item;

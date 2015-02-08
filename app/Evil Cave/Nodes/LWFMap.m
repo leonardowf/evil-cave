@@ -83,6 +83,8 @@
 }
 
 - (void)addPlayer:(LWFPlayer *)player {
+    [player removeFromParent];
+    
     self.player = player;
     self.player.position = self.tileMap.startTile.position;
     [self.player setCurrentTile:self.tileMap.startTile];
@@ -161,6 +163,7 @@
 - (void)createPlayer {
     LWFPlayer *player = (LWFPlayer *)[_creatureBuilder buildWithType:LWFCreatureTypeWarrior];
     [self addPlayer:player];
+    [player statsChanged];
     [player startStandingAnimation];
 }
 

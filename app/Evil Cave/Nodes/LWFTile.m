@@ -79,6 +79,9 @@
     }
     
     if (self.cellType == CaveCellTypeEnd && isPlayer) {
+        LWFPlayer *player = (LWFPlayer*)creature;
+        [player cancelPreExistingActions];
+        
         [[NSNotificationCenter defaultCenter]
          postNotificationName:@"notificationNextLevel"
          object:nil];

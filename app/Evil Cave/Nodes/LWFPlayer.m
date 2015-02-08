@@ -15,6 +15,8 @@
 
 @implementation LWFPlayer
 
+SINGLETON_FOR_CLASS(Player)
+
 - (void)build {
     [super build];
     

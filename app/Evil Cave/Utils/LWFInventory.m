@@ -23,7 +23,6 @@
 
 SINGLETON_FOR_CLASS(Inventory)
 
-
 - (void)hide {
     
 }

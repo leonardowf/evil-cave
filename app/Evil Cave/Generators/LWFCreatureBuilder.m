@@ -82,15 +82,18 @@
     } else if (creatureType == LWFCreatureTypeRadioactiveRat) {
         creature = [[LWFRadioactiveRat alloc]init];
     } else if (creatureType == LWFCreatureTypeWarrior) {
-        creature = [[LWFPlayer alloc]init];
+        creature = [LWFPlayer sharedPlayer];
         creature.spriteImageName = @"warrior";
     }
     
     if (creature != nil) {
-        LWFStats *stats = [self statsForCreatureType:creatureType];
-        stats.killable = creature;
         
-        creature.stats = stats;
+        if (creature.stats == nil) {
+            LWFStats *stats = [self statsForCreatureType:creatureType];
+            stats.killable = creature;
+            
+            creature.stats = stats;
+        }
         
         [creature build];
         creature.map = _map;
