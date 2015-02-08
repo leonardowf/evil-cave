@@ -337,8 +337,8 @@
     LWFTileMap *tileMap = self.map.tileMap;
     if (_pathFinder == nil) {
         _pathFinder = [[LWFHumbleBeeFindPath alloc]init];
-        _pathFinder.tileMap = tileMap;
     }
+    _pathFinder.tileMap = tileMap;
     
     NSArray *path = [_pathFinder findPath:self.currentTile.x :self.currentTile.y :tile.x :tile.y];
     
