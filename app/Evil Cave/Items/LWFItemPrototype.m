@@ -37,6 +37,8 @@
         self.baseArmor = [self dict:dict integerForKey:@"base_armor"];
         self.minArmor = [self dict:dict integerForKey:@"min_armor"];
         self.maxArmor = [self dict:dict integerForKey:@"max_armor"];
+        
+        self.atlas = [dict objectForKey:@"atlas"];
     }
     return self;
 }

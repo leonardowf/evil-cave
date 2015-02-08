@@ -41,10 +41,11 @@
 		326524F31A75550600EEA4B2 /* LWFLootChanceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 326524F21A75550600EEA4B2 /* LWFLootChanceFactory.m */; };
 		326524F51A75726900EEA4B2 /* loot_chances.json in Resources */ = {isa = PBXBuildFile; fileRef = 326524F41A75726900EEA4B2 /* loot_chances.json */; };
 		326524F71A75ABAF00EEA4B2 /* item_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 326524F61A75ABAF00EEA4B2 /* item_sword.png */; };
-		327F1A761A7D10100049AEF2 /* item_gold.png in Resources */ = {isa = PBXBuildFile; fileRef = 327F1A751A7D10100049AEF2 /* item_gold.png */; };
 		3293698B1A5058DD00ECF705 /* LWFRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3293698A1A5058DD00ECF705 /* LWFRect.m */; };
 		32ACD05F1A7B062600970F69 /* item_motherfucking_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */; };
 		32B5AAD91A878A1B00E6523A /* warrior_standing_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B5AAD81A878A1B00E6523A /* warrior_standing_left.png */; };
+		32B5AADF1A87F66D00E6523A /* item_gold.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32B5AADE1A87F66D00E6523A /* item_gold.atlas */; };
+		32B5AAE11A87F7A600E6523A /* item_gold.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B5AAE01A87F7A600E6523A /* item_gold.png */; };
 		32BCDF791A50455E004A2993 /* LWFDartDungeonGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDF781A50455E004A2993 /* LWFDartDungeonGenerator.m */; };
 		32BEBFB91A42476D000C77AA /* LWFGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BEBFB81A42476D000C77AA /* LWFGameController.m */; };
 		32BEBFEF1A470AAB000C77AA /* rock_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEBFEE1A470AAB000C77AA /* rock_tile.png */; };
@@ -163,11 +164,12 @@
 		326524F21A75550600EEA4B2 /* LWFLootChanceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFLootChanceFactory.m; sourceTree = "<group>"; };
 		326524F41A75726900EEA4B2 /* loot_chances.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loot_chances.json; sourceTree = "<group>"; };
 		326524F61A75ABAF00EEA4B2 /* item_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_sword.png; sourceTree = "<group>"; };
-		327F1A751A7D10100049AEF2 /* item_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_gold.png; sourceTree = "<group>"; };
 		329369891A5058DD00ECF705 /* LWFRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRect.h; sourceTree = "<group>"; };
 		3293698A1A5058DD00ECF705 /* LWFRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRect.m; sourceTree = "<group>"; };
 		32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_motherfucking_sword.png; sourceTree = "<group>"; };
 		32B5AAD81A878A1B00E6523A /* warrior_standing_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warrior_standing_left.png; sourceTree = "<group>"; };
+		32B5AADE1A87F66D00E6523A /* item_gold.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = item_gold.atlas; sourceTree = "<group>"; };
+		32B5AAE01A87F7A600E6523A /* item_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_gold.png; sourceTree = "<group>"; };
 		32BCDF771A50455E004A2993 /* LWFDartDungeonGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFDartDungeonGenerator.h; sourceTree = "<group>"; };
 		32BCDF781A50455E004A2993 /* LWFDartDungeonGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFDartDungeonGenerator.m; sourceTree = "<group>"; };
 		32BEBFB71A42476D000C77AA /* LWFGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LWFGameController.h; path = "Evil Cave/LWFGameController.h"; sourceTree = "<group>"; };
@@ -351,10 +353,11 @@
 		326524EC1A75405700EEA4B2 /* Items */ = {
 			isa = PBXGroup;
 			children = (
-				327F1A751A7D10100049AEF2 /* item_gold.png */,
+				32B5AADE1A87F66D00E6523A /* item_gold.atlas */,
 				32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */,
 				326524F61A75ABAF00EEA4B2 /* item_sword.png */,
 				326524ED1A75406B00EEA4B2 /* item_fine_sword.png */,
+				32B5AAE01A87F7A600E6523A /* item_gold.png */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -751,6 +754,7 @@
 				32BEC0121A472DA8000C77AA /* radioactive_rat_standing_right.png in Resources */,
 				32ACD05F1A7B062600970F69 /* item_motherfucking_sword.png in Resources */,
 				326524EF1A75406B00EEA4B2 /* item_fine_sword.png in Resources */,
+				32B5AAE11A87F7A600E6523A /* item_gold.png in Resources */,
 				324527891A4DB60800AFF9A7 /* warrior_standing_right.atlas in Resources */,
 				322765AB1A7EF5C400C0D0DD /* inventory_icon@2x.png in Resources */,
 				32BEC0051A470F5F000C77AA /* warrior_walking_right.atlas in Resources */,
@@ -760,7 +764,7 @@
 				32BEC00D1A4714DC000C77AA /* rat_standing_left.atlas in Resources */,
 				32BEBFEF1A470AAB000C77AA /* rock_tile.png in Resources */,
 				32BEC0101A4714DC000C77AA /* rat_standing_right.png in Resources */,
-				327F1A761A7D10100049AEF2 /* item_gold.png in Resources */,
+				32B5AADF1A87F66D00E6523A /* item_gold.atlas in Resources */,
 				322765AA1A7EF5C400C0D0DD /* inventory_icon.png in Resources */,
 				3254E6D71A5CB49400BD7D13 /* door.png in Resources */,
 				321A60601A6354DF0060517E /* door_open.png in Resources */,

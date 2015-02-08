@@ -48,6 +48,7 @@
     "image_name": "gold",
     "identifier": "gold",
     "name": "Gold",
-    "category": "money"
+    "category": "money",
+    "atlas": true
   }
 ]

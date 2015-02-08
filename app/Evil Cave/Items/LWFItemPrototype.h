@@ -36,6 +36,8 @@
 @property (nonatomic) NSNumber * minArmor;
 @property (nonatomic) NSNumber * maxArmor;
 
+@property(nonatomic) NSNumber *atlas;
+
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 - (LWFItem *)build;
 @end

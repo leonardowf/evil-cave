@@ -15,11 +15,35 @@
 - (instancetype)initWithItemPrototype:(LWFItemPrototype *)prototype
 {
     NSString *textureName = [NSString stringWithFormat:@"item_%@", prototype.imageName];
+    SKTextureAtlas *atlas = nil;
+    
+    if ([prototype.atlas boolValue]) {
+        atlas = [SKTextureAtlas atlasNamed:textureName];
+        
+    } else {
+        
+    }
+    
     SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
     texture.filteringMode = SKTextureFilteringNearest;
     
     self = [super initWithTexture:texture];
     if (self) {
+        if (atlas != nil) {
+            NSMutableArray *atlasTextures = [NSMutableArray array];
+            NSUInteger numImages = atlas.textureNames.count;
+            for (int i=1; i <= numImages; i++) {
+                NSString *textureNameFromAtlas = [NSString stringWithFormat:@"%@_%d", textureName, i];
+                SKTexture *texture = [atlas textureNamed:textureNameFromAtlas];
+                texture.filteringMode = SKTextureFilteringNearest;
+                [atlasTextures addObject:texture];
+            }
+            
+            SKAction *animate = [SKAction animateWithTextures:atlasTextures timePerFrame:0.3f];
+            SKAction *action = [SKAction repeatActionForever:animate];
+            [self runAction:action withKey:@"item_action"];
+        }
+        
         [self calculateForKey:@"lowdamage" andPrototype:prototype];
         [self calculateForKey:@"highdamage" andPrototype:prototype];
         [self calculateForKey:@"strength" andPrototype:prototype];
