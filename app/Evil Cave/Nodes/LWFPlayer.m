@@ -33,6 +33,7 @@ SINGLETON_FOR_CLASS(Player)
 
 - (void)notifyMovementFailure {
     NSLog(@"Player falhou na hora de mover");
+    [self cancelPreExistingActions];
     [self.map unlockUserInteraction];
 }
 

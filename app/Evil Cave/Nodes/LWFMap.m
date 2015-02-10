@@ -146,6 +146,8 @@
         } else if (tile == self.player.currentTile) {
             [self.player cancelPreExistingActions];
             [self.player requestTakeItem];
+        } else if (tile.cellType == CaveCellTypeEnd) {
+            [_player willMoveToTile:tile atX:tile.x andY:tile.y];
         }
     }
 }

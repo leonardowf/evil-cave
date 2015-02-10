@@ -71,7 +71,7 @@
     }
     
     
-    if (![nextTile isPassable]) {
+    if (![nextTile isPassable] && nextTile.cellType != CaveCellTypeEnd) {
         if ([self shouldFinishTurnOnFailedMovement]) {
             [self finishTurn];
             return;
@@ -334,6 +334,10 @@
 }
 
 - (void)buildPathToTile:(LWFTile *)tile {
+    if (tile.cellType == CaveCellTypeEnd) {
+        [tile setWalkable:true];
+    }
+    
     LWFTileMap *tileMap = self.map.tileMap;
     if (_pathFinder == nil) {
         _pathFinder = [[LWFHumbleBeeFindPath alloc]init];
@@ -343,6 +347,10 @@
     NSArray *path = [_pathFinder findPath:self.currentTile.x :self.currentTile.y :tile.x :tile.y];
     
     self.tilePath = [NSMutableArray arrayWithArray:path];
+    
+    if (tile.cellType == CaveCellTypeEnd) {
+        [tile setWalkable:false];
+    }
 }
 
 - (void)finishTurn {

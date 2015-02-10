@@ -43,11 +43,11 @@
                     [tile setWalkable:YES];
                 } else if (cell.cellType == CaveCellTypeStart) {
                     tile = [[LWFTile alloc]initWithColor:[UIColor redColor] size:mapDimension.tileSize];
-                    [tile setWalkable:YES];
+                    [tile setWalkable:NO];
                     self.startTile = tile;
                 } else if (cell.cellType == CaveCellTypeEnd) {
                     tile = [[LWFTile alloc]initWithColor:[UIColor greenColor] size:mapDimension.tileSize];
-                    [tile setWalkable:YES];
+                    [tile setWalkable:NO];
                     self.endTile = tile;
                     
                 } else if (cell.cellType == CaveCellTypeDoor) {

@@ -148,15 +148,12 @@
     }
 }
 
-// Method that is called by my UIPinchGestureRecognizer.
 - (void)handleZoomFrom:(UIPinchGestureRecognizer *)recognizer
 {
     CGPoint anchorPoint = [recognizer locationInView:recognizer.view];
     anchorPoint = [self convertPointFromView:anchorPoint];
     
     if (recognizer.state == UIGestureRecognizerStateBegan) {
-        
-        // No code needed for zooming...
         
     } else if (recognizer.state == UIGestureRecognizerStateChanged) {
         
@@ -172,9 +169,6 @@
         recognizer.scale = 1.0;
         
     } else if (recognizer.state == UIGestureRecognizerStateEnded) {
-        
-        // No code needed here for zooming...
-        
     }
 }
 @end
