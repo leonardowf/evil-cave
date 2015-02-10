@@ -60,6 +60,16 @@ SINGLETON_FOR_CLASS(Player)
 
 }
 
+- (void)didMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
+    [tile steppedOnTile:self];
+    
+    [self.tilePath removeObject:tile];
+    
+    if (tile.cellType != CaveCellTypeEnd) {
+        [self finishTurn];
+    }
+}
+
 - (void)movementRequestIsInvalid {
     [self.map movementRequestIsInvalid];
 }

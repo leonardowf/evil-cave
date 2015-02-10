@@ -51,6 +51,8 @@
 }
 
 - (void)nextLevel {
+    [_map blockUserInteraction];
+    
     SKSpriteNode *loadingNode = [SKSpriteNode spriteNodeWithColor:[UIColor blackColor] size:_size];
     loadingNode.position = CGPointMake(_size.width/2, _size.height/2);
     loadingNode.alpha = 0.0;
@@ -78,9 +80,13 @@
         [_map loadGame];
         
         [self addChild:_map];
+        
+        // TODO: Refactor, callback hell
         [_map moveCameraToTile:_map.player.currentTile completion:^{
             SKAction *fadeaction = [SKAction fadeAlphaTo:0 duration:0.5];
-            [loadingNode runAction:fadeaction];
+            [loadingNode runAction:fadeaction completion:^{
+                [_map unblockUserInteraction];
+            }];
         }];
     }];
     [self addChild:loadingNode];

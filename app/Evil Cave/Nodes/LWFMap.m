@@ -154,6 +154,14 @@
     _blockUserInteraction = NO;
 }
 
+- (void)blockUserInteraction {
+    _blockUserInteraction = YES;
+}
+
+- (void)unblockUserInteraction {
+    _blockUserInteraction = NO;
+}
+
 - (void)loadGame {
     [self createPlayer];
     [self createCreatures];
