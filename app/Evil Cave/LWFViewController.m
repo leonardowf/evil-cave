@@ -47,16 +47,12 @@
 
 - (void)showPreviewForItems:(NSMutableArray *) itemsStepped {
     if (itemsStepped == nil || itemsStepped.count == 0) {
-        //        self.itemPreview.alpha = 0;
-        //        self.itemPreview.hidden = YES;
-        
-        
         [self.view layoutIfNeeded];
         
         self.rightConstraint.constant = -16;
         [UIView animateWithDuration:0.5
                          animations:^{
-                             [self.view layoutIfNeeded]; // Called on parent view
+                             [self.view layoutIfNeeded];
                          }];
     } else {
         
@@ -65,7 +61,7 @@
         self.rightConstraint.constant = 147;
         [UIView animateWithDuration:0.5
                          animations:^{
-                             [self.view layoutIfNeeded]; // Called on parent view
+                             [self.view layoutIfNeeded];
                          }];
         
         LWFItem *item = [itemsStepped lastObject];
@@ -75,6 +71,10 @@
         self.labelHP.text = [item hpText];
         self.labelStrength.text = [item strengthText];
         self.labelArmor.text = [item armorText];
+        
+        UIImage *itemImage = [UIImage imageNamed:[NSString stringWithFormat:@"item_%@", item.imageName]];
+        
+        self.imageViewItemSprite.image = itemImage;
     }
 }
 

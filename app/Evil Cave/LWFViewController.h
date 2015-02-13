@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelHP;
 @property (weak, nonatomic) IBOutlet UILabel *labelArmor;
 @property (weak, nonatomic) IBOutlet UILabel *labelName;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewItemSprite;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightConstraint;
 

@@ -183,6 +183,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageViewItemSprite" destination="0cY-KH-aVb" id="4aL-U6-7xt"/>
                         <outlet property="itemPreview" destination="296-NC-TaJ" id="gGk-16-pyN"/>
                         <outlet property="labelArmor" destination="fBB-io-SUM" id="U0w-kG-nHC"/>
                         <outlet property="labelDamage" destination="GXb-kT-VC7" id="NFV-ud-q57"/>
