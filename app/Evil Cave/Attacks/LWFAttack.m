@@ -83,4 +83,8 @@
     return nil;
 }
 
+- (NSMutableArray *)affectedRange {
+    return nil;
+}
+
 @end
