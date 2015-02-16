@@ -69,7 +69,7 @@
         
         [_map removeFromParent];
         
-        LWFMapDimension *mapDimension = [[LWFMapDimension alloc]initWithGridSize:_size numberTilesVertical:13 numberTilesHorizontal:13 andTileSize:TILE_SIZE];
+        LWFMapDimension *mapDimension = [[LWFMapDimension alloc]initWithGridSize:_size numberTilesVertical:21 numberTilesHorizontal:21 andTileSize:TILE_SIZE];
         
         _map = [[LWFMap alloc]initWithMapDimension:mapDimension];
         

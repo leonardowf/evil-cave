@@ -9,8 +9,8 @@
     },
     "rat": {
       "strength": 0,
-      "chance_to_hit": 60,
-      "chance_to_evade": 50,
+      "chance_to_hit": 50,
+      "chance_to_evade": 30,
       "base_armor": 0,
       "max_hp" : 10,
       "action_points": 1
