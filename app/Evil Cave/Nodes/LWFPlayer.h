@@ -24,5 +24,6 @@
 - (void)cancelPreExistingActions;
 - (void)takeItem:(LWFItem *)item;
 - (void)requestTakeItem;
+- (void)requestSpecialAttack;
 
 @end

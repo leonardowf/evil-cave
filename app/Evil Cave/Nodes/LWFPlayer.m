@@ -171,7 +171,6 @@ SINGLETON_FOR_CLASS(Player)
 }
 
 - (void)requestTakeItem {
-    NSArray *inventoryItems = self.inventory.items;
     
     if (self.currentTile.items == nil || self.currentTile.items.count == 0) {
         return;
@@ -185,6 +184,12 @@ SINGLETON_FOR_CLASS(Player)
     
     [self finishTurn];
 }
+
+- (void)requestSpecialAttack {
+    NSLog(@"Special attaque");
+}
+
+
 
 
 @end

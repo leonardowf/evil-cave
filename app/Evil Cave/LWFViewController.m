@@ -9,6 +9,7 @@
 #import "LWFViewController.h"
 #import "LWFMyScene.h"
 #import "LWFItem.h"
+#import "LWFPlayer.h"
 
 @implementation LWFViewController
 
@@ -103,6 +104,12 @@
 }
 
 - (IBAction)didTapInventoryButton:(id)sender {
+}
+
+- (IBAction)didTapSpecialAttack:(id)sender {
+    LWFPlayer *player = [LWFPlayer sharedPlayer];
+    
+    [player requestSpecialAttack];
 }
 
 @end
