@@ -149,6 +149,4 @@
     return horizontalOk && verticalOk;
 }
 
-
-
 @end

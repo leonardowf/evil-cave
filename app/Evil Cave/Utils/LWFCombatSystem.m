@@ -111,42 +111,4 @@
 
     return f * 100;
 }
-
-//+ (CGFloat)attacker:(id<LWFAttackable>)attacker chanceToHitTarget:(id<LWFAttackable>)target
-//         withAttack:(LWFAttack *)attack {
-//    
-//    LWFStats *attackerStats = [attacker getStats];
-//    LWFEquips *attackerEquips = [attacker getEquips];
-//    
-//    LWFStats *targetStats = [target getStats];
-//    LWFEquips *targetEquips = [target getEquips];
-//    
-//    CGFloat A = attackerStats.chanceToHit;
-//    CGFloat B = targetStats.chanceToEvade;
-//    CGFloat C = A - B;
-//    
-//    CGFloat F1 = 2 / M_PI;
-//    CGFloat F2 = C - 50;
-//    CGFloat F3 = F2 / 40;
-//    CGFloat F4 = atan(F3);
-//    CGFloat F5 = F1 * F4;
-//    CGFloat F6 = 1 + F5;
-//    
-//    CGFloat F = F6 * 50;
-//    
-//    return F;
-//}
-/*
- Source: https://code.google.com/p/andors-trail/wiki/combat
- 
- 1) Determine the attacker's chance to hit. Call this A. (This value might be greaten than 100)
- 2) Determine the target's block chance. Call this B.
- 3) Calculate C = A - B
- 4) Calculate F = 50 * (1 + (2/pi) * ATAN( (C - 50) / 40 ) )
-    -> This function will produce a number between 0 and 100.
-    -> If C is 50, then F will be 50.
-    -> If C is high (the attacker's chance to hit is higher than the target's block chance), then F will be near 100.
-    -> If C is low, then F will be 50.
- 5) The chance to hit (in percent) is F.
- */
 @end

@@ -82,6 +82,4 @@
     return CGPointMake(self.x, self.y);
 }
 
-
-
 @end

@@ -32,9 +32,7 @@
 @implementation LWFMyScene
 
 -(id)initWithSize:(CGSize)size {    
-    if (self = [super initWithSize:size]) {
-        /* Setup your scene here */
-        
+    if (self = [super initWithSize:size]) {        
         self.backgroundColor = [UIColor blackColor];
         
         _size = size;
