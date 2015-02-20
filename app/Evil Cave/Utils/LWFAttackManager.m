@@ -40,8 +40,6 @@
 requestedAttackToTile:(LWFTile *)tile
         withAttack:(LWFAttack *)attack {
     
-    // TODO: Adicionar AOE
-    
     _attackedAllowedAttack = _attackerAllowedAttack = NO;
     
     LWFCreature *creatureOnTile = tile.creatureOnTile;
@@ -79,6 +77,8 @@ requestedAttackToTile:(LWFTile *)tile
         }];
     }
 }
+
+
 
 - (void)attackFinished:(id<LWFAttackable>)attacker target:(id<LWFAttackable>)target attack:(LWFAttack *)attack {
     if (_attackedDidStartReceivingAttack && _attackerDidStartAttack) {

@@ -12,6 +12,8 @@
 #import "LWFTurnList.h"
 #import "LWFInventory.h"
 #import "LWFItem.h"
+#import "LWFSpinningAttack.h"
+#import "LWFAttackManager.h"
 
 @implementation LWFPlayer
 
@@ -185,8 +187,9 @@ SINGLETON_FOR_CLASS(Player)
     [self finishTurn];
 }
 
-- (void)requestSpecialAttack {
-    NSLog(@"Special attaque");
+- (void)requestSpecialAttack {    
+    LWFSpinningAttack *spinningAttack = [[LWFSpinningAttack alloc]init];
+    [self.attackManager attackable:self requestedAttackToTile:self.currentTile withAttack:spinningAttack];
 }
 
 

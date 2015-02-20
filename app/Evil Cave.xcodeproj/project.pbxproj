@@ -75,6 +75,8 @@
 		32F1CDC61A575A2F00A0D9F5 /* LWFInventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F1CDC51A575A2F00A0D9F5 /* LWFInventory.m */; };
 		32F1CDCA1A575C6600A0D9F5 /* LWFItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F1CDC91A575C6600A0D9F5 /* LWFItem.m */; };
 		32F1CDCC1A57603800A0D9F5 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F1CDCB1A57603800A0D9F5 /* wall.png */; };
+		32F831341A96A96B007174F1 /* LWFAttackQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F831331A96A96B007174F1 /* LWFAttackQueue.m */; };
+		32F831371A96B458007174F1 /* LWFAttackQueueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F831361A96B458007174F1 /* LWFAttackQueueCell.m */; };
 		32FFE83E1A2C0BDD003D02A4 /* LWFAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFE83D1A2C0BDD003D02A4 /* LWFAttack.m */; };
 		32FFE8411A2C0BF0003D02A4 /* LWFMelee.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFE8401A2C0BF0003D02A4 /* LWFMelee.m */; };
 		A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = A70387581A17BC620053A9E6 /* LWFMapDimension.m */; };
@@ -216,6 +218,10 @@
 		32F1CDC81A575C6600A0D9F5 /* LWFItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFItem.h; sourceTree = "<group>"; };
 		32F1CDC91A575C6600A0D9F5 /* LWFItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFItem.m; sourceTree = "<group>"; };
 		32F1CDCB1A57603800A0D9F5 /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
+		32F831321A96A96B007174F1 /* LWFAttackQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttackQueue.h; sourceTree = "<group>"; };
+		32F831331A96A96B007174F1 /* LWFAttackQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAttackQueue.m; sourceTree = "<group>"; };
+		32F831351A96B458007174F1 /* LWFAttackQueueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttackQueueCell.h; sourceTree = "<group>"; };
+		32F831361A96B458007174F1 /* LWFAttackQueueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAttackQueueCell.m; sourceTree = "<group>"; };
 		32FFE83A1A2BF6E2003D02A4 /* LWFConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWFConstants.h; sourceTree = "<group>"; };
 		32FFE83C1A2C0BDD003D02A4 /* LWFAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttack.h; sourceTree = "<group>"; };
 		32FFE83D1A2C0BDD003D02A4 /* LWFAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAttack.m; sourceTree = "<group>"; };
@@ -516,6 +522,10 @@
 				32F09E281A48C947000B8797 /* LWFCombatSystem.m */,
 				32F1CDC41A575A2F00A0D9F5 /* LWFInventory.h */,
 				32F1CDC51A575A2F00A0D9F5 /* LWFInventory.m */,
+				32F831321A96A96B007174F1 /* LWFAttackQueue.h */,
+				32F831331A96A96B007174F1 /* LWFAttackQueue.m */,
+				32F831351A96B458007174F1 /* LWFAttackQueueCell.h */,
+				32F831361A96B458007174F1 /* LWFAttackQueueCell.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -827,6 +837,7 @@
 				A703875C1A17BD5E0053A9E6 /* LWFTile.m in Sources */,
 				32F09E2F1A48EBB1000B8797 /* LWFEquips.m in Sources */,
 				A703875F1A17BEB00053A9E6 /* LWFTileMap.m in Sources */,
+				32F831371A96B458007174F1 /* LWFAttackQueueCell.m in Sources */,
 				32F1CDCA1A575C6600A0D9F5 /* LWFItem.m in Sources */,
 				321DB10B1A741FF6003354BB /* LWFItemPrototype.m in Sources */,
 				A7F5BB961A16EFBC005BAB63 /* main.m in Sources */,
@@ -848,6 +859,7 @@
 				A7F5BBD11A16F831005BAB63 /* LWFMap.m in Sources */,
 				32D50BD31A3DFDF3002D3098 /* LWFPointObject.m in Sources */,
 				A78443AC1A1EEF7B0029995D /* LWFHumbleBeeFindPath.m in Sources */,
+				32F831341A96A96B007174F1 /* LWFAttackQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
