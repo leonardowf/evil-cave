@@ -21,5 +21,6 @@
 - (NSArray *)creaturesInRangeOfTile:(LWFTile *)tile;
 - (BOOL)isCreature:(LWFCreature *)creature inRangeOfTile:(LWFTile *)tile;
 - (NSMutableArray *)range;
+- (NSArray *)creaturesInAffectedRangeFromTile:(LWFTile *)tile;
 
 @end

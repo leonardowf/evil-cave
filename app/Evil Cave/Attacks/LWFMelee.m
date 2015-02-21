@@ -52,4 +52,15 @@
     return range;
 }
 
+- (NSMutableArray *)affectedRange {
+    NSMutableArray *range = [NSMutableArray array];
+    
+    LWFPointObject *pointObject;
+    
+    pointObject = [LWFPointObject pointWithX:0 andY:0];
+    [range addObject:pointObject];
+    
+    return range;
+}
+
 @end

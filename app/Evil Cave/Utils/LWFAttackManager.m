@@ -38,22 +38,22 @@ requestedAttackToTile:(LWFTile *)tile
         withAttack:(LWFAttack *)attack {
     
     _attackQueue = [[LWFAttackQueue alloc]init];
-    LWFCreature *creatureOnTile = tile.creatureOnTile;
     
-    [_attackQueue queue:attackable attacking:creatureOnTile];
+    NSArray *creaturesAffected = [attack creaturesInAffectedRangeFromTile:tile];
     
-    
-    _currentAttackable = attackable;
-    
-    if (creatureOnTile != nil) {
-        [creatureOnTile willBeAttackedByAttackable:attackable withAttack:attack completion:^{
-            [_attackQueue attackedAllowedAttack:creatureOnTile];
-            [self proceedAttack:attackable target:creatureOnTile attack:attack];
+    for (LWFCreature *creature in creaturesAffected) {
+        [_attackQueue queue:attackable attacking:creature];
+        
+        _currentAttackable = attackable;
+        
+        [creature willBeAttackedByAttackable:attackable withAttack:attack completion:^{
+            [_attackQueue attackedAllowedAttack:creature];
+            [self proceedAttack:attackable target:creature attack:attack];
         }];
         
         [attackable willAttackTile:tile withAttack:attack completion:^{
-            [_attackQueue attackerAllowedAttackToAttacked:creatureOnTile];
-            [self proceedAttack:attackable target:creatureOnTile attack:attack];
+            [_attackQueue attackerAllowedAttackToAttacked:creature];
+            [self proceedAttack:attackable target:creature attack:attack];
         }];
     }
 }

@@ -7,7 +7,58 @@
 //
 
 #import "LWFSpinningAttack.h"
+#import "LWFPointObject.h"
 
 @implementation LWFSpinningAttack
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.minimumDamage = 1;
+        self.maximumDamage = 5;
+    }
+    return self;
+}
+
+- (NSMutableArray *)affectedRange {
+    // (-1, 1)( 0, 1)( 1, 1)
+    // (-1, 0)( 0, 0)( 1, 0)
+    // (-1,-1)( 0,-1)( 1,-1)
+    
+    NSMutableArray *range = [NSMutableArray array];
+    
+    LWFPointObject *pointObject;
+    
+    pointObject = [LWFPointObject pointWithX:-1 andY:1];
+    [range addObject:pointObject];
+    pointObject = [LWFPointObject pointWithX:0 andY:1];
+    [range addObject:pointObject];
+    pointObject = [LWFPointObject pointWithX:1 andY:1];
+    [range addObject:pointObject];
+    pointObject = [LWFPointObject pointWithX:-1 andY:0];
+    [range addObject:pointObject];
+    pointObject = [LWFPointObject pointWithX:1 andY:0];
+    [range addObject:pointObject];
+    pointObject = [LWFPointObject pointWithX:-1 andY:-1];
+    [range addObject:pointObject];
+    pointObject = [LWFPointObject pointWithX:0 andY:-1];
+    [range addObject:pointObject];
+    pointObject = [LWFPointObject pointWithX:1 andY:-1];
+    [range addObject:pointObject];
+    
+    return range;
+}
+
+- (NSMutableArray *)range {
+    NSMutableArray *range = [NSMutableArray array];
+    
+    LWFPointObject *pointObject;
+    
+    pointObject = [LWFPointObject pointWithX:0 andY:0];
+    [range addObject:pointObject];
+    
+    return range;
+}
 
 @end
