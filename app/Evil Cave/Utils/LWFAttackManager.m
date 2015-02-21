@@ -12,15 +12,12 @@
 #import "LWFCreature.h"
 #import "LWFCombatSystem.h"
 #import "LWFCombatOutput.h"
+#import "LWFAttackQueue.h"
 
 @interface LWFAttackManager () {
     id<LWFAttackable> _currentAttackable;
     
-    BOOL _attackedAllowedAttack;
-    BOOL _attackerAllowedAttack;
-    
-    BOOL _attackerDidStartAttack;
-    BOOL _attackedDidStartReceivingAttack;
+    LWFAttackQueue *_attackQueue;
 }
 
 @end
@@ -40,48 +37,50 @@
 requestedAttackToTile:(LWFTile *)tile
         withAttack:(LWFAttack *)attack {
     
-    _attackedAllowedAttack = _attackerAllowedAttack = NO;
-    
+    _attackQueue = [[LWFAttackQueue alloc]init];
     LWFCreature *creatureOnTile = tile.creatureOnTile;
+    
+    [_attackQueue queue:attackable attacking:creatureOnTile];
+    
     
     _currentAttackable = attackable;
     
     if (creatureOnTile != nil) {
         [creatureOnTile willBeAttackedByAttackable:attackable withAttack:attack completion:^{
-            _attackedAllowedAttack = YES;
+            [_attackQueue attackedAllowedAttack:creatureOnTile];
             [self proceedAttack:attackable target:creatureOnTile attack:attack];
         }];
         
         [attackable willAttackTile:tile withAttack:attack completion:^{
-            _attackerAllowedAttack = YES;
+            [_attackQueue attackerAllowedAttackToAttacked:creatureOnTile];
             [self proceedAttack:attackable target:creatureOnTile attack:attack];
         }];
     }
 }
 
 - (void)proceedAttack:(id<LWFAttackable>)attacker target:(id<LWFAttackable>)target attack:(LWFAttack *)attack {
-    if (_attackedAllowedAttack && _attackerAllowedAttack) {
-        _attackedDidStartReceivingAttack = _attackerDidStartAttack = NO;
+    
+    BOOL canProceedAttack = [_attackQueue didAttackedAllowedAttack:target] && [_attackQueue didAttackerAllowedAttackToAttacked:target];
+    
+    if (canProceedAttack) {
         
         LWFCombatOutput *result = [LWFCombatSystem calculateForAttacker:attacker target:target withAttack:attack];
         
         [attacker attacksAttackable:target withAttack:attack completion:^{
-            _attackerDidStartAttack = YES;
+            [_attackQueue attackerStartAttackToAttacked:target];
             [self attackFinished:attacker target:target attack:attack];
         }];
         
         [target isBeingAttackedBy:attacker withAttack:attack forCombatOutput:result completion:^{
-            _attackedDidStartReceivingAttack = YES;
+            [_attackQueue attackedStartAttack:target];
             [self attackFinished:attacker target:target attack:attack];
             
         }];
     }
 }
 
-
-
 - (void)attackFinished:(id<LWFAttackable>)attacker target:(id<LWFAttackable>)target attack:(LWFAttack *)attack {
-    if (_attackedDidStartReceivingAttack && _attackerDidStartAttack) {
+    if ([_attackQueue allStartedAttack]) {
         [self didShowDamage];
     }
 }
