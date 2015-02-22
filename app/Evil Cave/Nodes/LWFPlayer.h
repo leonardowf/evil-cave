@@ -25,5 +25,6 @@
 - (void)takeItem:(LWFItem *)item;
 - (void)requestTakeItem;
 - (void)requestSpecialAttack;
+- (void)doFov;
 
 @end

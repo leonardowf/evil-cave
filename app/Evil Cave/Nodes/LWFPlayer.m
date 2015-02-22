@@ -14,6 +14,7 @@
 #import "LWFItem.h"
 #import "LWFSpinningAttack.h"
 #import "LWFAttackManager.h"
+#import "LWFShadowCasting.h"
 
 @implementation LWFPlayer
 
@@ -68,9 +69,17 @@ SINGLETON_FOR_CLASS(Player)
     
     [self.tilePath removeObject:tile];
     
+    [self doFov];
+    
     if (tile.cellType != CaveCellTypeEnd) {
         [self finishTurn];
     }
+}
+
+- (void)doFov {
+    LWFTile *tile = self.currentTile;
+    LWFShadowCasting *shadowCasting = [[LWFShadowCasting alloc]init];
+    [shadowCasting doFovStartX:tile.x startY:tile.y radius:5];
 }
 
 - (void)movementRequestIsInvalid {
@@ -187,7 +196,12 @@ SINGLETON_FOR_CLASS(Player)
     [self finishTurn];
 }
 
-- (void)requestSpecialAttack {    
+- (void)requestSpecialAttack {
+    SKAction *rotation = [SKAction rotateByAngle: 2*M_PI duration:0.3];
+    //and just run the action
+    [self runAction: rotation];
+    
+    
     LWFSpinningAttack *spinningAttack = [[LWFSpinningAttack alloc]init];
     [self.attackManager attackable:self requestedAttackToTile:self.currentTile withAttack:spinningAttack];
 }

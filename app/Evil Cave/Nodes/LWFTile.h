@@ -19,6 +19,7 @@
 @property (nonatomic) CaveCellType cellType;
 @property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic) BOOL isThereBloodAlready;
+@property (nonatomic) BOOL doorIsOpen;
 
 
 - (BOOL)isPassable;

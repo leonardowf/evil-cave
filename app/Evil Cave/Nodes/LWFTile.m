@@ -41,6 +41,7 @@
     BOOL isPlayer = [creature isKindOfClass:[LWFPlayer class]];
     
     if (self.cellType == CaveCellTypeDoor) {
+        self.doorIsOpen = YES;
         SKTexture *texture = [SKTexture textureWithImageNamed:@"door_open"];
         texture.filteringMode = SKTextureFilteringNearest;
         [self setTexture:texture];

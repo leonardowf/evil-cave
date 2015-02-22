@@ -90,6 +90,7 @@
     [self.player setCurrentTile:self.tileMap.startTile];
     self.player.currentTile.creatureOnTile = player;
     self.player.map = self;
+    [_player doFov];
     
     [_turnList.creatures addObject:player];
     player.turnList = _turnList;

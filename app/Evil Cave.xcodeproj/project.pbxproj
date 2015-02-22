@@ -42,6 +42,7 @@
 		326524F31A75550600EEA4B2 /* LWFLootChanceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 326524F21A75550600EEA4B2 /* LWFLootChanceFactory.m */; };
 		326524F51A75726900EEA4B2 /* loot_chances.json in Resources */ = {isa = PBXBuildFile; fileRef = 326524F41A75726900EEA4B2 /* loot_chances.json */; };
 		326524F71A75ABAF00EEA4B2 /* item_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 326524F61A75ABAF00EEA4B2 /* item_sword.png */; };
+		32915F541A99619300A037F0 /* LWFShadowCasting.m in Sources */ = {isa = PBXBuildFile; fileRef = 32915F531A99619300A037F0 /* LWFShadowCasting.m */; };
 		3293698B1A5058DD00ECF705 /* LWFRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3293698A1A5058DD00ECF705 /* LWFRect.m */; };
 		32ACD05F1A7B062600970F69 /* item_motherfucking_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */; };
 		32B5AAD91A878A1B00E6523A /* warrior_standing_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B5AAD81A878A1B00E6523A /* warrior_standing_left.png */; };
@@ -169,6 +170,8 @@
 		326524F21A75550600EEA4B2 /* LWFLootChanceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFLootChanceFactory.m; sourceTree = "<group>"; };
 		326524F41A75726900EEA4B2 /* loot_chances.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loot_chances.json; sourceTree = "<group>"; };
 		326524F61A75ABAF00EEA4B2 /* item_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_sword.png; sourceTree = "<group>"; };
+		32915F521A99619300A037F0 /* LWFShadowCasting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFShadowCasting.h; sourceTree = "<group>"; };
+		32915F531A99619300A037F0 /* LWFShadowCasting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFShadowCasting.m; sourceTree = "<group>"; };
 		329369891A5058DD00ECF705 /* LWFRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRect.h; sourceTree = "<group>"; };
 		3293698A1A5058DD00ECF705 /* LWFRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRect.m; sourceTree = "<group>"; };
 		32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_motherfucking_sword.png; sourceTree = "<group>"; };
@@ -545,6 +548,8 @@
 			isa = PBXGroup;
 			children = (
 				A78443AD1A1EEFAA0029995D /* humblebee */,
+				32915F521A99619300A037F0 /* LWFShadowCasting.h */,
+				32915F531A99619300A037F0 /* LWFShadowCasting.m */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -850,6 +855,7 @@
 				32BEBFB91A42476D000C77AA /* LWFGameController.m in Sources */,
 				322DB6AA1A229A0C0085AC68 /* LWFCreatureBuilder.m in Sources */,
 				A7D8BEE41A1988BC005B0599 /* LWFCaveGeneratorConstants.m in Sources */,
+				32915F541A99619300A037F0 /* LWFShadowCasting.m in Sources */,
 				A7D83B971A1D74F20054C022 /* LWFModelGrid.m in Sources */,
 				A7D8BEEA1A1AB598005B0599 /* LWFRandomUtils.m in Sources */,
 				321DB1111A74201D003354BB /* LWFItemPrototypeFactory.m in Sources */,
