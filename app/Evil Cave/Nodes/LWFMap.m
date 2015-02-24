@@ -58,7 +58,7 @@
             [self addChild:(SKSpriteNode *)tile];
             
             SKSpriteNode *overlay = [SKSpriteNode spriteNodeWithTexture:fogTexture];
-            overlay.size = CGSizeMake(TILE_SIZE + 100, TILE_SIZE + 100);
+            overlay.size = CGSizeMake(TILE_SIZE + 70, TILE_SIZE + 70);
             overlay.position = tile.position;
             [self addChild:overlay];
             overlay.zPosition = 20000;
