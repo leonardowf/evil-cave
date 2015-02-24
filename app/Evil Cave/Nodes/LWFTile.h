@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic) BOOL isThereBloodAlready;
 @property (nonatomic) BOOL doorIsOpen;
+@property (nonatomic, strong) SKSpriteNode *fog;
 
 
 - (BOOL)isPassable;

@@ -141,6 +141,8 @@
     SKAction *action = [SKAction fadeAlphaTo:1.0 duration:0.3];
     [tile runAction:action];
 
+    [tile.fog removeFromParent];
+
 }
 
 @end

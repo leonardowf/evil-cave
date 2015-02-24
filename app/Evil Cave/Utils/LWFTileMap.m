@@ -69,7 +69,7 @@
                 tile.x = x;
                 tile.y = y;
                 tile.alpha = 0.0;
-                
+            
                 self.tiles[x][y] = tile;
             }
         }

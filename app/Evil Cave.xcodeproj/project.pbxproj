@@ -25,6 +25,7 @@
 		322765AC1A7EF5C400C0D0DD /* inventory_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 322765A91A7EF5C400C0D0DD /* inventory_icon@3x.png */; };
 		322DB6AA1A229A0C0085AC68 /* LWFCreatureBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 322DB6A91A229A0C0085AC68 /* LWFCreatureBuilder.m */; };
 		322DB6AE1A229E320085AC68 /* LWFRat.m in Sources */ = {isa = PBXBuildFile; fileRef = 322DB6AD1A229E320085AC68 /* LWFRat.m */; };
+		323D10931A9C0CB6000AB32D /* fog_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 323D10921A9C0CB6000AB32D /* fog_overlay.png */; };
 		324527831A4CEC6900AFF9A7 /* warrior_attacking_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527821A4CEC6900AFF9A7 /* warrior_attacking_right.atlas */; };
 		324527851A4DB5E600AFF9A7 /* warrior_walking_left.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527841A4DB5E600AFF9A7 /* warrior_walking_left.atlas */; };
 		324527871A4DB5F400AFF9A7 /* warrior_standing_left.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527861A4DB5F400AFF9A7 /* warrior_standing_left.atlas */; };
@@ -149,6 +150,7 @@
 		322DB6A91A229A0C0085AC68 /* LWFCreatureBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFCreatureBuilder.m; sourceTree = "<group>"; };
 		322DB6AC1A229E320085AC68 /* LWFRat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRat.h; sourceTree = "<group>"; };
 		322DB6AD1A229E320085AC68 /* LWFRat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRat.m; sourceTree = "<group>"; };
+		323D10921A9C0CB6000AB32D /* fog_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fog_overlay.png; sourceTree = "<group>"; };
 		324527821A4CEC6900AFF9A7 /* warrior_attacking_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_attacking_right.atlas; sourceTree = "<group>"; };
 		324527841A4DB5E600AFF9A7 /* warrior_walking_left.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_walking_left.atlas; sourceTree = "<group>"; };
 		324527861A4DB5F400AFF9A7 /* warrior_standing_left.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_standing_left.atlas; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 		321A60611A635DA50060517E /* Decorations */ = {
 			isa = PBXGroup;
 			children = (
+				323D10921A9C0CB6000AB32D /* fog_overlay.png */,
 				321A60621A635DA50060517E /* blood.atlas */,
 			);
 			path = Decorations;
@@ -794,6 +797,7 @@
 				324527851A4DB5E600AFF9A7 /* warrior_walking_left.atlas in Resources */,
 				324527871A4DB5F400AFF9A7 /* warrior_standing_left.atlas in Resources */,
 				324527941A4DEEF100AFF9A7 /* rat_dying_right.atlas in Resources */,
+				323D10931A9C0CB6000AB32D /* fog_overlay.png in Resources */,
 				32B5AAD91A878A1B00E6523A /* warrior_standing_left.png in Resources */,
 				32F1CDCC1A57603800A0D9F5 /* wall.png in Resources */,
 				326524F51A75726900EEA4B2 /* loot_chances.json in Resources */,
