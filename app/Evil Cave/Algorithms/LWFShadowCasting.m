@@ -138,13 +138,8 @@
     
     LWFTile *tile = [tileMap tileForVertical:y andHorizontal:x];
     
-//    SKAction *action = [SKAction fadeAlphaTo:1.0 duration:0.3];
-//    [tile runAction:action];
-    
-    SKAction *fadeOutAction = [SKAction fadeOutWithDuration:0.3];
-
-    [tile.fog runAction:fadeOutAction];
-
+    SKAction *action = [SKAction fadeAlphaTo:1.0 duration:0.3];
+    [tile runAction:action];
 }
 
 @end

@@ -48,23 +48,11 @@
 }
 
 - (void)addTiles {
-    UIImage *fogImage = [UIImage imageNamed:@"fog_overlay"];
-    SKTexture *fogTexture = [SKTexture textureWithImage:fogImage];
-    
     for (NSInteger x = 0; x < self.mapDimension.numberTilesHorizontal; x++) {
         for (NSInteger y = 0; y < self.mapDimension.numberTilesVertical; y++) {
             LWFTile *tile = [self.tileMap tileForVertical:y andHorizontal:x];
             
             [self addChild:(SKSpriteNode *)tile];
-            
-            SKSpriteNode *overlay = [SKSpriteNode spriteNodeWithTexture:fogTexture];
-            overlay.size = CGSizeMake(TILE_SIZE + 70, TILE_SIZE + 70);
-            overlay.position = tile.position;
-            [self addChild:overlay];
-            overlay.zPosition = 20000;
-            
-            tile.fog = overlay;
-            
         }
     }
 }
