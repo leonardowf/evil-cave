@@ -212,7 +212,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="63"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tc9-fj-Hti">
-                                                        <rect key="frame" x="3.5" y="9" width="45" height="45"/>
+                                                        <rect key="frame" x="3" y="9" width="45" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Tc9-fj-Hti" secondAttribute="height" multiplier="1:1" id="KE3-cS-Sn7"/>
                                                         </constraints>
@@ -290,7 +290,47 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkq-VW-v15" userLabel="Row 2">
                                         <rect key="frame" x="20" y="205" width="208" height="63"/>
-                                        <color key="backgroundColor" red="1" green="0.94150015153558531" blue="0.27387546755822267" alpha="1" colorSpace="calibratedRGB"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWE-1Y-nBj">
+                                                <rect key="frame" x="104" y="0.0" width="52" height="63"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="GKS-M2-d4G">
+                                                        <rect key="frame" x="3.5" y="9" width="45" height="45"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="GKS-M2-d4G" secondAttribute="height" multiplier="1:1" id="me3-75-APz"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="centerX" secondItem="GKS-M2-d4G" secondAttribute="centerX" id="I1i-SC-Dz1"/>
+                                                    <constraint firstAttribute="centerY" secondItem="GKS-M2-d4G" secondAttribute="centerY" id="bgf-qR-cm2"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4xl-Uu-hlw">
+                                                <rect key="frame" x="156" y="0.0" width="52" height="63"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="WRI-7T-NPH">
+                                                        <rect key="frame" x="3" y="9" width="45" height="45"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="WRI-7T-NPH" secondAttribute="height" multiplier="1:1" id="Zkj-mr-18w"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="centerY" secondItem="WRI-7T-NPH" secondAttribute="centerY" id="RKt-Re-YEl"/>
+                                                    <constraint firstAttribute="centerX" secondItem="WRI-7T-NPH" secondAttribute="centerX" id="SZZ-IZ-uSV"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="4xl-Uu-hlw" secondAttribute="trailing" id="9om-kB-Qqx"/>
+                                            <constraint firstItem="4xl-Uu-hlw" firstAttribute="top" secondItem="Gkq-VW-v15" secondAttribute="top" id="Pw7-mN-lU0"/>
+                                            <constraint firstItem="UWE-1Y-nBj" firstAttribute="top" secondItem="Gkq-VW-v15" secondAttribute="top" id="Quz-mQ-6gy"/>
+                                            <constraint firstAttribute="bottom" secondItem="UWE-1Y-nBj" secondAttribute="bottom" id="Res-8n-UV6"/>
+                                            <constraint firstAttribute="bottom" secondItem="4xl-Uu-hlw" secondAttribute="bottom" id="bYk-Nd-GaX"/>
+                                            <constraint firstItem="4xl-Uu-hlw" firstAttribute="leading" secondItem="UWE-1Y-nBj" secondAttribute="trailing" id="dh3-Ks-d4c"/>
+                                            <constraint firstItem="UWE-1Y-nBj" firstAttribute="width" secondItem="4xl-Uu-hlw" secondAttribute="width" id="ezh-nW-TJf"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0v4-cr-YqR" userLabel="Row 3">
                                         <rect key="frame" x="20" y="268" width="208" height="63"/>
@@ -334,6 +374,7 @@
                                     <constraint firstItem="kJM-QY-aOf" firstAttribute="top" secondItem="Gkq-VW-v15" secondAttribute="top" id="Jvq-vM-MpM"/>
                                     <constraint firstAttribute="bottom" secondItem="Lqk-nz-kdZ" secondAttribute="bottom" constant="10" id="LYw-4e-cqB"/>
                                     <constraint firstItem="kJM-QY-aOf" firstAttribute="width" secondItem="Gkq-VW-v15" secondAttribute="width" multiplier="0.5" id="NsT-CD-uSJ"/>
+                                    <constraint firstItem="UWE-1Y-nBj" firstAttribute="leading" secondItem="kJM-QY-aOf" secondAttribute="trailing" id="Ybz-PY-307"/>
                                     <constraint firstItem="Lqk-nz-kdZ" firstAttribute="leading" secondItem="JCS-g0-RNG" secondAttribute="leading" id="Z7j-QI-NLr"/>
                                     <constraint firstAttribute="bottom" secondItem="KiR-51-SSX" secondAttribute="bottom" id="bPu-vm-Xv6"/>
                                     <constraint firstItem="Gkq-VW-v15" firstAttribute="trailing" secondItem="0v4-cr-YqR" secondAttribute="trailing" id="cHF-LB-vbJ"/>
