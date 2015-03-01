@@ -79,6 +79,19 @@
 		32F1CDCC1A57603800A0D9F5 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F1CDCB1A57603800A0D9F5 /* wall.png */; };
 		32F831341A96A96B007174F1 /* LWFAttackQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F831331A96A96B007174F1 /* LWFAttackQueue.m */; };
 		32F831371A96B458007174F1 /* LWFAttackQueueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F831361A96B458007174F1 /* LWFAttackQueueCell.m */; };
+		32FB7DAD1AA0004B00AA4C7F /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DA01AA0004B00AA4C7F /* bg.png */; };
+		32FB7DAE1AA0004B00AA4C7F /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DA11AA0004B00AA4C7F /* bg@2x.png */; };
+		32FB7DAF1AA0004B00AA4C7F /* bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DA21AA0004B00AA4C7F /* bg@3x.png */; };
+		32FB7DB01AA0004B00AA4C7F /* hero_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DA31AA0004B00AA4C7F /* hero_portrait.png */; };
+		32FB7DB11AA0004B00AA4C7F /* hero_portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DA41AA0004B00AA4C7F /* hero_portrait@2x.png */; };
+		32FB7DB21AA0004B00AA4C7F /* hero_portrait@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DA51AA0004B00AA4C7F /* hero_portrait@3x.png */; };
+		32FB7DB31AA0004B00AA4C7F /* inventory.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DA61AA0004B00AA4C7F /* inventory.png */; };
+		32FB7DB41AA0004B00AA4C7F /* thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DA71AA0004B00AA4C7F /* thumb.png */; };
+		32FB7DB51AA0004B00AA4C7F /* thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DA81AA0004B00AA4C7F /* thumb@2x.png */; };
+		32FB7DB61AA0004B00AA4C7F /* thumb@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DA91AA0004B00AA4C7F /* thumb@3x.png */; };
+		32FB7DB71AA0004B00AA4C7F /* thumb_money.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DAA1AA0004B00AA4C7F /* thumb_money.png */; };
+		32FB7DB81AA0004B00AA4C7F /* thumb_money@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DAB1AA0004B00AA4C7F /* thumb_money@2x.png */; };
+		32FB7DB91AA0004B00AA4C7F /* thumb_money@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DAC1AA0004B00AA4C7F /* thumb_money@3x.png */; };
 		32FFE83E1A2C0BDD003D02A4 /* LWFAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFE83D1A2C0BDD003D02A4 /* LWFAttack.m */; };
 		32FFE8411A2C0BF0003D02A4 /* LWFMelee.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFE8401A2C0BF0003D02A4 /* LWFMelee.m */; };
 		A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = A70387581A17BC620053A9E6 /* LWFMapDimension.m */; };
@@ -227,6 +240,19 @@
 		32F831331A96A96B007174F1 /* LWFAttackQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAttackQueue.m; sourceTree = "<group>"; };
 		32F831351A96B458007174F1 /* LWFAttackQueueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttackQueueCell.h; sourceTree = "<group>"; };
 		32F831361A96B458007174F1 /* LWFAttackQueueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAttackQueueCell.m; sourceTree = "<group>"; };
+		32FB7DA01AA0004B00AA4C7F /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		32FB7DA11AA0004B00AA4C7F /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
+		32FB7DA21AA0004B00AA4C7F /* bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@3x.png"; sourceTree = "<group>"; };
+		32FB7DA31AA0004B00AA4C7F /* hero_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero_portrait.png; sourceTree = "<group>"; };
+		32FB7DA41AA0004B00AA4C7F /* hero_portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hero_portrait@2x.png"; sourceTree = "<group>"; };
+		32FB7DA51AA0004B00AA4C7F /* hero_portrait@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hero_portrait@3x.png"; sourceTree = "<group>"; };
+		32FB7DA61AA0004B00AA4C7F /* inventory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inventory.png; sourceTree = "<group>"; };
+		32FB7DA71AA0004B00AA4C7F /* thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb.png; sourceTree = "<group>"; };
+		32FB7DA81AA0004B00AA4C7F /* thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb@2x.png"; sourceTree = "<group>"; };
+		32FB7DA91AA0004B00AA4C7F /* thumb@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb@3x.png"; sourceTree = "<group>"; };
+		32FB7DAA1AA0004B00AA4C7F /* thumb_money.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_money.png; sourceTree = "<group>"; };
+		32FB7DAB1AA0004B00AA4C7F /* thumb_money@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb_money@2x.png"; sourceTree = "<group>"; };
+		32FB7DAC1AA0004B00AA4C7F /* thumb_money@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb_money@3x.png"; sourceTree = "<group>"; };
 		32FFE83A1A2BF6E2003D02A4 /* LWFConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWFConstants.h; sourceTree = "<group>"; };
 		32FFE83C1A2C0BDD003D02A4 /* LWFAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttack.h; sourceTree = "<group>"; };
 		32FFE83D1A2C0BDD003D02A4 /* LWFAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAttack.m; sourceTree = "<group>"; };
@@ -463,6 +489,7 @@
 		32D50BC81A3D1FE9002D3098 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				32FB7D9F1AA0004B00AA4C7F /* Inventory */,
 				3206A3D91A7D9B3800D08893 /* HUD */,
 				326524EC1A75405700EEA4B2 /* Items */,
 				324527991A4EEF5500AFF9A7 /* creature_lifebar.png */,
@@ -491,6 +518,26 @@
 				326524F21A75550600EEA4B2 /* LWFLootChanceFactory.m */,
 			);
 			path = Items;
+			sourceTree = "<group>";
+		};
+		32FB7D9F1AA0004B00AA4C7F /* Inventory */ = {
+			isa = PBXGroup;
+			children = (
+				32FB7DA01AA0004B00AA4C7F /* bg.png */,
+				32FB7DA11AA0004B00AA4C7F /* bg@2x.png */,
+				32FB7DA21AA0004B00AA4C7F /* bg@3x.png */,
+				32FB7DA31AA0004B00AA4C7F /* hero_portrait.png */,
+				32FB7DA41AA0004B00AA4C7F /* hero_portrait@2x.png */,
+				32FB7DA51AA0004B00AA4C7F /* hero_portrait@3x.png */,
+				32FB7DA61AA0004B00AA4C7F /* inventory.png */,
+				32FB7DA71AA0004B00AA4C7F /* thumb.png */,
+				32FB7DA81AA0004B00AA4C7F /* thumb@2x.png */,
+				32FB7DA91AA0004B00AA4C7F /* thumb@3x.png */,
+				32FB7DAA1AA0004B00AA4C7F /* thumb_money.png */,
+				32FB7DAB1AA0004B00AA4C7F /* thumb_money@2x.png */,
+				32FB7DAC1AA0004B00AA4C7F /* thumb_money@3x.png */,
+			);
+			path = Inventory;
 			sourceTree = "<group>";
 		};
 		32FFE83B1A2C0BCE003D02A4 /* Attacks */ = {
@@ -758,12 +805,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3206A3E11A7D9D7F00D08893 /* item_preview_middle.png in Resources */,
+				32FB7DB51AA0004B00AA4C7F /* thumb@2x.png in Resources */,
 				32BEBFFD1A470B68000C77AA /* warrior_standing_right.png in Resources */,
+				32FB7DAD1AA0004B00AA4C7F /* bg.png in Resources */,
 				3206A3E71A7DA8B400D08893 /* get_button.png in Resources */,
 				3206A3E41A7DA8A800D08893 /* next_button.png in Resources */,
 				32BEBFF91A470B68000C77AA /* radioactive_rat_standing_left.png in Resources */,
 				32BEC00F1A4714DC000C77AA /* rat_standing_right.atlas in Resources */,
 				324527981A4DF83A00AFF9A7 /* rat_dying_left.atlas in Resources */,
+				32FB7DB31AA0004B00AA4C7F /* inventory.png in Resources */,
 				A7F5BB941A16EFBC005BAB63 /* InfoPlist.strings in Resources */,
 				3206A3DF1A7D9B6200D08893 /* item_preview_top.png in Resources */,
 				326524EB1A7448AB00EEA4B2 /* item_prototypes.json in Resources */,
@@ -773,26 +823,35 @@
 				3245278B1A4DCBFB00AFF9A7 /* warrior_attacking_left.atlas in Resources */,
 				32F09E311A48F4FA000B8797 /* Munro.ttf in Resources */,
 				32BEC0141A48A7C4000C77AA /* creature_stats.json in Resources */,
+				32FB7DB01AA0004B00AA4C7F /* hero_portrait.png in Resources */,
 				3245279A1A4EEF5500AFF9A7 /* creature_lifebar.png in Resources */,
+				32FB7DB21AA0004B00AA4C7F /* hero_portrait@3x.png in Resources */,
+				32FB7DB61AA0004B00AA4C7F /* thumb@3x.png in Resources */,
 				32BEC0121A472DA8000C77AA /* radioactive_rat_standing_right.png in Resources */,
 				32ACD05F1A7B062600970F69 /* item_motherfucking_sword.png in Resources */,
 				326524EF1A75406B00EEA4B2 /* item_fine_sword.png in Resources */,
 				32B5AAE71A87FCD900E6523A /* item_gold.png in Resources */,
 				324527891A4DB60800AFF9A7 /* warrior_standing_right.atlas in Resources */,
 				322765AB1A7EF5C400C0D0DD /* inventory_icon@2x.png in Resources */,
+				32FB7DAF1AA0004B00AA4C7F /* bg@3x.png in Resources */,
 				32BEC0051A470F5F000C77AA /* warrior_walking_right.atlas in Resources */,
+				32FB7DB91AA0004B00AA4C7F /* thumb_money@3x.png in Resources */,
+				32FB7DB81AA0004B00AA4C7F /* thumb_money@2x.png in Resources */,
+				32FB7DB71AA0004B00AA4C7F /* thumb_money.png in Resources */,
 				321A60631A635DA50060517E /* blood.atlas in Resources */,
 				324527831A4CEC6900AFF9A7 /* warrior_attacking_right.atlas in Resources */,
 				A7F5BBA71A16EFBE005BAB63 /* Images.xcassets in Resources */,
 				32BEC00D1A4714DC000C77AA /* rat_standing_left.atlas in Resources */,
 				32BEBFEF1A470AAB000C77AA /* rock_tile.png in Resources */,
 				32BEC0101A4714DC000C77AA /* rat_standing_right.png in Resources */,
+				32FB7DB41AA0004B00AA4C7F /* thumb.png in Resources */,
 				32B5AADF1A87F66D00E6523A /* item_gold.atlas in Resources */,
 				322765AA1A7EF5C400C0D0DD /* inventory_icon.png in Resources */,
 				3254E6D71A5CB49400BD7D13 /* door.png in Resources */,
 				321A60601A6354DF0060517E /* door_open.png in Resources */,
 				32BEC0071A470FFD000C77AA /* warrior_walking_left.atlas in Resources */,
 				32BEC00E1A4714DC000C77AA /* rat_standing_left.png in Resources */,
+				32FB7DB11AA0004B00AA4C7F /* hero_portrait@2x.png in Resources */,
 				A7F5BB9D1A16EFBD005BAB63 /* Main.storyboard in Resources */,
 				324527851A4DB5E600AFF9A7 /* warrior_walking_left.atlas in Resources */,
 				324527871A4DB5F400AFF9A7 /* warrior_standing_left.atlas in Resources */,
@@ -801,6 +860,7 @@
 				32B5AAD91A878A1B00E6523A /* warrior_standing_left.png in Resources */,
 				32F1CDCC1A57603800A0D9F5 /* wall.png in Resources */,
 				326524F51A75726900EEA4B2 /* loot_chances.json in Resources */,
+				32FB7DAE1AA0004B00AA4C7F /* bg@2x.png in Resources */,
 				322765AC1A7EF5C400C0D0DD /* inventory_icon@3x.png in Resources */,
 				3206A3E51A7DA8A800D08893 /* previous_button.png in Resources */,
 				326524F71A75ABAF00EEA4B2 /* item_sword.png in Resources */,
