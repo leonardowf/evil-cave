@@ -205,25 +205,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="248" height="468"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RKX-C2-ut7" userLabel="Row 1">
-                                        <rect key="frame" x="20" y="106" width="208" height="40"/>
+                                        <rect key="frame" x="20" y="106" width="208" height="63"/>
                                         <color key="backgroundColor" red="1" green="0.095022630920000004" blue="0.17102017980000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="SOW-ws-H4e"/>
-                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkq-VW-v15" userLabel="Row 2">
-                                        <rect key="frame" x="20" y="182" width="208" height="40"/>
+                                        <rect key="frame" x="20" y="205" width="208" height="63"/>
                                         <color key="backgroundColor" red="1" green="0.94150015153558531" blue="0.27387546755822267" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="x41-Tz-pkA"/>
-                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0v4-cr-YqR" userLabel="Row 3">
-                                        <rect key="frame" x="20" y="222" width="208" height="40"/>
+                                        <rect key="frame" x="20" y="268" width="208" height="63"/>
                                         <color key="backgroundColor" red="0.3899194084" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="dXj-hW-wlt"/>
-                                        </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Equipped Items" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nw-Ou-Qj2" userLabel="Equipped Items Label">
                                         <rect key="frame" x="72" y="80" width="103" height="16"/>
@@ -232,28 +223,22 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store Items" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1V-iI-mkB">
-                                        <rect key="frame" x="84" y="156" width="80" height="16"/>
+                                        <rect key="frame" x="84" y="179" width="80" height="16"/>
                                         <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJM-QY-aOf" userLabel="Item Preview">
-                                        <rect key="frame" x="20" y="182" width="104" height="80"/>
+                                        <rect key="frame" x="20" y="205" width="104" height="126"/>
                                         <color key="backgroundColor" red="1" green="0.01398915819" blue="0.97707120219999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCS-g0-RNG" userLabel="Row 4">
-                                        <rect key="frame" x="20" y="263" width="208" height="40"/>
+                                        <rect key="frame" x="20" y="332" width="208" height="63"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="2jj-oY-Wi4"/>
-                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lqk-nz-kdZ" userLabel="Row 5">
-                                        <rect key="frame" x="20" y="303" width="208" height="40"/>
+                                        <rect key="frame" x="20" y="395" width="208" height="63"/>
                                         <color key="backgroundColor" red="1" green="0.69066097859999998" blue="0.47813013980000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="NFt-vc-WXv"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -261,10 +246,13 @@
                                     <constraint firstItem="RKX-C2-ut7" firstAttribute="leading" secondItem="Gkq-VW-v15" secondAttribute="leading" id="68s-q4-vCr"/>
                                     <constraint firstItem="kJM-QY-aOf" firstAttribute="leading" secondItem="Gkq-VW-v15" secondAttribute="leading" id="7F8-C0-ePB"/>
                                     <constraint firstItem="Gkq-VW-v15" firstAttribute="top" secondItem="x1V-iI-mkB" secondAttribute="bottom" constant="10" id="9VW-vB-AWV"/>
+                                    <constraint firstItem="JCS-g0-RNG" firstAttribute="height" secondItem="0v4-cr-YqR" secondAttribute="height" id="BvQ-MM-jF9"/>
+                                    <constraint firstItem="JCS-g0-RNG" firstAttribute="height" secondItem="RKX-C2-ut7" secondAttribute="height" id="BvZ-Du-8Kc"/>
                                     <constraint firstItem="RKX-C2-ut7" firstAttribute="leading" secondItem="gfA-Uw-d4k" secondAttribute="leading" constant="20" id="FKd-mD-YqP"/>
                                     <constraint firstItem="Lqk-nz-kdZ" firstAttribute="trailing" secondItem="JCS-g0-RNG" secondAttribute="trailing" id="Fvl-jG-vby"/>
                                     <constraint firstAttribute="trailing" secondItem="RKX-C2-ut7" secondAttribute="trailing" constant="20" id="Gen-MS-Ukr"/>
                                     <constraint firstItem="kJM-QY-aOf" firstAttribute="top" secondItem="Gkq-VW-v15" secondAttribute="top" id="Jvq-vM-MpM"/>
+                                    <constraint firstAttribute="bottom" secondItem="Lqk-nz-kdZ" secondAttribute="bottom" constant="10" id="LYw-4e-cqB"/>
                                     <constraint firstItem="kJM-QY-aOf" firstAttribute="width" secondItem="Gkq-VW-v15" secondAttribute="width" multiplier="0.5" id="NsT-CD-uSJ"/>
                                     <constraint firstItem="Lqk-nz-kdZ" firstAttribute="leading" secondItem="JCS-g0-RNG" secondAttribute="leading" id="Z7j-QI-NLr"/>
                                     <constraint firstAttribute="bottom" secondItem="KiR-51-SSX" secondAttribute="bottom" id="bPu-vm-Xv6"/>
@@ -283,7 +271,9 @@
                                     <constraint firstItem="JCS-g0-RNG" firstAttribute="top" secondItem="0v4-cr-YqR" secondAttribute="bottom" constant="1" id="qdo-vA-Fxg"/>
                                     <constraint firstAttribute="trailing" secondItem="KiR-51-SSX" secondAttribute="trailing" id="te4-u8-3GF"/>
                                     <constraint firstItem="kJM-QY-aOf" firstAttribute="bottom" secondItem="0v4-cr-YqR" secondAttribute="bottom" id="tnl-5i-dxz"/>
+                                    <constraint firstItem="JCS-g0-RNG" firstAttribute="height" secondItem="Lqk-nz-kdZ" secondAttribute="height" id="y4o-Nj-gSG"/>
                                     <constraint firstItem="RKX-C2-ut7" firstAttribute="top" secondItem="1Nw-Ou-Qj2" secondAttribute="bottom" constant="10" id="yWB-V2-gCx"/>
+                                    <constraint firstItem="JCS-g0-RNG" firstAttribute="height" secondItem="Gkq-VW-v15" secondAttribute="height" id="zSL-nk-iGi"/>
                                 </constraints>
                             </view>
                         </subviews>
