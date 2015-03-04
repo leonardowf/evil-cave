@@ -21,4 +21,9 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightConstraint;
 
+
+// inventory
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewInventoryBackground;
+
+
 @end

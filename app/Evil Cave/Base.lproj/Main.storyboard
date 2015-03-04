@@ -201,7 +201,7 @@
                                     <outletCollection property="gestureRecognizers" destination="hUH-57-6B3" appends="YES" id="7sm-Jo-yUo"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfA-Uw-d4k" userLabel="Inventory Container">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfA-Uw-d4k" userLabel="Inventory Container">
                                 <rect key="frame" x="36" y="0.0" width="248" height="528"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="KiR-51-SSX">
@@ -677,6 +677,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageViewInventoryBackground" destination="KiR-51-SSX" id="EX3-ib-eDV"/>
                         <outlet property="imageViewItemSprite" destination="0cY-KH-aVb" id="4aL-U6-7xt"/>
                         <outlet property="itemPreview" destination="296-NC-TaJ" id="gGk-16-pyN"/>
                         <outlet property="labelArmor" destination="fBB-io-SUM" id="U0w-kG-nHC"/>

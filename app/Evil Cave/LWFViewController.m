@@ -31,6 +31,10 @@
     
     [self configureEvents];
     
+    
+    [self.imageViewInventoryBackground.layer setMagnificationFilter:@"kCAFilterNearest"];
+    [self.imageViewItemSprite.layer setMagnificationFilter:@"kCAFilterNearest"];
+    
 }
 
 - (void)configureEvents {
