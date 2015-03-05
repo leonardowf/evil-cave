@@ -31,9 +31,16 @@
     
     [self configureEvents];
     
+    UIImage *image = [UIImage imageNamed:@"item_sword"];
     
-    [self.imageViewInventoryBackground.layer setMagnificationFilter:@"kCAFilterNearest"];
-    [self.imageViewItemSprite.layer setMagnificationFilter:@"kCAFilterNearest"];
+//    self.imageViewWeapon.image = image;
+    
+    
+    [self.imageViewWeapon.layer setMinificationFilter:kCAFilterTrilinear];
+    [self.imageViewWeapon.layer setMagnificationFilter:kCAFilterTrilinear];
+    
+    
+
     
 }
 

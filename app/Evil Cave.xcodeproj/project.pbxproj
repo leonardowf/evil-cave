@@ -65,6 +65,7 @@
 		32BEC0101A4714DC000C77AA /* rat_standing_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEC00C1A4714DC000C77AA /* rat_standing_right.png */; };
 		32BEC0121A472DA8000C77AA /* radioactive_rat_standing_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEC0111A472DA8000C77AA /* radioactive_rat_standing_right.png */; };
 		32BEC0141A48A7C4000C77AA /* creature_stats.json in Resources */ = {isa = PBXBuildFile; fileRef = 32BEC0131A48A7C3000C77AA /* creature_stats.json */; };
+		32C4A58F1AA7E81B00BA5087 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32EDF5981A7C5FCC0007EA36 /* QuartzCore.framework */; };
 		32C511F31A37A5DB00F0B955 /* LWFGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C511F21A37A5DB00F0B955 /* LWFGeometry.m */; };
 		32CD39D61A22CBCC000ADD95 /* LWFGoblin.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CD39D51A22CBCC000ADD95 /* LWFGoblin.m */; };
 		32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */; };
@@ -72,7 +73,6 @@
 		32D50BC71A3D018D002D3098 /* LWFAttacksBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BC61A3D018D002D3098 /* LWFAttacksBuilder.m */; };
 		32D50BCD1A3D227C002D3098 /* LWFRadioactiveRat.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BCC1A3D227C002D3098 /* LWFRadioactiveRat.m */; };
 		32D50BD31A3DFDF3002D3098 /* LWFPointObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */; };
-		32EDF5991A7C5FCC0007EA36 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32EDF5981A7C5FCC0007EA36 /* QuartzCore.framework */; };
 		32F09E291A48C947000B8797 /* LWFCombatSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F09E281A48C947000B8797 /* LWFCombatSystem.m */; };
 		32F09E2C1A48E6B4000B8797 /* LWFCombatOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F09E2B1A48E6B4000B8797 /* LWFCombatOutput.m */; };
 		32F09E2F1A48EBB1000B8797 /* LWFEquips.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F09E2E1A48EBB1000B8797 /* LWFEquips.m */; };
@@ -324,7 +324,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32EDF5991A7C5FCC0007EA36 /* QuartzCore.framework in Frameworks */,
+				32C4A58F1AA7E81B00BA5087 /* QuartzCore.framework in Frameworks */,
 				A7F5BB8A1A16EFBC005BAB63 /* CoreGraphics.framework in Frameworks */,
 				A7F5BB8C1A16EFBC005BAB63 /* UIKit.framework in Frameworks */,
 				A7F5BB8E1A16EFBC005BAB63 /* SpriteKit.framework in Frameworks */,

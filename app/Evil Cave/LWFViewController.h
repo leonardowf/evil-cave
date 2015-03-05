@@ -25,5 +25,7 @@
 // inventory
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewInventoryBackground;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewWeapon;
+
 
 @end
