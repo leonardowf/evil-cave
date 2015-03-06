@@ -18,6 +18,7 @@
 #import "LWFPlayer.h"
 #import "LWFAttackManager.h"
 #import "LWFPointObject.h"
+#import "LWFInventory.h"
 
 @interface LWFMap () {
     LWFTurnList *_turnList;
@@ -117,6 +118,12 @@
 }
 
 - (void)userTouchedPoint:(CGPoint)point {
+    LWFInventory *inventory = [LWFInventory sharedInventory];
+    if ([inventory isOpen]) {
+        [inventory hide];
+        return;
+    }
+    
     if (_blockUserInteraction) {
         _touchQueue = [LWFPointObject pointWithX:point.x andY:point.y];
         return;

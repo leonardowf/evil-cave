@@ -23,9 +23,25 @@
 
 
 // inventory
+@property (weak, nonatomic) IBOutlet UIView *viewInventoryContainer;
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewInventoryBackground;
-
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewWeapon;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewArmor;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewBoots;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewAccessory;
 
+@property (weak, nonatomic) IBOutlet UIImageView *item1;
+@property (weak, nonatomic) IBOutlet UIImageView *item2;
+@property (weak, nonatomic) IBOutlet UIImageView *item3;
+@property (weak, nonatomic) IBOutlet UIImageView *item4;
+@property (weak, nonatomic) IBOutlet UIImageView *item5;
+@property (weak, nonatomic) IBOutlet UIImageView *item6;
+@property (weak, nonatomic) IBOutlet UIImageView *item7;
+@property (weak, nonatomic) IBOutlet UIImageView *item8;
+@property (weak, nonatomic) IBOutlet UIImageView *item9;
+@property (weak, nonatomic) IBOutlet UIImageView *item10;
+@property (weak, nonatomic) IBOutlet UIImageView *item11;
+@property (weak, nonatomic) IBOutlet UILabel *labelGold;
 
 @end

@@ -8,8 +8,16 @@
 
 #import "LWFInventory.h"
 #import "LWFItem.h"
+#import "LWFViewController.h"
 
+@interface LWFInventory () {
+    LWFViewController *_viewController;
+}
+
+@end
 @implementation LWFInventory
+
+
 
 - (instancetype)init
 {
@@ -24,15 +32,27 @@
 SINGLETON_FOR_CLASS(Inventory)
 
 - (void)hide {
-    
+    _viewController.viewInventoryContainer.alpha = 0.0;
 }
 
 - (void)show {
+    _viewController.viewInventoryContainer.alpha = 1.0;
     
+    _viewController.labelGold.text = [NSString stringWithFormat:@"%ld", (long)self.money];
 }
 
 - (BOOL)canTakeItem:(LWFItem *)item {
     return YES;
     // TODO
 }
+
+- (void)inject:(LWFViewController *)viewController {
+    _viewController = viewController;
+}
+
+- (BOOL)isOpen {
+    return _viewController.viewInventoryContainer.alpha == 1.0;
+}
+
+
 @end

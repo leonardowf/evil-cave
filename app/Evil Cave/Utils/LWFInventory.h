@@ -10,6 +10,7 @@
 
 @class LWFPlayer;
 @class LWFItem;
+@class LWFViewController;
 
 @interface LWFInventory : SKSpriteNode
 
@@ -22,5 +23,7 @@
 - (void)show;
 - (void)hide;
 - (BOOL)canTakeItem:(LWFItem *)item;
+- (void)inject:(LWFViewController *)viewController;
+- (BOOL)isOpen;
 
 @end
