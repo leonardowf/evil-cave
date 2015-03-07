@@ -22,7 +22,10 @@
 
 - (void)show;
 - (void)hide;
+
 - (BOOL)canTakeItem:(LWFItem *)item;
+- (void)takeItem:(LWFItem *)item;
+
 - (void)inject:(LWFViewController *)viewController;
 - (BOOL)isOpen;
 

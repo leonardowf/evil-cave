@@ -9,15 +9,15 @@
 #import "LWFInventory.h"
 #import "LWFItem.h"
 #import "LWFViewController.h"
+#import "LWFImageViewHolder.h"
 
 @interface LWFInventory () {
     LWFViewController *_viewController;
+    NSMutableArray *_imageViewHolders;
 }
 
 @end
 @implementation LWFInventory
-
-
 
 - (instancetype)init
 {
@@ -25,6 +25,7 @@
     if (self) {
         self.money = 0;
         self.items = [NSMutableArray array];
+
     }
     return self;
 }
@@ -46,8 +47,45 @@ SINGLETON_FOR_CLASS(Inventory)
     // TODO
 }
 
+- (void)takeItem:(LWFItem *)item {
+    [self.items addObject:item];
+    
+    [self displayItem:item];
+}
+
+- (void)displayItem:(LWFItem *)item {
+    LWFImageViewHolder *imageViewHolder = [self getImageViewContainer];
+    
+    if (imageViewHolder != nil) {
+        imageViewHolder.item = item;
+        UIImage *image = [item getImage];
+        
+        [imageViewHolder.imageView setImage:image];
+    }
+    
+}
+
+- (LWFImageViewHolder *)getImageViewContainer {
+    for (LWFImageViewHolder *imageViewHolder in _imageViewHolders) {
+        if (imageViewHolder.item == nil) {
+            return imageViewHolder;
+        }
+    }
+    return nil;
+}
+
 - (void)inject:(LWFViewController *)viewController {
     _viewController = viewController;
+    _imageViewHolders = [NSMutableArray array];
+    
+    for (NSInteger i = 1; i <= 11; i++) {
+        NSString *imageViewToGet = [NSString stringWithFormat:@"item%ld", i];
+        id imageView = [viewController valueForKey:imageViewToGet];
+        
+        LWFImageViewHolder *imageViewHolder = [[LWFImageViewHolder alloc]init];
+        imageViewHolder.imageView = imageView;
+        [_imageViewHolders addObject:imageViewHolder];
+    }
 }
 
 - (BOOL)isOpen {

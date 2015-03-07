@@ -154,7 +154,7 @@ SINGLETON_FOR_CLASS(Player)
         
     } else {
         // TODO: Potion
-        [self.inventory.items addObject:item];
+        [self.inventory takeItem:item];
         
         // Esse é um dos comportamentos mais bizarros que já na minha experiên-
         // cia de programador. Quando chamo o remove object, está sendo removi-

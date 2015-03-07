@@ -68,6 +68,7 @@
 		32C4A58F1AA7E81B00BA5087 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32EDF5981A7C5FCC0007EA36 /* QuartzCore.framework */; };
 		32C511F31A37A5DB00F0B955 /* LWFGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C511F21A37A5DB00F0B955 /* LWFGeometry.m */; };
 		32CD39D61A22CBCC000ADD95 /* LWFGoblin.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CD39D51A22CBCC000ADD95 /* LWFGoblin.m */; };
+		32D08C8E1AAA731900441A51 /* LWFImageViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D08C8D1AAA731900441A51 /* LWFImageViewHolder.m */; };
 		32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */; };
 		32D50BC41A3CFB60002D3098 /* LWFStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BC31A3CFB60002D3098 /* LWFStats.m */; };
 		32D50BC71A3D018D002D3098 /* LWFAttacksBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BC61A3D018D002D3098 /* LWFAttacksBuilder.m */; };
@@ -218,6 +219,8 @@
 		32C511F21A37A5DB00F0B955 /* LWFGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFGeometry.m; sourceTree = "<group>"; };
 		32CD39D41A22CBCC000ADD95 /* LWFGoblin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFGoblin.h; sourceTree = "<group>"; };
 		32CD39D51A22CBCC000ADD95 /* LWFGoblin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFGoblin.m; sourceTree = "<group>"; };
+		32D08C8C1AAA731900441A51 /* LWFImageViewHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LWFImageViewHolder.h; path = "Evil Cave/Utils/LWFImageViewHolder.h"; sourceTree = "<group>"; };
+		32D08C8D1AAA731900441A51 /* LWFImageViewHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LWFImageViewHolder.m; path = "Evil Cave/Utils/LWFImageViewHolder.m"; sourceTree = "<group>"; };
 		32D0BE6E1A2D13D8000EC0E1 /* LWFAttackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttackManager.h; sourceTree = "<group>"; };
 		32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAttackManager.m; sourceTree = "<group>"; };
 		32D0BE711A2D177B000EC0E1 /* LWFAttackable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttackable.h; sourceTree = "<group>"; };
@@ -638,6 +641,8 @@
 		A7F5BB7B1A16EFBC005BAB63 = {
 			isa = PBXGroup;
 			children = (
+				32D08C8C1AAA731900441A51 /* LWFImageViewHolder.h */,
+				32D08C8D1AAA731900441A51 /* LWFImageViewHolder.m */,
 				32BEBFB71A42476D000C77AA /* LWFGameController.h */,
 				32BEBFB81A42476D000C77AA /* LWFGameController.m */,
 				A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */,
@@ -901,6 +906,7 @@
 				32F1CDC61A575A2F00A0D9F5 /* LWFInventory.m in Sources */,
 				32FFE8411A2C0BF0003D02A4 /* LWFMelee.m in Sources */,
 				3245279D1A4EF1DB00AFF9A7 /* LWFLifeBar.m in Sources */,
+				32D08C8E1AAA731900441A51 /* LWFImageViewHolder.m in Sources */,
 				A7F5BBA31A16EFBE005BAB63 /* LWFMyScene.m in Sources */,
 				A7D8BEDC1A190A5B005B0599 /* LWFPlayer.m in Sources */,
 				A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */,

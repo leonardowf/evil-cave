@@ -140,5 +140,11 @@
     return nil;
 }
 
+- (UIImage *)getImage {
+    UIImage *itemImage = [UIImage imageNamed:[NSString stringWithFormat:@"item_%@", self.imageName]];
+    
+    return itemImage;
+}
+
 
 @end
