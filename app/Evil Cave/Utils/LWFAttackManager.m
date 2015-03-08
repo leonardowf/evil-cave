@@ -37,14 +37,18 @@
 requestedAttackToTile:(LWFTile *)tile
         withAttack:(LWFAttack *)attack {
     
+    _currentAttackable = attackable;
+    
     _attackQueue = [[LWFAttackQueue alloc]init];
     
     NSArray *creaturesAffected = [attack creaturesInAffectedRangeFromTile:tile];
     
+    if (creaturesAffected == nil || creaturesAffected.count == 0) {
+        [self didShowDamage];
+    }
+    
     for (LWFCreature *creature in creaturesAffected) {
         [_attackQueue queue:attackable attacking:creature];
-        
-        _currentAttackable = attackable;
         
         [creature willBeAttackedByAttackable:attackable withAttack:attack completion:^{
             [_attackQueue attackedAllowedAttack:creature];

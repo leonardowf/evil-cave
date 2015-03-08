@@ -59,10 +59,35 @@ SINGLETON_FOR_CLASS(Inventory)
     if (imageViewHolder != nil) {
         imageViewHolder.item = item;
         UIImage *image = [item getImage];
-        
+
         [imageViewHolder.imageView setImage:image];
     }
     
+}
+
+- (void)addGestureRecognizesToImageView:(UIImageView *)imageView {
+    imageView.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTap:)];
+    [imageView addGestureRecognizer:tapGR];
+}
+
+- (void)didTap:(id)sender {
+    
+    UIImageView *imageView = (UIImageView *)[sender view];
+    LWFImageViewHolder *viewHolder = [self viewHolderForImageView:imageView];
+    
+    NSLog(@"tocou");
+}
+
+- (LWFImageViewHolder *)viewHolderForImageView:(UIImageView *)imageView {
+    for (LWFImageViewHolder *viewHolder in _imageViewHolders) {
+        if (imageView == viewHolder.imageView) {
+            return viewHolder;
+        }
+    }
+    
+    return nil;
 }
 
 - (LWFImageViewHolder *)getImageViewContainer {
@@ -81,6 +106,8 @@ SINGLETON_FOR_CLASS(Inventory)
     for (NSInteger i = 1; i <= 11; i++) {
         NSString *imageViewToGet = [NSString stringWithFormat:@"item%ld", i];
         id imageView = [viewController valueForKey:imageViewToGet];
+        
+        [self addGestureRecognizesToImageView:imageView];
         
         LWFImageViewHolder *imageViewHolder = [[LWFImageViewHolder alloc]init];
         imageViewHolder.imageView = imageView;
