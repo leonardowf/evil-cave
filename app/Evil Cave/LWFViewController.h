@@ -42,6 +42,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *item9;
 @property (weak, nonatomic) IBOutlet UIImageView *item10;
 @property (weak, nonatomic) IBOutlet UIImageView *item11;
+@property (weak, nonatomic) IBOutlet UIImageView *item12;
+@property (weak, nonatomic) IBOutlet UIImageView *item13;
+@property (weak, nonatomic) IBOutlet UIImageView *item14;
+@property (weak, nonatomic) IBOutlet UIImageView *item15;
+
 @property (weak, nonatomic) IBOutlet UILabel *labelGold;
 
 @end

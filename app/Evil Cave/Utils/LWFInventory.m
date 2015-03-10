@@ -103,7 +103,7 @@ SINGLETON_FOR_CLASS(Inventory)
     _viewController = viewController;
     _imageViewHolders = [NSMutableArray array];
     
-    for (NSInteger i = 1; i <= 11; i++) {
+    for (NSInteger i = 1; i <= 15; i++) {
         NSString *imageViewToGet = [NSString stringWithFormat:@"item%ld", i];
         id imageView = [viewController valueForKey:imageViewToGet];
         
