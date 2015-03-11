@@ -34,5 +34,6 @@
 - (NSString *)damageText;
 - (BOOL)isMoney;
 - (SKLabelNode *)getLabel;
+- (UIImage *)getImage;
 
 @end

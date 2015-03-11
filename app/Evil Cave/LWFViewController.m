@@ -10,6 +10,7 @@
 #import "LWFMyScene.h"
 #import "LWFItem.h"
 #import "LWFPlayer.h"
+#import "LWFInventory.h"
 
 @implementation LWFViewController
 
@@ -31,6 +32,11 @@
     
     [self configureEvents];
     
+    LWFInventory *inventory = [LWFInventory sharedInventory];
+    [inventory inject:self];
+    
+    [self.imageViewWeapon.layer setMinificationFilter:kCAFilterTrilinear];
+    [self.imageViewWeapon.layer setMagnificationFilter:kCAFilterTrilinear];
 }
 
 - (void)configureEvents {
@@ -104,6 +110,8 @@
 }
 
 - (IBAction)didTapInventoryButton:(id)sender {
+    LWFInventory *inventory = [LWFInventory sharedInventory];
+    [inventory show];
 }
 
 - (IBAction)didTapSpecialAttack:(id)sender {

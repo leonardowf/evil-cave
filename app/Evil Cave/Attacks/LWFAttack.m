@@ -107,7 +107,7 @@
         if ([_gameController.tileMap isInBoundsTheTileWithX:x andY:y]) {
             possibleTile = [_gameController.tileMap tileForVertical:y andHorizontal:x];
             
-            if ([possibleTile isWalkable]) {
+            if (possibleTile.cellType != CaveCellTypeWall) {
                 [tiles addObject:possibleTile];
             }
         }
