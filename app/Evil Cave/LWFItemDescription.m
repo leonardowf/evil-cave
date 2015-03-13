@@ -68,6 +68,22 @@
     return _intrinsic;
 }
 
+- (void)addToView:(UIView *)view {
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [view addSubview:self];
+    
+    NSLayoutConstraint *c0 = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.containerView attribute:NSLayoutAttributeLeading multiplier:1.0 constant:-60];
+    
+    NSLayoutConstraint *c1 = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.containerView attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:60];
+    
+    NSLayoutConstraint *c2 = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.containerView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0];
+    
+    [view addConstraint:c0];
+    [view addConstraint:c1];
+    [view addConstraint:c2];
+}
+
 
 
 @end

@@ -83,20 +83,10 @@ SINGLETON_FOR_CLASS(Inventory)
     
     
     LWFItemDescription *itemDescription = [[LWFItemDescription alloc]init];
+    [itemDescription addToView:_viewController.view];
     
-    itemDescription.translatesAutoresizingMaskIntoConstraints = NO;
     
-    [_viewController.view addSubview:itemDescription];
-    
-    NSLayoutConstraint *c0 = [NSLayoutConstraint constraintWithItem:_viewController.view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:itemDescription.containerView attribute:NSLayoutAttributeLeading multiplier:1.0 constant:-60];
-    
-    NSLayoutConstraint *c1 = [NSLayoutConstraint constraintWithItem:_viewController.view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:itemDescription.containerView attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:60];
-    
-    NSLayoutConstraint *c2 = [NSLayoutConstraint constraintWithItem:_viewController.view attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:itemDescription.containerView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0];
-    
-    [_viewController.view addConstraint:c0];
-    [_viewController.view addConstraint:c1];
-    [_viewController.view addConstraint:c2];
+
     
 }
 

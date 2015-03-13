@@ -24,5 +24,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewDrop;
 
 - (void)configureTaps;
+- (void)addToView:(UIView *)view;
 
 @end
