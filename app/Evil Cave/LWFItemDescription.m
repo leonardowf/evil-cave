@@ -20,14 +20,9 @@
 {
     self = [super init];
     if (self) {
-        self.labelTitle.text = @"bavsdad";
+        [self configureTaps];
         
         self.bounds = self.containerView.bounds;
-
-        [self setUserInteractionEnabled:YES];
-        [self.imageViewDrop setUserInteractionEnabled:YES];
-        
-        
     }
     return self;
 }

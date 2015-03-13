@@ -98,8 +98,6 @@ SINGLETON_FOR_CLASS(Inventory)
     [_viewController.view addConstraint:c1];
     [_viewController.view addConstraint:c2];
     
-    [itemDescription configureTaps];
-    
 }
 
 - (LWFImageViewHolder *)viewHolderForImageView:(UIImageView *)imageView {
