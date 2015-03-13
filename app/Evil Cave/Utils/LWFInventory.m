@@ -11,6 +11,8 @@
 #import "LWFViewController.h"
 #import "LWFImageViewHolder.h"
 
+#import "LWFItemDescription.h"
+
 @interface LWFInventory () {
     LWFViewController *_viewController;
     NSMutableArray *_imageViewHolders;
@@ -78,6 +80,26 @@ SINGLETON_FOR_CLASS(Inventory)
     LWFImageViewHolder *viewHolder = [self viewHolderForImageView:imageView];
     
     NSLog(@"tocou");
+    
+    
+    LWFItemDescription *itemDescription = [[LWFItemDescription alloc]init];
+    
+    itemDescription.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [_viewController.view addSubview:itemDescription];
+    
+    NSLayoutConstraint *c0 = [NSLayoutConstraint constraintWithItem:_viewController.view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:itemDescription.containerView attribute:NSLayoutAttributeLeading multiplier:1.0 constant:-60];
+    
+    NSLayoutConstraint *c1 = [NSLayoutConstraint constraintWithItem:_viewController.view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:itemDescription.containerView attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:60];
+    
+    NSLayoutConstraint *c2 = [NSLayoutConstraint constraintWithItem:_viewController.view attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:itemDescription.containerView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0];
+    
+    [_viewController.view addConstraint:c0];
+    [_viewController.view addConstraint:c1];
+    [_viewController.view addConstraint:c2];
+    
+    [itemDescription configureTaps];
+    
 }
 
 - (LWFImageViewHolder *)viewHolderForImageView:(UIImageView *)imageView {
