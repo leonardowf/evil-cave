@@ -16,6 +16,8 @@
 @interface LWFInventory () {
     LWFViewController *_viewController;
     NSMutableArray *_imageViewHolders;
+    
+    LWFItemDescription *_itemDescription;
 }
 
 @end
@@ -36,6 +38,11 @@ SINGLETON_FOR_CLASS(Inventory)
 
 - (void)hide {
     _viewController.viewInventoryContainer.alpha = 0.0;
+    
+    if (_itemDescription != nil) {
+        [_itemDescription removeFromSuperview];
+        _itemDescription = nil;
+    }
 }
 
 - (void)show {
@@ -79,15 +86,12 @@ SINGLETON_FOR_CLASS(Inventory)
     UIImageView *imageView = (UIImageView *)[sender view];
     LWFImageViewHolder *viewHolder = [self viewHolderForImageView:imageView];
     
-    NSLog(@"tocou");
+    if (_itemDescription != nil) {
+        [_itemDescription removeFromSuperview];
+    }
     
-    
-    LWFItemDescription *itemDescription = [[LWFItemDescription alloc]init];
-    [itemDescription addToView:_viewController.view];
-    
-    
-
-    
+    _itemDescription = [[LWFItemDescription alloc]init];
+    [_itemDescription addToView:_viewController.view];
 }
 
 - (LWFImageViewHolder *)viewHolderForImageView:(UIImageView *)imageView {
