@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class LWFItem;
 
 @interface LWFItemDescription : UIView
 
@@ -23,7 +24,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewEquip;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewDrop;
 
-- (void)configureTaps;
+- (instancetype)initWithItem:(LWFItem *)item;
 - (void)addToView:(UIView *)view;
+- (void)removeFromSuperview:(BOOL)animated;
 
 @end

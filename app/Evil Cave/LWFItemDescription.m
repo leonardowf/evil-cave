@@ -7,11 +7,17 @@
 //
 
 #import "LWFItemDescription.h"
+#import "LWFItem.h"
 
 @interface LWFItemDescription () {
     CGSize _intrinsic;
 }
 
+@end
+
+@interface LWFItemDescription () {
+    LWFItem *_item;
+}
 @end
 
 @implementation LWFItemDescription
@@ -21,10 +27,36 @@
     self = [super init];
     if (self) {
         [self configureTaps];
+        [self addOutlineToLabel:self.labelTitle];
         
         self.bounds = self.containerView.bounds;
     }
     return self;
+}
+
+- (void)addOutlineToLabel:(UILabel *)label {
+    UIColor *aColor = [UIColor colorWithRed:225.0/255.0 green:225.0/255.0 blue:125/2550 alpha:1];
+    
+    label.layer.shadowColor = [aColor CGColor];
+    label.layer.shadowOffset = CGSizeMake(0.0f, 1.0f);
+    label.layer.shadowOpacity = 1.0f;
+    label.layer.shadowRadius = 1.0f;
+}
+
+- (instancetype)initWithItem:(LWFItem *)item
+{
+    self = [self init];
+    if (self) {
+        _item = item;
+        
+        [self fillLabels];
+    }
+    return self;
+}
+
+- (void)fillLabels {
+    self.labelTitle.text = _item.name;
+    
 }
 
 - (void)didTapImageView:(UITapGestureRecognizer *)recognizer {
@@ -82,7 +114,24 @@
     [view addConstraint:c0];
     [view addConstraint:c1];
     [view addConstraint:c2];
+    
+    CATransition *applicationLoadViewIn =[CATransition animation];
+    [applicationLoadViewIn setDuration:0.3];
+    [applicationLoadViewIn setType:kCATransitionReveal];
+    [applicationLoadViewIn setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]];
+    [[self.containerView layer]addAnimation:applicationLoadViewIn forKey:kCATransitionReveal];
 }
+
+- (void)removeFromSuperview:(BOOL)animated {
+    if (animated) {
+        [UIView animateWithDuration:0.2
+                         animations:^{self.alpha = 0.0;}
+                         completion:^(BOOL finished){ [self removeFromSuperview]; }];
+    } else {
+        [self removeFromSuperview];
+    }
+}
+
 
 
 

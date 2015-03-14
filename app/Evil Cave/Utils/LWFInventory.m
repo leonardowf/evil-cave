@@ -37,12 +37,13 @@
 SINGLETON_FOR_CLASS(Inventory)
 
 - (void)hide {
-    _viewController.viewInventoryContainer.alpha = 0.0;
-    
     if (_itemDescription != nil) {
-        [_itemDescription removeFromSuperview];
+        [_itemDescription removeFromSuperview:YES];
         _itemDescription = nil;
+        return;
     }
+    
+    _viewController.viewInventoryContainer.alpha = 0.0;
 }
 
 - (void)show {
@@ -86,11 +87,17 @@ SINGLETON_FOR_CLASS(Inventory)
     UIImageView *imageView = (UIImageView *)[sender view];
     LWFImageViewHolder *viewHolder = [self viewHolderForImageView:imageView];
     
+    if (viewHolder.item != nil) {
+        [self openItemDescription:viewHolder.item];
+    }
+}
+
+- (void)openItemDescription:(LWFItem *)item {
     if (_itemDescription != nil) {
         [_itemDescription removeFromSuperview];
     }
     
-    _itemDescription = [[LWFItemDescription alloc]init];
+    _itemDescription = [[LWFItemDescription alloc]initWithItem:item];
     [_itemDescription addToView:_viewController.view];
 }
 
