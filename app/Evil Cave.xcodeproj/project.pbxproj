@@ -74,6 +74,17 @@
 		32D50BC71A3D018D002D3098 /* LWFAttacksBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BC61A3D018D002D3098 /* LWFAttacksBuilder.m */; };
 		32D50BCD1A3D227C002D3098 /* LWFRadioactiveRat.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BCC1A3D227C002D3098 /* LWFRadioactiveRat.m */; };
 		32D50BD31A3DFDF3002D3098 /* LWFPointObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */; };
+		32DFD29F1AAFD7E400FB554B /* popup_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD29C1AAFD7E400FB554B /* popup_bg.png */; };
+		32DFD2A01AAFD7E400FB554B /* popup_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD29D1AAFD7E400FB554B /* popup_bg@2x.png */; };
+		32DFD2A11AAFD7E400FB554B /* popup_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD29E1AAFD7E400FB554B /* popup_bg@3x.png */; };
+		32DFD2A81AAFD7FC00FB554B /* button_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD2A21AAFD7FC00FB554B /* button_green.png */; };
+		32DFD2A91AAFD7FC00FB554B /* button_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD2A31AAFD7FC00FB554B /* button_green@2x.png */; };
+		32DFD2AA1AAFD7FC00FB554B /* button_green@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD2A41AAFD7FC00FB554B /* button_green@3x.png */; };
+		32DFD2AB1AAFD7FC00FB554B /* button_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD2A51AAFD7FC00FB554B /* button_red.png */; };
+		32DFD2AC1AAFD7FC00FB554B /* button_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD2A61AAFD7FC00FB554B /* button_red@2x.png */; };
+		32DFD2AD1AAFD7FC00FB554B /* button_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD2A71AAFD7FC00FB554B /* button_red@3x.png */; };
+		32DFD2B01AB1195200FB554B /* ItemDescription.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD2AF1AB1195200FB554B /* ItemDescription.xib */; };
+		32DFD2B31AB1196900FB554B /* LWFItemDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DFD2B21AB1196900FB554B /* LWFItemDescription.m */; };
 		32F09E291A48C947000B8797 /* LWFCombatSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F09E281A48C947000B8797 /* LWFCombatSystem.m */; };
 		32F09E2C1A48E6B4000B8797 /* LWFCombatOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F09E2B1A48E6B4000B8797 /* LWFCombatOutput.m */; };
 		32F09E2F1A48EBB1000B8797 /* LWFEquips.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F09E2E1A48EBB1000B8797 /* LWFEquips.m */; };
@@ -232,6 +243,18 @@
 		32D50BCC1A3D227C002D3098 /* LWFRadioactiveRat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRadioactiveRat.m; sourceTree = "<group>"; };
 		32D50BD11A3DFDF3002D3098 /* LWFPointObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPointObject.h; sourceTree = "<group>"; };
 		32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPointObject.m; sourceTree = "<group>"; };
+		32DFD29C1AAFD7E400FB554B /* popup_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popup_bg.png; sourceTree = "<group>"; };
+		32DFD29D1AAFD7E400FB554B /* popup_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popup_bg@2x.png"; sourceTree = "<group>"; };
+		32DFD29E1AAFD7E400FB554B /* popup_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popup_bg@3x.png"; sourceTree = "<group>"; };
+		32DFD2A21AAFD7FC00FB554B /* button_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_green.png; sourceTree = "<group>"; };
+		32DFD2A31AAFD7FC00FB554B /* button_green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_green@2x.png"; sourceTree = "<group>"; };
+		32DFD2A41AAFD7FC00FB554B /* button_green@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_green@3x.png"; sourceTree = "<group>"; };
+		32DFD2A51AAFD7FC00FB554B /* button_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_red.png; sourceTree = "<group>"; };
+		32DFD2A61AAFD7FC00FB554B /* button_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_red@2x.png"; sourceTree = "<group>"; };
+		32DFD2A71AAFD7FC00FB554B /* button_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_red@3x.png"; sourceTree = "<group>"; };
+		32DFD2AF1AB1195200FB554B /* ItemDescription.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemDescription.xib; sourceTree = "<group>"; };
+		32DFD2B11AB1196900FB554B /* LWFItemDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFItemDescription.h; sourceTree = "<group>"; };
+		32DFD2B21AB1196900FB554B /* LWFItemDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFItemDescription.m; sourceTree = "<group>"; };
 		32EDF5981A7C5FCC0007EA36 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		32F09E271A48C947000B8797 /* LWFCombatSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFCombatSystem.h; sourceTree = "<group>"; };
 		32F09E281A48C947000B8797 /* LWFCombatSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFCombatSystem.m; sourceTree = "<group>"; };
@@ -509,6 +532,16 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		32DFD2AE1AB1193D00FB554B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32DFD2AF1AB1195200FB554B /* ItemDescription.xib */,
+				32DFD2B11AB1196900FB554B /* LWFItemDescription.h */,
+				32DFD2B21AB1196900FB554B /* LWFItemDescription.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		32F1CDC71A575BCB00A0D9F5 /* Items */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,9 +567,18 @@
 			children = (
 				323335F71AA52F730088C4F6 /* item_info.png */,
 				323335F81AA52F730088C4F6 /* item_info@2x.png */,
+				32DFD2A21AAFD7FC00FB554B /* button_green.png */,
+				32DFD2A31AAFD7FC00FB554B /* button_green@2x.png */,
+				32DFD2A41AAFD7FC00FB554B /* button_green@3x.png */,
+				32DFD2A51AAFD7FC00FB554B /* button_red.png */,
+				32DFD2A61AAFD7FC00FB554B /* button_red@2x.png */,
+				32DFD2A71AAFD7FC00FB554B /* button_red@3x.png */,
 				323335F91AA52F730088C4F6 /* item_info@3x.png */,
 				32FB7DA01AA0004B00AA4C7F /* bg.png */,
 				32FB7DA11AA0004B00AA4C7F /* bg@2x.png */,
+				32DFD29C1AAFD7E400FB554B /* popup_bg.png */,
+				32DFD29D1AAFD7E400FB554B /* popup_bg@2x.png */,
+				32DFD29E1AAFD7E400FB554B /* popup_bg@3x.png */,
 				32FB7DA21AA0004B00AA4C7F /* bg@3x.png */,
 				32FB7DA31AA0004B00AA4C7F /* hero_portrait.png */,
 				32FB7DA41AA0004B00AA4C7F /* hero_portrait@2x.png */,
@@ -677,6 +719,7 @@
 		A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */ = {
 			isa = PBXGroup;
 			children = (
+				32DFD2AE1AB1193D00FB554B /* Views */,
 				32F1CDC71A575BCB00A0D9F5 /* Items */,
 				32D50BC81A3D1FE9002D3098 /* Assets */,
 				32C511F01A37A5BD00F0B955 /* Geometry */,
@@ -834,25 +877,31 @@
 				323335FA1AA52F730088C4F6 /* item_info.png in Resources */,
 				326524EB1A7448AB00EEA4B2 /* item_prototypes.json in Resources */,
 				3206A3DD1A7D9B6200D08893 /* item_preview_bottom.png in Resources */,
+				32DFD2A91AAFD7FC00FB554B /* button_green@2x.png in Resources */,
 				3245278F1A4DCC1700AFF9A7 /* radioactive_rat_standing_right.atlas in Resources */,
 				3245278D1A4DCC0E00AFF9A7 /* radioactive_rat_standing_left.atlas in Resources */,
 				3245278B1A4DCBFB00AFF9A7 /* warrior_attacking_left.atlas in Resources */,
 				32F09E311A48F4FA000B8797 /* Munro.ttf in Resources */,
 				32BEC0141A48A7C4000C77AA /* creature_stats.json in Resources */,
+				32DFD2A11AAFD7E400FB554B /* popup_bg@3x.png in Resources */,
+				32DFD2B01AB1195200FB554B /* ItemDescription.xib in Resources */,
 				32FB7DB01AA0004B00AA4C7F /* hero_portrait.png in Resources */,
 				3245279A1A4EEF5500AFF9A7 /* creature_lifebar.png in Resources */,
 				32FB7DB21AA0004B00AA4C7F /* hero_portrait@3x.png in Resources */,
 				32FB7DB61AA0004B00AA4C7F /* thumb@3x.png in Resources */,
 				32BEC0121A472DA8000C77AA /* radioactive_rat_standing_right.png in Resources */,
 				32ACD05F1A7B062600970F69 /* item_motherfucking_sword.png in Resources */,
+				32DFD29F1AAFD7E400FB554B /* popup_bg.png in Resources */,
 				326524EF1A75406B00EEA4B2 /* item_fine_sword.png in Resources */,
 				32B5AAE71A87FCD900E6523A /* item_gold.png in Resources */,
 				324527891A4DB60800AFF9A7 /* warrior_standing_right.atlas in Resources */,
 				322765AB1A7EF5C400C0D0DD /* inventory_icon@2x.png in Resources */,
+				32DFD2AA1AAFD7FC00FB554B /* button_green@3x.png in Resources */,
 				32FB7DAF1AA0004B00AA4C7F /* bg@3x.png in Resources */,
 				32BEC0051A470F5F000C77AA /* warrior_walking_right.atlas in Resources */,
 				32FB7DB91AA0004B00AA4C7F /* thumb_money@3x.png in Resources */,
 				323335FB1AA52F730088C4F6 /* item_info@2x.png in Resources */,
+				32DFD2AB1AAFD7FC00FB554B /* button_red.png in Resources */,
 				32FB7DB81AA0004B00AA4C7F /* thumb_money@2x.png in Resources */,
 				32FB7DB71AA0004B00AA4C7F /* thumb_money.png in Resources */,
 				321A60631A635DA50060517E /* blood.atlas in Resources */,
@@ -862,10 +911,13 @@
 				32BEBFEF1A470AAB000C77AA /* rock_tile.png in Resources */,
 				32BEC0101A4714DC000C77AA /* rat_standing_right.png in Resources */,
 				32FB7DB41AA0004B00AA4C7F /* thumb.png in Resources */,
+				32DFD2AC1AAFD7FC00FB554B /* button_red@2x.png in Resources */,
 				32B5AADF1A87F66D00E6523A /* item_gold.atlas in Resources */,
 				322765AA1A7EF5C400C0D0DD /* inventory_icon.png in Resources */,
 				3254E6D71A5CB49400BD7D13 /* door.png in Resources */,
+				32DFD2AD1AAFD7FC00FB554B /* button_red@3x.png in Resources */,
 				321A60601A6354DF0060517E /* door_open.png in Resources */,
+				32DFD2A81AAFD7FC00FB554B /* button_green.png in Resources */,
 				32BEC0071A470FFD000C77AA /* warrior_walking_left.atlas in Resources */,
 				32BEC00E1A4714DC000C77AA /* rat_standing_left.png in Resources */,
 				32FB7DB11AA0004B00AA4C7F /* hero_portrait@2x.png in Resources */,
@@ -873,6 +925,7 @@
 				324527851A4DB5E600AFF9A7 /* warrior_walking_left.atlas in Resources */,
 				324527871A4DB5F400AFF9A7 /* warrior_standing_left.atlas in Resources */,
 				324527941A4DEEF100AFF9A7 /* rat_dying_right.atlas in Resources */,
+				32DFD2A01AAFD7E400FB554B /* popup_bg@2x.png in Resources */,
 				323D10931A9C0CB6000AB32D /* fog_overlay.png in Resources */,
 				32B5AAD91A878A1B00E6523A /* warrior_standing_left.png in Resources */,
 				32F1CDCC1A57603800A0D9F5 /* wall.png in Resources */,
@@ -920,6 +973,7 @@
 				A78443A91A1EB2220029995D /* LWFCreature.m in Sources */,
 				32CD39D61A22CBCC000ADD95 /* LWFGoblin.m in Sources */,
 				326524F31A75550600EEA4B2 /* LWFLootChanceFactory.m in Sources */,
+				32DFD2B31AB1196900FB554B /* LWFItemDescription.m in Sources */,
 				322DB6AE1A229E320085AC68 /* LWFRat.m in Sources */,
 				A703875C1A17BD5E0053A9E6 /* LWFTile.m in Sources */,
 				32F09E2F1A48EBB1000B8797 /* LWFEquips.m in Sources */,
