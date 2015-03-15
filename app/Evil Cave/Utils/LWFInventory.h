@@ -28,5 +28,7 @@
 
 - (void)inject:(LWFViewController *)viewController;
 - (BOOL)isOpen;
+- (void)equip:(LWFItem *)item;
+- (void)drop:(LWFItem *)item;
 
 @end

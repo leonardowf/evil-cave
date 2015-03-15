@@ -7,7 +7,9 @@
 //
 
 #import "LWFItemDescription.h"
+
 #import "LWFItem.h"
+#import "LWFInventory.h"
 
 @interface LWFItemDescription () {
     CGSize _intrinsic;
@@ -17,6 +19,7 @@
 
 @interface LWFItemDescription () {
     LWFItem *_item;
+    LWFInventory *_inventory;
 }
 @end
 
@@ -26,10 +29,19 @@
 {
     self = [super init];
     if (self) {
-        [self configureTaps];
         [self addOutlineToLabel:self.labelTitle];
+    }
+    return self;
+}
+
+- (instancetype)initWithItem:(LWFItem *)item andInventory:(LWFInventory *)inventory
+{
+    self = [self init];
+    if (self) {
+        _item = item;
+        _inventory = inventory;
         
-        self.bounds = self.containerView.bounds;
+        [self fillLabels];
     }
     return self;
 }
@@ -43,35 +55,10 @@
     label.layer.shadowRadius = 1.0f;
 }
 
-- (instancetype)initWithItem:(LWFItem *)item
-{
-    self = [self init];
-    if (self) {
-        _item = item;
-        
-        [self fillLabels];
-    }
-    return self;
-}
-
 - (void)fillLabels {
     self.labelTitle.text = _item.name;
     
 }
-
-- (void)didTapImageView:(UITapGestureRecognizer *)recognizer {
-    NSLog(@"porque não pega?");
-}
-
-- (void)configureTaps {
-    UITapGestureRecognizer *tapRec = [[UITapGestureRecognizer alloc]initWithTarget:self
-                                                                            action:@selector(didTapImageView:)];
-    UITapGestureRecognizer *tapRec2 = [[UITapGestureRecognizer alloc]initWithTarget:self
-                                                                            action:@selector(didTapImageView:)];
-    [self.imageViewDrop addGestureRecognizer:tapRec];
-    [self.imageViewEquip addGestureRecognizer:tapRec2];
-}
-
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
@@ -79,7 +66,7 @@
     if (self) {
         [[NSBundle mainBundle] loadNibNamed: @"ItemDescription" owner:self options:nil];
         self.bounds = self.containerView.bounds;
-        [self addSubview:self.containerView];
+        [self addSubview:self.view];
         _intrinsic = self.view.bounds.size;
     }
     return self;
@@ -90,7 +77,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         [[NSBundle mainBundle] loadNibNamed: @"ItemDescription" owner:self options:nil];
-        [self addSubview:self.containerView];
+        [self addSubview:self.view];
         _intrinsic = self.view.bounds.size;
     }
     return self;
@@ -103,7 +90,7 @@
 - (void)addToView:(UIView *)view {
     self.translatesAutoresizingMaskIntoConstraints = NO;
     
-    [view addSubview:self];
+    [view addSubview:self.containerView];
     
     NSLayoutConstraint *c0 = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.containerView attribute:NSLayoutAttributeLeading multiplier:1.0 constant:-60];
     
@@ -124,15 +111,24 @@
 
 - (void)removeFromSuperview:(BOOL)animated {
     if (animated) {
-        [UIView animateWithDuration:0.2
+        [UIView animateWithDuration:0.4
                          animations:^{self.alpha = 0.0;}
-                         completion:^(BOOL finished){ [self removeFromSuperview]; }];
+                         completion:^(BOOL finished){ [self.containerView removeFromSuperview]; }];
     } else {
-        [self removeFromSuperview];
+        [self.containerView removeFromSuperview];
     }
 }
 
+- (IBAction)didTapEquip:(id)sender {
+    [self removeFromSuperview:YES];
+    
+    [_inventory equip:_item];
+}
 
-
+- (IBAction)didTapDrop:(id)sender {
+    [self removeFromSuperview:sender];
+    
+    [_inventory drop:_item];
+}
 
 @end

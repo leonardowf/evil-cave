@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-@class LWFItem;
 
-@interface LWFItemDescription : UIView
+@class LWFItem;
+@class LWFInventory;
+
+@interface LWFItemDescription : UIView <UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *view;
 
@@ -21,10 +23,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelMaxDamage;
 @property (weak, nonatomic) IBOutlet UILabel *labelStrength;
 @property (weak, nonatomic) IBOutlet UILabel *labelHp;
-@property (weak, nonatomic) IBOutlet UIImageView *imageViewEquip;
-@property (weak, nonatomic) IBOutlet UIImageView *imageViewDrop;
 
-- (instancetype)initWithItem:(LWFItem *)item;
+- (instancetype)initWithItem:(LWFItem *)item andInventory:(LWFInventory *)inventory;
 - (void)addToView:(UIView *)view;
 - (void)removeFromSuperview:(BOOL)animated;
 
