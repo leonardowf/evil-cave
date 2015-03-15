@@ -58,6 +58,30 @@
 - (void)fillLabels {
     self.labelTitle.text = _item.name;
     
+    [self fillForNumber:_item.strength label:self.labelStrength andPrefix:@"Strength"];
+    [self fillForNumber:_item.lowdamage label:self.labelMinDamage andPrefix:@"Minimum Damage"];
+    [self fillForNumber:_item.highdamage label:self.labelMaxDamage andPrefix:@"Maximum Damage"];
+    [self fillForNumber:_item.HP label:self.labelHp andPrefix:@"HP"];
+}
+
+- (void)fillForNumber:(NSNumber *)number label:(UILabel *)label andPrefix:(NSString *)prefix {
+    if (number != nil && [number integerValue] != 0) {
+        label.text = [NSString stringWithFormat:@"%@: %@", prefix, [number stringValue]];
+    } else {
+        [self hideLabel:label];
+    }
+}
+
+- (void)hideLabel:(UILabel *)label {
+    label.text = @"";
+    
+    for (NSLayoutConstraint *con in self.containerView.constraints) {
+        if (con.firstItem == label && con.firstAttribute == NSLayoutAttributeTop) {
+            con.constant = 0.0;
+            return;
+        }
+
+    }
 }
 
 - (instancetype)initWithCoder:(NSCoder *)coder
@@ -127,7 +151,6 @@
 
 - (IBAction)didTapDrop:(id)sender {
     [self removeFromSuperview:sender];
-    
     [_inventory drop:_item];
 }
 

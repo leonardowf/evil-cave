@@ -10,8 +10,8 @@
 #import "LWFItem.h"
 #import "LWFViewController.h"
 #import "LWFImageViewHolder.h"
-
 #import "LWFItemDescription.h"
+#import "LWFPlayer.h"
 
 @interface LWFInventory () {
     LWFViewController *_viewController;
@@ -110,6 +110,16 @@ SINGLETON_FOR_CLASS(Inventory)
     return nil;
 }
 
+- (LWFImageViewHolder *)viewHolderForItem:(LWFItem *)item {
+    for (LWFImageViewHolder *viewHolder in _imageViewHolders) {
+        if (item == viewHolder.item) {
+            return viewHolder;
+        }
+    }
+    
+    return nil;
+}
+
 - (LWFImageViewHolder *)getImageViewContainer {
     for (LWFImageViewHolder *imageViewHolder in _imageViewHolders) {
         if (imageViewHolder.item == nil) {
@@ -144,6 +154,15 @@ SINGLETON_FOR_CLASS(Inventory)
 }
 
 - (void)drop:(LWFItem *)item {
+    self.player = [LWFPlayer sharedPlayer];
+    
+    [self.player.currentTile addChild:item];
+    [self.player.currentTile steppedOnTile:self.player];
+    [_items removeObject:item];
+    
+    LWFImageViewHolder *viewHolder = [self viewHolderForItem:item];
+    viewHolder.item = nil;
+    viewHolder.imageView.image = nil;
     
 }
 
