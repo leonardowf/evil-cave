@@ -12,6 +12,7 @@
 #import "LWFImageViewHolder.h"
 #import "LWFItemDescription.h"
 #import "LWFPlayer.h"
+#import "LWFEquips.h"
 
 @interface LWFInventory () {
     LWFViewController *_viewController;
@@ -29,14 +30,14 @@
     if (self) {
         self.money = 0;
         self.items = [NSMutableArray array];
-
+        self.equips = [[LWFEquips alloc]init];
     }
     return self;
 }
 
 SINGLETON_FOR_CLASS(Inventory)
 
-- (void)hide {
+- (void)hide {    
     if (_itemDescription != nil) {
         [_itemDescription removeFromSuperview:YES];
         _itemDescription = nil;
@@ -143,6 +144,24 @@ SINGLETON_FOR_CLASS(Inventory)
         imageViewHolder.imageView = imageView;
         [_imageViewHolders addObject:imageViewHolder];
     }
+    
+    
+}
+
+- (void)didTapWeapon {
+    
+}
+
+- (void)didTapArmor {
+    
+}
+
+- (void)didTapBoots {
+    
+}
+
+- (void)didTapAccessory {
+    
 }
 
 - (BOOL)isOpen {
@@ -150,10 +169,20 @@ SINGLETON_FOR_CLASS(Inventory)
 }
 
 - (void)equip:(LWFItem *)item {
+    LWFItem *replaced = [self.equips equip:item];
     
+    LWFImageViewHolder *viewHolder = [self viewHolderForItem:item];
+    
+    if ([item isWeapon]) {
+        _viewController.imageViewWeapon.image = [item getImage];
+    }
+    
+    viewHolder.item = replaced;
+    viewHolder.imageView.image = [replaced getImage];
 }
 
 - (void)drop:(LWFItem *)item {
+    _itemDescription = nil;
     self.player = [LWFPlayer sharedPlayer];
     
     [self.player.currentTile addChild:item];
@@ -164,6 +193,8 @@ SINGLETON_FOR_CLASS(Inventory)
     viewHolder.item = nil;
     viewHolder.imageView.image = nil;
     
+    [self hide];
+
 }
 
 

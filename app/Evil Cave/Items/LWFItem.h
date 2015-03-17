@@ -36,4 +36,9 @@
 - (SKLabelNode *)getLabel;
 - (UIImage *)getImage;
 
+- (BOOL)isWeapon;
+- (BOOL)isArmor;
+- (BOOL)isAccessory;
+- (BOOL)isBoots;
+
 @end

@@ -7,7 +7,28 @@
 //
 
 #import "LWFEquips.h"
+#import "LWFItem.h"
 
 @implementation LWFEquips
+
+- (LWFItem *)equip:(LWFItem *)item {
+    LWFItem *replacedItem;
+    
+    if ([item isWeapon]) {
+        replacedItem = self.weapon;
+        self.weapon = item;
+        return replacedItem;
+    }
+    
+    return nil;
+}
+
+- (LWFItemComparison *)compareToRespectiveEquipped:(LWFItem *)item {
+    return nil;
+}
+
+- (LWFItemComparison *)compare:(LWFItem *)itemSrc toItem:(LWFItem *)itemDest {
+    return nil;
+}
 
 @end

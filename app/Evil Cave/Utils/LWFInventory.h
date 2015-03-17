@@ -11,12 +11,14 @@
 @class LWFPlayer;
 @class LWFItem;
 @class LWFViewController;
+@class LWFEquips;
 
 @interface LWFInventory : SKSpriteNode
 
 @property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic, strong) LWFPlayer *player;
 @property (nonatomic) NSInteger money;
+@property (nonatomic, strong) LWFEquips *equips;
 
 + (id)sharedInventory;
 

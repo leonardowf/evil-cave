@@ -146,5 +146,21 @@
     return itemImage;
 }
 
+- (BOOL)isWeapon {
+    return [self.category isEqualToString:@"weapon"];
+}
+
+- (BOOL)isArmor {
+    return [self.category isEqualToString:@"armor"];
+}
+
+- (BOOL)isAccessory {
+     return [self.category isEqualToString:@"accessory"];
+}
+
+- (BOOL)isBoots {
+     return [self.category isEqualToString:@"boots"];
+}
+
 
 @end

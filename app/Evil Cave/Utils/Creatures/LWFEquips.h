@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+@class LWFItem;
+@class LWFItemComparison;
 
 @interface LWFEquips : NSObject
+
+@property (nonatomic, strong) LWFItem *weapon;
+@property (nonatomic, strong) LWFItem *armor;
+@property (nonatomic, strong) LWFItem *boots;
+@property (nonatomic, strong) LWFItem *accessory;
+
+- (LWFItem *)equip:(LWFItem *)item;
+- (LWFItemComparison *)compareToRespectiveEquipped:(LWFItem *)item;
+- (LWFItemComparison *)compare:(LWFItem *)itemSrc toItem:(LWFItem *)itemDest;
 
 @end
