@@ -146,22 +146,46 @@ SINGLETON_FOR_CLASS(Inventory)
     }
     
     
+    UITapGestureRecognizer *tapArmor = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapArmor)];
+    UITapGestureRecognizer *tapBoots = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapBoots)];
+    UITapGestureRecognizer *tapAccessory = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapAccessory)];
+    UITapGestureRecognizer *tapWeapon = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapWeapon)];
+    
+    [viewController.imageViewWeapon setUserInteractionEnabled:YES];
+    [viewController.imageViewWeapon addGestureRecognizer:tapWeapon];
+    
+    [viewController.imageViewArmor setUserInteractionEnabled:YES];
+    [viewController.imageViewArmor addGestureRecognizer:tapArmor];
+    
+    [viewController.imageViewBoots setUserInteractionEnabled:YES];
+    [viewController.imageViewBoots addGestureRecognizer:tapBoots];
+    
+    [viewController.imageViewAccessory setUserInteractionEnabled:YES];
+    [viewController.imageViewAccessory addGestureRecognizer:tapAccessory];
 }
 
 - (void)didTapWeapon {
-    
+    if (self.equips.weapon != nil) {
+        [self openItemDescription:self.equips.weapon];
+    }
 }
 
 - (void)didTapArmor {
-    
+    if (self.equips.armor != nil) {
+        [self openItemDescription:self.equips.armor];
+    }
 }
 
 - (void)didTapBoots {
-    
+    if (self.equips.boots != nil) {
+        [self openItemDescription:self.equips.boots];
+    }
 }
 
 - (void)didTapAccessory {
-    
+    if (self.equips.accessory != nil) {
+        [self openItemDescription:self.equips.accessory];
+    }
 }
 
 - (BOOL)isOpen {
@@ -169,6 +193,12 @@ SINGLETON_FOR_CLASS(Inventory)
 }
 
 - (void)equip:(LWFItem *)item {
+    // Verifica se está tentando equipar um item que não está no inventário
+    // for some reason...
+    if (![_items containsObject:item]) {
+        return;
+    }
+    
     LWFItem *replaced = [self.equips equip:item];
     
     LWFImageViewHolder *viewHolder = [self viewHolderForItem:item];
@@ -179,22 +209,71 @@ SINGLETON_FOR_CLASS(Inventory)
     
     viewHolder.item = replaced;
     viewHolder.imageView.image = [replaced getImage];
+    
+    [_items removeObject:item];
+    
+    if (replaced != nil) {
+        [_items addObject:replaced];        
+    }
+
 }
 
 - (void)drop:(LWFItem *)item {
     _itemDescription = nil;
-    self.player = [LWFPlayer sharedPlayer];
     
-    [self.player.currentTile addChild:item];
-    [self.player.currentTile steppedOnTile:self.player];
+    if ([_items containsObject:item]) {
+        [self dropStoredItem:item];
+    } else {
+        [self dropEquippedItem:item];
+    }
+    
+    _itemDescription = nil;
+    
+    [self hide];
+    [self dropOnGround:item];
+
+}
+
+- (void)dropStoredItem:(LWFItem *)item {
     [_items removeObject:item];
     
     LWFImageViewHolder *viewHolder = [self viewHolderForItem:item];
     viewHolder.item = nil;
     viewHolder.imageView.image = nil;
     
-    [self hide];
+}
 
+- (void)dropEquippedItem:(LWFItem *)item {
+    if (self.equips.weapon == item) {
+        self.equips.weapon = nil;
+        _viewController.imageViewWeapon.image = nil;
+        return;
+    }
+    
+    if (self.equips.armor == item) {
+        self.equips.armor = nil;
+        _viewController.imageViewArmor.image = nil;
+        return;
+    }
+    
+    if (self.equips.boots == item) {
+        self.equips.boots = nil;
+        _viewController.imageViewBoots.image = nil;
+        return;
+    }
+    
+    if (self.equips.accessory == item) {
+        self.equips.accessory = nil;
+        _viewController.imageViewAccessory.image = nil;
+        return;
+    }
+}
+
+- (void)dropOnGround:(LWFItem *)item {
+    self.player = [LWFPlayer sharedPlayer];
+    
+    [self.player.currentTile addChild:item];
+    [self.player.currentTile steppedOnTile:self.player];
 }
 
 

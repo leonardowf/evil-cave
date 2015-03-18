@@ -20,6 +20,24 @@
         return replacedItem;
     }
     
+    if ([item isArmor]) {
+        replacedItem = self.armor;
+        self.armor = item;
+        return replacedItem;
+    }
+    
+    if ([item isBoots]) {
+        replacedItem = self.boots;
+        self.boots = item;
+        return replacedItem;
+    }
+    
+    if ([item isAccessory]) {
+        replacedItem = self.accessory;
+        self.accessory = item;
+        return replacedItem;
+    }
+    
     return nil;
 }
 
