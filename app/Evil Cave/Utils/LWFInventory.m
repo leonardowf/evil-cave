@@ -97,7 +97,9 @@ SINGLETON_FOR_CLASS(Inventory)
         [_itemDescription removeFromSuperview:true];
     }
     
-    _itemDescription = [[LWFItemDescription alloc]initWithItem:item andInventory:self];
+    LWFItemComparison *comparison = [self.equips compareToRespectiveEquipped:item];
+    
+    _itemDescription = [[LWFItemDescription alloc]initWithItem:item itemComparison:comparison andInventory:self];
     [_itemDescription addToView:_viewController.view];
 }
 

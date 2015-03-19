@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+@class LWFItem;
 
 @interface LWFItemComparison : NSObject
+
+@property NSInteger strength;
+@property NSInteger hp;
+@property NSInteger minimumDamage;
+@property NSInteger maximumDamage;
+
+
++ (LWFItemComparison *)compare:(LWFItem *)item1 withItem:(LWFItem *)item2;
 
 @end

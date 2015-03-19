@@ -10,6 +10,7 @@
 
 @class LWFItem;
 @class LWFInventory;
+@class LWFItemComparison;
 
 @interface LWFItemDescription : UIView <UIGestureRecognizerDelegate>
 
@@ -24,7 +25,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelStrength;
 @property (weak, nonatomic) IBOutlet UILabel *labelHp;
 
-- (instancetype)initWithItem:(LWFItem *)item andInventory:(LWFInventory *)inventory;
+- (instancetype)initWithItem:(LWFItem *)item
+              itemComparison:(LWFItemComparison *)itemComparison
+                andInventory:(LWFInventory *)inventory;
+
 - (void)addToView:(UIView *)view;
 - (void)removeFromSuperview:(BOOL)animated;
 

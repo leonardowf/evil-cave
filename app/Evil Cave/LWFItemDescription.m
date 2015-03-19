@@ -10,6 +10,7 @@
 
 #import "LWFItem.h"
 #import "LWFInventory.h"
+#import "LWFItemComparison.h"
 
 @interface LWFItemDescription () {
     CGSize _intrinsic;
@@ -20,6 +21,7 @@
 @interface LWFItemDescription () {
     LWFItem *_item;
     LWFInventory *_inventory;
+    LWFItemComparison *_itemComparison;
 }
 @end
 
@@ -34,14 +36,19 @@
     return self;
 }
 
-- (instancetype)initWithItem:(LWFItem *)item andInventory:(LWFInventory *)inventory
+- (instancetype)initWithItem:(LWFItem *)item
+              itemComparison:(LWFItemComparison *)itemComparison
+                andInventory:(LWFInventory *)inventory
 {
     self = [self init];
     if (self) {
         _item = item;
         _inventory = inventory;
+        _itemComparison = itemComparison;
         
         [self fillLabels];
+
+        
     }
     return self;
 }
@@ -58,18 +65,46 @@
 - (void)fillLabels {
     self.labelTitle.text = _item.name;
     
-    [self fillForNumber:_item.strength label:self.labelStrength andPrefix:@"Strength"];
-    [self fillForNumber:_item.lowdamage label:self.labelMinDamage andPrefix:@"Minimum Damage"];
-    [self fillForNumber:_item.highdamage label:self.labelMaxDamage andPrefix:@"Maximum Damage"];
-    [self fillForNumber:_item.HP label:self.labelHp andPrefix:@"HP"];
+    [self fillForNumber:_item.strength label:self.labelStrength comparison:_itemComparison.strength andPrefix:@"Strength"];
+    [self fillForNumber:_item.lowdamage label:self.labelMinDamage comparison:_itemComparison.minimumDamage andPrefix:@"Min Damage"];
+    [self fillForNumber:_item.highdamage label:self.labelMaxDamage comparison:_itemComparison.maximumDamage andPrefix:@"Max Damage"];
+    [self fillForNumber:_item.HP label:self.labelHp comparison:_itemComparison.hp andPrefix:@"HP"];
 }
 
-- (void)fillForNumber:(NSNumber *)number label:(UILabel *)label andPrefix:(NSString *)prefix {
+- (void)fillForNumber:(NSNumber *)number label:(UILabel *)label comparison:(NSInteger)comparison andPrefix:(NSString *)prefix {
     if (number != nil && [number integerValue] != 0) {
-        label.text = [NSString stringWithFormat:@"%@: %@", prefix, [number stringValue]];
+        if (comparison != 0) {
+            
+            NSAttributedString *atrString = [self buildString:comparison prefix:prefix number:number];
+            label.attributedText = atrString;
+            
+        } else {
+            label.text = [NSString stringWithFormat:@"%@: %@", prefix, [number stringValue]];
+        }
     } else {
-        [self hideLabel:label];
+        if (comparison == 0) {
+            [self hideLabel:label];
+        } else {
+            NSAttributedString *atrString = [self buildString:comparison prefix:prefix number:@(0)];
+            label.attributedText = atrString;
+        }
     }
+}
+
+- (NSAttributedString *)buildString:(NSInteger)comparison prefix:(NSString *)prefix number:(NSNumber *)number {
+    NSString *numberStr = comparison < 0 ? [@(comparison) stringValue] : [NSString stringWithFormat:@"+%ld", comparison];
+    NSString *comparisonResultString = [NSString stringWithFormat:@" (%@)", numberStr];
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc]initWithString:comparisonResultString];
+    
+    UIColor *color = comparison > 0 ? [UIColor greenColor] : [UIColor redColor];
+    
+    [attrString addAttribute:NSForegroundColorAttributeName value:color range:NSMakeRange(0, attrString.length)];
+    
+    NSString *normalString = [NSString stringWithFormat:@"%@: %@", prefix, [number stringValue]];
+    NSMutableAttributedString *concatenated = [[NSMutableAttributedString alloc]initWithString:normalString];
+    [concatenated appendAttributedString:attrString];
+    
+    return concatenated;
 }
 
 - (void)hideLabel:(UILabel *)label {
@@ -150,7 +185,7 @@
 }
 
 - (IBAction)didTapDrop:(id)sender {
-    [self removeFromSuperview:sender];
+    [self removeFromSuperview:true];
     [_inventory drop:_item];
 }
 

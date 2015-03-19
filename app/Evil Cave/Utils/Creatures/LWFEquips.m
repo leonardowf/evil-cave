@@ -8,6 +8,7 @@
 
 #import "LWFEquips.h"
 #import "LWFItem.h"
+#import "LWFItemComparison.h"
 
 @implementation LWFEquips
 
@@ -42,11 +43,19 @@
 }
 
 - (LWFItemComparison *)compareToRespectiveEquipped:(LWFItem *)item {
-    return nil;
+    LWFItem *itemToCompare = nil;
+    
+    if (item.isWeapon) {
+        itemToCompare = self.weapon;
+    }
+    
+    // ....
+    
+    return [LWFItemComparison compare:item withItem:itemToCompare];
 }
 
 - (LWFItemComparison *)compare:(LWFItem *)itemSrc toItem:(LWFItem *)itemDest {
-    return nil;
+    return [LWFItemComparison compare:itemSrc withItem:itemDest];
 }
 
 @end
