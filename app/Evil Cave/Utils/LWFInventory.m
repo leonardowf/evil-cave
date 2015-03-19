@@ -73,7 +73,6 @@ SINGLETON_FOR_CLASS(Inventory)
 
         [imageViewHolder.imageView setImage:image];
     }
-    
 }
 
 - (void)addGestureRecognizesToImageView:(UIImageView *)imageView {
@@ -212,7 +211,16 @@ SINGLETON_FOR_CLASS(Inventory)
     viewHolder.item = replaced;
     viewHolder.imageView.image = [replaced getImage];
     
-    [_items removeObject:item];
+    NSMutableArray *wtf = [NSMutableArray array];
+    
+    NSArray *items = _items;
+    for (LWFItem *aItem in items) {
+        if (aItem != item) {
+            [wtf addObject:aItem];
+        }
+    }
+    
+    _items = wtf;
     
     if (replaced != nil) {
         [_items addObject:replaced];        
@@ -237,7 +245,16 @@ SINGLETON_FOR_CLASS(Inventory)
 }
 
 - (void)dropStoredItem:(LWFItem *)item {
-    [_items removeObject:item];
+    NSMutableArray *wtf = [NSMutableArray array];
+    
+    NSArray *items = _items;
+    for (LWFItem *aItem in items) {
+        if (aItem != item) {
+            [wtf addObject:aItem];
+        }
+    }
+    
+    _items = wtf;
     
     LWFImageViewHolder *viewHolder = [self viewHolderForItem:item];
     viewHolder.item = nil;
