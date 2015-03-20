@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LWFLifeBar"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="454" height="136"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4c-KW-wcY" userLabel="Container View">
+                    <rect key="frame" x="0.0" y="0.0" width="454" height="136"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="34u-gj-f81">
+                            <rect key="frame" x="116" y="47" width="323" height="32"/>
+                            <color key="backgroundColor" red="1" green="0.84313725490000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="portrait@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="YWj-kN-Sfv">
+                            <rect key="frame" x="0.0" y="0.0" width="454" height="136"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="YWj-kN-Sfv" secondAttribute="trailing" id="7kx-TG-1gL"/>
+                        <constraint firstAttribute="bottom" secondItem="YWj-kN-Sfv" secondAttribute="bottom" id="Rsq-ug-2QE"/>
+                        <constraint firstItem="YWj-kN-Sfv" firstAttribute="top" secondItem="u4c-KW-wcY" secondAttribute="top" id="ft0-F6-f46"/>
+                        <constraint firstItem="YWj-kN-Sfv" firstAttribute="leading" secondItem="u4c-KW-wcY" secondAttribute="leading" id="nlN-io-hFE"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="u4c-KW-wcY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JpK-9h-6ca"/>
+                <constraint firstAttribute="trailing" secondItem="u4c-KW-wcY" secondAttribute="trailing" id="Kew-MQ-8JB"/>
+                <constraint firstItem="u4c-KW-wcY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="PgL-p2-uEP"/>
+                <constraint firstAttribute="bottom" secondItem="u4c-KW-wcY" secondAttribute="bottom" id="k5n-kK-JWH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="191" y="-78"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="portrait@3x.png" width="542" height="168"/>
+    </resources>
+</document>
