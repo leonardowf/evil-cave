@@ -15,6 +15,7 @@
 #import "LWFSpinningAttack.h"
 #import "LWFAttackManager.h"
 #import "LWFShadowCasting.h"
+#import "LWFHudLifebar.h"
 
 @implementation LWFPlayer
 
@@ -206,7 +207,7 @@ SINGLETON_FOR_CLASS(Player)
     [self.attackManager attackable:self requestedAttackToTile:self.currentTile withAttack:spinningAttack];
 }
 
-
-
-
+- (id<LWFLifeDisplayer>)getLifeBar {
+    return [LWFHudLifebar sharedHudLifeBar];
+}
 @end

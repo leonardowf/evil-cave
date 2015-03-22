@@ -52,6 +52,8 @@
     return self;
 }
 
+
+
 - (void)draw {
     if (self.stats.currentHP < self.stats.maxHP) {
         [_fillRightCorner setAlpha:0.0];

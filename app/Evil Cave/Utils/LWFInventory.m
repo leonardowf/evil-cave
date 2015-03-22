@@ -48,6 +48,7 @@ SINGLETON_FOR_CLASS(Inventory)
 }
 
 - (void)show {
+    [_viewController.view bringSubviewToFront:_viewController.viewInventoryContainer];
     _viewController.viewInventoryContainer.alpha = 1.0;
     
     _viewController.labelGold.text = [NSString stringWithFormat:@"%ld", (long)self.money];
@@ -88,6 +89,8 @@ SINGLETON_FOR_CLASS(Inventory)
     
     if (viewHolder.item != nil) {
         [self openItemDescription:viewHolder.item];
+    } else {
+        [self hide];
     }
 }
 

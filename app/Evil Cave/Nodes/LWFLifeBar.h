@@ -7,10 +7,11 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "LWFLifeDisplayer.h"
 
 @class LWFStats;
 
-@interface LWFLifeBar : SKSpriteNode
+@interface LWFLifeBar : SKSpriteNode <LWFLifeDisplayer>
 
 @property (nonatomic, strong) LWFStats *stats;
 

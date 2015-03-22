@@ -12,6 +12,8 @@
 #import "LWFPlayer.h"
 #import "LWFInventory.h"
 
+#import "LWFHudLifebar.h"
+
 @implementation LWFViewController
 
 - (void)viewDidLoad
@@ -37,6 +39,10 @@
     
     [self.imageViewWeapon.layer setMinificationFilter:kCAFilterTrilinear];
     [self.imageViewWeapon.layer setMagnificationFilter:kCAFilterTrilinear];
+    
+    LWFHudLifebar *lifebar = [LWFHudLifebar sharedHudLifeBar];
+    [lifebar addToView:self.view];
+    
 }
 
 - (void)configureEvents {

@@ -27,10 +27,12 @@
 #import "LWFLootChanceFactory.h"
 #import "LWFLootChance.h"
 
+#import "LWFLifeDisplayer.h"
+
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
     NSUInteger _failedMovements;
-    LWFLifeBar *_lifeBar;
+    id<LWFLifeDisplayer> _lifeBar;
     NSArray *_lootChances;
 
 }
@@ -138,15 +140,17 @@
     [self setSize:CGSizeMake(32, 32)];
     
     _lifeBar = [self getLifeBar];
-    _lifeBar.stats = self.stats;
+    [_lifeBar setStats:self.stats];
     
     LWFLootChanceFactory *lootChanceFactory = [LWFLootChanceFactory sharedLootChanceFactory];
     _lootChances = [lootChanceFactory getLootChancesForKey:self.spriteImageName];
     
-    [self addChild:_lifeBar];
+    if ([_lifeBar isKindOfClass:[LWFLifeBar class]]) {
+        [self addChild:(LWFLifeBar *)_lifeBar];
+    }
 }
 
-- (LWFLifeBar *)getLifeBar {
+- (id<LWFLifeDisplayer>)getLifeBar {
     LWFLifeBar *lifeBar = [[LWFLifeBar alloc]init];
     [lifeBar setPosition:CGPointMake(-16, 30)];
     
