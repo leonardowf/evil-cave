@@ -210,4 +210,8 @@ SINGLETON_FOR_CLASS(Player)
 - (id<LWFLifeDisplayer>)getLifeBar {
     return [LWFHudLifebar sharedHudLifeBar];
 }
+
+- (LWFEquips *)getEquips {
+    return self.inventory.equips;
+}
 @end

@@ -13,6 +13,7 @@
 
 #import "LWFStats.h"
 #import "LWFAttack.h"
+#import "LWFEquips.h"
 
 #import "LWFRandomUtils.h"
 
@@ -46,18 +47,18 @@
     LWFStats *targetStats = [target getStats];
     LWFEquips *targetEquips = [target getEquips];
     
-    NSUInteger strModifier = 100 + attackerStats.strength;
-    float newMinimum = (strModifier * attack.minimumDamage) / 100;
-    float newMaximum = (strModifier * attack.maximumDamage) / 100;
+    NSInteger strModifier = 100 + (attackerStats.strength + [attackerEquips totalStrength]);
+    float newMinimum = (strModifier * (attack.minimumDamage + [attackerEquips totalMinDamage])) / 100;
+    float newMaximum = (strModifier * (attack.maximumDamage + [attackerEquips totalMaxDamage])) / 100;
     
-    NSUInteger newMinimumInt = (newMinimum + 0.5);
-    NSUInteger newMaximumInt = (newMaximum + 0.5);
+    NSInteger newMinimumInt = (newMinimum + 0.5);
+    NSInteger newMaximumInt = (newMaximum + 0.5);
     
     LWFRandomUtils *randomizer = [[LWFRandomUtils alloc]init];
     
-    NSUInteger randomized = [randomizer randomIntegerBetween:newMinimumInt and:newMaximumInt];
+    NSInteger randomized = [randomizer randomIntegerBetween:newMinimumInt and:newMaximumInt];
     
-    NSInteger damage = randomized - [targetStats baseArmor];
+    NSInteger damage = randomized - ([targetStats baseArmor] + [targetEquips totalArmor]);
     
     if (damage < 0) damage = 0;
     

@@ -58,4 +58,40 @@
     return [LWFItemComparison compare:itemSrc withItem:itemDest];
 }
 
+- (NSInteger)totalStrength {
+    NSInteger total = [self.weapon.strength integerValue];
+    total += [self.armor.strength integerValue];
+    total += [self.boots.strength integerValue];
+    total += [self.accessory.strength integerValue];
+    
+    return total;
+}
+
+- (NSInteger)totalMinDamage {
+    NSInteger total = [self.weapon.lowdamage integerValue];
+    total += [self.armor.lowdamage integerValue];
+    total += [self.boots.lowdamage integerValue];
+    total += [self.accessory.lowdamage integerValue];
+    
+    return total;
+}
+
+- (NSInteger)totalMaxDamage {
+    NSInteger total = [self.weapon.highdamage integerValue];
+    total += [self.armor.highdamage integerValue];
+    total += [self.boots.highdamage integerValue];
+    total += [self.accessory.highdamage integerValue];
+    
+    return total;
+}
+
+- (NSInteger)totalArmor {
+    NSInteger total = [self.weapon.armor integerValue];
+    total += [self.armor.armor integerValue];
+    total += [self.boots.armor integerValue];
+    total += [self.accessory.armor integerValue];
+    
+    return total;
+}
+
 @end

@@ -21,4 +21,9 @@
 - (LWFItemComparison *)compareToRespectiveEquipped:(LWFItem *)item;
 - (LWFItemComparison *)compare:(LWFItem *)itemSrc toItem:(LWFItem *)itemDest;
 
+- (NSInteger)totalStrength;
+- (NSInteger)totalMinDamage;
+- (NSInteger)totalMaxDamage;
+- (NSInteger)totalArmor;
+
 @end
