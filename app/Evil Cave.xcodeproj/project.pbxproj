@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0943A68276D0B954BA961482 /* libPods-Evil Cave.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08256F3125610C5AFC2900D2 /* libPods-Evil Cave.a */; };
 		3206A3DD1A7D9B6200D08893 /* item_preview_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 3206A3DA1A7D9B6200D08893 /* item_preview_bottom.png */; };
 		3206A3DF1A7D9B6200D08893 /* item_preview_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 3206A3DC1A7D9B6200D08893 /* item_preview_top.png */; };
 		3206A3E11A7D9D7F00D08893 /* item_preview_middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3206A3E01A7D9D7F00D08893 /* item_preview_middle.png */; };
@@ -162,6 +163,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07C0B43184763B2DBBF2EF06 /* Pods-Evil Cave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evil Cave.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Evil Cave/Pods-Evil Cave.debug.xcconfig"; sourceTree = "<group>"; };
+		08256F3125610C5AFC2900D2 /* libPods-Evil Cave.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Evil Cave.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3206A3DA1A7D9B6200D08893 /* item_preview_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_preview_bottom.png; sourceTree = "<group>"; };
 		3206A3DC1A7D9B6200D08893 /* item_preview_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_preview_top.png; sourceTree = "<group>"; };
 		3206A3E01A7D9D7F00D08893 /* item_preview_middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_preview_middle.png; sourceTree = "<group>"; };
@@ -364,6 +367,7 @@
 		A7F5BBB91A16EFBF005BAB63 /* Evil_CaveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Evil_CaveTests.m; sourceTree = "<group>"; };
 		A7F5BBCF1A16F831005BAB63 /* LWFMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFMap.h; sourceTree = "<group>"; };
 		A7F5BBD01A16F831005BAB63 /* LWFMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFMap.m; sourceTree = "<group>"; };
+		BDBC7B6D7D9B2207F3C30383 /* Pods-Evil Cave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evil Cave.release.xcconfig"; path = "Pods/Target Support Files/Pods-Evil Cave/Pods-Evil Cave.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,6 +380,7 @@
 				A7F5BB8C1A16EFBC005BAB63 /* UIKit.framework in Frameworks */,
 				A7F5BB8E1A16EFBC005BAB63 /* SpriteKit.framework in Frameworks */,
 				A7F5BB881A16EFBC005BAB63 /* Foundation.framework in Frameworks */,
+				0943A68276D0B954BA961482 /* libPods-Evil Cave.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +397,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08F7C79A172C4280BD72C759 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				07C0B43184763B2DBBF2EF06 /* Pods-Evil Cave.debug.xcconfig */,
+				BDBC7B6D7D9B2207F3C30383 /* Pods-Evil Cave.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3206A3D91A7D9B3800D08893 /* HUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -724,6 +738,7 @@
 				A7F5BBB31A16EFBF005BAB63 /* Evil CaveTests */,
 				A7F5BB861A16EFBC005BAB63 /* Frameworks */,
 				A7F5BB851A16EFBC005BAB63 /* Products */,
+				08F7C79A172C4280BD72C759 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -745,6 +760,7 @@
 				A7F5BB8B1A16EFBC005BAB63 /* UIKit.framework */,
 				A7F5BB8D1A16EFBC005BAB63 /* SpriteKit.framework */,
 				A7F5BBAD1A16EFBF005BAB63 /* XCTest.framework */,
+				08256F3125610C5AFC2900D2 /* libPods-Evil Cave.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -824,9 +840,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7F5BBBD1A16EFBF005BAB63 /* Build configuration list for PBXNativeTarget "Evil Cave" */;
 			buildPhases = (
+				BCA548A7887D21DC30FD0E19 /* Check Pods Manifest.lock */,
 				A7F5BB801A16EFBC005BAB63 /* Sources */,
 				A7F5BB811A16EFBC005BAB63 /* Frameworks */,
 				A7F5BB821A16EFBC005BAB63 /* Resources */,
+				C0093994659D4BB30D624252 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -986,6 +1004,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BCA548A7887D21DC30FD0E19 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C0093994659D4BB30D624252 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Evil Cave/Pods-Evil Cave-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A7F5BB801A16EFBC005BAB63 /* Sources */ = {
@@ -1165,6 +1216,7 @@
 		};
 		A7F5BBBE1A16EFBF005BAB63 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07C0B43184763B2DBBF2EF06 /* Pods-Evil Cave.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1179,6 +1231,7 @@
 		};
 		A7F5BBBF1A16EFBF005BAB63 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDBC7B6D7D9B2207F3C30383 /* Pods-Evil Cave.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

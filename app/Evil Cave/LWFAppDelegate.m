@@ -7,11 +7,13 @@
 //
 
 #import "LWFAppDelegate.h"
+#import <SplunkMint-iOS/SplunkMint-iOS.h>
 
 @implementation LWFAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[Mint sharedInstance] initAndStartSession:@"6195a731"];
     // Override point for customization after application launch.
     return YES;
 }
