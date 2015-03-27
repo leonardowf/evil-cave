@@ -3,39 +3,39 @@
     {
       "name": "sword",
       "quantity": 1,
-      "chance": 100
+      "chance": 30
     },
     {
       "name": "gold",
       "quantity": 20,
-      "chance": 100
+      "chance": 0
     },
     {
       "name": "fine_sword",
       "quantity": 1,
-      "chance": 100
+      "chance": 20
     },
     {
       "name": "motherfucking_sword",
       "quantity": 1,
-      "chance": 100
+      "chance": 10
     }
   ],
   "radioactive_rat": [
     {
       "name": "sword",
       "quantity": 1,
-      "chance": 50
+      "chance": 45
     },
     {
       "name": "fine_sword",
       "quantity": 1,
-      "chance": 10
+      "chance": 30
     },
     {
       "name": "motherfucking_sword",
       "quantity": 1,
-      "chance": 100
+      "chance": 15
     }
 
   ]

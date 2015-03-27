@@ -17,8 +17,8 @@
 {
     self = [super init];
     if (self) {
-        self.minimumDamage = 1;
-        self.maximumDamage = 5;
+        self.minimumDamage = 2;
+        self.maximumDamage = 4;
     }
     return self;
 }

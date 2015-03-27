@@ -46,10 +46,10 @@
 }
 
 - (void)configureEvents {
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(notificationShowItemPreview:)
-                                                 name:@"notificationShowItemPreview"
-                                               object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(notificationShowItemPreview:)
+//                                                 name:@"notificationShowItemPreview"
+//                                               object:nil];
 }
 
 - (void)notificationShowItemPreview:(NSNotification *)notification {
