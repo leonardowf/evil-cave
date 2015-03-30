@@ -8,7 +8,7 @@
     {
       "name": "gold",
       "quantity": 20,
-      "chance": 0
+      "chance": 100
     },
     {
       "name": "fine_sword",

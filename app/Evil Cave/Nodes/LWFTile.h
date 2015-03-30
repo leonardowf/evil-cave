@@ -27,4 +27,6 @@
 - (NSUInteger)distanceToTile:(LWFTile *)tile;
 - (void)steppedOnTile:(LWFCreature *)creature;
 - (void)diedOnTile:(LWFCreature *)creature;
+- (NSArray *)groupItemsForLoot:(NSArray *)loot;
+
 @end

@@ -90,6 +90,37 @@
     }
 }
 
+- (NSArray *)groupItemsForLoot:(NSArray *)loot {
+    // agrupa todos os items no tile se necessário,
+    // retornando o loot com os agrupados removidos
+    
+    NSMutableArray *resultLoot = [NSMutableArray array];
+    
+    for (LWFItem *item in loot) {
+        BOOL didGroup = [self groupItemsForItem:item];
+        
+        if (!didGroup) {
+            [resultLoot addObject:item];
+        }
+    }
+    
+    return resultLoot;
+}
+
+- (BOOL)groupItemsForItem:(LWFItem *)item {
+    // verifica se tem um item no tile
+    // se tiver, aumenta sua quantidade e retorna true dizendo que agrupou
+    
+    for (LWFItem *tileItem in self.items) {
+        if ([tileItem isMoney] && [item isMoney]) {
+            tileItem.quantity += item.quantity;
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
 - (void)diedOnTile:(LWFCreature *)creature {
     if (self.isThereBloodAlready) {
         return;

@@ -587,8 +587,9 @@
 
 - (void)diedWithCompletion:(void(^)(void))someBlock {
     NSArray *loot = [self getLoots];
+    NSArray *removedGrouped = [self.currentTile groupItemsForLoot:loot];
     
-    for (LWFItem *item in loot) {
+    for (LWFItem *item in removedGrouped) {
         [self.currentTile addChild:item];
     }
     
@@ -598,6 +599,8 @@
     
     [someBlock invoke];
 }
+
+
 
 - (void)statsChanged {
     [_lifeBar draw];
