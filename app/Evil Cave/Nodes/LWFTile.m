@@ -58,16 +58,9 @@
             }
         }
         
-        NSInteger totalGold = 0;
         for (LWFItem *gold in toRemove) {
-            totalGold = totalGold + gold.quantity;
-        }
-        
-        if (totalGold > 0) {
-            LWFItem *pileOfGold = [toRemove firstObject];
-            pileOfGold.quantity = totalGold;
             LWFPlayer *player = (LWFPlayer *)creature;
-            [player takeItem:pileOfGold];
+            [player takeItem:gold];
         }
         
         [self.items removeObjectsInArray:toRemove];
