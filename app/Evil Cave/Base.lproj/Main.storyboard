@@ -160,7 +160,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cw0-2s-On6" userLabel="Inventory Container">
                                 <rect key="frame" x="23" y="485" width="60" height="60"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inventory_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="yOv-0K-4OW">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inventory@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="yOv-0K-4OW">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                     </imageView>
                                 </subviews>
@@ -878,7 +878,7 @@
     <resources>
         <image name="bg.png" width="300" height="501"/>
         <image name="get_button.png" width="40" height="15"/>
-        <image name="inventory_icon.png" width="60" height="60"/>
+        <image name="inventory@3x.png" width="144" height="144"/>
         <image name="item_fine_sword.png" width="32" height="32"/>
         <image name="item_preview_bottom.png" width="239" height="20"/>
         <image name="item_preview_middle.png" width="239" height="4"/>

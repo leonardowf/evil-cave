@@ -42,6 +42,44 @@
     return nil;
 }
 
+- (void)unequip:(LWFItem *)item {
+    if ([item isWeapon]) {
+        self.weapon = nil;
+    }
+    
+    if ([item isArmor]) {
+        self.armor = nil;
+    }
+    
+    if ([item isBoots]) {
+        self.boots = nil;
+    }
+    
+    if ([item isAccessory]) {
+        self.accessory = nil;
+    }
+}
+
+- (BOOL)isEquiped:(LWFItem *)item {
+    if (self.weapon == item) {
+        return YES;
+    }
+    
+    if ([item isArmor]) {
+        return YES;
+    }
+    
+    if ([item isBoots]) {
+        return YES;
+    }
+    
+    if ([item isAccessory]) {
+        return YES;
+    }
+    
+    return NO;
+}
+
 - (LWFItemComparison *)compareToRespectiveEquipped:(LWFItem *)item {
     LWFItem *itemToCompare = nil;
     
@@ -49,7 +87,7 @@
         itemToCompare = self.weapon;
     }
     
-    // ....
+    // .... TODO
     
     return [LWFItemComparison compare:item withItem:itemToCompare];
 }

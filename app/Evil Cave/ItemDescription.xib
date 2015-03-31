@@ -20,6 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LWFItemDescription">
             <connections>
+                <outlet property="buttonEquip" destination="OR7-Su-992" id="ZQs-A3-rts"/>
                 <outlet property="containerView" destination="m4t-JF-lkh" id="YF7-iN-3Fe"/>
                 <outlet property="labelDescription" destination="UB6-cc-Ih2" id="hEH-fC-CVR"/>
                 <outlet property="labelHp" destination="c3V-rF-TLM" id="KZg-Lr-p3N"/>

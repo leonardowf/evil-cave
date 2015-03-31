@@ -54,6 +54,10 @@ SINGLETON_FOR_CLASS(Inventory)
     _viewController.labelGold.text = [NSString stringWithFormat:@"%ld", (long)self.money];
 }
 
+- (BOOL)isEquipped:(LWFItem *)item {
+    return [_equips isEquiped:item];
+}
+
 - (BOOL)canTakeItem:(LWFItem *)item {
     return YES;
     // TODO
@@ -228,7 +232,20 @@ SINGLETON_FOR_CLASS(Inventory)
     if (replaced != nil) {
         [_items addObject:replaced];        
     }
+}
 
+- (void)unequip:(LWFItem *)item {
+    [_equips unequip:item];
+    
+    if ([item isWeapon]) {
+        _viewController.imageViewWeapon.image = nil;
+    }
+    
+    if ([self canTakeItem:item]) {
+        [self takeItem:item];
+    } else {
+        [self drop:item];
+    }
 }
 
 - (void)drop:(LWFItem *)item {

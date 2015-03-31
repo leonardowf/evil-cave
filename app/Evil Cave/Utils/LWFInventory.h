@@ -27,10 +27,12 @@
 
 - (BOOL)canTakeItem:(LWFItem *)item;
 - (void)takeItem:(LWFItem *)item;
+- (BOOL)isEquipped:(LWFItem *)item;
 
 - (void)inject:(LWFViewController *)viewController;
 - (BOOL)isOpen;
 - (void)equip:(LWFItem *)item;
+- (void)unequip:(LWFItem *)item;
 - (void)drop:(LWFItem *)item;
 
 @end

@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelMaxDamage;
 @property (weak, nonatomic) IBOutlet UILabel *labelStrength;
 @property (weak, nonatomic) IBOutlet UILabel *labelHp;
+@property (weak, nonatomic) IBOutlet UIButton *buttonEquip;
 
 - (instancetype)initWithItem:(LWFItem *)item
               itemComparison:(LWFItemComparison *)itemComparison

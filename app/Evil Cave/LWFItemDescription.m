@@ -47,8 +47,12 @@
         _itemComparison = itemComparison;
         
         [self fillLabels];
-
         
+        if ([_inventory isEquipped:item]) {
+            UIImage *buttonImage = [UIImage imageNamed:@"button_yellow"];
+            [self.buttonEquip setBackgroundImage:buttonImage forState:UIControlStateNormal];
+            [self.buttonEquip setTitle:@"UNEQUIP" forState:UIControlStateNormal];
+        }
     }
     return self;
 }
@@ -179,9 +183,14 @@
 }
 
 - (IBAction)didTapEquip:(id)sender {
-    [self removeFromSuperview:YES];
-    
-    [_inventory equip:_item];
+    if ([_inventory isEquipped:_item]) {
+        // apertou no botão amarelo de unequip
+        [_inventory unequip:_item];
+        [self removeFromSuperview:YES];
+    } else {
+        [self removeFromSuperview:YES];
+        [_inventory equip:_item];
+    }
 }
 
 - (IBAction)didTapDrop:(id)sender {

@@ -18,6 +18,7 @@
 @property (nonatomic, strong) LWFItem *accessory;
 
 - (LWFItem *)equip:(LWFItem *)item;
+- (void)unequip:(LWFItem *)item;
 - (LWFItemComparison *)compareToRespectiveEquipped:(LWFItem *)item;
 - (LWFItemComparison *)compare:(LWFItem *)itemSrc toItem:(LWFItem *)itemDest;
 
@@ -25,5 +26,6 @@
 - (NSInteger)totalMinDamage;
 - (NSInteger)totalMaxDamage;
 - (NSInteger)totalArmor;
+- (BOOL)isEquiped:(LWFItem *)item;
 
 @end
