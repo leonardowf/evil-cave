@@ -13,6 +13,7 @@
 #import "LWFRat.h"
 #import "LWFGoblin.h"
 #import "LWFRadioactiveRat.h"
+#import "LWFPoopThrowerRat.h"
 
 #import "LWFMapDimension.h"
 #import "LWFTurnList.h"
@@ -75,7 +76,9 @@
 - (LWFCreature *)buildWithType:(LWFCreatureType)creatureType {
     LWFCreature *creature;
     
-    if (creatureType == LWFCreatureTypeRat) {
+    if (creatureType == LWFCreatureTypePoopThrowerRat) {
+        creature = [[LWFPoopThrowerRat alloc]init];
+    } else if (creatureType == LWFCreatureTypeRat) {
         creature = [[LWFRat alloc]init];
     } else if (creatureType == LWFCreatureTypeGoblin) {
         creature = [[LWFGoblin alloc]init];
@@ -116,7 +119,10 @@
 
 - (LWFStats *)statsForCreatureType:(LWFCreatureType)creatureType {
     NSDictionary *creatureStatsDictionary = nil;
-    if (creatureType == LWFCreatureTypeWarrior) {
+    
+    if (creatureType == LWFCreatureTypePoopThrowerRat) {
+        creatureStatsDictionary = [_creatureStats objectForKey:@"poop_thrower_rat"];
+    } else if (creatureType == LWFCreatureTypeWarrior) {
         creatureStatsDictionary = [_creatureStats objectForKey:@"warrior"];
     } else if (creatureType == LWFCreatureTypeRat) {
         creatureStatsDictionary = [_creatureStats objectForKey:@"rat"];

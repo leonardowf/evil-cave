@@ -29,7 +29,9 @@
 - (NSMutableArray *)attacksForCreatureType:(LWFCreatureType)creatureType {
     NSMutableArray *attacks = nil;
     
-    if (creatureType == LWFCreatureTypeRat) {
+    if (creatureType == LWFCreatureTypePoopThrowerRat) {
+        return [self ratAttacks];
+    } else if (creatureType == LWFCreatureTypeRat) {
         return [self ratAttacks];
     } else if (creatureType == LWFCreatureTypeGoblin) {
         return [self goblinAttacks];

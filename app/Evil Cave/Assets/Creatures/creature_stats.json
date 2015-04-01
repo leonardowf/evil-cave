@@ -22,5 +22,13 @@
         "base_armor": 0,
         "max_hp" : 15,
         "action_points": 1
+    },
+    "poop_thrower_rat": {
+        "strength": 200,
+        "chance_to_hit": 80,
+        "chance_to_evade": 50,
+        "base_armor": 0,
+        "max_hp" : 15,
+        "action_points": 1
     }
 }

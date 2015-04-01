@@ -224,7 +224,11 @@
     [_turnList.creatures addObject:creature9];
     creature8.nextCreature = creature9;
     
-    creature9.nextCreature = _player;
+    LWFCreature *creature10 = [_creatureBuilder buildWithType:LWFCreatureTypePoopThrowerRat];
+    [_turnList.creatures addObject:creature10];
+    creature9.nextCreature = creature10;
+    
+    creature10.nextCreature = _player;
     
 }
 
