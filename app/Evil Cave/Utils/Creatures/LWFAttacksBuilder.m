@@ -8,6 +8,7 @@
 
 #import "LWFAttacksBuilder.h"
 #import "LWFMelee.h"
+#import "LWFPoopThrowAttack.h"
 #import "LWFGameController.h"
 
 @interface LWFAttacksBuilder () {
@@ -30,7 +31,7 @@
     NSMutableArray *attacks = nil;
     
     if (creatureType == LWFCreatureTypePoopThrowerRat) {
-        return [self ratAttacks];
+        return [self poopThrowerRatAttacks];
     } else if (creatureType == LWFCreatureTypeRat) {
         return [self ratAttacks];
     } else if (creatureType == LWFCreatureTypeGoblin) {
@@ -49,6 +50,15 @@
     
     NSMutableArray *attacks = [NSMutableArray array];
     [attacks addObject:melee];
+    
+    return attacks;
+}
+
+- (NSMutableArray *)poopThrowerRatAttacks {
+    LWFPoopThrowAttack *poopThrowAttack = [[LWFPoopThrowAttack alloc]init];
+    
+    NSMutableArray *attacks = [NSMutableArray array];
+    [attacks addObject:poopThrowAttack];
     
     return attacks;
 }
