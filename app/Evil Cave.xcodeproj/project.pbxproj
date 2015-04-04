@@ -107,6 +107,7 @@
 		32E2E6BC1ACB6C7300EA88DD /* LWFPoopThrowerRat.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2E6BB1ACB6C7300EA88DD /* LWFPoopThrowerRat.m */; };
 		32E2E6BF1ACCC1D900EA88DD /* LWFPoopThrowAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2E6BE1ACCC1D900EA88DD /* LWFPoopThrowAttack.m */; };
 		32E2E6C11ACCCB7C00EA88DD /* poop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E2E6C01ACCCB7C00EA88DD /* poop.jpg */; };
+		32E2E6C41ACF5ED500EA88DD /* LWFVisibilityShadowCasting.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2E6C31ACF5ED500EA88DD /* LWFVisibilityShadowCasting.m */; };
 		32F09E291A48C947000B8797 /* LWFCombatSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F09E281A48C947000B8797 /* LWFCombatSystem.m */; };
 		32F09E2C1A48E6B4000B8797 /* LWFCombatOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F09E2B1A48E6B4000B8797 /* LWFCombatOutput.m */; };
 		32F09E2F1A48EBB1000B8797 /* LWFEquips.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F09E2E1A48EBB1000B8797 /* LWFEquips.m */; };
@@ -305,6 +306,8 @@
 		32E2E6BD1ACCC1D900EA88DD /* LWFPoopThrowAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPoopThrowAttack.h; sourceTree = "<group>"; };
 		32E2E6BE1ACCC1D900EA88DD /* LWFPoopThrowAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPoopThrowAttack.m; sourceTree = "<group>"; };
 		32E2E6C01ACCCB7C00EA88DD /* poop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = poop.jpg; sourceTree = "<group>"; };
+		32E2E6C21ACF5ED500EA88DD /* LWFVisibilityShadowCasting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFVisibilityShadowCasting.h; sourceTree = "<group>"; };
+		32E2E6C31ACF5ED500EA88DD /* LWFVisibilityShadowCasting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFVisibilityShadowCasting.m; sourceTree = "<group>"; };
 		32EDF5981A7C5FCC0007EA36 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		32F09E271A48C947000B8797 /* LWFCombatSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFCombatSystem.h; sourceTree = "<group>"; };
 		32F09E281A48C947000B8797 /* LWFCombatSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFCombatSystem.m; sourceTree = "<group>"; };
@@ -753,6 +756,8 @@
 				A78443AD1A1EEFAA0029995D /* humblebee */,
 				32915F521A99619300A037F0 /* LWFShadowCasting.h */,
 				32915F531A99619300A037F0 /* LWFShadowCasting.m */,
+				32E2E6C21ACF5ED500EA88DD /* LWFVisibilityShadowCasting.h */,
+				32E2E6C31ACF5ED500EA88DD /* LWFVisibilityShadowCasting.m */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -1107,6 +1112,7 @@
 				A7D8BEE11A19883A005B0599 /* LWFCaveGenerator.m in Sources */,
 				32F1CDC61A575A2F00A0D9F5 /* LWFInventory.m in Sources */,
 				32E2E6BC1ACB6C7300EA88DD /* LWFPoopThrowerRat.m in Sources */,
+				32E2E6C41ACF5ED500EA88DD /* LWFVisibilityShadowCasting.m in Sources */,
 				32FFE8411A2C0BF0003D02A4 /* LWFMelee.m in Sources */,
 				3245279D1A4EF1DB00AFF9A7 /* LWFLifeBar.m in Sources */,
 				32D08C8E1AAA731900441A51 /* LWFImageViewHolder.m in Sources */,

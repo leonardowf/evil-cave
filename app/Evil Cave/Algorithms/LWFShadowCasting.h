@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+@class LWFTile;
 
 @interface LWFShadowCasting : NSObject
 
 - (void)doFovStartX:(NSInteger)startX startY:(NSInteger)startY radius:(NSInteger)radius;
-
+- (void)lightTile:(LWFTile *)tile;
 @end

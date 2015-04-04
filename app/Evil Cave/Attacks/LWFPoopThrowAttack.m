@@ -17,6 +17,7 @@
     if (self) {
         self.minimumDamage = 1;
         self.maximumDamage = 1;
+        self.fovRadius = 3;
     }
     return self;
 }

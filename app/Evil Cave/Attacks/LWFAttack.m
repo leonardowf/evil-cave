@@ -12,6 +12,8 @@
 #import "LWFPointObject.h"
 #import "LWFTileMap.h"
 #import "LWFGameController.h"
+#import "LWFVisibilityShadowCasting.h"
+#import "LWFCreature.h"
 
 @interface LWFAttack () {
     LWFGameController *_gameController;
@@ -26,6 +28,7 @@
     self = [super init];
     if (self) {
         _gameController = [LWFGameController sharedGameController];
+        _fovRadius = 1;
     }
     return self;
 }
@@ -72,11 +75,26 @@
     
     for (LWFCreature *creatureInTile in creatures) {
         if (creature == creatureInTile) {
-            return YES;
+            if ([self isThereSightToTile:creature.currentTile fromTile:tile]) {
+                return YES;
+            } else {
+                return NO;
+            }
         }
     }
     
     return NO;
+}
+
+- (BOOL)isThereSightToTile:(LWFTile *)tile fromTile:(LWFTile *)fromTile {
+    if (self.fovRadius == 1) {
+        return YES;
+    }
+    LWFVisibilityShadowCasting *visibilityShadowCasting = [[LWFVisibilityShadowCasting alloc]init];
+    
+    [visibilityShadowCasting doFovStartX:fromTile.x startY:fromTile.y radius:self.fovRadius];
+    return [visibilityShadowCasting isTileInSight:tile];
+    
 }
 
 - (NSArray *)creaturesInAffectedRangeFromTile:(LWFTile *)tile {

@@ -27,6 +27,8 @@
     return self;
 }
 
+
+
 - (void)createMultArray {
     NSArray *c0 = @[@1,  @0,  @0, @-1, @-1,  @0,  @0,  @1];
     NSArray *c1 = @[@0,  @1, @-1,  @0,  @0, @-1,  @1,  @0];
@@ -135,9 +137,13 @@
     
     LWFGameController *gameController = [LWFGameController sharedGameController];
     LWFTileMap *tileMap = gameController.tileMap;
-    
     LWFTile *tile = [tileMap tileForVertical:y andHorizontal:x];
     
+    [self lightTile:tile];
+
+}
+
+- (void)lightTile:(LWFTile *)tile {
     SKAction *action = [SKAction fadeAlphaTo:1.0 duration:0.3];
     [tile runAction:action];
 }
