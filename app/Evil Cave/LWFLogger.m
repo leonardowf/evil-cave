@@ -17,4 +17,11 @@
     [logger log:@"blabla"];
 }
 
++ (void)logGold:(NSInteger)quantity {
+    LWFHudLogger *logger = [LWFHudLogger sharedHudLogger];
+    NSString *log = [NSString stringWithFormat:@"+ %d gold", quantity];
+
+    [logger log:log];
+}
+
 @end

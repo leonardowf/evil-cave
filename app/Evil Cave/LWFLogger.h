@@ -12,5 +12,5 @@
 @interface LWFLogger : NSObject
 
 + (void)logAttack:(LWFCreature *)creature damage:(NSInteger)damage;
-
++ (void)logGold:(NSInteger)quantity;
 @end

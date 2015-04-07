@@ -11,6 +11,7 @@
 #import "LWFItem.h"
 #import "LWFPlayer.h"
 #import "LWFInventory.h"
+#import "LWFHudLogger.h"
 
 #import "LWFHudLifebar.h"
 
@@ -36,6 +37,9 @@
     
     LWFInventory *inventory = [LWFInventory sharedInventory];
     [inventory inject:self];
+    
+    LWFHudLogger *hugLogger = [LWFHudLogger sharedHudLogger];
+    [hugLogger inject:self];
     
     [self.imageViewWeapon.layer setMinificationFilter:kCAFilterTrilinear];
     [self.imageViewWeapon.layer setMagnificationFilter:kCAFilterTrilinear];

@@ -152,6 +152,8 @@ SINGLETON_FOR_CLASS(Player)
         }];
         
         self.inventory.money = self.inventory.money + item.quantity;
+        [LWFLogger logGold:item.quantity];
+        
         
     } else {
         // TODO: Potion

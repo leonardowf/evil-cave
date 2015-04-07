@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+@class LWFViewController;
 
 @interface LWFHudLogger : NSObject
 
 + (id)sharedHudLogger;
+- (void)inject:(LWFViewController *)viewController;
 
 - (void)log:(NSString *)message;
 
