@@ -479,6 +479,8 @@
           forCombatOutput:(LWFCombatOutput *)combatOutput
                completion:(void(^)(void))someBlock {
     
+    [self receveidDamageLog:combatOutput.damage fromCreature:(LWFCreature *)attacker];
+    
     [self.tilePath removeAllObjects];
     
     SKAction *pulseRed = [SKAction sequence:@[
@@ -492,6 +494,10 @@
     
     [self runAction: pulseRed completion:someBlock];
     
+}
+
+- (void)receveidDamageLog:(NSInteger)damage fromCreature:(LWFCreature *)creature {
+    [LWFLogger logAttackedCreature:self damage:damage];
 }
 
 - (void)replaceTile {

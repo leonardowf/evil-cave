@@ -199,6 +199,10 @@ SINGLETON_FOR_CLASS(Player)
     [self finishTurn];
 }
 
+- (void)receveidDamageLog:(NSInteger)damage fromCreature:(LWFCreature *)creature {
+    [LWFLogger logAttackedBy:creature damage:damage];
+}
+
 - (void)requestSpecialAttack {
     SKAction *rotation = [SKAction rotateByAngle: 2*M_PI duration:0.3];
     //and just run the action
@@ -216,4 +220,6 @@ SINGLETON_FOR_CLASS(Player)
 - (LWFEquips *)getEquips {
     return self.inventory.equips;
 }
+
+
 @end

@@ -9,19 +9,33 @@
 #import "LWFLogger.h"
 #import "LWFCreature.h"
 #import "LWFHudLogger.h"
+#import "LWFItem.h"
 
 @implementation LWFLogger
 
-+ (void)logAttack:(LWFCreature *)creature damage:(NSInteger)damage {
++ (void)log:(NSString *)message {
     LWFHudLogger *logger = [LWFHudLogger sharedHudLogger];
-    [logger log:@"blabla"];
+    [logger log:message];
+}
+
++ (void)logAttackedCreature:(LWFCreature *)creature damage:(NSInteger)damage {
+    NSString *message = [NSString stringWithFormat:@"You attacked %@. %d damage.", creature.name, damage];
+    [LWFLogger log:message];
+}
+
++ (void)logAttackedBy:(LWFCreature *)creature damage:(NSInteger)damage {
+    NSString *message = [NSString stringWithFormat:@"%@ attacked you. %d damage.", creature.name, damage];
+    [LWFLogger log:message];
 }
 
 + (void)logGold:(NSInteger)quantity {
-    LWFHudLogger *logger = [LWFHudLogger sharedHudLogger];
-    NSString *log = [NSString stringWithFormat:@"+ %d gold", quantity];
+    NSString *message = [NSString stringWithFormat:@"You picked: %d gold.", quantity];
+    [LWFLogger log:message];
+}
 
-    [logger log:log];
++ (void)logPickedItem:(LWFItem *)item {
+    NSString *message = [NSString stringWithFormat:@"You picked: %@.", item.name];
+    [LWFLogger log:message];
 }
 
 @end

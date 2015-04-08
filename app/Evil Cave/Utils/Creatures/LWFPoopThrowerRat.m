@@ -20,6 +20,7 @@
     self = [super init];
     if (self) {
         self.spriteImageName = @"poop_thrower_rat";
+        self.name = @"Poop Thrower Rat";
     }
     return self;
 }

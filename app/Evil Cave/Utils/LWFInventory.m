@@ -64,6 +64,8 @@ SINGLETON_FOR_CLASS(Inventory)
 }
 
 - (void)takeItem:(LWFItem *)item {
+    [LWFLogger logPickedItem:item];
+    
     [self.items addObject:item];
     
     [self displayItem:item];
