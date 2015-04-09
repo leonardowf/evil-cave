@@ -12,7 +12,7 @@
 @implementation LWFCombatOutput
 
 - (NSString *)getDamageString {
-    return [NSString stringWithFormat:@"%d", self.damage];
+    return [NSString stringWithFormat:@"%ld", (long)self.damage];
 }
 
 - (SKLabelNode *)getLabel {

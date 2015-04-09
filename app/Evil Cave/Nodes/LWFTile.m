@@ -129,7 +129,7 @@
     
     NSInteger randomized = [randomUtils randomIntegerBetween:1 and:numImages + 1];
     
-    NSString *textureName = [NSString stringWithFormat:@"blood_%d", randomized];
+    NSString *textureName = [NSString stringWithFormat:@"blood_%ld", (long)randomized];
     SKTexture *texture = [dyingAtlas textureNamed:textureName];
     texture.filteringMode = SKTextureFilteringNearest;
     

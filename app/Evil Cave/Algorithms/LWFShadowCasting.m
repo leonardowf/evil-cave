@@ -133,7 +133,7 @@
 }
 
 - (void)lightAtX:(NSInteger)x andY:(NSInteger)y {
-    NSLog(@"Light x: %d and y: %d", x, y);
+    NSLog(@"Light x: %ld and y: %ld", (long)x, (long)y);
     
     LWFGameController *gameController = [LWFGameController sharedGameController];
     LWFTileMap *tileMap = gameController.tileMap;

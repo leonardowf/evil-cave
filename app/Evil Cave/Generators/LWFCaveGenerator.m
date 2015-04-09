@@ -65,7 +65,7 @@
 }
 
 - (void)generateStartAndEndForModelGrid:(NSMutableArray *)modelGrid andRooms:(NSMutableArray *)rooms {
-    int randomized = [_randomUtils randomIntegerBetween:0 and:rooms.count];
+    NSInteger randomized = [_randomUtils randomIntegerBetween:0 and:rooms.count];
     
     LWFRect *firstRoom = [rooms objectAtIndex:randomized];
     

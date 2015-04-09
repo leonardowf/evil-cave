@@ -55,8 +55,8 @@ CGSize CGSizeDistanceBetweenRects(CGRect rect1, CGRect rect2)
 }
 
 - (CGPoint)middleCoordinate {
-    int x = self.x + self.width / 2;
-    int y = self.y + self.height / 2;
+    NSInteger x = self.x + self.width / 2;
+    NSInteger y = self.y + self.height / 2;
     
     return CGPointMake(x, y);
 }

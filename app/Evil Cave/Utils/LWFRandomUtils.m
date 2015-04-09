@@ -29,7 +29,7 @@
     }
     
     
-    int rndValue = low + arc4random() % (high - low);
+    NSInteger rndValue = low + arc4random() % (high - low);
     return rndValue;
 }
 

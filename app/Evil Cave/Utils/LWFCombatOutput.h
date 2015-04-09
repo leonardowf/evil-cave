@@ -17,7 +17,7 @@ typedef enum : NSUInteger {
 
 @interface LWFCombatOutput : NSObject
 
-@property (nonatomic) NSUInteger damage;
+@property (nonatomic) NSInteger damage;
 @property (nonatomic) LWFCombatOutputType combatOutputType;
 
 - (NSString *)getDamageString;

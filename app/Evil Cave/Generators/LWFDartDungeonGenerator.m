@@ -35,8 +35,8 @@
     int _currentRegion;
     NSNumber *_currentRegionNumber;
     
-    int _stageWidth;
-    int _stageHeight;
+    NSInteger _stageWidth;
+    NSInteger _stageHeight;
     
     
     LWFRandomUtils *_randomizer;
@@ -261,7 +261,7 @@
                 continue;
             }
             
-            int randomized = [_randomizer randomIntegerBetween:1 and:101];
+            NSInteger randomized = [_randomizer randomIntegerBetween:1 and:101];
             
             if (randomized <= extraConnectorChance) {
                 [self addJunction:pos];
@@ -345,11 +345,11 @@
                 dir = [unmadeCells objectAtIndex:dirIndex];
             }
             
-            int summedX = cell.x + dir.x;
-            int summedY = cell.y + dir.y;
+            NSInteger summedX = cell.x + dir.x;
+            NSInteger summedY = cell.y + dir.y;
             
-            int summedXDouble = (dir.x * 2) + cell.x;
-            int summedYDouble = (dir.y * 2) + cell.y;
+            NSInteger summedXDouble = (dir.x * 2) + cell.x;
+            NSInteger summedYDouble = (dir.y * 2) + cell.y;
             
             [self carveX:summedX y:summedY type:CaveCellTypeFloor];
             [self carveX:summedXDouble y:summedYDouble type:CaveCellTypeFloor];
@@ -366,8 +366,8 @@
 }
 
 - (BOOL)canCarve:(LWFPointObject *)pos direction:(LWFPointObject *)dir {
-    int directionX = dir.x * 3;
-    int directionY = dir.y * 3;
+    NSInteger directionX = dir.x * 3;
+    NSInteger directionY = dir.y * 3;
     
     directionX = directionX + pos.x;
     directionY = directionY + pos.y;
@@ -382,10 +382,10 @@
         return false;
     }
     
-    int doubleX = dir.x * 2;
+    NSInteger doubleX = dir.x * 2;
     doubleX = doubleX + pos.x;
     
-    int doubleY = dir.y * 2;
+    NSInteger doubleY = dir.y * 2;
     doubleY = doubleY + pos.y;
     
     LWFCaveGeneratorCell *cell = self.stage[doubleX][doubleY];
@@ -407,12 +407,12 @@
         NSInteger size = [_randomizer randomIntegerBetween:1 and:sizeMax];
         size = size * 2 + 1;
         
-        int rectangularityMax = 1 + size / 2;
+        NSInteger rectangularityMax = 1 + size / 2;
         
         NSInteger rectangularity = [_randomizer randomIntegerBetween:0 and:rectangularityMax] * 2;
         
-        int width = size;
-        int height = size;
+        NSInteger width = size;
+        NSInteger height = size;
         
         NSInteger bla = [_randomizer randomIntegerBetween:0 and:2];
         
@@ -422,11 +422,11 @@
             height += rectangularity;
         }
         
-        int maxX = ((_stageWidth - width) / 2);
-        int x = [_randomizer randomIntegerBetween:0 and:maxX] * 2 + 1;
+        NSInteger maxX = ((_stageWidth - width) / 2);
+        NSInteger x = [_randomizer randomIntegerBetween:0 and:maxX] * 2 + 1;
         
-        int maxY = ((_stageHeight - height) / 2);
-        int y = [_randomizer randomIntegerBetween:0 and:maxY] * 2 + 1;
+        NSInteger maxY = ((_stageHeight - height) / 2);
+        NSInteger y = [_randomizer randomIntegerBetween:0 and:maxY] * 2 + 1;
         
         LWFRect *room = [LWFRect rectWithX:x y:y width:width andHeight:height];
         
@@ -451,8 +451,8 @@
 }
 
 - (void)carveForRoom:(LWFRect *)rect withType:(CaveCellType)type {
-    for (int x = rect.x; x < rect.x + rect.width; x++) {
-        for (int y = rect.y; y < rect.y + rect.height; y++) {
+    for (NSInteger x = rect.x; x < rect.x + rect.width; x++) {
+        for (NSInteger y = rect.y; y < rect.y + rect.height; y++) {
             [self carveX:x y:y type:type];
         }
     }

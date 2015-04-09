@@ -19,17 +19,17 @@
 }
 
 + (void)logAttackedCreature:(LWFCreature *)creature damage:(NSInteger)damage {
-    NSString *message = [NSString stringWithFormat:@"You attacked %@. %d damage.", creature.name, damage];
+    NSString *message = [NSString stringWithFormat:@"You attacked %@. %ld damage.", creature.name, (long)damage];
     [LWFLogger log:message];
 }
 
 + (void)logAttackedBy:(LWFCreature *)creature damage:(NSInteger)damage {
-    NSString *message = [NSString stringWithFormat:@"%@ attacked you. %d damage.", creature.name, damage];
+    NSString *message = [NSString stringWithFormat:@"%@ attacked you. %ld damage.", creature.name, (long)damage];
     [LWFLogger log:message];
 }
 
 + (void)logGold:(NSInteger)quantity {
-    NSString *message = [NSString stringWithFormat:@"You picked: %d gold.", quantity];
+    NSString *message = [NSString stringWithFormat:@"You picked: %ld gold.", (long)quantity];
     [LWFLogger log:message];
 }
 

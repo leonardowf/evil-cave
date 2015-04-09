@@ -13,8 +13,8 @@
 @interface LWFTile : SKSpriteNode
 
 @property (getter = isWalkable, setter = setWalkable:) BOOL walkable;
-@property NSUInteger x;
-@property NSUInteger y;
+@property NSInteger x;
+@property NSInteger y;
 @property LWFCreature *creatureOnTile;
 @property (nonatomic) CaveCellType cellType;
 @property (nonatomic, strong) NSMutableArray *items;

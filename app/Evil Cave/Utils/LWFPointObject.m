@@ -19,15 +19,15 @@
 }
 
 + (LWFPointObject *)point:(LWFPointObject *)point1 plus:(LWFPointObject *)point2 {
-    int x = point1.x + point2.x;
-    int y = point1.y + point2.y;
+    NSInteger x = point1.x + point2.x;
+    NSInteger y = point1.y + point2.y;
     
     return [LWFPointObject pointWithX:x andY:y];
 }
 
 + (LWFPointObject *)point:(LWFPointObject *)point1 minus:(LWFPointObject *)point2 {
-    int x = point1.x - point2.x;
-    int y = point1.y - point2.y;
+    NSInteger x = point1.x - point2.x;
+    NSInteger y = point1.y - point2.y;
     
     return [LWFPointObject pointWithX:x andY:y];
 }
@@ -43,7 +43,7 @@
 }
 
 - (NSString *)toString {
-    return [NSString stringWithFormat:@"%d;%d", self.x, self.y];
+    return [NSString stringWithFormat:@"%ld;%ld", (long)self.x, (long)self.y];
 }
 
 - (CGFloat)distanceTo:(LWFPointObject *)other {
@@ -53,9 +53,9 @@
 }
 
 - (BOOL)isItFuckingNear:(LWFPointObject *)other {
-    int x = self.x - other.x;
+    NSInteger x = self.x - other.x;
     
-    int y = self.y - other.y;
+    NSInteger y = self.y - other.y;
     
     if (x < 0) {
         x = -1 * x;
