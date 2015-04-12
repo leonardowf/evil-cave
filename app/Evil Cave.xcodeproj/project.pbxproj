@@ -81,6 +81,9 @@
 		32D50BC71A3D018D002D3098 /* LWFAttacksBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BC61A3D018D002D3098 /* LWFAttacksBuilder.m */; };
 		32D50BCD1A3D227C002D3098 /* LWFRadioactiveRat.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BCC1A3D227C002D3098 /* LWFRadioactiveRat.m */; };
 		32D50BD31A3DFDF3002D3098 /* LWFPointObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */; };
+		32DB4CC21AD9FB65003402C0 /* LWFHudLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DB4CBF1AD9FB65003402C0 /* LWFHudLogger.m */; };
+		32DB4CC31AD9FB65003402C0 /* LWFLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DB4CC11AD9FB65003402C0 /* LWFLogger.m */; };
+		32DB4CC61AD9FC2E003402C0 /* LWFDifficultyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DB4CC51AD9FC2E003402C0 /* LWFDifficultyManager.m */; };
 		32DFD29F1AAFD7E400FB554B /* popup_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD29C1AAFD7E400FB554B /* popup_bg.png */; };
 		32DFD2A01AAFD7E400FB554B /* popup_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD29D1AAFD7E400FB554B /* popup_bg@2x.png */; };
 		32DFD2A11AAFD7E400FB554B /* popup_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD29E1AAFD7E400FB554B /* popup_bg@3x.png */; };
@@ -108,8 +111,6 @@
 		32E2E6BF1ACCC1D900EA88DD /* LWFPoopThrowAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2E6BE1ACCC1D900EA88DD /* LWFPoopThrowAttack.m */; };
 		32E2E6C11ACCCB7C00EA88DD /* poop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E2E6C01ACCCB7C00EA88DD /* poop.jpg */; };
 		32E2E6C41ACF5ED500EA88DD /* LWFVisibilityShadowCasting.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2E6C31ACF5ED500EA88DD /* LWFVisibilityShadowCasting.m */; };
-		32E2E6C81AD0B76E00EA88DD /* LWFHudLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2E6C71AD0B76E00EA88DD /* LWFHudLogger.m */; };
-		32E2E6CB1AD0BAB700EA88DD /* LWFLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2E6CA1AD0BAB700EA88DD /* LWFLogger.m */; };
 		32F09E291A48C947000B8797 /* LWFCombatSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F09E281A48C947000B8797 /* LWFCombatSystem.m */; };
 		32F09E2C1A48E6B4000B8797 /* LWFCombatOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F09E2B1A48E6B4000B8797 /* LWFCombatOutput.m */; };
 		32F09E2F1A48EBB1000B8797 /* LWFEquips.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F09E2E1A48EBB1000B8797 /* LWFEquips.m */; };
@@ -279,6 +280,12 @@
 		32D50BCC1A3D227C002D3098 /* LWFRadioactiveRat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRadioactiveRat.m; sourceTree = "<group>"; };
 		32D50BD11A3DFDF3002D3098 /* LWFPointObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPointObject.h; sourceTree = "<group>"; };
 		32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPointObject.m; sourceTree = "<group>"; };
+		32DB4CBE1AD9FB65003402C0 /* LWFHudLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFHudLogger.h; sourceTree = "<group>"; };
+		32DB4CBF1AD9FB65003402C0 /* LWFHudLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFHudLogger.m; sourceTree = "<group>"; };
+		32DB4CC01AD9FB65003402C0 /* LWFLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFLogger.h; sourceTree = "<group>"; };
+		32DB4CC11AD9FB65003402C0 /* LWFLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFLogger.m; sourceTree = "<group>"; };
+		32DB4CC41AD9FC2E003402C0 /* LWFDifficultyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFDifficultyManager.h; sourceTree = "<group>"; };
+		32DB4CC51AD9FC2E003402C0 /* LWFDifficultyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFDifficultyManager.m; sourceTree = "<group>"; };
 		32DFD29C1AAFD7E400FB554B /* popup_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popup_bg.png; sourceTree = "<group>"; };
 		32DFD29D1AAFD7E400FB554B /* popup_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popup_bg@2x.png"; sourceTree = "<group>"; };
 		32DFD29E1AAFD7E400FB554B /* popup_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popup_bg@3x.png"; sourceTree = "<group>"; };
@@ -310,10 +317,6 @@
 		32E2E6C01ACCCB7C00EA88DD /* poop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = poop.jpg; sourceTree = "<group>"; };
 		32E2E6C21ACF5ED500EA88DD /* LWFVisibilityShadowCasting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFVisibilityShadowCasting.h; sourceTree = "<group>"; };
 		32E2E6C31ACF5ED500EA88DD /* LWFVisibilityShadowCasting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFVisibilityShadowCasting.m; sourceTree = "<group>"; };
-		32E2E6C61AD0B76E00EA88DD /* LWFHudLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFHudLogger.h; sourceTree = "<group>"; };
-		32E2E6C71AD0B76E00EA88DD /* LWFHudLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFHudLogger.m; sourceTree = "<group>"; };
-		32E2E6C91AD0BAB700EA88DD /* LWFLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFLogger.h; sourceTree = "<group>"; };
-		32E2E6CA1AD0BAB700EA88DD /* LWFLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFLogger.m; sourceTree = "<group>"; };
 		32EDF5981A7C5FCC0007EA36 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		32F09E271A48C947000B8797 /* LWFCombatSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFCombatSystem.h; sourceTree = "<group>"; };
 		32F09E281A48C947000B8797 /* LWFCombatSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFCombatSystem.m; sourceTree = "<group>"; };
@@ -611,6 +614,26 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		32DB4CBC1AD9FB31003402C0 /* Difficulty */ = {
+			isa = PBXGroup;
+			children = (
+				32DB4CC41AD9FC2E003402C0 /* LWFDifficultyManager.h */,
+				32DB4CC51AD9FC2E003402C0 /* LWFDifficultyManager.m */,
+			);
+			path = Difficulty;
+			sourceTree = "<group>";
+		};
+		32DB4CBD1AD9FB65003402C0 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				32DB4CBE1AD9FB65003402C0 /* LWFHudLogger.h */,
+				32DB4CBF1AD9FB65003402C0 /* LWFHudLogger.m */,
+				32DB4CC01AD9FB65003402C0 /* LWFLogger.h */,
+				32DB4CC11AD9FB65003402C0 /* LWFLogger.m */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
 		32DFD2AE1AB1193D00FB554B /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,17 +659,6 @@
 				32E2E6B31ACB6BA900EA88DD /* poop_thrower_rat_standing_right.png */,
 			);
 			path = "Poop Thrower Rat";
-			sourceTree = "<group>";
-		};
-		32E2E6C51AD0B69000EA88DD /* Log */ = {
-			isa = PBXGroup;
-			children = (
-				32E2E6C61AD0B76E00EA88DD /* LWFHudLogger.h */,
-				32E2E6C71AD0B76E00EA88DD /* LWFHudLogger.m */,
-				32E2E6C91AD0BAB700EA88DD /* LWFLogger.h */,
-				32E2E6CA1AD0BAB700EA88DD /* LWFLogger.m */,
-			);
-			name = Log;
 			sourceTree = "<group>";
 		};
 		32F1CDC71A575BCB00A0D9F5 /* Items */ = {
@@ -838,7 +850,8 @@
 		A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */ = {
 			isa = PBXGroup;
 			children = (
-				32E2E6C51AD0B69000EA88DD /* Log */,
+				32DB4CBD1AD9FB65003402C0 /* Log */,
+				32DB4CBC1AD9FB31003402C0 /* Difficulty */,
 				32DFD2AE1AB1193D00FB554B /* Views */,
 				32F1CDC71A575BCB00A0D9F5 /* Items */,
 				32D50BC81A3D1FE9002D3098 /* Assets */,
@@ -1127,7 +1140,7 @@
 				32BCDF791A50455E004A2993 /* LWFDartDungeonGenerator.m in Sources */,
 				32C511F31A37A5DB00F0B955 /* LWFGeometry.m in Sources */,
 				A7D8BEE71A198C67005B0599 /* LWFCaveGeneratorCell.m in Sources */,
-				32E2E6C81AD0B76E00EA88DD /* LWFHudLogger.m in Sources */,
+				32DB4CC21AD9FB65003402C0 /* LWFHudLogger.m in Sources */,
 				A7D8BEE11A19883A005B0599 /* LWFCaveGenerator.m in Sources */,
 				32F1CDC61A575A2F00A0D9F5 /* LWFInventory.m in Sources */,
 				32E2E6BC1ACB6C7300EA88DD /* LWFPoopThrowerRat.m in Sources */,
@@ -1144,6 +1157,7 @@
 				3219AB4B1A8ECEB600FE544C /* LWFSpinningAttack.m in Sources */,
 				A78443B01A1EEFCC0029995D /* PathFindNode.m in Sources */,
 				A7D8BEED1A1AB909005B0599 /* LWFRoom.m in Sources */,
+				32DB4CC61AD9FC2E003402C0 /* LWFDifficultyManager.m in Sources */,
 				32D50BC41A3CFB60002D3098 /* LWFStats.m in Sources */,
 				A78443A91A1EB2220029995D /* LWFCreature.m in Sources */,
 				32CD39D61A22CBCC000ADD95 /* LWFGoblin.m in Sources */,
@@ -1171,7 +1185,7 @@
 				A7D8BEE41A1988BC005B0599 /* LWFCaveGeneratorConstants.m in Sources */,
 				32915F541A99619300A037F0 /* LWFShadowCasting.m in Sources */,
 				A7D83B971A1D74F20054C022 /* LWFModelGrid.m in Sources */,
-				32E2E6CB1AD0BAB700EA88DD /* LWFLogger.m in Sources */,
+				32DB4CC31AD9FB65003402C0 /* LWFLogger.m in Sources */,
 				A7D8BEEA1A1AB598005B0599 /* LWFRandomUtils.m in Sources */,
 				321DB1111A74201D003354BB /* LWFItemPrototypeFactory.m in Sources */,
 				32FFE83E1A2C0BDD003D02A4 /* LWFAttack.m in Sources */,
