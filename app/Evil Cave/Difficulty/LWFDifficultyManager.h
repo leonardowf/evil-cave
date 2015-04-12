@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+@class LWFLevelDifficulty;
 
 @interface LWFDifficultyManager : NSObject
 
 @property (nonatomic) NSInteger currentDepth;
 
-- (NSArray *)getMonsters;
+- (LWFLevelDifficulty *)getLevelDifficulty;
 
 @end

@@ -10,8 +10,8 @@
 
 @implementation LWFDifficultyManager
 
-- (NSArray *)getMonsters {
-    
+- (LWFLevelDifficulty *)getLevelDifficulty {
+    return nil;
 }
 
 @end
