@@ -10,24 +10,4 @@
 
 @implementation LWFLevelDifficulty
 
-- (NSArray *)getCreatures {
-    return nil;
-}
-
-- (NSArray *)getChests {
-    return nil;
-}
-
-- (NSInteger)getNumberOfTilesVertical {
-    return 11;
-}
-
-- (NSInteger)getNumberOfTilesHorizontal {
-    return 11;
-}
-
-- (NSInteger)getDepth {
-    return 1;
-}
-
 @end

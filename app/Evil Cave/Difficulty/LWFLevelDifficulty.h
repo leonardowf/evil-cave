@@ -10,10 +10,10 @@
 
 @interface LWFLevelDifficulty : NSObject
 
-- (NSArray *)getCreatures;
-- (NSArray *)getChests;
-- (NSInteger)getDepth;
-- (NSInteger)getNumberOfTilesVertical;
-- (NSInteger)getNumberOfTilesHorizontal;
+@property (nonatomic, strong) NSArray *creatures;
+@property (nonatomic, strong) NSArray *chests;
+@property (nonatomic) NSInteger depth;
+@property (nonatomic) NSInteger numberTilesVertical;
+@property (nonatomic) NSInteger numberTilesHorizontal;
 
 @end
