@@ -155,6 +155,14 @@
         
     } else if (recognizer.state == UIGestureRecognizerStateChanged) {
         
+        if (_map.xScale > MAX_ZOOM_IN && recognizer.scale >= 1.0) {
+            return;
+        }
+        
+        if (_map.xScale < MAX_ZOOM_OUT && recognizer.scale < 1.0) {
+            return;
+        }
+        
         CGPoint anchorPointInMySkNode = [_map convertPoint:anchorPoint fromNode:self];
         
         [_map setScale:(_map.xScale * recognizer.scale)];

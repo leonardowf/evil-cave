@@ -11,7 +11,6 @@
 
 #import "LWFPlayer.h"
 #import "LWFRat.h"
-#import "LWFGoblin.h"
 #import "LWFRadioactiveRat.h"
 #import "LWFPoopThrowerRat.h"
 
@@ -80,8 +79,6 @@
         creature = [[LWFPoopThrowerRat alloc]init];
     } else if (creatureType == LWFCreatureTypeRat) {
         creature = [[LWFRat alloc]init];
-    } else if (creatureType == LWFCreatureTypeGoblin) {
-        creature = [[LWFGoblin alloc]init];
     } else if (creatureType == LWFCreatureTypeRadioactiveRat) {
         creature = [[LWFRadioactiveRat alloc]init];
     } else if (creatureType == LWFCreatureTypeWarrior) {

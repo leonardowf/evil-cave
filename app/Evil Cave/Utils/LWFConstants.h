@@ -14,6 +14,9 @@
 #define MAX_NUMBER_PATH_FIND_TRIES 3
 // Define a quantidade de vezes que a inteligência artifical tenta se mover até encontrar
 
+#define MAX_ZOOM_IN 3.0
+#define MAX_ZOOM_OUT 0.25
+
 #define SINGLETON_FOR_CLASS(classname)\
 + (id) shared##classname {\
 static dispatch_once_t pred = 0;\
