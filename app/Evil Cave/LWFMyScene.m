@@ -131,6 +131,10 @@
         [recognizer setTranslation:CGPointZero inView:recognizer.view];
         
     } else if (recognizer.state == UIGestureRecognizerStateChanged) {
+        LWFInventory *inventory = [LWFInventory sharedInventory];
+        if ([inventory isOpen]) {
+            return;
+        }
         
         CGPoint translation = [recognizer translationInView:recognizer.view];
         translation = CGPointMake(-translation.x, translation.y);
