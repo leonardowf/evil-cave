@@ -17,6 +17,7 @@
 @interface LWFInventory () {
     LWFViewController *_viewController;
     NSMutableArray *_imageViewHolders;
+    UIView *_overlay;
     
     LWFItemDescription *_itemDescription;
 }
@@ -37,7 +38,8 @@
 
 SINGLETON_FOR_CLASS(Inventory)
 
-- (void)hide {    
+- (void)hide {
+    _overlay.hidden = YES;
     if (_itemDescription != nil) {
         [_itemDescription removeFromSuperview:YES];
         _itemDescription = nil;
@@ -48,6 +50,7 @@ SINGLETON_FOR_CLASS(Inventory)
 }
 
 - (void)show {
+    _overlay.hidden = NO;
     [_viewController.view bringSubviewToFront:_viewController.viewInventoryContainer];
     _viewController.viewInventoryContainer.alpha = 1.0;
     
@@ -143,6 +146,7 @@ SINGLETON_FOR_CLASS(Inventory)
 - (void)inject:(LWFViewController *)viewController {
     _viewController = viewController;
     _imageViewHolders = [NSMutableArray array];
+    _overlay = viewController.viewInventoryOverlay;
     
     for (NSInteger i = 1; i <= 15; i++) {
         NSString *imageViewToGet = [NSString stringWithFormat:@"item%ld", i];
