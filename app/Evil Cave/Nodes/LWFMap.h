@@ -17,13 +17,15 @@
 
 @interface LWFMap : SKNode
 
-@property (nonatomic, readonly, strong) LWFMapDimension *mapDimension;
-@property (nonatomic, readonly, strong) LWFTileMap *tileMap;
+@property (nonatomic, strong) LWFMapDimension *mapDimension;
+@property (nonatomic, strong) LWFTileMap *tileMap;
 @property (nonatomic, strong) LWFPlayer *player;
 @property (nonatomic, strong) LWFMovementManager *movementManager;
 @property (nonatomic, strong) LWFAttackManager *attackManager;
 
-- (instancetype)initWithMapDimension:(LWFMapDimension *)mapDimension;
+- (instancetype)initWithScreenSize:(CGSize)size;
+
+- (void)build;
 - (void)addTiles;
 - (void)addPlayer:(LWFPlayer *)player;
 - (LWFTile *)tileForPoint:(CGPoint)point;

@@ -26,26 +26,33 @@
     
     BOOL _blockUserInteraction;
     LWFPointObject *_touchQueue;
+    
+    CGSize _size;
 
 }
 @end
 
 @implementation LWFMap
 
-- (instancetype)initWithMapDimension:(LWFMapDimension *)mapDimension
+- (instancetype)initWithScreenSize:(CGSize)size
 {
     self = [super init];
     if (self) {
-        _mapDimension = mapDimension;
-        _tileMap = [[LWFTileMap alloc]initWithMapDimension:mapDimension];
-        _turnList = [[LWFTurnList alloc]init];
-
-        _attackManager = [[LWFAttackManager alloc]initWithTileMap:_tileMap];
-        
-        _creatureBuilder = [[LWFCreatureBuilder alloc]initWithMap:self movementManager:_movementManager andMapDimension:_mapDimension andTurnList:_turnList andAttackManager:_attackManager];
+        _size = size;
         
     }
     return self;
+}
+
+- (void)build {
+    _mapDimension = [[LWFMapDimension alloc]initWithGridSize:_size numberTilesVertical:15 numberTilesHorizontal:15 andTileSize:TILE_SIZE];
+    
+    _tileMap = [[LWFTileMap alloc]initWithMapDimension:_mapDimension];
+    _turnList = [[LWFTurnList alloc]init];
+    
+    _attackManager = [[LWFAttackManager alloc]initWithTileMap:_tileMap];
+    
+    _creatureBuilder = [[LWFCreatureBuilder alloc]initWithMap:self movementManager:_movementManager andMapDimension:_mapDimension andTurnList:_turnList andAttackManager:_attackManager];
 }
 
 - (void)addTiles {
