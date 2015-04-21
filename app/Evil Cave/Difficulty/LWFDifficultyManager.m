@@ -7,11 +7,38 @@
 //
 
 #import "LWFDifficultyManager.h"
+#import "LWFFloorDifficulty.h"
+#import "LWFCreatureBuilder.h"
+#import "LWFCreature.h"
+
+@interface LWFDifficultyManager () {
+    LWFCreatureBuilder *_creatureBuilder;
+}
+@end
 
 @implementation LWFDifficultyManager
 
-- (LWFLevelDifficulty *)getLevelDifficulty {
-    return nil;
+- (instancetype)initWithCreatureBuilder:(LWFCreatureBuilder *)creatureBuilder
+{
+    self = [super init];
+    if (self) {
+        _creatureBuilder = creatureBuilder;
+    }
+    return self;
 }
 
+
+- (LWFFloorDifficulty *)getFloorDifficultyForFloor:(NSInteger)floor {
+    return [self floorDifficulty1];
+}
+
+- (LWFFloorDifficulty *)floorDifficulty1 {
+    LWFFloorDifficulty *floorDifficulty = [[LWFFloorDifficulty alloc]init];
+    
+    floorDifficulty.numberTilesVertical = 13;
+    floorDifficulty.numberTilesHorizontal = 13;
+    floorDifficulty.floor = 1;
+    
+    return floorDifficulty;
+}
 @end

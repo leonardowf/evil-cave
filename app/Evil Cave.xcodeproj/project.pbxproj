@@ -46,7 +46,7 @@
 		326524F51A75726900EEA4B2 /* loot_chances.json in Resources */ = {isa = PBXBuildFile; fileRef = 326524F41A75726900EEA4B2 /* loot_chances.json */; };
 		326524F71A75ABAF00EEA4B2 /* item_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 326524F61A75ABAF00EEA4B2 /* item_sword.png */; };
 		328198351ABB990B00DB42F1 /* Lifebar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 328198341ABB990B00DB42F1 /* Lifebar.xib */; };
-		328F18461ADB33C100B61752 /* LWFLevelDifficulty.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F18451ADB33C100B61752 /* LWFLevelDifficulty.m */; };
+		328F18461ADB33C100B61752 /* LWFFloorDifficulty.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F18451ADB33C100B61752 /* LWFFloorDifficulty.m */; };
 		32915F541A99619300A037F0 /* LWFShadowCasting.m in Sources */ = {isa = PBXBuildFile; fileRef = 32915F531A99619300A037F0 /* LWFShadowCasting.m */; };
 		3293698B1A5058DD00ECF705 /* LWFRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3293698A1A5058DD00ECF705 /* LWFRect.m */; };
 		32ACD05F1A7B062600970F69 /* item_motherfucking_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */; };
@@ -231,8 +231,8 @@
 		326524F41A75726900EEA4B2 /* loot_chances.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loot_chances.json; sourceTree = "<group>"; };
 		326524F61A75ABAF00EEA4B2 /* item_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_sword.png; sourceTree = "<group>"; };
 		328198341ABB990B00DB42F1 /* Lifebar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Lifebar.xib; sourceTree = "<group>"; };
-		328F18441ADB33C100B61752 /* LWFLevelDifficulty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFLevelDifficulty.h; sourceTree = "<group>"; };
-		328F18451ADB33C100B61752 /* LWFLevelDifficulty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFLevelDifficulty.m; sourceTree = "<group>"; };
+		328F18441ADB33C100B61752 /* LWFFloorDifficulty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFFloorDifficulty.h; sourceTree = "<group>"; };
+		328F18451ADB33C100B61752 /* LWFFloorDifficulty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFFloorDifficulty.m; sourceTree = "<group>"; };
 		32915F521A99619300A037F0 /* LWFShadowCasting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFShadowCasting.h; sourceTree = "<group>"; };
 		32915F531A99619300A037F0 /* LWFShadowCasting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFShadowCasting.m; sourceTree = "<group>"; };
 		329369891A5058DD00ECF705 /* LWFRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRect.h; sourceTree = "<group>"; };
@@ -617,8 +617,8 @@
 			children = (
 				32DB4CC41AD9FC2E003402C0 /* LWFDifficultyManager.h */,
 				32DB4CC51AD9FC2E003402C0 /* LWFDifficultyManager.m */,
-				328F18441ADB33C100B61752 /* LWFLevelDifficulty.h */,
-				328F18451ADB33C100B61752 /* LWFLevelDifficulty.m */,
+				328F18441ADB33C100B61752 /* LWFFloorDifficulty.h */,
+				328F18451ADB33C100B61752 /* LWFFloorDifficulty.m */,
 			);
 			path = Difficulty;
 			sourceTree = "<group>";
@@ -1159,7 +1159,7 @@
 				A7D8BEED1A1AB909005B0599 /* LWFRoom.m in Sources */,
 				32DB4CC61AD9FC2E003402C0 /* LWFDifficultyManager.m in Sources */,
 				32D50BC41A3CFB60002D3098 /* LWFStats.m in Sources */,
-				328F18461ADB33C100B61752 /* LWFLevelDifficulty.m in Sources */,
+				328F18461ADB33C100B61752 /* LWFFloorDifficulty.m in Sources */,
 				A78443A91A1EB2220029995D /* LWFCreature.m in Sources */,
 				326524F31A75550600EEA4B2 /* LWFLootChanceFactory.m in Sources */,
 				32DFD2B31AB1196900FB554B /* LWFItemDescription.m in Sources */,

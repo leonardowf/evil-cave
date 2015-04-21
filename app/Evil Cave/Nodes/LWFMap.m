@@ -20,6 +20,9 @@
 #import "LWFPointObject.h"
 #import "LWFInventory.h"
 
+#import "LWFDifficultyManager.h"
+#import "LWFFloorDifficulty.h"
+
 @interface LWFMap () {
     LWFTurnList *_turnList;
     LWFCreatureBuilder *_creatureBuilder;
@@ -28,24 +31,33 @@
     LWFPointObject *_touchQueue;
     
     CGSize _size;
+    NSInteger _floor;
+    LWFFloorDifficulty *_floorDifficulty;
 
 }
+
 @end
 
 @implementation LWFMap
 
-- (instancetype)initWithScreenSize:(CGSize)size
+- (instancetype)initWithScreenSize:(CGSize)size andFloor:(NSInteger)floor
 {
     self = [super init];
     if (self) {
         _size = size;
+        _floor = floor;
+//        self.player = [LWFPlayer sharedPlayer];
         
     }
     return self;
 }
 
 - (void)build {
-    _mapDimension = [[LWFMapDimension alloc]initWithGridSize:_size numberTilesVertical:15 numberTilesHorizontal:15 andTileSize:TILE_SIZE];
+
+    LWFDifficultyManager *difficultyManager = [[LWFDifficultyManager alloc]init];
+    _floorDifficulty = [difficultyManager getFloorDifficultyForFloor:_floor];
+    
+    _mapDimension = [[LWFMapDimension alloc]initWithGridSize:_size numberTilesVertical:_floorDifficulty.numberTilesVertical numberTilesHorizontal:_floorDifficulty.numberTilesHorizontal andTileSize:TILE_SIZE];
     
     _tileMap = [[LWFTileMap alloc]initWithMapDimension:_mapDimension];
     _turnList = [[LWFTurnList alloc]init];
@@ -53,6 +65,7 @@
     _attackManager = [[LWFAttackManager alloc]initWithTileMap:_tileMap];
     
     _creatureBuilder = [[LWFCreatureBuilder alloc]initWithMap:self movementManager:_movementManager andMapDimension:_mapDimension andTurnList:_turnList andAttackManager:_attackManager];
+    
 }
 
 - (void)addTiles {
@@ -193,49 +206,27 @@
 }
 
 - (void)createCreatures {
+    [_floorDifficulty buildCreaturesWithBuilder:_creatureBuilder];
 
-    LWFCreature *creature1 = [_creatureBuilder buildWithType:LWFCreatureTypeRat];
-    [_turnList.creatures addObject:creature1];
+    _player.nextCreature = _floorDifficulty.creatures[0];
+    [_turnList.creatures addObjectsFromArray:_floorDifficulty.creatures];
     
-    _player.nextCreature = creature1;
+    for (LWFCreature *creature in _floorDifficulty.creatures) {
+        if ([_floorDifficulty.creatures lastObject] == creature) {
+            break;
+        }
+        
+        NSInteger currentIndex = [_floorDifficulty.creatures indexOfObject:creature];
+        
+        NSInteger nextIndex = currentIndex + 1;
+        
+        LWFCreature *nextCreature = _floorDifficulty.creatures[nextIndex];
+        
+        creature.nextCreature = nextCreature;
+    }
     
-    LWFCreature *creature2 = [_creatureBuilder buildWithType:LWFCreatureTypeRat];
-    [_turnList.creatures addObject:creature2];
-    creature1.nextCreature = creature2;
-    
-    LWFCreature *creature3 = [_creatureBuilder buildWithType:LWFCreatureTypeRat];
-    [_turnList.creatures addObject:creature3];
-    creature2.nextCreature = creature3;
-    
-    LWFCreature *creature4 = [_creatureBuilder buildWithType:LWFCreatureTypeRat];
-    [_turnList.creatures addObject:creature4];
-    creature3.nextCreature = creature4;
-    
-    LWFCreature *creature5 = [_creatureBuilder buildWithType:LWFCreatureTypeRadioactiveRat];
-    [_turnList.creatures addObject:creature5];
-    creature4.nextCreature = creature5;
-    
-    LWFCreature *creature6 = [_creatureBuilder buildWithType:LWFCreatureTypeRat];
-    [_turnList.creatures addObject:creature6];
-    creature5.nextCreature = creature6;
-    
-    LWFCreature *creature7 = [_creatureBuilder buildWithType:LWFCreatureTypeRat];
-    [_turnList.creatures addObject:creature7];
-    creature6.nextCreature = creature7;
-    
-    LWFCreature *creature8 = [_creatureBuilder buildWithType:LWFCreatureTypeRat];
-    [_turnList.creatures addObject:creature8];
-    creature7.nextCreature = creature8;
-    
-    LWFCreature *creature9 = [_creatureBuilder buildWithType:LWFCreatureTypeRat];
-    [_turnList.creatures addObject:creature9];
-    creature8.nextCreature = creature9;
-    
-    LWFCreature *creature10 = [_creatureBuilder buildWithType:LWFCreatureTypePoopThrowerRat];
-    [_turnList.creatures addObject:creature10];
-    creature9.nextCreature = creature10;
-    
-    creature10.nextCreature = _player;
+    LWFCreature *last = _floorDifficulty.creatures.lastObject;
+    last.nextCreature = _player;
     
 }
 

@@ -23,7 +23,7 @@
 @property (nonatomic, strong) LWFMovementManager *movementManager;
 @property (nonatomic, strong) LWFAttackManager *attackManager;
 
-- (instancetype)initWithScreenSize:(CGSize)size;
+- (instancetype)initWithScreenSize:(CGSize)size andFloor:(NSInteger)floor;
 
 - (void)build;
 - (void)addTiles;

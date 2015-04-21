@@ -7,13 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+@class LWFCreatureBuilder;
 
-@interface LWFLevelDifficulty : NSObject
+@interface LWFFloorDifficulty : NSObject
 
 @property (nonatomic, strong) NSArray *creatures;
 @property (nonatomic, strong) NSArray *chests;
-@property (nonatomic) NSInteger depth;
+@property (nonatomic) NSInteger floor;
 @property (nonatomic) NSInteger numberTilesVertical;
 @property (nonatomic) NSInteger numberTilesHorizontal;
+
+- (void)buildCreaturesWithBuilder:(LWFCreatureBuilder *)builder;
 
 @end

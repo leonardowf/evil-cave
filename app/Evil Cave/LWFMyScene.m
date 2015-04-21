@@ -26,16 +26,20 @@
     UITouch *_lastTouch;
     
     CGSize _size;
+    
+    NSInteger _currentFloor;
 }
 @end
 
 @implementation LWFMyScene
 
--(id)initWithSize:(CGSize)size {    
+-(id)initWithSize:(CGSize)size {
+    
     if (self = [super initWithSize:size]) {        
         self.backgroundColor = [UIColor blackColor];
         
         _size = size;
+        _currentFloor = 0;
         [self nextLevel];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
@@ -49,6 +53,7 @@
 }
 
 - (void)nextLevel {
+    _currentFloor++;
     [_map blockUserInteraction];
     
     SKSpriteNode *loadingNode = [SKSpriteNode spriteNodeWithColor:[UIColor blackColor] size:_size];
@@ -67,7 +72,7 @@
         
         [_map removeFromParent];
         
-        _map = [[LWFMap alloc]initWithScreenSize:_size];
+        _map = [[LWFMap alloc]initWithScreenSize:_size andFloor:_currentFloor];
         _map.xScale = xScale;
         _map.yScale = yScale;
         

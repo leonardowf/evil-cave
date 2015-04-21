@@ -39,13 +39,13 @@
 SINGLETON_FOR_CLASS(Inventory)
 
 - (void)hide {
-    _overlay.hidden = YES;
     if (_itemDescription != nil) {
         [_itemDescription removeFromSuperview:YES];
         _itemDescription = nil;
         return;
     }
     
+    _overlay.hidden = YES;
     _viewController.viewInventoryContainer.alpha = 0.0;
 }
 
