@@ -24,6 +24,7 @@
 
 - (void)show;
 - (void)hide;
+- (void)hideItemDescriptionIfNeeded;
 
 - (BOOL)canTakeItem:(LWFItem *)item;
 - (void)takeItem:(LWFItem *)item;

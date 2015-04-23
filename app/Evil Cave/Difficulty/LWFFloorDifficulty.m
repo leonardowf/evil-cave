@@ -26,7 +26,7 @@
 - (void)buildFloor1 {
     NSMutableArray *creatures = [NSMutableArray array];
     
-    for (NSInteger i = 0; i < 1; i++) {
+    for (NSInteger i = 0; i < self.floor + 100; i++) {
         LWFCreature *creature = [_builder buildWithType:LWFCreatureTypeRat];
         [creatures addObject:creature];
     }

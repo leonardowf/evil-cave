@@ -130,5 +130,16 @@
     
     [player requestSpecialAttack];
 }
+- (IBAction)didTapInventoryOverlay:(id)sender {
+    LWFInventory *inventory = [LWFInventory sharedInventory];
+    if ([inventory isOpen]) {
+        [inventory hide];
+        return;
+    }
+}
+- (IBAction)didTapInventoryContainer:(id)sender {
+    LWFInventory *inventory = [LWFInventory sharedInventory];
+    [inventory hideItemDescriptionIfNeeded];
+}
 
 @end

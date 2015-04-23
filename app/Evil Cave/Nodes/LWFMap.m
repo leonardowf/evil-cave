@@ -140,7 +140,6 @@
 - (void)userTouchedPoint:(CGPoint)point {
     LWFInventory *inventory = [LWFInventory sharedInventory];
     if ([inventory isOpen]) {
-        [inventory hide];
         return;
     }
     
@@ -211,18 +210,18 @@
     _player.nextCreature = _floorDifficulty.creatures[0];
     [_turnList.creatures addObjectsFromArray:_floorDifficulty.creatures];
     
+    NSInteger currentIndex = 0;
+    
     for (LWFCreature *creature in _floorDifficulty.creatures) {
         if ([_floorDifficulty.creatures lastObject] == creature) {
             break;
         }
         
-        NSInteger currentIndex = [_floorDifficulty.creatures indexOfObject:creature];
-        
         NSInteger nextIndex = currentIndex + 1;
-        
         LWFCreature *nextCreature = _floorDifficulty.creatures[nextIndex];
-        
         creature.nextCreature = nextCreature;
+        
+        currentIndex++;
     }
     
     LWFCreature *last = _floorDifficulty.creatures.lastObject;

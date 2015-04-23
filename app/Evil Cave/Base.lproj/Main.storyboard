@@ -202,14 +202,14 @@
                                     <outletCollection property="gestureRecognizers" destination="hUH-57-6B3" appends="YES" id="7sm-Jo-yUo"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FgX-lQ-npQ" userLabel="Log Container">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgX-lQ-npQ" userLabel="Log Container">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eM0-Xs-6fp">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eM0-Xs-6fp">
                                         <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E58-Ef-riH">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E58-Ef-riH">
                                         <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -237,6 +237,10 @@
                             <view hidden="YES" alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmD-T8-41z" userLabel="Inventory Overlay">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="XIy-1S-5WJ" appends="YES" id="q7B-6j-MF3"/>
+                                </connections>
                             </view>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfA-Uw-d4k" userLabel="Inventory Container">
                                 <rect key="frame" x="26" y="40" width="268" height="488"/>
@@ -579,7 +583,7 @@
                                             <constraint firstItem="gS0-6h-6gd" firstAttribute="top" secondItem="kgC-WS-qaA" secondAttribute="top" id="sa0-lz-hby"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nw-Ou-Qj2" userLabel="Equipped Items Label">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nw-Ou-Qj2" userLabel="Equipped Items Label">
                                         <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -844,6 +848,9 @@
                                     <constraint firstItem="RKX-C2-ut7" firstAttribute="top" secondItem="1Nw-Ou-Qj2" secondAttribute="bottom" constant="20" id="yWB-V2-gCx"/>
                                     <constraint firstItem="JCS-g0-RNG" firstAttribute="height" secondItem="Gkq-VW-v15" secondAttribute="height" id="zSL-nk-iGi"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="nBq-iN-EvB" appends="YES" id="qFm-BI-hpV"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -919,6 +926,16 @@
                 <tapGestureRecognizer id="hUH-57-6B3">
                     <connections>
                         <action selector="didTapSpecialAttack:" destination="LVB-YS-i5n" id="bis-hd-hzu"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="XIy-1S-5WJ">
+                    <connections>
+                        <action selector="didTapInventoryOverlay:" destination="LVB-YS-i5n" id="jTj-yP-zfa"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="nBq-iN-EvB">
+                    <connections>
+                        <action selector="didTapInventoryContainer:" destination="LVB-YS-i5n" id="CkP-vV-MyR"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

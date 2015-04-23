@@ -49,6 +49,14 @@ SINGLETON_FOR_CLASS(Inventory)
     _viewController.viewInventoryContainer.alpha = 0.0;
 }
 
+- (void)hideItemDescriptionIfNeeded {
+    if (_itemDescription != nil) {
+        [_itemDescription removeFromSuperview:YES];
+        _itemDescription = nil;
+        return;
+    }
+}
+
 - (void)show {
     _overlay.hidden = NO;
     [_viewController.view bringSubviewToFront:_viewController.viewInventoryContainer];
@@ -93,13 +101,13 @@ SINGLETON_FOR_CLASS(Inventory)
 }
 
 - (void)didTap:(id)sender {
+    [self hideItemDescriptionIfNeeded];
+    
     UIImageView *imageView = (UIImageView *)[sender view];
     LWFImageViewHolder *viewHolder = [self viewHolderForImageView:imageView];
     
     if (viewHolder.item != nil) {
         [self openItemDescription:viewHolder.item];
-    } else {
-        [self hide];
     }
 }
 
