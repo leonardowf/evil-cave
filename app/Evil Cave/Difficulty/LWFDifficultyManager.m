@@ -31,8 +31,10 @@
 - (LWFFloorDifficulty *)getFloorDifficultyForFloor:(NSInteger)floor {
     LWFFloorDifficulty *floorDifficulty = [self floorDifficulty1];
     
-    floorDifficulty.numberTilesVertical = floor * 2 + floorDifficulty.numberTilesVertical;
-    floorDifficulty.numberTilesHorizontal = floor * 2 + floorDifficulty.numberTilesHorizontal;
+    NSInteger mod = floor % 2;
+    
+    floorDifficulty.numberTilesVertical = floor * 2 * mod + floorDifficulty.numberTilesVertical;
+    floorDifficulty.numberTilesHorizontal = floor * 2 * mod + floorDifficulty.numberTilesHorizontal;
     floorDifficulty.floor = floor;
     
     return floorDifficulty;
