@@ -81,6 +81,7 @@
 		32D50BC71A3D018D002D3098 /* LWFAttacksBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BC61A3D018D002D3098 /* LWFAttacksBuilder.m */; };
 		32D50BCD1A3D227C002D3098 /* LWFRadioactiveRat.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BCC1A3D227C002D3098 /* LWFRadioactiveRat.m */; };
 		32D50BD31A3DFDF3002D3098 /* LWFPointObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */; };
+		32DAF7611AEC5E03007B6BC1 /* LWFOvertimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DAF7601AEC5E03007B6BC1 /* LWFOvertimeManager.m */; };
 		32DB4CC21AD9FB65003402C0 /* LWFHudLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DB4CBF1AD9FB65003402C0 /* LWFHudLogger.m */; };
 		32DB4CC31AD9FB65003402C0 /* LWFLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DB4CC11AD9FB65003402C0 /* LWFLogger.m */; };
 		32DB4CC61AD9FC2E003402C0 /* LWFDifficultyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DB4CC51AD9FC2E003402C0 /* LWFDifficultyManager.m */; };
@@ -280,6 +281,9 @@
 		32D50BCC1A3D227C002D3098 /* LWFRadioactiveRat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRadioactiveRat.m; sourceTree = "<group>"; };
 		32D50BD11A3DFDF3002D3098 /* LWFPointObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPointObject.h; sourceTree = "<group>"; };
 		32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPointObject.m; sourceTree = "<group>"; };
+		32DAF75F1AEC5E03007B6BC1 /* LWFOvertimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFOvertimeManager.h; sourceTree = "<group>"; };
+		32DAF7601AEC5E03007B6BC1 /* LWFOvertimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFOvertimeManager.m; sourceTree = "<group>"; };
+		32DAF7621AEC5E42007B6BC1 /* LWFOvertimeEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFOvertimeEffect.h; sourceTree = "<group>"; };
 		32DB4CBE1AD9FB65003402C0 /* LWFHudLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFHudLogger.h; sourceTree = "<group>"; };
 		32DB4CBF1AD9FB65003402C0 /* LWFHudLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFHudLogger.m; sourceTree = "<group>"; };
 		32DB4CC01AD9FB65003402C0 /* LWFLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFLogger.h; sourceTree = "<group>"; };
@@ -612,6 +616,16 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		32DAF75E1AEC5DDD007B6BC1 /* Overtime */ = {
+			isa = PBXGroup;
+			children = (
+				32DAF75F1AEC5E03007B6BC1 /* LWFOvertimeManager.h */,
+				32DAF7601AEC5E03007B6BC1 /* LWFOvertimeManager.m */,
+				32DAF7621AEC5E42007B6BC1 /* LWFOvertimeEffect.h */,
+			);
+			path = Overtime;
+			sourceTree = "<group>";
+		};
 		32DB4CBC1AD9FB31003402C0 /* Difficulty */ = {
 			isa = PBXGroup;
 			children = (
@@ -850,6 +864,7 @@
 		A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */ = {
 			isa = PBXGroup;
 			children = (
+				32DAF75E1AEC5DDD007B6BC1 /* Overtime */,
 				32DB4CBD1AD9FB65003402C0 /* Log */,
 				32DB4CBC1AD9FB31003402C0 /* Difficulty */,
 				32DFD2AE1AB1193D00FB554B /* Views */,
@@ -1194,6 +1209,7 @@
 				A7F5BBD11A16F831005BAB63 /* LWFMap.m in Sources */,
 				32D50BD31A3DFDF3002D3098 /* LWFPointObject.m in Sources */,
 				A78443AC1A1EEF7B0029995D /* LWFHumbleBeeFindPath.m in Sources */,
+				32DAF7611AEC5E03007B6BC1 /* LWFOvertimeManager.m in Sources */,
 				32F831341A96A96B007174F1 /* LWFAttackQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

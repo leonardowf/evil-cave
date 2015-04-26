@@ -61,4 +61,18 @@
     return range;
 }
 
+// OVERTIME: COOLDOWN
+- (NSInteger)numberOfTurns {
+    return 10;
+}
+
+- (void)overtimeNotInEffectAnymore {
+    
+}
+
+- (void)overtimeEffectChangedFrom:(NSInteger)before to:(NSInteger)after {
+    
+}
+
+
 @end

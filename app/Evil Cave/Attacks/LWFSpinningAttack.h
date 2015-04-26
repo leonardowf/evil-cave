@@ -7,7 +7,8 @@
 //
 
 #import "LWFAttack.h"
+#import "LWFOvertimeEffect.h"
 
-@interface LWFSpinningAttack : LWFAttack
+@interface LWFSpinningAttack : LWFAttack <LWFOvertimeEffect>
 
 @end
