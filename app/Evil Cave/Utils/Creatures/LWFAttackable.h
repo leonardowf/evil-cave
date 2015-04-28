@@ -13,6 +13,7 @@ typedef enum : NSUInteger {
 } FailedAttackReason;
 
 #import <Foundation/Foundation.h>
+
 @class LWFTile;
 @class LWFAttack;
 @class LWFStats;

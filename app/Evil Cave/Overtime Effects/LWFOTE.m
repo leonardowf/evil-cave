@@ -8,6 +8,36 @@
 
 #import "LWFOTE.h"
 
+@interface LWFOTE () {
+    NSMutableArray *_oteObservers;
+}
+@end
+
 @implementation LWFOTE
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _oteObservers = [NSMutableArray array];
+    }
+    return self;
+}
+
+- (void)turnsLeftChanged {
+    
+}
+
+- (void)activate {
+    
+}
+
+- (void)willBeRemoved {
+    
+}
+
+- (void)addObserver:(id<LWFOTEObserver>)observer {
+    [_oteObservers addObject:observer];
+}
 
 @end

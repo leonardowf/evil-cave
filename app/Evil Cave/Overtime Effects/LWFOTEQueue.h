@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LWFOTEObserver.h"
 
 @interface LWFOTEQueue : NSObject
+
+@property (nonatomic, strong) NSMutableArray *OTEs;
+
+- (void)process;
 
 @end

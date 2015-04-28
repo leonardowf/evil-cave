@@ -7,7 +7,45 @@
 //
 
 #import "LWFOTEQueue.h"
+#import "LWFOTE.h"
 
 @implementation LWFOTEQueue
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _OTEs = [NSMutableArray array];
+    }
+    return self;
+}
+
+- (void)addOTE:(LWFOTE *)ote {
+    [_OTEs addObject:ote];
+}
+
+- (void)process {
+    for (LWFOTE *ote in _OTEs) {
+        [ote activate];
+        ote.turnsLeft--;
+        [ote turnsLeftChanged];
+    }
+    
+    [self cleanOTEs];
+}
+
+- (void)cleanOTEs {
+    NSMutableArray *toRemove = [NSMutableArray array];
+    
+    for (LWFOTE *ote in _OTEs) {
+        if (ote.turnsLeft < 0) {
+            [ote willBeRemoved];
+            [toRemove addObject:toRemove];
+        }
+
+    }
+    
+    [self.OTEs removeObjectsInArray:toRemove];
+}
 
 @end

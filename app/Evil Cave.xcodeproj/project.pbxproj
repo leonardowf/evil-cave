@@ -28,7 +28,6 @@
 		323335FC1AA52F730088C4F6 /* item_info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 323335F91AA52F730088C4F6 /* item_info@3x.png */; };
 		323D10931A9C0CB6000AB32D /* fog_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 323D10921A9C0CB6000AB32D /* fog_overlay.png */; };
 		324527831A4CEC6900AFF9A7 /* warrior_attacking_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527821A4CEC6900AFF9A7 /* warrior_attacking_right.atlas */; };
-		324527851A4DB5E600AFF9A7 /* warrior_walking_left.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527841A4DB5E600AFF9A7 /* warrior_walking_left.atlas */; };
 		324527871A4DB5F400AFF9A7 /* warrior_standing_left.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527861A4DB5F400AFF9A7 /* warrior_standing_left.atlas */; };
 		324527891A4DB60800AFF9A7 /* warrior_standing_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527881A4DB60800AFF9A7 /* warrior_standing_right.atlas */; };
 		3245278B1A4DCBFB00AFF9A7 /* warrior_attacking_left.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3245278A1A4DCBFB00AFF9A7 /* warrior_attacking_left.atlas */; };
@@ -237,6 +236,7 @@
 		32826C301AEDB296007400AD /* LWFOTE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFOTE.m; sourceTree = "<group>"; };
 		32826C321AEDB2A8007400AD /* LWFOTEQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFOTEQueue.h; sourceTree = "<group>"; };
 		32826C331AEDB2A8007400AD /* LWFOTEQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFOTEQueue.m; sourceTree = "<group>"; };
+		32826C351AEDB45F007400AD /* LWFOTEObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFOTEObserver.h; sourceTree = "<group>"; };
 		328F18441ADB33C100B61752 /* LWFFloorDifficulty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFFloorDifficulty.h; sourceTree = "<group>"; };
 		328F18451ADB33C100B61752 /* LWFFloorDifficulty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFFloorDifficulty.m; sourceTree = "<group>"; };
 		32915F521A99619300A037F0 /* LWFShadowCasting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFShadowCasting.h; sourceTree = "<group>"; };
@@ -527,6 +527,7 @@
 				32826C301AEDB296007400AD /* LWFOTE.m */,
 				32826C321AEDB2A8007400AD /* LWFOTEQueue.h */,
 				32826C331AEDB2A8007400AD /* LWFOTEQueue.m */,
+				32826C351AEDB45F007400AD /* LWFOTEObserver.h */,
 			);
 			path = "Overtime Effects";
 			sourceTree = "<group>";
@@ -982,7 +983,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = LWF;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = leonardowistuba;
 				TargetAttributes = {
 					A7F5BBAB1A16EFBF005BAB63 = {
@@ -1093,7 +1094,6 @@
 				32BEC00E1A4714DC000C77AA /* rat_standing_left.png in Resources */,
 				32FB7DB11AA0004B00AA4C7F /* hero_portrait@2x.png in Resources */,
 				A7F5BB9D1A16EFBD005BAB63 /* Main.storyboard in Resources */,
-				324527851A4DB5E600AFF9A7 /* warrior_walking_left.atlas in Resources */,
 				324527871A4DB5F400AFF9A7 /* warrior_standing_left.atlas in Resources */,
 				324527941A4DEEF100AFF9A7 /* rat_dying_right.atlas in Resources */,
 				32DFD2A01AAFD7E400FB554B /* popup_bg@2x.png in Resources */,

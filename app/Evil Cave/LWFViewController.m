@@ -15,6 +15,8 @@
 
 #import "LWFHudLifebar.h"
 
+#import "LWFOTE.h"
+
 @implementation LWFViewController
 
 - (void)viewDidLoad

@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LWFOTEObserver.h"
 
 @interface LWFOTE : NSObject
+
+@property (nonatomic) NSInteger numberOfTurns;
+@property (nonatomic) NSInteger turnsLeft;
+
+- (void)activate;
+- (void)turnsLeftChanged;
+- (void)willBeRemoved;
+
+- (void)addObserver:(id<LWFOTEObserver>)observer;
 
 @end
