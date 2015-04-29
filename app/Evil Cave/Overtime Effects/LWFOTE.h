@@ -14,6 +14,8 @@
 @property (nonatomic) NSInteger numberOfTurns;
 @property (nonatomic) NSInteger turnsLeft;
 
+- (instancetype)initWithNumberOfTurns:(NSInteger)numberOfTurns;
+
 - (void)activate;
 - (void)turnsLeftChanged;
 - (void)willBeRemoved;

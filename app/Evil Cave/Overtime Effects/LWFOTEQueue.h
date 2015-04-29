@@ -11,8 +11,8 @@
 
 @interface LWFOTEQueue : NSObject
 
-@property (nonatomic, strong) NSMutableArray *OTEs;
-
 - (void)process;
+- (NSArray *)oteWithSameKind:(LWFOTE *)ote;
+- (void)addOTE:(LWFOTE *)ote;
 
 @end

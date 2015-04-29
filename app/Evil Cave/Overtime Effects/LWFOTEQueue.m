@@ -9,6 +9,11 @@
 #import "LWFOTEQueue.h"
 #import "LWFOTE.h"
 
+@interface LWFOTEQueue () {
+    NSMutableArray *_OTEs;
+}
+@end
+
 @implementation LWFOTEQueue
 
 - (instancetype)init
@@ -40,12 +45,24 @@
     for (LWFOTE *ote in _OTEs) {
         if (ote.turnsLeft < 0) {
             [ote willBeRemoved];
-            [toRemove addObject:toRemove];
+            [toRemove addObject:ote];
         }
 
     }
     
-    [self.OTEs removeObjectsInArray:toRemove];
+    [_OTEs removeObjectsInArray:toRemove];
+}
+
+- (NSArray *)oteWithSameKind:(LWFOTE *)ote {
+    NSMutableArray *foundOTES = [NSMutableArray array];
+    
+    for (LWFOTE *anOte in _OTEs) {
+        if ([anOte isKindOfClass:[ote class]]) {
+            [foundOTES addObject:anOte];
+        }
+    }
+    
+    return foundOTES;
 }
 
 @end

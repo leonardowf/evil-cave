@@ -37,6 +37,7 @@
 		324527981A4DF83A00AFF9A7 /* rat_dying_left.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527971A4DF83A00AFF9A7 /* rat_dying_left.atlas */; };
 		3245279A1A4EEF5500AFF9A7 /* creature_lifebar.png in Resources */ = {isa = PBXBuildFile; fileRef = 324527991A4EEF5500AFF9A7 /* creature_lifebar.png */; };
 		3245279D1A4EF1DB00AFF9A7 /* LWFLifeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3245279C1A4EF1DB00AFF9A7 /* LWFLifeBar.m */; };
+		325373881AF064FA00BF0E43 /* LWFOTESpinningCooldown.m in Sources */ = {isa = PBXBuildFile; fileRef = 325373871AF064FA00BF0E43 /* LWFOTESpinningCooldown.m */; };
 		3254E6D71A5CB49400BD7D13 /* door.png in Resources */ = {isa = PBXBuildFile; fileRef = 3254E6D61A5CB49400BD7D13 /* door.png */; };
 		32635D891AB5DD4D00362183 /* LWFItemComparison.m in Sources */ = {isa = PBXBuildFile; fileRef = 32635D881AB5DD4D00362183 /* LWFItemComparison.m */; };
 		326524EB1A7448AB00EEA4B2 /* item_prototypes.json in Resources */ = {isa = PBXBuildFile; fileRef = 326524EA1A7448AB00EEA4B2 /* item_prototypes.json */; };
@@ -221,6 +222,8 @@
 		324527991A4EEF5500AFF9A7 /* creature_lifebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = creature_lifebar.png; sourceTree = "<group>"; };
 		3245279B1A4EF1DB00AFF9A7 /* LWFLifeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFLifeBar.h; sourceTree = "<group>"; };
 		3245279C1A4EF1DB00AFF9A7 /* LWFLifeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFLifeBar.m; sourceTree = "<group>"; };
+		325373861AF064FA00BF0E43 /* LWFOTESpinningCooldown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFOTESpinningCooldown.h; sourceTree = "<group>"; };
+		325373871AF064FA00BF0E43 /* LWFOTESpinningCooldown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFOTESpinningCooldown.m; sourceTree = "<group>"; };
 		3254E6D61A5CB49400BD7D13 /* door.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door.png; sourceTree = "<group>"; };
 		32635D871AB5DD4D00362183 /* LWFItemComparison.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LWFItemComparison.h; path = ../../LWFItemComparison.h; sourceTree = "<group>"; };
 		32635D881AB5DD4D00362183 /* LWFItemComparison.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LWFItemComparison.m; path = ../../LWFItemComparison.m; sourceTree = "<group>"; };
@@ -528,6 +531,8 @@
 				32826C321AEDB2A8007400AD /* LWFOTEQueue.h */,
 				32826C331AEDB2A8007400AD /* LWFOTEQueue.m */,
 				32826C351AEDB45F007400AD /* LWFOTEObserver.h */,
+				325373861AF064FA00BF0E43 /* LWFOTESpinningCooldown.h */,
+				325373871AF064FA00BF0E43 /* LWFOTESpinningCooldown.m */,
 			);
 			path = "Overtime Effects";
 			sourceTree = "<group>";
@@ -1193,6 +1198,7 @@
 				321DB10B1A741FF6003354BB /* LWFItemPrototype.m in Sources */,
 				A7F5BB961A16EFBC005BAB63 /* main.m in Sources */,
 				321EC9A71A26A5C400F06B77 /* LWFTurnList.m in Sources */,
+				325373881AF064FA00BF0E43 /* LWFOTESpinningCooldown.m in Sources */,
 				32D50BC71A3D018D002D3098 /* LWFAttacksBuilder.m in Sources */,
 				32635D891AB5DD4D00362183 /* LWFItemComparison.m in Sources */,
 				32BEB13D1ABE75EA008950C0 /* LWFHudLifebar.m in Sources */,

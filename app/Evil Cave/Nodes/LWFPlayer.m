@@ -17,6 +17,9 @@
 #import "LWFShadowCasting.h"
 #import "LWFHudLifebar.h"
 
+#import "LWFOTEQueue.h"
+#import "LWFOTESpinningCooldown.h"
+
 @implementation LWFPlayer
 
 SINGLETON_FOR_CLASS(Player)
@@ -43,6 +46,8 @@ SINGLETON_FOR_CLASS(Player)
 
 - (void)processTurn {
     [self.map newTurnCycleStarted];
+    
+    [self.oteQueue process];
     
     if (self.tilePath == nil || self.tilePath.count == 0) {
         [self.map unlockUserInteraction];
@@ -185,7 +190,6 @@ SINGLETON_FOR_CLASS(Player)
 }
 
 - (void)requestTakeItem {
-    
     if (self.currentTile.items == nil || self.currentTile.items.count == 0) {
         return;
     }
@@ -204,13 +208,22 @@ SINGLETON_FOR_CLASS(Player)
 }
 
 - (void)requestSpecialAttack {
-    SKAction *rotation = [SKAction rotateByAngle: 2*M_PI duration:0.3];
-    //and just run the action
-    [self runAction: rotation];
+    LWFOTESpinningCooldown *ote = [[LWFOTESpinningCooldown alloc]init];
     
-    
-    LWFSpinningAttack *spinningAttack = [[LWFSpinningAttack alloc]init];
-    [self.attackManager attackable:self requestedAttackToTile:self.currentTile withAttack:spinningAttack];
+    NSArray *sameKindOtes = [self.oteQueue oteWithSameKind:ote];
+    if (sameKindOtes != nil && sameKindOtes.count > 0) {
+        
+    } else {
+        [self.oteQueue addOTE:ote];
+        
+        SKAction *rotation = [SKAction rotateByAngle: 2*M_PI duration:0.3];
+        //and just run the action
+        [self runAction: rotation];
+        
+        
+        LWFSpinningAttack *spinningAttack = [[LWFSpinningAttack alloc]init];
+        [self.attackManager attackable:self requestedAttackToTile:self.currentTile withAttack:spinningAttack];
+    }
 }
 
 - (id<LWFLifeDisplayer>)getLifeBar {

@@ -16,11 +16,13 @@
 
 @implementation LWFOTE
 
-- (instancetype)init
+- (instancetype)initWithNumberOfTurns:(NSInteger)numberOfTurns
 {
     self = [super init];
     if (self) {
         _oteObservers = [NSMutableArray array];
+        _numberOfTurns = numberOfTurns;
+        _turnsLeft = _numberOfTurns;
     }
     return self;
 }

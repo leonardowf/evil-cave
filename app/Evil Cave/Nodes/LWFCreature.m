@@ -26,6 +26,7 @@
 #import "LWFItemPrototypeFactory.h"
 #import "LWFLootChanceFactory.h"
 #import "LWFLootChance.h"
+#import "LWFOTEQueue.h"
 
 #import "LWFLifeDisplayer.h"
 
@@ -259,6 +260,7 @@
         return;
     }
     
+    [self.oteQueue process];
     [self processAIBehavior];
 }
 
