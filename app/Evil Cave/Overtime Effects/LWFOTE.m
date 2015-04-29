@@ -7,6 +7,7 @@
 //
 
 #import "LWFOTE.h"
+#import "LWFOTEObserver.h"
 
 @interface LWFOTE () {
     NSMutableArray *_oteObservers;
@@ -25,15 +26,21 @@
 }
 
 - (void)turnsLeftChanged {
-    
+    for (id<LWFOTEObserver> observer in _oteObservers) {
+        [observer notify:self turnsLeftChangedTo:self.turnsLeft];
+    }
 }
 
 - (void)activate {
-    
+    for (id<LWFOTEObserver> observer in _oteObservers) {
+        [observer notifyOTEActivated:self];
+    }
 }
 
 - (void)willBeRemoved {
-    
+    for (id<LWFOTEObserver> observer in _oteObservers) {
+        [observer notifyRemovalOf:self];
+    }
 }
 
 - (void)addObserver:(id<LWFOTEObserver>)observer {

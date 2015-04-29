@@ -23,6 +23,7 @@
 #import "LWFGameController.h"
 
 #import "LWFStats.h"
+#import "LWFOTEQueue.h"
 
 @interface LWFCreatureBuilder () {
     LWFMovementManager *_movementManager;
@@ -32,8 +33,6 @@
     LWFAttackManager *_attackManager;
     LWFAttacksBuilder *_attacksBuilder;
     NSDictionary *_creatureStats;
-    
-
 }
 @end
 @implementation LWFCreatureBuilder
@@ -103,6 +102,7 @@
         creature.size = _mapDimension.tileSize;
         creature.player = _map.player;
         creature.attacks = [_attacksBuilder attacksForCreatureType:creatureType];
+        creature.oteQueue = [[LWFOTEQueue alloc]init];
     }
     
     return creature;

@@ -250,11 +250,19 @@
 }
 
 - (void)processTurn {
+    [self turnBegun];
+}
+
+- (void)turnBegun {
     if ([self isDead]) {
         [self finishTurn];
         return;
     }
     
+    [self processAIBehavior];
+}
+
+- (void)processAIBehavior {
     LWFAttack *melee = [self.attacks firstObject];
     
     if ([melee isCreature:_player inRangeOfTile:self.currentTile]) {
@@ -264,7 +272,7 @@
         if ([self isAdjacentToPlayer]) {
             // por ataque melee
             [self attackPlayerWithMelee];
-
+            
             return;
         } else {
             if ([self.player isSurrounded]) {
@@ -289,12 +297,13 @@
             return;
         }
     } else if (self.tilePath == nil || [self.tilePath count] == 0) {
-//        [self buildPathToSomeDestiny];
     }
     
-//    [self walkToExistingPath];
     [self finishTurn];
-    
+}
+
+- (void)finishTurn {
+    [self.nextCreature processTurn];
 }
 
 - (void)walkToExistingPath {
@@ -357,11 +366,7 @@
     }
 }
 
-- (void)finishTurn {
-//    [self.turnList creatureFinishedTurn:self];
-    
-    [self.nextCreature processTurn];
-}
+
 
 - (BOOL)isSurrounded {
     NSArray *neighbors = [self.map.tileMap neighborsForTile:self.currentTile];

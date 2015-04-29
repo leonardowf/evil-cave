@@ -23,11 +23,13 @@
 
 @class LWFMovementManager;
 @class LWFAttackManager;
+@class LWFOTEQueue;
 
 @interface LWFCreature : SKSpriteNode <LWFMoveable, LWFAttackable, LWFKillable, LWFLootable>
 
 @property (nonatomic, strong) LWFMovementManager *movementManager;
 @property (nonatomic, strong) LWFAttackManager *attackManager;
+@property (nonatomic, strong) LWFOTEQueue *oteQueue;
 
 @property (nonatomic, strong) LWFTile *currentTile;
 @property (nonatomic, strong) LWFMap *map;
@@ -48,8 +50,12 @@
 @property (nonatomic, strong) NSArray *lootChances;
 
 - (void)build;
+
 - (void)processTurn;
+- (void)turnBegun;
 - (void)finishTurn;
+- (void)processAIBehavior;
+
 - (BOOL)isSurrounded;
 - (void)buildPathToTile:(LWFTile *)tile;
 - (void)walkToExistingPath;

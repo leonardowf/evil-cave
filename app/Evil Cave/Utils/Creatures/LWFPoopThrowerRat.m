@@ -29,12 +29,7 @@
     [super build];
 }
 
-- (void)processTurn {
-    if ([self isDead]) {
-        [self finishTurn];
-        return;
-    }
-    
+- (void)processAIBehavior {
     LWFPoopThrowAttack *poopThrowAttack = [self.attacks firstObject];
     
     if ([poopThrowAttack isCreature:self.player inRangeOfTile:self.currentTile]) {
