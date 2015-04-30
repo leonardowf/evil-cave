@@ -43,11 +43,10 @@
     NSMutableArray *toRemove = [NSMutableArray array];
     
     for (LWFOTE *ote in _OTEs) {
-        if (ote.turnsLeft < 0) {
+        if (ote.turnsLeft <= 0) {
             [ote willBeRemoved];
             [toRemove addObject:ote];
         }
-
     }
     
     [_OTEs removeObjectsInArray:toRemove];

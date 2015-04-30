@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
+#import "LWFOTEObserver.h"
 
-@interface LWFViewController : UIViewController
+@interface LWFViewController : UIViewController <LWFOTEObserver>
 
 @property (weak, nonatomic) IBOutlet UIView *itemPreview;
 @property (weak, nonatomic) IBOutlet UILabel *labelDamage;

@@ -207,23 +207,15 @@ SINGLETON_FOR_CLASS(Player)
     [LWFLogger logAttackedBy:creature damage:damage];
 }
 
-- (void)requestSpecialAttack {
-    LWFOTESpinningCooldown *ote = [[LWFOTESpinningCooldown alloc]init];
+- (void)requestSpecialAttack {        
+    SKAction *rotation = [SKAction rotateByAngle: 2*M_PI duration:0.3];
+    //and just run the action
+    [self runAction: rotation];
     
-    NSArray *sameKindOtes = [self.oteQueue oteWithSameKind:ote];
-    if (sameKindOtes != nil && sameKindOtes.count > 0) {
-        
-    } else {
-        [self.oteQueue addOTE:ote];
-        
-        SKAction *rotation = [SKAction rotateByAngle: 2*M_PI duration:0.3];
-        //and just run the action
-        [self runAction: rotation];
-        
-        
-        LWFSpinningAttack *spinningAttack = [[LWFSpinningAttack alloc]init];
-        [self.attackManager attackable:self requestedAttackToTile:self.currentTile withAttack:spinningAttack];
-    }
+    
+    LWFSpinningAttack *spinningAttack = [[LWFSpinningAttack alloc]init];
+    [self.attackManager attackable:self requestedAttackToTile:self.currentTile withAttack:spinningAttack];
+    
 }
 
 - (id<LWFLifeDisplayer>)getLifeBar {

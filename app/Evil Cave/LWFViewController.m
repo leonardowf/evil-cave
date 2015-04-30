@@ -16,6 +16,8 @@
 #import "LWFHudLifebar.h"
 
 #import "LWFOTE.h"
+#import "LWFOTEQueue.h"
+#import "LWFOTESpinningCooldown.h"
 
 @implementation LWFViewController
 
@@ -130,8 +132,18 @@
 - (IBAction)didTapSpecialAttack:(id)sender {
     LWFPlayer *player = [LWFPlayer sharedPlayer];
     
-    [player requestSpecialAttack];
+    // verifica se cooldown ainda está em efeito
+    LWFOTESpinningCooldown *ote = [[LWFOTESpinningCooldown alloc]init];
+    [ote addObserver:self];
+    NSArray *sameKindOtes = [player.oteQueue oteWithSameKind:ote];
+    BOOL cooldownOn = sameKindOtes != nil && sameKindOtes.count > 0;
+    
+    if (!cooldownOn) {
+        [player.oteQueue addOTE:ote];
+        [player requestSpecialAttack];
+    }
 }
+
 - (IBAction)didTapInventoryOverlay:(id)sender {
     LWFInventory *inventory = [LWFInventory sharedInventory];
     if ([inventory isOpen]) {
@@ -143,5 +155,21 @@
     LWFInventory *inventory = [LWFInventory sharedInventory];
     [inventory hideItemDescriptionIfNeeded];
 }
+
+# pragma - mark: LWFOTEObserver
+
+- (void)notify:(LWFOTE *)ote turnsLeftChangedTo:(NSInteger)newTurnsLeft {
+    NSLog(@"cooldown do spinning mudou para: %d", newTurnsLeft);
+}
+
+- (void)notifyRemovalOf:(LWFOTE *)ote {
+    
+}
+
+- (void)notifyOTEActivated:(LWFOTE *)ote {
+    
+}
+
+
 
 @end
