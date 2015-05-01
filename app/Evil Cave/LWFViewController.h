@@ -56,8 +56,13 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *labelGold;
 
+// log
 @property (weak, nonatomic) IBOutlet UILabel *labelLogLine3;
 @property (weak, nonatomic) IBOutlet UILabel *labelLogLine2;
 @property (weak, nonatomic) IBOutlet UILabel *labelLogLine1;
+
+// special attack
+@property (weak, nonatomic) IBOutlet UILabel *labelSpecialAttackCooldown;
+
 
 @end

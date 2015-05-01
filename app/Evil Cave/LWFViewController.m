@@ -160,6 +160,12 @@
 
 - (void)notify:(LWFOTE *)ote turnsLeftChangedTo:(NSInteger)newTurnsLeft {
     NSLog(@"cooldown do spinning mudou para: %d", newTurnsLeft);
+    
+    if (newTurnsLeft == 0) {
+        self.labelSpecialAttackCooldown.text = @"";
+    } else {
+        self.labelSpecialAttackCooldown.text = [NSString stringWithFormat:@"%d", newTurnsLeft];
+    }
 }
 
 - (void)notifyRemovalOf:(LWFOTE *)ote {

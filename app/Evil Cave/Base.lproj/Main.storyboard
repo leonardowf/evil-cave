@@ -20,6 +20,7 @@
             <string>Munro</string>
             <string>Munro</string>
             <string>Munro</string>
+            <string>Munro</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -183,6 +184,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pgk-fA-6RV" userLabel="Special Attack Container">
                                 <rect key="frame" x="260" y="508" width="60" height="60"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0Y-HF-1lD">
+                                        <rect key="frame" x="0.0" y="50" width="60" height="9.5"/>
+                                        <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="10"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Especial" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vif-fl-NZm">
                                         <rect key="frame" x="3" y="22" width="54.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -194,8 +201,11 @@
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="0h9-dY-Fn6"/>
+                                    <constraint firstItem="D0Y-HF-1lD" firstAttribute="leading" secondItem="Pgk-fA-6RV" secondAttribute="leading" id="Dyf-7a-uwN"/>
+                                    <constraint firstAttribute="trailing" secondItem="D0Y-HF-1lD" secondAttribute="trailing" id="JOH-5B-SgA"/>
                                     <constraint firstAttribute="centerX" secondItem="vif-fl-NZm" secondAttribute="centerX" id="KOV-fS-awW"/>
                                     <constraint firstAttribute="height" constant="60" id="Vqh-ib-jzi"/>
+                                    <constraint firstAttribute="bottom" secondItem="D0Y-HF-1lD" secondAttribute="bottom" id="Z2r-2Y-ruU"/>
                                     <constraint firstAttribute="centerY" secondItem="vif-fl-NZm" secondAttribute="centerY" id="kTa-PV-NAi"/>
                                 </constraints>
                                 <connections>
@@ -910,6 +920,7 @@
                         <outlet property="labelLogLine2" destination="E58-Ef-riH" id="Jb2-re-PKD"/>
                         <outlet property="labelLogLine3" destination="eM0-Xs-6fp" id="b5e-rl-TAC"/>
                         <outlet property="labelName" destination="YGq-V5-YTy" id="7xM-Mg-y2N"/>
+                        <outlet property="labelSpecialAttackCooldown" destination="D0Y-HF-1lD" id="AEf-Bj-h1v"/>
                         <outlet property="labelStrength" destination="MdV-q5-UXP" id="WGQ-NW-EL9"/>
                         <outlet property="rightConstraint" destination="2t2-QB-Kbp" id="2tx-de-n7L"/>
                         <outlet property="viewInventoryContainer" destination="gfA-Uw-d4k" id="kxO-wg-ae1"/>
