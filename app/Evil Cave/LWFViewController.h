@@ -27,12 +27,16 @@
 @property (weak, nonatomic) IBOutlet UIView *viewInventoryContainer;
 @property (weak, nonatomic) IBOutlet UIView *viewInventoryOverlay;
 
-
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewInventoryBackground;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewWeapon;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewArmor;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewBoots;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewAccessory;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewWeaponBackground;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewArmorBackground;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewBootsBackground;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewAccessoryBackground;
 
 @property (weak, nonatomic) IBOutlet UIImageView *item1;
 @property (weak, nonatomic) IBOutlet UIImageView *item2;

@@ -225,9 +225,7 @@ SINGLETON_FOR_CLASS(Inventory)
     
     LWFImageViewHolder *viewHolder = [self viewHolderForItem:item];
     
-    if ([item isWeapon]) {
-        _viewController.imageViewWeapon.image = [item getImage];
-    }
+    [self changeEquipsContainerFor:item withAction:YES];
     
     viewHolder.item = replaced;
     viewHolder.imageView.image = [replaced getImage];
@@ -248,12 +246,31 @@ SINGLETON_FOR_CLASS(Inventory)
     }
 }
 
+- (void)changeEquipsContainerFor:(LWFItem *)item withAction:(BOOL)equipping {
+    NSString *imageName = @"";
+    UIImageView *imageViewToReplace = nil;
+    UIImageView *backgroundImageViewToReplace = nil;
+    UIImage *imageToReplace = nil;
+    
+    if ([item isWeapon]) {
+        imageName = @"weapon_empty";
+        imageViewToReplace = _viewController.imageViewWeapon;
+        backgroundImageViewToReplace = _viewController.imageViewWeaponBackground;
+    }
+    
+    if (equipping) {
+        imageName = @"weapon_empty";
+        imageToReplace = [item getImage];
+    }
+    
+    imageViewToReplace.image = imageToReplace;
+    backgroundImageViewToReplace.image = [UIImage imageNamed:imageName];
+}
+
 - (void)unequip:(LWFItem *)item {
     [_equips unequip:item];
     
-    if ([item isWeapon]) {
-        _viewController.imageViewWeapon.image = nil;
-    }
+    [self changeEquipsContainerFor:item withAction:NO];
     
     if ([self canTakeItem:item]) {
         [self takeItem:item];
