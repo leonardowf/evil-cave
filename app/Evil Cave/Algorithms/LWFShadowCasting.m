@@ -10,6 +10,7 @@
 #import "LWFGameController.h"
 #import "LWFTileMap.h"
 #import "LWFTile.h"
+#import "LWFCreature.h"
 
 @interface LWFShadowCasting () {
     NSArray *_mult;
@@ -145,6 +146,9 @@
 
 - (void)lightTile:(LWFTile *)tile {
     SKAction *action = [SKAction fadeAlphaTo:1.0 duration:0.3];
+    [tile.creatureOnTile light];
+    [tile.fog removeFromParent];
+    
     [tile runAction:action];
 }
 

@@ -103,6 +103,7 @@
         creature.player = _map.player;
         creature.attacks = [_attacksBuilder attacksForCreatureType:creatureType];
         creature.oteQueue = [[LWFOTEQueue alloc]init];
+        creature.alpha = 0.0;
     }
     
     return creature;

@@ -89,6 +89,11 @@
     
 }
 
+- (void)light {
+    self.alpha = 1.0;
+    ((LWFLifeBar *)_lifeBar).alpha = 1.0;
+}
+
 - (void)notifyMovementFailure {
     NSLog(@"Criatura falhou na hora de mover");
 }
@@ -147,6 +152,7 @@
     _lootChances = [lootChanceFactory getLootChancesForKey:self.spriteImageName];
     
     if ([_lifeBar isKindOfClass:[LWFLifeBar class]]) {
+        ((LWFLifeBar *)_lifeBar).alpha = 0.0;
         [self addChild:(LWFLifeBar *)_lifeBar];
     }
 }

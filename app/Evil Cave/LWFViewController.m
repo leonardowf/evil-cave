@@ -27,9 +27,6 @@
 
     // Configure the view.
     SKView * skView = (SKView *)self.view;
-//    skView.showsFPS = YES;
-//    skView.showsNodeCount = YES;
-//    skView.show
     
     // Create and configure the scene.
     SKScene * scene = [LWFMyScene sceneWithSize:skView.bounds.size];

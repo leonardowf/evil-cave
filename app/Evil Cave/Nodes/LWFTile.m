@@ -38,6 +38,10 @@
 }
 
 - (void)steppedOnTile:(LWFCreature *)creature {
+    if ([self isLit]) {
+        [creature light];
+    }
+    
     BOOL isPlayer = [creature isKindOfClass:[LWFPlayer class]];
     
     if (self.cellType == CaveCellTypeDoor) {
@@ -153,6 +157,14 @@
     if (fadeAction != nil) {
         [node runAction:fadeAction];
     }
+}
+
+- (BOOL)isLit {
+    if (self.alpha == 1.0) {
+        return YES;
+    }
+    
+    return NO;
 }
 
 @end

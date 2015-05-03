@@ -22,7 +22,6 @@
 @property (nonatomic) BOOL doorIsOpen;
 @property (nonatomic, strong) SKSpriteNode *fog;
 
-
 - (BOOL)isPassable;
 - (NSUInteger)distanceToTile:(LWFTile *)tile;
 - (void)steppedOnTile:(LWFCreature *)creature;
