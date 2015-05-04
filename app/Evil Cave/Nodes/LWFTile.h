@@ -22,10 +22,15 @@
 @property (nonatomic) BOOL doorIsOpen;
 @property (nonatomic, strong) SKSpriteNode *fog;
 
+@property (nonatomic, getter=isLit) BOOL lit;
+
 - (BOOL)isPassable;
 - (NSUInteger)distanceToTile:(LWFTile *)tile;
 - (void)steppedOnTile:(LWFCreature *)creature;
 - (void)diedOnTile:(LWFCreature *)creature;
 - (NSArray *)groupItemsForLoot:(NSArray *)loot;
+
+- (void)light;
+- (void)displayFog;
 
 @end

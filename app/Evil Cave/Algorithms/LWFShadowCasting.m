@@ -11,9 +11,15 @@
 #import "LWFTileMap.h"
 #import "LWFTile.h"
 #import "LWFCreature.h"
+#import "LWFTileMap.h"
+#import "LWFGameController.h"
 
 @interface LWFShadowCasting () {
     NSArray *_mult;
+    
+    NSMutableArray *_tilesLit;
+    
+    LWFTileMap *_tileMap;
 }
 @end
 
@@ -24,6 +30,10 @@
     self = [super init];
     if (self) {
         [self createMultArray];
+        _tilesLit = [NSMutableArray array];
+        LWFGameController *gameController = [LWFGameController sharedGameController];
+        
+        _tileMap = gameController.tileMap;
     }
     return self;
 }
@@ -50,6 +60,34 @@
         NSInteger m3 = [_mult[3][oct] integerValue];
         
         [self castLight:startX cy:startY row:1 lightStart:1.0 lightEnd:0.0 radius:radius xx:m0 xy:m1 yx:m2 yy:m3 anId:0];
+    }
+    
+    [self applyFog];
+    [_tilesLit removeAllObjects];
+    
+    
+}
+
+- (void)applyFog {
+    // esse método é responsável por colocar as bordinhas esfumaçadas
+    // nos tiles ainda não "acesos"
+    
+    NSOrderedSet *orderedSet = [NSOrderedSet orderedSetWithArray:_tilesLit];
+    NSArray *tilesLitWithoutDuplicates = [orderedSet array];
+    
+    NSMutableOrderedSet *neighbors = [NSMutableOrderedSet orderedSet];
+    
+    for (LWFTile *tile in tilesLitWithoutDuplicates) {
+        NSArray *neighborsOfTile = [_tileMap neighborsForTile:tile];
+        [neighbors addObjectsFromArray:neighborsOfTile];
+    }
+    
+    NSArray *neighborsArray = [neighbors array];
+    
+    for (LWFTile *tile in neighborsArray) {
+        if (![tile isLit]) {
+            [tile displayFog];
+        }
     }
 }
 
@@ -145,11 +183,8 @@
 }
 
 - (void)lightTile:(LWFTile *)tile {
-    SKAction *action = [SKAction fadeAlphaTo:1.0 duration:0.3];
-    [tile.creatureOnTile light];
-    [tile.fog removeFromParent];
-    
-    [tile runAction:action];
+    [_tilesLit addObject:tile];
+    [tile light];
 }
 
 @end

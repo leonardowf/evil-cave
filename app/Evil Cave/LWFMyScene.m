@@ -7,6 +7,7 @@
 //
 
 #import "LWFMyScene.h"
+#import "LWFGameController.h"
 
 #import "LWFMap.h"
 #import "LWFMapDimension.h"
@@ -73,6 +74,8 @@
         [_map removeFromParent];
         
         _map = [[LWFMap alloc]initWithScreenSize:_size andFloor:_currentFloor];
+        [[LWFGameController sharedGameController]setMap:_map];
+        
         _map.xScale = xScale;
         _map.yScale = yScale;
         

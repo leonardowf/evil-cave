@@ -26,16 +26,16 @@
 - (void)buildFloor1 {
     NSMutableArray *creatures = [NSMutableArray array];
     
-    for (NSInteger i = 0; i < self.floor + 1; i++) {
-        LWFCreature *creature = [_builder buildWithType:LWFCreatureTypeRat];
-        [creatures addObject:creature];
-    }
+//    for (NSInteger i = 0; i < self.floor + 1; i++) {
+//        LWFCreature *creature = [_builder buildWithType:LWFCreatureTypeRat];
+//        [creatures addObject:creature];
+//    }
     
-    LWFCreature *poop = [_builder buildWithType:LWFCreatureTypePoopThrowerRat];
+//    LWFCreature *poop = [_builder buildWithType:LWFCreatureTypePoopThrowerRat];
     
     LWFCreature *radioctive = [_builder buildWithType:LWFCreatureTypeRadioactiveRat];
     
-    [creatures addObject:poop];
+//    [creatures addObject:poop];
     [creatures addObject:radioctive];
     
     self.creatures = creatures;

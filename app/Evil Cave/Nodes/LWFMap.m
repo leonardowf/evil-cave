@@ -111,7 +111,7 @@
     [self.player setCurrentTile:self.tileMap.startTile];
     self.player.currentTile.creatureOnTile = player;
     self.player.map = self;
-    [_player doFov];
+
     
     [_turnList.creatures addObject:player];
     player.turnList = _turnList;
@@ -195,6 +195,7 @@
     [self createPlayer];
     [self createCreatures];
     [self chooseCreaturePositions];
+    [_player doFov];
 }
 
 - (void)createPlayer {

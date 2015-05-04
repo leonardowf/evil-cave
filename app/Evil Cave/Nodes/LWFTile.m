@@ -7,10 +7,17 @@
 //
 
 #import "LWFTile.h"
+#import "LWFGameController.h"
 #import "LWFRandomUtils.h"
 #import "LWFItem.h"
 #import "LWFCreature.h"
 #import "LWFPlayer.h"
+#import "LWFMap.h"
+
+@interface LWFTile () {
+    LWFMap *_map;
+}
+@end
 
 @implementation LWFTile
 
@@ -18,6 +25,9 @@
 {
     self = [super initWithTexture:texture];
     if (self) {
+        LWFGameController *gameController = [LWFGameController sharedGameController];
+        _map = gameController.map;
+
         self.items = [NSMutableArray array];
     }
     return self;
@@ -159,12 +169,31 @@
     }
 }
 
-- (BOOL)isLit {
-    if (self.alpha == 1.0) {
-        return YES;
+- (void)light {
+    self.lit = YES;
+    [self.creatureOnTile light];
+    
+    SKAction *action = [SKAction fadeAlphaTo:1.0 duration:0.3];
+    [self runAction:action];
+    
+    [self.fog removeFromParent];
+    self.fog = nil;
+}
+
+- (void)displayFog {
+    if (self.fog != nil) {
+        return;
     }
     
-    return NO;
+    [self light];
+    
+    SKSpriteNode *_preLoadedFog = [SKSpriteNode spriteNodeWithImageNamed:@"fog_overlay"];
+    _preLoadedFog.size = CGSizeMake(2.5 * TILE_SIZE, 2.5 * TILE_SIZE);
+    _preLoadedFog.position = self.position;
+    
+    [_map addChild:_preLoadedFog];
+    self.fog = _preLoadedFog;
+    
 }
 
 @end

@@ -90,7 +90,8 @@
 }
 
 - (void)light {
-    self.alpha = 1.0;
+    SKAction *action = [SKAction fadeAlphaTo:1.0 duration:0.3];
+    [self runAction:action];
     ((LWFLifeBar *)_lifeBar).alpha = 1.0;
 }
 
