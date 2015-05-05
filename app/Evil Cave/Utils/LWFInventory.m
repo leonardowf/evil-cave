@@ -259,7 +259,7 @@ SINGLETON_FOR_CLASS(Inventory)
     }
     
     if (equipping) {
-        imageName = @"weapon_empty";
+        imageName = @"thumb";
         imageToReplace = [item getImage];
     }
     
@@ -314,6 +314,8 @@ SINGLETON_FOR_CLASS(Inventory)
 }
 
 - (void)dropEquippedItem:(LWFItem *)item {
+    [self changeEquipsContainerFor:item withAction:NO];
+    
     if (self.equips.weapon == item) {
         self.equips.weapon = nil;
         _viewController.imageViewWeapon.image = nil;

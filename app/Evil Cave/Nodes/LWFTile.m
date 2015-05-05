@@ -176,7 +176,8 @@
     SKAction *action = [SKAction fadeAlphaTo:1.0 duration:0.3];
     [self runAction:action];
     
-    [self.fog removeFromParent];
+    action = [SKAction fadeAlphaTo:0.0 duration:0.3];
+    [self.fog runAction:action];
     self.fog = nil;
 }
 
