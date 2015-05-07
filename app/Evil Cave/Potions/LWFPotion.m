@@ -10,4 +10,8 @@
 
 @implementation LWFPotion
 
+- (BOOL)isPotion {
+    return YES;
+}
+
 @end
