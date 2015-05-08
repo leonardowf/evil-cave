@@ -9,7 +9,9 @@
     "image_name": "sword",
     "identifier": "sword",
     "name": "Sword",
-    "category": "weapon"
+    "category": "weapon",
+    "atlas": true
+
   },
   {
     "base_str": "0",
