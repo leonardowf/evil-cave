@@ -68,7 +68,7 @@ SINGLETON_FOR_CLASS(Inventory)
     return [_equips isEquiped:equipment];
 }
 
-- (BOOL)canTakeItem:(LWFItem *)item {
+- (BOOL)canTakeItem:(LWFNewItem *)item {
     return YES;
     // TODO
 }
@@ -283,13 +283,17 @@ SINGLETON_FOR_CLASS(Inventory)
     }
 }
 
-- (void)drop:(LWFItem *)item {
+- (void)drop:(LWFNewItem *)item {
     _itemDescription = nil;
     
     if ([_items containsObject:item]) {
         [self dropStoredItem:item];
     } else {
-        [self dropEquippedItem:item];
+        
+        if ([item isEquipment]) {
+            LWFEquipment *equipment = (LWFEquipment *)item;
+            [self dropEquippedItem:equipment];
+        }
     }
     
     _itemDescription = nil;
@@ -299,11 +303,11 @@ SINGLETON_FOR_CLASS(Inventory)
 
 }
 
-- (void)dropStoredItem:(LWFItem *)item {
+- (void)dropStoredItem:(LWFNewItem *)item {
     NSMutableArray *wtf = [NSMutableArray array];
     
     NSArray *items = _items;
-    for (LWFItem *aItem in items) {
+    for (LWFNewItem *aItem in items) {
         if (aItem != item) {
             [wtf addObject:aItem];
         }
@@ -317,7 +321,7 @@ SINGLETON_FOR_CLASS(Inventory)
     
 }
 
-- (void)dropEquippedItem:(LWFItem *)item {
+- (void)dropEquippedItem:(LWFEquipment *)item {
     [self changeEquipsContainerFor:item withAction:NO];
     
     if (self.equips.weapon == item) {
@@ -345,7 +349,7 @@ SINGLETON_FOR_CLASS(Inventory)
     }
 }
 
-- (void)dropOnGround:(LWFItem *)item {
+- (void)dropOnGround:(LWFNewItem *)item {
     self.player = [LWFPlayer sharedPlayer];
     
     [self.player.currentTile addChild:item];

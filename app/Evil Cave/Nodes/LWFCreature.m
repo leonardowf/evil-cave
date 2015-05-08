@@ -28,6 +28,7 @@
 #import "LWFOTEQueue.h"
 
 #import "LWFLifeDisplayer.h"
+#import "LWFNewItem.h"
 
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
@@ -608,7 +609,7 @@
     NSArray *loot = [self getLoots];
     NSArray *removedGrouped = [self.currentTile groupItemsForLoot:loot];
     
-    for (LWFItem *item in removedGrouped) {
+    for (LWFNewItem *item in removedGrouped) {
         [self.currentTile addChild:item];
     }
     
@@ -636,7 +637,7 @@
     
     for (LWFLootChance *lootChance in lootChances) {
         NSInteger amountDropped = [lootChance amountDropped];
-        LWFItem *drop = [lootChance buildWithQuantity:amountDropped];
+        LWFNewItem *drop = [lootChance buildWithQuantity:amountDropped];
         
         if (drop != nil) {
             [loot addObject:drop];

@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 @class LWFItemPrototype;
-@class LWFItem;
 @class LWFNewItem;
 
 @interface LWFLootChance : NSObject
