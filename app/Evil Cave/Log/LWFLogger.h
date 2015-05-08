@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 @class LWFCreature;
-@class LWFItem;
+@class LWFNewItem;
 
 @interface LWFLogger : NSObject
 
 + (void)logAttackedCreature:(LWFCreature *)creature damage:(NSInteger)damage;
 + (void)logAttackedBy:(LWFCreature *)creature damage:(NSInteger)damage;
 + (void)logGold:(NSInteger)quantity;
-+ (void)logPickedItem:(LWFItem *)item;
++ (void)logPickedItem:(LWFNewItem *)item;
 
 @end

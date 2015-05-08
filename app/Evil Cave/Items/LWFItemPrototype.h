@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class LWFItem;
+@class LWFNewItem;
 
 @interface LWFItemPrototype : NSObject
 
@@ -39,5 +39,5 @@
 @property(nonatomic) NSNumber *atlas;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
-- (LWFItem *)build;
+
 @end

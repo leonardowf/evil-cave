@@ -7,17 +7,17 @@
 //
 
 #import "LWFItemComparison.h"
-#import "LWFItem.h"
+#import "LWFEquipment.h"
 
 @implementation LWFItemComparison
 
-+ (LWFItemComparison *)compare:(LWFItem *)item1 withItem:(LWFItem *)item2 {
++ (LWFItemComparison *)compare:(LWFEquipment *)equipment1 withEquipment:(LWFEquipment *)equipment2 {
     LWFItemComparison *result = [[LWFItemComparison alloc]init];
     
-    result.strength = [item1.strength integerValue] - [item2.strength integerValue];
-    result.hp = [item1.HP integerValue] - [item2.HP integerValue];
-    result.minimumDamage = [item1.lowdamage integerValue] - [item2.lowdamage integerValue];
-    result.maximumDamage = [item1.highdamage integerValue] - [item2.highdamage integerValue];
+    result.strength = [equipment1.strength integerValue] - [equipment2.strength integerValue];
+    result.hp = [equipment1.HP integerValue] - [equipment2.HP integerValue];
+    result.minimumDamage = [equipment1.lowdamage integerValue] - [equipment2.lowdamage integerValue];
+    result.maximumDamage = [equipment1.highdamage integerValue] - [equipment2.highdamage integerValue];
     
     return result;
 }

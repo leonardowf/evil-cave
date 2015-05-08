@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class LWFItem;
+@class LWFEquipment;
 @class LWFInventory;
 @class LWFItemComparison;
 
@@ -26,7 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelHp;
 @property (weak, nonatomic) IBOutlet UIButton *buttonEquip;
 
-- (instancetype)initWithItem:(LWFItem *)item
+- (instancetype)initWithItem:(LWFEquipment *)equipment
               itemComparison:(LWFItemComparison *)itemComparison
                 andInventory:(LWFInventory *)inventory;
 

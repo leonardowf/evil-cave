@@ -7,93 +7,93 @@
 //
 
 #import "LWFEquips.h"
-#import "LWFItem.h"
 #import "LWFItemComparison.h"
+#import "LWFEquipment.h"
 
 @implementation LWFEquips
 
-- (LWFItem *)equip:(LWFItem *)item {
-    LWFItem *replacedItem;
+- (LWFEquipment *)equip:(LWFEquipment *)equipment {
+    LWFEquipment *replacedItem;
     
-    if ([item isWeapon]) {
+    if ([equipment isWeapon]) {
         replacedItem = self.weapon;
-        self.weapon = item;
+        self.weapon = equipment;
         return replacedItem;
     }
     
-    if ([item isArmor]) {
+    if ([equipment isArmor]) {
         replacedItem = self.armor;
-        self.armor = item;
+        self.armor = equipment;
         return replacedItem;
     }
     
-    if ([item isBoots]) {
+    if ([equipment isBoots]) {
         replacedItem = self.boots;
-        self.boots = item;
+        self.boots = equipment;
         return replacedItem;
     }
     
-    if ([item isAccessory]) {
+    if ([equipment isAccessory]) {
         replacedItem = self.accessory;
-        self.accessory = item;
+        self.accessory = equipment;
         return replacedItem;
     }
     
     return nil;
 }
 
-- (void)unequip:(LWFItem *)item {
-    if ([item isWeapon]) {
+- (void)unequip:(LWFEquipment *)equipment {
+    if ([equipment isWeapon]) {
         self.weapon = nil;
     }
     
-    if ([item isArmor]) {
+    if ([equipment isArmor]) {
         self.armor = nil;
     }
     
-    if ([item isBoots]) {
+    if ([equipment isBoots]) {
         self.boots = nil;
     }
     
-    if ([item isAccessory]) {
+    if ([equipment isAccessory]) {
         self.accessory = nil;
     }
 }
 
-- (BOOL)isEquiped:(LWFItem *)item {
-    if (self.weapon == item) {
+- (BOOL)isEquiped:(LWFEquipment *)equipment {
+    if (self.weapon == equipment) {
         return YES;
     }
     
-    if ([item isArmor]) {
+    if ([equipment isArmor]) {
         return YES;
     }
     
-    if ([item isBoots]) {
+    if ([equipment isBoots]) {
         return YES;
     }
     
-    if ([item isAccessory]) {
+    if ([equipment isAccessory]) {
         return YES;
     }
     
     return NO;
 }
 
-- (LWFItemComparison *)compareToRespectiveEquipped:(LWFItem *)item {
-    LWFItem *itemToCompare = nil;
+- (LWFItemComparison *)compareToRespectiveEquipped:(LWFEquipment *)equipment {
+    LWFEquipment *equipmentToCompare = nil;
     
-    if (item.isWeapon) {
-        itemToCompare = self.weapon;
+    if ([equipment isWeapon]) {
+        equipmentToCompare = self.weapon;
     }
     
     // .... TODO
-    
-    return [LWFItemComparison compare:item withItem:itemToCompare];
+    return [LWFItemComparison compare:equipment withEquipment:equipmentToCompare];
 }
 
-- (LWFItemComparison *)compare:(LWFItem *)itemSrc toItem:(LWFItem *)itemDest {
-    return [LWFItemComparison compare:itemSrc withItem:itemDest];
+- (LWFItemComparison *)compare:(LWFEquipment *)equipmentSrc toItem:(LWFEquipment *)equipmentDest {
+    
+    return [LWFItemComparison compare:equipmentSrc withEquipment:equipmentDest];
 }
 
 - (NSInteger)totalStrength {

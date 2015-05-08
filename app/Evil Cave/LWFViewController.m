@@ -8,7 +8,6 @@
 
 #import "LWFViewController.h"
 #import "LWFMyScene.h"
-#import "LWFItem.h"
 #import "LWFPlayer.h"
 #import "LWFInventory.h"
 #import "LWFHudLogger.h"
@@ -18,6 +17,7 @@
 #import "LWFOTE.h"
 #import "LWFOTEQueue.h"
 #import "LWFOTESpinningCooldown.h"
+#import "LWFEquipment.h"
 
 @implementation LWFViewController
 
@@ -83,13 +83,18 @@
                              [self.view layoutIfNeeded];
                          }];
         
-        LWFItem *item = [itemsStepped lastObject];
+        LWFNewItem *item = [itemsStepped lastObject];
         
-        self.labelName.text = item.name;
-        self.labelDamage.text = [item damageText];
-        self.labelHP.text = [item hpText];
-        self.labelStrength.text = [item strengthText];
-        self.labelArmor.text = [item armorText];
+        if ([item isEquipment]) {
+            LWFEquipment *equipment = (LWFEquipment *)item;
+            self.labelName.text = equipment.name;
+            self.labelDamage.text = [equipment damageText];
+            self.labelHP.text = [equipment hpText];
+            self.labelStrength.text = [equipment strengthText];
+            self.labelArmor.text = [equipment armorText];
+        }
+        
+
         
         UIImage *itemImage = [UIImage imageNamed:[NSString stringWithFormat:@"item_%@", item.imageName]];
         

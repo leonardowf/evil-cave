@@ -7,7 +7,6 @@
 //
 
 #import "LWFInventory.h"
-#import "LWFItem.h"
 #import "LWFViewController.h"
 #import "LWFImageViewHolder.h"
 #import "LWFItemDescription.h"
@@ -65,8 +64,8 @@ SINGLETON_FOR_CLASS(Inventory)
     _viewController.labelGold.text = [NSString stringWithFormat:@"%ld", (long)self.money];
 }
 
-- (BOOL)isEquipped:(LWFItem *)item {
-    return [_equips isEquiped:item];
+- (BOOL)isEquipped:(LWFEquipment *)equipment {
+    return [_equips isEquiped:equipment];
 }
 
 - (BOOL)canTakeItem:(LWFItem *)item {
@@ -74,7 +73,7 @@ SINGLETON_FOR_CLASS(Inventory)
     // TODO
 }
 
-- (void)takeItem:(LWFItem *)item {
+- (void)takeItem:(LWFNewItem *)item {
     [LWFLogger logPickedItem:item];
     
     [self.items addObject:item];
@@ -82,7 +81,7 @@ SINGLETON_FOR_CLASS(Inventory)
     [self displayItem:item];
 }
 
-- (void)displayItem:(LWFItem *)item {
+- (void)displayItem:(LWFNewItem *)item {
     LWFImageViewHolder *imageViewHolder = [self getImageViewContainer];
     
     if (imageViewHolder != nil) {
@@ -107,18 +106,23 @@ SINGLETON_FOR_CLASS(Inventory)
     LWFImageViewHolder *viewHolder = [self viewHolderForImageView:imageView];
     
     if (viewHolder.item != nil) {
-        [self openItemDescription:viewHolder.item];
+        
+        if ([viewHolder.item isEquipment]) {
+            LWFEquipment *equipment = (LWFEquipment *)viewHolder.item;
+            [self openItemDescription:equipment];
+            
+        }
     }
 }
 
-- (void)openItemDescription:(LWFItem *)item {
+- (void)openItemDescription:(LWFEquipment *)equipment {
     if (_itemDescription != nil) {
         [_itemDescription removeFromSuperview:true];
     }
     
-    LWFItemComparison *comparison = [self.equips compareToRespectiveEquipped:item];
+    LWFItemComparison *comparison = [self.equips compareToRespectiveEquipped:equipment];
     
-    _itemDescription = [[LWFItemDescription alloc]initWithItem:item itemComparison:comparison andInventory:self];
+    _itemDescription = [[LWFItemDescription alloc]initWithItem:equipment itemComparison:comparison andInventory:self];
     [_itemDescription addToView:_viewController.view];
 }
 
@@ -132,7 +136,7 @@ SINGLETON_FOR_CLASS(Inventory)
     return nil;
 }
 
-- (LWFImageViewHolder *)viewHolderForItem:(LWFItem *)item {
+- (LWFImageViewHolder *)viewHolderForItem:(LWFNewItem *)item {
     for (LWFImageViewHolder *viewHolder in _imageViewHolders) {
         if (item == viewHolder.item) {
             return viewHolder;
@@ -214,18 +218,18 @@ SINGLETON_FOR_CLASS(Inventory)
     return _viewController.viewInventoryContainer.alpha == 1.0;
 }
 
-- (void)equip:(LWFItem *)item {
+- (void)equip:(LWFEquipment *)equipment {
     // Verifica se está tentando equipar um item que não está no inventário
     // for some reason...
-    if (![_items containsObject:item]) {
+    if (![_items containsObject:equipment]) {
         return;
     }
     
-    LWFItem *replaced = [self.equips equip:item];
+    LWFEquipment *replaced = [self.equips equip:equipment];
     
-    LWFImageViewHolder *viewHolder = [self viewHolderForItem:item];
+    LWFImageViewHolder *viewHolder = [self viewHolderForItem:equipment];
     
-    [self changeEquipsContainerFor:item withAction:YES];
+    [self changeEquipsContainerFor:equipment withAction:YES];
     
     viewHolder.item = replaced;
     viewHolder.imageView.image = [replaced getImage];
@@ -233,9 +237,9 @@ SINGLETON_FOR_CLASS(Inventory)
     NSMutableArray *wtf = [NSMutableArray array];
     
     NSArray *items = _items;
-    for (LWFItem *aItem in items) {
-        if (aItem != item) {
-            [wtf addObject:aItem];
+    for (LWFEquipment *aEquipment in items) {
+        if (aEquipment != equipment) {
+            [wtf addObject:aEquipment];
         }
     }
     
@@ -246,13 +250,13 @@ SINGLETON_FOR_CLASS(Inventory)
     }
 }
 
-- (void)changeEquipsContainerFor:(LWFItem *)item withAction:(BOOL)equipping {
+- (void)changeEquipsContainerFor:(LWFEquipment *)equipment withAction:(BOOL)equipping {
     NSString *imageName = @"";
     UIImageView *imageViewToReplace = nil;
     UIImageView *backgroundImageViewToReplace = nil;
     UIImage *imageToReplace = nil;
     
-    if ([item isWeapon]) {
+    if ([equipment isWeapon]) {
         imageName = @"weapon_empty";
         imageViewToReplace = _viewController.imageViewWeapon;
         backgroundImageViewToReplace = _viewController.imageViewWeaponBackground;
@@ -260,22 +264,22 @@ SINGLETON_FOR_CLASS(Inventory)
     
     if (equipping) {
         imageName = @"thumb";
-        imageToReplace = [item getImage];
+        imageToReplace = [equipment getImage];
     }
     
     imageViewToReplace.image = imageToReplace;
     backgroundImageViewToReplace.image = [UIImage imageNamed:imageName];
 }
 
-- (void)unequip:(LWFItem *)item {
-    [_equips unequip:item];
+- (void)unequip:(LWFEquipment *)equipment {
+    [_equips unequip:equipment];
     
-    [self changeEquipsContainerFor:item withAction:NO];
+    [self changeEquipsContainerFor:equipment withAction:NO];
     
-    if ([self canTakeItem:item]) {
-        [self takeItem:item];
+    if ([self canTakeItem:equipment]) {
+        [self takeItem:equipment];
     } else {
-        [self drop:item];
+        [self drop:equipment];
     }
 }
 

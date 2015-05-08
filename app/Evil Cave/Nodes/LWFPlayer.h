@@ -12,7 +12,7 @@
 
 @class LWFTile;
 @class LWFInventory;
-@class LWFItem;
+@class LWFNewItem;
 
 @interface LWFPlayer : LWFCreature
 
@@ -22,7 +22,7 @@
 
 - (void)movementRequestIsInvalid;
 - (void)cancelPreExistingActions;
-- (void)takeItem:(LWFItem *)item;
+- (void)takeItem:(LWFNewItem *)item;
 - (void)requestTakeItem;
 - (void)requestSpecialAttack;
 - (void)doFov;

@@ -7,6 +7,7 @@
 //
 
 #import "LWFNewItem.h"
+#import "LWFItemPrototypeFactory.h"
 
 @implementation LWFNewItem
 
@@ -24,6 +25,12 @@
 
 - (BOOL)isProjectile {
     return NO;
+}
+
+- (UIImage *)getImage {
+    UIImage *itemImage = [UIImage imageNamed:[NSString stringWithFormat:@"item_%@", self.imageName]];
+    
+    return itemImage;
 }
 
 @end

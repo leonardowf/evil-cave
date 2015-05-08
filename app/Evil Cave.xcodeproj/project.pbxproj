@@ -70,6 +70,7 @@
 		32938A251AFAEDD700BBE745 /* LWFGold.m in Sources */ = {isa = PBXBuildFile; fileRef = 32938A241AFAEDD700BBE745 /* LWFGold.m */; };
 		32938A281AFAEDE800BBE745 /* LWFEquipment.m in Sources */ = {isa = PBXBuildFile; fileRef = 32938A271AFAEDE800BBE745 /* LWFEquipment.m */; };
 		32938A2B1AFAEE0900BBE745 /* LWFProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 32938A2A1AFAEE0900BBE745 /* LWFProjectile.m */; };
+		32938A311AFAF9BD00BBE745 /* LWFItemFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 32938A301AFAF9BD00BBE745 /* LWFItemFactory.m */; };
 		32ACD05F1A7B062600970F69 /* item_motherfucking_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */; };
 		32B5AAD91A878A1B00E6523A /* warrior_standing_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B5AAD81A878A1B00E6523A /* warrior_standing_left.png */; };
 		32B5AADF1A87F66D00E6523A /* item_gold.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32B5AADE1A87F66D00E6523A /* item_gold.atlas */; };
@@ -137,7 +138,6 @@
 		32F09E2F1A48EBB1000B8797 /* LWFEquips.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F09E2E1A48EBB1000B8797 /* LWFEquips.m */; };
 		32F09E311A48F4FA000B8797 /* Munro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32F09E301A48EFBC000B8797 /* Munro.ttf */; };
 		32F1CDC61A575A2F00A0D9F5 /* LWFInventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F1CDC51A575A2F00A0D9F5 /* LWFInventory.m */; };
-		32F1CDCA1A575C6600A0D9F5 /* LWFItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F1CDC91A575C6600A0D9F5 /* LWFItem.m */; };
 		32F1CDCC1A57603800A0D9F5 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F1CDCB1A57603800A0D9F5 /* wall.png */; };
 		32F831341A96A96B007174F1 /* LWFAttackQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F831331A96A96B007174F1 /* LWFAttackQueue.m */; };
 		32F831371A96B458007174F1 /* LWFAttackQueueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F831361A96B458007174F1 /* LWFAttackQueueCell.m */; };
@@ -289,6 +289,8 @@
 		32938A271AFAEDE800BBE745 /* LWFEquipment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFEquipment.m; sourceTree = "<group>"; };
 		32938A291AFAEE0900BBE745 /* LWFProjectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFProjectile.h; sourceTree = "<group>"; };
 		32938A2A1AFAEE0900BBE745 /* LWFProjectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFProjectile.m; sourceTree = "<group>"; };
+		32938A2F1AFAF9BD00BBE745 /* LWFItemFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFItemFactory.h; sourceTree = "<group>"; };
+		32938A301AFAF9BD00BBE745 /* LWFItemFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFItemFactory.m; sourceTree = "<group>"; };
 		32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_motherfucking_sword.png; sourceTree = "<group>"; };
 		32B5AAD81A878A1B00E6523A /* warrior_standing_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warrior_standing_left.png; sourceTree = "<group>"; };
 		32B5AADE1A87F66D00E6523A /* item_gold.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = item_gold.atlas; sourceTree = "<group>"; };
@@ -379,8 +381,6 @@
 		32F09E301A48EFBC000B8797 /* Munro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Munro.ttf; sourceTree = "<group>"; };
 		32F1CDC41A575A2F00A0D9F5 /* LWFInventory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFInventory.h; sourceTree = "<group>"; };
 		32F1CDC51A575A2F00A0D9F5 /* LWFInventory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFInventory.m; sourceTree = "<group>"; };
-		32F1CDC81A575C6600A0D9F5 /* LWFItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFItem.h; sourceTree = "<group>"; };
-		32F1CDC91A575C6600A0D9F5 /* LWFItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFItem.m; sourceTree = "<group>"; };
 		32F1CDCB1A57603800A0D9F5 /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
 		32F831321A96A96B007174F1 /* LWFAttackQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttackQueue.h; sourceTree = "<group>"; };
 		32F831331A96A96B007174F1 /* LWFAttackQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAttackQueue.m; sourceTree = "<group>"; };
@@ -630,6 +630,8 @@
 				32938A271AFAEDE800BBE745 /* LWFEquipment.m */,
 				32938A291AFAEE0900BBE745 /* LWFProjectile.h */,
 				32938A2A1AFAEE0900BBE745 /* LWFProjectile.m */,
+				32938A2F1AFAF9BD00BBE745 /* LWFItemFactory.h */,
+				32938A301AFAF9BD00BBE745 /* LWFItemFactory.m */,
 			);
 			name = New;
 			sourceTree = "<group>";
@@ -775,8 +777,6 @@
 			isa = PBXGroup;
 			children = (
 				32938A1F1AFAED7A00BBE745 /* New */,
-				32F1CDC81A575C6600A0D9F5 /* LWFItem.h */,
-				32F1CDC91A575C6600A0D9F5 /* LWFItem.m */,
 				321DB1091A741FF6003354BB /* LWFItemPrototype.h */,
 				321DB10A1A741FF6003354BB /* LWFItemPrototype.m */,
 				321DB10C1A742002003354BB /* LWFLootChance.h */,
@@ -1300,7 +1300,6 @@
 				32F09E2F1A48EBB1000B8797 /* LWFEquips.m in Sources */,
 				A703875F1A17BEB00053A9E6 /* LWFTileMap.m in Sources */,
 				32F831371A96B458007174F1 /* LWFAttackQueueCell.m in Sources */,
-				32F1CDCA1A575C6600A0D9F5 /* LWFItem.m in Sources */,
 				321DB10B1A741FF6003354BB /* LWFItemPrototype.m in Sources */,
 				A7F5BB961A16EFBC005BAB63 /* main.m in Sources */,
 				321EC9A71A26A5C400F06B77 /* LWFTurnList.m in Sources */,
@@ -1309,6 +1308,7 @@
 				32635D891AB5DD4D00362183 /* LWFItemComparison.m in Sources */,
 				32938A221AFAEDC200BBE745 /* LWFNewItem.m in Sources */,
 				32BEB13D1ABE75EA008950C0 /* LWFHudLifebar.m in Sources */,
+				32938A311AFAF9BD00BBE745 /* LWFItemFactory.m in Sources */,
 				321DB10E1A742002003354BB /* LWFLootChance.m in Sources */,
 				32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */,
 				32F09E291A48C947000B8797 /* LWFCombatSystem.m in Sources */,

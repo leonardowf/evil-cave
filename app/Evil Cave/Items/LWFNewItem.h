@@ -7,12 +7,23 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+@class LWFItemPrototype;
 
 @interface LWFNewItem : SKSpriteNode
+
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *category;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *imageName;
+@property (nonatomic, strong) LWFItemPrototype *prototype;
+
+@property (nonatomic) NSInteger quantity;
 
 - (BOOL)isPotion;
 - (BOOL)isGold;
 - (BOOL)isEquipment;
 - (BOOL)isProjectile;
+
+- (UIImage *)getImage;
 
 @end

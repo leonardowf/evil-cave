@@ -3,7 +3,7 @@
     {
       "name": "sword",
       "quantity": 1,
-      "chance": 10
+      "chance": 100
     },
     {
       "name": "gold",

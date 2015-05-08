@@ -7,10 +7,9 @@
 //
 
 #import "LWFItemDescription.h"
-
-#import "LWFItem.h"
 #import "LWFInventory.h"
 #import "LWFItemComparison.h"
+#import "LWFEquipment.h"
 
 @interface LWFItemDescription () {
     CGSize _intrinsic;
@@ -19,7 +18,7 @@
 @end
 
 @interface LWFItemDescription () {
-    LWFItem *_item;
+    LWFEquipment *_equipment;
     LWFInventory *_inventory;
     LWFItemComparison *_itemComparison;
 }
@@ -36,19 +35,19 @@
     return self;
 }
 
-- (instancetype)initWithItem:(LWFItem *)item
+- (instancetype)initWithItem:(LWFEquipment *)equipment
               itemComparison:(LWFItemComparison *)itemComparison
                 andInventory:(LWFInventory *)inventory
 {
     self = [self init];
     if (self) {
-        _item = item;
+        _equipment = equipment;
         _inventory = inventory;
         _itemComparison = itemComparison;
         
         [self fillLabels];
-        
-        if ([_inventory isEquipped:item]) {
+    
+        if ([_inventory isEquipped:_equipment]) {
             UIImage *buttonImage = [UIImage imageNamed:@"button_yellow"];
             [self.buttonEquip setBackgroundImage:buttonImage forState:UIControlStateNormal];
             [self.buttonEquip setTitle:@"UNEQUIP" forState:UIControlStateNormal];
@@ -67,12 +66,12 @@
 }
 
 - (void)fillLabels {
-    self.labelTitle.text = _item.name;
+    self.labelTitle.text = _equipment.name;
     
-    [self fillForNumber:_item.strength label:self.labelStrength comparison:_itemComparison.strength andPrefix:@"Strength"];
-    [self fillForNumber:_item.lowdamage label:self.labelMinDamage comparison:_itemComparison.minimumDamage andPrefix:@"Min Damage"];
-    [self fillForNumber:_item.highdamage label:self.labelMaxDamage comparison:_itemComparison.maximumDamage andPrefix:@"Max Damage"];
-    [self fillForNumber:_item.HP label:self.labelHp comparison:_itemComparison.hp andPrefix:@"HP"];
+    [self fillForNumber:_equipment.strength label:self.labelStrength comparison:_itemComparison.strength andPrefix:@"Strength"];
+    [self fillForNumber:_equipment.lowdamage label:self.labelMinDamage comparison:_itemComparison.minimumDamage andPrefix:@"Min Damage"];
+    [self fillForNumber:_equipment.highdamage label:self.labelMaxDamage comparison:_itemComparison.maximumDamage andPrefix:@"Max Damage"];
+    [self fillForNumber:_equipment.HP label:self.labelHp comparison:_itemComparison.hp andPrefix:@"HP"];
 }
 
 - (void)fillForNumber:(NSNumber *)number label:(UILabel *)label comparison:(NSInteger)comparison andPrefix:(NSString *)prefix {
@@ -183,19 +182,19 @@
 }
 
 - (IBAction)didTapEquip:(id)sender {
-    if ([_inventory isEquipped:_item]) {
+    if ([_inventory isEquipped:_equipment]) {
         // apertou no botão amarelo de unequip
-        [_inventory unequip:_item];
+        [_inventory unequip:_equipment];
         [self removeFromSuperview:YES];
     } else {
         [self removeFromSuperview:YES];
-        [_inventory equip:_item];
+        [_inventory equip:_equipment];
     }
 }
 
 - (IBAction)didTapDrop:(id)sender {
     [self removeFromSuperview:true];
-    [_inventory drop:_item];
+    [_inventory drop:_equipment];
 }
 
 @end

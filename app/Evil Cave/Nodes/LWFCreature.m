@@ -21,7 +21,6 @@
 #import "LWFStats.h"
 #import "LWFLifeBar.h"
 
-#import "LWFItem.h"
 #import "LWFItemPrototype.h"
 #import "LWFItemPrototypeFactory.h"
 #import "LWFLootChanceFactory.h"

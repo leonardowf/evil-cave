@@ -8,7 +8,6 @@
 
 #import "LWFItemPrototypeFactory.h"
 #import "LWFItemPrototype.h"
-#import "LWFItem.h"
 
 @implementation LWFItemPrototypeFactory
 

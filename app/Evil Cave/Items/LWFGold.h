@@ -10,4 +10,6 @@
 
 @interface LWFGold : LWFNewItem
 
+- (SKLabelNode *)getLabel;
+
 @end

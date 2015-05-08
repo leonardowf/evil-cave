@@ -7,25 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
-@class LWFItem;
+@class LWFEquipment;
 @class LWFItemComparison;
 
 @interface LWFEquips : NSObject
 
-@property (nonatomic, strong) LWFItem *weapon;
-@property (nonatomic, strong) LWFItem *armor;
-@property (nonatomic, strong) LWFItem *boots;
-@property (nonatomic, strong) LWFItem *accessory;
+@property (nonatomic, strong) LWFEquipment *weapon;
+@property (nonatomic, strong) LWFEquipment *armor;
+@property (nonatomic, strong) LWFEquipment *boots;
+@property (nonatomic, strong) LWFEquipment *accessory;
 
-- (LWFItem *)equip:(LWFItem *)item;
-- (void)unequip:(LWFItem *)item;
-- (LWFItemComparison *)compareToRespectiveEquipped:(LWFItem *)item;
-- (LWFItemComparison *)compare:(LWFItem *)itemSrc toItem:(LWFItem *)itemDest;
+- (LWFEquipment *)equip:(LWFEquipment *)equipment;
+- (void)unequip:(LWFEquipment *)equipment;
+- (LWFItemComparison *)compareToRespectiveEquipped:(LWFEquipment *)item;
+- (LWFItemComparison *)compare:(LWFEquipment *)equipmentSrc toItem:(LWFEquipment *)equipmentDest;
 
 - (NSInteger)totalStrength;
 - (NSInteger)totalMinDamage;
 - (NSInteger)totalMaxDamage;
 - (NSInteger)totalArmor;
-- (BOOL)isEquiped:(LWFItem *)item;
+- (BOOL)isEquiped:(LWFEquipment *)item;
 
 @end

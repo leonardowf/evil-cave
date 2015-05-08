@@ -11,7 +11,6 @@
 #import "LWFMap.h"
 #import "LWFTurnList.h"
 #import "LWFInventory.h"
-#import "LWFItem.h"
 #import "LWFSpinningAttack.h"
 #import "LWFAttackManager.h"
 #import "LWFShadowCasting.h"
@@ -19,6 +18,7 @@
 
 #import "LWFOTEQueue.h"
 #import "LWFOTESpinningCooldown.h"
+#import "LWFGold.h"
 
 @implementation LWFPlayer
 
@@ -139,10 +139,11 @@ SINGLETON_FOR_CLASS(Player)
     self.tilePath = nil;
 }
 
-- (void)takeItem:(LWFItem *)item {
-    if ([item isMoney]) {
+- (void)takeItem:(LWFNewItem *)item {
+    if ([item isGold]) {
+        LWFGold *gold = (LWFGold *)item;
         
-        SKLabelNode *label = [item getLabel];
+        SKLabelNode *label = [gold getLabel];
         
         label.position = self.currentTile.position;
         
@@ -174,7 +175,7 @@ SINGLETON_FOR_CLASS(Player)
         NSMutableArray *wtf = [NSMutableArray array];
         
         NSArray *items = self.currentTile.items;
-        for (LWFItem *aItem in items) {
+        for (LWFNewItem *aItem in items) {
             if (aItem != item) {
                 [wtf addObject:aItem];
             }
@@ -194,7 +195,7 @@ SINGLETON_FOR_CLASS(Player)
         return;
     }
     
-    LWFItem *item = [self.currentTile.items lastObject];
+    LWFNewItem *item = [self.currentTile.items lastObject];
     
     if ([self.inventory canTakeItem:item]) {
         [self takeItem:item];

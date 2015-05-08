@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-@class LWFItem;
-
+@class LWFNewItem;
 
 @interface LWFImageViewHolder : NSObject
 
 @property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, strong) LWFItem *item;
+@property (nonatomic, strong) LWFNewItem *item;
 
 @end

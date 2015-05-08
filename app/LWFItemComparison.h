@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class LWFItem;
+#import "LWFEquipment.h"
 
 @interface LWFItemComparison : NSObject
 
@@ -17,6 +17,6 @@
 @property NSInteger maximumDamage;
 
 
-+ (LWFItemComparison *)compare:(LWFItem *)item1 withItem:(LWFItem *)item2;
++ (LWFItemComparison *)compare:(LWFEquipment *)equipment1 withEquipment:(LWFEquipment *)equipment2;
 
 @end

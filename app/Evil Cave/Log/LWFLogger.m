@@ -9,7 +9,8 @@
 #import "LWFLogger.h"
 #import "LWFCreature.h"
 #import "LWFHudLogger.h"
-#import "LWFItem.h"
+#import "LWFNewItem.h"
+
 
 @implementation LWFLogger
 
@@ -33,7 +34,7 @@
     [LWFLogger log:message];
 }
 
-+ (void)logPickedItem:(LWFItem *)item {
++ (void)logPickedItem:(LWFNewItem *)item {
     NSString *message = [NSString stringWithFormat:@"You picked: %@.", item.name];
     [LWFLogger log:message];
 }

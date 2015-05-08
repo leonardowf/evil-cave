@@ -9,10 +9,11 @@
 #import "LWFTile.h"
 #import "LWFGameController.h"
 #import "LWFRandomUtils.h"
-#import "LWFItem.h"
 #import "LWFCreature.h"
 #import "LWFPlayer.h"
 #import "LWFMap.h"
+#import "LWFNewItem.h"
+#import "LWFGold.h"
 
 @interface LWFTile () {
     LWFMap *_map;
@@ -66,13 +67,13 @@
         // Decide se é gold, caso sim, pega automaticamente
         NSMutableArray *toRemove = [NSMutableArray array];
         
-        for (LWFItem *item in self.items) {
-            if ([item isMoney]) {
+        for (LWFNewItem *item in self.items) {
+            if ([item isGold]) {
                 [toRemove addObject:item];
             }
         }
         
-        for (LWFItem *gold in toRemove) {
+        for (LWFGold *gold in toRemove) {
             LWFPlayer *player = (LWFPlayer *)creature;
             [player takeItem:gold];
         }
@@ -103,7 +104,7 @@
     
     NSMutableArray *resultLoot = [NSMutableArray array];
     
-    for (LWFItem *item in loot) {
+    for (LWFNewItem *item in loot) {
         BOOL didGroup = [self groupItemsForItem:item];
         
         if (!didGroup) {
@@ -114,12 +115,12 @@
     return resultLoot;
 }
 
-- (BOOL)groupItemsForItem:(LWFItem *)item {
+- (BOOL)groupItemsForItem:(LWFNewItem *)item {
     // verifica se tem um item no tile
     // se tiver, aumenta sua quantidade e retorna true dizendo que agrupou
     
-    for (LWFItem *tileItem in self.items) {
-        if ([tileItem isMoney] && [item isMoney]) {
+    for (LWFNewItem *tileItem in self.items) {
+        if ([tileItem isGold] && [item isGold]) {
             tileItem.quantity += item.quantity;
             return YES;
         }
@@ -156,7 +157,7 @@
 - (void)addChild:(SKNode *)node {
     SKAction *fadeAction = nil;
     
-    if ([node isKindOfClass:[LWFItem class]]) {
+    if ([node isKindOfClass:[LWFNewItem class]]) {
         node.alpha = 0.0;
         fadeAction = [SKAction fadeInWithDuration:0.5];
         [self.items addObject:node];

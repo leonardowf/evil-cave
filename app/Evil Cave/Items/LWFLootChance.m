@@ -8,8 +8,9 @@
 
 #import "LWFLootChance.h"
 #import "LWFRandomUtils.h"
-#import "LWFItem.h"
 #import "LWFItemPrototype.h"
+#import "LWFItemFactory.h"
+#import "LWFNewItem.h"
 
 @implementation LWFLootChance
 
@@ -40,12 +41,14 @@
     return randomQuantity;
 }
 
-- (LWFItem *)buildWithQuantity:(NSInteger)quantity {
+- (LWFNewItem *)buildWithQuantity:(NSInteger)quantity {
+    LWFItemFactory *itemFactory = [LWFItemFactory new];
+    
     if (quantity == 0) {
         return nil;
     }
     
-    LWFItem *item = [self.prototype build];
+    LWFNewItem *item = [itemFactory manufactureWithItemPrototype:self.prototype];
     item.quantity = quantity;
     
     return item;

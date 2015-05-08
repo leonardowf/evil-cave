@@ -7,7 +7,7 @@
 //
 
 #import "LWFItemPrototype.h"
-#import "LWFItem.h"
+#import "LWFNewItem.h"
 
 @implementation LWFItemPrototype
 
@@ -49,10 +49,6 @@
     if (object == nil) return nil;
     
     return [NSNumber numberWithInteger:[object integerValue]];
-}
-
-- (LWFItem *)build {
-    return [[LWFItem alloc]initWithItemPrototype:self];
 }
 
 @end

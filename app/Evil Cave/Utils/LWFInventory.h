@@ -7,11 +7,12 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "LWFEquipment.h"
 
 @class LWFPlayer;
-@class LWFItem;
 @class LWFViewController;
 @class LWFEquips;
+@class LWFNewItem;
 
 @interface LWFInventory : SKSpriteNode
 
@@ -26,14 +27,14 @@
 - (void)hide;
 - (void)hideItemDescriptionIfNeeded;
 
-- (BOOL)canTakeItem:(LWFItem *)item;
-- (void)takeItem:(LWFItem *)item;
-- (BOOL)isEquipped:(LWFItem *)item;
+- (BOOL)canTakeItem:(LWFNewItem *)item;
+- (void)takeItem:(LWFNewItem *)item;
+- (BOOL)isEquipped:(LWFEquipment *)equipment;
 
 - (void)inject:(LWFViewController *)viewController;
 - (BOOL)isOpen;
-- (void)equip:(LWFItem *)item;
-- (void)unequip:(LWFItem *)item;
-- (void)drop:(LWFItem *)item;
+- (void)equip:(LWFEquipment *)equipment;
+- (void)unequip:(LWFEquipment *)equipment;
+- (void)drop:(LWFNewItem *)item;
 
 @end

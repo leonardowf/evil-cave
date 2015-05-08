@@ -13,6 +13,8 @@
 #import "LWFGold.h"
 #import "LWFEquipment.h"
 #import "LWFProjectile.h"
+#import "LWFItemPrototype.h"
+#import "LWFItemFactory.h"
 
 @interface LWFItemsTests : XCTestCase {
 
@@ -57,7 +59,18 @@
     XCTAssertFalse([projectile isEquipment]);
     XCTAssertFalse([gold isEquipment]);
     XCTAssertTrue([equipment isEquipment]);
+}
+
+- (void)testEquipmentGeneration {
+    LWFItemPrototype *equipmentPrototype = [LWFItemPrototype new];
+    equipmentPrototype.category = @"armor";
+    
+    LWFItemFactory *itemFactory = [LWFItemFactory new];
+    LWFNewItem *item = [itemFactory manufactureWithItemPrototype:equipmentPrototype];
+
+    XCTAssertTrue([item isEquipment]);
     
 }
+
 
 @end
