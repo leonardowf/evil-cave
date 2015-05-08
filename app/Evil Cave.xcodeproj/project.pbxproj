@@ -71,6 +71,9 @@
 		32938A281AFAEDE800BBE745 /* LWFEquipment.m in Sources */ = {isa = PBXBuildFile; fileRef = 32938A271AFAEDE800BBE745 /* LWFEquipment.m */; };
 		32938A2B1AFAEE0900BBE745 /* LWFProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 32938A2A1AFAEE0900BBE745 /* LWFProjectile.m */; };
 		32938A311AFAF9BD00BBE745 /* LWFItemFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 32938A301AFAF9BD00BBE745 /* LWFItemFactory.m */; };
+		32938A381AFC42FA00BBE745 /* special_attack_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 32938A351AFC42FA00BBE745 /* special_attack_icon.png */; };
+		32938A391AFC42FA00BBE745 /* special_attack_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32938A361AFC42FA00BBE745 /* special_attack_icon@2x.png */; };
+		32938A3A1AFC42FA00BBE745 /* special_attack_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32938A371AFC42FA00BBE745 /* special_attack_icon@3x.png */; };
 		32ACD05F1A7B062600970F69 /* item_motherfucking_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */; };
 		32B5AAD91A878A1B00E6523A /* warrior_standing_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B5AAD81A878A1B00E6523A /* warrior_standing_left.png */; };
 		32B5AADF1A87F66D00E6523A /* item_gold.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32B5AADE1A87F66D00E6523A /* item_gold.atlas */; };
@@ -291,6 +294,9 @@
 		32938A2A1AFAEE0900BBE745 /* LWFProjectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFProjectile.m; sourceTree = "<group>"; };
 		32938A2F1AFAF9BD00BBE745 /* LWFItemFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFItemFactory.h; sourceTree = "<group>"; };
 		32938A301AFAF9BD00BBE745 /* LWFItemFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFItemFactory.m; sourceTree = "<group>"; };
+		32938A351AFC42FA00BBE745 /* special_attack_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = special_attack_icon.png; sourceTree = "<group>"; };
+		32938A361AFC42FA00BBE745 /* special_attack_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "special_attack_icon@2x.png"; sourceTree = "<group>"; };
+		32938A371AFC42FA00BBE745 /* special_attack_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "special_attack_icon@3x.png"; sourceTree = "<group>"; };
 		32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_motherfucking_sword.png; sourceTree = "<group>"; };
 		32B5AAD81A878A1B00E6523A /* warrior_standing_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warrior_standing_left.png; sourceTree = "<group>"; };
 		32B5AADE1A87F66D00E6523A /* item_gold.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = item_gold.atlas; sourceTree = "<group>"; };
@@ -502,6 +508,9 @@
 				32BEB12F1ABE4EFA008950C0 /* Lifebar.png */,
 				32BEB1301ABE4EFA008950C0 /* Lifebar@2x.png */,
 				32BEB1311ABE4EFA008950C0 /* Lifebar@3x.png */,
+				32938A351AFC42FA00BBE745 /* special_attack_icon.png */,
+				32938A361AFC42FA00BBE745 /* special_attack_icon@2x.png */,
+				32938A371AFC42FA00BBE745 /* special_attack_icon@3x.png */,
 				32BEB1321ABE4EFA008950C0 /* portrait.png */,
 				32BEB1331ABE4EFA008950C0 /* portrait@2x.png */,
 				32BEB1341ABE4EFA008950C0 /* portrait@3x.png */,
@@ -1123,6 +1132,7 @@
 				32BEC00F1A4714DC000C77AA /* rat_standing_right.atlas in Resources */,
 				324527981A4DF83A00AFF9A7 /* rat_dying_left.atlas in Resources */,
 				32E2E6B81ACB6BAA00EA88DD /* poop_thrower_rat_standing_right.atlas in Resources */,
+				32938A391AFC42FA00BBE745 /* special_attack_icon@2x.png in Resources */,
 				32FB7DB31AA0004B00AA4C7F /* inventory.png in Resources */,
 				A7F5BB941A16EFBC005BAB63 /* InfoPlist.strings in Resources */,
 				325373B21AF1B25C00BF0E43 /* boot_empty.png in Resources */,
@@ -1158,6 +1168,7 @@
 				32BEC0121A472DA8000C77AA /* radioactive_rat_standing_right.png in Resources */,
 				32ACD05F1A7B062600970F69 /* item_motherfucking_sword.png in Resources */,
 				32DFD29F1AAFD7E400FB554B /* popup_bg.png in Resources */,
+				32938A3A1AFC42FA00BBE745 /* special_attack_icon@3x.png in Resources */,
 				32E2E6B91ACB6BAA00EA88DD /* poop_thrower_rat_standing_right.png in Resources */,
 				325373B01AF1B25C00BF0E43 /* armor_empty@2x.png in Resources */,
 				32E2E6A51ACA2E5300EA88DD /* inventory@2x.png in Resources */,
@@ -1171,6 +1182,7 @@
 				325373B91AF1B25C00BF0E43 /* weapon_empty@2x.png in Resources */,
 				32DFD2AA1AAFD7FC00FB554B /* button_green@3x.png in Resources */,
 				32FB7DAF1AA0004B00AA4C7F /* bg@3x.png in Resources */,
+				32938A381AFC42FA00BBE745 /* special_attack_icon.png in Resources */,
 				32BEC0051A470F5F000C77AA /* warrior_walking_right.atlas in Resources */,
 				32FB7DB91AA0004B00AA4C7F /* thumb_money@3x.png in Resources */,
 				323335FB1AA52F730088C4F6 /* item_info@2x.png in Resources */,
