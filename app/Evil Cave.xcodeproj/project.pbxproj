@@ -74,6 +74,7 @@
 		32938A381AFC42FA00BBE745 /* special_attack_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 32938A351AFC42FA00BBE745 /* special_attack_icon.png */; };
 		32938A391AFC42FA00BBE745 /* special_attack_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32938A361AFC42FA00BBE745 /* special_attack_icon@2x.png */; };
 		32938A3A1AFC42FA00BBE745 /* special_attack_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32938A371AFC42FA00BBE745 /* special_attack_icon@3x.png */; };
+		32938A3C1AFC563500BBE745 /* item_sword.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32938A3B1AFC563500BBE745 /* item_sword.atlas */; };
 		32ACD05F1A7B062600970F69 /* item_motherfucking_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */; };
 		32B5AAD91A878A1B00E6523A /* warrior_standing_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B5AAD81A878A1B00E6523A /* warrior_standing_left.png */; };
 		32B5AADF1A87F66D00E6523A /* item_gold.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32B5AADE1A87F66D00E6523A /* item_gold.atlas */; };
@@ -297,6 +298,7 @@
 		32938A351AFC42FA00BBE745 /* special_attack_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = special_attack_icon.png; sourceTree = "<group>"; };
 		32938A361AFC42FA00BBE745 /* special_attack_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "special_attack_icon@2x.png"; sourceTree = "<group>"; };
 		32938A371AFC42FA00BBE745 /* special_attack_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "special_attack_icon@3x.png"; sourceTree = "<group>"; };
+		32938A3B1AFC563500BBE745 /* item_sword.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = item_sword.atlas; sourceTree = "<group>"; };
 		32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_motherfucking_sword.png; sourceTree = "<group>"; };
 		32B5AAD81A878A1B00E6523A /* warrior_standing_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warrior_standing_left.png; sourceTree = "<group>"; };
 		32B5AADE1A87F66D00E6523A /* item_gold.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = item_gold.atlas; sourceTree = "<group>"; };
@@ -585,6 +587,7 @@
 		326524EC1A75405700EEA4B2 /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				32938A3B1AFC563500BBE745 /* item_sword.atlas */,
 				32B5AAE61A87FCD900E6523A /* item_gold.png */,
 				32B5AADE1A87F66D00E6523A /* item_gold.atlas */,
 				32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */,
@@ -1179,6 +1182,7 @@
 				324527891A4DB60800AFF9A7 /* warrior_standing_right.atlas in Resources */,
 				32BEB1391ABE4EFA008950C0 /* portrait@2x.png in Resources */,
 				325373B11AF1B25C00BF0E43 /* armor_empty@3x.png in Resources */,
+				32938A3C1AFC563500BBE745 /* item_sword.atlas in Resources */,
 				325373B91AF1B25C00BF0E43 /* weapon_empty@2x.png in Resources */,
 				32DFD2AA1AAFD7FC00FB554B /* button_green@3x.png in Resources */,
 				32FB7DAF1AA0004B00AA4C7F /* bg@3x.png in Resources */,
