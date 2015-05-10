@@ -10,6 +10,7 @@
 #import "LWFInventory.h"
 #import "LWFItemComparison.h"
 #import "LWFEquipment.h"
+#import <pop/POP.h>
 
 @interface LWFItemDescription () {
     CGSize _intrinsic;
@@ -150,6 +151,7 @@
 }
 
 - (void)addToView:(UIView *)view {
+    [self.containerView setAlpha:0.0];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     
     [view addSubview:self.containerView];
@@ -164,21 +166,38 @@
     [view addConstraint:c1];
     [view addConstraint:c2];
     
-    CATransition *applicationLoadViewIn =[CATransition animation];
-    [applicationLoadViewIn setDuration:0.3];
-    [applicationLoadViewIn setType:kCATransitionReveal];
-    [applicationLoadViewIn setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]];
-    [[self.containerView layer]addAnimation:applicationLoadViewIn forKey:kCATransitionReveal];
+    POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
+    opacityAnimation.fromValue = @(0);
+    opacityAnimation.toValue = @(1);
+    opacityAnimation.beginTime = 0;
+    opacityAnimation.duration = 1;
+    [self.containerView.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
+    
+    POPSpringAnimation *heightAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayoutConstraintConstant];
+    heightAnimation.springBounciness = 0;
+    heightAnimation.toValue = @(10.);
+    heightAnimation.fromValue = @(-100);
+    
+    [c2 pop_addAnimation:heightAnimation forKey:@"fullscreen"];
 }
 
 - (void)removeFromSuperview:(BOOL)animated {
-    if (animated) {
-        [UIView animateWithDuration:0.4
-                         animations:^{self.alpha = 0.0;}
-                         completion:^(BOOL finished){ [self.containerView removeFromSuperview]; }];
-    } else {
+    if (!animated) {
         [self.containerView removeFromSuperview];
+        return;
     }
+    
+    POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
+    opacityAnimation.fromValue = @(1);
+    opacityAnimation.toValue = @(0);
+    opacityAnimation.beginTime = 0;
+    opacityAnimation.duration = 0.5;
+    [self.containerView.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
+    
+    
+    [opacityAnimation setCompletionBlock:^(POPAnimation *animation, BOOL completed) {
+        [self.containerView removeFromSuperview];
+    }];
 }
 
 - (IBAction)didTapEquip:(id)sender {
