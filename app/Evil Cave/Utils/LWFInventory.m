@@ -13,6 +13,8 @@
 #import "LWFPlayer.h"
 #import "LWFEquips.h"
 
+#import <pop/POP.h>
+
 @interface LWFInventory () {
     LWFViewController *_viewController;
     NSMutableArray *_imageViewHolders;
@@ -59,7 +61,12 @@ SINGLETON_FOR_CLASS(Inventory)
 - (void)show {
     _overlay.hidden = NO;
     [_viewController.view bringSubviewToFront:_viewController.viewInventoryContainer];
-    _viewController.viewInventoryContainer.alpha = 1.0;
+    
+    POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
+    opacityAnimation.fromValue = @(0);
+    opacityAnimation.toValue = @(1);
+    opacityAnimation.beginTime = CACurrentMediaTime() + 0.1;
+    [_viewController.viewInventoryContainer.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
     
     _viewController.labelGold.text = [NSString stringWithFormat:@"%ld", (long)self.money];
 }

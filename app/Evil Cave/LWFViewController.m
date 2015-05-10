@@ -19,6 +19,8 @@
 #import "LWFOTESpinningCooldown.h"
 #import "LWFEquipment.h"
 
+#import <pop/POP.h>
+
 @implementation LWFViewController
 
 - (void)viewDidLoad
@@ -94,8 +96,6 @@
             self.labelArmor.text = [equipment armorText];
         }
         
-
-        
         UIImage *itemImage = [UIImage imageNamed:[NSString stringWithFormat:@"item_%@", item.imageName]];
         
         self.imageViewItemSprite.image = itemImage;
@@ -126,9 +126,36 @@
     
 }
 
-- (IBAction)didTapInventoryButton:(id)sender {
-    LWFInventory *inventory = [LWFInventory sharedInventory];
-    [inventory show];
+- (IBAction)didTapInventoryButton:(UITapGestureRecognizer *)sender {
+    UIView *view = (UIView *)sender.view;
+    
+    CGRect baseRect = CGRectMake(view.frame.origin.x + 0, view.frame.origin.y + 5, view.frame.size.width, view.frame.size.height);
+    
+    [view pop_removeAllAnimations];
+    
+    POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewFrame];
+    animation.springBounciness = 8;
+    
+    animation.toValue = [NSValue valueWithCGRect:baseRect];
+    [animation setCompletionBlock:^(POPAnimation *animationCompleted, BOOL finished) {
+        NSLog(@"terminou");
+        
+        CGRect baseRect = CGRectMake(view.frame.origin.x -0, view.frame.origin.y -5, view.frame.size.width, view.frame.size.height);
+        
+        [view pop_removeAllAnimations];
+        POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewFrame];
+        animation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewFrame];
+        animation.springBounciness = 8;
+        
+        animation.toValue = [NSValue valueWithCGRect:baseRect];
+        
+        [view pop_addAnimation:animation forKey:@"fullscreen"];
+        
+        LWFInventory *inventory = [LWFInventory sharedInventory];
+        [inventory show];
+    }];
+    
+    [view pop_addAnimation:animation forKey:@"fullscreen"];
 }
 
 - (IBAction)didTapSpecialAttack:(id)sender {

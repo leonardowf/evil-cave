@@ -1,10 +1,22 @@
 PODS:
+  - pop (1.0.7)
   - SplunkMint-iOS (4.1)
 
 DEPENDENCIES:
+  - pop (from `https://github.com/facebook/pop.git`)
   - SplunkMint-iOS
 
+EXTERNAL SOURCES:
+  pop:
+    :git: https://github.com/facebook/pop.git
+
+CHECKOUT OPTIONS:
+  pop:
+    :commit: 038f29b2de47db3fce803c5a180eee604ebe1977
+    :git: https://github.com/facebook/pop.git
+
 SPEC CHECKSUMS:
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   SplunkMint-iOS: 514a7cfdc38cc9fadab99826a093c3615cd4a5d0
 
 COCOAPODS: 0.36.0
