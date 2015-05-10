@@ -63,7 +63,7 @@
 
 // OVERTIME: COOLDOWN
 - (NSInteger)numberOfTurns {
-    return 10;
+    return 1;
 }
 
 - (void)overtimeNotInEffectAnymore {

@@ -93,6 +93,12 @@ SINGLETON_FOR_CLASS(Player)
 }
 
 - (void)willAttackTile:(LWFTile *)tile withAttack:(LWFAttack *)attack completion:(void (^)(void))someBlock {
+    if ([attack isKindOfClass:[LWFSpinningAttack class]]) {
+        [someBlock invoke];
+        return;
+    }
+    
+    
     [super willAttackTile:tile withAttack:attack completion:nil];
     
     [self startAttackingAnimation];
@@ -209,13 +215,33 @@ SINGLETON_FOR_CLASS(Player)
 }
 
 - (void)requestSpecialAttack {        
-    SKAction *rotation = [SKAction rotateByAngle: 2*M_PI duration:0.3];
-    //and just run the action
-    [self runAction: rotation];
+//    SKAction *rotation = [SKAction rotateByAngle: 2*M_PI duration:0.3];
+//    //and just run the action
+//    [self runAction: rotation];
+    
+//    tilesize ---- 100
+    // 48 --- x
+    
+    float x = 48.0 * 100.0 / TILE_SIZE + 10;
+    
+    [self setSize:CGSizeMake(x, x)];
+    
+    NSArray *spinningAnimation = [self getSpinningAttackFrames];
+    
+    if (spinningAnimation != nil && spinningAnimation.count > 0) {
+        SKAction *animate = [SKAction animateWithTextures:spinningAnimation timePerFrame:0.05f resize:NO restore:YES];
+        SKAction *action = [SKAction repeatAction:animate count:1];
+        
+        [self runAction:action completion:^{
+            [self setSize:CGSizeMake(TILE_SIZE, TILE_SIZE)];
+            LWFSpinningAttack *spinningAttack = [[LWFSpinningAttack alloc]init];
+            [self.attackManager attackable:self requestedAttackToTile:self.currentTile withAttack:spinningAttack];
+        }];
+    }
     
     
-    LWFSpinningAttack *spinningAttack = [[LWFSpinningAttack alloc]init];
-    [self.attackManager attackable:self requestedAttackToTile:self.currentTile withAttack:spinningAttack];
+    
+
     
 }
 
@@ -225,6 +251,22 @@ SINGLETON_FOR_CLASS(Player)
 
 - (LWFEquips *)getEquips {
     return self.inventory.equips;
+}
+
+- (NSArray *)getSpinningAttackFrames {
+    NSMutableArray *spinningAtlasArray = [NSMutableArray array];
+    NSString *spinningAtlasName = [NSString stringWithFormat:@"warrior_spinning_attack_right"];
+    SKTextureAtlas *spinningAtlas = [SKTextureAtlas atlasNamed:spinningAtlasName];
+    
+    NSUInteger numImages = spinningAtlas.textureNames.count;
+    for (int i=1; i <= numImages; i++) {
+        NSString *textureName = [NSString stringWithFormat:@"spin_attack%d", i];
+        SKTexture *texture = [spinningAtlas textureNamed:textureName];
+        texture.filteringMode = SKTextureFilteringNearest;
+        [spinningAtlasArray addObject:texture];
+    }
+    
+    return spinningAtlasArray;
 }
 
 
