@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class LWFAnimationArrowInventory;
 @interface LWFTutorial : UIView
 
 @property (strong, nonatomic) IBOutlet UIView *view;
+@property (weak, nonatomic) IBOutlet UILabel *labelInventoryDescription;
+@property (weak, nonatomic) IBOutlet LWFAnimationArrowInventory *arrowAnimationView;
 
 - (void)addToView:(UIView *)view;
+- (void)showTutorialIfNeeded;
 
 @end

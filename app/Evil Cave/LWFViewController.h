@@ -10,7 +10,11 @@
 #import <SpriteKit/SpriteKit.h>
 #import "LWFOTEObserver.h"
 
+@class LWFTutorial;
+
 @interface LWFViewController : UIViewController <LWFOTEObserver>
+
+
 
 @property (weak, nonatomic) IBOutlet UIView *itemPreview;
 @property (weak, nonatomic) IBOutlet UILabel *labelDamage;
@@ -22,6 +26,7 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightConstraint;
 
+@property (weak, nonatomic) IBOutlet LWFTutorial *viewTutorial;
 
 // inventory
 @property (weak, nonatomic) IBOutlet UIView *viewInventoryContainer;

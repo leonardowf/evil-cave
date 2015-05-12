@@ -929,6 +929,7 @@
                         <outlet property="rightConstraint" destination="2t2-QB-Kbp" id="2tx-de-n7L"/>
                         <outlet property="viewInventoryContainer" destination="gfA-Uw-d4k" id="kxO-wg-ae1"/>
                         <outlet property="viewInventoryOverlay" destination="lmD-T8-41z" id="NZy-tr-JfB"/>
+                        <outlet property="viewTutorial" destination="8q5-Rk-klS" id="022-SM-Upc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>

@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Munro.ttf">
+            <string>Munro</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LWFTutorial">
             <connections>
+                <outlet property="arrowAnimationView" destination="LBX-WB-BR5" id="TZg-j4-5DW"/>
+                <outlet property="labelInventoryDescription" destination="AmF-yY-SGQ" id="sqH-te-C3O"/>
                 <outlet property="view" destination="iN0-l3-epB" id="jwn-BU-f1R"/>
             </connections>
         </placeholder>
@@ -14,7 +20,35 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBX-WB-BR5" customClass="LWFAnimationArrowInventory">
+                    <rect key="frame" x="10" y="470" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="Nng-F1-wHp"/>
+                        <constraint firstAttribute="width" constant="80" id="X2W-sa-kZz"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here you can see, drop and equip the items you get" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AmF-yY-SGQ">
+                    <rect key="frame" x="90" y="470" width="500" height="19"/>
+                    <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="20"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="AmF-yY-SGQ" secondAttribute="trailing" constant="10" id="51L-vo-Qxv"/>
+                <constraint firstItem="AmF-yY-SGQ" firstAttribute="top" secondItem="LBX-WB-BR5" secondAttribute="top" id="ERz-lI-iBj"/>
+                <constraint firstItem="LBX-WB-BR5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="255" id="I1k-81-aKE"/>
+                <constraint firstItem="AmF-yY-SGQ" firstAttribute="leading" secondItem="LBX-WB-BR5" secondAttribute="trailing" id="ObK-2i-jOy"/>
+                <constraint firstItem="LBX-WB-BR5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="U58-aL-AVH"/>
+                <constraint firstAttribute="bottom" secondItem="LBX-WB-BR5" secondAttribute="bottom" constant="50" id="yPl-kW-3CZ"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="I1k-81-aKE"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

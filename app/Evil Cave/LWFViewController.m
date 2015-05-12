@@ -23,6 +23,7 @@
 
 #import "QuartzCore/QuartzCore.h"
 #import <pop/POP.h>
+#import "LWFTutorial.h"
 
 @implementation LWFViewController
 
@@ -58,6 +59,9 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    [self.viewTutorial showTutorialIfNeeded];
+    
     
 }
 

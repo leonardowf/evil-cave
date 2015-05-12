@@ -8,17 +8,10 @@
 
 #import "LWFTutorial.h"
 #import <pop/POP.h>
+#import "LWFAnimationArrowInventory.h"
+#import <pop/POP.h>
 
 @implementation LWFTutorial
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
@@ -39,6 +32,54 @@
         [self addSubview:self.view];
     }
     return self;
+}
+
+- (void)showTutorialIfNeeded {
+    if ([self shouldShowTutorial]) {
+        [self showTutorial];
+    }
+}
+
+- (BOOL)shouldShowTutorial {
+    return YES;
+}
+
+- (BOOL)shouldShowInventoryTutorial {
+    return YES;
+}
+
+- (void)showTutorial {
+    [self showViewTapInterceptor];
+    
+    if ([self shouldShowInventoryTutorial]) {
+        [self showInventoryTutorial];
+        
+    }
+}
+
+- (void)showViewTapInterceptor {
+    // view que fica por cima pegando todos os taps e passando o tutorial
+    
+    UIView *superview = self.superview;
+    UIView *interceptor = [[UIView alloc]initWithFrame:superview.frame];
+    
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapViewInterceptor:)];
+    [interceptor addGestureRecognizer:recognizer];
+    [superview addSubview:interceptor];
+}
+
+- (void)didTapViewInterceptor:(id)sender {
+    NSLog(@"próximo passo do tuts");
+}
+
+- (void)showInventoryTutorial {
+    [self.arrowAnimationView addGrowAnimationWithCompletion:^(BOOL finished) {
+        POPBasicAnimation *anim = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
+        anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        anim.fromValue = @(0.0);
+        anim.toValue = @(1.0);
+        [self.labelInventoryDescription pop_addAnimation:anim forKey:@"fade"];
+    }];
 }
 
 - (void)addToView:(UIView *)view {
