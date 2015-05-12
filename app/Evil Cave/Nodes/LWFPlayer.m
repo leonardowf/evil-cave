@@ -229,7 +229,7 @@ SINGLETON_FOR_CLASS(Player)
     NSArray *spinningAnimation = [self getSpinningAttackFrames];
     
     if (spinningAnimation != nil && spinningAnimation.count > 0) {
-        SKAction *animate = [SKAction animateWithTextures:spinningAnimation timePerFrame:0.05f resize:NO restore:YES];
+        SKAction *animate = [SKAction animateWithTextures:spinningAnimation timePerFrame:0.08f resize:NO restore:YES];
         SKAction *action = [SKAction repeatAction:animate count:1];
         
         [self runAction:action completion:^{
@@ -238,11 +238,6 @@ SINGLETON_FOR_CLASS(Player)
             [self.attackManager attackable:self requestedAttackToTile:self.currentTile withAttack:spinningAttack];
         }];
     }
-    
-    
-    
-
-    
 }
 
 - (id<LWFLifeDisplayer>)getLifeBar {

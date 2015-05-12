@@ -161,6 +161,9 @@
                                     <outletCollection property="gestureRecognizers" destination="cdQ-2N-2DM" appends="YES" id="TUD-La-V3l"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8q5-Rk-klS" userLabel="Tutorial View" customClass="LWFTutorial">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cw0-2s-On6" userLabel="Inventory Container">
                                 <rect key="frame" x="0.0" y="508" width="60" height="60"/>
                                 <subviews>
@@ -869,13 +872,17 @@
                             <constraint firstItem="Pgk-fA-6RV" firstAttribute="leading" secondItem="FgX-lQ-npQ" secondAttribute="trailing" constant="6" id="84g-FB-jvp"/>
                             <constraint firstItem="aVg-JY-jeM" firstAttribute="top" secondItem="lmD-T8-41z" secondAttribute="bottom" id="Bms-B0-Ah1"/>
                             <constraint firstItem="cw0-2s-On6" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leading" id="CHY-h7-uy3"/>
+                            <constraint firstItem="8q5-Rk-klS" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leading" id="EF1-6f-Qqd"/>
+                            <constraint firstItem="8q5-Rk-klS" firstAttribute="top" secondItem="TvN-0d-DFh" secondAttribute="bottom" id="H1v-qS-5Od"/>
                             <constraint firstItem="aVg-JY-jeM" firstAttribute="top" secondItem="gfA-Uw-d4k" secondAttribute="bottom" constant="40" id="Mxs-Hn-ZRU"/>
                             <constraint firstItem="gfA-Uw-d4k" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leadingMargin" constant="10" id="RzR-Aq-1fZ"/>
                             <constraint firstItem="aVg-JY-jeM" firstAttribute="top" secondItem="cw0-2s-On6" secondAttribute="bottom" id="Sn5-cA-EfV"/>
                             <constraint firstAttribute="trailing" secondItem="Pgk-fA-6RV" secondAttribute="trailing" id="URx-Le-vvH"/>
+                            <constraint firstAttribute="trailing" secondItem="8q5-Rk-klS" secondAttribute="trailing" id="XVz-v6-9VN"/>
                             <constraint firstItem="lmD-T8-41z" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leading" id="ZZt-iE-XL1"/>
                             <constraint firstItem="gfA-Uw-d4k" firstAttribute="top" secondItem="TvN-0d-DFh" secondAttribute="bottom" constant="40" id="e7m-QO-L3E"/>
                             <constraint firstItem="lmD-T8-41z" firstAttribute="top" secondItem="TvN-0d-DFh" secondAttribute="bottom" constant="-50" id="gW1-1a-0UK"/>
+                            <constraint firstItem="aVg-JY-jeM" firstAttribute="top" secondItem="8q5-Rk-klS" secondAttribute="bottom" id="i0g-b5-CPa"/>
                             <constraint firstItem="Pgk-fA-6RV" firstAttribute="top" secondItem="cw0-2s-On6" secondAttribute="top" id="j6I-Hr-hWD"/>
                             <constraint firstItem="FgX-lQ-npQ" firstAttribute="leading" secondItem="yOv-0K-4OW" secondAttribute="trailing" constant="6" id="r4K-Jc-jY2"/>
                             <constraint firstItem="Pgk-fA-6RV" firstAttribute="bottom" secondItem="cw0-2s-On6" secondAttribute="bottom" id="x5R-0k-k9I"/>

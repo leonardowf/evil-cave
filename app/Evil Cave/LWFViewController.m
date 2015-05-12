@@ -19,6 +19,9 @@
 #import "LWFOTESpinningCooldown.h"
 #import "LWFEquipment.h"
 
+#import "LWFTutorial.h"
+
+#import "QuartzCore/QuartzCore.h"
 #import <pop/POP.h>
 
 @implementation LWFViewController
@@ -50,6 +53,11 @@
     
     LWFHudLifebar *lifebar = [LWFHudLifebar sharedHudLifeBar];
     [lifebar addToView:self.view];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
 }
 

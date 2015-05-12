@@ -95,6 +95,11 @@
     ((LWFLifeBar *)_lifeBar).alpha = 1.0;
 }
 
+- (void)dark {
+    self.alpha = 0.0;
+    ((LWFLifeBar *)_lifeBar).alpha = 0.0;
+}
+
 - (void)notifyMovementFailure {
     NSLog(@"Criatura falhou na hora de mover");
 }

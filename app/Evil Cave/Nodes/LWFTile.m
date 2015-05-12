@@ -51,6 +51,8 @@
 - (void)steppedOnTile:(LWFCreature *)creature {
     if ([self isLit]) {
         [creature light];
+    } else {
+        
     }
     
     BOOL isPlayer = [creature isKindOfClass:[LWFPlayer class]];
@@ -195,6 +197,8 @@
     
     [_map addChild:_preLoadedFog];
     self.fog = _preLoadedFog;
+    
+    self.lit = NO;
     
 }
 
