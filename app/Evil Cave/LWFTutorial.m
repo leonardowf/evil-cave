@@ -169,7 +169,17 @@
 
 - (void)finishTutorial {
     [_interceptor removeFromSuperview];
-    [self removeFromSuperview];
+    
+    POPBasicAnimation *anim = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
+    anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    anim.fromValue = @(1.0);
+    anim.toValue = @(0.0);
+    
+    [anim setCompletionBlock:^(POPAnimation *animation, BOOL someshit) {
+        [self removeFromSuperview];
+    }];
+    
+    [self pop_addAnimation:anim forKey:@"fade"];
 }
 
 - (void)addToView:(UIView *)view {
