@@ -26,5 +26,6 @@
 - (void)requestTakeItem;
 - (void)requestSpecialAttack;
 - (void)doFov;
+- (void)lockTarget:(LWFCreature *)creature;
 
 @end

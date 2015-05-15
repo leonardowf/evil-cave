@@ -8,6 +8,7 @@
 
 #import "LWFPlayer.h"
 #import "LWFTile.h"
+#import "LWFTileMap.h"
 #import "LWFMap.h"
 #import "LWFTurnList.h"
 #import "LWFInventory.h"
@@ -19,6 +20,11 @@
 #import "LWFOTEQueue.h"
 #import "LWFOTESpinningCooldown.h"
 #import "LWFGold.h"
+
+@interface LWFPlayer () {
+    LWFCreature *_lockedTarget;
+}
+@end
 
 @implementation LWFPlayer
 
@@ -46,8 +52,15 @@ SINGLETON_FOR_CLASS(Player)
 
 - (void)processTurn {
     [self.map newTurnCycleStarted];
-    
     [self.oteQueue process];
+    
+    if (_lockedTarget != nil) {
+        if ([self isInTheMeleeRangeTheCreature:_lockedTarget]) {
+            _lockedTarget = nil;
+        } else {
+            [self buildPathToLockedTarget];
+        }
+    }
     
     if (self.tilePath == nil || self.tilePath.count == 0) {
         [self.map unlockUserInteraction];
@@ -56,6 +69,12 @@ SINGLETON_FOR_CLASS(Player)
     }
     
     [self.map processTouchQueue];
+}
+
+- (void)buildPathToLockedTarget {
+    LWFTile *closest = [self.map.tileMap closestNeighborFromTile:self.currentTile toTile:_lockedTarget.currentTile];
+    
+    [self buildPathToTile:closest];
 }
 
 - (void)moveableToTile:(LWFTile *)tile {
@@ -262,6 +281,12 @@ SINGLETON_FOR_CLASS(Player)
     }
     
     return spinningAtlasArray;
+}
+
+- (void)lockTarget:(LWFCreature *)creature {
+    _lockedTarget = creature;
+    [self buildPathToLockedTarget];
+    [self walkToExistingPath];
 }
 
 

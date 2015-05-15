@@ -162,6 +162,7 @@
             _blockUserInteraction = YES;
             [self.player requestAttackToTile:tile withAttack:(LWFAttack *)[self.player getMelee]];
         } else {
+            [self.player lockTarget:creatureOnTile];
         }
         return;
     }
