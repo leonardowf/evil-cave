@@ -1,8 +1,10 @@
 PODS:
+  - FLAnimatedImage (1.0.8)
   - pop (1.0.7)
   - SplunkMint-iOS (4.2)
 
 DEPENDENCIES:
+  - FLAnimatedImage (~> 1.0)
   - pop (from `https://github.com/facebook/pop.git`)
   - SplunkMint-iOS
 
@@ -16,6 +18,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/facebook/pop.git
 
 SPEC CHECKSUMS:
+  FLAnimatedImage: f9422f796135aff80d8c00b2afc48015bb746e24
   pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   SplunkMint-iOS: 058e5297f7cc8d335aea3dcaa8111eeb0f657371
 

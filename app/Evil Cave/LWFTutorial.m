@@ -11,11 +11,13 @@
 #import "LWFAnimationArrowInventory.h"
 #import "LWFAnimationArrowSpecialAttackView.h"
 #import <pop/POP.h>
+#import "FLAnimatedImage.h"
 
 @interface LWFTutorial () {
     BOOL _didShowInventoryTutorial;
     BOOL _didShowSpecialAttackTutorial;
     BOOL _disableInteraction;
+    BOOL _didShowGif1;
     
     UIView *_interceptor;
 }
@@ -72,6 +74,33 @@
         [self showSpecialAttackTutorial];
         return;
     }
+    
+    if ([self shouldShowGif1]) {
+        [self showGif1];
+    }
+}
+
+- (BOOL)shouldShowGif1 {
+    return !_didShowGif1;
+}
+
+- (void)showGif1 {
+    NSURL *imgPath = [[NSBundle mainBundle] URLForResource:@"tutorial1" withExtension:@"gif"];
+    NSString*stringPath = [imgPath absoluteString]; //this is correct
+    
+    //you can again use it in NSURL eg if you have async loading images and your mechanism
+    //uses only url like mine (but sometimes i need local files to load)
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:stringPath]];
+    
+    
+    FLAnimatedImage *image = [FLAnimatedImage animatedImageWithGIFData:data];
+    FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
+    imageView.animatedImage = image;
+    imageView.frame = CGRectMake(0, 0, self.viewGif1Container.frame.size.width, self.viewGif1Container.frame.size.height);
+    
+    imageView.animationDuration = 0.5;
+    
+    [self.viewGif1Container addSubview:imageView];
 }
 
 - (BOOL)shouldShowSpecialAttackTutorial {
@@ -164,6 +193,7 @@
 }
 
 - (BOOL)tutorialFinished {
+    return NO;
     return _didShowSpecialAttackTutorial && _didShowInventoryTutorial;
 }
 

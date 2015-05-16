@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelSpecialAttackDescription;
 @property (weak, nonatomic) IBOutlet UILabel *labelSpecialAttackTitle;
 
+@property (weak, nonatomic) IBOutlet UIView *viewGif1Container;
+
 - (void)addToView:(UIView *)view;
 - (void)showTutorialIfNeeded;
 

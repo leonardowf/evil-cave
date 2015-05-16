@@ -20,6 +20,7 @@
                 <outlet property="labelSpecialAttackTitle" destination="aOm-TK-4dp" id="gUC-hP-qLE"/>
                 <outlet property="view" destination="iN0-l3-epB" id="jwn-BU-f1R"/>
                 <outlet property="viewAnimationArrowSpecialAttack" destination="HpP-1p-94K" id="zQm-9E-pqx"/>
+                <outlet property="viewGif1Container" destination="2L4-f2-MOO" id="UWs-NL-IXH"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -65,11 +66,19 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2L4-f2-MOO" userLabel="gif1container">
+                    <rect key="frame" x="0.0" y="200" width="600" height="200"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="sAW-Rm-RrX"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="HpP-1p-94K" secondAttribute="bottom" constant="60" id="46u-W0-iIj"/>
                 <constraint firstAttribute="trailing" secondItem="AmF-yY-SGQ" secondAttribute="trailing" constant="10" id="51L-vo-Qxv"/>
+                <constraint firstItem="2L4-f2-MOO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9UR-KG-JJv"/>
                 <constraint firstItem="AmF-yY-SGQ" firstAttribute="top" secondItem="LBX-WB-BR5" secondAttribute="top" id="ERz-lI-iBj"/>
                 <constraint firstItem="wXT-AT-hDG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="I18-tF-pbu"/>
                 <constraint firstItem="LBX-WB-BR5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="255" id="I1k-81-aKE"/>
@@ -82,13 +91,15 @@
                 <constraint firstItem="wXT-AT-hDG" firstAttribute="top" secondItem="aOm-TK-4dp" secondAttribute="bottom" constant="10" id="h2S-lt-7R9"/>
                 <constraint firstItem="HpP-1p-94K" firstAttribute="top" secondItem="wXT-AT-hDG" secondAttribute="top" constant="-20" id="qBf-sN-apu"/>
                 <constraint firstItem="wXT-AT-hDG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="qhO-BP-x48"/>
+                <constraint firstAttribute="trailing" secondItem="2L4-f2-MOO" secondAttribute="trailing" id="sWb-Qg-YNL"/>
                 <constraint firstItem="aOm-TK-4dp" firstAttribute="trailing" secondItem="wXT-AT-hDG" secondAttribute="trailing" id="tDl-ol-PIX"/>
+                <constraint firstAttribute="centerY" secondItem="2L4-f2-MOO" secondAttribute="centerY" id="y3y-DP-CC8"/>
                 <constraint firstAttribute="bottom" secondItem="LBX-WB-BR5" secondAttribute="bottom" constant="50" id="yPl-kW-3CZ"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="qhO-BP-x48"/>
                     <exclude reference="I1k-81-aKE"/>
+                    <exclude reference="qhO-BP-x48"/>
                 </mask>
             </variation>
         </view>
