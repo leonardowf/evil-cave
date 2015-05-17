@@ -86,6 +86,8 @@
 		32B3E1AD1B02D05C00CF2EA2 /* arrow-flipped.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B3E1AB1B02D05C00CF2EA2 /* arrow-flipped.png */; };
 		32B3E1AE1B02D05C00CF2EA2 /* arrow-flipped@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B3E1AC1B02D05C00CF2EA2 /* arrow-flipped@2x.png */; };
 		32B3E1B11B06DA3B00CF2EA2 /* tutorial1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 32B3E1B01B06DA3B00CF2EA2 /* tutorial1.gif */; };
+		32B3E1B41B082A6B00CF2EA2 /* grass_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B3E1B21B082A6B00CF2EA2 /* grass_tile.png */; };
+		32B3E1B51B082A6B00CF2EA2 /* water_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B3E1B31B082A6B00CF2EA2 /* water_tile.png */; };
 		32B5AAD91A878A1B00E6523A /* warrior_standing_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B5AAD81A878A1B00E6523A /* warrior_standing_left.png */; };
 		32B5AADF1A87F66D00E6523A /* item_gold.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32B5AADE1A87F66D00E6523A /* item_gold.atlas */; };
 		32B5AAE71A87FCD900E6523A /* item_gold.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B5AAE61A87FCD900E6523A /* item_gold.png */; };
@@ -323,6 +325,8 @@
 		32B3E1AB1B02D05C00CF2EA2 /* arrow-flipped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-flipped.png"; sourceTree = "<group>"; };
 		32B3E1AC1B02D05C00CF2EA2 /* arrow-flipped@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-flipped@2x.png"; sourceTree = "<group>"; };
 		32B3E1B01B06DA3B00CF2EA2 /* tutorial1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tutorial1.gif; sourceTree = "<group>"; };
+		32B3E1B21B082A6B00CF2EA2 /* grass_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass_tile.png; sourceTree = "<group>"; };
+		32B3E1B31B082A6B00CF2EA2 /* water_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_tile.png; sourceTree = "<group>"; };
 		32B5AAD81A878A1B00E6523A /* warrior_standing_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warrior_standing_left.png; sourceTree = "<group>"; };
 		32B5AADE1A87F66D00E6523A /* item_gold.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = item_gold.atlas; sourceTree = "<group>"; };
 		32B5AAE61A87FCD900E6523A /* item_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_gold.png; sourceTree = "<group>"; };
@@ -709,6 +713,8 @@
 				321A605F1A6354DF0060517E /* door_open.png */,
 				3254E6D61A5CB49400BD7D13 /* door.png */,
 				32F1CDCB1A57603800A0D9F5 /* wall.png */,
+				32B3E1B21B082A6B00CF2EA2 /* grass_tile.png */,
+				32B3E1B31B082A6B00CF2EA2 /* water_tile.png */,
 				32BEBFEE1A470AAB000C77AA /* rock_tile.png */,
 			);
 			path = Tiles;
@@ -1208,6 +1214,7 @@
 				32B3E1B11B06DA3B00CF2EA2 /* tutorial1.gif in Resources */,
 				3206A3DD1A7D9B6200D08893 /* item_preview_bottom.png in Resources */,
 				32DFD2A91AAFD7FC00FB554B /* button_green@2x.png in Resources */,
+				32B3E1B41B082A6B00CF2EA2 /* grass_tile.png in Resources */,
 				32E2E6AA1ACA31E800EA88DD /* button_yellow.png in Resources */,
 				32BEB1371ABE4EFA008950C0 /* Lifebar@3x.png in Resources */,
 				3245278F1A4DCC1700AFF9A7 /* radioactive_rat_standing_right.atlas in Resources */,
@@ -1245,6 +1252,7 @@
 				32BEB1351ABE4EFA008950C0 /* Lifebar.png in Resources */,
 				32B5AAE71A87FCD900E6523A /* item_gold.png in Resources */,
 				324527891A4DB60800AFF9A7 /* warrior_standing_right.atlas in Resources */,
+				32B3E1B51B082A6B00CF2EA2 /* water_tile.png in Resources */,
 				32BEB1391ABE4EFA008950C0 /* portrait@2x.png in Resources */,
 				325373B11AF1B25C00BF0E43 /* armor_empty@3x.png in Resources */,
 				32938A3C1AFC563500BBE745 /* item_sword.atlas in Resources */,

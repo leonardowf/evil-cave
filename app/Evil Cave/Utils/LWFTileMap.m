@@ -37,7 +37,7 @@
                     [tile setWalkable:NO];
                 }
                 else if (cell.cellType == CaveCellTypeFloor) {
-                    SKTexture *texture = [SKTexture textureWithImageNamed:@"rock_tile"];
+                    SKTexture *texture = [self loadTextureForFloor];
                     texture.filteringMode = SKTextureFilteringNearest;
                     tile = [LWFTile spriteNodeWithTexture:texture];
                     [tile setWalkable:YES];
@@ -75,6 +75,24 @@
         }
     }
     return self;
+}
+
+- (SKTexture *)loadTextureForFloor {
+    SKTexture *texture = [SKTexture textureWithImageNamed:@"rock_tile"];
+    
+    LWFRandomUtils *randomUtils = [[LWFRandomUtils alloc]init];
+    NSInteger randomInt = [randomUtils randomIntegerBetween:1 and:100];
+    
+    if (randomInt <= 5) {
+        texture = [SKTexture textureWithImageNamed:@"grass_tile"];
+    }
+    randomInt = [randomUtils randomIntegerBetween:1 and:100];
+    
+    if (randomInt <= 5) {
+        texture = [SKTexture textureWithImageNamed:@"water_tile"];
+    }
+    
+    return texture;
 }
 
 - (LWFTile *)tileForVertical:(NSInteger)y andHorizontal:(NSInteger)x {
