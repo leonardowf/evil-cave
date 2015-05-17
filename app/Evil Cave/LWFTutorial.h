@@ -10,6 +10,10 @@
 @class LWFAnimationArrowInventory;
 @class LWFAnimationArrowSpecialAttackView;
 
+@protocol LWFTutorialDelegate <NSObject>
+- (void)tutorialFinished;
+@end
+
 @interface LWFTutorial : UIView
 
 @property (strong, nonatomic) IBOutlet UIView *view;
@@ -23,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelSpecialAttackTitle;
 
 @property (weak, nonatomic) IBOutlet UIView *viewGif1Container;
+
+@property (weak) id<LWFTutorialDelegate>delegate;
 
 - (void)addToView:(UIView *)view;
 - (void)showTutorialIfNeeded;

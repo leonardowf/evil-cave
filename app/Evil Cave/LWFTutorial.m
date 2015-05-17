@@ -19,6 +19,8 @@
     BOOL _disableInteraction;
     BOOL _didShowGif1;
     
+    
+    UIView *_currentGifView;
     UIView *_interceptor;
 }
 @end
@@ -49,6 +51,8 @@
 - (void)showTutorialIfNeeded {
     if ([self shouldShowTutorial]) {
         [self showTutorial];
+    } else {
+        [self.delegate tutorialFinished];
     }
 }
 
@@ -77,6 +81,7 @@
     
     if ([self shouldShowGif1]) {
         [self showGif1];
+        return;
     }
 }
 
@@ -85,6 +90,15 @@
 }
 
 - (void)showGif1 {
+    
+    POPBasicAnimation *anim = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
+    anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    anim.fromValue = @(0.0);
+    anim.toValue = @(1.0);
+    anim.duration = 0.1;
+    
+    [self.viewGif1Container pop_addAnimation:anim forKey:@"fade"];
+    
     NSURL *imgPath = [[NSBundle mainBundle] URLForResource:@"tutorial1" withExtension:@"gif"];
     NSString*stringPath = [imgPath absoluteString]; //this is correct
     
@@ -92,15 +106,16 @@
     //uses only url like mine (but sometimes i need local files to load)
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:stringPath]];
     
-    
     FLAnimatedImage *image = [FLAnimatedImage animatedImageWithGIFData:data];
     FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
     imageView.animatedImage = image;
     imageView.frame = CGRectMake(0, 0, self.viewGif1Container.frame.size.width, self.viewGif1Container.frame.size.height);
     
-    imageView.animationDuration = 0.5;
-    
     [self.viewGif1Container addSubview:imageView];
+    _currentGifView = imageView;
+    
+    _didShowGif1 = YES;
+    _disableInteraction = NO;
 }
 
 - (BOOL)shouldShowSpecialAttackTutorial {
@@ -121,8 +136,6 @@
         
         [self.labelSpecialAttackDescription pop_addAnimation:anim forKey:@"fade"];
         [self.labelSpecialAttackTitle pop_addAnimation:anim forKey:@"fade"];
-        
-        
     }];
     
     _didShowSpecialAttackTutorial = YES;
@@ -190,11 +203,11 @@
     [self.labelSpecialAttackDescription pop_addAnimation:anim forKey:@"fade"];
     [self.viewAnimationArrowSpecialAttack pop_addAnimation:anim forKey:@"fade"];
     [self.arrowAnimationView pop_addAnimation:anim forKey:@"fade"];
+    [self.viewGif1Container pop_addAnimation:anim forKey:@"fade"];
 }
 
 - (BOOL)tutorialFinished {
-    return NO;
-    return _didShowSpecialAttackTutorial && _didShowInventoryTutorial;
+    return _didShowSpecialAttackTutorial && _didShowInventoryTutorial && _didShowGif1;
 }
 
 - (void)finishTutorial {
@@ -210,6 +223,8 @@
     }];
     
     [self pop_addAnimation:anim forKey:@"fade"];
+    
+    [self.delegate tutorialFinished];
 }
 
 - (void)addToView:(UIView *)view {

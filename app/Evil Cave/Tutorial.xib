@@ -68,7 +68,6 @@
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2L4-f2-MOO" userLabel="gif1container">
                     <rect key="frame" x="0.0" y="200" width="600" height="200"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="sAW-Rm-RrX"/>
                     </constraints>

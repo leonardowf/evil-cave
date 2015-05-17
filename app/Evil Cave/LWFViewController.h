@@ -9,12 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 #import "LWFOTEObserver.h"
+#import "LWFTutorial.h"
 
 @class LWFTutorial;
 
-@interface LWFViewController : UIViewController <LWFOTEObserver>
-
-
+@interface LWFViewController : UIViewController <LWFOTEObserver, LWFTutorialDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *itemPreview;
 @property (weak, nonatomic) IBOutlet UILabel *labelDamage;

@@ -30,39 +30,39 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Configure the view.
-    SKView * skView = (SKView *)self.view;
     
-    // Create and configure the scene.
-//    SKScene * scene = [LWFMyScene sceneWithSize:skView.bounds.size];
-//    scene.scaleMode = SKSceneScaleModeAspectFill;
-//    
-//    // Present the scene.
-//    [skView presentScene:scene];
-//    
-//    [self configureEvents];
-//    
-//    LWFInventory *inventory = [LWFInventory sharedInventory];
-//    [inventory inject:self];
-//    
-//    LWFHudLogger *hugLogger = [LWFHudLogger sharedHudLogger];
-//    [hugLogger inject:self];
-//    
-//    [self.imageViewWeapon.layer setMinificationFilter:kCAFilterTrilinear];
-//    [self.imageViewWeapon.layer setMagnificationFilter:kCAFilterTrilinear];
-//    
-//    LWFHudLifebar *lifebar = [LWFHudLifebar sharedHudLifeBar];
-//    [lifebar addToView:self.view];
-    
+    [self.viewTutorial setDelegate:self];    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     [self.viewTutorial showTutorialIfNeeded];
+}
+
+- (void)tutorialFinished {
+    SKView * skView = (SKView *)self.view;
     
-    
+//     Create and configure the scene.
+    SKScene * scene = [LWFMyScene sceneWithSize:skView.bounds.size];
+    scene.scaleMode = SKSceneScaleModeAspectFill;
+
+    // Present the scene.
+    [skView presentScene:scene];
+
+    [self configureEvents];
+
+    LWFInventory *inventory = [LWFInventory sharedInventory];
+    [inventory inject:self];
+
+    LWFHudLogger *hugLogger = [LWFHudLogger sharedHudLogger];
+    [hugLogger inject:self];
+
+    [self.imageViewWeapon.layer setMinificationFilter:kCAFilterTrilinear];
+    [self.imageViewWeapon.layer setMagnificationFilter:kCAFilterTrilinear];
+
+    LWFHudLifebar *lifebar = [LWFHudLifebar sharedHudLifeBar];
+    [lifebar addToView:self.view];
 }
 
 - (void)configureEvents {
