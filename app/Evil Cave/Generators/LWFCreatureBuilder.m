@@ -103,7 +103,7 @@
         creature.player = _map.player;
         creature.attacks = [_attacksBuilder attacksForCreatureType:creatureType];
         
-        // Como o player é um singleton, precisamos manter a OTEQUE dele
+        // Como o player é um singleton, precisamos manter a OTEQUEUE dele
         if (creature.oteQueue == nil) {
             creature.oteQueue = [[LWFOTEQueue alloc]init];
         }
