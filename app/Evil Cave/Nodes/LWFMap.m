@@ -199,7 +199,7 @@
     [_player doFov];
 }
 
-- (void)createPlayer {
+- (void)createPlayer {       
     LWFPlayer *player = (LWFPlayer *)[_creatureBuilder buildWithType:LWFCreatureTypeWarrior];
     [self addPlayer:player];
     [player statsChanged];

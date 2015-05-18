@@ -102,7 +102,12 @@
         creature.size = _mapDimension.tileSize;
         creature.player = _map.player;
         creature.attacks = [_attacksBuilder attacksForCreatureType:creatureType];
-        creature.oteQueue = [[LWFOTEQueue alloc]init];
+        
+        // Como o player é um singleton, precisamos manter a OTEQUE dele
+        if (creature.oteQueue == nil) {
+            creature.oteQueue = [[LWFOTEQueue alloc]init];
+        }
+        
         creature.alpha = 0.0;
     }
     
