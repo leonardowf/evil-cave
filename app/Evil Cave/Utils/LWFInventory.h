@@ -36,5 +36,7 @@
 - (void)equip:(LWFEquipment *)equipment;
 - (void)unequip:(LWFEquipment *)equipment;
 - (void)drop:(LWFNewItem *)item;
+- (void)clear;
+- (BOOL)isEmpty;
 
 @end

@@ -363,5 +363,37 @@ SINGLETON_FOR_CLASS(Inventory)
     [self.player.currentTile steppedOnTile:self.player];
 }
 
+- (void)clear {
+    [self.items removeAllObjects];
+    self.equips.weapon = nil;
+    self.equips.armor = nil;
+    self.equips.boots = nil;
+    self.equips.accessory = nil;
+}
+
+- (BOOL)isEmpty {
+    if ([self.items count] != 0) {
+        return NO;
+    }
+    
+    if (self.equips.weapon != nil) {
+        return NO;
+    }
+    
+    if (self.equips.armor != nil) {
+        return NO;
+    }
+    
+    if (self.equips.boots != nil) {
+        return NO;
+    }
+    
+    if (self.equips.accessory != nil) {
+        return NO;
+    }
+    
+    return YES;
+}
+
 
 @end

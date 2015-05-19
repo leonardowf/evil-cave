@@ -77,6 +77,7 @@
 		32938A3C1AFC563500BBE745 /* item_sword.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32938A3B1AFC563500BBE745 /* item_sword.atlas */; };
 		32938A3E1AFFA33100BBE745 /* warrior_spinning_attack_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32938A3D1AFFA33100BBE745 /* warrior_spinning_attack_right.atlas */; };
 		32938A401AFFF01900BBE745 /* Tutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32938A3F1AFFF01900BBE745 /* Tutorial.xib */; };
+		32A9E2CB1B0AC398003D37FD /* LWFInventoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2CA1B0AC398003D37FD /* LWFInventoryTests.m */; };
 		32ACD05F1A7B062600970F69 /* item_motherfucking_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */; };
 		32B3E18C1AFFF64400CF2EA2 /* LWFTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B3E18B1AFFF64400CF2EA2 /* LWFTutorial.m */; };
 		32B3E1A51B01964B00CF2EA2 /* Imported Layers.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B3E1A11B01964B00CF2EA2 /* Imported Layers.png */; };
@@ -313,6 +314,7 @@
 		32938A3B1AFC563500BBE745 /* item_sword.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = item_sword.atlas; sourceTree = "<group>"; };
 		32938A3D1AFFA33100BBE745 /* warrior_spinning_attack_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_spinning_attack_right.atlas; sourceTree = "<group>"; };
 		32938A3F1AFFF01900BBE745 /* Tutorial.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tutorial.xib; sourceTree = "<group>"; };
+		32A9E2CA1B0AC398003D37FD /* LWFInventoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFInventoryTests.m; sourceTree = "<group>"; };
 		32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_motherfucking_sword.png; sourceTree = "<group>"; };
 		32B3E18A1AFFF64400CF2EA2 /* LWFTutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFTutorial.h; sourceTree = "<group>"; };
 		32B3E18B1AFFF64400CF2EA2 /* LWFTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFTutorial.m; sourceTree = "<group>"; };
@@ -1081,8 +1083,9 @@
 			children = (
 				32938A1B1AF99A7E00BBE745 /* LWFPotionsTests.m */,
 				A7F5BBB91A16EFBF005BAB63 /* Evil_CaveTests.m */,
-				A7F5BBB41A16EFBF005BAB63 /* Supporting Files */,
 				32938A1D1AFAED4600BBE745 /* LWFItemsTests.m */,
+				32A9E2CA1B0AC398003D37FD /* LWFInventoryTests.m */,
+				A7F5BBB41A16EFBF005BAB63 /* Supporting Files */,
 			);
 			path = "Evil CaveTests";
 			sourceTree = "<group>";
@@ -1430,6 +1433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32A9E2CB1B0AC398003D37FD /* LWFInventoryTests.m in Sources */,
 				32938A1E1AFAED4600BBE745 /* LWFItemsTests.m in Sources */,
 				32938A1C1AF99A7E00BBE745 /* LWFPotionsTests.m in Sources */,
 				A7F5BBBA1A16EFBF005BAB63 /* Evil_CaveTests.m in Sources */,
