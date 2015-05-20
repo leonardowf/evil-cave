@@ -14,4 +14,16 @@
     return YES;
 }
 
+- (BOOL)isStackable {
+    return YES;
+}
+
+- (BOOL)canStackWith:(LWFNewItem *)item {
+    if ([item isPotion] && [item.identifier isEqualToString:self.identifier]) {
+        return YES;
+    }
+    
+    return NO;
+}
+
 @end

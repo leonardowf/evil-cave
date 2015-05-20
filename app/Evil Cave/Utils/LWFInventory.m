@@ -76,8 +76,11 @@ SINGLETON_FOR_CLASS(Inventory)
 }
 
 - (BOOL)canTakeItem:(LWFNewItem *)item {
+    if (self.items.count >= STORED_ITEMS_LIMIT) {
+        return NO;
+    }
+    
     return YES;
-    // TODO
 }
 
 - (void)takeItem:(LWFNewItem *)item {

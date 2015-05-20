@@ -66,6 +66,33 @@
     LWFNewItem *item = [itemFactory manufactureWithItemPrototype:equipmentPrototype];
 
     XCTAssertTrue([item isEquipment]);
+}
+
+- (void)testStackOfPotionsOfDifferentTypes {
+    LWFPotion *healthPotion = [LWFPotion new];
+    healthPotion.identifier = @"health_potion";
+    healthPotion.quantity = 1;
+    
+    LWFPotion *poisonPotion = [LWFPotion new];
+    poisonPotion.identifier = @"poison_potion";
+    poisonPotion.quantity = 1;
+    
+    XCTAssertFalse([healthPotion canStackWith:poisonPotion]);
+}
+
+- (void)testStackOfPotionsOfSameTypes {
+    LWFPotion *healthPotion = [LWFPotion new];
+    healthPotion.identifier = @"health_potion";
+    healthPotion.quantity = 1;
+    
+    LWFPotion *healthPotion2 = [LWFPotion new];
+    healthPotion2.identifier = @"health_potion";
+    healthPotion2.quantity = 1;
+    
+    XCTAssertTrue([healthPotion canStackWith:healthPotion2]);
+}
+
+- (void)testStackOfPotions {
     
 }
 

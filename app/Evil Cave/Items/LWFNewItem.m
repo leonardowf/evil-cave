@@ -27,6 +27,18 @@
     return NO;
 }
 
+- (BOOL)isStackable {
+    return NO;
+}
+
+- (BOOL)canStackWith:(LWFNewItem *)item {
+    return NO;
+}
+
+- (LWFNewItem *)stackWithItem:(LWFNewItem *)item {
+    return nil;
+}
+
 - (UIImage *)getImage {
     UIImage *itemImage = [UIImage imageNamed:[NSString stringWithFormat:@"item_%@", self.imageName]];
     

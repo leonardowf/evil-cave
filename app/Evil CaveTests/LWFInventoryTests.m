@@ -34,6 +34,17 @@
     XCTAssertTrue([_inventory isEmpty]);
 }
 
+- (void)testInventoryNotEmpty {
+    LWFEquipment *equipment = [LWFEquipment new];
+    equipment.category = @"weapon";
+    
+    [_inventory takeItem:equipment];
+    XCTAssertFalse([_inventory isEmpty]);
+    
+    [_inventory equip:equipment];
+    XCTAssertFalse([_inventory isEmpty]);
+}
+
 - (void)testInventoryClearance {
     LWFEquipment *equipment = [[LWFEquipment alloc]init];
     [_inventory takeItem:equipment];
@@ -49,6 +60,28 @@
     
     [_inventory equip:equipment];
     XCTAssertFalse([_inventory isEmpty]);
+}
+
+- (void)testCanTakeItemShouldReturnNo {
+    [self add:STORED_ITEMS_LIMIT];
+    LWFEquipment *equipment = [LWFEquipment new];
+    equipment.category = @"weapon";
+    XCTAssertFalse([_inventory canTakeItem:equipment]);
+}
+
+- (void)testCanTakeItemShouldReturnYes {
+    [self add:STORED_ITEMS_LIMIT -1];
+    LWFEquipment *equipment = [LWFEquipment new];
+    equipment.category = @"weapon";
+    XCTAssertTrue([_inventory canTakeItem:equipment]);
+}
+
+- (void)add:(NSInteger)numberOfEquips {
+    for (NSInteger i = 0; i < numberOfEquips; i++) {
+        LWFEquipment *equipment = [LWFEquipment new];
+        equipment.category = @"weapon";
+        [_inventory takeItem:equipment];
+    }
 }
 
 @end

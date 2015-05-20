@@ -14,6 +14,8 @@
 @class LWFEquips;
 @class LWFNewItem;
 
+static NSInteger const STORED_ITEMS_LIMIT = 15;
+
 @interface LWFInventory : SKSpriteNode
 
 @property (nonatomic, strong) NSMutableArray *items;
