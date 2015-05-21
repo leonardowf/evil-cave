@@ -26,4 +26,11 @@
     return NO;
 }
 
+- (LWFNewItem *)stackWithItem:(LWFNewItem *)item {
+    self.quantity = self.quantity + item.quantity;
+    item.quantity = 0;
+    
+    return self;
+}
+
 @end

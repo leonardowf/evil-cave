@@ -93,6 +93,23 @@
 }
 
 - (void)testStackOfPotions {
+    LWFPotion *healthPotion = [LWFPotion new];
+    healthPotion.identifier = @"health_potion";
+    healthPotion.quantity = 1;
+    
+    LWFPotion *healthPotion2 = [LWFPotion new];
+    healthPotion2.identifier = @"health_potion";
+    healthPotion2.quantity = 1;
+    
+    NSInteger totalQuantityBeforeStack = healthPotion.quantity + healthPotion2.quantity;
+    
+    LWFNewItem *returnedItem = [healthPotion stackWithItem:healthPotion2];
+    
+    // multiple assertions are bad?
+    
+    XCTAssertEqual(healthPotion.quantity, totalQuantityBeforeStack);
+    XCTAssertEqual(healthPotion2.quantity, 0);
+    XCTAssertEqual(returnedItem, healthPotion);
     
 }
 

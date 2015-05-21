@@ -10,6 +10,7 @@
 #import <XCTest/XCTest.h>
 #import "LWFInventory.h"
 #import "LWFEquipment.h"
+#import "LWFPotion.h"
 
 @interface LWFInventoryTests : XCTestCase {
     LWFInventory *_inventory;
@@ -74,6 +75,80 @@
     LWFEquipment *equipment = [LWFEquipment new];
     equipment.category = @"weapon";
     XCTAssertTrue([_inventory canTakeItem:equipment]);
+}
+
+- (void)testCanTakeStackableItemWithEmptyInventory {
+    LWFPotion *potion = [LWFPotion new];
+    potion.quantity = 1;
+    potion.identifier = @"health_potion";
+    
+    XCTAssertTrue([_inventory canTakeItem:potion]);
+}
+
+- (void)testCannotAddStackableItemWithFullOfEquipsInventory {
+    [self add:STORED_ITEMS_LIMIT];
+    LWFPotion *potion = [LWFPotion new];
+    potion.quantity = 1;
+    potion.identifier = @"health_potion";
+    
+    XCTAssertFalse([_inventory canTakeItem:potion]);
+}
+
+- (void)testTakeItemDoesNothingIfInventoryFull {
+    [self add:STORED_ITEMS_LIMIT];
+    
+    LWFPotion *potion = [LWFPotion new];
+    potion.quantity = 1;
+    potion.identifier = @"health_potion";
+    
+    XCTAssertFalse([_inventory canTakeItem:potion]);
+    [_inventory takeItem:potion];
+    XCTAssertEqual(_inventory.items.count, STORED_ITEMS_LIMIT);
+}
+
+- (void)testIfFindsItemThatCanStack {
+    LWFPotion *potion = [LWFPotion new];
+    potion.quantity = 1;
+    potion.identifier = @"health_potion";
+    
+    [self add:3];
+    [_inventory takeItem:potion];
+    
+    LWFPotion *potion2 = [LWFPotion new];
+    potion2.quantity = 1;
+    potion2.identifier = @"health_potion";
+    
+    LWFNewItem *foundItem = [_inventory findSameKindStackable:potion2];
+    
+    XCTAssertEqual(foundItem, potion);
+}
+
+- (void)testIfDontFindStackableItem {
+    LWFPotion *potion = [LWFPotion new];
+    potion.quantity = 1;
+    potion.identifier = @"health_potion";
+    
+    [self add:3];
+    
+    LWFNewItem *foundItem = [_inventory findSameKindStackable:potion];
+    
+    XCTAssertNil(foundItem);
+}
+
+- (void)testCanTakeStackableWithFullInventoryButOneStackable {
+    [self add:STORED_ITEMS_LIMIT -1];
+    
+    LWFPotion *potion = [LWFPotion new];
+    potion.quantity = 1;
+    potion.identifier = @"health_potion";
+    
+    [_inventory takeItem:potion];
+    
+    LWFPotion *potion2 = [LWFPotion new];
+    potion2.quantity = 1;
+    potion2.identifier = @"health_potion";
+    
+    XCTAssertTrue([_inventory canTakeItem:potion2]);
 }
 
 - (void)add:(NSInteger)numberOfEquips {

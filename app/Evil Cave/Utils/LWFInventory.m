@@ -76,6 +76,14 @@ SINGLETON_FOR_CLASS(Inventory)
 }
 
 - (BOOL)canTakeItem:(LWFNewItem *)item {
+    if ([item isStackable]) {
+        LWFNewItem *foundItem = [self findSameKindStackable:item];
+        
+        if (foundItem != nil) {
+            return YES;
+        }
+    }
+    
     if (self.items.count >= STORED_ITEMS_LIMIT) {
         return NO;
     }
@@ -84,6 +92,10 @@ SINGLETON_FOR_CLASS(Inventory)
 }
 
 - (void)takeItem:(LWFNewItem *)item {
+    if (![self canTakeItem:item]) {
+        return;
+    }
+    
     [LWFLogger logPickedItem:item];
     
     [self.items addObject:item];
@@ -396,6 +408,21 @@ SINGLETON_FOR_CLASS(Inventory)
     }
     
     return YES;
+}
+
+- (LWFNewItem *)findSameKindStackable:(LWFNewItem *)item {
+    if (![item isStackable]) {
+        return nil;
+    }
+    
+    for (LWFNewItem *storedItem in self.items) {
+        if ([storedItem isStackable] && [storedItem.identifier isEqualToString:item.identifier]) {
+            return storedItem;
+        }
+    }
+    
+    return nil;
+    
 }
 
 

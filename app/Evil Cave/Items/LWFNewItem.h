@@ -24,9 +24,9 @@
 - (BOOL)isEquipment;
 - (BOOL)isProjectile;
 
-// mover isso aqui para um protocolo
 - (BOOL)isStackable;
 - (BOOL)canStackWith:(LWFNewItem *)item;
+- (LWFNewItem *)stackWithItem:(LWFNewItem *)item;
 
 - (UIImage *)getImage;
 

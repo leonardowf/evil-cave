@@ -40,5 +40,6 @@ static NSInteger const STORED_ITEMS_LIMIT = 15;
 - (void)drop:(LWFNewItem *)item;
 - (void)clear;
 - (BOOL)isEmpty;
+- (LWFNewItem *)findSameKindStackable:(LWFNewItem *)item;
 
 @end
