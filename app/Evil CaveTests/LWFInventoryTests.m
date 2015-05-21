@@ -151,6 +151,23 @@
     XCTAssertTrue([_inventory canTakeItem:potion2]);
 }
 
+- (void)testTakeStackableItemWithInventoryWithStackableItem {
+    LWFPotion *potion = [LWFPotion new];
+    potion.quantity = 1;
+    potion.identifier = @"health_potion";
+    
+    LWFPotion *potion2 = [LWFPotion new];
+    potion2.quantity = 1;
+    potion2.identifier = @"health_potion";
+    
+    NSInteger beforeTakeItemTotal = potion.quantity + potion2.quantity;
+    
+    [_inventory takeItem:potion];
+    [_inventory takeItem:potion2];
+    
+    XCTAssertEqual(potion.quantity, beforeTakeItemTotal);
+}
+
 - (void)add:(NSInteger)numberOfEquips {
     for (NSInteger i = 0; i < numberOfEquips; i++) {
         LWFEquipment *equipment = [LWFEquipment new];

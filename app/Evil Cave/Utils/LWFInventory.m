@@ -98,7 +98,17 @@ SINGLETON_FOR_CLASS(Inventory)
     
     [LWFLogger logPickedItem:item];
     
-    [self.items addObject:item];
+    if ([item isStackable]) {
+        LWFNewItem *foundItem = [self findSameKindStackable:item];
+        
+        if (foundItem == nil) {
+            [self.items addObject:item];
+        } else {
+            [foundItem stackWithItem:item];
+        }
+    } else {
+        [self.items addObject:item];
+    }
     
     [self displayItem:item];
 }
