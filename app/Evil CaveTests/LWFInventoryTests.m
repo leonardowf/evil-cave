@@ -168,6 +168,8 @@
     XCTAssertEqual(potion.quantity, beforeTakeItemTotal);
 }
 
+// test commit
+
 - (void)add:(NSInteger)numberOfEquips {
     for (NSInteger i = 0; i < numberOfEquips; i++) {
         LWFEquipment *equipment = [LWFEquipment new];
