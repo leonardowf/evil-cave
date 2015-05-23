@@ -224,9 +224,10 @@ SINGLETON_FOR_CLASS(Player)
     
     if ([self.inventory canTakeItem:item]) {
         [self takeItem:item];
+        [self finishTurn];
+    } else {
+        NSLog(@"Inventory is full");
     }
-    
-    [self finishTurn];
 }
 
 - (void)receveidDamageLog:(NSInteger)damage fromCreature:(LWFCreature *)creature {
