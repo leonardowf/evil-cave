@@ -303,6 +303,10 @@ SINGLETON_FOR_CLASS(Inventory)
     backgroundImageViewToReplace.image = [UIImage imageNamed:imageName];
 }
 
+- (BOOL)canUnequip:(LWFEquipment *)equipment {
+    return [self canTakeItem:equipment];
+}
+
 - (void)unequip:(LWFEquipment *)equipment {
     [_equips unequip:equipment];
     

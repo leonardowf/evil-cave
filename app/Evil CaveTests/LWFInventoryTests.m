@@ -168,6 +168,26 @@
     XCTAssertEqual(potion.quantity, beforeTakeItemTotal);
 }
 
+- (void)testIfCanUnequipWithInventoryEmpty {
+    LWFEquipment *equipment = [LWFEquipment new];
+    equipment.category = @"weapon";
+    [_inventory takeItem:equipment];
+    [_inventory equip:equipment];
+    
+    XCTAssertTrue([_inventory canUnequip:equipment]);
+}
+
+- (void)testIfCanUnequipWithInventoryFull {
+    LWFEquipment *equipment = [LWFEquipment new];
+    equipment.category = @"weapon";
+    [_inventory takeItem:equipment];
+    [_inventory equip:equipment];
+    
+    [self add:STORED_ITEMS_LIMIT];
+    
+    XCTAssertFalse([_inventory canUnequip:equipment]);
+}
+
 - (void)add:(NSInteger)numberOfEquips {
     for (NSInteger i = 0; i < numberOfEquips; i++) {
         LWFEquipment *equipment = [LWFEquipment new];

@@ -51,7 +51,14 @@
         if ([_inventory isEquipped:_equipment]) {
             UIImage *buttonImage = [UIImage imageNamed:@"button_yellow"];
             [self.buttonEquip setBackgroundImage:buttonImage forState:UIControlStateNormal];
+            
             [self.buttonEquip setTitle:@"UNEQUIP" forState:UIControlStateNormal];
+            
+            if ([_inventory canUnequip:_equipment]) {
+                [self.buttonEquip setEnabled:NO];
+            } else {
+                [self.buttonEquip setEnabled:YES];
+            }
         }
     }
     return self;
@@ -203,8 +210,10 @@
 - (IBAction)didTapEquip:(id)sender {
     if ([_inventory isEquipped:_equipment]) {
         // apertou no botão amarelo de unequip
-        [_inventory unequip:_equipment];
-        [self removeFromSuperview:YES];
+        if ([_inventory canUnequip:_equipment]) {
+            [_inventory unequip:_equipment];
+            [self removeFromSuperview:YES];
+        }
     } else {
         [self removeFromSuperview:YES];
         [_inventory equip:_equipment];

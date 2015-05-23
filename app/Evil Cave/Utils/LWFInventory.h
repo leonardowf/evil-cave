@@ -36,6 +36,7 @@ static NSInteger const STORED_ITEMS_LIMIT = 15;
 - (void)inject:(LWFViewController *)viewController;
 - (BOOL)isOpen;
 - (void)equip:(LWFEquipment *)equipment;
+- (BOOL)canUnequip:(LWFEquipment *)equipment;
 - (void)unequip:(LWFEquipment *)equipment;
 - (void)drop:(LWFNewItem *)item;
 - (void)clear;
