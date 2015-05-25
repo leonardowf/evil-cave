@@ -58,6 +58,18 @@
     XCTAssertTrue([equipment isEquipment]);
 }
 
+- (void)testIfPotionIsUsable {
+    LWFPotion *potion = [LWFPotion new];
+    
+    XCTAssertTrue([potion isUsable]);
+}
+
+- (void)testIfEquipIsNotUsable {
+    LWFEquipment *potion = [LWFEquipment new];
+    
+    XCTAssertFalse([potion isUsable]);
+}
+
 - (void)testEquipmentGeneration {
     LWFItemPrototype *equipmentPrototype = [LWFItemPrototype new];
     equipmentPrototype.category = @"armor";

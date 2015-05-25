@@ -7,6 +7,7 @@
 //
 
 #import "LWFPotion.h"
+#import "LWFCreature.h"
 
 @implementation LWFPotion
 
@@ -16,6 +17,14 @@
 
 - (BOOL)isStackable {
     return YES;
+}
+
+- (BOOL)isUsable {
+    return YES;
+}
+
+- (void)applyEffectOn:(LWFCreature *)creature {
+    
 }
 
 - (BOOL)canStackWith:(LWFNewItem *)item {

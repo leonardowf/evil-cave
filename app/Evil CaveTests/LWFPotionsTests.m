@@ -11,6 +11,10 @@
 
 #import "LWFInventory.h"
 #import "LWFPotion.h"
+#import "LWFPlayer.h"
+#import "LWFCreatureBuilder.h"
+#import "LWFStats.h"
+#import "LWFHealthPotion.h"
 
 @interface LWFPotionsTests : XCTestCase {
     LWFInventory *_inventory;
@@ -41,6 +45,33 @@
     LWFPotion *potion = [LWFPotion new];
     [_inventory.items addObject:potion];
     XCTAssertEqual(_inventory.items.count, 1);
+}
+
+- (void)testIfHealthPotionHeals {
+    LWFCreatureBuilder *creatureBuilder = [[LWFCreatureBuilder alloc]initWithMap:nil movementManager:nil andMapDimension:nil andTurnList:nil andAttackManager:nil];
+    LWFPlayer *player = (LWFPlayer *)[creatureBuilder buildWithType:LWFCreatureTypeWarrior];
+    
+    player.stats.currentHP = 20;
+    
+    LWFHealthPotion *healthPotion = [LWFHealthPotion new];
+    [healthPotion applyEffectOn:player];
+    
+    NSInteger quantityHealed = [healthPotion getHealingQuantity];
+    
+    XCTAssertEqual(player.stats.currentHP, 20 + quantityHealed);
+}
+
+- (void)testIfHealthPotionHealsToMaximum {
+    LWFCreatureBuilder *creatureBuilder = [[LWFCreatureBuilder alloc]initWithMap:nil movementManager:nil andMapDimension:nil andTurnList:nil andAttackManager:nil];
+    LWFPlayer *player = (LWFPlayer *)[creatureBuilder buildWithType:LWFCreatureTypeWarrior];
+
+    LWFHealthPotion *healthPotion = [LWFHealthPotion new];
+    NSInteger quantityHealed = [healthPotion getHealingQuantity];
+    
+    player.stats.currentHP = player.stats.maxHP - quantityHealed + 1;
+    [healthPotion applyEffectOn:player];
+    
+    XCTAssertEqual(player.stats.currentHP, player.stats.maxHP);
 }
 
 @end

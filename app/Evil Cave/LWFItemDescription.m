@@ -201,7 +201,6 @@
     opacityAnimation.duration = 0.5;
     [self.containerView.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
     
-    
     [opacityAnimation setCompletionBlock:^(POPAnimation *animation, BOOL completed) {
         [self.containerView removeFromSuperview];
     }];

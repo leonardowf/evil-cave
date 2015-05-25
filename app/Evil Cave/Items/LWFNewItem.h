@@ -23,6 +23,8 @@
 - (BOOL)isGold;
 - (BOOL)isEquipment;
 - (BOOL)isProjectile;
+- (BOOL)isUsable;
+- (void)use;
 
 - (BOOL)isStackable;
 - (BOOL)canStackWith:(LWFNewItem *)item;

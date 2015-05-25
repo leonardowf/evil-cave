@@ -10,4 +10,6 @@
 
 @interface LWFPotion : LWFNewItem
 
+- (void)applyEffectOn:(LWFCreature *)creature;
+
 @end

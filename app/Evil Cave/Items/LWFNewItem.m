@@ -31,12 +31,22 @@
     return NO;
 }
 
+- (BOOL)isUsable {
+    return NO;
+}
+
 - (BOOL)canStackWith:(LWFNewItem *)item {
     return NO;
 }
 
 - (LWFNewItem *)stackWithItem:(LWFNewItem *)item {
     return nil;
+}
+
+- (void)use {
+    if (![self isUsable]) {
+        return;
+    }
 }
 
 - (UIImage *)getImage {
