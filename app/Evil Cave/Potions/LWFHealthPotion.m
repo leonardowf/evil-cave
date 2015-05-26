@@ -29,4 +29,8 @@
     return 20;
 }
 
+- (LWFPotion *)clone {
+    return [LWFHealthPotion new];
+}
+
 @end

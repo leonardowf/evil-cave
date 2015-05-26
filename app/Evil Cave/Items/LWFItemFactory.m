@@ -57,7 +57,6 @@
     
     equipment = [[LWFEquipment alloc]initWithTexture:texture];
 
-        
     [equipment calculateForKey:@"lowdamage" andPrototype:prototype];
     [equipment calculateForKey:@"highdamage" andPrototype:prototype];
     [equipment calculateForKey:@"strength" andPrototype:prototype];

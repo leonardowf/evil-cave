@@ -12,4 +12,6 @@
 
 - (void)applyEffectOn:(LWFCreature *)creature;
 
+- (LWFPotion *)clone;
+
 @end

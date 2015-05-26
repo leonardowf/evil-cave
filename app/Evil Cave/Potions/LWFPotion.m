@@ -23,6 +23,10 @@
     return YES;
 }
 
+- (LWFPotion *)clone {
+    return [LWFPotion new];
+}
+
 - (void)applyEffectOn:(LWFCreature *)creature {
     
 }
