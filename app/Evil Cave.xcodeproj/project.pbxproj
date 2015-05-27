@@ -80,6 +80,7 @@
 		32A9E2CB1B0AC398003D37FD /* LWFInventoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2CA1B0AC398003D37FD /* LWFInventoryTests.m */; };
 		32A9E2CE1B12AA1B003D37FD /* LWFHealthPotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2CD1B12AA1B003D37FD /* LWFHealthPotion.m */; };
 		32A9E2D11B12B36B003D37FD /* LWFPotionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2D01B12B36B003D37FD /* LWFPotionFactory.m */; };
+		32A9E2D41B155E2C003D37FD /* LWFPotionIdentifierMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2D31B155E2C003D37FD /* LWFPotionIdentifierMatcher.m */; };
 		32ACD05F1A7B062600970F69 /* item_motherfucking_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */; };
 		32B3E18C1AFFF64400CF2EA2 /* LWFTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B3E18B1AFFF64400CF2EA2 /* LWFTutorial.m */; };
 		32B3E1A51B01964B00CF2EA2 /* Imported Layers.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B3E1A11B01964B00CF2EA2 /* Imported Layers.png */; };
@@ -321,6 +322,8 @@
 		32A9E2CD1B12AA1B003D37FD /* LWFHealthPotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFHealthPotion.m; sourceTree = "<group>"; };
 		32A9E2CF1B12B36B003D37FD /* LWFPotionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPotionFactory.h; sourceTree = "<group>"; };
 		32A9E2D01B12B36B003D37FD /* LWFPotionFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPotionFactory.m; sourceTree = "<group>"; };
+		32A9E2D21B155E2C003D37FD /* LWFPotionIdentifierMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPotionIdentifierMatcher.h; sourceTree = "<group>"; };
+		32A9E2D31B155E2C003D37FD /* LWFPotionIdentifierMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPotionIdentifierMatcher.m; sourceTree = "<group>"; };
 		32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_motherfucking_sword.png; sourceTree = "<group>"; };
 		32B3E18A1AFFF64400CF2EA2 /* LWFTutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFTutorial.h; sourceTree = "<group>"; };
 		32B3E18B1AFFF64400CF2EA2 /* LWFTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFTutorial.m; sourceTree = "<group>"; };
@@ -664,6 +667,8 @@
 				32A9E2CD1B12AA1B003D37FD /* LWFHealthPotion.m */,
 				32A9E2CF1B12B36B003D37FD /* LWFPotionFactory.h */,
 				32A9E2D01B12B36B003D37FD /* LWFPotionFactory.m */,
+				32A9E2D21B155E2C003D37FD /* LWFPotionIdentifierMatcher.h */,
+				32A9E2D31B155E2C003D37FD /* LWFPotionIdentifierMatcher.m */,
 			);
 			path = Potions;
 			sourceTree = "<group>";
@@ -1431,6 +1436,7 @@
 				A7D8BEEA1A1AB598005B0599 /* LWFRandomUtils.m in Sources */,
 				321DB1111A74201D003354BB /* LWFItemPrototypeFactory.m in Sources */,
 				32FFE83E1A2C0BDD003D02A4 /* LWFAttack.m in Sources */,
+				32A9E2D41B155E2C003D37FD /* LWFPotionIdentifierMatcher.m in Sources */,
 				32B3E1A71B01964B00CF2EA2 /* LWFAnimationArrowInventory.m in Sources */,
 				A7F5BBA01A16EFBD005BAB63 /* LWFViewController.m in Sources */,
 				32F09E2C1A48E6B4000B8797 /* LWFCombatOutput.m in Sources */,

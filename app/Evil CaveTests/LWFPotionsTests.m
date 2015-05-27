@@ -61,6 +61,12 @@
     XCTAssertEqual(player.stats.currentHP, 20 + quantityHealed);
 }
 
+- (void)testHealthPotionIdentifier {
+    LWFHealthPotion *healthPotion = [LWFHealthPotion new];
+    
+    XCTAssertTrue([healthPotion.identifier isEqualToString:@"health_potion"]);
+}
+
 - (void)testIfHealthPotionHealsToMaximum {
     LWFCreatureBuilder *creatureBuilder = [[LWFCreatureBuilder alloc]initWithMap:nil movementManager:nil andMapDimension:nil andTurnList:nil andAttackManager:nil];
     LWFPlayer *player = (LWFPlayer *)[creatureBuilder buildWithType:LWFCreatureTypeWarrior];

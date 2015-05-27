@@ -8,9 +8,10 @@
 
 #import "LWFPotionFactory.h"
 #import "LWFHealthPotion.h"
+#import "LWFPotionIdentifierMatcher.h"
 
 @interface LWFPotionFactory () {
-    NSMutableDictionary *_prototypes;
+    LWFPotionIdentifierMatcher *_potionIdentifierMatcher;
 }
 @end
 
@@ -21,13 +22,20 @@ SINGLETON_FOR_CLASS(PotionFactory)
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _prototypes = [NSMutableDictionary dictionary];
+        _potionIdentifierMatcher = [[LWFPotionIdentifierMatcher alloc]init];
     }
     return self;
 }
 
-- (void)loadPrototypes {
-    [_prototypes setObject:[LWFHealthPotion new] forKey:@"health_potion"];
+- (LWFPotion *)manufactureWithPotionIdentifier:(NSString *)potionIdentifier {
+    LWFPotion *potion;
+    SKTexture *texture = [_potionIdentifierMatcher textureForPotionIdentifier:potionIdentifier];
+    
+    if ([potionIdentifier isEqualToString:@"health_potion"]) {
+        potion = [[LWFHealthPotion alloc]initWithTexture:texture];
+    }
+    
+    return potion;
 }
 
 

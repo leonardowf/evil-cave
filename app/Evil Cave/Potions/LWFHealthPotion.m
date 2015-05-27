@@ -33,4 +33,8 @@
     return [LWFHealthPotion new];
 }
 
+- (NSString *)identifier {
+    return @"health_potion";
+}
+
 @end
