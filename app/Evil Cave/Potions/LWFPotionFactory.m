@@ -37,7 +37,4 @@ SINGLETON_FOR_CLASS(PotionFactory)
     
     return potion;
 }
-
-
-
 @end

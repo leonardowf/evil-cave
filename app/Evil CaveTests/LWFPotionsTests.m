@@ -15,6 +15,7 @@
 #import "LWFCreatureBuilder.h"
 #import "LWFStats.h"
 #import "LWFHealthPotion.h"
+#import "LWFPotionFactory.h"
 
 @interface LWFPotionsTests : XCTestCase {
     LWFInventory *_inventory;
@@ -78,6 +79,15 @@
     [healthPotion applyEffectOn:player];
     
     XCTAssertEqual(player.stats.currentHP, player.stats.maxHP);
+}
+
+- (void)testIfPotionFactortManufacturesHealthPotion {
+    LWFPotionFactory *potionFactory = [LWFPotionFactory sharedPotionFactory];
+    
+    LWFPotion *potion = [potionFactory manufactureWithPotionIdentifier:@"health_potion"];
+    
+    
+    XCTAssertTrue([potion isKindOfClass:[LWFHealthPotion class]]);
 }
 
 @end

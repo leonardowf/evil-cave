@@ -7,10 +7,13 @@
 //
 
 #import "LWFPotionIdentifierMatcher.h"
+#import "NSMutableArray_Shuffling.h"
 
 @interface LWFPotionIdentifierMatcher () {
     NSMutableArray *_knowFlavors;
     NSMutableArray *_unknowFlavors;
+    
+    NSDictionary *_identifierTextureDictionary;
 }
 @end
 
@@ -24,10 +27,27 @@
         _unknowFlavors = [NSMutableArray array];
         
         NSArray *allowed = [self allowedPotions];
-        
         [_unknowFlavors addObjectsFromArray:allowed];
+        
+        [self matchTexturesAndIdentifiers];
     }
     return self;
+}
+
+- (void)matchTexturesAndIdentifiers {
+    NSMutableDictionary *identifierTextureDictionary = [NSMutableDictionary dictionary];
+    
+    NSMutableArray *shuffledTextures = [NSMutableArray arrayWithArray:[self allowedTextures]];
+    [shuffledTextures shuffle];
+    
+    NSArray *potionIdentifiers = [self allowedPotions];
+    
+    for (NSInteger i = 0; i < potionIdentifiers.count; i++) {
+        NSString *textureIdentifier = [shuffledTextures objectAtIndex:i];
+        NSString *potionIdenfitier = [potionIdentifiers objectAtIndex:i];
+        
+        [identifierTextureDictionary setObject:textureIdentifier forKey:potionIdenfitier];
+    }
 }
 
 - (NSArray *)allowedPotions {

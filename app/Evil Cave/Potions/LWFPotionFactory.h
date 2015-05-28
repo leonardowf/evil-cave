@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+@class LWFPotion;
 
 @interface LWFPotionFactory : NSObject
 
 + (id)sharedPotionFactory;
+
+- (LWFPotion *)manufactureWithPotionIdentifier:(NSString *)potionIdentifier;
 
 @end

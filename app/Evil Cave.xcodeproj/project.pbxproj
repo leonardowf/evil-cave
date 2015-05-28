@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0943A68276D0B954BA961482 /* libPods-Evil Cave.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08256F3125610C5AFC2900D2 /* libPods-Evil Cave.a */; };
+		3204AC091B16A6D500DEE14D /* NSMutableArray_Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3204AC081B16A6D500DEE14D /* NSMutableArray_Shuffling.m */; };
 		3206A3DD1A7D9B6200D08893 /* item_preview_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 3206A3DA1A7D9B6200D08893 /* item_preview_bottom.png */; };
 		3206A3DF1A7D9B6200D08893 /* item_preview_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 3206A3DC1A7D9B6200D08893 /* item_preview_top.png */; };
 		3206A3E11A7D9D7F00D08893 /* item_preview_middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3206A3E01A7D9D7F00D08893 /* item_preview_middle.png */; };
@@ -222,6 +223,8 @@
 /* Begin PBXFileReference section */
 		07C0B43184763B2DBBF2EF06 /* Pods-Evil Cave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evil Cave.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Evil Cave/Pods-Evil Cave.debug.xcconfig"; sourceTree = "<group>"; };
 		08256F3125610C5AFC2900D2 /* libPods-Evil Cave.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Evil Cave.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3204AC071B16A6D500DEE14D /* NSMutableArray_Shuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMutableArray_Shuffling.h; sourceTree = "<group>"; };
+		3204AC081B16A6D500DEE14D /* NSMutableArray_Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableArray_Shuffling.m; sourceTree = "<group>"; };
 		3206A3DA1A7D9B6200D08893 /* item_preview_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_preview_bottom.png; sourceTree = "<group>"; };
 		3206A3DC1A7D9B6200D08893 /* item_preview_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_preview_top.png; sourceTree = "<group>"; };
 		3206A3E01A7D9D7F00D08893 /* item_preview_middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_preview_middle.png; sourceTree = "<group>"; };
@@ -790,12 +793,15 @@
 			path = Rat;
 			sourceTree = "<group>";
 		};
-		32C511F01A37A5BD00F0B955 /* Geometry */ = {
+		32C511F01A37A5BD00F0B955 /* External Classes */ = {
 			isa = PBXGroup;
 			children = (
 				32C511F11A37A5DB00F0B955 /* LWFGeometry.h */,
 				32C511F21A37A5DB00F0B955 /* LWFGeometry.m */,
+				3204AC071B16A6D500DEE14D /* NSMutableArray_Shuffling.h */,
+				3204AC081B16A6D500DEE14D /* NSMutableArray_Shuffling.m */,
 			);
+			name = "External Classes";
 			path = Geometry;
 			sourceTree = "<group>";
 		};
@@ -1063,7 +1069,7 @@
 				32DFD2AE1AB1193D00FB554B /* Views */,
 				32F1CDC71A575BCB00A0D9F5 /* Items */,
 				32D50BC81A3D1FE9002D3098 /* Assets */,
-				32C511F01A37A5BD00F0B955 /* Geometry */,
+				32C511F01A37A5BD00F0B955 /* External Classes */,
 				32FFE83B1A2C0BCE003D02A4 /* Attacks */,
 				A7D83B8B1A1D73640054C022 /* Algorithms */,
 				A7D8BEDE1A198820005B0599 /* Generators */,
@@ -1403,6 +1409,7 @@
 				A78443A91A1EB2220029995D /* LWFCreature.m in Sources */,
 				326524F31A75550600EEA4B2 /* LWFLootChanceFactory.m in Sources */,
 				32938A2B1AFAEE0900BBE745 /* LWFProjectile.m in Sources */,
+				3204AC091B16A6D500DEE14D /* NSMutableArray_Shuffling.m in Sources */,
 				32DFD2B31AB1196900FB554B /* LWFItemDescription.m in Sources */,
 				322DB6AE1A229E320085AC68 /* LWFRat.m in Sources */,
 				32E2E6BF1ACCC1D900EA88DD /* LWFPoopThrowAttack.m in Sources */,
