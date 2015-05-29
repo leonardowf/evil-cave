@@ -12,5 +12,9 @@
 @interface LWFPotionIdentifierMatcher : NSObject
 
 - (SKTexture *)textureForPotionIdentifier:(NSString *)potionIdentifier;
+- (NSArray *)allowedPotions;
+- (NSArray *)allowedTextures;
+- (BOOL)potionWithIdentifierIsKnow:(NSString *)potionIdentifier;
+- (void)setPotionWithIdentifierAsKnow:(NSString *)string;
 
 @end

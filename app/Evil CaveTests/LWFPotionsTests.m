@@ -16,6 +16,7 @@
 #import "LWFStats.h"
 #import "LWFHealthPotion.h"
 #import "LWFPotionFactory.h"
+#import "LWFPotionIdentifierMatcher.h"
 
 @interface LWFPotionsTests : XCTestCase {
     LWFInventory *_inventory;
@@ -86,8 +87,35 @@
     
     LWFPotion *potion = [potionFactory manufactureWithPotionIdentifier:@"health_potion"];
     
-    
     XCTAssertTrue([potion isKindOfClass:[LWFHealthPotion class]]);
+}
+
+- (void)testIfTexturesAndIdentifiersAreInSameNumber {
+    LWFPotionIdentifierMatcher *potionIdentifierMatcher = [[LWFPotionIdentifierMatcher alloc]init];
+    
+    NSInteger numberOfTextures = [[potionIdentifierMatcher allowedPotions] count];
+    NSInteger numberOfPotions = [[potionIdentifierMatcher allowedTextures] count];
+    
+    XCTAssertEqual(numberOfPotions, numberOfTextures);
+}
+
+- (void)testIfPotionFlavorIsKnow {
+    LWFPotionFactory *potionFactory = [LWFPotionFactory sharedPotionFactory];
+    LWFPotion *potion = [potionFactory manufactureWithPotionIdentifier:@"health_potion"];
+    LWFCreatureBuilder *creatureBuilder = [[LWFCreatureBuilder alloc]initWithMap:nil movementManager:nil andMapDimension:nil andTurnList:nil andAttackManager:nil];
+    LWFPlayer *player = (LWFPlayer *)[creatureBuilder buildWithType:LWFCreatureTypeWarrior];
+    
+    [potion applyEffectOn:player];
+    
+    XCTAssertTrue([potion isKnow]);
+}
+
+- (void)testIfPotionFlavorIsUnknow {
+    LWFPotionFactory *potionFactory = [LWFPotionFactory sharedPotionFactory];
+    [potionFactory resetPotionKnowledgeAndTextures];
+    LWFPotion *potion = [potionFactory manufactureWithPotionIdentifier:@"health_potion"];
+    
+    XCTAssertFalse([potion isKnow]);
 }
 
 @end

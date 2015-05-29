@@ -62,4 +62,13 @@
     return nil;
 }
 
+- (void)setPotionWithIdentifierAsKnow:(NSString *)string {
+    [_unknowFlavors removeObject:string];
+    [_knowFlavors addObject:string];
+}
+
+- (BOOL)potionWithIdentifierIsKnow:(NSString *)potionIdentifier {
+    return [_knowFlavors containsObject:potionIdentifier];
+}
+
 @end

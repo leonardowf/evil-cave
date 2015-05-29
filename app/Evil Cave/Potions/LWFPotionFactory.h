@@ -14,5 +14,6 @@
 + (id)sharedPotionFactory;
 
 - (LWFPotion *)manufactureWithPotionIdentifier:(NSString *)potionIdentifier;
+- (void)resetPotionKnowledgeAndTextures;
 
 @end

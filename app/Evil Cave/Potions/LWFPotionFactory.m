@@ -35,6 +35,14 @@ SINGLETON_FOR_CLASS(PotionFactory)
         potion = [[LWFHealthPotion alloc]initWithTexture:texture];
     }
     
+    [potion setPotionIdentifierMatcher:_potionIdentifierMatcher];
+    
     return potion;
 }
+
+- (void)resetPotionKnowledgeAndTextures {
+    _potionIdentifierMatcher = [[LWFPotionIdentifierMatcher alloc]init];
+
+}
+
 @end

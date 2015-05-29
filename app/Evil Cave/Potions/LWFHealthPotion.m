@@ -13,6 +13,8 @@
 @implementation LWFHealthPotion
 
 - (void)applyEffectOn:(LWFCreature *)creature {
+    [super applyEffectOn:creature];
+    
     LWFStats *creatureStats = creature.stats;
     
     NSInteger totalAfterHealing = creatureStats.currentHP + [self getHealingQuantity];

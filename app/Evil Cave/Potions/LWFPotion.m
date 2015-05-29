@@ -8,6 +8,12 @@
 
 #import "LWFPotion.h"
 #import "LWFCreature.h"
+#import "LWFPotionIdentifierMatcher.h"
+
+@interface LWFPotion () {
+    LWFPotionIdentifierMatcher *_potionIdentifierMatcher;
+}
+@end
 
 @implementation LWFPotion
 
@@ -23,12 +29,8 @@
     return YES;
 }
 
-- (LWFPotion *)clone {
-    return [LWFPotion new];
-}
-
 - (void)applyEffectOn:(LWFCreature *)creature {
-    
+    [_potionIdentifierMatcher setPotionWithIdentifierAsKnow:self.identifier];
 }
 
 - (BOOL)canStackWith:(LWFNewItem *)item {
@@ -44,6 +46,14 @@
     item.quantity = 0;
     
     return self;
+}
+
+- (void)setPotionIdentifierMatcher:(LWFPotionIdentifierMatcher *)potionIdentifierMatcher {
+    _potionIdentifierMatcher = potionIdentifierMatcher;
+}
+
+- (BOOL)isKnow {
+    return [_potionIdentifierMatcher potionWithIdentifierIsKnow:self.identifier];
 }
 
 @end

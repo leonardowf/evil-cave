@@ -7,11 +7,12 @@
 //
 
 #import "LWFNewItem.h"
+@class LWFPotionIdentifierMatcher;
 
 @interface LWFPotion : LWFNewItem
 
 - (void)applyEffectOn:(LWFCreature *)creature;
-
-- (LWFPotion *)clone;
+- (void)setPotionIdentifierMatcher:(LWFPotionIdentifierMatcher *)potionIdentifierMatcher;
+- (BOOL)isKnow;
 
 @end
