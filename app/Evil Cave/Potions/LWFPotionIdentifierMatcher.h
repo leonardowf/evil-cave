@@ -16,5 +16,6 @@
 - (NSArray *)allowedTextures;
 - (BOOL)potionWithIdentifierIsKnow:(NSString *)potionIdentifier;
 - (void)setPotionWithIdentifierAsKnow:(NSString *)string;
+- (NSString *)textureNameForPotionIdentifier:(NSString *)potionIdentifier;
 
 @end

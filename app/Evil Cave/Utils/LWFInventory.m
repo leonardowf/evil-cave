@@ -114,6 +114,10 @@ SINGLETON_FOR_CLASS(Inventory)
 }
 
 - (void)displayItem:(LWFNewItem *)item {
+    if (item.quantity == 0) {
+        return;
+    }
+    
     LWFImageViewHolder *imageViewHolder = [self getImageViewContainer];
     
     if (imageViewHolder != nil) {

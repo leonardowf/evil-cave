@@ -3,6 +3,11 @@
     {
       "name": "sword",
       "quantity": 1,
+      "chance": 10
+    },
+    {
+      "name": "health_potion",
+      "quantity": 1,
       "chance": 100
     },
     {

@@ -36,7 +36,7 @@ SINGLETON_FOR_CLASS(PotionFactory)
     }
     
     [potion setPotionIdentifierMatcher:_potionIdentifierMatcher];
-    
+    potion.imageName = [_potionIdentifierMatcher textureNameForPotionIdentifier:potionIdentifier];
     return potion;
 }
 

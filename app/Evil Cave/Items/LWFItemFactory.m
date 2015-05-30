@@ -11,6 +11,9 @@
 #import "LWFEquipment.h"
 #import "LWFRandomUtils.h"
 #import "LWFGold.h"
+#import "LWFPotionIdentifierMatcher.h"
+#import "LWFPotion.h"
+#import "LWFPotionFactory.h"
 
 @implementation LWFItemFactory
 
@@ -21,6 +24,8 @@
         item = [self manufactureEquipment:itemPrototype];
     } else if ([self itemPrototypeIsGold:itemPrototype]) {
         item = [self manufactureGold:itemPrototype];
+    } else if ([self itemPrototypeIsPotion:itemPrototype]) {
+        item = [self manufacturePotion:itemPrototype];
     }
     
     item.size = CGSizeMake(TILE_SIZE, TILE_SIZE);
@@ -28,6 +33,16 @@
     [self addAnimations:itemPrototype forItem:item];
     
     return item;
+}
+
+- (BOOL)itemPrototypeIsPotion:(LWFItemPrototype *)itemPrototype {
+    NSArray *allowedPotions = [[LWFPotionIdentifierMatcher new] allowedPotions];
+    
+    if ([allowedPotions containsObject:itemPrototype.identifier]) {
+        return YES;
+    }
+    
+    return NO;
 }
 
 - (BOOL)itemPrototypeIsEquipment:(LWFItemPrototype *)itemPrototype {
@@ -46,6 +61,23 @@
     }
     
     return NO;
+}
+
+- (LWFPotion *)manufacturePotion:(LWFItemPrototype *)prototype {
+    LWFPotionFactory *potionFactory = [LWFPotionFactory sharedPotionFactory];
+    
+    LWFPotion *potion = [potionFactory manufactureWithPotionIdentifier:prototype.identifier];
+    
+    potion.quantity = 1;
+    
+    potion.prototype = prototype;
+    
+    potion.name = prototype.name;
+    potion.category = prototype.category;
+    potion.identifier = prototype.identifier;
+    
+    return potion;
+    
 }
 
 - (LWFEquipment *)manufactureEquipment:(LWFItemPrototype *)prototype {

@@ -48,6 +48,8 @@
         
         [identifierTextureDictionary setObject:textureIdentifier forKey:potionIdenfitier];
     }
+    
+    _identifierTextureDictionary = identifierTextureDictionary;
 }
 
 - (NSArray *)allowedPotions {
@@ -56,6 +58,10 @@
 
 - (NSArray *)allowedTextures {
     return @[@"red_potion"];
+}
+
+- (NSString *)textureNameForPotionIdentifier:(NSString *)potionIdentifier {
+    return [_identifierTextureDictionary objectForKey:potionIdentifier];
 }
 
 - (SKTexture *)textureForPotionIdentifier:(NSString *)potionIdentifier {

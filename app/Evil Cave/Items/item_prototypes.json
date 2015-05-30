@@ -52,5 +52,11 @@
     "name": "Gold",
     "category": "money",
     "atlas": true
+  },
+  {
+    "identifier": "health_potion",
+    "name": "Health Potion",
+    "category": "potion",
+    "atlas": false
   }
 ]

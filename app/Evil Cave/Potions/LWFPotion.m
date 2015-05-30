@@ -56,4 +56,18 @@
     return [_potionIdentifierMatcher potionWithIdentifierIsKnow:self.identifier];
 }
 
+- (UIImage *)getImage {
+    UIImage *itemImage = [UIImage imageNamed:self.imageName];
+    
+    return itemImage;
+}
+
+- (NSString *)name {
+    if ([self isKnow]) {
+        return self.name;
+    } else {
+        return @"Unknown potion";
+    }
+}
+
 @end
