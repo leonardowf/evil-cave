@@ -59,7 +59,11 @@
 }
 
 - (SKTexture *)textureForPotionIdentifier:(NSString *)potionIdentifier {
-    return nil;
+    NSString *textureName = [_identifierTextureDictionary objectForKey:potionIdentifier];
+    SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
+    [texture setFilteringMode:SKTextureFilteringNearest];
+    
+    return texture;
 }
 
 - (void)setPotionWithIdentifierAsKnow:(NSString *)string {

@@ -78,6 +78,7 @@
 		32938A3C1AFC563500BBE745 /* item_sword.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32938A3B1AFC563500BBE745 /* item_sword.atlas */; };
 		32938A3E1AFFA33100BBE745 /* warrior_spinning_attack_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32938A3D1AFFA33100BBE745 /* warrior_spinning_attack_right.atlas */; };
 		32938A401AFFF01900BBE745 /* Tutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32938A3F1AFFF01900BBE745 /* Tutorial.xib */; };
+		32A650931B194DAC00EE1ACD /* red_potion.png in Resources */ = {isa = PBXBuildFile; fileRef = 32A650921B194DAC00EE1ACD /* red_potion.png */; };
 		32A9E2CB1B0AC398003D37FD /* LWFInventoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2CA1B0AC398003D37FD /* LWFInventoryTests.m */; };
 		32A9E2CE1B12AA1B003D37FD /* LWFHealthPotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2CD1B12AA1B003D37FD /* LWFHealthPotion.m */; };
 		32A9E2D11B12B36B003D37FD /* LWFPotionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2D01B12B36B003D37FD /* LWFPotionFactory.m */; };
@@ -320,6 +321,7 @@
 		32938A3B1AFC563500BBE745 /* item_sword.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = item_sword.atlas; sourceTree = "<group>"; };
 		32938A3D1AFFA33100BBE745 /* warrior_spinning_attack_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_spinning_attack_right.atlas; sourceTree = "<group>"; };
 		32938A3F1AFFF01900BBE745 /* Tutorial.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tutorial.xib; sourceTree = "<group>"; };
+		32A650921B194DAC00EE1ACD /* red_potion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_potion.png; sourceTree = "<group>"; };
 		32A9E2CA1B0AC398003D37FD /* LWFInventoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFInventoryTests.m; sourceTree = "<group>"; };
 		32A9E2CC1B12AA1B003D37FD /* LWFHealthPotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFHealthPotion.h; sourceTree = "<group>"; };
 		32A9E2CD1B12AA1B003D37FD /* LWFHealthPotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFHealthPotion.m; sourceTree = "<group>"; };
@@ -666,6 +668,7 @@
 		32938A171AF999E900BBE745 /* Potions */ = {
 			isa = PBXGroup;
 			children = (
+				32A650921B194DAC00EE1ACD /* red_potion.png */,
 				32A9E2CC1B12AA1B003D37FD /* LWFHealthPotion.h */,
 				32A9E2CD1B12AA1B003D37FD /* LWFHealthPotion.m */,
 				32A9E2CF1B12B36B003D37FD /* LWFPotionFactory.h */,
@@ -1233,6 +1236,7 @@
 				325373B21AF1B25C00BF0E43 /* boot_empty.png in Resources */,
 				3206A3DF1A7D9B6200D08893 /* item_preview_top.png in Resources */,
 				325373BA1AF1B25C00BF0E43 /* weapon_empty@3x.png in Resources */,
+				32A650931B194DAC00EE1ACD /* red_potion.png in Resources */,
 				323335FA1AA52F730088C4F6 /* item_info.png in Resources */,
 				326524EB1A7448AB00EEA4B2 /* item_prototypes.json in Resources */,
 				32B3E1B11B06DA3B00CF2EA2 /* tutorial1.gif in Resources */,
