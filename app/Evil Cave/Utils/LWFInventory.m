@@ -14,6 +14,7 @@
 #import "LWFEquips.h"
 
 #import <pop/POP.h>
+#import "LWFPotion.h"
 
 @interface LWFInventory () {
     LWFViewController *_viewController;
@@ -142,13 +143,17 @@ SINGLETON_FOR_CLASS(Inventory)
     LWFImageViewHolder *viewHolder = [self viewHolderForImageView:imageView];
     
     if (viewHolder.item != nil) {
-        
         if ([viewHolder.item isEquipment]) {
             LWFEquipment *equipment = (LWFEquipment *)viewHolder.item;
             [self openItemDescription:equipment];
+        } else { 
             
         }
     }
+}
+
+- (void)openPotionDescription:(LWFPotion *)potion {
+    NSLog(@"abrindo descrição de poção");
 }
 
 - (void)openItemDescription:(LWFEquipment *)equipment {

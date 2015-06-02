@@ -79,6 +79,7 @@
 		32938A3E1AFFA33100BBE745 /* warrior_spinning_attack_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32938A3D1AFFA33100BBE745 /* warrior_spinning_attack_right.atlas */; };
 		32938A401AFFF01900BBE745 /* Tutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32938A3F1AFFF01900BBE745 /* Tutorial.xib */; };
 		32A650931B194DAC00EE1ACD /* red_potion.png in Resources */ = {isa = PBXBuildFile; fileRef = 32A650921B194DAC00EE1ACD /* red_potion.png */; };
+		32A650961B1BFF9600EE1ACD /* LWFImageViewInventoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A650951B1BFF9600EE1ACD /* LWFImageViewInventoryItem.m */; };
 		32A9E2CB1B0AC398003D37FD /* LWFInventoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2CA1B0AC398003D37FD /* LWFInventoryTests.m */; };
 		32A9E2CE1B12AA1B003D37FD /* LWFHealthPotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2CD1B12AA1B003D37FD /* LWFHealthPotion.m */; };
 		32A9E2D11B12B36B003D37FD /* LWFPotionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2D01B12B36B003D37FD /* LWFPotionFactory.m */; };
@@ -322,6 +323,8 @@
 		32938A3D1AFFA33100BBE745 /* warrior_spinning_attack_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_spinning_attack_right.atlas; sourceTree = "<group>"; };
 		32938A3F1AFFF01900BBE745 /* Tutorial.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tutorial.xib; sourceTree = "<group>"; };
 		32A650921B194DAC00EE1ACD /* red_potion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_potion.png; sourceTree = "<group>"; };
+		32A650941B1BFF9600EE1ACD /* LWFImageViewInventoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFImageViewInventoryItem.h; sourceTree = "<group>"; };
+		32A650951B1BFF9600EE1ACD /* LWFImageViewInventoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFImageViewInventoryItem.m; sourceTree = "<group>"; };
 		32A9E2CA1B0AC398003D37FD /* LWFInventoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFInventoryTests.m; sourceTree = "<group>"; };
 		32A9E2CC1B12AA1B003D37FD /* LWFHealthPotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFHealthPotion.h; sourceTree = "<group>"; };
 		32A9E2CD1B12AA1B003D37FD /* LWFHealthPotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFHealthPotion.m; sourceTree = "<group>"; };
@@ -858,6 +861,8 @@
 				32938A3F1AFFF01900BBE745 /* Tutorial.xib */,
 				32B3E18A1AFFF64400CF2EA2 /* LWFTutorial.h */,
 				32B3E18B1AFFF64400CF2EA2 /* LWFTutorial.m */,
+				32A650941B1BFF9600EE1ACD /* LWFImageViewInventoryItem.h */,
+				32A650951B1BFF9600EE1ACD /* LWFImageViewInventoryItem.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1390,6 +1395,7 @@
 				A7D8BEE11A19883A005B0599 /* LWFCaveGenerator.m in Sources */,
 				32F1CDC61A575A2F00A0D9F5 /* LWFInventory.m in Sources */,
 				32826C341AEDB2A8007400AD /* LWFOTEQueue.m in Sources */,
+				32A650961B1BFF9600EE1ACD /* LWFImageViewInventoryItem.m in Sources */,
 				32E2E6BC1ACB6C7300EA88DD /* LWFPoopThrowerRat.m in Sources */,
 				32E2E6C41ACF5ED500EA88DD /* LWFVisibilityShadowCasting.m in Sources */,
 				32FFE8411A2C0BF0003D02A4 /* LWFMelee.m in Sources */,

@@ -10,6 +10,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "LWFOTEObserver.h"
 #import "LWFTutorial.h"
+#import "LWFImageViewInventoryItem.h"
 
 @class LWFTutorial;
 
@@ -42,21 +43,21 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewBootsBackground;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewAccessoryBackground;
 
-@property (weak, nonatomic) IBOutlet UIImageView *item1;
-@property (weak, nonatomic) IBOutlet UIImageView *item2;
-@property (weak, nonatomic) IBOutlet UIImageView *item3;
-@property (weak, nonatomic) IBOutlet UIImageView *item4;
-@property (weak, nonatomic) IBOutlet UIImageView *item5;
-@property (weak, nonatomic) IBOutlet UIImageView *item6;
-@property (weak, nonatomic) IBOutlet UIImageView *item7;
-@property (weak, nonatomic) IBOutlet UIImageView *item8;
-@property (weak, nonatomic) IBOutlet UIImageView *item9;
-@property (weak, nonatomic) IBOutlet UIImageView *item10;
-@property (weak, nonatomic) IBOutlet UIImageView *item11;
-@property (weak, nonatomic) IBOutlet UIImageView *item12;
-@property (weak, nonatomic) IBOutlet UIImageView *item13;
-@property (weak, nonatomic) IBOutlet UIImageView *item14;
-@property (weak, nonatomic) IBOutlet UIImageView *item15;
+@property (weak, nonatomic) IBOutlet LWFImageViewInventoryItem *item1;
+@property (weak, nonatomic) IBOutlet LWFImageViewInventoryItem *item2;
+@property (weak, nonatomic) IBOutlet LWFImageViewInventoryItem *item3;
+@property (weak, nonatomic) IBOutlet LWFImageViewInventoryItem *item4;
+@property (weak, nonatomic) IBOutlet LWFImageViewInventoryItem *item5;
+@property (weak, nonatomic) IBOutlet LWFImageViewInventoryItem *item6;
+@property (weak, nonatomic) IBOutlet LWFImageViewInventoryItem *item7;
+@property (weak, nonatomic) IBOutlet LWFImageViewInventoryItem *item8;
+@property (weak, nonatomic) IBOutlet LWFImageViewInventoryItem *item9;
+@property (weak, nonatomic) IBOutlet LWFImageViewInventoryItem *item10;
+@property (weak, nonatomic) IBOutlet LWFImageViewInventoryItem *item11;
+@property (weak, nonatomic) IBOutlet LWFImageViewInventoryItem *item12;
+@property (weak, nonatomic) IBOutlet LWFImageViewInventoryItem *item13;
+@property (weak, nonatomic) IBOutlet LWFImageViewInventoryItem *item14;
+@property (weak, nonatomic) IBOutlet LWFImageViewInventoryItem *item15;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelGold;
 
