@@ -143,11 +143,14 @@ SINGLETON_FOR_CLASS(Inventory)
     LWFImageViewHolder *viewHolder = [self viewHolderForImageView:imageView];
     
     if (viewHolder.item != nil) {
-        if ([viewHolder.item isEquipment]) {
+        LWFNewItem *item = viewHolder.item;
+        
+        if ([item isEquipment]) {
             LWFEquipment *equipment = (LWFEquipment *)viewHolder.item;
             [self openItemDescription:equipment];
-        } else { 
-            
+        } else if ([item isPotion]) {
+            LWFPotion *potion = (LWFPotion *)item;
+            [self openPotionDescription:potion];
         }
     }
 }

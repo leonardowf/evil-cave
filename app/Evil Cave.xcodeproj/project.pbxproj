@@ -80,6 +80,8 @@
 		32938A401AFFF01900BBE745 /* Tutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32938A3F1AFFF01900BBE745 /* Tutorial.xib */; };
 		32A650931B194DAC00EE1ACD /* red_potion.png in Resources */ = {isa = PBXBuildFile; fileRef = 32A650921B194DAC00EE1ACD /* red_potion.png */; };
 		32A650961B1BFF9600EE1ACD /* LWFImageViewInventoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A650951B1BFF9600EE1ACD /* LWFImageViewInventoryItem.m */; };
+		32A650981B1EA01100EE1ACD /* PotionDescription.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32A650971B1EA01100EE1ACD /* PotionDescription.xib */; };
+		32A6509B1B1EA02F00EE1ACD /* LWFPotionDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A6509A1B1EA02F00EE1ACD /* LWFPotionDescription.m */; };
 		32A9E2CB1B0AC398003D37FD /* LWFInventoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2CA1B0AC398003D37FD /* LWFInventoryTests.m */; };
 		32A9E2CE1B12AA1B003D37FD /* LWFHealthPotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2CD1B12AA1B003D37FD /* LWFHealthPotion.m */; };
 		32A9E2D11B12B36B003D37FD /* LWFPotionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2D01B12B36B003D37FD /* LWFPotionFactory.m */; };
@@ -325,6 +327,9 @@
 		32A650921B194DAC00EE1ACD /* red_potion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_potion.png; sourceTree = "<group>"; };
 		32A650941B1BFF9600EE1ACD /* LWFImageViewInventoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFImageViewInventoryItem.h; sourceTree = "<group>"; };
 		32A650951B1BFF9600EE1ACD /* LWFImageViewInventoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFImageViewInventoryItem.m; sourceTree = "<group>"; };
+		32A650971B1EA01100EE1ACD /* PotionDescription.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PotionDescription.xib; sourceTree = "<group>"; };
+		32A650991B1EA02F00EE1ACD /* LWFPotionDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPotionDescription.h; sourceTree = "<group>"; };
+		32A6509A1B1EA02F00EE1ACD /* LWFPotionDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPotionDescription.m; sourceTree = "<group>"; };
 		32A9E2CA1B0AC398003D37FD /* LWFInventoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFInventoryTests.m; sourceTree = "<group>"; };
 		32A9E2CC1B12AA1B003D37FD /* LWFHealthPotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFHealthPotion.h; sourceTree = "<group>"; };
 		32A9E2CD1B12AA1B003D37FD /* LWFHealthPotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFHealthPotion.m; sourceTree = "<group>"; };
@@ -861,8 +866,11 @@
 				32938A3F1AFFF01900BBE745 /* Tutorial.xib */,
 				32B3E18A1AFFF64400CF2EA2 /* LWFTutorial.h */,
 				32B3E18B1AFFF64400CF2EA2 /* LWFTutorial.m */,
+				32A650971B1EA01100EE1ACD /* PotionDescription.xib */,
 				32A650941B1BFF9600EE1ACD /* LWFImageViewInventoryItem.h */,
 				32A650951B1BFF9600EE1ACD /* LWFImageViewInventoryItem.m */,
+				32A650991B1EA02F00EE1ACD /* LWFPotionDescription.h */,
+				32A6509A1B1EA02F00EE1ACD /* LWFPotionDescription.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1288,6 +1296,7 @@
 				32B3E1B51B082A6B00CF2EA2 /* water_tile.png in Resources */,
 				32BEB1391ABE4EFA008950C0 /* portrait@2x.png in Resources */,
 				325373B11AF1B25C00BF0E43 /* armor_empty@3x.png in Resources */,
+				32A650981B1EA01100EE1ACD /* PotionDescription.xib in Resources */,
 				32938A3C1AFC563500BBE745 /* item_sword.atlas in Resources */,
 				325373B91AF1B25C00BF0E43 /* weapon_empty@2x.png in Resources */,
 				32DFD2AA1AAFD7FC00FB554B /* button_green@3x.png in Resources */,
@@ -1432,6 +1441,7 @@
 				A7F5BB961A16EFBC005BAB63 /* main.m in Sources */,
 				321EC9A71A26A5C400F06B77 /* LWFTurnList.m in Sources */,
 				325373881AF064FA00BF0E43 /* LWFOTESpinningCooldown.m in Sources */,
+				32A6509B1B1EA02F00EE1ACD /* LWFPotionDescription.m in Sources */,
 				32D50BC71A3D018D002D3098 /* LWFAttacksBuilder.m in Sources */,
 				32635D891AB5DD4D00362183 /* LWFItemComparison.m in Sources */,
 				32B3E18C1AFFF64400CF2EA2 /* LWFTutorial.m in Sources */,
