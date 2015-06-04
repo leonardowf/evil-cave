@@ -11,10 +11,6 @@
             <string>Munro</string>
             <string>Munro</string>
             <string>Munro</string>
-            <string>Munro</string>
-            <string>Munro</string>
-            <string>Munro</string>
-            <string>Munro</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -23,10 +19,8 @@
                 <outlet property="buttonEquip" destination="OR7-Su-992" id="ZQs-A3-rts"/>
                 <outlet property="containerView" destination="m4t-JF-lkh" id="YF7-iN-3Fe"/>
                 <outlet property="labelDescription" destination="UB6-cc-Ih2" id="hEH-fC-CVR"/>
-                <outlet property="labelHp" destination="c3V-rF-TLM" id="KZg-Lr-p3N"/>
-                <outlet property="labelMaxDamage" destination="jRA-vk-kCz" id="IiU-6n-vrs"/>
-                <outlet property="labelMinDamage" destination="fqr-LM-DgE" id="5ae-E9-ywl"/>
-                <outlet property="labelStrength" destination="lbc-Hg-ffJ" id="iaE-VG-E4W"/>
+                <outlet property="labelPotionDescription" destination="UB6-cc-Ih2" id="F3u-fG-27C"/>
+                <outlet property="labelPotionName" destination="yBP-2C-G1u" id="b8H-eM-LjF"/>
                 <outlet property="labelTitle" destination="yBP-2C-G1u" id="vmT-oz-wiU"/>
                 <outlet property="view" destination="iN0-l3-epB" id="ecb-pR-hSO"/>
             </connections>
@@ -36,11 +30,11 @@
             <rect key="frame" x="0.0" y="0.0" width="285" height="368"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m4t-JF-lkh" userLabel="First Container">
-                    <rect key="frame" x="0.0" y="0.0" width="285" height="199"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4t-JF-lkh" userLabel="First Container">
+                    <rect key="frame" x="0.0" y="0.0" width="285" height="105"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" misplaced="YES" image="popup_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="TvL-Xg-Uzw">
-                            <rect key="frame" x="0.0" y="0.0" width="285" height="199"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="249" image="popup_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="TvL-Xg-Uzw">
+                            <rect key="frame" x="0.0" y="0.0" width="285" height="105"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBP-2C-G1u" userLabel="Item name">
                             <rect key="frame" x="15" y="15" width="255" height="19"/>
@@ -49,45 +43,21 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description bla bla" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UB6-cc-Ih2" userLabel="Item description">
-                            <rect key="frame" x="15" y="39" width="255" height="14.5"/>
+                            <rect key="frame" x="15" y="39" width="255" height="15"/>
                             <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="15"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum damage: X" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqr-LM-DgE" userLabel="Min damage">
-                            <rect key="frame" x="15" y="68.5" width="255" height="14.5"/>
-                            <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="15"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Maximum damage: X" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRA-vk-kCz" userLabel="Max damage">
-                            <rect key="frame" x="15" y="88" width="255" height="16"/>
-                            <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="15"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Strength: X" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbc-Hg-ffJ" userLabel="Strenght">
-                            <rect key="frame" x="15" y="109" width="255" height="14.5"/>
-                            <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="15"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="HP: X" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3V-rF-TLM" userLabel="Hp">
-                            <rect key="frame" x="15" y="128.5" width="255" height="14.5"/>
-                            <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="15"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OR7-Su-992">
-                            <rect key="frame" x="62" y="158" width="80" height="26"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OR7-Su-992">
+                            <rect key="frame" x="62" y="64" width="80" height="26"/>
                             <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="14"/>
                             <state key="normal" title="EQUIP" backgroundImage="button_green.png"/>
                             <connections>
                                 <action selector="didTapEquip:" destination="-1" eventType="touchUpInside" id="u8y-Sw-l4n"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPH-54-ho6">
-                            <rect key="frame" x="147" y="158" width="80" height="26"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPH-54-ho6">
+                            <rect key="frame" x="147" y="64" width="80" height="26"/>
                             <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="14"/>
                             <state key="normal" title="DROP" backgroundImage="button_red.png"/>
                             <connections>
@@ -97,52 +67,27 @@
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="OR7-Su-992" secondAttribute="bottom" constant="15" id="0mC-Wg-xdz"/>
-                        <constraint firstAttribute="bottom" secondItem="c3V-rF-TLM" secondAttribute="bottom" constant="60" id="2DV-Tz-HEx"/>
-                        <constraint firstItem="fqr-LM-DgE" firstAttribute="leading" secondItem="UB6-cc-Ih2" secondAttribute="leading" id="77H-jX-Yag"/>
-                        <constraint firstItem="jRA-vk-kCz" firstAttribute="leading" secondItem="lbc-Hg-ffJ" secondAttribute="leading" id="7Ia-fs-M0y"/>
-                        <constraint firstItem="c3V-rF-TLM" firstAttribute="top" secondItem="lbc-Hg-ffJ" secondAttribute="bottom" constant="5" id="7jP-ni-V6g"/>
                         <constraint firstAttribute="centerX" secondItem="yBP-2C-G1u" secondAttribute="centerX" id="8dO-Iz-lCP"/>
                         <constraint firstItem="yBP-2C-G1u" firstAttribute="trailing" secondItem="UB6-cc-Ih2" secondAttribute="trailing" id="CeZ-8N-GqJ"/>
-                        <constraint firstItem="fqr-LM-DgE" firstAttribute="trailing" secondItem="yBP-2C-G1u" secondAttribute="trailing" id="CiQ-NJ-Ief"/>
-                        <constraint firstItem="jRA-vk-kCz" firstAttribute="top" secondItem="fqr-LM-DgE" secondAttribute="bottom" constant="5" id="ESj-QQ-ocU"/>
                         <constraint firstAttribute="centerX" secondItem="OR7-Su-992" secondAttribute="trailing" id="Gmy-9d-yRw"/>
                         <constraint firstAttribute="trailing" secondItem="yBP-2C-G1u" secondAttribute="trailing" constant="15" id="HRJ-i2-mIg"/>
                         <constraint firstAttribute="centerX" secondItem="tPH-54-ho6" secondAttribute="leading" constant="-5" id="Kla-dr-LWp"/>
                         <constraint firstItem="TvL-Xg-Uzw" firstAttribute="top" secondItem="m4t-JF-lkh" secondAttribute="top" id="Q1R-Pk-mJb"/>
                         <constraint firstAttribute="trailing" secondItem="TvL-Xg-Uzw" secondAttribute="trailing" id="QGc-Dc-L4y"/>
                         <constraint firstItem="yBP-2C-G1u" firstAttribute="leading" secondItem="UB6-cc-Ih2" secondAttribute="leading" id="RmG-1Q-f3U"/>
-                        <constraint firstItem="OR7-Su-992" firstAttribute="top" secondItem="c3V-rF-TLM" secondAttribute="bottom" constant="15" id="SY1-00-nwM"/>
-                        <constraint firstItem="fqr-LM-DgE" firstAttribute="trailing" secondItem="UB6-cc-Ih2" secondAttribute="trailing" id="Syg-8h-qzv"/>
-                        <constraint firstItem="lbc-Hg-ffJ" firstAttribute="top" secondItem="jRA-vk-kCz" secondAttribute="bottom" constant="5" id="UBd-Pv-Gex"/>
-                        <constraint firstItem="jRA-vk-kCz" firstAttribute="trailing" secondItem="fqr-LM-DgE" secondAttribute="trailing" id="Ueh-u8-hir"/>
                         <constraint firstItem="TvL-Xg-Uzw" firstAttribute="leading" secondItem="m4t-JF-lkh" secondAttribute="leading" id="aoH-WM-wpb"/>
                         <constraint firstItem="yBP-2C-G1u" firstAttribute="leading" secondItem="m4t-JF-lkh" secondAttribute="leading" constant="15" id="atb-cT-ekf"/>
-                        <constraint firstItem="OR7-Su-992" firstAttribute="centerY" secondItem="c3V-rF-TLM" secondAttribute="centerY" id="auY-Ru-TaL"/>
                         <constraint firstAttribute="bottom" secondItem="yBP-2C-G1u" secondAttribute="bottom" constant="10" id="ba5-Yn-k97"/>
-                        <constraint firstItem="lbc-Hg-ffJ" firstAttribute="top" secondItem="fqr-LM-DgE" secondAttribute="bottom" constant="26" id="c7p-zD-1fa"/>
-                        <constraint firstItem="lbc-Hg-ffJ" firstAttribute="trailing" secondItem="c3V-rF-TLM" secondAttribute="trailing" id="cO0-hl-92T"/>
-                        <constraint firstItem="lbc-Hg-ffJ" firstAttribute="leading" secondItem="c3V-rF-TLM" secondAttribute="leading" id="goT-vp-yAW"/>
+                        <constraint firstItem="OR7-Su-992" firstAttribute="top" secondItem="UB6-cc-Ih2" secondAttribute="bottom" constant="10" id="d4v-KW-z5z"/>
                         <constraint firstAttribute="bottom" secondItem="TvL-Xg-Uzw" secondAttribute="bottom" id="gyu-fT-1ST"/>
-                        <constraint firstItem="OR7-Su-992" firstAttribute="centerX" secondItem="c3V-rF-TLM" secondAttribute="centerX" id="h4e-CW-xxr"/>
-                        <constraint firstItem="fqr-LM-DgE" firstAttribute="leading" secondItem="yBP-2C-G1u" secondAttribute="leading" id="hKU-B2-gzV"/>
                         <constraint firstItem="OR7-Su-992" firstAttribute="centerY" secondItem="tPH-54-ho6" secondAttribute="centerY" id="j4d-sA-bgk"/>
-                        <constraint firstItem="jRA-vk-kCz" firstAttribute="trailing" secondItem="lbc-Hg-ffJ" secondAttribute="trailing" id="ovt-e7-phh"/>
-                        <constraint firstItem="jRA-vk-kCz" firstAttribute="leading" secondItem="fqr-LM-DgE" secondAttribute="leading" id="pjJ-he-EF7"/>
-                        <constraint firstItem="fqr-LM-DgE" firstAttribute="top" secondItem="UB6-cc-Ih2" secondAttribute="bottom" constant="15" id="qGT-bP-o3T"/>
                         <constraint firstItem="UB6-cc-Ih2" firstAttribute="top" secondItem="yBP-2C-G1u" secondAttribute="bottom" constant="5" id="qco-dy-Yfp"/>
                         <constraint firstItem="yBP-2C-G1u" firstAttribute="top" secondItem="m4t-JF-lkh" secondAttribute="top" constant="15" id="vjg-q8-Wj3"/>
-                        <constraint firstItem="fqr-LM-DgE" firstAttribute="top" secondItem="yBP-2C-G1u" secondAttribute="bottom" constant="50" id="xjH-Wa-OiP"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="8dO-Iz-lCP"/>
                             <exclude reference="ba5-Yn-k97"/>
-                            <exclude reference="CiQ-NJ-Ief"/>
-                            <exclude reference="hKU-B2-gzV"/>
-                            <exclude reference="xjH-Wa-OiP"/>
-                            <exclude reference="2DV-Tz-HEx"/>
-                            <exclude reference="auY-Ru-TaL"/>
-                            <exclude reference="h4e-CW-xxr"/>
                         </mask>
                     </variation>
                 </view>

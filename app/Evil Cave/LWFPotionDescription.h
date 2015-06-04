@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LWFPotionDescription : UIView
+@property (weak, nonatomic) IBOutlet UILabel *labelPotionName;
+@property (weak, nonatomic) IBOutlet UILabel *labelPotionDescription;
 
 @end
