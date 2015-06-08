@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Munro.ttf">
+            <string>Munro</string>
             <string>Munro</string>
             <string>Munro</string>
             <string>Munro</string>
@@ -31,10 +31,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4t-JF-lkh" userLabel="First Container">
-                    <rect key="frame" x="0.0" y="0.0" width="285" height="105"/>
+                    <rect key="frame" x="0.0" y="0.0" width="285" height="113.5"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="249" image="popup_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="TvL-Xg-Uzw">
-                            <rect key="frame" x="0.0" y="0.0" width="285" height="105"/>
+                            <rect key="frame" x="0.0" y="0.0" width="285" height="113.5"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBP-2C-G1u" userLabel="Item name">
                             <rect key="frame" x="15" y="15" width="255" height="19"/>
@@ -43,44 +43,75 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description bla bla" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UB6-cc-Ih2" userLabel="Item description">
-                            <rect key="frame" x="15" y="39" width="255" height="15"/>
+                            <rect key="frame" x="15" y="39" width="255" height="14.5"/>
                             <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="15"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OR7-Su-992">
-                            <rect key="frame" x="62" y="64" width="80" height="26"/>
-                            <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="14"/>
-                            <state key="normal" title="EQUIP" backgroundImage="button_green.png"/>
-                            <connections>
-                                <action selector="didTapEquip:" destination="-1" eventType="touchUpInside" id="u8y-Sw-l4n"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPH-54-ho6">
-                            <rect key="frame" x="147" y="64" width="80" height="26"/>
-                            <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="14"/>
-                            <state key="normal" title="DROP" backgroundImage="button_red.png"/>
-                            <connections>
-                                <action selector="didTapDrop:" destination="-1" eventType="touchUpInside" id="jhx-1Z-g5f"/>
-                            </connections>
-                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JML-27-oqV">
+                            <rect key="frame" x="7.5" y="63.5" width="270" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OR7-Su-992">
+                                    <rect key="frame" x="10" y="12" width="80" height="26"/>
+                                    <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="14"/>
+                                    <state key="normal" title="DRINK" backgroundImage="button_green.png"/>
+                                    <connections>
+                                        <action selector="didTapEquip:" destination="-1" eventType="touchUpInside" id="u8y-Sw-l4n"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbP-Zm-Qbc">
+                                    <rect key="frame" x="95" y="12" width="80" height="26"/>
+                                    <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="14"/>
+                                    <state key="normal" title="THROW" backgroundImage="button_yellow.png"/>
+                                    <connections>
+                                        <action selector="didTapDrop:" destination="-1" eventType="touchUpInside" id="oTi-12-8OT"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPH-54-ho6">
+                                    <rect key="frame" x="180" y="12" width="80" height="26"/>
+                                    <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="14"/>
+                                    <state key="normal" title="DROP" backgroundImage="button_red.png"/>
+                                    <connections>
+                                        <action selector="didTapDrop:" destination="-1" eventType="touchUpInside" id="jhx-1Z-g5f"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="tPH-54-ho6" secondAttribute="trailing" constant="10" id="EQE-Yz-ulE"/>
+                                <constraint firstItem="OR7-Su-992" firstAttribute="centerY" secondItem="zbP-Zm-Qbc" secondAttribute="centerY" id="K6R-hh-zsj"/>
+                                <constraint firstItem="OR7-Su-992" firstAttribute="top" secondItem="JML-27-oqV" secondAttribute="top" constant="12" id="KUH-9N-WfC"/>
+                                <constraint firstAttribute="bottom" secondItem="OR7-Su-992" secondAttribute="bottom" constant="12" id="MoR-2Q-2FR"/>
+                                <constraint firstItem="zbP-Zm-Qbc" firstAttribute="leading" secondItem="OR7-Su-992" secondAttribute="trailing" constant="5" id="PB5-lc-uhs"/>
+                                <constraint firstAttribute="height" constant="50" id="Wue-Dw-YYB"/>
+                                <constraint firstItem="OR7-Su-992" firstAttribute="centerY" secondItem="zbP-Zm-Qbc" secondAttribute="centerY" id="uih-gN-H9w"/>
+                                <constraint firstItem="tPH-54-ho6" firstAttribute="leading" secondItem="zbP-Zm-Qbc" secondAttribute="trailing" constant="5" id="uzV-eN-e1K"/>
+                                <constraint firstItem="OR7-Su-992" firstAttribute="leading" secondItem="JML-27-oqV" secondAttribute="leading" constant="10" id="xCe-2a-ZkN"/>
+                                <constraint firstItem="tPH-54-ho6" firstAttribute="centerY" secondItem="zbP-Zm-Qbc" secondAttribute="centerY" id="xWL-8p-gOp"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Wue-Dw-YYB"/>
+                                    <exclude reference="uih-gN-H9w"/>
+                                </mask>
+                            </variation>
+                        </view>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="OR7-Su-992" secondAttribute="bottom" constant="15" id="0mC-Wg-xdz"/>
+                        <constraint firstItem="JML-27-oqV" firstAttribute="leading" secondItem="m4t-JF-lkh" secondAttribute="leading" id="7xX-NK-7Cn"/>
                         <constraint firstAttribute="centerX" secondItem="yBP-2C-G1u" secondAttribute="centerX" id="8dO-Iz-lCP"/>
                         <constraint firstItem="yBP-2C-G1u" firstAttribute="trailing" secondItem="UB6-cc-Ih2" secondAttribute="trailing" id="CeZ-8N-GqJ"/>
-                        <constraint firstAttribute="centerX" secondItem="OR7-Su-992" secondAttribute="trailing" id="Gmy-9d-yRw"/>
                         <constraint firstAttribute="trailing" secondItem="yBP-2C-G1u" secondAttribute="trailing" constant="15" id="HRJ-i2-mIg"/>
-                        <constraint firstAttribute="centerX" secondItem="tPH-54-ho6" secondAttribute="leading" constant="-5" id="Kla-dr-LWp"/>
                         <constraint firstItem="TvL-Xg-Uzw" firstAttribute="top" secondItem="m4t-JF-lkh" secondAttribute="top" id="Q1R-Pk-mJb"/>
+                        <constraint firstAttribute="bottom" secondItem="JML-27-oqV" secondAttribute="bottom" id="Q7W-na-Ek4"/>
                         <constraint firstAttribute="trailing" secondItem="TvL-Xg-Uzw" secondAttribute="trailing" id="QGc-Dc-L4y"/>
                         <constraint firstItem="yBP-2C-G1u" firstAttribute="leading" secondItem="UB6-cc-Ih2" secondAttribute="leading" id="RmG-1Q-f3U"/>
+                        <constraint firstAttribute="trailing" secondItem="JML-27-oqV" secondAttribute="trailing" id="VjP-JU-5kz"/>
+                        <constraint firstAttribute="centerX" secondItem="JML-27-oqV" secondAttribute="centerX" id="a2I-Fu-NzI"/>
                         <constraint firstItem="TvL-Xg-Uzw" firstAttribute="leading" secondItem="m4t-JF-lkh" secondAttribute="leading" id="aoH-WM-wpb"/>
                         <constraint firstItem="yBP-2C-G1u" firstAttribute="leading" secondItem="m4t-JF-lkh" secondAttribute="leading" constant="15" id="atb-cT-ekf"/>
                         <constraint firstAttribute="bottom" secondItem="yBP-2C-G1u" secondAttribute="bottom" constant="10" id="ba5-Yn-k97"/>
-                        <constraint firstItem="OR7-Su-992" firstAttribute="top" secondItem="UB6-cc-Ih2" secondAttribute="bottom" constant="10" id="d4v-KW-z5z"/>
                         <constraint firstAttribute="bottom" secondItem="TvL-Xg-Uzw" secondAttribute="bottom" id="gyu-fT-1ST"/>
-                        <constraint firstItem="OR7-Su-992" firstAttribute="centerY" secondItem="tPH-54-ho6" secondAttribute="centerY" id="j4d-sA-bgk"/>
+                        <constraint firstItem="JML-27-oqV" firstAttribute="top" secondItem="UB6-cc-Ih2" secondAttribute="bottom" constant="10" id="hHf-EJ-PlF"/>
                         <constraint firstItem="UB6-cc-Ih2" firstAttribute="top" secondItem="yBP-2C-G1u" secondAttribute="bottom" constant="5" id="qco-dy-Yfp"/>
                         <constraint firstItem="yBP-2C-G1u" firstAttribute="top" secondItem="m4t-JF-lkh" secondAttribute="top" constant="15" id="vjg-q8-Wj3"/>
                     </constraints>
@@ -88,6 +119,8 @@
                         <mask key="constraints">
                             <exclude reference="8dO-Iz-lCP"/>
                             <exclude reference="ba5-Yn-k97"/>
+                            <exclude reference="7xX-NK-7Cn"/>
+                            <exclude reference="VjP-JU-5kz"/>
                         </mask>
                     </variation>
                 </view>
@@ -99,12 +132,13 @@
                 <constraint firstItem="m4t-JF-lkh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nTO-JX-jnu"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-344.5" y="394.75"/>
+            <point key="canvasLocation" x="-344.5" y="394"/>
         </view>
     </objects>
     <resources>
         <image name="button_green.png" width="80" height="26"/>
         <image name="button_red.png" width="80" height="26"/>
+        <image name="button_yellow.png" width="80" height="26"/>
         <image name="popup_bg.png" width="200" height="178"/>
     </resources>
 </document>
