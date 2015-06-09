@@ -9,7 +9,10 @@
 #import "LWFInventory.h"
 #import "LWFViewController.h"
 #import "LWFImageViewHolder.h"
+
 #import "LWFItemDescription.h"
+#import "LWFPotionDescription.h"
+
 #import "LWFPlayer.h"
 #import "LWFEquips.h"
 
@@ -22,6 +25,7 @@
     UIView *_overlay;
     
     LWFItemDescription *_itemDescription;
+    LWFPotionDescription *_potionDescription;
 }
 
 @end
@@ -157,6 +161,13 @@ SINGLETON_FOR_CLASS(Inventory)
 
 - (void)openPotionDescription:(LWFPotion *)potion {
     NSLog(@"abrindo descrição de poção");
+    
+    if (_potionDescription != nil) {
+        [_potionDescription removeFromSuperview];
+    }
+    
+    _potionDescription = [[LWFPotionDescription alloc]initWithItem:potion andInventory:self];
+    [_potionDescription addToView:_viewController.view];
 }
 
 - (void)openItemDescription:(LWFEquipment *)equipment {

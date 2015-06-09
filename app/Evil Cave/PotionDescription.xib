@@ -16,13 +16,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LWFPotionDescription">
             <connections>
-                <outlet property="buttonEquip" destination="OR7-Su-992" id="ZQs-A3-rts"/>
-                <outlet property="containerView" destination="m4t-JF-lkh" id="YF7-iN-3Fe"/>
-                <outlet property="labelDescription" destination="UB6-cc-Ih2" id="hEH-fC-CVR"/>
+                <outlet property="containerView" destination="m4t-JF-lkh" id="BVz-Fn-xiL"/>
                 <outlet property="labelPotionDescription" destination="UB6-cc-Ih2" id="F3u-fG-27C"/>
                 <outlet property="labelPotionName" destination="yBP-2C-G1u" id="b8H-eM-LjF"/>
-                <outlet property="labelTitle" destination="yBP-2C-G1u" id="vmT-oz-wiU"/>
-                <outlet property="view" destination="iN0-l3-epB" id="ecb-pR-hSO"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Kwu-go-ET9"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -48,31 +45,31 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JML-27-oqV">
-                            <rect key="frame" x="7.5" y="63.5" width="270" height="50"/>
+                        <view contentMode="scaleToFill" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="JML-27-oqV">
+                            <rect key="frame" x="8" y="63" width="269" height="50"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OR7-Su-992">
-                                    <rect key="frame" x="10" y="12" width="80" height="26"/>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OR7-Su-992">
+                                    <rect key="frame" x="10" y="12" width="79.5" height="26"/>
                                     <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="14"/>
                                     <state key="normal" title="DRINK" backgroundImage="button_green.png"/>
                                     <connections>
-                                        <action selector="didTapEquip:" destination="-1" eventType="touchUpInside" id="u8y-Sw-l4n"/>
+                                        <action selector="didTapDrinkButton:" destination="-1" eventType="touchUpInside" id="bTT-ht-G4l"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbP-Zm-Qbc">
-                                    <rect key="frame" x="95" y="12" width="80" height="26"/>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbP-Zm-Qbc">
+                                    <rect key="frame" x="94.5" y="12" width="80" height="26"/>
                                     <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="14"/>
                                     <state key="normal" title="THROW" backgroundImage="button_yellow.png"/>
                                     <connections>
-                                        <action selector="didTapDrop:" destination="-1" eventType="touchUpInside" id="oTi-12-8OT"/>
+                                        <action selector="didTapThrowButton:" destination="-1" eventType="touchUpInside" id="yl2-Wp-yD5"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPH-54-ho6">
-                                    <rect key="frame" x="180" y="12" width="80" height="26"/>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPH-54-ho6">
+                                    <rect key="frame" x="179" y="12" width="79.5" height="26"/>
                                     <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="14"/>
                                     <state key="normal" title="DROP" backgroundImage="button_red.png"/>
                                     <connections>
-                                        <action selector="didTapDrop:" destination="-1" eventType="touchUpInside" id="jhx-1Z-g5f"/>
+                                        <action selector="didTapDropButton:" destination="-1" eventType="touchUpInside" id="qy4-DU-fWG"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -83,6 +80,8 @@
                                 <constraint firstAttribute="bottom" secondItem="OR7-Su-992" secondAttribute="bottom" constant="12" id="MoR-2Q-2FR"/>
                                 <constraint firstItem="zbP-Zm-Qbc" firstAttribute="leading" secondItem="OR7-Su-992" secondAttribute="trailing" constant="5" id="PB5-lc-uhs"/>
                                 <constraint firstAttribute="height" constant="50" id="Wue-Dw-YYB"/>
+                                <constraint firstItem="OR7-Su-992" firstAttribute="width" secondItem="tPH-54-ho6" secondAttribute="width" id="gWJ-TB-Ycb"/>
+                                <constraint firstItem="OR7-Su-992" firstAttribute="width" secondItem="zbP-Zm-Qbc" secondAttribute="width" id="sP7-Cr-Mh5"/>
                                 <constraint firstItem="OR7-Su-992" firstAttribute="centerY" secondItem="zbP-Zm-Qbc" secondAttribute="centerY" id="uih-gN-H9w"/>
                                 <constraint firstItem="tPH-54-ho6" firstAttribute="leading" secondItem="zbP-Zm-Qbc" secondAttribute="trailing" constant="5" id="uzV-eN-e1K"/>
                                 <constraint firstItem="OR7-Su-992" firstAttribute="leading" secondItem="JML-27-oqV" secondAttribute="leading" constant="10" id="xCe-2a-ZkN"/>
@@ -110,6 +109,8 @@
                         <constraint firstItem="TvL-Xg-Uzw" firstAttribute="leading" secondItem="m4t-JF-lkh" secondAttribute="leading" id="aoH-WM-wpb"/>
                         <constraint firstItem="yBP-2C-G1u" firstAttribute="leading" secondItem="m4t-JF-lkh" secondAttribute="leading" constant="15" id="atb-cT-ekf"/>
                         <constraint firstAttribute="bottom" secondItem="yBP-2C-G1u" secondAttribute="bottom" constant="10" id="ba5-Yn-k97"/>
+                        <constraint firstAttribute="trailing" secondItem="JML-27-oqV" secondAttribute="trailing" constant="8" id="eAY-hg-1ak"/>
+                        <constraint firstItem="JML-27-oqV" firstAttribute="leading" secondItem="m4t-JF-lkh" secondAttribute="leading" constant="8" id="eCe-Uh-dKA"/>
                         <constraint firstAttribute="bottom" secondItem="TvL-Xg-Uzw" secondAttribute="bottom" id="gyu-fT-1ST"/>
                         <constraint firstItem="JML-27-oqV" firstAttribute="top" secondItem="UB6-cc-Ih2" secondAttribute="bottom" constant="10" id="hHf-EJ-PlF"/>
                         <constraint firstItem="UB6-cc-Ih2" firstAttribute="top" secondItem="yBP-2C-G1u" secondAttribute="bottom" constant="5" id="qco-dy-Yfp"/>
