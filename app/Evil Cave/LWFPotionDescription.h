@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import "LWFNewItemDescription.h"
 @class LWFPotion;
 @class LWFInventory;
 
-@interface LWFPotionDescription : UIView
+@interface LWFPotionDescription : LWFNewItemDescription
 @property (weak, nonatomic) IBOutlet UILabel *labelPotionName;
 @property (weak, nonatomic) IBOutlet UILabel *labelPotionDescription;
 
@@ -19,7 +21,5 @@
 
 - (instancetype)initWithItem:(LWFPotion *)potion
                 andInventory:(LWFInventory *)inventory;
-- (void)addToView:(UIView *)view;
-- (void)removeFromSuperview:(BOOL)animated;
 
 @end

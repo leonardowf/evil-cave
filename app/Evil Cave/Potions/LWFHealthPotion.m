@@ -25,14 +25,11 @@
     
     creatureStats.currentHP = totalAfterHealing;
     
+    [creature statsChanged];
 }
 
 - (NSInteger)getHealingQuantity {
     return 20;
-}
-
-- (LWFPotion *)clone {
-    return [LWFHealthPotion new];
 }
 
 - (NSString *)identifier {

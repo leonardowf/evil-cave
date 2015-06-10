@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LWFNewItemDescription.h"
 
 @class LWFEquipment;
 @class LWFInventory;
 @class LWFItemComparison;
 
-@interface LWFItemDescription : UIView <UIGestureRecognizerDelegate>
+@interface LWFItemDescription : LWFNewItemDescription <UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *view;
 
@@ -29,8 +30,5 @@
 - (instancetype)initWithItem:(LWFEquipment *)equipment
               itemComparison:(LWFItemComparison *)itemComparison
                 andInventory:(LWFInventory *)inventory;
-
-- (void)addToView:(UIView *)view;
-- (void)removeFromSuperview:(BOOL)animated;
 
 @end
