@@ -42,6 +42,7 @@
     
     [_potion applyEffectOn:player];
     
+    [_inventory didUsePotion:_potion];
 }
 
 - (IBAction)didTapThrowButton:(id)sender {

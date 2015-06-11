@@ -35,8 +35,10 @@
 }
 
 + (void)logPickedItem:(LWFNewItem *)item {
-    NSString *message = [NSString stringWithFormat:@"You picked: %@.", item.name];
-    [LWFLogger log:message];
+    if (item.name != nil) {
+        NSString *message = [NSString stringWithFormat:@"You picked: %@.", item.name];
+        [LWFLogger log:message];
+    }
 }
 
 @end

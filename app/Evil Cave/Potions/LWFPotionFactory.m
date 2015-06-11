@@ -35,6 +35,9 @@ SINGLETON_FOR_CLASS(PotionFactory)
         potion = [[LWFHealthPotion alloc]initWithTexture:texture];
     }
     
+    potion.quantity = 1;
+    [potion setName:@""];
+    
     [potion setPotionIdentifierMatcher:_potionIdentifierMatcher];
     potion.imageName = [_potionIdentifierMatcher textureNameForPotionIdentifier:potionIdentifier];
     return potion;

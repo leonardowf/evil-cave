@@ -31,6 +31,7 @@
 
 - (void)applyEffectOn:(LWFCreature *)creature {
     [_potionIdentifierMatcher setPotionWithIdentifierAsKnow:self.identifier];
+    self.quantity = self.quantity - 1;
 }
 
 - (BOOL)canStackWith:(LWFNewItem *)item {

@@ -11,6 +11,7 @@
 #import "LWFInventory.h"
 #import "LWFEquipment.h"
 #import "LWFPotion.h"
+#import "LWFPotionFactory.h"
 
 @interface LWFInventoryTests : XCTestCase {
     LWFInventory *_inventory;
@@ -186,6 +187,30 @@
     [self add:STORED_ITEMS_LIMIT];
     
     XCTAssertFalse([_inventory canUnequip:equipment]);
+}
+
+- (void)testIfPotionDecreasesInQuantity {
+    LWFPotionFactory *potionFactory = [LWFPotionFactory sharedPotionFactory];
+    LWFPotion *potion = [potionFactory manufactureWithPotionIdentifier:@"health_potion"];
+    
+    [_inventory takeItem:potion];
+    [potion applyEffectOn:nil];
+    
+    XCTAssertEqual(potion.quantity, 0);
+}
+
+- (void)testIfPotionDisappearsFromInventory {
+    LWFPotionFactory *potionFactory = [LWFPotionFactory sharedPotionFactory];
+    LWFPotion *potion = [potionFactory manufactureWithPotionIdentifier:@"health_potion"];
+    
+    [_inventory takeItem:potion];
+    [potion applyEffectOn:nil];
+    
+    [_inventory didUsePotion:potion];
+    
+    [_inventory findSameKindStackable:potion];
+    
+    XCTAssertNil([_inventory findSameKindStackable:potion]);
 }
 
 - (void)add:(NSInteger)numberOfEquips {

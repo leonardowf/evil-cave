@@ -55,9 +55,9 @@
             [self.buttonEquip setTitle:@"UNEQUIP" forState:UIControlStateNormal];
             
             if ([_inventory canUnequip:_equipment]) {
-                [self.buttonEquip setEnabled:NO];
-            } else {
                 [self.buttonEquip setEnabled:YES];
+            } else {
+                [self.buttonEquip setEnabled:NO];
             }
         }
     }

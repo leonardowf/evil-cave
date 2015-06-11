@@ -11,6 +11,8 @@
 
 @implementation LWFNewItem
 
+@dynamic name;
+
 - (BOOL)isPotion {
     return NO;
 }

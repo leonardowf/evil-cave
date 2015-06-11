@@ -13,6 +13,7 @@
 @class LWFViewController;
 @class LWFEquips;
 @class LWFNewItem;
+@class LWFPotion;
 
 static NSInteger const STORED_ITEMS_LIMIT = 15;
 
@@ -42,5 +43,6 @@ static NSInteger const STORED_ITEMS_LIMIT = 15;
 - (void)clear;
 - (BOOL)isEmpty;
 - (LWFNewItem *)findSameKindStackable:(LWFNewItem *)item;
+- (void)didUsePotion:(LWFPotion *)potion;
 
 @end

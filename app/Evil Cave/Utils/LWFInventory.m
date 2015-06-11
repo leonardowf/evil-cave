@@ -10,6 +10,7 @@
 #import "LWFViewController.h"
 #import "LWFImageViewHolder.h"
 
+#import "LWFNewItemDescription.h"
 #import "LWFItemDescription.h"
 #import "LWFPotionDescription.h"
 
@@ -24,8 +25,7 @@
     NSMutableArray *_imageViewHolders;
     UIView *_overlay;
     
-    LWFItemDescription *_itemDescription;
-    LWFPotionDescription *_potionDescription;
+    LWFNewItemDescription *_newItemDescription;
 }
 
 @end
@@ -45,9 +45,9 @@
 SINGLETON_FOR_CLASS(Inventory)
 
 - (void)hide {
-    if (_itemDescription != nil) {
-        [_itemDescription removeFromSuperview:YES];
-        _itemDescription = nil;
+    if (_newItemDescription != nil) {
+        [_newItemDescription removeFromSuperview:YES];
+        _newItemDescription = nil;
         return;
     }
     
@@ -56,9 +56,9 @@ SINGLETON_FOR_CLASS(Inventory)
 }
 
 - (void)hideItemDescriptionIfNeeded {
-    if (_itemDescription != nil) {
-        [_itemDescription removeFromSuperview:YES];
-        _itemDescription = nil;
+    if (_newItemDescription != nil) {
+        [_newItemDescription removeFromSuperview:YES];
+        _newItemDescription = nil;
         return;
     }
 }
@@ -162,23 +162,23 @@ SINGLETON_FOR_CLASS(Inventory)
 - (void)openPotionDescription:(LWFPotion *)potion {
     NSLog(@"abrindo descrição de poção");
     
-    if (_potionDescription != nil) {
-        [_potionDescription removeFromSuperview];
+    if (_newItemDescription != nil) {
+        [_newItemDescription removeFromSuperview];
     }
     
-    _potionDescription = [[LWFPotionDescription alloc]initWithItem:potion andInventory:self];
-    [_potionDescription addToView:_viewController.view];
+    _newItemDescription = [[LWFPotionDescription alloc]initWithItem:potion andInventory:self];
+    [_newItemDescription addToView:_viewController.view];
 }
 
 - (void)openItemDescription:(LWFEquipment *)equipment {
-    if (_itemDescription != nil) {
-        [_itemDescription removeFromSuperview:true];
+    if (_newItemDescription != nil) {
+        [_newItemDescription removeFromSuperview:true];
     }
     
     LWFItemComparison *comparison = [self.equips compareToRespectiveEquipped:equipment];
     
-    _itemDescription = [[LWFItemDescription alloc]initWithItem:equipment itemComparison:comparison andInventory:self];
-    [_itemDescription addToView:_viewController.view];
+    _newItemDescription = [[LWFItemDescription alloc]initWithItem:equipment itemComparison:comparison andInventory:self];
+    [_newItemDescription addToView:_viewController.view];
 }
 
 - (LWFImageViewHolder *)viewHolderForImageView:(UIImageView *)imageView {
@@ -343,7 +343,7 @@ SINGLETON_FOR_CLASS(Inventory)
 }
 
 - (void)drop:(LWFNewItem *)item {
-    _itemDescription = nil;
+    _newItemDescription = nil;
     
     if ([_items containsObject:item]) {
         [self dropStoredItem:item];
@@ -355,7 +355,7 @@ SINGLETON_FOR_CLASS(Inventory)
         }
     }
     
-    _itemDescription = nil;
+    _newItemDescription = nil;
     
     [self hide];
     [self dropOnGround:item];
@@ -459,6 +459,11 @@ SINGLETON_FOR_CLASS(Inventory)
     }
     
     return nil;
+}
+
+- (void)didUsePotion:(LWFPotion *)potion {
+    LWFNewItem *sameKind = [self findSameKindStackable:potion];
+    
     
 }
 
