@@ -101,7 +101,7 @@
         
         if ([item isEquipment]) {
             LWFEquipment *equipment = (LWFEquipment *)item;
-            self.labelName.text = equipment.name;
+            self.labelName.text = [equipment getName];
             self.labelDamage.text = [equipment damageText];
             self.labelHP.text = [equipment hpText];
             self.labelStrength.text = [equipment strengthText];

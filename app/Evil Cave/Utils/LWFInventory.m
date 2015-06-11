@@ -464,6 +464,14 @@ SINGLETON_FOR_CLASS(Inventory)
 - (void)didUsePotion:(LWFPotion *)potion {
     LWFNewItem *sameKind = [self findSameKindStackable:potion];
     
+    if (sameKind.quantity == 0) {
+        [_items removeObject:sameKind];
+        LWFImageViewHolder *viewHolder = [self viewHolderForItem:potion];
+        viewHolder.imageView.image = nil;
+        viewHolder.item = nil;
+        
+    }
+    
     
 }
 

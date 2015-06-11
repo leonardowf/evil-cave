@@ -208,8 +208,6 @@
     
     [_inventory didUsePotion:potion];
     
-    [_inventory findSameKindStackable:potion];
-    
     XCTAssertNil([_inventory findSameKindStackable:potion]);
 }
 

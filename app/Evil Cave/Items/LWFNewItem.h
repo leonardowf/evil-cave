@@ -31,5 +31,6 @@
 - (LWFNewItem *)stackWithItem:(LWFNewItem *)item;
 
 - (UIImage *)getImage;
+- (NSString *)getName;
 
 @end

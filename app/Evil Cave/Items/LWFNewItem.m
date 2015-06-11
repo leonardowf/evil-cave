@@ -57,4 +57,8 @@
     return itemImage;
 }
 
+- (NSString *)getName {
+    return self.name;
+}
+
 @end

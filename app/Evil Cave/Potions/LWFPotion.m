@@ -63,7 +63,7 @@
     return itemImage;
 }
 
-- (NSString *)name {
+- (NSString *)getName {
     if ([self isKnow]) {
         return self.name;
     } else {

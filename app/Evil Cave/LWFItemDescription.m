@@ -74,7 +74,7 @@
 }
 
 - (void)fillLabels {
-    self.labelTitle.text = _equipment.name;
+    self.labelTitle.text = [_equipment getName];
     
     [self fillForNumber:_equipment.strength label:self.labelStrength comparison:_itemComparison.strength andPrefix:@"Strength"];
     [self fillForNumber:_equipment.lowdamage label:self.labelMinDamage comparison:_itemComparison.minimumDamage andPrefix:@"Min Damage"];

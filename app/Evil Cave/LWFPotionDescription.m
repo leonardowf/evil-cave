@@ -33,6 +33,8 @@
         _inventory = inventory;
         _potion = potion;
     }
+    
+    self.labelPotionName.text = [NSString stringWithFormat:@"%@ [x%d]", [_potion getName], _potion.quantity];
     return self;
     
 }
