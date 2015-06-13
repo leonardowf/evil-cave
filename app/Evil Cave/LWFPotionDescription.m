@@ -34,10 +34,15 @@
         _potion = potion;
     }
     
-    self.labelPotionName.text = [NSString stringWithFormat:@"%@ [x%d]", [_potion getName], _potion.quantity];
+    [self displayPotionInfo];
     return self;
     
 }
+
+- (void)displayPotionInfo {
+    self.labelPotionName.text = [NSString stringWithFormat:@"%@ [x%d]", [_potion getName], _potion.quantity];
+}
+
 
 - (IBAction)didTapDrinkButton:(id)sender {
     LWFPlayer *player = [LWFPlayer sharedPlayer];
@@ -45,6 +50,8 @@
     [_potion applyEffectOn:player];
     
     [_inventory didUsePotion:_potion];
+    
+    [self displayPotionInfo];
 }
 
 - (IBAction)didTapThrowButton:(id)sender {
