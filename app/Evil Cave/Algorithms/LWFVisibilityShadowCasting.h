@@ -11,5 +11,6 @@
 @interface LWFVisibilityShadowCasting : LWFShadowCasting
 
 - (BOOL)isTileInSight:(LWFTile *)tile;
+- (NSMutableArray *)getVisibleTiles;
 
 @end

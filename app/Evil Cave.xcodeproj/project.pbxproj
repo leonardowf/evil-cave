@@ -100,6 +100,7 @@
 		32B5AAD91A878A1B00E6523A /* warrior_standing_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B5AAD81A878A1B00E6523A /* warrior_standing_left.png */; };
 		32B5AADF1A87F66D00E6523A /* item_gold.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32B5AADE1A87F66D00E6523A /* item_gold.atlas */; };
 		32B5AAE71A87FCD900E6523A /* item_gold.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B5AAE61A87FCD900E6523A /* item_gold.png */; };
+		32BC56741B2F710700767C88 /* LWFItemRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BC56731B2F710700767C88 /* LWFItemRange.m */; };
 		32BCDF791A50455E004A2993 /* LWFDartDungeonGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDF781A50455E004A2993 /* LWFDartDungeonGenerator.m */; };
 		32BEB1351ABE4EFA008950C0 /* Lifebar.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEB12F1ABE4EFA008950C0 /* Lifebar.png */; };
 		32BEB1361ABE4EFA008950C0 /* Lifebar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEB1301ABE4EFA008950C0 /* Lifebar@2x.png */; };
@@ -355,6 +356,8 @@
 		32B5AAD81A878A1B00E6523A /* warrior_standing_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warrior_standing_left.png; sourceTree = "<group>"; };
 		32B5AADE1A87F66D00E6523A /* item_gold.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = item_gold.atlas; sourceTree = "<group>"; };
 		32B5AAE61A87FCD900E6523A /* item_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_gold.png; sourceTree = "<group>"; };
+		32BC56721B2F710700767C88 /* LWFItemRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFItemRange.h; sourceTree = "<group>"; };
+		32BC56731B2F710700767C88 /* LWFItemRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFItemRange.m; sourceTree = "<group>"; };
 		32BCDF771A50455E004A2993 /* LWFDartDungeonGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFDartDungeonGenerator.h; sourceTree = "<group>"; };
 		32BCDF781A50455E004A2993 /* LWFDartDungeonGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFDartDungeonGenerator.m; sourceTree = "<group>"; };
 		32BEB12F1ABE4EFA008950C0 /* Lifebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lifebar.png; sourceTree = "<group>"; };
@@ -909,6 +912,8 @@
 				326524EA1A7448AB00EEA4B2 /* item_prototypes.json */,
 				326524F11A75550600EEA4B2 /* LWFLootChanceFactory.h */,
 				326524F21A75550600EEA4B2 /* LWFLootChanceFactory.m */,
+				32BC56721B2F710700767C88 /* LWFItemRange.h */,
+				32BC56731B2F710700767C88 /* LWFItemRange.m */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -1437,6 +1442,7 @@
 				3204AC091B16A6D500DEE14D /* NSMutableArray_Shuffling.m in Sources */,
 				32DFD2B31AB1196900FB554B /* LWFItemDescription.m in Sources */,
 				322DB6AE1A229E320085AC68 /* LWFRat.m in Sources */,
+				32BC56741B2F710700767C88 /* LWFItemRange.m in Sources */,
 				32E2E6BF1ACCC1D900EA88DD /* LWFPoopThrowAttack.m in Sources */,
 				32938A1A1AF999F600BBE745 /* LWFPotion.m in Sources */,
 				A703875C1A17BD5E0053A9E6 /* LWFTile.m in Sources */,

@@ -55,9 +55,12 @@
 }
 
 - (IBAction)didTapThrowButton:(id)sender {
+    [_inventory requestThrowItem:_potion];
 }
 
 - (IBAction)didTapDropButton:(id)sender {
+    [self removeFromSuperview:true];
+    [_inventory drop:_potion];
 }
 
 - (UIView *)getContainerView {

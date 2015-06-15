@@ -32,4 +32,8 @@
     return ([_visibleTiles containsObject:tile]);
 }
 
+- (NSMutableArray *)getVisibleTiles {
+    return _visibleTiles;
+}
+
 @end

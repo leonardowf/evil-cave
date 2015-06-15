@@ -19,6 +19,7 @@
 
 #import <pop/POP.h>
 #import "LWFPotion.h"
+#import "LWFItemRange.h"
 
 @interface LWFInventory () {
     LWFViewController *_viewController;
@@ -471,6 +472,15 @@ SINGLETON_FOR_CLASS(Inventory)
         viewHolder.item = nil;
         
     }
+}
+
+- (void)requestThrowItem:(LWFNewItem *)item {
+    LWFPlayer *player = [LWFPlayer sharedPlayer];
+    
+    [self hideItemDescriptionIfNeeded];
+    [self hide];
+    
+    LWFItemRange *itemRange = [[LWFItemRange alloc]initFromTile:player.currentTile];
     
     
 }

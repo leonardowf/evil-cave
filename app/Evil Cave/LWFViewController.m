@@ -37,10 +37,12 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self.viewTutorial showTutorialIfNeeded];
+//    [self.viewTutorial showTutorialIfNeeded];
+    [self tutorialFinished];
 }
 
 - (void)tutorialFinished {
+    [self.viewTutorial removeFromSuperview];
     SKView * skView = (SKView *)self.view;
     
 //     Create and configure the scene.
