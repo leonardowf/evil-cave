@@ -14,6 +14,7 @@
 @class LWFPlayer;
 @class LWFMovementManager;
 @class LWFAttackManager;
+@class LWFItemRange;
 
 @interface LWFMap : SKNode
 
@@ -22,6 +23,7 @@
 @property (nonatomic, strong) LWFPlayer *player;
 @property (nonatomic, strong) LWFMovementManager *movementManager;
 @property (nonatomic, strong) LWFAttackManager *attackManager;
+@property (nonatomic, strong) LWFItemRange *currentItemRange;
 
 - (instancetype)initWithScreenSize:(CGSize)size andFloor:(NSInteger)floor;
 

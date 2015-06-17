@@ -20,6 +20,8 @@
 #import <pop/POP.h>
 #import "LWFPotion.h"
 #import "LWFItemRange.h"
+#import "LWFMap.h"
+#import "LWFGameController.h"
 
 @interface LWFInventory () {
     LWFViewController *_viewController;
@@ -480,9 +482,16 @@ SINGLETON_FOR_CLASS(Inventory)
     [self hideItemDescriptionIfNeeded];
     [self hide];
     
-    LWFItemRange *itemRange = [[LWFItemRange alloc]initFromTile:player.currentTile];
+    LWFItemRange *itemRange = [[LWFItemRange alloc]initFromTile:player.currentTile forItem:item];
     
+    itemRange.delegate = self;
     
+    LWFMap *map = [[LWFGameController sharedGameController] map];
+    map.currentItemRange = itemRange;
+}
+
+- (void)didSelectTileInRange:(LWFTile *)tile forItem:(LWFNewItem *)item {
+
 }
 
 

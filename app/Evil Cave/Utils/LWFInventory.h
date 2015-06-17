@@ -8,6 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "LWFEquipment.h"
+#import "LWFItemRange.h"
 
 @class LWFPlayer;
 @class LWFViewController;
@@ -17,7 +18,7 @@
 
 static NSInteger const STORED_ITEMS_LIMIT = 15;
 
-@interface LWFInventory : SKSpriteNode
+@interface LWFInventory : SKSpriteNode <LWFItemRangeProtocol>
 
 @property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic, strong) LWFPlayer *player;

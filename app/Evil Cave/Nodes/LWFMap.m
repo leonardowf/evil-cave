@@ -154,6 +154,13 @@
 - (void)playerInteractionWithPoint:(CGPoint)point {
     LWFTile *tile = [self tileForPoint:point];
     
+    if ([self.currentItemRange tileIsOnRange:tile]) {
+        NSLog(@"tá no range");
+    } else {
+        NSLog(@"Não tá no range");
+    }
+    
+    
     LWFCreature *creatureOnTile = tile.creatureOnTile;
     
     if (creatureOnTile != nil && creatureOnTile != self.player) {
