@@ -154,12 +154,17 @@
 - (void)playerInteractionWithPoint:(CGPoint)point {
     LWFTile *tile = [self tileForPoint:point];
     
-    if ([self.currentItemRange tileIsOnRange:tile]) {
-        NSLog(@"tá no range");
-    } else {
-        NSLog(@"Não tá no range");
+    if (self.currentItemRange != nil) {
+        if ([self.currentItemRange tileIsOnRange:tile]) {
+            NSLog(@"tá no range");
+            [self.currentItemRange throwItemAtTile:tile];
+        } else {
+            NSLog(@"Não tá no range");
+            [self.currentItemRange removeRangeOverlay];
+        }
+        self.currentItemRange = nil;
+        return;
     }
-    
     
     LWFCreature *creatureOnTile = tile.creatureOnTile;
     
@@ -185,6 +190,10 @@
             [_player willMoveToTile:tile atX:tile.x andY:tile.y];
         }
     }
+}
+
+- (void)checkItemRangeInteractionForTile:(LWFTile *)tile {
+    
 }
 
 - (void)movementRequestIsInvalid {

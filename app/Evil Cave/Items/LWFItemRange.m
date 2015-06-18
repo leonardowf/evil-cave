@@ -37,7 +37,7 @@
         for (LWFTile *tile in setOfTiles) {
             if (tile.cellType != CaveCellTypeWall) {
                 [self.tiles addObject:tile];
-                SKSpriteNode *redNode = [SKSpriteNode spriteNodeWithColor:[SKColor redColor] size:CGSizeMake(TILE_SIZE, TILE_SIZE)];
+                SKSpriteNode *redNode = [SKSpriteNode spriteNodeWithColor:[SKColor blueColor] size:CGSizeMake(TILE_SIZE, TILE_SIZE)];
                 redNode.alpha = 0.2;
                 
                 [tile addChild:redNode];
@@ -47,6 +47,11 @@
         
     }
     return self;
+}
+
+- (void)throwItemAtTile:(LWFTile *)tile {
+    [self removeRangeOverlay];
+    [self.delegate didSelectTileInRange:tile forItem:_item];
 }
 
 - (BOOL)tileIsOnRange:(LWFTile *)tile {

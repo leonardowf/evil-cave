@@ -491,7 +491,35 @@ SINGLETON_FOR_CLASS(Inventory)
 }
 
 - (void)didSelectTileInRange:(LWFTile *)tile forItem:(LWFNewItem *)item {
+    
+    [self animateThrowOfItem:item atTile:tile completion:^{
+        if ([item isPotion]) {
+            LWFPotion *potion = (LWFPotion *)item;
+            
+            [potion applyEffectOn:tile.creatureOnTile];
+        }
+    }];
+}
 
+- (void)animateThrowOfItem:(LWFNewItem *)item atTile:(LWFTile *)tile completion:(void(^)(void))someBlock {
+    // Não faz sentido a classe inventório cuidar disso, mas não sei onde mais colocar
+    
+    LWFMap *map = [[LWFGameController sharedGameController] map];
+    LWFPlayer *player = [LWFPlayer sharedPlayer];
+    
+    SKSpriteNode *itemRepresentation = [SKSpriteNode spriteNodeWithTexture:[item texture]];
+    itemRepresentation.position = player.position;
+    [map addChild:itemRepresentation];
+    SKAction *moveAction = [SKAction moveTo:tile.position duration:0.4];
+    SKAction *rotateAction = [SKAction rotateByAngle: M_PI/4.0 duration:0.1];
+    rotateAction = [SKAction repeatAction:rotateAction count:4];
+    
+    NSArray *actionGroup = @[moveAction, rotateAction];
+    
+    [itemRepresentation runAction:[SKAction group:actionGroup] completion:^{
+        [itemRepresentation removeFromParent];
+        [someBlock invoke];
+    }];
 }
 
 

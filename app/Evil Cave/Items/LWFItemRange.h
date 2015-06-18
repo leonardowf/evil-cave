@@ -22,5 +22,6 @@
 - (instancetype)initFromTile:(LWFTile *)tile forItem:(LWFNewItem *)item;
 - (void)removeRangeOverlay;
 - (BOOL)tileIsOnRange:(LWFTile *)tile;
+- (void)throwItemAtTile:(LWFTile *)tile;
 
 @end
