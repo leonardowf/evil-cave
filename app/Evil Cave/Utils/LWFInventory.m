@@ -497,8 +497,10 @@ SINGLETON_FOR_CLASS(Inventory)
             LWFPotion *potion = (LWFPotion *)item;
             
             [potion applyEffectOn:tile.creatureOnTile];
+            [self didUsePotion:potion];
         }
     }];
+
 }
 
 - (void)animateThrowOfItem:(LWFNewItem *)item atTile:(LWFTile *)tile completion:(void(^)(void))someBlock {

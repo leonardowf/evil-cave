@@ -30,7 +30,8 @@
         [vsc doFovStartX:tile.x startY:tile.y radius:3];
         
         NSArray *tiles = [vsc getVisibleTiles];
-        NSSet *setOfTiles = [NSSet setWithArray:tiles];
+        NSMutableSet *setOfTiles = [NSMutableSet setWithArray:tiles];
+        [setOfTiles removeObject:tile];
         _addedNodes = [NSMutableArray array];
         self.tiles = [NSMutableArray array];
         
@@ -38,7 +39,7 @@
             if (tile.cellType != CaveCellTypeWall) {
                 [self.tiles addObject:tile];
                 SKSpriteNode *redNode = [SKSpriteNode spriteNodeWithColor:[SKColor blueColor] size:CGSizeMake(TILE_SIZE, TILE_SIZE)];
-                redNode.alpha = 0.2;
+                redNode.alpha = 0.3;
                 
                 [tile addChild:redNode];
                 [_addedNodes addObject:redNode];
