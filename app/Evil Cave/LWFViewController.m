@@ -68,10 +68,6 @@
 }
 
 - (void)configureEvents {
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(notificationShowItemPreview:)
-//                                                 name:@"notificationShowItemPreview"
-//                                               object:nil];
 }
 
 - (void)notificationShowItemPreview:(NSNotification *)notification {
@@ -143,36 +139,45 @@
 - (IBAction)didTapInventoryButton:(UITapGestureRecognizer *)sender {
     UIView *view = (UIView *)sender.view;
     
-    CGRect baseRect = CGRectMake(view.frame.origin.x + 0, view.frame.origin.y + 5, view.frame.size.width, view.frame.size.height);
+    [self animateOnPressButton:view completion:^{
+        LWFInventory *inventory = [LWFInventory sharedInventory];
+        [inventory show];
+    }];
+}
+
+- (void)animateOnPressButton:(UIView *)button completion:(void(^)(void))someBlock {
+    CGRect baseRect = CGRectMake(button.frame.origin.x + 0, button.frame.origin.y + 5, button.frame.size.width, button.frame.size.height);
     
-    [view pop_removeAllAnimations];
+    [button pop_removeAllAnimations];
     
     POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewFrame];
     animation.springBounciness = 8;
     
     animation.toValue = [NSValue valueWithCGRect:baseRect];
+    
     [animation setCompletionBlock:^(POPAnimation *animationCompleted, BOOL finished) {
         NSLog(@"terminou");
         
-        CGRect baseRect = CGRectMake(view.frame.origin.x -0, view.frame.origin.y -5, view.frame.size.width, view.frame.size.height);
+        CGRect baseRect = CGRectMake(button.frame.origin.x -0, button.frame.origin.y -5, button.frame.size.width, button.frame.size.height);
         
-        [view pop_removeAllAnimations];
+        [button pop_removeAllAnimations];
         POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewFrame];
         animation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewFrame];
         animation.springBounciness = 8;
         
         animation.toValue = [NSValue valueWithCGRect:baseRect];
         
-        [view pop_addAnimation:animation forKey:@"fullscreen"];
+        [button pop_addAnimation:animation forKey:@"fullscreen"];
         
-        LWFInventory *inventory = [LWFInventory sharedInventory];
-        [inventory show];
+        [someBlock invoke];
     }];
     
-    [view pop_addAnimation:animation forKey:@"fullscreen"];
+    [button pop_addAnimation:animation forKey:@"fullscreen"];
 }
 
-- (IBAction)didTapSpecialAttack:(id)sender {
+- (IBAction)didTapSpecialAttack:(UITapGestureRecognizer *)sender {
+    UIView *view = (UIView *)sender.view;
+    
     LWFPlayer *player = [LWFPlayer sharedPlayer];
     
     // verifica se cooldown ainda está em efeito
@@ -183,7 +188,9 @@
     
     if (!cooldownOn) {
         [player.oteQueue addOTE:ote];
-        [player requestSpecialAttack];
+        [self animateOnPressButton:view completion:^{
+            [player requestSpecialAttack];
+        }];
     }
 }
 

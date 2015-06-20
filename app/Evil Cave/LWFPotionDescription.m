@@ -52,6 +52,10 @@
     [_inventory didUsePotion:_potion];
     
     [self displayPotionInfo];
+    
+    if (_potion.quantity <= 0) {
+        [self removeFromSuperview:true];
+    }
 }
 
 - (IBAction)didTapThrowButton:(id)sender {

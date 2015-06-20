@@ -487,10 +487,14 @@ SINGLETON_FOR_CLASS(Inventory)
     itemRange.delegate = self;
     
     LWFMap *map = [[LWFGameController sharedGameController] map];
+    [map.currentItemRange removeRangeOverlay];
     map.currentItemRange = itemRange;
 }
 
 - (void)didSelectTileInRange:(LWFTile *)tile forItem:(LWFNewItem *)item {
+    if (item.quantity <= 0) {
+        return;
+    }
     
     [self animateThrowOfItem:item atTile:tile completion:^{
         if ([item isPotion]) {

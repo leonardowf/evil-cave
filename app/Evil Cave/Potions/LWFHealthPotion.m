@@ -13,6 +13,11 @@
 @implementation LWFHealthPotion
 
 - (void)applyEffectOn:(LWFCreature *)creature {
+    
+    if (self.quantity <= 0) {
+        return;
+    }
+    
     [super applyEffectOn:creature];
     
     LWFStats *creatureStats = creature.stats;
