@@ -3,22 +3,22 @@
     {
       "name": "sword",
       "quantity": 1,
-      "chance": 1
+      "chance": 10
     },
     {
       "name": "health_potion",
       "quantity": 1,
-      "chance": 100
+      "chance": 30
     },
     {
       "name": "acid_potion",
       "quantity": 1,
-      "chance": 100
+      "chance": 30
     },
     {
       "name": "gold",
       "quantity": 20,
-      "chance": 100
+      "chance": 10
     },
     {
       "name": "fine_sword",
@@ -40,7 +40,7 @@
     {
       "name": "fine_sword",
       "quantity": 1,
-      "chance": 100
+      "chance": 10
     },
     {
       "name": "motherfucking_sword",
