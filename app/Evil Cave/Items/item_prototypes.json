@@ -58,5 +58,11 @@
     "name": "Health Potion",
     "category": "potion",
     "atlas": false
+  },
+  {
+    "identifier": "acid_potion",
+    "name": "Acid Potion",
+    "category": "potion",
+    "atlas": false
   }
 ]

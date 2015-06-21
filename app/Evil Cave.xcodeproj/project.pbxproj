@@ -62,6 +62,8 @@
 		32826C311AEDB296007400AD /* LWFOTE.m in Sources */ = {isa = PBXBuildFile; fileRef = 32826C301AEDB296007400AD /* LWFOTE.m */; };
 		32826C341AEDB2A8007400AD /* LWFOTEQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 32826C331AEDB2A8007400AD /* LWFOTEQueue.m */; };
 		328F18461ADB33C100B61752 /* LWFFloorDifficulty.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F18451ADB33C100B61752 /* LWFFloorDifficulty.m */; };
+		328F5F361B36476000D136BA /* LWFAcidPotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F5F351B36476000D136BA /* LWFAcidPotion.m */; };
+		328F5F381B36494900D136BA /* green_potion.png in Resources */ = {isa = PBXBuildFile; fileRef = 328F5F371B36494900D136BA /* green_potion.png */; };
 		32915F541A99619300A037F0 /* LWFShadowCasting.m in Sources */ = {isa = PBXBuildFile; fileRef = 32915F531A99619300A037F0 /* LWFShadowCasting.m */; };
 		3293698B1A5058DD00ECF705 /* LWFRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3293698A1A5058DD00ECF705 /* LWFRect.m */; };
 		32938A1A1AF999F600BBE745 /* LWFPotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32938A191AF999F600BBE745 /* LWFPotion.m */; };
@@ -302,6 +304,9 @@
 		32826C351AEDB45F007400AD /* LWFOTEObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFOTEObserver.h; sourceTree = "<group>"; };
 		328F18441ADB33C100B61752 /* LWFFloorDifficulty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFFloorDifficulty.h; sourceTree = "<group>"; };
 		328F18451ADB33C100B61752 /* LWFFloorDifficulty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFFloorDifficulty.m; sourceTree = "<group>"; };
+		328F5F341B36476000D136BA /* LWFAcidPotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAcidPotion.h; sourceTree = "<group>"; };
+		328F5F351B36476000D136BA /* LWFAcidPotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAcidPotion.m; sourceTree = "<group>"; };
+		328F5F371B36494900D136BA /* green_potion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_potion.png; sourceTree = "<group>"; };
 		32915F521A99619300A037F0 /* LWFShadowCasting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFShadowCasting.h; sourceTree = "<group>"; };
 		32915F531A99619300A037F0 /* LWFShadowCasting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFShadowCasting.m; sourceTree = "<group>"; };
 		329369891A5058DD00ECF705 /* LWFRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRect.h; sourceTree = "<group>"; };
@@ -682,6 +687,7 @@
 		32938A171AF999E900BBE745 /* Potions */ = {
 			isa = PBXGroup;
 			children = (
+				328F5F371B36494900D136BA /* green_potion.png */,
 				32A650921B194DAC00EE1ACD /* red_potion.png */,
 				32A9E2CC1B12AA1B003D37FD /* LWFHealthPotion.h */,
 				32A9E2CD1B12AA1B003D37FD /* LWFHealthPotion.m */,
@@ -689,6 +695,8 @@
 				32A9E2D01B12B36B003D37FD /* LWFPotionFactory.m */,
 				32A9E2D21B155E2C003D37FD /* LWFPotionIdentifierMatcher.h */,
 				32A9E2D31B155E2C003D37FD /* LWFPotionIdentifierMatcher.m */,
+				328F5F341B36476000D136BA /* LWFAcidPotion.h */,
+				328F5F351B36476000D136BA /* LWFAcidPotion.m */,
 			);
 			path = Potions;
 			sourceTree = "<group>";
@@ -1312,6 +1320,7 @@
 				32DFD2AA1AAFD7FC00FB554B /* button_green@3x.png in Resources */,
 				32FB7DAF1AA0004B00AA4C7F /* bg@3x.png in Resources */,
 				32938A381AFC42FA00BBE745 /* special_attack_icon.png in Resources */,
+				328F5F381B36494900D136BA /* green_potion.png in Resources */,
 				32BEC0051A470F5F000C77AA /* warrior_walking_right.atlas in Resources */,
 				32FB7DB91AA0004B00AA4C7F /* thumb_money@3x.png in Resources */,
 				323335FB1AA52F730088C4F6 /* item_info@2x.png in Resources */,
@@ -1433,6 +1442,7 @@
 				A78443B01A1EEFCC0029995D /* PathFindNode.m in Sources */,
 				A7D8BEED1A1AB909005B0599 /* LWFRoom.m in Sources */,
 				32DB4CC61AD9FC2E003402C0 /* LWFDifficultyManager.m in Sources */,
+				328F5F361B36476000D136BA /* LWFAcidPotion.m in Sources */,
 				32D50BC41A3CFB60002D3098 /* LWFStats.m in Sources */,
 				32B3E1AA1B02D05400CF2EA2 /* LWFAnimationArrowSpecialAttackView.m in Sources */,
 				328F18461ADB33C100B61752 /* LWFFloorDifficulty.m in Sources */,

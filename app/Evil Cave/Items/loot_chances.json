@@ -11,6 +11,11 @@
       "chance": 100
     },
     {
+      "name": "acid_potion",
+      "quantity": 1,
+      "chance": 100
+    },
+    {
       "name": "gold",
       "quantity": 20,
       "chance": 100

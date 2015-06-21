@@ -53,11 +53,11 @@
 }
 
 - (NSArray *)allowedPotions {
-    return @[@"health_potion"];
+    return @[@"health_potion", @"acid_potion"];
 }
 
 - (NSArray *)allowedTextures {
-    return @[@"red_potion"];
+    return @[@"red_potion", @"green_potion"];
 }
 
 - (NSString *)textureNameForPotionIdentifier:(NSString *)potionIdentifier {

@@ -9,6 +9,7 @@
 #import "LWFPotionFactory.h"
 #import "LWFHealthPotion.h"
 #import "LWFPotionIdentifierMatcher.h"
+#import "LWFAcidPotion.h"
 
 @interface LWFPotionFactory () {
     LWFPotionIdentifierMatcher *_potionIdentifierMatcher;
@@ -33,6 +34,8 @@ SINGLETON_FOR_CLASS(PotionFactory)
     
     if ([potionIdentifier isEqualToString:@"health_potion"]) {
         potion = [[LWFHealthPotion alloc]initWithTexture:texture];
+    } else  if ([potionIdentifier isEqualToString:@"acid_potion"]) {
+        potion = [[LWFAcidPotion alloc]initWithTexture:texture];
     }
     
     potion.quantity = 1;
