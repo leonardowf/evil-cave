@@ -472,8 +472,9 @@ SINGLETON_FOR_CLASS(Inventory)
         LWFImageViewHolder *viewHolder = [self viewHolderForItem:potion];
         viewHolder.imageView.image = nil;
         viewHolder.item = nil;
-        
     }
+    
+    [[LWFPlayer sharedPlayer] finishTurn];
 }
 
 - (void)requestThrowItem:(LWFNewItem *)item {
@@ -489,6 +490,8 @@ SINGLETON_FOR_CLASS(Inventory)
     LWFMap *map = [[LWFGameController sharedGameController] map];
     [map.currentItemRange removeRangeOverlay];
     map.currentItemRange = itemRange;
+    
+
 }
 
 - (void)didSelectTileInRange:(LWFTile *)tile forItem:(LWFNewItem *)item {

@@ -39,15 +39,7 @@
     self.currentHP = self.currentHP - combatOutput.damage;
     [self.killable statsChanged];
     
-    if (self.currentHP <= 0) {
-        [self.killable willDieWithCompletion:^{
-            [self.killable isDyingWithCompletion:^{
-               [self.killable diedWithCompletion:^{
-                   
-               }];
-            }];
-        }];
-    }
+
     
     
 }

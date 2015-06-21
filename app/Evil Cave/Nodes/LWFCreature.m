@@ -625,10 +625,18 @@
     [someBlock invoke];
 }
 
-
-
 - (void)statsChanged {
     [_lifeBar draw];
+    
+    if (self.stats.currentHP <= 0) {
+        [self willDieWithCompletion:^{
+            [self isDyingWithCompletion:^{
+                [self diedWithCompletion:^{
+                    
+                }];
+            }];
+        }];
+    }
 }
 
 # pragma - mark LWFLootable
