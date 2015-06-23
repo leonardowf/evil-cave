@@ -12,6 +12,7 @@
 #import "LWFAttackable.h"
 #import "LWFKillable.h"
 #import "LWFLootable.h"
+#import "LWFOTEObserver.h"
 
 @class LWFTile;
 @class LWFMap;
@@ -25,7 +26,7 @@
 @class LWFAttackManager;
 @class LWFOTEQueue;
 
-@interface LWFCreature : SKSpriteNode <LWFMoveable, LWFAttackable, LWFKillable, LWFLootable>
+@interface LWFCreature : SKSpriteNode <LWFMoveable, LWFAttackable, LWFKillable, LWFLootable, LWFOTEObserver>
 
 @property (nonatomic, strong) LWFMovementManager *movementManager;
 @property (nonatomic, strong) LWFAttackManager *attackManager;

@@ -10,6 +10,9 @@
 #import "LWFStats.h"
 #import "LWFCreature.h"
 
+#import "LWFOTEQueue.h"
+#import "LWFOTEPoison.h"
+
 @implementation LWFAcidPotion
 
 - (void)applyEffectOn:(LWFCreature *)creature {
@@ -31,10 +34,18 @@
     creatureStats.currentHP = totalAfterDamage;
     
     [creature statsChanged];
+    
+    
+    LWFOTEPoison *poisonEffect = [[LWFOTEPoison alloc]init];
+    [poisonEffect addObserver:creature];
+    [creature.oteQueue addOTE:poisonEffect];
+    
+    
+//    [creature.oteQueue ]
 }
 
 - (NSInteger)getDamageQuantity {
-    return 20;
+    return 0;
 }
 
 - (NSString *)identifier {

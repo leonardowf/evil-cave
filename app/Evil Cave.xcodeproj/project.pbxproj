@@ -64,6 +64,7 @@
 		328F18461ADB33C100B61752 /* LWFFloorDifficulty.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F18451ADB33C100B61752 /* LWFFloorDifficulty.m */; };
 		328F5F361B36476000D136BA /* LWFAcidPotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F5F351B36476000D136BA /* LWFAcidPotion.m */; };
 		328F5F381B36494900D136BA /* green_potion.png in Resources */ = {isa = PBXBuildFile; fileRef = 328F5F371B36494900D136BA /* green_potion.png */; };
+		328F5F3B1B37893500D136BA /* LWFOTEPoison.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F5F3A1B37893500D136BA /* LWFOTEPoison.m */; };
 		32915F541A99619300A037F0 /* LWFShadowCasting.m in Sources */ = {isa = PBXBuildFile; fileRef = 32915F531A99619300A037F0 /* LWFShadowCasting.m */; };
 		3293698B1A5058DD00ECF705 /* LWFRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3293698A1A5058DD00ECF705 /* LWFRect.m */; };
 		32938A1A1AF999F600BBE745 /* LWFPotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32938A191AF999F600BBE745 /* LWFPotion.m */; };
@@ -307,6 +308,8 @@
 		328F5F341B36476000D136BA /* LWFAcidPotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAcidPotion.h; sourceTree = "<group>"; };
 		328F5F351B36476000D136BA /* LWFAcidPotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAcidPotion.m; sourceTree = "<group>"; };
 		328F5F371B36494900D136BA /* green_potion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_potion.png; sourceTree = "<group>"; };
+		328F5F391B37893500D136BA /* LWFOTEPoison.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFOTEPoison.h; sourceTree = "<group>"; };
+		328F5F3A1B37893500D136BA /* LWFOTEPoison.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFOTEPoison.m; sourceTree = "<group>"; };
 		32915F521A99619300A037F0 /* LWFShadowCasting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFShadowCasting.h; sourceTree = "<group>"; };
 		32915F531A99619300A037F0 /* LWFShadowCasting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFShadowCasting.m; sourceTree = "<group>"; };
 		329369891A5058DD00ECF705 /* LWFRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRect.h; sourceTree = "<group>"; };
@@ -669,6 +672,8 @@
 				32826C351AEDB45F007400AD /* LWFOTEObserver.h */,
 				325373861AF064FA00BF0E43 /* LWFOTESpinningCooldown.h */,
 				325373871AF064FA00BF0E43 /* LWFOTESpinningCooldown.m */,
+				328F5F391B37893500D136BA /* LWFOTEPoison.h */,
+				328F5F3A1B37893500D136BA /* LWFOTEPoison.m */,
 			);
 			path = "Overtime Effects";
 			sourceTree = "<group>";
@@ -1433,6 +1438,7 @@
 				A7D8BEDC1A190A5B005B0599 /* LWFPlayer.m in Sources */,
 				32CC70EE1B27C62300600096 /* LWFNewItemDescription.m in Sources */,
 				A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */,
+				328F5F3B1B37893500D136BA /* LWFOTEPoison.m in Sources */,
 				A7F5BB9A1A16EFBC005BAB63 /* LWFAppDelegate.m in Sources */,
 				3293698B1A5058DD00ECF705 /* LWFRect.m in Sources */,
 				32826C311AEDB296007400AD /* LWFOTE.m in Sources */,
