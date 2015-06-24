@@ -14,7 +14,7 @@
 {
     self = [super initWithNumberOfTurns:11];
     if (self) {
-        _damage = 1;
+        _damage = 5;
     }
     return self;
 }

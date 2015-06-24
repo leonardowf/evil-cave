@@ -275,6 +275,12 @@
     }
     
     [self.oteQueue process];
+    
+    if ([self isDead]) {
+        [self finishTurn];
+        return;
+    }
+    
     [self processAIBehavior];
 }
 
