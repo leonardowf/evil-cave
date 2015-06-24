@@ -29,6 +29,8 @@
 
 #import "LWFLifeDisplayer.h"
 #import "LWFNewItem.h"
+#import "LWFOTE.h"
+#import "LWFOTEPoison.h"
 
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
@@ -628,7 +630,7 @@
 - (void)statsChanged {
     [_lifeBar draw];
     
-    if (self.stats.currentHP <= 0) {
+    if (![self isAlive]) {
         [self willDieWithCompletion:^{
             [self isDyingWithCompletion:^{
                 [self diedWithCompletion:^{
@@ -669,7 +671,16 @@
 }
 
 - (void)notifyOTEActivated:(LWFOTE *)ote {
-    
+    if ([ote isKindOfClass:[LWFOTEPoison class]]) {
+        LWFOTEPoison *poison = (LWFOTEPoison *)ote;
+        LWFCombatOutput *combatOutput = [[LWFCombatOutput alloc]init];
+        
+        combatOutput.combatOutputType = LWFCombatOutputTypePoison;
+        combatOutput.damage = poison.damage;
+        
+        [self displayDamageForCombatOutput:combatOutput];
+        [self.stats receivesCombatOutput:combatOutput];
+    }
 }
 
 @end

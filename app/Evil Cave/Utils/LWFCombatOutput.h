@@ -10,7 +10,8 @@
 
 typedef enum : NSUInteger {
     LWFCombatOutputTypeHit,
-    LWFCombatOutputTypeMiss
+    LWFCombatOutputTypeMiss,
+    LWFCombatOutputTypePoison
 } LWFCombatOutputType;
 
 @class SKLabelNode;

@@ -25,6 +25,10 @@
     if (self.combatOutputType == LWFCombatOutputTypeMiss) {
         labelColor = [UIColor yellowColor];
         labelText = @"miss";
+    }
+    else if (self.combatOutputType == LWFCombatOutputTypePoison) {
+        labelColor = [UIColor greenColor];
+        labelText = [self getDamageString];
     } else {
         labelColor = [UIColor whiteColor];
         labelText = [self getDamageString];

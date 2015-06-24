@@ -34,18 +34,10 @@
     creatureStats.currentHP = totalAfterDamage;
     
     [creature statsChanged];
-    
-    
-    LWFOTEPoison *poisonEffect = [[LWFOTEPoison alloc]init];
-    [poisonEffect addObserver:creature];
-    [creature.oteQueue addOTE:poisonEffect];
-    
-    
-//    [creature.oteQueue ]
 }
 
 - (NSInteger)getDamageQuantity {
-    return 0;
+    return 20;
 }
 
 - (NSString *)identifier {

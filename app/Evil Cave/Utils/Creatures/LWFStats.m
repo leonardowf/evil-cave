@@ -38,10 +38,6 @@
 - (void)receivesCombatOutput:(LWFCombatOutput *)combatOutput {
     self.currentHP = self.currentHP - combatOutput.damage;
     [self.killable statsChanged];
-    
-
-    
-    
 }
 
 

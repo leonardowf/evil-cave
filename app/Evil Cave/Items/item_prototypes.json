@@ -64,5 +64,11 @@
     "name": "Acid Potion",
     "category": "potion",
     "atlas": false
+  },
+  {
+    "identifier": "poison_potion",
+    "name": "Poison Potion",
+    "category": "potion",
+    "atlas": false
   }
 ]

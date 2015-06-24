@@ -16,6 +16,11 @@
       "chance": 30
     },
     {
+        "name": "poison_potion",
+        "quantity": 1,
+        "chance": 100
+    },
+    {
       "name": "gold",
       "quantity": 20,
       "chance": 10

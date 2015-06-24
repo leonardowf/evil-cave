@@ -10,4 +10,6 @@
 
 @interface LWFOTEPoison : LWFOTE
 
+@property (nonatomic) NSInteger damage;
+
 @end
