@@ -23,6 +23,8 @@
 
 @interface LWFPlayer () {
     LWFCreature *_lockedTarget;
+    
+    BOOL _shouldExecuteSpecialAttackNextTurn;
 }
 @end
 
@@ -53,6 +55,14 @@ SINGLETON_FOR_CLASS(Player)
 - (void)processTurn {
     [self.map newTurnCycleStarted];
     [self.oteQueue process];
+    
+    if (_shouldExecuteSpecialAttackNextTurn) {
+        _shouldExecuteSpecialAttackNextTurn = NO;
+        [self cancelPreExistingActions];
+        [self animateSpecialAttack];
+        return;
+    }
+    
     
     if (_lockedTarget != nil) {
         if ([self isInTheMeleeRangeTheCreature:_lockedTarget]) {
@@ -98,6 +108,7 @@ SINGLETON_FOR_CLASS(Player)
     
     if (tile.cellType != CaveCellTypeEnd) {
         [self finishTurn];
+        return;
     }
 }
 
@@ -234,14 +245,16 @@ SINGLETON_FOR_CLASS(Player)
     [LWFLogger logAttackedBy:creature damage:damage];
 }
 
-- (void)requestSpecialAttack {        
-//    SKAction *rotation = [SKAction rotateByAngle: 2*M_PI duration:0.3];
-//    //and just run the action
-//    [self runAction: rotation];
+- (void)requestSpecialAttack {
+    if ([self isWalkingInPath]) {
+        _shouldExecuteSpecialAttackNextTurn = YES;
+        return;
+    }
     
-//    tilesize ---- 100
-    // 48 --- x
-    
+    [self animateSpecialAttack];
+}
+
+- (void)animateSpecialAttack {
     float x = 48.0 * 100.0 / TILE_SIZE + 10;
     
     [self setSize:CGSizeMake(x, x)];
@@ -258,6 +271,10 @@ SINGLETON_FOR_CLASS(Player)
             [self.attackManager attackable:self requestedAttackToTile:self.currentTile withAttack:spinningAttack];
         }];
     }
+}
+
+- (BOOL)isWalkingInPath {
+    return (self.tilePath != nil && self.tilePath.count > 0);
 }
 
 - (id<LWFLifeDisplayer>)getLifeBar {
