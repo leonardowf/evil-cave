@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @class LWFItemPrototype;
-@class LWFNewItem;
+@class LWFItem;
 
 @interface LWFLootChance : NSObject
 
@@ -21,6 +21,6 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 
 - (NSInteger)amountDropped;
-- (LWFNewItem *)buildWithQuantity:(NSInteger)quantity;
+- (LWFItem *)buildWithQuantity:(NSInteger)quantity;
 
 @end

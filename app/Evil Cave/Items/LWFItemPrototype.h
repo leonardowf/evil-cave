@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class LWFNewItem;
+@class LWFItem;
 
 @interface LWFItemPrototype : NSObject
 

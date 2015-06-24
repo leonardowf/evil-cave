@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 leonardowistuba. All rights reserved.
 //
 
-#import "LWFNewItem.h"
+#import "LWFItem.h"
 @class LWFPotionIdentifierMatcher;
 
-@interface LWFPotion : LWFNewItem
+@interface LWFPotion : LWFItem
 
 - (void)applyEffectOn:(LWFCreature *)creature;
 - (void)setPotionIdentifierMatcher:(LWFPotionIdentifierMatcher *)potionIdentifierMatcher;

@@ -164,7 +164,7 @@ SINGLETON_FOR_CLASS(Player)
     self.tilePath = nil;
 }
 
-- (void)takeItem:(LWFNewItem *)item {
+- (void)takeItem:(LWFItem *)item {
     if ([item isGold]) {
         LWFGold *gold = (LWFGold *)item;
         
@@ -200,7 +200,7 @@ SINGLETON_FOR_CLASS(Player)
         NSMutableArray *wtf = [NSMutableArray array];
         
         NSArray *items = self.currentTile.items;
-        for (LWFNewItem *aItem in items) {
+        for (LWFItem *aItem in items) {
             if (aItem != item) {
                 [wtf addObject:aItem];
             }
@@ -220,7 +220,7 @@ SINGLETON_FOR_CLASS(Player)
         return;
     }
     
-    LWFNewItem *item = [self.currentTile.items lastObject];
+    LWFItem *item = [self.currentTile.items lastObject];
     
     if ([self.inventory canTakeItem:item]) {
         [self takeItem:item];

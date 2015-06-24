@@ -34,7 +34,7 @@
     self.quantity = self.quantity - 1;
 }
 
-- (BOOL)canStackWith:(LWFNewItem *)item {
+- (BOOL)canStackWith:(LWFItem *)item {
     if ([item isPotion] && [item.identifier isEqualToString:self.identifier]) {
         return YES;
     }
@@ -42,7 +42,7 @@
     return NO;
 }
 
-- (LWFNewItem *)stackWithItem:(LWFNewItem *)item {
+- (LWFItem *)stackWithItem:(LWFItem *)item {
     self.quantity = self.quantity + item.quantity;
     item.quantity = 0;
     

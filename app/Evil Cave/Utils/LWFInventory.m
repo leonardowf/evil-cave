@@ -83,9 +83,9 @@ SINGLETON_FOR_CLASS(Inventory)
     return [_equips isEquiped:equipment];
 }
 
-- (BOOL)canTakeItem:(LWFNewItem *)item {
+- (BOOL)canTakeItem:(LWFItem *)item {
     if ([item isStackable]) {
-        LWFNewItem *foundItem = [self findSameKindStackable:item];
+        LWFItem *foundItem = [self findSameKindStackable:item];
         
         if (foundItem != nil) {
             return YES;
@@ -99,7 +99,7 @@ SINGLETON_FOR_CLASS(Inventory)
     return YES;
 }
 
-- (void)takeItem:(LWFNewItem *)item {
+- (void)takeItem:(LWFItem *)item {
     if (![self canTakeItem:item]) {
         return;
     }
@@ -107,7 +107,7 @@ SINGLETON_FOR_CLASS(Inventory)
     [LWFLogger logPickedItem:item];
     
     if ([item isStackable]) {
-        LWFNewItem *foundItem = [self findSameKindStackable:item];
+        LWFItem *foundItem = [self findSameKindStackable:item];
         
         if (foundItem == nil) {
             [self.items addObject:item];
@@ -121,7 +121,7 @@ SINGLETON_FOR_CLASS(Inventory)
     [self displayItem:item];
 }
 
-- (void)displayItem:(LWFNewItem *)item {
+- (void)displayItem:(LWFItem *)item {
     if (item.quantity == 0) {
         return;
     }
@@ -150,7 +150,7 @@ SINGLETON_FOR_CLASS(Inventory)
     LWFImageViewHolder *viewHolder = [self viewHolderForImageView:imageView];
     
     if (viewHolder.item != nil) {
-        LWFNewItem *item = viewHolder.item;
+        LWFItem *item = viewHolder.item;
         
         if ([item isEquipment]) {
             LWFEquipment *equipment = (LWFEquipment *)viewHolder.item;
@@ -194,7 +194,7 @@ SINGLETON_FOR_CLASS(Inventory)
     return nil;
 }
 
-- (LWFImageViewHolder *)viewHolderForItem:(LWFNewItem *)item {
+- (LWFImageViewHolder *)viewHolderForItem:(LWFItem *)item {
     for (LWFImageViewHolder *viewHolder in _imageViewHolders) {
         if (item == viewHolder.item) {
             return viewHolder;
@@ -345,7 +345,7 @@ SINGLETON_FOR_CLASS(Inventory)
     }
 }
 
-- (void)drop:(LWFNewItem *)item {
+- (void)drop:(LWFItem *)item {
     _newItemDescription = nil;
     
     if ([_items containsObject:item]) {
@@ -365,11 +365,11 @@ SINGLETON_FOR_CLASS(Inventory)
 
 }
 
-- (void)dropStoredItem:(LWFNewItem *)item {
+- (void)dropStoredItem:(LWFItem *)item {
     NSMutableArray *wtf = [NSMutableArray array];
     
     NSArray *items = _items;
-    for (LWFNewItem *aItem in items) {
+    for (LWFItem *aItem in items) {
         if (aItem != item) {
             [wtf addObject:aItem];
         }
@@ -411,7 +411,7 @@ SINGLETON_FOR_CLASS(Inventory)
     }
 }
 
-- (void)dropOnGround:(LWFNewItem *)item {
+- (void)dropOnGround:(LWFItem *)item {
     self.player = [LWFPlayer sharedPlayer];
     
     [self.player.currentTile addChild:item];
@@ -450,12 +450,12 @@ SINGLETON_FOR_CLASS(Inventory)
     return YES;
 }
 
-- (LWFNewItem *)findSameKindStackable:(LWFNewItem *)item {
+- (LWFItem *)findSameKindStackable:(LWFItem *)item {
     if (![item isStackable]) {
         return nil;
     }
     
-    for (LWFNewItem *storedItem in self.items) {
+    for (LWFItem *storedItem in self.items) {
         if ([storedItem isStackable] && [storedItem.identifier isEqualToString:item.identifier]) {
             return storedItem;
         }
@@ -465,7 +465,7 @@ SINGLETON_FOR_CLASS(Inventory)
 }
 
 - (void)didUsePotion:(LWFPotion *)potion {
-    LWFNewItem *sameKind = [self findSameKindStackable:potion];
+    LWFItem *sameKind = [self findSameKindStackable:potion];
     
     if (sameKind.quantity == 0) {
         [_items removeObject:sameKind];
@@ -477,7 +477,7 @@ SINGLETON_FOR_CLASS(Inventory)
     [[LWFPlayer sharedPlayer] finishTurn];
 }
 
-- (void)requestThrowItem:(LWFNewItem *)item {
+- (void)requestThrowItem:(LWFItem *)item {
     LWFPlayer *player = [LWFPlayer sharedPlayer];
     
     [self hideItemDescriptionIfNeeded];
@@ -494,7 +494,7 @@ SINGLETON_FOR_CLASS(Inventory)
 
 }
 
-- (void)didSelectTileInRange:(LWFTile *)tile forItem:(LWFNewItem *)item {
+- (void)didSelectTileInRange:(LWFTile *)tile forItem:(LWFItem *)item {
     if (item.quantity <= 0) {
         return;
     }
@@ -510,7 +510,7 @@ SINGLETON_FOR_CLASS(Inventory)
 
 }
 
-- (void)animateThrowOfItem:(LWFNewItem *)item atTile:(LWFTile *)tile completion:(void(^)(void))someBlock {
+- (void)animateThrowOfItem:(LWFItem *)item atTile:(LWFTile *)tile completion:(void(^)(void))someBlock {
     // Não faz sentido a classe inventório cuidar disso, mas não sei onde mais colocar
     
     LWFMap *map = [[LWFGameController sharedGameController] map];

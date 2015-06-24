@@ -95,7 +95,7 @@
                              [self.view layoutIfNeeded];
                          }];
         
-        LWFNewItem *item = [itemsStepped lastObject];
+        LWFItem *item = [itemsStepped lastObject];
         
         if ([item isEquipment]) {
             LWFEquipment *equipment = (LWFEquipment *)item;

@@ -119,7 +119,7 @@
     potion2.quantity = 1;
     potion2.identifier = @"health_potion";
     
-    LWFNewItem *foundItem = [_inventory findSameKindStackable:potion2];
+    LWFItem *foundItem = [_inventory findSameKindStackable:potion2];
     
     XCTAssertEqual(foundItem, potion);
 }
@@ -131,7 +131,7 @@
     
     [self add:3];
     
-    LWFNewItem *foundItem = [_inventory findSameKindStackable:potion];
+    LWFItem *foundItem = [_inventory findSameKindStackable:potion];
     
     XCTAssertNil(foundItem);
 }

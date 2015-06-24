@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@class LWFNewItem;
+@class LWFItem;
 @class LWFItemPrototype;
 
 @interface LWFItemFactory : NSObject
 
-- (LWFNewItem *)manufactureWithItemPrototype:(LWFItemPrototype *)itemPrototype;
+- (LWFItem *)manufactureWithItemPrototype:(LWFItemPrototype *)itemPrototype;
 
 @end

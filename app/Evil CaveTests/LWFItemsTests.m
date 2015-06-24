@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "LWFNewItem.h"
+#import "LWFItem.h"
 #import "LWFPotion.h"
 #import "LWFGold.h"
 #import "LWFEquipment.h"
@@ -75,7 +75,7 @@
     equipmentPrototype.category = @"armor";
     
     LWFItemFactory *itemFactory = [LWFItemFactory new];
-    LWFNewItem *item = [itemFactory manufactureWithItemPrototype:equipmentPrototype];
+    LWFItem *item = [itemFactory manufactureWithItemPrototype:equipmentPrototype];
 
     XCTAssertTrue([item isEquipment]);
 }
@@ -115,7 +115,7 @@
     
     NSInteger totalQuantityBeforeStack = healthPotion.quantity + healthPotion2.quantity;
     
-    LWFNewItem *returnedItem = [healthPotion stackWithItem:healthPotion2];
+    LWFItem *returnedItem = [healthPotion stackWithItem:healthPotion2];
     
     // multiple assertions are bad?
     

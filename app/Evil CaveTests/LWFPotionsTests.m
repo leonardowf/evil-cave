@@ -56,6 +56,7 @@
     player.stats.currentHP = 20;
     
     LWFHealthPotion *healthPotion = [LWFHealthPotion new];
+    healthPotion.quantity = 1;
     [healthPotion applyEffectOn:player];
     
     NSInteger quantityHealed = [healthPotion getHealingQuantity];
@@ -74,6 +75,7 @@
     LWFPlayer *player = (LWFPlayer *)[creatureBuilder buildWithType:LWFCreatureTypeWarrior];
 
     LWFHealthPotion *healthPotion = [LWFHealthPotion new];
+    healthPotion.quantity = 1;
     NSInteger quantityHealed = [healthPotion getHealingQuantity];
     
     player.stats.currentHP = player.stats.maxHP - quantityHealed + 1;

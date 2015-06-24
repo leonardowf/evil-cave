@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 leonardowistuba. All rights reserved.
 //
 #import "LWFItemFactory.h"
-#import "LWFNewItem.h"
+#import "LWFItem.h"
 #import "LWFItemPrototype.h"
 #import "LWFEquipment.h"
 #import "LWFRandomUtils.h"
@@ -17,8 +17,8 @@
 
 @implementation LWFItemFactory
 
-- (LWFNewItem *)manufactureWithItemPrototype:(LWFItemPrototype *)itemPrototype {
-    LWFNewItem *item = nil;
+- (LWFItem *)manufactureWithItemPrototype:(LWFItemPrototype *)itemPrototype {
+    LWFItem *item = nil;
     
     if ([self itemPrototypeIsEquipment:itemPrototype]) {
         item = [self manufactureEquipment:itemPrototype];
@@ -119,7 +119,7 @@
     return gold;
 }
 
-- (void)addAnimations:(LWFItemPrototype *)prototype forItem:(LWFNewItem *)item {
+- (void)addAnimations:(LWFItemPrototype *)prototype forItem:(LWFItem *)item {
     SKTextureAtlas *atlas = nil;
         NSString *textureName = [NSString stringWithFormat:@"item_%@", prototype.imageName];
     

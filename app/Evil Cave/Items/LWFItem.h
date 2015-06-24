@@ -9,7 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 @class LWFItemPrototype;
 
-@interface LWFNewItem : SKSpriteNode
+@interface LWFItem : SKSpriteNode
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *category;
@@ -27,8 +27,8 @@
 - (void)use;
 
 - (BOOL)isStackable;
-- (BOOL)canStackWith:(LWFNewItem *)item;
-- (LWFNewItem *)stackWithItem:(LWFNewItem *)item;
+- (BOOL)canStackWith:(LWFItem *)item;
+- (LWFItem *)stackWithItem:(LWFItem *)item;
 
 - (UIImage *)getImage;
 - (NSString *)getName;

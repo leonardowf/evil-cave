@@ -72,7 +72,7 @@
 		32938A1A1AF999F600BBE745 /* LWFPotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32938A191AF999F600BBE745 /* LWFPotion.m */; };
 		32938A1C1AF99A7E00BBE745 /* LWFPotionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32938A1B1AF99A7E00BBE745 /* LWFPotionsTests.m */; };
 		32938A1E1AFAED4600BBE745 /* LWFItemsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32938A1D1AFAED4600BBE745 /* LWFItemsTests.m */; };
-		32938A221AFAEDC200BBE745 /* LWFNewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 32938A211AFAEDC200BBE745 /* LWFNewItem.m */; };
+		32938A221AFAEDC200BBE745 /* LWFItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 32938A211AFAEDC200BBE745 /* LWFItem.m */; };
 		32938A251AFAEDD700BBE745 /* LWFGold.m in Sources */ = {isa = PBXBuildFile; fileRef = 32938A241AFAEDD700BBE745 /* LWFGold.m */; };
 		32938A281AFAEDE800BBE745 /* LWFEquipment.m in Sources */ = {isa = PBXBuildFile; fileRef = 32938A271AFAEDE800BBE745 /* LWFEquipment.m */; };
 		32938A2B1AFAEE0900BBE745 /* LWFProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 32938A2A1AFAEE0900BBE745 /* LWFProjectile.m */; };
@@ -323,8 +323,8 @@
 		32938A191AF999F600BBE745 /* LWFPotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LWFPotion.m; path = ../Potions/LWFPotion.m; sourceTree = "<group>"; };
 		32938A1B1AF99A7E00BBE745 /* LWFPotionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPotionsTests.m; sourceTree = "<group>"; };
 		32938A1D1AFAED4600BBE745 /* LWFItemsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFItemsTests.m; sourceTree = "<group>"; };
-		32938A201AFAEDC200BBE745 /* LWFNewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFNewItem.h; sourceTree = "<group>"; };
-		32938A211AFAEDC200BBE745 /* LWFNewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFNewItem.m; sourceTree = "<group>"; };
+		32938A201AFAEDC200BBE745 /* LWFItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFItem.h; sourceTree = "<group>"; };
+		32938A211AFAEDC200BBE745 /* LWFItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFItem.m; sourceTree = "<group>"; };
 		32938A231AFAEDD700BBE745 /* LWFGold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFGold.h; sourceTree = "<group>"; };
 		32938A241AFAEDD700BBE745 /* LWFGold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFGold.m; sourceTree = "<group>"; };
 		32938A261AFAEDE800BBE745 /* LWFEquipment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFEquipment.h; sourceTree = "<group>"; };
@@ -717,8 +717,8 @@
 		32938A1F1AFAED7A00BBE745 /* New */ = {
 			isa = PBXGroup;
 			children = (
-				32938A201AFAEDC200BBE745 /* LWFNewItem.h */,
-				32938A211AFAEDC200BBE745 /* LWFNewItem.m */,
+				32938A201AFAEDC200BBE745 /* LWFItem.h */,
+				32938A211AFAEDC200BBE745 /* LWFItem.m */,
 				32938A181AF999F600BBE745 /* LWFPotion.h */,
 				32938A191AF999F600BBE745 /* LWFPotion.m */,
 				32938A231AFAEDD700BBE745 /* LWFGold.h */,
@@ -1483,7 +1483,7 @@
 				32D50BC71A3D018D002D3098 /* LWFAttacksBuilder.m in Sources */,
 				32635D891AB5DD4D00362183 /* LWFItemComparison.m in Sources */,
 				32B3E18C1AFFF64400CF2EA2 /* LWFTutorial.m in Sources */,
-				32938A221AFAEDC200BBE745 /* LWFNewItem.m in Sources */,
+				32938A221AFAEDC200BBE745 /* LWFItem.m in Sources */,
 				32BEB13D1ABE75EA008950C0 /* LWFHudLifebar.m in Sources */,
 				32938A311AFAF9BD00BBE745 /* LWFItemFactory.m in Sources */,
 				321DB10E1A742002003354BB /* LWFLootChance.m in Sources */,

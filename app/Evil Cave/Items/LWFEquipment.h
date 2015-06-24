@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 leonardowistuba. All rights reserved.
 //
 
-#import "LWFNewItem.h"
+#import "LWFItem.h"
 
-@interface LWFEquipment : LWFNewItem
+@interface LWFEquipment : LWFItem
 
 @property (nonatomic, strong) NSNumber * lowdamage;
 @property (nonatomic, strong) NSNumber * highdamage;

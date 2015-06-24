@@ -7,7 +7,7 @@
 //
 
 #import "LWFItemPrototype.h"
-#import "LWFNewItem.h"
+#import "LWFItem.h"
 
 @implementation LWFItemPrototype
 

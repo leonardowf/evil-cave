@@ -8,10 +8,10 @@
 
 #import <SpriteKit/SpriteKit.h>
 @class LWFTile;
-@class LWFNewItem;
+@class LWFItem;
 
 @protocol LWFItemRangeProtocol <NSObject>
-- (void)didSelectTileInRange:(LWFTile *)tile forItem:(LWFNewItem *)item;
+- (void)didSelectTileInRange:(LWFTile *)tile forItem:(LWFItem *)item;
 @end
 
 @interface LWFItemRange : NSObject
@@ -19,7 +19,7 @@
 @property (nonatomic, strong) NSMutableArray *tiles;
 @property (nonatomic, weak) id<LWFItemRangeProtocol>delegate;
 
-- (instancetype)initFromTile:(LWFTile *)tile forItem:(LWFNewItem *)item;
+- (instancetype)initFromTile:(LWFTile *)tile forItem:(LWFItem *)item;
 - (void)removeRangeOverlay;
 - (BOOL)tileIsOnRange:(LWFTile *)tile;
 - (void)throwItemAtTile:(LWFTile *)tile;

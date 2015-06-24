@@ -14,13 +14,13 @@
 
 @interface LWFItemRange () {
     NSMutableArray *_addedNodes;
-    LWFNewItem *_item;
+    LWFItem *_item;
 }
 @end
 
 @implementation LWFItemRange
 
-- (instancetype)initFromTile:(LWFTile *)tile forItem:(LWFNewItem *)item
+- (instancetype)initFromTile:(LWFTile *)tile forItem:(LWFItem *)item
 {
     self = [super init];
     if (self) {

@@ -13,7 +13,7 @@
 @class LWFPlayer;
 @class LWFViewController;
 @class LWFEquips;
-@class LWFNewItem;
+@class LWFItem;
 @class LWFPotion;
 
 static NSInteger const STORED_ITEMS_LIMIT = 15;
@@ -31,8 +31,8 @@ static NSInteger const STORED_ITEMS_LIMIT = 15;
 - (void)hide;
 - (void)hideItemDescriptionIfNeeded;
 
-- (BOOL)canTakeItem:(LWFNewItem *)item;
-- (void)takeItem:(LWFNewItem *)item;
+- (BOOL)canTakeItem:(LWFItem *)item;
+- (void)takeItem:(LWFItem *)item;
 - (BOOL)isEquipped:(LWFEquipment *)equipment;
 
 - (void)inject:(LWFViewController *)viewController;
@@ -40,12 +40,12 @@ static NSInteger const STORED_ITEMS_LIMIT = 15;
 - (void)equip:(LWFEquipment *)equipment;
 - (BOOL)canUnequip:(LWFEquipment *)equipment;
 - (void)unequip:(LWFEquipment *)equipment;
-- (void)drop:(LWFNewItem *)item;
+- (void)drop:(LWFItem *)item;
 - (void)clear;
 - (BOOL)isEmpty;
-- (LWFNewItem *)findSameKindStackable:(LWFNewItem *)item;
+- (LWFItem *)findSameKindStackable:(LWFItem *)item;
 - (void)didUsePotion:(LWFPotion *)potion;
-- (void)requestThrowItem:(LWFNewItem *)item;
+- (void)requestThrowItem:(LWFItem *)item;
 
 
 @end

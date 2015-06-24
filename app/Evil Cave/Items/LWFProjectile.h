@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 leonardowistuba. All rights reserved.
 //
 
-#import "LWFNewItem.h"
+#import "LWFItem.h"
 
-@interface LWFProjectile : LWFNewItem
+@interface LWFProjectile : LWFItem
 
 @end

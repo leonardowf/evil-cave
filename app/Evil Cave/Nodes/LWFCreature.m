@@ -28,7 +28,7 @@
 #import "LWFOTEQueue.h"
 
 #import "LWFLifeDisplayer.h"
-#import "LWFNewItem.h"
+#import "LWFItem.h"
 #import "LWFOTE.h"
 #import "LWFOTEPoison.h"
 
@@ -622,7 +622,7 @@
     NSArray *loot = [self getLoots];
     NSArray *removedGrouped = [self.currentTile groupItemsForLoot:loot];
     
-    for (LWFNewItem *item in removedGrouped) {
+    for (LWFItem *item in removedGrouped) {
         [self.currentTile addChild:item];
     }
     
@@ -658,7 +658,7 @@
     
     for (LWFLootChance *lootChance in lootChances) {
         NSInteger amountDropped = [lootChance amountDropped];
-        LWFNewItem *drop = [lootChance buildWithQuantity:amountDropped];
+        LWFItem *drop = [lootChance buildWithQuantity:amountDropped];
         
         if (drop != nil) {
             [loot addObject:drop];

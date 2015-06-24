@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 leonardowistuba. All rights reserved.
 //
 
-#import "LWFNewItem.h"
+#import "LWFItem.h"
 #import "LWFItemPrototypeFactory.h"
 
-@implementation LWFNewItem
+@implementation LWFItem
 
 @dynamic name;
 
@@ -37,11 +37,11 @@
     return NO;
 }
 
-- (BOOL)canStackWith:(LWFNewItem *)item {
+- (BOOL)canStackWith:(LWFItem *)item {
     return NO;
 }
 
-- (LWFNewItem *)stackWithItem:(LWFNewItem *)item {
+- (LWFItem *)stackWithItem:(LWFItem *)item {
     return nil;
 }
 
