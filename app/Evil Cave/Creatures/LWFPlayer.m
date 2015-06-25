@@ -261,6 +261,7 @@ SINGLETON_FOR_CLASS(Player)
     
     NSArray *spinningAnimation = [self getSpinningAttackFrames];
     
+    [self.map blockUserInteraction];
     if (spinningAnimation != nil && spinningAnimation.count > 0) {
         SKAction *animate = [SKAction animateWithTextures:spinningAnimation timePerFrame:0.08f resize:NO restore:YES];
         SKAction *action = [SKAction repeatAction:animate count:1];
@@ -269,6 +270,7 @@ SINGLETON_FOR_CLASS(Player)
             [self setSize:CGSizeMake(TILE_SIZE, TILE_SIZE)];
             LWFSpinningAttack *spinningAttack = [[LWFSpinningAttack alloc]init];
             [self.attackManager attackable:self requestedAttackToTile:self.currentTile withAttack:spinningAttack];
+            [self.map unlockUserInteraction];
         }];
     }
 }
