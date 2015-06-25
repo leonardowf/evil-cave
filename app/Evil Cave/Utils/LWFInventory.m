@@ -490,8 +490,6 @@ SINGLETON_FOR_CLASS(Inventory)
     LWFMap *map = [[LWFGameController sharedGameController] map];
     [map.currentItemRange removeRangeOverlay];
     map.currentItemRange = itemRange;
-    
-
 }
 
 - (void)didSelectTileInRange:(LWFTile *)tile forItem:(LWFItem *)item {
@@ -504,6 +502,7 @@ SINGLETON_FOR_CLASS(Inventory)
             LWFPotion *potion = (LWFPotion *)item;
             
             [potion applyEffectOn:tile.creatureOnTile];
+            
             [self didUsePotion:potion];
         }
     }];

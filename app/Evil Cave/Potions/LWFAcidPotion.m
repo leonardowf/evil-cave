@@ -23,6 +23,10 @@
     
     [super applyEffectOn:creature];
     
+    if (creature == nil) {
+        return;
+    }
+    
     LWFStats *creatureStats = creature.stats;
     
     NSInteger totalAfterDamage = creatureStats.currentHP - [self getDamageQuantity];

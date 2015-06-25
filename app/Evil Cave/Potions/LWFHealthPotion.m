@@ -20,6 +20,10 @@
     
     [super applyEffectOn:creature];
     
+    if (creature == nil) {
+        return;
+    }
+    
     LWFStats *creatureStats = creature.stats;
     
     NSInteger totalAfterHealing = creatureStats.currentHP + [self getHealingQuantity];

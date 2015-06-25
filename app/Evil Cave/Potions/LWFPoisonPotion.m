@@ -20,6 +20,10 @@
     
     [super applyEffectOn:creature];
     
+    if (creature == nil) {
+        return;
+    }
+    
     LWFOTEPoison *poison = [[LWFOTEPoison alloc]init];
     [poison addObserver:creature];
     [creature.oteQueue addOTE:poison];
