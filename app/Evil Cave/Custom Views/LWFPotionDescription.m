@@ -11,7 +11,7 @@
 #import "LWFInventory.h"
 
 #import "LWFPlayer.h"
-
+#import "LWFLogger.h"
 
 #import <pop/POP.h>
 
@@ -48,6 +48,8 @@
     LWFPlayer *player = [LWFPlayer sharedPlayer];
     
     [_potion applyEffectOn:player];
+    
+    [LWFLogger logDrankPotion:_potion];
     
     [_inventory didUsePotion:_potion];
     

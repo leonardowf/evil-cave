@@ -504,6 +504,8 @@ SINGLETON_FOR_CLASS(Inventory)
             [potion applyEffectOn:tile.creatureOnTile];
             
             [self didUsePotion:potion];
+            
+            [LWFLogger logThrewPotion:potion];
         }
     }];
 

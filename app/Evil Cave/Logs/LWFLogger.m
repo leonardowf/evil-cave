@@ -10,7 +10,7 @@
 #import "LWFCreature.h"
 #import "LWFHudLogger.h"
 #import "LWFItem.h"
-
+#import "LWFPotion.h"
 
 @implementation LWFLogger
 
@@ -39,6 +39,16 @@
         NSString *message = [NSString stringWithFormat:@"You picked: %@.", [item getName]];
         [LWFLogger log:message];
     }
+}
+
++ (void)logDrankPotion:(LWFPotion *)potion {
+    NSString *message = [NSString stringWithFormat:@"You drank: %@.", [potion getName]];
+    [LWFLogger log:message];
+}
+
++ (void)logThrewPotion:(LWFPotion *)potion {
+    NSString *message = [NSString stringWithFormat:@"You threw: %@.", [potion getName]];
+    [LWFLogger log:message];
 }
 
 @end
