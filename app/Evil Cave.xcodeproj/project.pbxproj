@@ -34,6 +34,15 @@
 		324527981A4DF83A00AFF9A7 /* rat_dying_left.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527971A4DF83A00AFF9A7 /* rat_dying_left.atlas */; };
 		3245279A1A4EEF5500AFF9A7 /* creature_lifebar.png in Resources */ = {isa = PBXBuildFile; fileRef = 324527991A4EEF5500AFF9A7 /* creature_lifebar.png */; };
 		3245279D1A4EF1DB00AFF9A7 /* LWFLifeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3245279C1A4EF1DB00AFF9A7 /* LWFLifeBar.m */; };
+		324B2C141B3F7FF5005CAF81 /* green_potion.png in Resources */ = {isa = PBXBuildFile; fileRef = 324B2C111B3F7FF5005CAF81 /* green_potion.png */; };
+		324B2C151B3F7FF5005CAF81 /* purple_potion.png in Resources */ = {isa = PBXBuildFile; fileRef = 324B2C121B3F7FF5005CAF81 /* purple_potion.png */; };
+		324B2C161B3F7FF5005CAF81 /* red_potion.png in Resources */ = {isa = PBXBuildFile; fileRef = 324B2C131B3F7FF5005CAF81 /* red_potion.png */; };
+		324B2C1D1B3F8092005CAF81 /* green_potion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 324B2C171B3F8092005CAF81 /* green_potion@2x.png */; };
+		324B2C1E1B3F8092005CAF81 /* green_potion@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 324B2C181B3F8092005CAF81 /* green_potion@3x.png */; };
+		324B2C1F1B3F8092005CAF81 /* purple_potion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 324B2C191B3F8092005CAF81 /* purple_potion@2x.png */; };
+		324B2C201B3F8092005CAF81 /* purple_potion@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 324B2C1A1B3F8092005CAF81 /* purple_potion@3x.png */; };
+		324B2C211B3F8092005CAF81 /* red_potion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 324B2C1B1B3F8092005CAF81 /* red_potion@2x.png */; };
+		324B2C221B3F8092005CAF81 /* red_potion@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 324B2C1C1B3F8092005CAF81 /* red_potion@3x.png */; };
 		325373881AF064FA00BF0E43 /* LWFOTESpinningCooldown.m in Sources */ = {isa = PBXBuildFile; fileRef = 325373871AF064FA00BF0E43 /* LWFOTESpinningCooldown.m */; };
 		325373AF1AF1B25C00BF0E43 /* armor_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 325373A31AF1B25C00BF0E43 /* armor_empty.png */; };
 		325373B01AF1B25C00BF0E43 /* armor_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 325373A41AF1B25C00BF0E43 /* armor_empty@2x.png */; };
@@ -53,9 +62,7 @@
 		32826C311AEDB296007400AD /* LWFOTE.m in Sources */ = {isa = PBXBuildFile; fileRef = 32826C301AEDB296007400AD /* LWFOTE.m */; };
 		32826C341AEDB2A8007400AD /* LWFOTEQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 32826C331AEDB2A8007400AD /* LWFOTEQueue.m */; };
 		328F5F361B36476000D136BA /* LWFAcidPotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F5F351B36476000D136BA /* LWFAcidPotion.m */; };
-		328F5F381B36494900D136BA /* green_potion.png in Resources */ = {isa = PBXBuildFile; fileRef = 328F5F371B36494900D136BA /* green_potion.png */; };
 		328F5F3B1B37893500D136BA /* LWFOTEPoison.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F5F3A1B37893500D136BA /* LWFOTEPoison.m */; };
-		328F5F3D1B3A435700D136BA /* purple_potion.png in Resources */ = {isa = PBXBuildFile; fileRef = 328F5F3C1B3A435700D136BA /* purple_potion.png */; };
 		328F5F401B3A437700D136BA /* LWFPoisonPotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F5F3F1B3A437700D136BA /* LWFPoisonPotion.m */; };
 		328F5F4B1B3B69B900D136BA /* arrow-flipped.png in Resources */ = {isa = PBXBuildFile; fileRef = 328F5F431B3B69B900D136BA /* arrow-flipped.png */; };
 		328F5F4C1B3B69B900D136BA /* arrow-flipped@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 328F5F441B3B69B900D136BA /* arrow-flipped@2x.png */; };
@@ -108,7 +115,6 @@
 		32938A3A1AFC42FA00BBE745 /* special_attack_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32938A371AFC42FA00BBE745 /* special_attack_icon@3x.png */; };
 		32938A3C1AFC563500BBE745 /* item_sword.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32938A3B1AFC563500BBE745 /* item_sword.atlas */; };
 		32938A3E1AFFA33100BBE745 /* warrior_spinning_attack_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32938A3D1AFFA33100BBE745 /* warrior_spinning_attack_right.atlas */; };
-		32A650931B194DAC00EE1ACD /* red_potion.png in Resources */ = {isa = PBXBuildFile; fileRef = 32A650921B194DAC00EE1ACD /* red_potion.png */; };
 		32A9E2CB1B0AC398003D37FD /* LWFInventoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2CA1B0AC398003D37FD /* LWFInventoryTests.m */; };
 		32A9E2CE1B12AA1B003D37FD /* LWFHealthPotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2CD1B12AA1B003D37FD /* LWFHealthPotion.m */; };
 		32A9E2D11B12B36B003D37FD /* LWFPotionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2D01B12B36B003D37FD /* LWFPotionFactory.m */; };
@@ -266,6 +272,15 @@
 		324527991A4EEF5500AFF9A7 /* creature_lifebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = creature_lifebar.png; sourceTree = "<group>"; };
 		3245279B1A4EF1DB00AFF9A7 /* LWFLifeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFLifeBar.h; sourceTree = "<group>"; };
 		3245279C1A4EF1DB00AFF9A7 /* LWFLifeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFLifeBar.m; sourceTree = "<group>"; };
+		324B2C111B3F7FF5005CAF81 /* green_potion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_potion.png; sourceTree = "<group>"; };
+		324B2C121B3F7FF5005CAF81 /* purple_potion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purple_potion.png; sourceTree = "<group>"; };
+		324B2C131B3F7FF5005CAF81 /* red_potion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_potion.png; sourceTree = "<group>"; };
+		324B2C171B3F8092005CAF81 /* green_potion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green_potion@2x.png"; sourceTree = "<group>"; };
+		324B2C181B3F8092005CAF81 /* green_potion@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green_potion@3x.png"; sourceTree = "<group>"; };
+		324B2C191B3F8092005CAF81 /* purple_potion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "purple_potion@2x.png"; sourceTree = "<group>"; };
+		324B2C1A1B3F8092005CAF81 /* purple_potion@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "purple_potion@3x.png"; sourceTree = "<group>"; };
+		324B2C1B1B3F8092005CAF81 /* red_potion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_potion@2x.png"; sourceTree = "<group>"; };
+		324B2C1C1B3F8092005CAF81 /* red_potion@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_potion@3x.png"; sourceTree = "<group>"; };
 		325373861AF064FA00BF0E43 /* LWFOTESpinningCooldown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFOTESpinningCooldown.h; sourceTree = "<group>"; };
 		325373871AF064FA00BF0E43 /* LWFOTESpinningCooldown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFOTESpinningCooldown.m; sourceTree = "<group>"; };
 		325373A31AF1B25C00BF0E43 /* armor_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = armor_empty.png; sourceTree = "<group>"; };
@@ -290,10 +305,8 @@
 		32826C351AEDB45F007400AD /* LWFOTEObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFOTEObserver.h; sourceTree = "<group>"; };
 		328F5F341B36476000D136BA /* LWFAcidPotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAcidPotion.h; sourceTree = "<group>"; };
 		328F5F351B36476000D136BA /* LWFAcidPotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAcidPotion.m; sourceTree = "<group>"; };
-		328F5F371B36494900D136BA /* green_potion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_potion.png; sourceTree = "<group>"; };
 		328F5F391B37893500D136BA /* LWFOTEPoison.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFOTEPoison.h; sourceTree = "<group>"; };
 		328F5F3A1B37893500D136BA /* LWFOTEPoison.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFOTEPoison.m; sourceTree = "<group>"; };
-		328F5F3C1B3A435700D136BA /* purple_potion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purple_potion.png; sourceTree = "<group>"; };
 		328F5F3E1B3A437700D136BA /* LWFPoisonPotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPoisonPotion.h; sourceTree = "<group>"; };
 		328F5F3F1B3A437700D136BA /* LWFPoisonPotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPoisonPotion.m; sourceTree = "<group>"; };
 		328F5F431B3B69B900D136BA /* arrow-flipped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-flipped.png"; sourceTree = "<group>"; };
@@ -385,7 +398,6 @@
 		32938A371AFC42FA00BBE745 /* special_attack_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "special_attack_icon@3x.png"; sourceTree = "<group>"; };
 		32938A3B1AFC563500BBE745 /* item_sword.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = item_sword.atlas; sourceTree = "<group>"; };
 		32938A3D1AFFA33100BBE745 /* warrior_spinning_attack_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_spinning_attack_right.atlas; sourceTree = "<group>"; };
-		32A650921B194DAC00EE1ACD /* red_potion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_potion.png; sourceTree = "<group>"; };
 		32A9E2CA1B0AC398003D37FD /* LWFInventoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFInventoryTests.m; sourceTree = "<group>"; };
 		32A9E2CC1B12AA1B003D37FD /* LWFHealthPotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFHealthPotion.h; sourceTree = "<group>"; };
 		32A9E2CD1B12AA1B003D37FD /* LWFHealthPotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFHealthPotion.m; sourceTree = "<group>"; };
@@ -608,6 +620,22 @@
 			path = Decorations;
 			sourceTree = "<group>";
 		};
+		324B2C101B3F7FF5005CAF81 /* Potions */ = {
+			isa = PBXGroup;
+			children = (
+				324B2C171B3F8092005CAF81 /* green_potion@2x.png */,
+				324B2C181B3F8092005CAF81 /* green_potion@3x.png */,
+				324B2C191B3F8092005CAF81 /* purple_potion@2x.png */,
+				324B2C1A1B3F8092005CAF81 /* purple_potion@3x.png */,
+				324B2C1B1B3F8092005CAF81 /* red_potion@2x.png */,
+				324B2C1C1B3F8092005CAF81 /* red_potion@3x.png */,
+				324B2C111B3F7FF5005CAF81 /* green_potion.png */,
+				324B2C121B3F7FF5005CAF81 /* purple_potion.png */,
+				324B2C131B3F7FF5005CAF81 /* red_potion.png */,
+			);
+			path = Potions;
+			sourceTree = "<group>";
+		};
 		325373A21AF1B25C00BF0E43 /* Empty Equipment */ = {
 			isa = PBXGroup;
 			children = (
@@ -630,6 +658,7 @@
 		326524EC1A75405700EEA4B2 /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				324B2C101B3F7FF5005CAF81 /* Potions */,
 				32938A3B1AFC563500BBE745 /* item_sword.atlas */,
 				32B5AAE61A87FCD900E6523A /* item_gold.png */,
 				32B5AADE1A87F66D00E6523A /* item_gold.atlas */,
@@ -796,9 +825,6 @@
 		32938A171AF999E900BBE745 /* Potions */ = {
 			isa = PBXGroup;
 			children = (
-				328F5F3C1B3A435700D136BA /* purple_potion.png */,
-				328F5F371B36494900D136BA /* green_potion.png */,
-				32A650921B194DAC00EE1ACD /* red_potion.png */,
 				32A9E2CC1B12AA1B003D37FD /* LWFHealthPotion.h */,
 				32A9E2CD1B12AA1B003D37FD /* LWFHealthPotion.m */,
 				32A9E2CF1B12B36B003D37FD /* LWFPotionFactory.h */,
@@ -1265,11 +1291,11 @@
 				32E2E6B81ACB6BAA00EA88DD /* poop_thrower_rat_standing_right.atlas in Resources */,
 				32938A391AFC42FA00BBE745 /* special_attack_icon@2x.png in Resources */,
 				32FB7DB31AA0004B00AA4C7F /* inventory.png in Resources */,
+				324B2C161B3F7FF5005CAF81 /* red_potion.png in Resources */,
 				A7F5BB941A16EFBC005BAB63 /* InfoPlist.strings in Resources */,
 				325373B21AF1B25C00BF0E43 /* boot_empty.png in Resources */,
 				3206A3DF1A7D9B6200D08893 /* item_preview_top.png in Resources */,
 				325373BA1AF1B25C00BF0E43 /* weapon_empty@3x.png in Resources */,
-				32A650931B194DAC00EE1ACD /* red_potion.png in Resources */,
 				323335FA1AA52F730088C4F6 /* item_info.png in Resources */,
 				328F5F6B1B3B6A8700D136BA /* Tutorial.xib in Resources */,
 				32B3E1B11B06DA3B00CF2EA2 /* tutorial1.gif in Resources */,
@@ -1277,6 +1303,7 @@
 				32DFD2A91AAFD7FC00FB554B /* button_green@2x.png in Resources */,
 				32B3E1B41B082A6B00CF2EA2 /* grass_tile.png in Resources */,
 				32E2E6AA1ACA31E800EA88DD /* button_yellow.png in Resources */,
+				324B2C1E1B3F8092005CAF81 /* green_potion@3x.png in Resources */,
 				32BEB1371ABE4EFA008950C0 /* Lifebar@3x.png in Resources */,
 				328F5F4B1B3B69B900D136BA /* arrow-flipped.png in Resources */,
 				3245278F1A4DCC1700AFF9A7 /* radioactive_rat_standing_right.atlas in Resources */,
@@ -1285,15 +1312,16 @@
 				3245278B1A4DCBFB00AFF9A7 /* warrior_attacking_left.atlas in Resources */,
 				32E2E6B71ACB6BAA00EA88DD /* poop_thrower_rat_standing_left.png in Resources */,
 				32F09E311A48F4FA000B8797 /* Munro.ttf in Resources */,
+				324B2C211B3F8092005CAF81 /* red_potion@2x.png in Resources */,
 				328F5F631B3B6A8700D136BA /* Lifebar.xib in Resources */,
 				325373B61AF1B25C00BF0E43 /* ring_empty@2x.png in Resources */,
 				32BEC0141A48A7C4000C77AA /* creature_stats.json in Resources */,
 				32E2E6B61ACB6BAA00EA88DD /* poop_thrower_rat_standing_left.atlas in Resources */,
 				32DFD2A11AAFD7E400FB554B /* popup_bg@3x.png in Resources */,
+				324B2C1F1B3F8092005CAF81 /* purple_potion@2x.png in Resources */,
 				328F5F4E1B3B69B900D136BA /* Imported Layers@2x.png in Resources */,
 				32BEB1361ABE4EFA008950C0 /* Lifebar@2x.png in Resources */,
 				32E2E6A41ACA2E5300EA88DD /* inventory.png in Resources */,
-				328F5F3D1B3A435700D136BA /* purple_potion.png in Resources */,
 				328F5F621B3B6A8700D136BA /* ItemDescription.xib in Resources */,
 				32E2E6C11ACCCB7C00EA88DD /* poop.jpg in Resources */,
 				32E2E6AC1ACA31E800EA88DD /* button_yellow@3x.png in Resources */,
@@ -1303,8 +1331,10 @@
 				3245279A1A4EEF5500AFF9A7 /* creature_lifebar.png in Resources */,
 				32FB7DB21AA0004B00AA4C7F /* hero_portrait@3x.png in Resources */,
 				32BEB1381ABE4EFA008950C0 /* portrait.png in Resources */,
+				324B2C221B3F8092005CAF81 /* red_potion@3x.png in Resources */,
 				32FB7DB61AA0004B00AA4C7F /* thumb@3x.png in Resources */,
 				32BEC0121A472DA8000C77AA /* radioactive_rat_standing_right.png in Resources */,
+				324B2C141B3F7FF5005CAF81 /* green_potion.png in Resources */,
 				32ACD05F1A7B062600970F69 /* item_motherfucking_sword.png in Resources */,
 				32DFD29F1AAFD7E400FB554B /* popup_bg.png in Resources */,
 				328F5F4D1B3B69B900D136BA /* Imported Layers.png in Resources */,
@@ -1325,11 +1355,11 @@
 				32DFD2AA1AAFD7FC00FB554B /* button_green@3x.png in Resources */,
 				32FB7DAF1AA0004B00AA4C7F /* bg@3x.png in Resources */,
 				32938A381AFC42FA00BBE745 /* special_attack_icon.png in Resources */,
-				328F5F381B36494900D136BA /* green_potion.png in Resources */,
 				32BEC0051A470F5F000C77AA /* warrior_walking_right.atlas in Resources */,
 				32FB7DB91AA0004B00AA4C7F /* thumb_money@3x.png in Resources */,
 				323335FB1AA52F730088C4F6 /* item_info@2x.png in Resources */,
 				32DFD2AB1AAFD7FC00FB554B /* button_red.png in Resources */,
+				324B2C201B3F8092005CAF81 /* purple_potion@3x.png in Resources */,
 				328F5F4C1B3B69B900D136BA /* arrow-flipped@2x.png in Resources */,
 				32FB7DB81AA0004B00AA4C7F /* thumb_money@2x.png in Resources */,
 				32FB7DB71AA0004B00AA4C7F /* thumb_money.png in Resources */,
@@ -1351,6 +1381,7 @@
 				32B5AADF1A87F66D00E6523A /* item_gold.atlas in Resources */,
 				32E2E6A61ACA2E5300EA88DD /* inventory@3x.png in Resources */,
 				3254E6D71A5CB49400BD7D13 /* door.png in Resources */,
+				324B2C151B3F7FF5005CAF81 /* purple_potion.png in Resources */,
 				32DFD2AD1AAFD7FC00FB554B /* button_red@3x.png in Resources */,
 				321A60601A6354DF0060517E /* door_open.png in Resources */,
 				32DFD2A81AAFD7FC00FB554B /* button_green.png in Resources */,
@@ -1366,6 +1397,7 @@
 				323D10931A9C0CB6000AB32D /* fog_overlay.png in Resources */,
 				32B5AAD91A878A1B00E6523A /* warrior_standing_left.png in Resources */,
 				32F1CDCC1A57603800A0D9F5 /* wall.png in Resources */,
+				324B2C1D1B3F8092005CAF81 /* green_potion@2x.png in Resources */,
 				32FB7DAE1AA0004B00AA4C7F /* bg@2x.png in Resources */,
 				3206A3E51A7DA8A800D08893 /* previous_button.png in Resources */,
 				326524F71A75ABAF00EEA4B2 /* item_sword.png in Resources */,
