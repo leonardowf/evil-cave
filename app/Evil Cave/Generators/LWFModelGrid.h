@@ -13,7 +13,6 @@
 @property (nonatomic, strong) NSMutableArray *model;
 @property (nonatomic) CGPoint startLevelPosition;
 @property (nonatomic) CGPoint endLevelPosition;
-
 @property (nonatomic, strong) NSMutableArray *rooms;
 
 @end

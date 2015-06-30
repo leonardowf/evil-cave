@@ -11,6 +11,7 @@
 #import "LWFTile.h"
 #import "LWFCaveGenerator.h"
 #import "LWFRandomUtils.h"
+#import "LWFCaveGeneratorResult.h"
 
 @implementation LWFTileMap
 
@@ -21,7 +22,10 @@
         self.mapDimension = mapDimension;
         
         LWFCaveGenerator *generator = [[LWFCaveGenerator alloc]initWithHeight:mapDimension.numberTilesVertical width:mapDimension.numberTilesHorizontal];
-        self.gridModel = [generator generate];
+        
+        LWFCaveGeneratorResult *result = [generator generate];
+        
+        self.gridModel = result.stage;
         
         self.tiles = [[NSMutableArray alloc]initWithCapacity:mapDimension.numberTilesHorizontal];
         NSInteger x = 0;

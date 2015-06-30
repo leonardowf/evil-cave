@@ -17,6 +17,7 @@
 #import "LWFDartDungeonGenerator.h"
 
 #import "LWFRect.h"
+#import "LWFCaveGeneratorResult.h"
 
 @interface LWFCaveGenerator () {
     LWFModelGrid *_modelGrid;
@@ -27,6 +28,8 @@
     NSMutableArray *_rooms;
     
     LWFRoomBuilder *_roomBuilder;
+    
+    LWFCaveGeneratorResult *_caveGeneratorResult;
 }
 @end
 
@@ -43,6 +46,7 @@
         _rooms = _modelGrid.rooms;
         _randomUtils = [[LWFRandomUtils alloc]init];
         _roomBuilder = [[LWFRoomBuilder alloc]initWithMinWidth:3 maxWidth:5 minHeigth:3 andMaxHeigth:5];
+        _caveGeneratorResult = [[LWFCaveGeneratorResult alloc]init];
 
         for (NSUInteger i = 0; i < width; i++) {
             _grid[i] = [NSMutableArray arrayWithCapacity:heigth];
@@ -54,14 +58,16 @@
     return self;
 }
 
-- (NSMutableArray *)generate {
+- (LWFCaveGeneratorResult *)generate {
     LWFDartDungeonGenerator *generator = [[LWFDartDungeonGenerator alloc]initForStageWidth:_width andStageHeigth:_heigth];
     
     [generator generate];
     
     [self generateStartAndEndForModelGrid:generator.stage andRooms:generator.rooms];
     
-    return generator.stage;
+    _caveGeneratorResult.stage = generator.stage;
+    
+    return _caveGeneratorResult;
 }
 
 - (void)generateStartAndEndForModelGrid:(NSMutableArray *)modelGrid andRooms:(NSMutableArray *)rooms {
@@ -94,6 +100,9 @@
     y = endCoord.y;
     
     modelGrid[x][y] = [LWFCaveGeneratorCell cellForX:x y:y andType:CaveCellTypeEnd];
+    
+    _caveGeneratorResult.startingRoom = firstRoom;
+    _caveGeneratorResult.endingRoom = lastRoom;
 }
 
 @end

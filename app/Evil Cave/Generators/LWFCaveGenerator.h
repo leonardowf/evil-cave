@@ -9,13 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "LWFCaveGeneratorConstants.h"
 #import "LWFCaveGeneratorCell.h"
+@class LWFCaveGeneratorResult;
 
 @interface LWFCaveGenerator : NSObject
 
 @property (assign, nonatomic) CGFloat chanceToBecomeWall;
 
 - (instancetype)initWithHeight:(NSUInteger)heigth width:(NSUInteger)width;
-- (NSMutableArray *)generate;
+
+- (LWFCaveGeneratorResult *)generate;
 
 
 @end
