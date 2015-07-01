@@ -250,7 +250,7 @@
 - (void)chooseCreaturePositions {
     for (LWFCreature *creature in _turnList.creatures) {
         if (creature != _player) {
-            LWFTile *tile = [_tileMap randomEmptyWalkableTile];
+            LWFTile *tile = [_tileMap randomEmptyWalkableTileNotInStartAndEnd];
             tile.creatureOnTile = creature;
             creature.position = tile.position;
             creature.currentTile = tile;

@@ -32,6 +32,10 @@
     
 }
 
+- (CGRect)convert {
+    return CGRectMake(self.x, self.y, self.width, self.height);
+}
+
 CGSize CGSizeDistanceBetweenRects(CGRect rect1, CGRect rect2)
 {
     if (CGRectIntersectsRect(rect1, rect2))

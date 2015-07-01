@@ -12,6 +12,7 @@
 #import "LWFCaveGenerator.h"
 #import "LWFRandomUtils.h"
 #import "LWFCaveGeneratorResult.h"
+#import "LWFRect.h"
 
 @implementation LWFTileMap
 
@@ -26,6 +27,8 @@
         LWFCaveGeneratorResult *result = [generator generate];
         
         self.gridModel = result.stage;
+        self.startingRoom = result.startingRoom;
+        self.endingRoom = result.endingRoom;
         
         self.tiles = [[NSMutableArray alloc]initWithCapacity:mapDimension.numberTilesHorizontal];
         NSInteger x = 0;
@@ -146,6 +149,23 @@
     }
     
     return tile;
+}
+
+- (LWFTile *)randomEmptyWalkableTileNotInStartAndEnd {
+    while(1) {
+        LWFTile *tile = [self randomEmptyWalkableTile];
+        CGPoint tilePoint = CGPointMake(tile.x, tile.y);
+        
+        CGRect startRect = [self.startingRoom convert];
+        CGRect endRect = [self.endingRoom convert];
+        
+        BOOL isInStart = CGRectContainsPoint(startRect, tilePoint);
+        BOOL isInEnd = CGRectContainsPoint(endRect, tilePoint);
+        
+        if (!isInStart && !isInEnd) {
+            return tile;
+        }
+    }
 }
 
 - (LWFTile *)closestNeighborFromTile:(LWFTile *)origin toTile:(LWFTile *)destiny {

@@ -19,4 +19,5 @@
 
 - (CGFloat)distanceTo:(LWFRect *)other;
 - (CGPoint)middleCoordinate;
+- (CGRect)convert;
 @end
