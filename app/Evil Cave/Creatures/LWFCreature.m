@@ -32,6 +32,8 @@
 #import "LWFOTE.h"
 #import "LWFOTEPoison.h"
 
+#import "LWFNodeCompletionWithKeyCategory.h"
+
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
     NSUInteger _failedMovements;
@@ -145,7 +147,8 @@
     }];
     
     SKAction *moveAction = [SKAction moveTo:tile.position duration:movementDuration];
-    [self runAction: moveAction completion:someBlock];
+    
+    [self runAction:moveAction withKey:@"move_action" completion:someBlock];
 }
 
 - (void)build {
@@ -463,6 +466,17 @@
     
     [self startStandingAnimation];
     
+    // antes de atacar verifica se tem uma animação de walking acontecendo
+    // se tiver, garante que ela terminou para então executar o resto
+    if ([self actionForKey:@"move_action"] != nil) {
+        SKAction *wait = [SKAction waitForDuration:0.3];
+        [self runAction:wait completion:^{
+            [self moveDistanceHorizontal:moveOffsetX andVertical:moveOffsetY inTime:0.1];
+            [someBlock invoke];
+        }];
+        return;
+    }
+
     [self moveDistanceHorizontal:moveOffsetX andVertical:moveOffsetY inTime:0.1];
     
     [someBlock invoke];

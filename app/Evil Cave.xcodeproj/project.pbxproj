@@ -145,6 +145,7 @@
 		32D08C8E1AAA731900441A51 /* LWFImageViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D08C8D1AAA731900441A51 /* LWFImageViewHolder.m */; };
 		32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */; };
 		32D50BD31A3DFDF3002D3098 /* LWFPointObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */; };
+		32DB3B141B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DB3B131B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.m */; };
 		32DFD29F1AAFD7E400FB554B /* popup_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD29C1AAFD7E400FB554B /* popup_bg.png */; };
 		32DFD2A01AAFD7E400FB554B /* popup_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD29D1AAFD7E400FB554B /* popup_bg@2x.png */; };
 		32DFD2A11AAFD7E400FB554B /* popup_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD29E1AAFD7E400FB554B /* popup_bg@3x.png */; };
@@ -433,6 +434,8 @@
 		32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAttackManager.m; sourceTree = "<group>"; };
 		32D50BD11A3DFDF3002D3098 /* LWFPointObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPointObject.h; sourceTree = "<group>"; };
 		32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPointObject.m; sourceTree = "<group>"; };
+		32DB3B121B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFNodeCompletionWithKeyCategory.h; sourceTree = "<group>"; };
+		32DB3B131B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFNodeCompletionWithKeyCategory.m; sourceTree = "<group>"; };
 		32DFD29C1AAFD7E400FB554B /* popup_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popup_bg.png; sourceTree = "<group>"; };
 		32DFD29D1AAFD7E400FB554B /* popup_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popup_bg@2x.png"; sourceTree = "<group>"; };
 		32DFD29E1AAFD7E400FB554B /* popup_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popup_bg@3x.png"; sourceTree = "<group>"; };
@@ -1024,6 +1027,8 @@
 				32F831351A96B458007174F1 /* LWFAttackQueueCell.h */,
 				32F831361A96B458007174F1 /* LWFAttackQueueCell.m */,
 				32BEB13E1ABF76D3008950C0 /* LWFLifeDisplayer.h */,
+				32DB3B121B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.h */,
+				32DB3B131B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1464,6 +1469,7 @@
 				3293698B1A5058DD00ECF705 /* LWFRect.m in Sources */,
 				328F5F691B3B6A8700D136BA /* LWFTutorial.m in Sources */,
 				32826C311AEDB296007400AD /* LWFOTE.m in Sources */,
+				32DB3B141B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.m in Sources */,
 				3219AB4B1A8ECEB600FE544C /* LWFSpinningAttack.m in Sources */,
 				A78443B01A1EEFCC0029995D /* PathFindNode.m in Sources */,
 				328F5F9F1B3B6C2F00D136BA /* LWFDifficultyManager.m in Sources */,
