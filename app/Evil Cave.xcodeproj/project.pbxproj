@@ -146,6 +146,8 @@
 		32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */; };
 		32D50BD31A3DFDF3002D3098 /* LWFPointObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */; };
 		32DB3B141B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DB3B131B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.m */; };
+		32DB3B161B477B260016E8B7 /* LWFChestsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DB3B151B477B260016E8B7 /* LWFChestsTests.m */; };
+		32DB3B1A1B477BB90016E8B7 /* LWFChest.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DB3B191B477BB90016E8B7 /* LWFChest.m */; };
 		32DFD29F1AAFD7E400FB554B /* popup_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD29C1AAFD7E400FB554B /* popup_bg.png */; };
 		32DFD2A01AAFD7E400FB554B /* popup_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD29D1AAFD7E400FB554B /* popup_bg@2x.png */; };
 		32DFD2A11AAFD7E400FB554B /* popup_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD29E1AAFD7E400FB554B /* popup_bg@3x.png */; };
@@ -436,6 +438,9 @@
 		32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPointObject.m; sourceTree = "<group>"; };
 		32DB3B121B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFNodeCompletionWithKeyCategory.h; sourceTree = "<group>"; };
 		32DB3B131B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFNodeCompletionWithKeyCategory.m; sourceTree = "<group>"; };
+		32DB3B151B477B260016E8B7 /* LWFChestsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFChestsTests.m; sourceTree = "<group>"; };
+		32DB3B181B477BB90016E8B7 /* LWFChest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFChest.h; sourceTree = "<group>"; };
+		32DB3B191B477BB90016E8B7 /* LWFChest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFChest.m; sourceTree = "<group>"; };
 		32DFD29C1AAFD7E400FB554B /* popup_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popup_bg.png; sourceTree = "<group>"; };
 		32DFD29D1AAFD7E400FB554B /* popup_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popup_bg@2x.png"; sourceTree = "<group>"; };
 		32DFD29E1AAFD7E400FB554B /* popup_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popup_bg@3x.png"; sourceTree = "<group>"; };
@@ -930,6 +935,15 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		32DB3B171B477B9B0016E8B7 /* Chests */ = {
+			isa = PBXGroup;
+			children = (
+				32DB3B181B477BB90016E8B7 /* LWFChest.h */,
+				32DB3B191B477BB90016E8B7 /* LWFChest.m */,
+			);
+			path = Chests;
+			sourceTree = "<group>";
+		};
 		32E2E6AD1ACB6BA900EA88DD /* Poop Thrower Rat */ = {
 			isa = PBXGroup;
 			children = (
@@ -1117,6 +1131,7 @@
 		A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */ = {
 			isa = PBXGroup;
 			children = (
+				32DB3B171B477B9B0016E8B7 /* Chests */,
 				328F5FD51B3B6FA600D136BA /* Creatures */,
 				328F5F9A1B3B6C2F00D136BA /* Difficulty Configurations */,
 				328F5F931B3B6BC200D136BA /* Logs */,
@@ -1162,6 +1177,7 @@
 				32938A1B1AF99A7E00BBE745 /* LWFPotionsTests.m */,
 				A7F5BBB91A16EFBF005BAB63 /* Evil_CaveTests.m */,
 				32938A1D1AFAED4600BBE745 /* LWFItemsTests.m */,
+				32DB3B151B477B260016E8B7 /* LWFChestsTests.m */,
 				32A9E2CA1B0AC398003D37FD /* LWFInventoryTests.m */,
 				A7F5BBB41A16EFBF005BAB63 /* Supporting Files */,
 			);
@@ -1456,6 +1472,7 @@
 				3245279D1A4EF1DB00AFF9A7 /* LWFLifeBar.m in Sources */,
 				32D08C8E1AAA731900441A51 /* LWFImageViewHolder.m in Sources */,
 				A7F5BBA31A16EFBE005BAB63 /* LWFMyScene.m in Sources */,
+				32DB3B1A1B477BB90016E8B7 /* LWFChest.m in Sources */,
 				328F5F991B3B6BC200D136BA /* LWFLogger.m in Sources */,
 				328F5F901B3B6B8E00D136BA /* LWFLootChanceFactory.m in Sources */,
 				A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */,
@@ -1528,6 +1545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32A9E2CB1B0AC398003D37FD /* LWFInventoryTests.m in Sources */,
+				32DB3B161B477B260016E8B7 /* LWFChestsTests.m in Sources */,
 				32938A1E1AFAED4600BBE745 /* LWFItemsTests.m in Sources */,
 				32938A1C1AF99A7E00BBE745 /* LWFPotionsTests.m in Sources */,
 				A7F5BBBA1A16EFBF005BAB63 /* Evil_CaveTests.m in Sources */,
