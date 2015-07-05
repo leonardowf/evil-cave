@@ -9,16 +9,24 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "LWFChest.h"
+#import "LWFChestFactory.h"
 
-@interface LWFChestsTests : XCTestCase
+@interface LWFChestsTests : XCTestCase {
+    LWFChestFactory *_chestFactory;
+}
 
 @end
 
 @implementation LWFChestsTests
 
++ (void)setUp {
+    [super setUp];
+}
+
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    _chestFactory = [LWFChestFactory sharedChestFactory];
 }
 
 - (void)tearDown {

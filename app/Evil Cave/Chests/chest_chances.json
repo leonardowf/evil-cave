@@ -1,0 +1,9 @@
+{
+	"floor_1": {
+		"chance": 1,
+		"quantity": 2,
+		"loot_chances": [
+			{ "name": "sword", "chance": 10, "quantity": 1 }
+		]
+	}
+}

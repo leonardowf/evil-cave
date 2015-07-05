@@ -15,6 +15,8 @@
 		3206A3E41A7DA8A800D08893 /* next_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3206A3E21A7DA8A800D08893 /* next_button.png */; };
 		3206A3E51A7DA8A800D08893 /* previous_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3206A3E31A7DA8A800D08893 /* previous_button.png */; };
 		3206A3E71A7DA8B400D08893 /* get_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3206A3E61A7DA8B400D08893 /* get_button.png */; };
+		320976131B48BB810022B331 /* chest_chances.json in Resources */ = {isa = PBXBuildFile; fileRef = 320976121B48BB810022B331 /* chest_chances.json */; };
+		320976161B48BBD80022B331 /* LWFChestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 320976151B48BBD80022B331 /* LWFChestFactory.m */; };
 		3219AB4B1A8ECEB600FE544C /* LWFSpinningAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 3219AB4A1A8ECEB600FE544C /* LWFSpinningAttack.m */; };
 		321A60601A6354DF0060517E /* door_open.png in Resources */ = {isa = PBXBuildFile; fileRef = 321A605F1A6354DF0060517E /* door_open.png */; };
 		321A60631A635DA50060517E /* blood.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 321A60621A635DA50060517E /* blood.atlas */; };
@@ -246,6 +248,9 @@
 		3206A3E21A7DA8A800D08893 /* next_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next_button.png; sourceTree = "<group>"; };
 		3206A3E31A7DA8A800D08893 /* previous_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = previous_button.png; sourceTree = "<group>"; };
 		3206A3E61A7DA8B400D08893 /* get_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = get_button.png; sourceTree = "<group>"; };
+		320976121B48BB810022B331 /* chest_chances.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chest_chances.json; sourceTree = "<group>"; };
+		320976141B48BBD80022B331 /* LWFChestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFChestFactory.h; sourceTree = "<group>"; };
+		320976151B48BBD80022B331 /* LWFChestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFChestFactory.m; sourceTree = "<group>"; };
 		3219AB491A8ECEB600FE544C /* LWFSpinningAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSpinningAttack.h; sourceTree = "<group>"; };
 		3219AB4A1A8ECEB600FE544C /* LWFSpinningAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFSpinningAttack.m; sourceTree = "<group>"; };
 		321A605F1A6354DF0060517E /* door_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door_open.png; sourceTree = "<group>"; };
@@ -938,8 +943,11 @@
 		32DB3B171B477B9B0016E8B7 /* Chests */ = {
 			isa = PBXGroup;
 			children = (
+				320976121B48BB810022B331 /* chest_chances.json */,
 				32DB3B181B477BB90016E8B7 /* LWFChest.h */,
 				32DB3B191B477BB90016E8B7 /* LWFChest.m */,
+				320976141B48BBD80022B331 /* LWFChestFactory.h */,
+				320976151B48BBD80022B331 /* LWFChestFactory.m */,
 			);
 			path = Chests;
 			sourceTree = "<group>";
@@ -1363,6 +1371,7 @@
 				32FB7DB91AA0004B00AA4C7F /* thumb_money@3x.png in Resources */,
 				323335FB1AA52F730088C4F6 /* item_info@2x.png in Resources */,
 				32DFD2AB1AAFD7FC00FB554B /* button_red.png in Resources */,
+				320976131B48BB810022B331 /* chest_chances.json in Resources */,
 				328F5F4C1B3B69B900D136BA /* arrow-flipped@2x.png in Resources */,
 				32FB7DB81AA0004B00AA4C7F /* thumb_money@2x.png in Resources */,
 				32FB7DB71AA0004B00AA4C7F /* thumb_money.png in Resources */,
@@ -1510,6 +1519,7 @@
 				328F5F981B3B6BC200D136BA /* LWFHudLogger.m in Sources */,
 				328F5F911B3B6B8E00D136BA /* LWFPotion.m in Sources */,
 				328F5FEB1B3B6FA600D136BA /* LWFEquips.m in Sources */,
+				320976161B48BBD80022B331 /* LWFChestFactory.m in Sources */,
 				321EC9A71A26A5C400F06B77 /* LWFTurnList.m in Sources */,
 				325373881AF064FA00BF0E43 /* LWFOTESpinningCooldown.m in Sources */,
 				328F5F8F1B3B6B8E00D136BA /* LWFLootChance.m in Sources */,

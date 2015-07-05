@@ -6,25 +6,30 @@
 //  Copyright (c) 2015 leonardowistuba. All rights reserved.
 //
 
+typedef enum : NSUInteger {
+    LWFChestStateClosed,
+    LWFChestStateOpen
+} LWFChestState;
+
 #import "LWFChest.h"
 
 @interface LWFChest () {
-    BOOL _open;
+    LWFChestState _chestState;
 }
 @end
 
 @implementation LWFChest
 
 - (BOOL)isOpen {
-    return _open;
+    return _chestState == LWFChestStateOpen;
 }
 
 - (BOOL)isClosed {
-    return !_open;
+    return _chestState == LWFChestStateClosed;
 }
 
 - (void)open {
-    _open = YES;
+    _chestState = LWFChestStateOpen;
 }
 
 @end
