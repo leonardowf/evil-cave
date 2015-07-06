@@ -8,25 +8,25 @@
 
 #import "LWFDifficultyManager.h"
 #import "LWFFloorDifficulty.h"
-#import "LWFCreatureBuilder.h"
 #import "LWFCreature.h"
+#import "LWFChestFactory.h"
+
 
 @interface LWFDifficultyManager () {
-    LWFCreatureBuilder *_creatureBuilder;
+    LWFChestFactory *_chestFactory;
 }
 @end
 
 @implementation LWFDifficultyManager
 
-- (instancetype)initWithCreatureBuilder:(LWFCreatureBuilder *)creatureBuilder
+- (instancetype)init
 {
     self = [super init];
     if (self) {
-        _creatureBuilder = creatureBuilder;
+        _chestFactory = [LWFChestFactory sharedChestFactory];
     }
     return self;
 }
-
 
 - (LWFFloorDifficulty *)getFloorDifficultyForFloor:(NSInteger)floor {
     LWFFloorDifficulty *floorDifficulty = [self floorDifficulty1];
@@ -36,6 +36,8 @@
     floorDifficulty.numberTilesVertical = floor * 2 * mod + floorDifficulty.numberTilesVertical;
     floorDifficulty.numberTilesHorizontal = floor * 2 * mod + floorDifficulty.numberTilesHorizontal;
     floorDifficulty.floor = floor;
+    
+    floorDifficulty.chests = [_chestFactory getChestsForFloor:floor];
     
     return floorDifficulty;
 }

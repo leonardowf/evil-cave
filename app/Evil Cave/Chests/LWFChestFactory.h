@@ -10,6 +10,9 @@
 
 @interface LWFChestFactory : NSObject
 
+@property (nonatomic, strong) NSArray *chestChances;
+
 + (id) sharedChestFactory;
+- (NSArray *)getChestsForFloor:(NSInteger)floor;
 
 @end

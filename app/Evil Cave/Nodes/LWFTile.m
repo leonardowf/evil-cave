@@ -35,7 +35,7 @@
 }
 
 - (BOOL)isPassable {
-    return [self isWalkable] && self.creatureOnTile == nil;
+    return [self isWalkable] && self.creatureOnTile == nil && self.chest == nil;
 }
 
 - (NSUInteger)distanceToTile:(LWFTile *)tile {

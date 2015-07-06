@@ -10,6 +10,7 @@
 #import <XCTest/XCTest.h>
 #import "LWFChest.h"
 #import "LWFChestFactory.h"
+#import "LWFChestChance.h"
 
 @interface LWFChestsTests : XCTestCase {
     LWFChestFactory *_chestFactory;
@@ -25,12 +26,10 @@
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
     _chestFactory = [LWFChestFactory sharedChestFactory];
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
@@ -46,6 +45,32 @@
     [chest open];
     
     XCTAssertTrue([chest isOpen]);
+}
+
+- (void)testIfChestChanceNeverRespawnChest {
+    NSDictionary *chestChanceDictionary = @{@"quantity": @1,
+                                            @"chance": @100,
+                                            @"floor": @1};
+    LWFChestChance *chestChance = [[LWFChestChance alloc]
+                                   initWithDictionary:chestChanceDictionary];
+    NSInteger amountRespawned = [chestChance amountRespawned];
+    
+    XCTAssertEqual(amountRespawned, [[chestChanceDictionary objectForKey:@"quantity"] integerValue]);
+}
+
+- (void)testIfChestChanceAlwaysRespawnChest {
+    NSDictionary *chestChanceDictionary = @{@"quantity": @1,
+                                            @"chance": @0,
+                                            @"floor": @1};
+    LWFChestChance *chestChance = [[LWFChestChance alloc]
+                                   initWithDictionary:chestChanceDictionary];
+    NSInteger amountRespawned = [chestChance amountRespawned];
+    
+    XCTAssertEqual(amountRespawned, 0);
+}
+
+- (void)testIfFactoryBringsNotNil {
+    NSArray *chests = [_chestFactory getChestsForFloor:1];
 }
 
 @end

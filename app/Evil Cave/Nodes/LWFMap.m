@@ -22,6 +22,7 @@
 
 #import "LWFDifficultyManager.h"
 #import "LWFFloorDifficulty.h"
+#import "LWFChest.h"
 
 @interface LWFMap () {
     LWFTurnList *_turnList;
@@ -212,6 +213,7 @@
     [self createPlayer];
     [self createCreatures];
     [self chooseCreaturePositions];
+    [self chooseChestsPositions];
     [_player doFov];
 }
 
@@ -220,6 +222,15 @@
     [self addPlayer:player];
     [player statsChanged];
     [player startStandingAnimation];
+}
+
+- (void)chooseChestsPositions {
+    for (LWFChest *chest in _floorDifficulty.chests) {
+        LWFTile *tile = [_tileMap randomEmptyWalkableTileNotInStartAndEnd];
+        tile.chest = chest;
+        [chest setPosition:CGPointMake(tile.position.x, tile.position.y)];
+        [self addChild:chest];
+    }
 }
 
 - (void)createCreatures {
