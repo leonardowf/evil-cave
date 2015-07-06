@@ -7,6 +7,9 @@
 //
 
 #import "LWFChestFactory.h"
+#import "LWFChestChance.h"
+#import "LWFChest.h"
+#import "LWFLootChance.h"
 
 @implementation LWFChestFactory
 
@@ -23,11 +26,56 @@ SINGLETON_FOR_CLASS(ChestFactory)
 
 - (void)loadFromJson {
     NSDictionary *jsonChances = [self getDictionaryFromJson];
-    NSMutableDictionary *chestChances = [NSMutableDictionary dictionary];
+    
+    NSMutableArray *chestChances = [NSMutableArray array];
+    
+    for (NSDictionary *dict in jsonChances) {
+        LWFChestChance *chestChance = [[LWFChestChance alloc]initWithDictionary:dict];
+        [chestChances addObject:chestChance];
+    }
+    self.chestChances = chestChances;
 }
 
-- (NSArray *)getLootChancesForKey:(NSString *)key {
-    return nil;
+- (NSArray *)getChestsForFloor:(NSInteger)floor {
+    NSMutableArray *chests = [NSMutableArray array];
+    LWFChestChance *chestChance = [self findChestChanceForFloor:floor];
+    NSInteger amountRespawned = [chestChance amountRespawned];
+    
+    for (NSInteger i = 0; i < amountRespawned; i++) {
+        LWFChest *chest = [self buildChest];
+        [self addItemsToChest:chest fromLootChances:chestChance.lootChances];
+        [chests addObject:chest];
+    }
+    
+    return chests;
+}
+
+/*
+    Sorteia cada umas das lootChances e adiciona na chest se sorteio positivo
+ */
+- (void)addItemsToChest:(LWFChest *)chest fromLootChances: (NSArray *)lootChances {
+    for (LWFLootChance *lootChance in lootChances) {
+        NSInteger amount = [lootChance amountDropped];
+        LWFItem *item = [lootChance buildWithQuantity:amount];
+        
+        if (item != nil) {
+            [chest.items addObject:item];
+        }
+    }
+}
+
+- (LWFChest *)buildChest {
+    LWFChest *chest = [[LWFChest alloc]initWithColor:[UIColor yellowColor]
+                                                size:CGSizeMake(TILE_SIZE, TILE_SIZE)];
+    chest.items = [NSMutableArray array];
+    return chest;
+}
+
+- (LWFChestChance *)findChestChanceForFloor:(NSInteger)floor {
+    // procura uma ChestChance para construir
+    // se não encontrar, pega a ChestChance mais alta que é menor que a procurada
+    LWFChestChance *chestChance = [self.chestChances firstObject];
+    return chestChance;
 }
 
 - (NSDictionary *)getDictionaryFromJson {

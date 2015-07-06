@@ -6,9 +6,13 @@
 //  Copyright (c) 2015 leonardowistuba. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <SpriteKit/SpriteKit.h>
+@class LWFTile;
 
-@interface LWFChest : NSObject
+@interface LWFChest : SKSpriteNode
+
+@property (nonatomic, strong) NSMutableArray *items;
+@property (nonatomic, strong) LWFTile *tile;
 
 - (BOOL)isOpen;
 - (BOOL)isClosed;

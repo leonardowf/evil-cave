@@ -1,9 +1,17 @@
+[{
+	"floor": 1,
+	"chance": 100,
+	"quantity": 2,
+	"loot_chances": [
+        { "name": "sword", "chance": 10, "quantity": 1 },
+        { "name": "gold", "chance": 100, "quantity": 30 }
+	]
+},
 {
-	"floor_1": {
-		"chance": 1,
-		"quantity": 2,
-		"loot_chances": [
-			{ "name": "sword", "chance": 10, "quantity": 1 }
-		]
-	}
-}
+	"floor": 2,
+	"chance": 50,
+	"quantity": 2,
+	"loot_chances": [
+		{ "name": "sword", "chance": 10, "quantity": 1 }
+	]
+},]

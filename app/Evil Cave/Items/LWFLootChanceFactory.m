@@ -40,8 +40,6 @@ SINGLETON_FOR_CLASS(LootChanceFactory)
         
         for (NSDictionary *dict in lootChancesJson) {
             LWFLootChance *lootChance = [[LWFLootChance alloc]initWithDictionary:dict];
-            LWFItemPrototype *prototype = [_itemPrototypeFactory getPrototypeWithName:lootChance.name];
-            lootChance.prototype = prototype;
             [lootChancesForKey addObject:lootChance];
         }
         

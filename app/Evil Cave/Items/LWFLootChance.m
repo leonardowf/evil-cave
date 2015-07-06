@@ -11,6 +11,7 @@
 #import "LWFItemPrototype.h"
 #import "LWFItemFactory.h"
 #import "LWFItem.h"
+#import "LWFItemPrototypeFactory.h"
 
 @implementation LWFLootChance
 
@@ -18,6 +19,8 @@
 {
     self = [super init];
     if (self) {
+        LWFItemPrototypeFactory *itemPrototypeFactory = [LWFItemPrototypeFactory sharedItemPrototypeFactory];
+        
         NSString *nameString = [dict objectForKey:@"name"];
         NSNumber *quantityNumber = [dict objectForKey:@"quantity"];
         NSNumber *chanceNumber = [dict objectForKey:@"chance"];
@@ -25,6 +28,9 @@
         self.name = nameString;
         self.quantity = [quantityNumber integerValue];
         self.chance = [chanceNumber floatValue];
+        
+        LWFItemPrototype *prototype = [itemPrototypeFactory getPrototypeWithName:self.name];
+        self.prototype = prototype;
     }
     return self;
 }

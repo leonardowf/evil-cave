@@ -17,6 +17,7 @@
 		3206A3E71A7DA8B400D08893 /* get_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3206A3E61A7DA8B400D08893 /* get_button.png */; };
 		320976131B48BB810022B331 /* chest_chances.json in Resources */ = {isa = PBXBuildFile; fileRef = 320976121B48BB810022B331 /* chest_chances.json */; };
 		320976161B48BBD80022B331 /* LWFChestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 320976151B48BBD80022B331 /* LWFChestFactory.m */; };
+		320976191B498D730022B331 /* LWFChestChance.m in Sources */ = {isa = PBXBuildFile; fileRef = 320976181B498D730022B331 /* LWFChestChance.m */; };
 		3219AB4B1A8ECEB600FE544C /* LWFSpinningAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 3219AB4A1A8ECEB600FE544C /* LWFSpinningAttack.m */; };
 		321A60601A6354DF0060517E /* door_open.png in Resources */ = {isa = PBXBuildFile; fileRef = 321A605F1A6354DF0060517E /* door_open.png */; };
 		321A60631A635DA50060517E /* blood.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 321A60621A635DA50060517E /* blood.atlas */; };
@@ -251,6 +252,8 @@
 		320976121B48BB810022B331 /* chest_chances.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chest_chances.json; sourceTree = "<group>"; };
 		320976141B48BBD80022B331 /* LWFChestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFChestFactory.h; sourceTree = "<group>"; };
 		320976151B48BBD80022B331 /* LWFChestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFChestFactory.m; sourceTree = "<group>"; };
+		320976171B498D730022B331 /* LWFChestChance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFChestChance.h; sourceTree = "<group>"; };
+		320976181B498D730022B331 /* LWFChestChance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFChestChance.m; sourceTree = "<group>"; };
 		3219AB491A8ECEB600FE544C /* LWFSpinningAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSpinningAttack.h; sourceTree = "<group>"; };
 		3219AB4A1A8ECEB600FE544C /* LWFSpinningAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFSpinningAttack.m; sourceTree = "<group>"; };
 		321A605F1A6354DF0060517E /* door_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door_open.png; sourceTree = "<group>"; };
@@ -948,6 +951,8 @@
 				32DB3B191B477BB90016E8B7 /* LWFChest.m */,
 				320976141B48BBD80022B331 /* LWFChestFactory.h */,
 				320976151B48BBD80022B331 /* LWFChestFactory.m */,
+				320976171B498D730022B331 /* LWFChestChance.h */,
+				320976181B498D730022B331 /* LWFChestChance.m */,
 			);
 			path = Chests;
 			sourceTree = "<group>";
@@ -1525,6 +1530,7 @@
 				328F5F8F1B3B6B8E00D136BA /* LWFLootChance.m in Sources */,
 				32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */,
 				32F09E291A48C947000B8797 /* LWFCombatSystem.m in Sources */,
+				320976191B498D730022B331 /* LWFChestChance.m in Sources */,
 				A7D8BEF01A1ABAFC005B0599 /* LWFRoomBuilder.m in Sources */,
 				32BEBFB91A42476D000C77AA /* LWFGameController.m in Sources */,
 				322DB6AA1A229A0C0085AC68 /* LWFCreatureBuilder.m in Sources */,

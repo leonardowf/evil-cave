@@ -9,7 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "LWFCaveGeneratorConstants.h"
 @class LWFCreature;
-
+@class LWFChest;
 @interface LWFTile : SKSpriteNode
 
 @property (getter = isWalkable, setter = setWalkable:) BOOL walkable;
@@ -21,6 +21,7 @@
 @property (nonatomic) BOOL isThereBloodAlready;
 @property (nonatomic) BOOL doorIsOpen;
 @property (nonatomic, strong) SKSpriteNode *fog;
+@property (nonatomic, strong) LWFChest *chest;
 
 @property (nonatomic, getter=isLit) BOOL lit;
 

@@ -20,6 +20,15 @@ typedef enum : NSUInteger {
 
 @implementation LWFChest
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.items = [NSMutableArray array];
+    }
+    return self;
+}
+
 - (BOOL)isOpen {
     return _chestState == LWFChestStateOpen;
 }
