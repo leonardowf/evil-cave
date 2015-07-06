@@ -41,4 +41,35 @@ typedef enum : NSUInteger {
     _chestState = LWFChestStateOpen;
 }
 
+#pragma mark - Animations
+
+- (void)startAnimation:(LWFChestAnimationType)animationType {
+    switch (animationType) {
+        case LWFChestAnimationTypeClosed:
+            [self startAnimationClosed];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)startAnimationClosed {
+    NSMutableArray *closedAtlasArray = [NSMutableArray array];
+    NSString *closedAtlasName = @"closed_chest";
+    SKTextureAtlas *closedAtlas = [SKTextureAtlas atlasNamed:closedAtlasName];
+    
+    NSUInteger numImages = closedAtlas.textureNames.count;
+    for (int i=1; i <= numImages; i++) {
+        NSString *textureName = [NSString stringWithFormat:@"%@_%d", closedAtlasName, i];
+        SKTexture *texture = [closedAtlas textureNamed:textureName];
+        texture.filteringMode = SKTextureFilteringNearest;
+        [closedAtlasArray addObject:texture];
+    }
+    
+    SKAction *animate = [SKAction animateWithTextures:closedAtlasArray timePerFrame:0.1f];
+    SKAction *action = [SKAction repeatActionForever:animate];
+    
+    [self runAction:action];
+}
+
 @end

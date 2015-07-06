@@ -7,6 +7,13 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+
+typedef enum : NSUInteger {
+    LWFChestAnimationTypeClosed,
+    LWFChestAnimationTypeOpen,
+    LWFChestAnimationTypeOpening,
+} LWFChestAnimationType;
+
 @class LWFTile;
 
 @interface LWFChest : SKSpriteNode
@@ -17,4 +24,6 @@
 - (BOOL)isOpen;
 - (BOOL)isClosed;
 - (void)open;
+- (void)startAnimation:(LWFChestAnimationType)animationType;
+
 @end

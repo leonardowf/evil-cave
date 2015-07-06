@@ -230,6 +230,7 @@
         tile.chest = chest;
         [chest setPosition:CGPointMake(tile.position.x, tile.position.y)];
         [self addChild:chest];
+        [chest startAnimation:LWFChestAnimationTypeClosed];
     }
 }
 

@@ -65,15 +65,22 @@ SINGLETON_FOR_CLASS(ChestFactory)
 }
 
 - (LWFChest *)buildChest {
-    LWFChest *chest = [[LWFChest alloc]initWithColor:[UIColor yellowColor]
-                                                size:CGSizeMake(TILE_SIZE, TILE_SIZE)];
+    SKTexture *texture = [SKTexture textureWithImageNamed:@"closed_chest"];
+    [texture setFilteringMode:SKTextureFilteringNearest];
+    
+    LWFChest *chest = [[LWFChest alloc]initWithTexture:texture];
+    chest.size = CGSizeMake(TILE_SIZE, TILE_SIZE);
     chest.items = [NSMutableArray array];
+    
     return chest;
 }
 
+/*  
+    procura uma ChestChance para construir
+    se não encontrar, pega a ChestChance mais alta que é menor que a procurada
+ */
 - (LWFChestChance *)findChestChanceForFloor:(NSInteger)floor {
-    // procura uma ChestChance para construir
-    // se não encontrar, pega a ChestChance mais alta que é menor que a procurada
+
     LWFChestChance *chestChance = [self.chestChances firstObject];
     return chestChance;
 }

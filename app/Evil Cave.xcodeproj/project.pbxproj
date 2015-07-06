@@ -18,6 +18,8 @@
 		320976131B48BB810022B331 /* chest_chances.json in Resources */ = {isa = PBXBuildFile; fileRef = 320976121B48BB810022B331 /* chest_chances.json */; };
 		320976161B48BBD80022B331 /* LWFChestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 320976151B48BBD80022B331 /* LWFChestFactory.m */; };
 		320976191B498D730022B331 /* LWFChestChance.m in Sources */ = {isa = PBXBuildFile; fileRef = 320976181B498D730022B331 /* LWFChestChance.m */; };
+		3209763B1B4A0A980022B331 /* closed_chest.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3209763A1B4A0A980022B331 /* closed_chest.atlas */; };
+		3209763D1B4A0BBD0022B331 /* closed_chest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3209763C1B4A0BBD0022B331 /* closed_chest.png */; };
 		3219AB4B1A8ECEB600FE544C /* LWFSpinningAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 3219AB4A1A8ECEB600FE544C /* LWFSpinningAttack.m */; };
 		321A60601A6354DF0060517E /* door_open.png in Resources */ = {isa = PBXBuildFile; fileRef = 321A605F1A6354DF0060517E /* door_open.png */; };
 		321A60631A635DA50060517E /* blood.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 321A60621A635DA50060517E /* blood.atlas */; };
@@ -254,6 +256,8 @@
 		320976151B48BBD80022B331 /* LWFChestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFChestFactory.m; sourceTree = "<group>"; };
 		320976171B498D730022B331 /* LWFChestChance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFChestChance.h; sourceTree = "<group>"; };
 		320976181B498D730022B331 /* LWFChestChance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFChestChance.m; sourceTree = "<group>"; };
+		3209763A1B4A0A980022B331 /* closed_chest.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = closed_chest.atlas; sourceTree = "<group>"; };
+		3209763C1B4A0BBD0022B331 /* closed_chest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closed_chest.png; sourceTree = "<group>"; };
 		3219AB491A8ECEB600FE544C /* LWFSpinningAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSpinningAttack.h; sourceTree = "<group>"; };
 		3219AB4A1A8ECEB600FE544C /* LWFSpinningAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFSpinningAttack.m; sourceTree = "<group>"; };
 		321A605F1A6354DF0060517E /* door_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door_open.png; sourceTree = "<group>"; };
@@ -618,6 +622,15 @@
 			path = HUD;
 			sourceTree = "<group>";
 		};
+		320976391B4A0A980022B331 /* Chest */ = {
+			isa = PBXGroup;
+			children = (
+				3209763C1B4A0BBD0022B331 /* closed_chest.png */,
+				3209763A1B4A0A980022B331 /* closed_chest.atlas */,
+			);
+			path = Chest;
+			sourceTree = "<group>";
+		};
 		321A60611A635DA50060517E /* Decorations */ = {
 			isa = PBXGroup;
 			children = (
@@ -930,6 +943,7 @@
 		32D50BC81A3D1FE9002D3098 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				320976391B4A0A980022B331 /* Chest */,
 				32B3E1AF1B06DA3B00CF2EA2 /* Tutorial */,
 				325373A21AF1B25C00BF0E43 /* Empty Equipment */,
 				32FB7D9F1AA0004B00AA4C7F /* Inventory */,
@@ -1337,6 +1351,7 @@
 				32BEC0141A48A7C4000C77AA /* creature_stats.json in Resources */,
 				32E2E6B61ACB6BAA00EA88DD /* poop_thrower_rat_standing_left.atlas in Resources */,
 				32DFD2A11AAFD7E400FB554B /* popup_bg@3x.png in Resources */,
+				3209763D1B4A0BBD0022B331 /* closed_chest.png in Resources */,
 				328F5F4E1B3B69B900D136BA /* Imported Layers@2x.png in Resources */,
 				32BEB1361ABE4EFA008950C0 /* Lifebar@2x.png in Resources */,
 				32E2E6A41ACA2E5300EA88DD /* inventory.png in Resources */,
@@ -1391,6 +1406,7 @@
 				A7F5BBA71A16EFBE005BAB63 /* Images.xcassets in Resources */,
 				32BEC00D1A4714DC000C77AA /* rat_standing_left.atlas in Resources */,
 				32BEBFEF1A470AAB000C77AA /* rock_tile.png in Resources */,
+				3209763B1B4A0A980022B331 /* closed_chest.atlas in Resources */,
 				32BEC0101A4714DC000C77AA /* rat_standing_right.png in Resources */,
 				32FB7DB41AA0004B00AA4C7F /* thumb.png in Resources */,
 				32DFD2AC1AAFD7FC00FB554B /* button_red@2x.png in Resources */,
