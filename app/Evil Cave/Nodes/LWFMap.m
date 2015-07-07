@@ -226,7 +226,7 @@
 
 - (void)chooseChestsPositions {
     for (LWFChest *chest in _floorDifficulty.chests) {
-        LWFTile *tile = [_tileMap randomEmptyWalkableTileNotInStartAndEnd];
+        LWFTile *tile = [_tileMap randomEmptyWalkableTileNotInStartAndEndWithWalkableAdjacents:4];
         tile.chest = chest;
         [chest setPosition:CGPointMake(tile.position.x, tile.position.y)];
         [self addChild:chest];

@@ -13,6 +13,7 @@
 #import "LWFRandomUtils.h"
 #import "LWFCaveGeneratorResult.h"
 #import "LWFRect.h"
+#import "LWFCaveGeneratorConstants.h"
 
 @implementation LWFTileMap
 
@@ -164,6 +165,29 @@
         
         if (!isInStart && !isInEnd) {
             return tile;
+        }
+    }
+}
+
+- (LWFTile *)randomEmptyWalkableTileNotInStartAndEndWithWalkableAdjacents:(NSInteger)numberOfAdjacentsRequired {
+    while(1) {
+        LWFTile *tile = [self randomEmptyWalkableTileNotInStartAndEnd];
+        if (tile.cellType != CaveCellTypeFloor) {
+            continue;
+        }
+        
+        NSArray *neighbors = [self neighborsForTile:tile];
+        
+        NSInteger numberOfAdjacents = 0;
+        
+        for (LWFTile *neighborTile in neighbors) {
+            if (neighborTile.cellType == CaveCellTypeFloor) {
+                numberOfAdjacents++;
+                
+                if (numberOfAdjacents >= numberOfAdjacentsRequired) {
+                    return tile;
+                }
+            }
         }
     }
 }

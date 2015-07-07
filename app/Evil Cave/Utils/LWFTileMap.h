@@ -29,5 +29,6 @@
 - (LWFTile *)randomEmptyWalkableTileNotInStartAndEnd;
 - (LWFTile *)closestNeighborFromTile:(LWFTile *)origin toTile:(LWFTile *)destiny;
 - (BOOL)isInBoundsTheTileWithX:(NSUInteger)x andY:(NSUInteger)y;
+- (LWFTile *)randomEmptyWalkableTileNotInStartAndEndWithWalkableAdjacents:(NSInteger)numberOfAdjacentsRequired;
 
 @end
