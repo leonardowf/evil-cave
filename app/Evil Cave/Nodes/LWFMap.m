@@ -228,6 +228,7 @@
     for (LWFChest *chest in _floorDifficulty.chests) {
         LWFTile *tile = [_tileMap randomEmptyWalkableTileNotInStartAndEndWithWalkableAdjacents:4];
         tile.chest = chest;
+        tile.chest.alpha = 0.0;
         [chest setPosition:CGPointMake(tile.position.x, tile.position.y)];
         [self addChild:chest];
         [chest startAnimation:LWFChestAnimationTypeClosed];

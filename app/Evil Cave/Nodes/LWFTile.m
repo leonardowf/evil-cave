@@ -14,6 +14,7 @@
 #import "LWFMap.h"
 #import "LWFItem.h"
 #import "LWFGold.h"
+#import "LWFChest.h"
 
 @interface LWFTile () {
     LWFMap *_map;
@@ -181,6 +182,9 @@
     
     action = [SKAction fadeAlphaTo:0.0 duration:0.3];
     [self.fog runAction:action];
+    
+    action = [SKAction fadeAlphaTo:1.0 duration:0.3];
+    [self.chest runAction:action];
     self.fog = nil;
 }
 
