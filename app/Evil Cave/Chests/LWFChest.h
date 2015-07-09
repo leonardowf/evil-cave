@@ -25,5 +25,7 @@ typedef enum : NSUInteger {
 - (BOOL)isClosed;
 - (void)open;
 - (void)startAnimation:(LWFChestAnimationType)animationType;
+- (BOOL)canInteract;
+- (void)interact;
 
 @end

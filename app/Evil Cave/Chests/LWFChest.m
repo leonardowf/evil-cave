@@ -41,6 +41,14 @@ typedef enum : NSUInteger {
     _chestState = LWFChestStateOpen;
 }
 
+- (BOOL)canInteract {
+    return true;
+}
+
+- (void)interact {
+    
+}
+
 #pragma mark - Animations
 
 - (void)startAnimation:(LWFChestAnimationType)animationType {

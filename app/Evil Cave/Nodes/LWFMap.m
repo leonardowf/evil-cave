@@ -155,6 +155,11 @@
 - (void)playerInteractionWithPoint:(CGPoint)point {
     LWFTile *tile = [self tileForPoint:point];
     
+    if ([tile.chest canInteract]) {
+        [tile.chest interact];
+        return;
+    }
+    
     if (self.currentItemRange != nil) {
         if ([self.currentItemRange tileIsOnRange:tile]) {
             NSLog(@"tá no range");
