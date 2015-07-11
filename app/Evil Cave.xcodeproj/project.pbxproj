@@ -58,6 +58,7 @@
 		3254E6D71A5CB49400BD7D13 /* door.png in Resources */ = {isa = PBXBuildFile; fileRef = 3254E6D61A5CB49400BD7D13 /* door.png */; };
 		326524EF1A75406B00EEA4B2 /* item_fine_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 326524ED1A75406B00EEA4B2 /* item_fine_sword.png */; };
 		326524F71A75ABAF00EEA4B2 /* item_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 326524F61A75ABAF00EEA4B2 /* item_sword.png */; };
+		327D3C751B50B17F0045D316 /* LWFLootExplosion.m in Sources */ = {isa = PBXBuildFile; fileRef = 327D3C741B50B17F0045D316 /* LWFLootExplosion.m */; };
 		32826C311AEDB296007400AD /* LWFOTE.m in Sources */ = {isa = PBXBuildFile; fileRef = 32826C301AEDB296007400AD /* LWFOTE.m */; };
 		32826C341AEDB2A8007400AD /* LWFOTEQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 32826C331AEDB2A8007400AD /* LWFOTEQueue.m */; };
 		328F5F361B36476000D136BA /* LWFAcidPotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F5F351B36476000D136BA /* LWFAcidPotion.m */; };
@@ -302,6 +303,8 @@
 		3254E6D61A5CB49400BD7D13 /* door.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door.png; sourceTree = "<group>"; };
 		326524ED1A75406B00EEA4B2 /* item_fine_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_fine_sword.png; sourceTree = "<group>"; };
 		326524F61A75ABAF00EEA4B2 /* item_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_sword.png; sourceTree = "<group>"; };
+		327D3C731B50B17F0045D316 /* LWFLootExplosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFLootExplosion.h; sourceTree = "<group>"; };
+		327D3C741B50B17F0045D316 /* LWFLootExplosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFLootExplosion.m; sourceTree = "<group>"; };
 		32826C2F1AEDB296007400AD /* LWFOTE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFOTE.h; sourceTree = "<group>"; };
 		32826C301AEDB296007400AD /* LWFOTE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFOTE.m; sourceTree = "<group>"; };
 		32826C321AEDB2A8007400AD /* LWFOTEQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFOTEQueue.h; sourceTree = "<group>"; };
@@ -1070,6 +1073,8 @@
 				32BEB13E1ABF76D3008950C0 /* LWFLifeDisplayer.h */,
 				32DB3B121B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.h */,
 				32DB3B131B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.m */,
+				327D3C731B50B17F0045D316 /* LWFLootExplosion.h */,
+				327D3C741B50B17F0045D316 /* LWFLootExplosion.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1531,6 +1536,7 @@
 				32E2E6BF1ACCC1D900EA88DD /* LWFPoopThrowAttack.m in Sources */,
 				A703875C1A17BD5E0053A9E6 /* LWFTile.m in Sources */,
 				328F5FA01B3B6C2F00D136BA /* LWFFloorDifficulty.m in Sources */,
+				327D3C751B50B17F0045D316 /* LWFLootExplosion.m in Sources */,
 				328F5F681B3B6A8700D136BA /* LWFPotionDescription.m in Sources */,
 				A703875F1A17BEB00053A9E6 /* LWFTileMap.m in Sources */,
 				32F831371A96B458007174F1 /* LWFAttackQueueCell.m in Sources */,

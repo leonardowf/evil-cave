@@ -12,6 +12,7 @@ typedef enum : NSUInteger {
 } LWFChestState;
 
 #import "LWFChest.h"
+#import "LWFLootExplosion.h"
 
 @interface LWFChest () {
     LWFChestState _chestState;
@@ -39,14 +40,18 @@ typedef enum : NSUInteger {
 
 - (void)open {
     _chestState = LWFChestStateOpen;
+    
+    [self startAnimation:LWFChestAnimationTypeOpening];
+    LWFLootExplosion *lootExplosion = [[LWFLootExplosion alloc]initWithItems:self.items];
+    [lootExplosion explodeWithCompletion:nil];
 }
 
 - (BOOL)canInteract {
-    return true;
+    return [self isClosed];
 }
 
 - (void)interact {
-    
+    [self open];
 }
 
 #pragma mark - Animations
