@@ -47,7 +47,7 @@ typedef enum : NSUInteger {
 }
 
 - (BOOL)canInteract {
-    return true;
+    return [self isClosed];
 }
 
 - (void)interact {

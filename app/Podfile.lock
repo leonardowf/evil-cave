@@ -2,24 +2,32 @@ PODS:
   - FLAnimatedImage (1.0.8)
   - pop (1.0.7)
   - SplunkMint-iOS (4.2)
+  - SpriteKit-Easing (0.1.0)
 
 DEPENDENCIES:
   - FLAnimatedImage (~> 1.0)
   - pop (from `https://github.com/facebook/pop.git`)
   - SplunkMint-iOS
+  - SpriteKit-Easing (from `https://github.com/leonardowf/SpriteKit-Easing.git`)
 
 EXTERNAL SOURCES:
   pop:
     :git: https://github.com/facebook/pop.git
+  SpriteKit-Easing:
+    :git: https://github.com/leonardowf/SpriteKit-Easing.git
 
 CHECKOUT OPTIONS:
   pop:
     :commit: 038f29b2de47db3fce803c5a180eee604ebe1977
     :git: https://github.com/facebook/pop.git
+  SpriteKit-Easing:
+    :commit: 91bc9232f22205a0e4b5ea82ac3f8b6e64a0e520
+    :git: https://github.com/leonardowf/SpriteKit-Easing.git
 
 SPEC CHECKSUMS:
   FLAnimatedImage: f9422f796135aff80d8c00b2afc48015bb746e24
   pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   SplunkMint-iOS: 058e5297f7cc8d335aea3dcaa8111eeb0f657371
+  SpriteKit-Easing: 869759e6c847b9d6c43eaad86c1d52c846e1a766
 
 COCOAPODS: 0.37.2

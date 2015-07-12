@@ -634,15 +634,8 @@
 
 - (void)diedWithCompletion:(void(^)(void))someBlock {
     NSArray *loot = [self getLoots];
-    NSArray *removedGrouped = [self.currentTile groupItemsForLoot:loot];
     
-    for (LWFItem *item in removedGrouped) {
-        [self.currentTile addChild:item];
-    }
-    
-    if (self.currentTile.creatureOnTile == self.player) {
-        [self.currentTile steppedOnTile:self.player];
-    }
+    [self.currentTile addLoot:loot animated:YES];
     
     [someBlock invoke];
 }

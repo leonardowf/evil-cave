@@ -101,6 +101,23 @@
     }
 }
 
+- (void)addLoot:(NSArray *)loot animated:(BOOL)animated {
+    NSArray *removedGrouped = [self groupItemsForLoot:loot];
+    
+    for (LWFItem *item in removedGrouped) {
+        
+        if (animated) {
+            [self addChild:item];
+        } else {
+            [self addChildNoAnimation:item];
+        }
+    }
+    
+    if ([self.creatureOnTile isKindOfClass:[LWFPlayer class]]) {
+        [self steppedOnTile:[LWFPlayer sharedPlayer]];
+    }
+}
+
 - (NSArray *)groupItemsForLoot:(NSArray *)loot {
     // agrupa todos os items no tile se necessário,
     // retornando o loot com os agrupados removidos
@@ -171,6 +188,14 @@
     if (fadeAction != nil) {
         [node runAction:fadeAction];
     }
+}
+
+- (void)addChildNoAnimation:(SKNode *)node {
+    if ([node isKindOfClass:[LWFItem class]]) {
+        [self.items addObject:node];
+    }
+    
+    [super addChild:node];
 }
 
 - (void)light {

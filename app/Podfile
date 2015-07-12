@@ -5,6 +5,7 @@ target 'Evil Cave' do
   pod 'FLAnimatedImage', '~> 1.0'
   pod 'SplunkMint-iOS'
   pod 'pop', :git => 'https://github.com/facebook/pop.git'
+  pod 'SpriteKit-Easing', :git => 'https://github.com/leonardowf/SpriteKit-Easing.git'
 end
 
 target 'Evil CaveTests' do
