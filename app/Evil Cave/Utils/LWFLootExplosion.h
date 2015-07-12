@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+@class LWFTile;
 
 @interface LWFLootExplosion : NSObject
 
 @property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) LWFTile *tile;
 
-- (instancetype)initWithItems:(NSArray *)items;
+- (instancetype)initWithItems:(NSArray *)items atTile:(LWFTile *)tile;
 - (void)explodeWithCompletion:(void(^)(void))someBlock;
 
 @end

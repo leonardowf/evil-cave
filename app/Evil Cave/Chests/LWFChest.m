@@ -42,12 +42,12 @@ typedef enum : NSUInteger {
     _chestState = LWFChestStateOpen;
     
     [self startAnimation:LWFChestAnimationTypeOpening];
-    LWFLootExplosion *lootExplosion = [[LWFLootExplosion alloc]initWithItems:self.items];
+    LWFLootExplosion *lootExplosion = [[LWFLootExplosion alloc]initWithItems:self.items atTile:self.tile];
     [lootExplosion explodeWithCompletion:nil];
 }
 
 - (BOOL)canInteract {
-    return [self isClosed];
+    return true;
 }
 
 - (void)interact {
