@@ -57,20 +57,7 @@
         
         [itemClones addObject:itemClone];
         
-        CGPoint origin = _tile.position;
-        CGPoint dest = tile.position;
-        
-        CGVector vector = CGVectorMake(dest.x, dest.y);
-        
-        SKAction *action = [SKEase MoveToWithNode:itemClone EaseFunction:CurveTypeSine Mode:EaseOut Time:0.2 ToVector:vector];
-        
-        SKAction *scale = [SKEase ScaleToWithNode:itemClone EaseFunction:CurveTypeSine Mode:EaseInOut Time:action.duration/2.0 ToValue:1.5];
-        
-        SKAction *scaleBack = [SKEase ScaleToWithNode:itemClone EaseFunction:CurveTypeSine Mode:EaseInOut Time:action.duration/2.0 ToValue:1.0];
-        
-        SKAction *scaleSeq = [SKAction sequence:@[scale, scaleBack]];
-        
-        action = [SKAction group:@[action, scaleSeq]];
+        SKAction *action = [self getExplosionAnimation:itemClone destinationTile:tile];
         
         [actions addObject:action];
     }
@@ -89,6 +76,33 @@
     }
     
     [someBlock invoke];
+}
+
+- (SKAction *)getExplosionAnimation:(SKSpriteNode *)item destinationTile:(LWFTile *)tile {
+    LWFRandomUtils *randomUtils = [LWFRandomUtils new];
+    CGFloat rotateCoefficient = [randomUtils randomFloatBetween:0 and:0.8];
+    CGFloat multiplier = rotateCoefficient > 0.5 ? -1 : 1;
+    
+    CGPoint dest = tile.position;
+    
+    item.xScale = 1.5;
+    item.yScale = 1.5;
+    
+    item.zRotation = rotateCoefficient * M_PI;
+    
+    CGVector vector = CGVectorMake(dest.x, dest.y);
+    
+    SKAction *action = [SKEase MoveToWithNode:item EaseFunction:CurveTypeSine Mode:EaseOut Time:0.6 ToVector:vector];
+    
+    SKAction *scale = [SKAction scaleBy:0.666 duration:action.duration/0.9];
+    
+    SKAction *scaleSeq = [SKAction sequence:@[scale]];
+    
+    SKAction *rotate = [SKAction rotateByAngle:(multiplier * 2 * M_PI - item.zRotation) duration:action.duration];
+    
+    action = [SKAction group:@[action, scaleSeq, rotate]];
+    
+    return action;
 }
 
 - (NSArray *)getAvailableTilesForLoot {
