@@ -71,6 +71,26 @@
 
 - (void)testIfFactoryBringsNotNil {
     NSArray *chests = [_chestFactory getChestsForFloor:1];
+    
+    XCTAssertNotNil(chests);
+}
+
+- (void)testIfFactoryBringsBiggestFloorChestChance {
+    NSMutableArray *chestChances = [NSMutableArray array];
+    
+    for (NSInteger i = 1; i <= 10; i++) {
+        LWFChestChance *chestChance = [LWFChestChance new];
+        chestChance.floor = i;
+        [chestChances addObject:chestChance];
+    }
+    
+    _chestFactory.chestChances = chestChances;
+    
+    LWFChestChance *chestChance = [_chestFactory findChestChanceForFloor:chestChances.count + 1];
+    
+    LWFChestChance *lastChestChance = (LWFChestChance *)chestChances.lastObject;
+    
+    XCTAssertEqual(chestChance.floor, lastChestChance.floor);
 }
 
 @end

@@ -75,8 +75,8 @@ SINGLETON_FOR_CLASS(ChestFactory)
     return chest;
 }
 
-/*  
-    procura uma ChestChance para construir
+/**
+    Procura uma ChestChance para construir
     se não encontrar, pega a ChestChance mais alta que é menor que a procurada
  */
 - (LWFChestChance *)findChestChanceForFloor:(NSInteger)floor {

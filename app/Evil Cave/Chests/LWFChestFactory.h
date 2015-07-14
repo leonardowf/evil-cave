@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class LWFChestChance;
 
 @interface LWFChestFactory : NSObject
 
@@ -14,5 +15,6 @@
 
 + (id) sharedChestFactory;
 - (NSArray *)getChestsForFloor:(NSInteger)floor;
+- (LWFChestChance *)findChestChanceForFloor:(NSInteger)floor;
 
 @end
