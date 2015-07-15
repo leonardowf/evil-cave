@@ -93,4 +93,42 @@
     XCTAssertEqual(chestChance.floor, lastChestChance.floor);
 }
 
+- (void)testIfFactoryBringsBiggestMiddleFloorChestChance {
+    NSMutableArray *chestChances = [NSMutableArray array];
+    
+    for (NSInteger i = 1; i <= 10; i++) {
+        if (i == 5) {
+            continue;
+        }
+        
+        LWFChestChance *chestChance = [LWFChestChance new];
+        chestChance.floor = i;
+        [chestChances addObject:chestChance];
+    }
+    
+    _chestFactory.chestChances = chestChances;
+    
+    LWFChestChance *chestChance = [_chestFactory findChestChanceForFloor:5];
+    
+    XCTAssertEqual(chestChance.floor, 4);
+}
+
+- (void)testIfFactoryBringsCorrectFloor {
+    NSMutableArray *chestChances = [NSMutableArray array];
+    
+    for (NSInteger i = 1; i <= 10; i++) {
+        LWFChestChance *chestChance = [LWFChestChance new];
+        chestChance.floor = i;
+        [chestChances addObject:chestChance];
+    }
+    
+    _chestFactory.chestChances = chestChances;
+    
+    LWFChestChance *chestChance = [_chestFactory findChestChanceForFloor:5];
+    LWFChestChance *correctChest = chestChances[4];
+    
+    
+    XCTAssertEqual(chestChance.floor, correctChest.floor);
+}
+
 @end

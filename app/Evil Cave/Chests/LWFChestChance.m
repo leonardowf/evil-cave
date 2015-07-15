@@ -53,4 +53,11 @@
     return amountRespawned;
 }
 
+- (NSComparisonResult)compare:(LWFChestChance *)otherObject {
+    NSNumber *myFloor = [NSNumber numberWithInteger:self.floor];
+    NSNumber *otherFloor = [NSNumber numberWithInteger:otherObject.floor];
+    
+    return [myFloor compare:otherFloor];
+}
+
 @end

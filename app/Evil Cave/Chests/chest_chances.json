@@ -19,4 +19,13 @@
 	"loot_chances": [
 		{ "name": "sword", "chance": 10, "quantity": 1 }
 	]
-},]
+},
+{
+	"floor": 3,
+	"chance": 100,
+	"quantity": 2,
+	"loot_chances": [
+		{ "name": "motherfucking_sword", "chance": 10, "quantity": 1 },
+		{ "name": "gold", "chance": 100, "quantity": 1000 }
+	]
+}]

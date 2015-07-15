@@ -33,7 +33,11 @@ SINGLETON_FOR_CLASS(ChestFactory)
         LWFChestChance *chestChance = [[LWFChestChance alloc]initWithDictionary:dict];
         [chestChances addObject:chestChance];
     }
-    self.chestChances = chestChances;
+    
+    // Garante que as chances estão ordenadas pelo .floor
+    NSArray *sortedArray = [chestChances sortedArrayUsingSelector:@selector(compare:)];
+    
+    self.chestChances = sortedArray;
 }
 
 - (NSArray *)getChestsForFloor:(NSInteger)floor {
@@ -80,9 +84,20 @@ SINGLETON_FOR_CLASS(ChestFactory)
     se não encontrar, pega a ChestChance mais alta que é menor que a procurada
  */
 - (LWFChestChance *)findChestChanceForFloor:(NSInteger)floor {
-
-    LWFChestChance *chestChance = [self.chestChances firstObject];
-    return chestChance;
+    NSInteger i = 0;
+    for (i = 0; i < self.chestChances.count; i++) {
+        LWFChestChance *chestChance = self.chestChances[i];
+        
+        if (floor < chestChance.floor) {
+            break;
+        }
+    }
+    
+    if (i == 0) {
+        return self.chestChances.firstObject;
+    } else {
+        return self.chestChances[i - 1];
+    }
 }
 
 - (NSDictionary *)getDictionaryFromJson {

@@ -17,4 +17,5 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 - (NSInteger)amountRespawned;
+- (NSComparisonResult)compare:(LWFChestChance *)otherObject;
 @end
