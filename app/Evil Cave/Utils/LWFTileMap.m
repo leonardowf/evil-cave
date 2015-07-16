@@ -71,6 +71,7 @@
                     [tile setWalkable:NO];
                 }
                 
+                tile.tileMap = self;
                 tile.cellType = cell.cellType;
                 tile.size = mapDimension.tileSize;
                 tile.position = CGPointMake(x * mapDimension.tileSize.height, y * mapDimension.tileSize.height);
@@ -190,6 +191,18 @@
             }
         }
     }
+}
+
+- (BOOL)tile:(LWFTile *)possibleAdjacent isAdjacentTo:(LWFTile *)target {
+    NSArray *adjacentsToTile = [self neighborsForTile:target];
+    
+    for (LWFTile *tile in adjacentsToTile) {
+        if (tile.x == possibleAdjacent.x && tile.y == possibleAdjacent.y) {
+            return YES;
+        }
+    }
+    
+    return NO;
 }
 
 - (LWFTile *)closestNeighborFromTile:(LWFTile *)origin toTile:(LWFTile *)destiny {

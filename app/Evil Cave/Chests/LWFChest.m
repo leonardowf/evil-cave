@@ -13,6 +13,10 @@ typedef enum : NSUInteger {
 
 #import "LWFChest.h"
 #import "LWFLootExplosion.h"
+#import "LWFTile.h"
+#import "LWFTileMap.h"
+#import "LWFPlayer.h"
+#import "LWFGameController.h"
 
 @interface LWFChest () {
     LWFChestState _chestState;
@@ -47,7 +51,11 @@ typedef enum : NSUInteger {
 }
 
 - (BOOL)canInteract {
-    return [self isClosed];
+    LWFPlayer *player = [LWFPlayer sharedPlayer];
+    LWFTileMap *tileMap = [[LWFGameController sharedGameController] tileMap];
+    BOOL playerAdjacent = [tileMap tile:player.currentTile isAdjacentTo:self.tile];
+    
+    return [self isClosed] && playerAdjacent;
 }
 
 - (void)interact {

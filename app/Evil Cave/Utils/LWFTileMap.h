@@ -22,6 +22,7 @@
 @property (nonatomic, strong) LWFRect *endingRoom;
 @property (nonatomic, strong) LWFMapDimension *mapDimension;
 
+
 - (instancetype)initWithMapDimension:(LWFMapDimension *)mapDimension;
 - (LWFTile *)tileForVertical:(NSInteger)vertical andHorizontal:(NSInteger)horizontal;
 - (NSArray *)neighborsForTile:(LWFTile *)tile;
@@ -30,5 +31,6 @@
 - (LWFTile *)closestNeighborFromTile:(LWFTile *)origin toTile:(LWFTile *)destiny;
 - (BOOL)isInBoundsTheTileWithX:(NSUInteger)x andY:(NSUInteger)y;
 - (LWFTile *)randomEmptyWalkableTileNotInStartAndEndWithWalkableAdjacents:(NSInteger)numberOfAdjacentsRequired;
+- (BOOL)tile:(LWFTile *)possibleAdjacent isAdjacentTo:(LWFTile *)target;
 
 @end
