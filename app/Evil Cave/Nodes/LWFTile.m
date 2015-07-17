@@ -153,7 +153,7 @@
     if (self.isThereBloodAlready) {
         return;
     }
-    
+
     self.isThereBloodAlready = YES;
     
     LWFRandomUtils *randomUtils = [[LWFRandomUtils alloc]init];

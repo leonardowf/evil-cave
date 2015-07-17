@@ -686,6 +686,13 @@
 			path = Items;
 			sourceTree = "<group>";
 		};
+		3275C3FC1B588FB700813994 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Particles;
+			sourceTree = "<group>";
+		};
 		32826C2E1AEDB27B007400AD /* Overtime Effects */ = {
 			isa = PBXGroup;
 			children = (
@@ -946,6 +953,7 @@
 		32D50BC81A3D1FE9002D3098 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				3275C3FC1B588FB700813994 /* Particles */,
 				320976391B4A0A980022B331 /* Chest */,
 				32B3E1AF1B06DA3B00CF2EA2 /* Tutorial */,
 				325373A21AF1B25C00BF0E43 /* Empty Equipment */,

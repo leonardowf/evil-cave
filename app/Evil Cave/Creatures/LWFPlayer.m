@@ -128,7 +128,6 @@ SINGLETON_FOR_CLASS(Player)
         return;
     }
     
-    
     [super willAttackTile:tile withAttack:attack completion:nil];
     
     [self startAttackingAnimation];

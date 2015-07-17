@@ -50,22 +50,22 @@
 }
 
 - (void)doFovStartX:(NSInteger)startX startY:(NSInteger)startY radius:(NSInteger)radius {
-    [self lightAtX:startX andY:startY];
-    
-    NSInteger oct = 0;
-    for (oct = 0; oct < 8; oct++) {
-        NSInteger m0 = [_mult[0][oct] integerValue];
-        NSInteger m1 = [_mult[1][oct] integerValue];
-        NSInteger m2 = [_mult[2][oct] integerValue];
-        NSInteger m3 = [_mult[3][oct] integerValue];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self lightAtX:startX andY:startY];
         
-        [self castLight:startX cy:startY row:1 lightStart:1.0 lightEnd:0.0 radius:radius xx:m0 xy:m1 yx:m2 yy:m3 anId:0];
-    }
-    
-    [self applyFog];
-    [_tilesLit removeAllObjects];
-    
-    
+        NSInteger oct = 0;
+        for (oct = 0; oct < 8; oct++) {
+            NSInteger m0 = [_mult[0][oct] integerValue];
+            NSInteger m1 = [_mult[1][oct] integerValue];
+            NSInteger m2 = [_mult[2][oct] integerValue];
+            NSInteger m3 = [_mult[3][oct] integerValue];
+            
+            [self castLight:startX cy:startY row:1 lightStart:1.0 lightEnd:0.0 radius:radius xx:m0 xy:m1 yx:m2 yy:m3 anId:0];
+        }
+        
+        [self applyFog];
+        [_tilesLit removeAllObjects];
+    });
 }
 
 - (void)applyFog {
