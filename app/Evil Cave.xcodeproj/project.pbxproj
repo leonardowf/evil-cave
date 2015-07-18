@@ -203,6 +203,7 @@
 		A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = A70387581A17BC620053A9E6 /* LWFMapDimension.m */; };
 		A703875C1A17BD5E0053A9E6 /* LWFTile.m in Sources */ = {isa = PBXBuildFile; fileRef = A703875B1A17BD5E0053A9E6 /* LWFTile.m */; };
 		A703875F1A17BEB00053A9E6 /* LWFTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = A703875E1A17BEB00053A9E6 /* LWFTileMap.m */; };
+		A75046161B59DFB800EF5A2F /* LWFGameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = A75046151B59DFB800EF5A2F /* LWFGameOver.m */; };
 		A78443AC1A1EEF7B0029995D /* LWFHumbleBeeFindPath.m in Sources */ = {isa = PBXBuildFile; fileRef = A78443AB1A1EEF7B0029995D /* LWFHumbleBeeFindPath.m */; };
 		A78443B01A1EEFCC0029995D /* PathFindNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A78443AF1A1EEFCC0029995D /* PathFindNode.m */; };
 		A7D83B971A1D74F20054C022 /* LWFModelGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D83B961A1D74F20054C022 /* LWFModelGrid.m */; };
@@ -519,6 +520,8 @@
 		A703875B1A17BD5E0053A9E6 /* LWFTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFTile.m; sourceTree = "<group>"; };
 		A703875D1A17BEB00053A9E6 /* LWFTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFTileMap.h; sourceTree = "<group>"; };
 		A703875E1A17BEB00053A9E6 /* LWFTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFTileMap.m; sourceTree = "<group>"; };
+		A75046141B59DFB800EF5A2F /* LWFGameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFGameOver.h; sourceTree = "<group>"; };
+		A75046151B59DFB800EF5A2F /* LWFGameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFGameOver.m; sourceTree = "<group>"; };
 		A78443AA1A1EEF7B0029995D /* LWFHumbleBeeFindPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFHumbleBeeFindPath.h; sourceTree = "<group>"; };
 		A78443AB1A1EEF7B0029995D /* LWFHumbleBeeFindPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFHumbleBeeFindPath.m; sourceTree = "<group>"; };
 		A78443AE1A1EEFCC0029995D /* PathFindNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathFindNode.h; sourceTree = "<group>"; };
@@ -1087,6 +1090,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		A75046131B59DF9100EF5A2F /* Game Over */ = {
+			isa = PBXGroup;
+			children = (
+				A75046141B59DFB800EF5A2F /* LWFGameOver.h */,
+				A75046151B59DFB800EF5A2F /* LWFGameOver.m */,
+			);
+			path = "Game Over";
+			sourceTree = "<group>";
+		};
 		A78443AD1A1EEFAA0029995D /* humblebee */ = {
 			isa = PBXGroup;
 			children = (
@@ -1171,6 +1183,7 @@
 		A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */ = {
 			isa = PBXGroup;
 			children = (
+				A75046131B59DF9100EF5A2F /* Game Over */,
 				32DB3B171B477B9B0016E8B7 /* Chests */,
 				328F5FD51B3B6FA600D136BA /* Creatures */,
 				328F5F9A1B3B6C2F00D136BA /* Difficulty Configurations */,
@@ -1579,6 +1592,7 @@
 				A7F5BBA01A16EFBD005BAB63 /* LWFViewController.m in Sources */,
 				32F09E2C1A48E6B4000B8797 /* LWFCombatOutput.m in Sources */,
 				A7F5BBD11A16F831005BAB63 /* LWFMap.m in Sources */,
+				A75046161B59DFB800EF5A2F /* LWFGameOver.m in Sources */,
 				32D50BD31A3DFDF3002D3098 /* LWFPointObject.m in Sources */,
 				A78443AC1A1EEF7B0029995D /* LWFHumbleBeeFindPath.m in Sources */,
 				32F831341A96A96B007174F1 /* LWFAttackQueue.m in Sources */,
