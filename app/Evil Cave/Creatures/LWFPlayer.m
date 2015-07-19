@@ -20,6 +20,7 @@
 #import "LWFOTEQueue.h"
 #import "LWFOTESpinningCooldown.h"
 #import "LWFGold.h"
+#import "LWFGameOver.h"
 
 @interface LWFPlayer () {
     LWFCreature *_lockedTarget;
@@ -168,6 +169,11 @@ SINGLETON_FOR_CLASS(Player)
 
 - (NSArray *)getDyingFramesAnimation {
     return nil;
+}
+
+- (void)diedWithCompletion:(void (^)(void))someBlock {
+    LWFGameOver *gameOver = [LWFGameOver sharedGameOver];
+    [gameOver start];
 }
 
 - (void)cancelPreExistingActions {

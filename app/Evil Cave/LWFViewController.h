@@ -31,6 +31,7 @@
 // inventory
 @property (weak, nonatomic) IBOutlet UIView *viewInventoryContainer;
 @property (weak, nonatomic) IBOutlet UIView *viewInventoryOverlay;
+@property (weak, nonatomic) IBOutlet UIView *viewInventoryButton;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewInventoryBackground;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewWeapon;
@@ -62,12 +63,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelGold;
 
 // log
+@property (weak, nonatomic) IBOutlet UIView *viewLogContainer;
 @property (weak, nonatomic) IBOutlet UILabel *labelLogLine3;
 @property (weak, nonatomic) IBOutlet UILabel *labelLogLine2;
 @property (weak, nonatomic) IBOutlet UILabel *labelLogLine1;
 
 // special attack
 @property (weak, nonatomic) IBOutlet UILabel *labelSpecialAttackCooldown;
-
+@property (weak, nonatomic) IBOutlet UIView *viewSpecialAttackButton;
 
 @end

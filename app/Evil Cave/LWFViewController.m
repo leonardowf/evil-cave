@@ -20,6 +20,7 @@
 #import "LWFEquipment.h"
 
 #import "LWFTutorial.h"
+#import "LWFGameController.h"
 
 #import "QuartzCore/QuartzCore.h"
 #import <pop/POP.h>
@@ -30,8 +31,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.viewTutorial setDelegate:self];
     
-    [self.viewTutorial setDelegate:self];    
+    LWFGameController *gameController = [LWFGameController sharedGameController];
+    gameController.rootController = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated {

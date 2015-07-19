@@ -18,10 +18,10 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   pop:
-    :commit: 038f29b2de47db3fce803c5a180eee604ebe1977
+    :commit: 27793516fc16079843e8683cf3abcd8b73b5475d
     :git: https://github.com/facebook/pop.git
   SpriteKit-Easing:
-    :commit: 91bc9232f22205a0e4b5ea82ac3f8b6e64a0e520
+    :commit: ad34d3ebcf04a047fde9a01f35f76149fd4321a0
     :git: https://github.com/leonardowf/SpriteKit-Easing.git
 
 SPEC CHECKSUMS:
@@ -30,4 +30,4 @@ SPEC CHECKSUMS:
   SplunkMint-iOS: 058e5297f7cc8d335aea3dcaa8111eeb0f657371
   SpriteKit-Easing: 869759e6c847b9d6c43eaad86c1d52c846e1a766
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.37.1

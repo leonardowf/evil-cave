@@ -14,9 +14,11 @@
 @class LWFAttacksBuilder;
 @class LWFItemPrototypeFactory;
 @class LWFLootChanceFactory;
+@class LWFViewController;
 
 @interface LWFGameController : NSObject
 
+@property (nonatomic, strong) LWFViewController *rootController;
 @property (nonatomic, strong) LWFMap *map;
 @property (nonatomic, strong) LWFTileMap *tileMap;
 @property (nonatomic, strong) LWFItemPrototypeFactory *itemPrototypeFactory;

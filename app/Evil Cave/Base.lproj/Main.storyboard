@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LVB-YS-i5n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LVB-YS-i5n">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="296-NC-TaJ" userLabel="item preview">
-                                <rect key="frame" x="320" y="370" width="150" height="117.5"/>
+                                <rect key="frame" x="320" y="370" width="150" height="118"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="item_preview_top.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Qh-tn-RF3">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="10"/>
@@ -46,7 +46,7 @@
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="item_preview_middle.png" translatesAutoresizingMaskIntoConstraints="NO" id="tmS-aK-BIP">
-                                        <rect key="frame" x="0.0" y="10" width="150" height="97.5"/>
+                                        <rect key="frame" x="0.0" y="10" width="150" height="98"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="item_preview_bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="jXP-rM-hgp">
                                         <rect key="frame" x="0.0" y="107" width="150" height="10"/>
@@ -55,7 +55,7 @@
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6QM-nM-pKS">
-                                        <rect key="frame" x="0.0" y="10" width="150" height="107.5"/>
+                                        <rect key="frame" x="0.0" y="10" width="150" height="108"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="item_fine_sword.png" translatesAutoresizingMaskIntoConstraints="NO" id="0cY-KH-aVb">
                                                 <rect key="frame" x="10" y="0.0" width="30" height="30"/>
@@ -77,19 +77,19 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdV-q5-UXP">
-                                                <rect key="frame" x="10" y="38" width="130" height="11.5"/>
+                                                <rect key="frame" x="10" y="38" width="130" height="12"/>
                                                 <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="12"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRV-jE-tZ0">
-                                                <rect key="frame" x="10" y="49" width="130" height="11.5"/>
+                                                <rect key="frame" x="10" y="49" width="130" height="12"/>
                                                 <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="12"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBB-io-SUM">
-                                                <rect key="frame" x="10" y="61" width="130" height="11.5"/>
+                                                <rect key="frame" x="10" y="61" width="130" height="12"/>
                                                 <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="12"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -927,8 +927,11 @@
                         <outlet property="labelSpecialAttackCooldown" destination="D0Y-HF-1lD" id="AEf-Bj-h1v"/>
                         <outlet property="labelStrength" destination="MdV-q5-UXP" id="WGQ-NW-EL9"/>
                         <outlet property="rightConstraint" destination="2t2-QB-Kbp" id="2tx-de-n7L"/>
+                        <outlet property="viewInventoryButton" destination="cw0-2s-On6" id="lQB-uK-cdC"/>
                         <outlet property="viewInventoryContainer" destination="gfA-Uw-d4k" id="kxO-wg-ae1"/>
                         <outlet property="viewInventoryOverlay" destination="lmD-T8-41z" id="NZy-tr-JfB"/>
+                        <outlet property="viewLogContainer" destination="FgX-lQ-npQ" id="2Mu-6D-wP1"/>
+                        <outlet property="viewSpecialAttackButton" destination="Pgk-fA-6RV" id="RW6-R0-YCS"/>
                         <outlet property="viewTutorial" destination="8q5-Rk-klS" id="022-SM-Upc"/>
                     </connections>
                 </viewController>
