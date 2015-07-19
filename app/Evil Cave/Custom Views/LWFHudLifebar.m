@@ -124,11 +124,10 @@ SINGLETON_FOR_CLASS(HudLifeBar)
     _colors = colorArray;
 }
 
-- (void)draw {
-    // 100% - stats.maxHP
-    // x% - stats.currentHP
-    
+- (void)draw {    
     CGFloat currentPercent = (100.0 * self.stats.currentHP) / self.stats.maxHP;
+    
+    currentPercent = currentPercent < 0 ? 0 : currentPercent;
     self.lifeDisplayerConstraint.constant = currentPercent;
     
     NSInteger index = currentPercent;

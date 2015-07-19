@@ -13,6 +13,8 @@
 #import "LWFTile.h"
 #import "LWFViewController.h"
 #import "LWFHudLifebar.h"
+#import "LWFPlayer.h"
+#import "LWFGameOverTitle.h"
 
 @implementation LWFGameOver
 
@@ -21,6 +23,7 @@ SINGLETON_FOR_CLASS(GameOver)
 - (void)start {
     [self addBlackOverlay];
     [self removeHUDElements];
+    [self addGameOverTitle];
 }
 
 - (void)addBlackOverlay {
@@ -53,7 +56,14 @@ SINGLETON_FOR_CLASS(GameOver)
 }
 
 - (void)addGameOverTitle {
+    LWFGameController *gameController = [self getGameController];
     
+    
+    LWFGameOverTitle *title = [LWFGameOverTitle new];
+    LWFViewController *viewController = gameController.rootController;
+    
+    [title addToView:viewController.view];
+
 }
 
 - (void)displayAd {
