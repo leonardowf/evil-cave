@@ -15,19 +15,39 @@
 #import "LWFHudLifebar.h"
 #import "LWFPlayer.h"
 #import "LWFGameOverTitle.h"
+#import "LWFNotifications.h"
+#import <Chartboost/Chartboost.h>
 
 @implementation LWFGameOver
 
 SINGLETON_FOR_CLASS(GameOver)
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didDismissInterstitial) name:NotificationDidDismissInterstitial object:nil];
+    }
+    return self;
+}
+
 - (void)start {
+    
+    [self stopUserInteractions];
     [self addBlackOverlay];
     [self removeHUDElements];
     [self addGameOverTitle];
+    [self displayAd];
+}
+
+- (void)stopUserInteractions {
+    LWFGameController *gameController = [self getGameController];
+    LWFMap *map = gameController.map;
+    [map blockUserInteraction];
 }
 
 - (void)addBlackOverlay {
-    LWFGameController *gameController = [LWFGameController sharedGameController];
+    LWFGameController *gameController = [self getGameController];
     
     LWFMap *map = [gameController map];
     
@@ -58,7 +78,6 @@ SINGLETON_FOR_CLASS(GameOver)
 - (void)addGameOverTitle {
     LWFGameController *gameController = [self getGameController];
     
-    
     LWFGameOverTitle *title = [LWFGameOverTitle new];
     LWFViewController *viewController = gameController.rootController;
     
@@ -67,7 +86,7 @@ SINGLETON_FOR_CLASS(GameOver)
 }
 
 - (void)displayAd {
-    
+    [Chartboost showInterstitial:CBLocationHomeScreen];
 }
 
 - (void)displayActions {
@@ -76,6 +95,10 @@ SINGLETON_FOR_CLASS(GameOver)
 
 - (void)requestRestartGame {
     
+}
+
+- (void)didDismissInterstitial {
+    [self displayActions];
 }
 
 #pragma mark - Actions

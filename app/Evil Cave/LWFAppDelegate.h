@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Chartboost/Chartboost.h>
 
 @interface LWFAppDelegate : UIResponder <UIApplicationDelegate>
 

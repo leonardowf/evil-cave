@@ -8,13 +8,21 @@
 
 #import "LWFAppDelegate.h"
 #import <SplunkMint-iOS/SplunkMint-iOS.h>
+#import "LWFChartboostHandler.h"
+
+@interface LWFAppDelegate () {
+    LWFChartboostHandler *_chartBoostHandler;
+}
+
+@end
 
 @implementation LWFAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[Mint sharedInstance] initAndStartSession:@"6195a731"];
-    // Override point for customization after application launch.
+    _chartBoostHandler = [[LWFChartboostHandler alloc]init];
+    
     return YES;
 }
 							

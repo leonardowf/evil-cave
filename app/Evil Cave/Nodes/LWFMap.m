@@ -149,6 +149,10 @@
         return;
     }
     
+    if ([_player isDead]) {
+        return;
+    }
+    
     [self playerInteractionWithPoint:point];
 }
 
