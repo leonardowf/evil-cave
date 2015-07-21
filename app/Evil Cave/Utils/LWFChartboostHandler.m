@@ -28,7 +28,16 @@
 }
 
 - (void)didDismissInterstitial:(CBLocation)location {
-    [[NSNotificationCenter defaultCenter]postNotificationName:NotificationDidDismissInterstitial object:nil];
+    [self postNotification:NotificationDidDismissInterstitial withObject:nil];
+}
+
+- (void)didFailToLoadInterstitial:(CBLocation)location withError:(CBLoadError)error {
+    [self postNotification:NotificationInterstitalDidFail withObject:nil];
+    
+}
+
+- (void)postNotification:(NSString *)notificationName withObject:(id)object {
+    [[NSNotificationCenter defaultCenter]postNotificationName:notificationName object:object];
 }
 
 @end

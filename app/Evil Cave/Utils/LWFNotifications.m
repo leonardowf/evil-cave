@@ -9,3 +9,4 @@
 #import "LWFNotifications.h"
 
 NSString *const NotificationDidDismissInterstitial = @"NotificationDidDismissInterstitial";
+NSString *const NotificationInterstitalDidFail = @"NotificationInterstitalDidFail";

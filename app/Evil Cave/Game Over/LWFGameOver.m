@@ -26,18 +26,23 @@ SINGLETON_FOR_CLASS(GameOver)
 {
     self = [super init];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didDismissInterstitial) name:NotificationDidDismissInterstitial object:nil];
+        [self subscribeToNotifications];
     }
     return self;
 }
 
-- (void)start {
+- (void)subscribeToNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didDismissInterstitial) name:NotificationDidDismissInterstitial object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(interstitialDidFail) name:NotificationInterstitalDidFail object:nil];
+}
+
+- (void)start {
     [self stopUserInteractions];
     [self addBlackOverlay];
     [self removeHUDElements];
     [self addGameOverTitle];
-    [self displayAd];
+    [self triggerTimedAd];
 }
 
 - (void)stopUserInteractions {
@@ -85,8 +90,19 @@ SINGLETON_FOR_CLASS(GameOver)
 
 }
 
-- (void)displayAd {
+- (void)triggerTimedAd {
+    [NSTimer scheduledTimerWithTimeInterval:1.0
+                                     target:self
+                                   selector:@selector(displayAd)
+                                   userInfo:nil
+                                    repeats:NO];
+    
+    
     [Chartboost showInterstitial:CBLocationHomeScreen];
+}
+
+- (void)displayAd {
+    
 }
 
 - (void)displayActions {
@@ -98,6 +114,10 @@ SINGLETON_FOR_CLASS(GameOver)
 }
 
 - (void)didDismissInterstitial {
+    [self displayActions];
+}
+
+- (void)interstitialDidFail {
     [self displayActions];
 }
 
