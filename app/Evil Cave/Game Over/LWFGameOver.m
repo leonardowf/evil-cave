@@ -16,7 +16,14 @@
 #import "LWFPlayer.h"
 #import "LWFGameOverTitle.h"
 #import "LWFNotifications.h"
+#import "LWFGameOverStats.h"
 #import <Chartboost/Chartboost.h>
+
+@interface LWFGameOver () {
+    LWFGameOverTitle *_title;
+}
+
+@end
 
 @implementation LWFGameOver
 
@@ -43,6 +50,11 @@ SINGLETON_FOR_CLASS(GameOver)
     [self removeHUDElements];
     [self addGameOverTitle];
     [self triggerTimedAd];
+}
+
+- (void)displayAfterAd {
+    [self displayStats];
+    [self displayActions];
 }
 
 - (void)stopUserInteractions {
@@ -83,10 +95,10 @@ SINGLETON_FOR_CLASS(GameOver)
 - (void)addGameOverTitle {
     LWFGameController *gameController = [self getGameController];
     
-    LWFGameOverTitle *title = [LWFGameOverTitle new];
+    _title = [LWFGameOverTitle new];
     LWFViewController *viewController = gameController.rootController;
     
-    [title addToView:viewController.view];
+    [_title addToView:viewController.view];
 
 }
 
@@ -96,13 +108,38 @@ SINGLETON_FOR_CLASS(GameOver)
                                    selector:@selector(displayAd)
                                    userInfo:nil
                                     repeats:NO];
-    
-    
-    [Chartboost showInterstitial:CBLocationHomeScreen];
 }
 
 - (void)displayAd {
+    [Chartboost showInterstitial:CBLocationHomeScreen];
+}
+
+- (void)didDismissInterstitial {
+    [self displayAfterAd];
+}
+
+- (void)interstitialDidFail {
+    [self displayAfterAd];
+}
+
+- (void)displayStats {
+    LWFGameOverStats *gameOverStats = [[LWFGameOverStats alloc]init];
+    LWFGameController *gameController = [self getGameController];
+    LWFViewController *viewController = gameController.rootController;
     
+    gameOverStats.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [viewController.view addSubview:gameOverStats.containerView];
+    
+    NSLayoutConstraint *c1 = [NSLayoutConstraint constraintWithItem:_title.containerView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:gameOverStats.containerView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
+    
+        NSLayoutConstraint *c2 = [NSLayoutConstraint constraintWithItem:_title.containerView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:gameOverStats.containerView attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
+    
+        NSLayoutConstraint *c3 = [NSLayoutConstraint constraintWithItem:_title.containerView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:gameOverStats.containerView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0];
+    
+    [viewController.view addConstraint:c1];
+    [viewController.view addConstraint:c2];
+    [viewController.view addConstraint:c3];
 }
 
 - (void)displayActions {
@@ -111,14 +148,6 @@ SINGLETON_FOR_CLASS(GameOver)
 
 - (void)requestRestartGame {
     
-}
-
-- (void)didDismissInterstitial {
-    [self displayActions];
-}
-
-- (void)interstitialDidFail {
-    [self displayActions];
 }
 
 #pragma mark - Actions

@@ -60,6 +60,8 @@
 		326524F71A75ABAF00EEA4B2 /* item_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 326524F61A75ABAF00EEA4B2 /* item_sword.png */; };
 		3275C4031B5C9C4800813994 /* LWFChartboostHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3275C4021B5C9C4800813994 /* LWFChartboostHandler.m */; };
 		3275C4061B5C9E9100813994 /* LWFNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 3275C4051B5C9E9100813994 /* LWFNotifications.m */; };
+		3275C4081B5F25AF00813994 /* GameOverStats.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3275C4071B5F25AF00813994 /* GameOverStats.xib */; };
+		3275C40B1B5F25D900813994 /* LWFGameOverStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 3275C40A1B5F25D900813994 /* LWFGameOverStats.m */; };
 		327D3C751B50B17F0045D316 /* LWFLootExplosion.m in Sources */ = {isa = PBXBuildFile; fileRef = 327D3C741B50B17F0045D316 /* LWFLootExplosion.m */; };
 		32826C311AEDB296007400AD /* LWFOTE.m in Sources */ = {isa = PBXBuildFile; fileRef = 32826C301AEDB296007400AD /* LWFOTE.m */; };
 		32826C341AEDB2A8007400AD /* LWFOTEQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 32826C331AEDB2A8007400AD /* LWFOTEQueue.m */; };
@@ -312,6 +314,9 @@
 		3275C4021B5C9C4800813994 /* LWFChartboostHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFChartboostHandler.m; sourceTree = "<group>"; };
 		3275C4041B5C9E9100813994 /* LWFNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFNotifications.h; sourceTree = "<group>"; };
 		3275C4051B5C9E9100813994 /* LWFNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFNotifications.m; sourceTree = "<group>"; };
+		3275C4071B5F25AF00813994 /* GameOverStats.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameOverStats.xib; sourceTree = "<group>"; };
+		3275C4091B5F25D900813994 /* LWFGameOverStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFGameOverStats.h; sourceTree = "<group>"; };
+		3275C40A1B5F25D900813994 /* LWFGameOverStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFGameOverStats.m; sourceTree = "<group>"; };
 		327D3C731B50B17F0045D316 /* LWFLootExplosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFLootExplosion.h; sourceTree = "<group>"; };
 		327D3C741B50B17F0045D316 /* LWFLootExplosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFLootExplosion.m; sourceTree = "<group>"; };
 		32826C2F1AEDB296007400AD /* LWFOTE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFOTE.h; sourceTree = "<group>"; };
@@ -1113,6 +1118,9 @@
 				A7D46D7F1B5C011B00EBA942 /* GameOverTitle.xib */,
 				A7D46D811B5C01A300EBA942 /* LWFGameOverTitle.h */,
 				A7D46D821B5C01A300EBA942 /* LWFGameOverTitle.m */,
+				3275C4071B5F25AF00813994 /* GameOverStats.xib */,
+				3275C4091B5F25D900813994 /* LWFGameOverStats.h */,
+				3275C40A1B5F25D900813994 /* LWFGameOverStats.m */,
 			);
 			path = "Game Over";
 			sourceTree = "<group>";
@@ -1390,6 +1398,7 @@
 				328F5F6A1B3B6A8700D136BA /* PotionDescription.xib in Resources */,
 				3245278B1A4DCBFB00AFF9A7 /* warrior_attacking_left.atlas in Resources */,
 				32E2E6B71ACB6BAA00EA88DD /* poop_thrower_rat_standing_left.png in Resources */,
+				3275C4081B5F25AF00813994 /* GameOverStats.xib in Resources */,
 				32F09E311A48F4FA000B8797 /* Munro.ttf in Resources */,
 				328F5F631B3B6A8700D136BA /* Lifebar.xib in Resources */,
 				325373B61AF1B25C00BF0E43 /* ring_empty@2x.png in Resources */,
@@ -1544,6 +1553,7 @@
 				32E2E6C41ACF5ED500EA88DD /* LWFVisibilityShadowCasting.m in Sources */,
 				32CCF02F1B4230C100AA133D /* LWFCaveGeneratorResult.m in Sources */,
 				32FFE8411A2C0BF0003D02A4 /* LWFMelee.m in Sources */,
+				3275C40B1B5F25D900813994 /* LWFGameOverStats.m in Sources */,
 				3245279D1A4EF1DB00AFF9A7 /* LWFLifeBar.m in Sources */,
 				32D08C8E1AAA731900441A51 /* LWFImageViewHolder.m in Sources */,
 				A7F5BBA31A16EFBE005BAB63 /* LWFMyScene.m in Sources */,
