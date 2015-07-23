@@ -45,9 +45,10 @@ typedef enum : NSUInteger {
 - (void)open {
     _chestState = LWFChestStateOpen;
     
-    [self startAnimation:LWFChestAnimationTypeOpening];
-    LWFLootExplosion *lootExplosion = [[LWFLootExplosion alloc]initWithItems:self.items atTile:self.tile];
-    [lootExplosion explodeWithCompletion:nil];
+    [self startAnimation:LWFChestAnimationTypeOpening completion:^{
+        LWFLootExplosion *lootExplosion = [[LWFLootExplosion alloc]initWithItems:self.items atTile:self.tile];
+        [lootExplosion explodeWithCompletion:nil];
+    }];
 }
 
 - (BOOL)canInteract {
@@ -64,11 +65,15 @@ typedef enum : NSUInteger {
 
 #pragma mark - Animations
 
-- (void)startAnimation:(LWFChestAnimationType)animationType {
+- (void)startAnimation:(LWFChestAnimationType)animationType completion:(void(^)(void))someBlock {
     switch (animationType) {
         case LWFChestAnimationTypeClosed:
             [self startAnimationClosed];
             break;
+        case LWFChestAnimationTypeOpening: {
+            [self startOpenAnimationWithCompletion:someBlock];
+            break;
+        }
         default:
             break;
     }
@@ -91,6 +96,29 @@ typedef enum : NSUInteger {
     SKAction *action = [SKAction repeatActionForever:animate];
     
     [self runAction:action];
+}
+
+// TODO: repetido
+- (void)startOpenAnimationWithCompletion:(void(^)(void))someBlock {
+    [self removeAllActions];
+    
+    NSMutableArray *closedAtlasArray = [NSMutableArray array];
+    NSString *closedAtlasName = @"opening_chest";
+    SKTextureAtlas *closedAtlas = [SKTextureAtlas atlasNamed:closedAtlasName];
+    
+    NSUInteger numImages = closedAtlas.textureNames.count;
+    for (int i=1; i <= numImages; i++) {
+        NSString *textureName = [NSString stringWithFormat:@"%@_%d", closedAtlasName, i];
+        SKTexture *texture = [closedAtlas textureNamed:textureName];
+        texture.filteringMode = SKTextureFilteringNearest;
+        [closedAtlasArray addObject:texture];
+    }
+    
+    SKTexture *texture = [SKTexture textureWithImageNamed:@"opened_chest"];
+    texture.filteringMode = SKTextureFilteringNearest;
+    SKAction *animate = [SKAction animateWithTextures:closedAtlasArray timePerFrame:0.5f];
+    
+    [self runAction:animate completion:someBlock];
 }
 
 @end

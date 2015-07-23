@@ -241,7 +241,7 @@
         tile.chest.tile = tile;
         [chest setPosition:CGPointMake(tile.position.x, tile.position.y)];
         [self addChild:chest];
-        [chest startAnimation:LWFChestAnimationTypeClosed];
+        [chest startAnimation:LWFChestAnimationTypeClosed completion:nil];
     }
 }
 
