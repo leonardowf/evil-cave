@@ -14,4 +14,5 @@
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UILabel *labelGold;
 
+- (void)addBelowView:(UIView *)view;
 @end

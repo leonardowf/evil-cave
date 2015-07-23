@@ -124,22 +124,9 @@ SINGLETON_FOR_CLASS(GameOver)
 
 - (void)displayStats {
     LWFGameOverStats *gameOverStats = [[LWFGameOverStats alloc]init];
-    LWFGameController *gameController = [self getGameController];
-    LWFViewController *viewController = gameController.rootController;
     
-    gameOverStats.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [viewController.view addSubview:gameOverStats.containerView];
-    
-    NSLayoutConstraint *c1 = [NSLayoutConstraint constraintWithItem:_title.containerView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:gameOverStats.containerView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
-    
-        NSLayoutConstraint *c2 = [NSLayoutConstraint constraintWithItem:_title.containerView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:gameOverStats.containerView attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
-    
-        NSLayoutConstraint *c3 = [NSLayoutConstraint constraintWithItem:_title.containerView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:gameOverStats.containerView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0];
-    
-    [viewController.view addConstraint:c1];
-    [viewController.view addConstraint:c2];
-    [viewController.view addConstraint:c3];
+    [gameOverStats addBelowView:_title.containerView];
+
 }
 
 - (void)displayActions {

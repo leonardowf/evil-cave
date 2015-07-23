@@ -42,4 +42,21 @@
     return _intrinsic;
 }
 
+- (void)addBelowView:(UIView *)view {
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    UIView *superView = view.superview;
+    
+    [superView addSubview:self.containerView];
+    
+    NSLayoutConstraint *c1 = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.containerView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
+    
+    NSLayoutConstraint *c2 = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.containerView attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
+    
+    NSLayoutConstraint *c3 = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.containerView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0];
+    
+    [superView addConstraint:c1];
+    [superView addConstraint:c2];
+    [superView addConstraint:c3];
+}
+
 @end
