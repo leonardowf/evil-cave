@@ -35,7 +35,7 @@
     
     LWFCreature *radioctive = [_builder buildWithType:LWFCreatureTypeRadioactiveRat];
     
-    [creatures addObject:poop];
+//    [creatures addObjects:poop];
     [creatures addObject:radioctive];
     
     self.creatures = creatures;

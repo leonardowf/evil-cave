@@ -116,7 +116,7 @@ typedef enum : NSUInteger {
     
     SKTexture *texture = [SKTexture textureWithImageNamed:@"opened_chest"];
     texture.filteringMode = SKTextureFilteringNearest;
-    SKAction *animate = [SKAction animateWithTextures:closedAtlasArray timePerFrame:0.5f];
+    SKAction *animate = [SKAction animateWithTextures:closedAtlasArray timePerFrame:0.2f];
     
     [self runAction:animate completion:someBlock];
 }
