@@ -17,5 +17,11 @@
     // Drawing code
 }
 */
+- (IBAction)didTapSkillTree:(id)sender {
+    
+}
 
+- (IBAction)didTapRestart:(id)sender {
+    
+}
 @end

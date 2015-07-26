@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface LWFGameOverButtons : UIView
+@property (strong, nonatomic) IBOutlet UIView *view;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIButton *restartButton;
+@property (weak, nonatomic) IBOutlet UIButton *skillTreeButton;
+
+
+- (IBAction)didTapRestart:(id)sender;
 
 @end

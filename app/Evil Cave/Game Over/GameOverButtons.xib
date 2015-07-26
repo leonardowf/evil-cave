@@ -2,18 +2,52 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LWFGameOverButtons">
+            <connections>
+                <outlet property="containerView" destination="xiw-xI-cna" id="ynG-7f-fEZ"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Wi0-FE-uHj"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xiw-xI-cna" userLabel="Container View">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <rect key="frame" x="186" y="275" width="228" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Na-DO-Cye" userLabel="RESTART">
+                            <rect key="frame" x="20" y="10" width="84" height="30"/>
+                            <state key="normal" title="RESTART">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="didTapRestart:" destination="-1" eventType="touchUpInside" id="Nd5-RC-m3P"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zw9-EZ-8tM" userLabel="SKILL TREE">
+                            <rect key="frame" x="124" y="10" width="84" height="30"/>
+                            <state key="normal" title="SKILL TREE">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="didTapSkillTree:" destination="-1" eventType="touchUpInside" id="YIv-63-tfL"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.3899194084" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="zw9-EZ-8tM" secondAttribute="trailing" constant="20" id="BEP-jq-TnG"/>
+                        <constraint firstItem="zw9-EZ-8tM" firstAttribute="leading" secondItem="5Na-DO-Cye" secondAttribute="trailing" constant="20" id="CmQ-nD-saT"/>
+                        <constraint firstItem="5Na-DO-Cye" firstAttribute="centerY" secondItem="zw9-EZ-8tM" secondAttribute="centerY" id="DZW-Np-oO1"/>
+                        <constraint firstItem="5Na-DO-Cye" firstAttribute="top" secondItem="xiw-xI-cna" secondAttribute="top" constant="10" id="M8D-HS-jM3"/>
+                        <constraint firstItem="5Na-DO-Cye" firstAttribute="leading" secondItem="xiw-xI-cna" secondAttribute="leading" constant="20" id="MFi-Sw-uOD"/>
+                        <constraint firstItem="5Na-DO-Cye" firstAttribute="width" secondItem="zw9-EZ-8tM" secondAttribute="width" id="jh6-7H-Xh2"/>
+                        <constraint firstAttribute="bottom" secondItem="5Na-DO-Cye" secondAttribute="bottom" constant="10" id="oyM-Sj-qD2"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -22,7 +56,17 @@
                 <constraint firstItem="xiw-xI-cna" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VMD-f3-4D0"/>
                 <constraint firstAttribute="bottom" secondItem="xiw-xI-cna" secondAttribute="bottom" id="aYX-p5-qR2"/>
                 <constraint firstAttribute="trailing" secondItem="xiw-xI-cna" secondAttribute="trailing" id="cUY-tS-cjs"/>
+                <constraint firstAttribute="centerY" secondItem="xiw-xI-cna" secondAttribute="centerY" id="fVo-yH-vi7"/>
+                <constraint firstAttribute="centerX" secondItem="xiw-xI-cna" secondAttribute="centerX" id="h3x-hh-lVB"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Fcs-Zx-gFR"/>
+                    <exclude reference="VMD-f3-4D0"/>
+                    <exclude reference="aYX-p5-qR2"/>
+                    <exclude reference="cUY-tS-cjs"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>
