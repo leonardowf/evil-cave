@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *restartButton;
 @property (weak, nonatomic) IBOutlet UIButton *skillTreeButton;
 
-
 - (IBAction)didTapRestart:(id)sender;
+- (void)addBelowView:(UIView *)view;
 
 @end

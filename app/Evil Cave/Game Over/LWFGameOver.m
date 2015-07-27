@@ -17,10 +17,15 @@
 #import "LWFGameOverTitle.h"
 #import "LWFNotifications.h"
 #import "LWFGameOverStats.h"
+#import "LWFGameOverButtons.h"
+
 #import <Chartboost/Chartboost.h>
 
 @interface LWFGameOver () {
     LWFGameOverTitle *_title;
+    LWFGameOverStats *_gameOverStats;
+    LWFGameOverButtons *_gameOverButtons;
+    
 }
 
 @end
@@ -123,14 +128,15 @@ SINGLETON_FOR_CLASS(GameOver)
 }
 
 - (void)displayStats {
-    LWFGameOverStats *gameOverStats = [[LWFGameOverStats alloc]init];
+    _gameOverStats = [[LWFGameOverStats alloc]init];
     
-    [gameOverStats addBelowView:_title.containerView];
-
+    [_gameOverStats addBelowView:_title.containerView];
 }
 
 - (void)displayActions {
+    _gameOverButtons = [[LWFGameOverButtons alloc]init];
     
+    [_gameOverButtons addBelowView:_gameOverStats.containerView];
 }
 
 - (void)requestRestartGame {
