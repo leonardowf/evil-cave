@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#include "LWFGameOverButtons.h"
 
-@interface LWFGameOver : NSObject
+@interface LWFGameOver : NSObject <LWFGameOverButtonsDelegate>
 
 + (id)sharedGameOver;
 - (void)start;

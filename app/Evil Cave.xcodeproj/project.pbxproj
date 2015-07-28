@@ -1124,15 +1124,15 @@
 		A75046131B59DF9100EF5A2F /* Game Over */ = {
 			isa = PBXGroup;
 			children = (
+				A7D46D7F1B5C011B00EBA942 /* GameOverTitle.xib */,
+				3275C4071B5F25AF00813994 /* GameOverStats.xib */,
+				3275C4121B63136A00813994 /* GameOverButtons.xib */,
 				A75046141B59DFB800EF5A2F /* LWFGameOver.h */,
 				A75046151B59DFB800EF5A2F /* LWFGameOver.m */,
-				A7D46D7F1B5C011B00EBA942 /* GameOverTitle.xib */,
 				A7D46D811B5C01A300EBA942 /* LWFGameOverTitle.h */,
 				A7D46D821B5C01A300EBA942 /* LWFGameOverTitle.m */,
-				3275C4071B5F25AF00813994 /* GameOverStats.xib */,
 				3275C4091B5F25D900813994 /* LWFGameOverStats.h */,
 				3275C40A1B5F25D900813994 /* LWFGameOverStats.m */,
-				3275C4121B63136A00813994 /* GameOverButtons.xib */,
 				3275C4141B6314C300813994 /* LWFGameOverButtons.h */,
 				3275C4151B6314C300813994 /* LWFGameOverButtons.m */,
 			);

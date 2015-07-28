@@ -135,6 +135,7 @@ SINGLETON_FOR_CLASS(GameOver)
 
 - (void)displayActions {
     _gameOverButtons = [[LWFGameOverButtons alloc]init];
+    _gameOverButtons.delegate = self;
     
     [_gameOverButtons addBelowView:_gameOverStats.containerView];
 }
@@ -153,6 +154,16 @@ SINGLETON_FOR_CLASS(GameOver)
 }
 
 - (void)didClickMainMenu {
+    
+}
+
+- (void)restart {
+    NSLog(@"restartando");
+}
+- (void)showSkillTree {
+    
+}
+- (void)share {
     
 }
 @end

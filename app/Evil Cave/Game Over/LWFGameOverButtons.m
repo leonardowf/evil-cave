@@ -39,11 +39,11 @@
 }
 
 - (IBAction)didTapSkillTree:(id)sender {
-    
+    [_delegate showSkillTree];
 }
 
 - (IBAction)didTapRestart:(id)sender {
-    
+    [_delegate restart];
 }
 
 - (void)addBelowView:(UIView *)view {
