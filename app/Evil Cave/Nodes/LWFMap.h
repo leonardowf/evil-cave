@@ -45,5 +45,6 @@
 
 - (void)blockUserInteraction;
 - (void)unblockUserInteraction;
+- (void)resetTouchQueue;
 
 @end

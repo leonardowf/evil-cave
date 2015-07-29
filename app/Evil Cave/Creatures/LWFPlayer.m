@@ -171,9 +171,11 @@ SINGLETON_FOR_CLASS(Player)
     return nil;
 }
 
-- (void)diedWithCompletion:(void (^)(void))someBlock {
+- (void)willDieWithCompletion:(void (^)(void))someBlock {
     LWFGameOver *gameOver = [LWFGameOver sharedGameOver];
     [gameOver start];
+    
+    [super willDieWithCompletion:someBlock];
 }
 
 - (void)cancelPreExistingActions {

@@ -157,6 +157,11 @@
 }
 
 - (void)playerInteractionWithPoint:(CGPoint)point {
+    LWFPlayer *player = [LWFPlayer sharedPlayer];
+    if ([player isDead]) {
+        return;
+    }
+    
     LWFTile *tile = [self tileForPoint:point];
     
     if ([tile.chest canInteract]) {
@@ -208,6 +213,10 @@
 
 - (void)movementRequestIsInvalid {
     _blockUserInteraction = NO;
+}
+
+- (void)resetTouchQueue {
+    _touchQueue = nil;
 }
 
 - (void)blockUserInteraction {

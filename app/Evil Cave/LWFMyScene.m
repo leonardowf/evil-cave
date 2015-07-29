@@ -49,6 +49,11 @@
                                                    object:nil];
 
         
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(restart)
+                                                     name:@"notificationRestartGame"
+                                                   object:nil];
+        
     }
     return self;
 }
@@ -94,6 +99,11 @@
         }];
     }];
     [self addChild:loadingNode];
+}
+
+- (void)restart {
+    _currentFloor = 0;
+    [self nextLevel];
 }
 
 -(void)update:(CFTimeInterval)currentTime {

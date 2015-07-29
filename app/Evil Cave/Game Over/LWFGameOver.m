@@ -18,6 +18,7 @@
 #import "LWFNotifications.h"
 #import "LWFGameOverStats.h"
 #import "LWFGameOverButtons.h"
+#import "LWFStats.h"
 
 #import <Chartboost/Chartboost.h>
 
@@ -100,11 +101,12 @@ SINGLETON_FOR_CLASS(GameOver)
 - (void)addGameOverTitle {
     LWFGameController *gameController = [self getGameController];
     
-    _title = [LWFGameOverTitle new];
-    LWFViewController *viewController = gameController.rootController;
-    
-    [_title addToView:viewController.view];
-
+    if (_title == nil) {
+        _title = [LWFGameOverTitle new];
+        LWFViewController *viewController = gameController.rootController;
+        
+        [_title addToView:viewController.view];
+    }
 }
 
 - (void)triggerTimedAd {
@@ -140,14 +142,26 @@ SINGLETON_FOR_CLASS(GameOver)
     [_gameOverButtons addBelowView:_gameOverStats.containerView];
 }
 
-- (void)requestRestartGame {
+- (void)resetGame {
+    LWFPlayer *player = [LWFPlayer sharedPlayer];
+    player.stats.currentHP = player.stats.maxHP;
+    [player statsChanged];
+}
+
+- (void)showHudElements {
+    LWFGameController *gameController = [self getGameController];
+    LWFViewController *rootController = gameController.rootController;
+    LWFHudLifebar *hudLifebar = [LWFHudLifebar sharedHudLifeBar];
     
+    // TODO: Animações
+    
+    rootController.viewSpecialAttackButton.hidden = NO;
+    rootController.viewInventoryButton.hidden = NO;
+    rootController.viewLogContainer.hidden = NO;
+    hudLifebar.containerView.hidden = NO;
 }
 
 #pragma mark - Actions
-- (void)didClickRetry {
-    
-}
 
 - (void)didClickSkillTree {
     
@@ -158,7 +172,20 @@ SINGLETON_FOR_CLASS(GameOver)
 }
 
 - (void)restart {
+    [self resetGame];
+    
+    [_title.containerView removeFromSuperview];
+    [_gameOverStats.containerView removeFromSuperview];
+    [_gameOverButtons.containerView removeFromSuperview];
+    
+    _title = nil;
+    _gameOverButtons = nil;
+    _gameOverButtons = nil;
+    
+    [self showHudElements];
+    
     NSLog(@"restartando");
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"notificationRestartGame" object:nil];
 }
 - (void)showSkillTree {
     
