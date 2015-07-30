@@ -25,6 +25,10 @@
     return self;
 }
 
+- (void)removeAll {
+    [_OTEs removeAllObjects];
+}
+
 - (void)addOTE:(LWFOTE *)ote {
     [_OTEs addObject:ote];
 }

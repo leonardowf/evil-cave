@@ -19,8 +19,10 @@
 #import "LWFGameOverStats.h"
 #import "LWFGameOverButtons.h"
 #import "LWFStats.h"
+#import "LWFOTEQueue.h"
 
 #import <Chartboost/Chartboost.h>
+#import "LWFInventory.h"
 
 @interface LWFGameOver () {
     LWFGameOverTitle *_title;
@@ -146,6 +148,9 @@ SINGLETON_FOR_CLASS(GameOver)
     LWFPlayer *player = [LWFPlayer sharedPlayer];
     player.stats.currentHP = player.stats.maxHP;
     [player statsChanged];
+    
+    [player.oteQueue removeAll];
+    [player.inventory clear];
 }
 
 - (void)showHudElements {

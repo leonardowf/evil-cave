@@ -14,5 +14,5 @@
 - (void)process;
 - (NSArray *)oteWithSameKind:(LWFOTE *)ote;
 - (void)addOTE:(LWFOTE *)ote;
-
+- (void)removeAll;
 @end
