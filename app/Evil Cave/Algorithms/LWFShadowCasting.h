@@ -13,4 +13,5 @@
 
 - (void)doFovStartX:(NSInteger)startX startY:(NSInteger)startY radius:(NSInteger)radius;
 - (void)lightTile:(LWFTile *)tile;
+- (BOOL)shouldExecuteAsync;
 @end

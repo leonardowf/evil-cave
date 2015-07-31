@@ -36,4 +36,8 @@
     return _visibleTiles;
 }
 
+- (BOOL)shouldExecuteAsync {
+    return NO;
+}
+
 @end
