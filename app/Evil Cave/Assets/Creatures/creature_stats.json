@@ -4,7 +4,7 @@
       "chance_to_hit": 80,
       "chance_to_evade": 100,
       "base_armor": 0,
-      "max_hp" : 100,
+      "max_hp" : 1,
       "action_points": 1
     },
     "rat": {

@@ -29,6 +29,7 @@
     LWFGameOverStats *_gameOverStats;
     LWFGameOverButtons *_gameOverButtons;
     
+    NSTimer *_adErrorTimer;
 }
 
 @end
@@ -49,7 +50,7 @@ SINGLETON_FOR_CLASS(GameOver)
 - (void)subscribeToNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didDismissInterstitial) name:NotificationDidDismissInterstitial object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(interstitialDidFail) name:NotificationInterstitalDidFail object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(interstitialDidFail) name:NotificationInterstitalDidFail object:nil];
 }
 
 - (void)start {
@@ -112,11 +113,17 @@ SINGLETON_FOR_CLASS(GameOver)
 }
 
 - (void)triggerTimedAd {
-    [NSTimer scheduledTimerWithTimeInterval:1.0
+    _adErrorTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(adTimeout) userInfo:nil repeats:NO];
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.2
                                      target:self
                                    selector:@selector(displayAd)
                                    userInfo:nil
                                     repeats:NO];
+}
+
+- (void)adTimeout {
+    [self displayAfterAd];
 }
 
 - (void)displayAd {
@@ -138,6 +145,8 @@ SINGLETON_FOR_CLASS(GameOver)
 }
 
 - (void)displayActions {
+    [_adErrorTimer invalidate];
+    
     _gameOverButtons = [[LWFGameOverButtons alloc]init];
     _gameOverButtons.delegate = self;
     
