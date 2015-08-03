@@ -7,12 +7,14 @@
     <customFonts key="customFonts">
         <mutableArray key="Munro.ttf">
             <string>Munro</string>
+            <string>Munro</string>
         </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LWFGameOverStats">
             <connections>
                 <outlet property="containerView" destination="E0z-tg-xZH" id="mpQ-CC-nOn"/>
+                <outlet property="labelFloor" destination="RiI-bi-maj" id="4Fc-82-AfB"/>
                 <outlet property="labelGold" destination="R3Q-Q9-Bf5" id="ufY-Dp-4wf"/>
                 <outlet property="view" destination="iN0-l3-epB" id="bq2-jn-RmW"/>
             </connections>
@@ -22,11 +24,17 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E0z-tg-xZH" userLabel="ContainerView">
-                    <rect key="frame" x="277.5" y="283" width="45" height="34.5"/>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E0z-tg-xZH" userLabel="ContainerView">
+                    <rect key="frame" x="277.5" y="273" width="45" height="53.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gold" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3Q-Q9-Bf5">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Gold" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3Q-Q9-Bf5">
                             <rect key="frame" x="10" y="10" width="25" height="14.5"/>
+                            <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="15"/>
+                            <color key="textColor" red="1" green="0.84313725490000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Floor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiI-bi-maj">
+                            <rect key="frame" x="9.5" y="29.5" width="29.5" height="14.5"/>
                             <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="15"/>
                             <color key="textColor" red="1" green="0.84313725490000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -36,8 +44,11 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="R3Q-Q9-Bf5" secondAttribute="trailing" constant="10" id="0LZ-DW-56H"/>
                         <constraint firstItem="R3Q-Q9-Bf5" firstAttribute="top" secondItem="E0z-tg-xZH" secondAttribute="top" constant="10" id="3t1-ws-Q84"/>
+                        <constraint firstItem="R3Q-Q9-Bf5" firstAttribute="leading" secondItem="RiI-bi-maj" secondAttribute="leading" id="7Se-wQ-eVW"/>
+                        <constraint firstAttribute="bottom" secondItem="RiI-bi-maj" secondAttribute="bottom" constant="10" id="M6V-aO-tvo"/>
+                        <constraint firstItem="R3Q-Q9-Bf5" firstAttribute="trailing" secondItem="RiI-bi-maj" secondAttribute="trailing" id="Vi3-JL-Pce"/>
                         <constraint firstItem="R3Q-Q9-Bf5" firstAttribute="leading" secondItem="E0z-tg-xZH" secondAttribute="leading" constant="10" id="ccI-2M-Cgv"/>
-                        <constraint firstAttribute="bottom" secondItem="R3Q-Q9-Bf5" secondAttribute="bottom" constant="10" id="cgJ-mR-LSH"/>
+                        <constraint firstItem="RiI-bi-maj" firstAttribute="top" secondItem="R3Q-Q9-Bf5" secondAttribute="bottom" constant="5" id="yT8-Uf-FTC"/>
                     </constraints>
                 </view>
             </subviews>

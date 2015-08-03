@@ -139,18 +139,39 @@ SINGLETON_FOR_CLASS(GameOver)
 }
 
 - (void)displayStats {
-    _gameOverStats = [[LWFGameOverStats alloc]init];
+    if (_gameOverStats == nil) {
+        _gameOverStats = [[LWFGameOverStats alloc]init];
+        [_gameOverStats addBelowView:_title.containerView];
+    }
     
-    [_gameOverStats addBelowView:_title.containerView];
+    NSInteger goldCount = [self getGoldCount];
+    NSInteger floorCount = [self getFloorCount];
+    
+    _gameOverStats.labelGold.text = [NSString stringWithFormat:@"Gold: %d", goldCount];
+    _gameOverStats.labelFloor.text = [NSString stringWithFormat:@"Floor: %d", floorCount];
+}
+
+- (NSInteger)getGoldCount {
+    LWFInventory *inventory = [LWFInventory sharedInventory];
+    
+    return [inventory money];
+}
+
+- (NSInteger)getFloorCount {
+    LWFMap *map = [[self getGameController]map];
+    
+    return map.floor;
 }
 
 - (void)displayActions {
     [_adErrorTimer invalidate];
     
-    _gameOverButtons = [[LWFGameOverButtons alloc]init];
-    _gameOverButtons.delegate = self;
-    
-    [_gameOverButtons addBelowView:_gameOverStats.containerView];
+    if (_gameOverButtons == nil) {
+        _gameOverButtons = [[LWFGameOverButtons alloc]init];
+        _gameOverButtons.delegate = self;
+        
+        [_gameOverButtons addBelowView:_gameOverStats.containerView];
+    }
 }
 
 - (void)resetGame {
@@ -194,7 +215,7 @@ SINGLETON_FOR_CLASS(GameOver)
     
     _title = nil;
     _gameOverButtons = nil;
-    _gameOverButtons = nil;
+    _gameOverStats = nil;
     
     [self showHudElements];
     

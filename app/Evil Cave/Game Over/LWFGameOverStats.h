@@ -13,6 +13,7 @@
 @property (strong, nonatomic) IBOutlet UIView *view;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UILabel *labelGold;
+@property (weak, nonatomic) IBOutlet UILabel *labelFloor;
 
 - (void)addBelowView:(UIView *)view;
 @end

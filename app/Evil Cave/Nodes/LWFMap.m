@@ -32,7 +32,7 @@
     LWFPointObject *_touchQueue;
     
     CGSize _size;
-    NSInteger _floor;
+    
     LWFFloorDifficulty *_floorDifficulty;
 
 }

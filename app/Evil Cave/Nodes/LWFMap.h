@@ -24,6 +24,7 @@
 @property (nonatomic, strong) LWFMovementManager *movementManager;
 @property (nonatomic, strong) LWFAttackManager *attackManager;
 @property (nonatomic, strong) LWFItemRange *currentItemRange;
+@property (nonatomic) NSInteger floor;
 
 - (instancetype)initWithScreenSize:(CGSize)size andFloor:(NSInteger)floor;
 

@@ -424,6 +424,7 @@ SINGLETON_FOR_CLASS(Inventory)
     self.equips.armor = nil;
     self.equips.boots = nil;
     self.equips.accessory = nil;
+    self.money = 0;
 }
 
 - (BOOL)isEmpty {
