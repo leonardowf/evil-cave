@@ -23,6 +23,7 @@
 
 #import <Chartboost/Chartboost.h>
 #import "LWFInventory.h"
+#import "LWFPotionFactory.h"
 
 @interface LWFGameOver () {
     LWFGameOverTitle *_title;
@@ -181,6 +182,9 @@ SINGLETON_FOR_CLASS(GameOver)
     
     [player.oteQueue removeAll];
     [player.inventory clear];
+    
+    LWFPotionFactory *potionFactory = [LWFPotionFactory sharedPotionFactory];
+    [potionFactory resetPotionKnowledgeAndTextures];
 }
 
 - (void)showHudElements {
