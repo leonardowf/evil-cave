@@ -53,7 +53,7 @@
     if ([self isLit]) {
         [creature light];
     } else {
-        
+        [creature dark];
     }
     
     BOOL isPlayer = [creature isKindOfClass:[LWFPlayer class]];

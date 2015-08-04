@@ -67,5 +67,6 @@
 - (BOOL)isAlive;
 - (void)receveidDamageLog:(NSInteger)damage fromCreature:(LWFCreature *)creature;
 - (void)light;
+- (void)dark;
 
 @end
