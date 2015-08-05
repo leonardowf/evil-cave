@@ -25,6 +25,7 @@
 #import "QuartzCore/QuartzCore.h"
 #import <pop/POP.h>
 #import "LWFTutorial.h"
+#import "LWFPieView.h"
 
 @implementation LWFViewController
 
@@ -216,7 +217,18 @@
     
     if (newTurnsLeft == 0) {
         self.labelSpecialAttackCooldown.text = @"";
+        [self.pieView removeFromSuperview];
+        self.pieView = nil;
     } else {
+        if (self.pieView == nil) {
+            self.pieView = [[LWFPieView alloc]initWithFrame:self.viewSpecialAttackButton.frame];
+            
+            self.pieView.backgroundColor = [UIColor clearColor];
+            
+            [self.viewSpecialAttackButton.superview addSubview:self.pieView];
+            [self.pieView setNeedsDisplay];
+        }
+        
         self.labelSpecialAttackCooldown.text = [NSString stringWithFormat:@"%d", newTurnsLeft];
     }
 }

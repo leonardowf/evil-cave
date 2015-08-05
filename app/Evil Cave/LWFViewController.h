@@ -13,6 +13,7 @@
 #import "LWFImageViewInventoryItem.h"
 
 @class LWFTutorial;
+@class LWFPieView;
 
 @interface LWFViewController : UIViewController <LWFOTEObserver, LWFTutorialDelegate>
 
@@ -71,5 +72,6 @@
 // special attack
 @property (weak, nonatomic) IBOutlet UILabel *labelSpecialAttackCooldown;
 @property (weak, nonatomic) IBOutlet UIView *viewSpecialAttackButton;
+@property (nonatomic, strong) LWFPieView *pieView;
 
 @end

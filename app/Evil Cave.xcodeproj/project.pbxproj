@@ -29,6 +29,7 @@
 		323335FB1AA52F730088C4F6 /* item_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 323335F81AA52F730088C4F6 /* item_info@2x.png */; };
 		323335FC1AA52F730088C4F6 /* item_info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 323335F91AA52F730088C4F6 /* item_info@3x.png */; };
 		323D10931A9C0CB6000AB32D /* fog_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 323D10921A9C0CB6000AB32D /* fog_overlay.png */; };
+		324046811B719FF30001BEF6 /* LWFPieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 324046801B719FF30001BEF6 /* LWFPieView.m */; };
 		324527831A4CEC6900AFF9A7 /* warrior_attacking_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527821A4CEC6900AFF9A7 /* warrior_attacking_right.atlas */; };
 		324527871A4DB5F400AFF9A7 /* warrior_standing_left.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527861A4DB5F400AFF9A7 /* warrior_standing_left.atlas */; };
 		324527891A4DB60800AFF9A7 /* warrior_standing_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527881A4DB60800AFF9A7 /* warrior_standing_right.atlas */; };
@@ -282,6 +283,8 @@
 		323335F81AA52F730088C4F6 /* item_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item_info@2x.png"; sourceTree = "<group>"; };
 		323335F91AA52F730088C4F6 /* item_info@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item_info@3x.png"; sourceTree = "<group>"; };
 		323D10921A9C0CB6000AB32D /* fog_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fog_overlay.png; sourceTree = "<group>"; };
+		3240467F1B719FF30001BEF6 /* LWFPieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPieView.h; sourceTree = "<group>"; };
+		324046801B719FF30001BEF6 /* LWFPieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPieView.m; sourceTree = "<group>"; };
 		324527821A4CEC6900AFF9A7 /* warrior_attacking_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_attacking_right.atlas; sourceTree = "<group>"; };
 		324527841A4DB5E600AFF9A7 /* warrior_walking_left.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_walking_left.atlas; sourceTree = "<group>"; };
 		324527861A4DB5F400AFF9A7 /* warrior_standing_left.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_standing_left.atlas; sourceTree = "<group>"; };
@@ -781,6 +784,8 @@
 				328F5F5F1B3B6A8700D136BA /* LWFTutorial.m */,
 				328F5F601B3B6A8700D136BA /* PotionDescription.xib */,
 				328F5F611B3B6A8700D136BA /* Tutorial.xib */,
+				3240467F1B719FF30001BEF6 /* LWFPieView.h */,
+				324046801B719FF30001BEF6 /* LWFPieView.m */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -1569,6 +1574,7 @@
 				328F5FED1B3B6FA600D136BA /* LWFPoopThrowerRat.m in Sources */,
 				32E2E6C41ACF5ED500EA88DD /* LWFVisibilityShadowCasting.m in Sources */,
 				32CCF02F1B4230C100AA133D /* LWFCaveGeneratorResult.m in Sources */,
+				324046811B719FF30001BEF6 /* LWFPieView.m in Sources */,
 				32FFE8411A2C0BF0003D02A4 /* LWFMelee.m in Sources */,
 				3275C40B1B5F25D900813994 /* LWFGameOverStats.m in Sources */,
 				3245279D1A4EF1DB00AFF9A7 /* LWFLifeBar.m in Sources */,
