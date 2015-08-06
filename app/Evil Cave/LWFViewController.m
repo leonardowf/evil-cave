@@ -217,20 +217,45 @@
     
     if (newTurnsLeft == 0) {
         self.labelSpecialAttackCooldown.text = @"";
-        [self.pieView removeFromSuperview];
-        self.pieView = nil;
     } else {
-        if (self.pieView == nil) {
-            self.pieView = [[LWFPieView alloc]initWithFrame:self.viewSpecialAttackButton.frame];
-            
-            self.pieView.backgroundColor = [UIColor clearColor];
-            
-            [self.viewSpecialAttackButton.superview addSubview:self.pieView];
-            [self.pieView setNeedsDisplay];
-        }
-        
+        [self updatePieView:newTurnsLeft forTotalTurns:ote.numberOfTurns];
         self.labelSpecialAttackCooldown.text = [NSString stringWithFormat:@"%d", newTurnsLeft];
     }
+    
+    [self updatePieView:newTurnsLeft forTotalTurns:ote.numberOfTurns];
+}
+
+
+/**
+ pieView é a view indicadora de progresso do ataque especial
+ esse método calcula o progresso/adiciona/remove
+ */
+- (void)updatePieView:(NSInteger)turnsLeft forTotalTurns:(NSInteger)totalTurns {
+    
+    if (turnsLeft == 0) {
+        [self.pieView removeFromSuperview];
+        self.pieView = nil;
+        return;
+    }
+    
+    if (self.pieView == nil) {
+        CGRect specialButtonFrame = self.viewSpecialAttackButton.frame;
+        CGRect pieFrame = CGRectMake(30, 30, specialButtonFrame.size.width + 30, specialButtonFrame.size.height + 30);
+        
+        self.pieView = [[LWFPieView alloc]initWithFrame:pieFrame];
+        
+        self.pieView.backgroundColor = [UIColor blackColor];
+        self.pieView.alpha = 0.5;
+        
+        self.pieView.center = CGPointMake(30, 30);
+        self.viewSpecialAttackButton.clipsToBounds = YES;
+        
+        [self.viewSpecialAttackButton addSubview:self.pieView];
+    }
+    
+    CGFloat progress = 1.0 - (float)turnsLeft / (float)totalTurns;
+    self.pieView.progress = progress;
+    [self.pieView setNeedsDisplay];
 }
 
 - (void)notifyRemovalOf:(LWFOTE *)ote {

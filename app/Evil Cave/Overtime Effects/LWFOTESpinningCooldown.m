@@ -12,7 +12,7 @@
 
 - (instancetype)init
 {
-    NSInteger numberOfTurns = 6;
+    NSInteger numberOfTurns = 20;
     
     self = [super initWithNumberOfTurns:numberOfTurns];
     if (self) {

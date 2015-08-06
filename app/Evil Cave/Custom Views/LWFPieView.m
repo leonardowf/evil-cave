@@ -22,7 +22,6 @@
 }
 
 - (void)drawRect:(CGRect)rect {
-    self.backgroundColor = [UIColor redColor];
     CGRect allRect = self.bounds;
     CGContextRef context = UIGraphicsGetCurrentContext();
     
