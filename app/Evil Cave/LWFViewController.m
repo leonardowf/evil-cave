@@ -249,8 +249,9 @@
         
         self.pieView.center = CGPointMake(30, 30);
         self.viewSpecialAttackButton.clipsToBounds = YES;
-        
+
         [self.viewSpecialAttackButton addSubview:self.pieView];
+        [self.viewSpecialAttackButton bringSubviewToFront:self.labelSpecialAttackCooldown];
     }
     
     CGFloat progress = 1.0 - (float)turnsLeft / (float)totalTurns;
