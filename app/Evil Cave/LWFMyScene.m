@@ -15,20 +15,20 @@
 #import "LWFPlayer.h"
 #import "LWFGeometry.h"
 #import "LWFInventory.h"
+#import "LWFSoundPlayer.h"
 
 @interface LWFMyScene () {
     LWFMap *_map;
+    CGSize _size;
+    NSInteger _currentFloor;
+    
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
     UIPanGestureRecognizer *_panGestureRecognizer;
     UITapGestureRecognizer *_tapGestureRecognizer;
-    
     BOOL _pinching;
-    
     UITouch *_lastTouch;
     
-    CGSize _size;
-    
-    NSInteger _currentFloor;
+    LWFSoundPlayer *_soundPlayer;
 }
 @end
 
@@ -53,6 +53,8 @@
                                                  selector:@selector(restart)
                                                      name:@"notificationRestartGame"
                                                    object:nil];
+        
+        _soundPlayer = [[LWFSoundPlayer alloc]initWithScene:self];
         
     }
     return self;

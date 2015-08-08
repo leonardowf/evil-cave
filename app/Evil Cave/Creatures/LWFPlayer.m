@@ -21,6 +21,7 @@
 #import "LWFOTESpinningCooldown.h"
 #import "LWFGold.h"
 #import "LWFGameOver.h"
+#import "LWFSoundPlayer.h"
 
 @interface LWFPlayer () {
     LWFCreature *_lockedTarget;
@@ -202,6 +203,7 @@ SINGLETON_FOR_CLASS(Player)
         
         self.inventory.money = self.inventory.money + item.quantity;
         [LWFLogger logGold:item.quantity];
+        [LWFSoundPlayer play:LWFSoundTypePickedGold];
         
         
     } else {

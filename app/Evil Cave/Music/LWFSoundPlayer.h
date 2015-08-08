@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "LWFSoundTypes.h"
+@class LWFMyScene;
 
 @interface LWFSoundPlayer : NSObject
 
+- (instancetype)initWithScene:(LWFMyScene *)scene;
 + (void)play:(LWFSoundType)soundType;
 
 @end
