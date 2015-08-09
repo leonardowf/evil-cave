@@ -32,6 +32,7 @@
 		324046811B719FF30001BEF6 /* LWFPieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 324046801B719FF30001BEF6 /* LWFPieView.m */; };
 		324046851B74419B0001BEF6 /* LWFSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 324046841B74419B0001BEF6 /* LWFSoundPlayer.m */; };
 		324046891B7443D30001BEF6 /* soundTypePickedGold.wav in Resources */ = {isa = PBXBuildFile; fileRef = 324046881B7443D30001BEF6 /* soundTypePickedGold.wav */; };
+		3240468B1B77CB8B0001BEF6 /* soundTypeGameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3240468A1B77CB8B0001BEF6 /* soundTypeGameOver.mp3 */; };
 		324527831A4CEC6900AFF9A7 /* warrior_attacking_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527821A4CEC6900AFF9A7 /* warrior_attacking_right.atlas */; };
 		324527871A4DB5F400AFF9A7 /* warrior_standing_left.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527861A4DB5F400AFF9A7 /* warrior_standing_left.atlas */; };
 		324527891A4DB60800AFF9A7 /* warrior_standing_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527881A4DB60800AFF9A7 /* warrior_standing_right.atlas */; };
@@ -291,6 +292,7 @@
 		324046841B74419B0001BEF6 /* LWFSoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFSoundPlayer.m; sourceTree = "<group>"; };
 		324046871B7442210001BEF6 /* LWFSoundTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSoundTypes.h; sourceTree = "<group>"; };
 		324046881B7443D30001BEF6 /* soundTypePickedGold.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundTypePickedGold.wav; sourceTree = "<group>"; };
+		3240468A1B77CB8B0001BEF6 /* soundTypeGameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundTypeGameOver.mp3; sourceTree = "<group>"; };
 		324527821A4CEC6900AFF9A7 /* warrior_attacking_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_attacking_right.atlas; sourceTree = "<group>"; };
 		324527841A4DB5E600AFF9A7 /* warrior_walking_left.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_walking_left.atlas; sourceTree = "<group>"; };
 		324527861A4DB5F400AFF9A7 /* warrior_standing_left.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_standing_left.atlas; sourceTree = "<group>"; };
@@ -689,6 +691,7 @@
 				324046831B74419B0001BEF6 /* LWFSoundPlayer.h */,
 				324046841B74419B0001BEF6 /* LWFSoundPlayer.m */,
 				324046871B7442210001BEF6 /* LWFSoundTypes.h */,
+				3240468A1B77CB8B0001BEF6 /* soundTypeGameOver.mp3 */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -1401,6 +1404,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3240468B1B77CB8B0001BEF6 /* soundTypeGameOver.mp3 in Resources */,
 				3206A3E11A7D9D7F00D08893 /* item_preview_middle.png in Resources */,
 				32FB7DB51AA0004B00AA4C7F /* thumb@2x.png in Resources */,
 				32BEBFFD1A470B68000C77AA /* warrior_standing_right.png in Resources */,

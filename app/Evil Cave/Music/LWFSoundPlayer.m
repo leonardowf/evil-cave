@@ -24,7 +24,10 @@
 {
     self = [super init];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceivePlayRequest:) name:PLAY_SOUND_NOTIFICATION object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(didReceivePlayRequest:)
+                                                     name:PLAY_SOUND_NOTIFICATION
+                                                   object:nil];
         _scene = scene;
         
         [self preloadAudioFiles];
@@ -63,13 +66,18 @@
 + (void)play:(LWFSoundType)soundType {
     NSString *soundFileName = [self soundFileNameForSoundType:soundType];
     
-    [[NSNotificationCenter defaultCenter]postNotificationName:PLAY_SOUND_NOTIFICATION object:soundFileName];
+    [[NSNotificationCenter defaultCenter]postNotificationName:PLAY_SOUND_NOTIFICATION
+                                                       object:soundFileName];
 }
 
 + (NSString *)soundFileNameForSoundType:(LWFSoundType)soundType {
     switch (soundType) {
         case LWFSoundTypePickedGold:
             return @"soundTypePickedGold.wav";
+        break;
+        
+        case LWFSoundTypeGameOver:
+            return @"soundTypeGameOver.mp3";
         break;
         
         default:

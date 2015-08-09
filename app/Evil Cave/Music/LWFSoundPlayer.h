@@ -13,6 +13,7 @@
 @interface LWFSoundPlayer : NSObject
 
 - (instancetype)initWithScene:(LWFMyScene *)scene;
+
 + (void)play:(LWFSoundType)soundType;
 
 @end

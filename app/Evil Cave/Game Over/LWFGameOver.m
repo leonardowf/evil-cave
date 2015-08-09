@@ -24,6 +24,7 @@
 #import <Chartboost/Chartboost.h>
 #import "LWFInventory.h"
 #import "LWFPotionFactory.h"
+#import "LWFSoundPlayer.h"
 
 @interface LWFGameOver () {
     LWFGameOverTitle *_title;
@@ -55,6 +56,8 @@ SINGLETON_FOR_CLASS(GameOver)
 }
 
 - (void)start {
+    [LWFSoundPlayer play:LWFSoundTypeGameOver];
+    
     [self stopUserInteractions];
     [self addBlackOverlay];
     [self removeHUDElements];
@@ -116,7 +119,7 @@ SINGLETON_FOR_CLASS(GameOver)
 - (void)triggerTimedAd {
     _adErrorTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(adTimeout) userInfo:nil repeats:NO];
     
-    [NSTimer scheduledTimerWithTimeInterval:0.2
+    [NSTimer scheduledTimerWithTimeInterval:2.0
                                      target:self
                                    selector:@selector(displayAd)
                                    userInfo:nil
