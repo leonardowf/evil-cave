@@ -14,6 +14,7 @@
 
 @interface LWFSoundPlayer () {
     LWFMyScene *_scene;
+    NSDictionary *_preloadedAudios;
 }
 @end
 
@@ -25,16 +26,38 @@
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceivePlayRequest:) name:PLAY_SOUND_NOTIFICATION object:nil];
         _scene = scene;
+        
+        [self preloadAudioFiles];
     }
     return self;
+}
+
+- (void)preloadAudioFiles {
+    NSMutableDictionary *dictionary = [NSMutableDictionary new];
+    
+    for (NSUInteger i = 0; i < LWFSoundTypeCount; i++) {
+        NSString *fileName = [LWFSoundPlayer soundFileNameForSoundType:i];
+        SKAction *action = [LWFSoundPlayer actionForAudioWithName:fileName];
+        [dictionary setObject:action forKey:fileName];
+    }
+    
+    _preloadedAudios = dictionary;
 }
 
 - (void)didReceivePlayRequest:(NSNotification *)notification {
     if ([notification.object isKindOfClass:[NSString class]]) {
         NSString *fileName = (NSString *)[notification object];
         
-        [_scene runAction:[SKAction playSoundFileNamed:fileName waitForCompletion:NO]];
+        SKAction *action = [_preloadedAudios objectForKey:fileName];
+        
+        [_scene runAction: action];
     }
+}
+
++ (SKAction *)actionForAudioWithName:(NSString *)fileName {
+    SKAction *action = [SKAction playSoundFileNamed:fileName waitForCompletion:NO];
+    
+    return action;
 }
 
 + (void)play:(LWFSoundType)soundType {
@@ -45,10 +68,6 @@
 
 + (NSString *)soundFileNameForSoundType:(LWFSoundType)soundType {
     switch (soundType) {
-        case LWFSoundTypePlayerHit:
-            return @"soundTypePlayerHit.wav";
-        break;
-        
         case LWFSoundTypePickedGold:
             return @"soundTypePickedGold.wav";
         break;
