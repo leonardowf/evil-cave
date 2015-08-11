@@ -218,7 +218,7 @@ SINGLETON_FOR_CLASS(Inventory)
     _imageViewHolders = [NSMutableArray array];
     _overlay = viewController.viewInventoryOverlay;
     
-    for (NSInteger i = 1; i <= 15; i++) {
+    for (NSInteger i = 1; i <= STORED_ITEMS_LIMIT; i++) {
         NSString *imageViewToGet = [NSString stringWithFormat:@"item%ld", i];
         id imageView = [viewController valueForKey:imageViewToGet];
         
@@ -425,6 +425,24 @@ SINGLETON_FOR_CLASS(Inventory)
     self.equips.boots = nil;
     self.equips.accessory = nil;
     self.money = 0;
+    
+    [self resetImageViewHolders];
+    [self resetEquipmentsImageViews];
+}
+
+- (void)resetEquipmentsImageViews {
+    _viewController.imageViewArmor.image = nil;
+    _viewController.imageViewBoots.image = nil;
+    _viewController.imageViewWeapon.image = [UIImage imageNamed:@"weapon_empty"];
+    _viewController.imageViewAccessory.image = nil;
+}
+
+- (void)resetImageViewHolders {
+    for (NSInteger i = 0; i < STORED_ITEMS_LIMIT; i++) {
+        LWFImageViewHolder *viewHolder = [_imageViewHolders objectAtIndex:i];
+        viewHolder.item = nil;
+        viewHolder.imageView.image = nil;
+    }
 }
 
 - (BOOL)isEmpty {
