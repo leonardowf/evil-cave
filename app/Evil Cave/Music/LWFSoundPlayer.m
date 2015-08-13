@@ -11,6 +11,7 @@
 #import "LWFMyScene.h"
 
 #define PLAY_SOUND_NOTIFICATION @"NotificationPlaySound"
+#define PLAY_MUSIC_NOTIFICATION @"NotificationPlayMusic"
 
 @interface LWFSoundPlayer () {
     LWFMyScene *_scene;
@@ -28,11 +29,30 @@
                                                  selector:@selector(didReceivePlayRequest:)
                                                      name:PLAY_SOUND_NOTIFICATION
                                                    object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(didReceivePlayMusicRequest:)
+                                                     name:PLAY_MUSIC_NOTIFICATION
+                                                   object:nil];
         _scene = scene;
         
         [self preloadAudioFiles];
     }
     return self;
+}
+
++ (void)play:(LWFSoundType)soundType {
+    NSString *soundFileName = [self soundFileNameForSoundType:soundType];
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:PLAY_SOUND_NOTIFICATION
+                                                       object:soundFileName];
+}
+
++ (void)playMusic:(LWFMusicType)musicType {
+    NSString *musicFileName = [self musicFileNameForMusicType:musicType];
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:PLAY_MUSIC_NOTIFICATION
+                                                       object:musicFileName];
 }
 
 - (void)preloadAudioFiles {
@@ -57,17 +77,24 @@
     }
 }
 
+- (void)didReceivePlayMusicRequest:(NSNotification *)notification {
+    if ([notification.object isKindOfClass:[NSString class]]) {
+        NSString *fileName = (NSString *)[notification object];
+        
+        SKAction *action = [_preloadedAudios objectForKey:fileName];
+        
+        [_scene runAction: action];
+    }
+}
+
 + (SKAction *)actionForAudioWithName:(NSString *)fileName {
     SKAction *action = [SKAction playSoundFileNamed:fileName waitForCompletion:NO];
     
     return action;
 }
 
-+ (void)play:(LWFSoundType)soundType {
-    NSString *soundFileName = [self soundFileNameForSoundType:soundType];
-    
-    [[NSNotificationCenter defaultCenter]postNotificationName:PLAY_SOUND_NOTIFICATION
-                                                       object:soundFileName];
++ (NSString *)musicFileNameForMusicType:(LWFMusicType)musicType {
+    return @"TODO";
 }
 
 + (NSString *)soundFileNameForSoundType:(LWFSoundType)soundType {
