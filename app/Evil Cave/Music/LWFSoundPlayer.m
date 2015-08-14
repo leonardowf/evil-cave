@@ -15,7 +15,11 @@
 
 @interface LWFSoundPlayer () {
     LWFMyScene *_scene;
+    
     NSDictionary *_preloadedAudios;
+    NSDictionary *_preloadedMusic;
+    
+    SKAction *_currentPlayingMusic;
 }
 @end
 
@@ -60,11 +64,21 @@
     
     for (NSUInteger i = 0; i < LWFSoundTypeCount; i++) {
         NSString *fileName = [LWFSoundPlayer soundFileNameForSoundType:i];
-        SKAction *action = [LWFSoundPlayer actionForAudioWithName:fileName];
+        SKAction *action = [LWFSoundPlayer actionForAudioWithName:fileName isMusic:NO];
         [dictionary setObject:action forKey:fileName];
     }
     
     _preloadedAudios = dictionary;
+    
+    dictionary = [NSMutableDictionary new];
+    
+    for (NSUInteger i = 0; i < LWFMusicTypeCount; i++) {
+        NSString *fileName = [LWFSoundPlayer musicFileNameForMusicType:i];
+        SKAction *action = [LWFSoundPlayer actionForAudioWithName:fileName isMusic:YES];
+        [dictionary setObject:action forKey:fileName];
+    }
+    
+    _preloadedMusic = dictionary;
 }
 
 - (void)didReceivePlayRequest:(NSNotification *)notification {
@@ -81,20 +95,30 @@
     if ([notification.object isKindOfClass:[NSString class]]) {
         NSString *fileName = (NSString *)[notification object];
         
-        SKAction *action = [_preloadedAudios objectForKey:fileName];
+        SKAction *action = [_preloadedMusic objectForKey:fileName];
+        SKAction *repeat = [SKAction repeatActionForever:action];
         
-        [_scene runAction: action];
+        [_scene runAction: repeat];
     }
 }
 
-+ (SKAction *)actionForAudioWithName:(NSString *)fileName {
-    SKAction *action = [SKAction playSoundFileNamed:fileName waitForCompletion:NO];
++ (SKAction *)actionForAudioWithName:(NSString *)fileName isMusic:(BOOL)music {
+    SKAction *action = [SKAction playSoundFileNamed:fileName waitForCompletion:music];
     
     return action;
 }
 
 + (NSString *)musicFileNameForMusicType:(LWFMusicType)musicType {
-    return @"TODO";
+    
+    switch (musicType) {
+        case LWFMusicTypeMenu:
+            return @"musicTypeMenu.mp3";
+        break;
+        default:
+            return nil;
+    }
+    
+    return nil;
 }
 
 + (NSString *)soundFileNameForSoundType:(LWFSoundType)soundType {

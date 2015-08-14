@@ -15,5 +15,6 @@
 - (instancetype)initWithScene:(LWFMyScene *)scene;
 
 + (void)play:(LWFSoundType)soundType;
++ (void)playMusic:(LWFMusicType)musicType;
 
 @end

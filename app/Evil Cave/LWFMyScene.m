@@ -55,6 +55,7 @@
                                                    object:nil];
         
         _soundPlayer = [[LWFSoundPlayer alloc]initWithScene:self];
+        [LWFSoundPlayer playMusic:LWFMusicTypeMenu];
         
     }
     return self;

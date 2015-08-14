@@ -14,5 +14,5 @@ typedef enum : NSUInteger {
 
 typedef enum : NSUInteger {
     LWFMusicTypeMenu,
-    LWFMusicTypeGame,
+    LWFMusicTypeCount,
 } LWFMusicType;
