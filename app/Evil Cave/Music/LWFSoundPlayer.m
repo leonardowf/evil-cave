@@ -20,8 +20,7 @@
     NSDictionary *_preloadedAudios;
     NSDictionary *_preloadedMusic;
     
-    SKAction *_currentPlayingMusic;
-    AVAudioPlayer *_audioPlayer;
+    AVAudioPlayer *_currentPlayingMusic;
 }
 @end
 
@@ -42,10 +41,14 @@
 - (void)registerForNotifications {
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     
+    /**
+     *  Dicionário que mapeia os as notificações e os métodos que serão executa-
+        dos
+     */
     NSDictionary *notificationsDictionary = @{
                                               PLAY_SOUND_NOTIFICATION: @"didReceivePlayRequest:",
                                               PLAY_MUSIC_NOTIFICATION: @"didReceivePlayMusicRequest:",
-                                              STOP_MUSIC_NOTIFICATION: @"didReceiveStopMusicRequest:"
+                                              STOP_MUSIC_NOTIFICATION: @"didReceiveStopMusicRequest"
                                               };
     
     for (NSString* key in notificationsDictionary) {
@@ -72,6 +75,8 @@
 }
 
 + (void)stopMusic {
+    [[NSNotificationCenter defaultCenter]postNotificationName:STOP_MUSIC_NOTIFICATION
+                                                       object:nil];
 }
 
 - (void)preloadAudioFiles {
@@ -89,11 +94,16 @@
     
     for (NSUInteger i = 0; i < LWFMusicTypeCount; i++) {
         NSString *fileName = [LWFSoundPlayer musicFileNameForMusicType:i];
-        SKAction *action = [LWFSoundPlayer actionForAudioWithName:fileName isMusic:YES];
-        [dictionary setObject:action forKey:fileName];
+        AVAudioPlayer *audioPlayer = [LWFSoundPlayer audioPlayerForMusicFileName:fileName];
+        [dictionary setObject:audioPlayer forKey:fileName];
     }
     
     _preloadedMusic = dictionary;
+}
+                            
++ (SKAction *)actionForAudioWithName:(NSString *)fileName isMusic:(BOOL)music {
+    SKAction *action = [SKAction playSoundFileNamed:fileName waitForCompletion:music];
+    return action;
 }
 
 - (void)didReceivePlayRequest:(NSNotification *)notification {
@@ -102,26 +112,30 @@
         
         SKAction *action = [_preloadedAudios objectForKey:fileName];
         
-        
         [_scene runAction: action];
     }
 }
 
 - (void)didReceivePlayMusicRequest:(NSNotification *)notification {
     if ([notification.object isKindOfClass:[NSString class]]) {
-        NSString *fileName = (NSString *)[notification object];
+        [_currentPlayingMusic stop];
         
-        NSString *path = [NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], fileName];
-        NSURL *soundUrl = [NSURL fileURLWithPath:path];
-        _audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:soundUrl error:nil];
-        [_audioPlayer play];
+        NSString *fileName = (NSString *)[notification object];
+        _currentPlayingMusic = [_preloadedMusic objectForKey:fileName];
+
+        [_currentPlayingMusic play];
     }
 }
 
-+ (SKAction *)actionForAudioWithName:(NSString *)fileName isMusic:(BOOL)music {
-    SKAction *action = [SKAction playSoundFileNamed:fileName waitForCompletion:music];
-    
-    return action;
+- (void)didReceiveStopMusicRequest {
+//    [_currentPlayingMusic stop];
+    [_currentPlayingMusic setVolume:0.1];
+}
+
++ (AVAudioPlayer *)audioPlayerForMusicFileName:(NSString *)musicFileName {
+    NSString *path = [NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], musicFileName];
+    NSURL *soundUrl = [NSURL fileURLWithPath:path];
+    return [[AVAudioPlayer alloc]initWithContentsOfURL:soundUrl error:nil];
 }
 
 + (NSString *)musicFileNameForMusicType:(LWFMusicType)musicType {

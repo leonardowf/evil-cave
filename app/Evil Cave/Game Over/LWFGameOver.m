@@ -56,6 +56,7 @@ SINGLETON_FOR_CLASS(GameOver)
 }
 
 - (void)start {
+    [LWFSoundPlayer stopMusic];
     [LWFSoundPlayer play:LWFSoundTypeGameOver];
     
     [self stopUserInteractions];
