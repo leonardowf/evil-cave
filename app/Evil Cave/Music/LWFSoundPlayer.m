@@ -7,11 +7,12 @@
 //
 #import <SpriteKit/SpriteKit.h>
 #import "LWFSoundPlayer.h"
-#import <AVFoundation/AVFoundation.h>
 #import "LWFMyScene.h"
+#import <AVFoundation/AVFoundation.h>
 
 #define PLAY_SOUND_NOTIFICATION @"NotificationPlaySound"
 #define PLAY_MUSIC_NOTIFICATION @"NotificationPlayMusic"
+#define STOP_MUSIC_NOTIFICATION @"NotificationStopMusic"
 
 @interface LWFSoundPlayer () {
     LWFMyScene *_scene;
@@ -20,6 +21,7 @@
     NSDictionary *_preloadedMusic;
     
     SKAction *_currentPlayingMusic;
+    AVAudioPlayer *_audioPlayer;
 }
 @end
 
@@ -29,20 +31,30 @@
 {
     self = [super init];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(didReceivePlayRequest:)
-                                                     name:PLAY_SOUND_NOTIFICATION
-                                                   object:nil];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(didReceivePlayMusicRequest:)
-                                                     name:PLAY_MUSIC_NOTIFICATION
-                                                   object:nil];
         _scene = scene;
         
+        [self registerForNotifications];
         [self preloadAudioFiles];
     }
     return self;
+}
+
+- (void)registerForNotifications {
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    
+    NSDictionary *notificationsDictionary = @{
+                                              PLAY_SOUND_NOTIFICATION: @"didReceivePlayRequest:",
+                                              PLAY_MUSIC_NOTIFICATION: @"didReceivePlayMusicRequest:",
+                                              STOP_MUSIC_NOTIFICATION: @"didReceiveStopMusicRequest:"
+                                              };
+    
+    for (NSString* key in notificationsDictionary) {
+        NSString *value = [notificationsDictionary objectForKey:key];
+
+        [notificationCenter addObserver:self selector: NSSelectorFromString(value)
+                                                     name:key
+                                                   object:nil];
+    }
 }
 
 + (void)play:(LWFSoundType)soundType {
@@ -57,6 +69,9 @@
     
     [[NSNotificationCenter defaultCenter]postNotificationName:PLAY_MUSIC_NOTIFICATION
                                                        object:musicFileName];
+}
+
++ (void)stopMusic {
 }
 
 - (void)preloadAudioFiles {
@@ -87,6 +102,7 @@
         
         SKAction *action = [_preloadedAudios objectForKey:fileName];
         
+        
         [_scene runAction: action];
     }
 }
@@ -95,10 +111,10 @@
     if ([notification.object isKindOfClass:[NSString class]]) {
         NSString *fileName = (NSString *)[notification object];
         
-        SKAction *action = [_preloadedMusic objectForKey:fileName];
-        SKAction *repeat = [SKAction repeatActionForever:action];
-        
-        [_scene runAction: repeat];
+        NSString *path = [NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], fileName];
+        NSURL *soundUrl = [NSURL fileURLWithPath:path];
+        _audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:soundUrl error:nil];
+        [_audioPlayer play];
     }
 }
 

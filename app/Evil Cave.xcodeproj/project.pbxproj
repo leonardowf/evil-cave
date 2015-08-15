@@ -34,6 +34,7 @@
 		324046891B7443D30001BEF6 /* soundTypePickedGold.wav in Resources */ = {isa = PBXBuildFile; fileRef = 324046881B7443D30001BEF6 /* soundTypePickedGold.wav */; };
 		3240468B1B77CB8B0001BEF6 /* soundTypeGameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3240468A1B77CB8B0001BEF6 /* soundTypeGameOver.mp3 */; };
 		3240468D1B7D7CD10001BEF6 /* musicTypeMenu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3240468C1B7D7CD10001BEF6 /* musicTypeMenu.mp3 */; };
+		3240468F1B7EC3890001BEF6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3240468E1B7EC3890001BEF6 /* AVFoundation.framework */; };
 		324527831A4CEC6900AFF9A7 /* warrior_attacking_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527821A4CEC6900AFF9A7 /* warrior_attacking_right.atlas */; };
 		324527871A4DB5F400AFF9A7 /* warrior_standing_left.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527861A4DB5F400AFF9A7 /* warrior_standing_left.atlas */; };
 		324527891A4DB60800AFF9A7 /* warrior_standing_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527881A4DB60800AFF9A7 /* warrior_standing_right.atlas */; };
@@ -295,6 +296,7 @@
 		324046881B7443D30001BEF6 /* soundTypePickedGold.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundTypePickedGold.wav; sourceTree = "<group>"; };
 		3240468A1B77CB8B0001BEF6 /* soundTypeGameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundTypeGameOver.mp3; sourceTree = "<group>"; };
 		3240468C1B7D7CD10001BEF6 /* musicTypeMenu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = musicTypeMenu.mp3; sourceTree = "<group>"; };
+		3240468E1B7EC3890001BEF6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		324527821A4CEC6900AFF9A7 /* warrior_attacking_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_attacking_right.atlas; sourceTree = "<group>"; };
 		324527841A4DB5E600AFF9A7 /* warrior_walking_left.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_walking_left.atlas; sourceTree = "<group>"; };
 		324527861A4DB5F400AFF9A7 /* warrior_standing_left.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_standing_left.atlas; sourceTree = "<group>"; };
@@ -610,6 +612,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3240468F1B7EC3890001BEF6 /* AVFoundation.framework in Frameworks */,
 				32C4A58F1AA7E81B00BA5087 /* QuartzCore.framework in Frameworks */,
 				A7F5BB8A1A16EFBC005BAB63 /* CoreGraphics.framework in Frameworks */,
 				A7F5BB8C1A16EFBC005BAB63 /* UIKit.framework in Frameworks */,
@@ -1237,6 +1240,7 @@
 		A7F5BB861A16EFBC005BAB63 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3240468E1B7EC3890001BEF6 /* AVFoundation.framework */,
 				32EDF5981A7C5FCC0007EA36 /* QuartzCore.framework */,
 				A7F5BB871A16EFBC005BAB63 /* Foundation.framework */,
 				A7F5BB891A16EFBC005BAB63 /* CoreGraphics.framework */,
@@ -1810,6 +1814,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Evil Cave/Evil Cave-Prefix.pch";
 				INFOPLIST_FILE = "Evil Cave/Evil Cave-Info.plist";
@@ -1825,6 +1830,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Evil Cave/Evil Cave-Prefix.pch";
 				INFOPLIST_FILE = "Evil Cave/Evil Cave-Info.plist";
