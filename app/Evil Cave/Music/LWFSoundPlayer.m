@@ -10,9 +10,12 @@
 #import "LWFMyScene.h"
 #import <AVFoundation/AVFoundation.h>
 
-#define PLAY_SOUND_NOTIFICATION @"NotificationPlaySound"
-#define PLAY_MUSIC_NOTIFICATION @"NotificationPlayMusic"
-#define STOP_MUSIC_NOTIFICATION @"NotificationStopMusic"
+#define PLAY_SOUND_NOTIFICATION             @"NotificationPlaySound"
+#define PLAY_MUSIC_NOTIFICATION             @"NotificationPlayMusic"
+#define STOP_MUSIC_NOTIFICATION             @"NotificationStopMusic"
+#define MUTE_MUSIC_NOTIFICATION             @"NotificationMuteMusic"
+#define DECREASE_MUSIC_VOLUME_NOTIFICATION  @"NotificationDecreaseMusicVolume"
+#define INCREASE_MUSIC_VOLUME_NOTIFICATION  @"NotificationIncreaseMusicVolume"
 
 @interface LWFSoundPlayer () {
     LWFMyScene *_scene;
@@ -46,9 +49,12 @@
         dos
      */
     NSDictionary *notificationsDictionary = @{
-                                              PLAY_SOUND_NOTIFICATION: @"didReceivePlayRequest:",
-                                              PLAY_MUSIC_NOTIFICATION: @"didReceivePlayMusicRequest:",
-                                              STOP_MUSIC_NOTIFICATION: @"didReceiveStopMusicRequest"
+                                              PLAY_SOUND_NOTIFICATION:              @"didReceivePlayRequest:",
+                                              PLAY_MUSIC_NOTIFICATION:              @"didReceivePlayMusicRequest:",
+                                              STOP_MUSIC_NOTIFICATION:              @"didReceiveStopMusicRequest",
+                                              MUTE_MUSIC_NOTIFICATION:              @"didReceiveMuteMusicRequest",
+                                              DECREASE_MUSIC_VOLUME_NOTIFICATION:   @"didReceiveDecreaseMusicVolumeRequest",
+                                              INCREASE_MUSIC_VOLUME_NOTIFICATION:   @"didReceiveIncreaseMusicVolumeRequest"
                                               };
     
     for (NSString* key in notificationsDictionary) {
@@ -78,6 +84,24 @@
     [[NSNotificationCenter defaultCenter]postNotificationName:STOP_MUSIC_NOTIFICATION
                                                        object:nil];
 }
+
++ (void)muteMusic {
+    
+}
+
++ (void)muteSound {
+    
+}
+
++ (void)increaseMusicVolume {
+    
+}
+
++ (void)decreaseMusicVolume {
+    
+}
+
+
 
 - (void)preloadAudioFiles {
     NSMutableDictionary *dictionary = [NSMutableDictionary new];
@@ -128,8 +152,33 @@
 }
 
 - (void)didReceiveStopMusicRequest {
-//    [_currentPlayingMusic stop];
-    [_currentPlayingMusic setVolume:0.1];
+    [_currentPlayingMusic stop];
+}
+
+- (void)didReceiveMuteMusicRequest {
+    
+}
+
+- (void)didReceiveDecreaseMusicVolumeRequest {
+    
+}
+
+- (void)didReceiveIncreaseMusicVolumeRequest {
+    
+}
+
+/**
+ *  Salva localmente informações sobre mute e volumes
+ */
+- (void)savePreferences {
+    
+}
+
+/**
+ *  Carrega informações de mute e volumes
+ */
+- (void)loadPreferences {
+    
 }
 
 + (AVAudioPlayer *)audioPlayerForMusicFileName:(NSString *)musicFileName {

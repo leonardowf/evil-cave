@@ -17,5 +17,9 @@
 + (void)play:(LWFSoundType)soundType;
 + (void)playMusic:(LWFMusicType)musicType;
 + (void)stopMusic;
++ (void)muteMusic;
++ (void)muteSound;
++ (void)increaseMusicVolume;
++ (void)decreaseMusicVolume;
 
 @end
