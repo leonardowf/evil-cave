@@ -26,16 +26,17 @@
 		321EC9A71A26A5C400F06B77 /* LWFTurnList.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EC9A61A26A5C400F06B77 /* LWFTurnList.m */; };
 		321F41D41B816B8E00FD6A12 /* LWFUserDefaultsPersistenceStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 321F41D31B816B8E00FD6A12 /* LWFUserDefaultsPersistenceStrategy.m */; };
 		321F41D71B81707B00FD6A12 /* LWFMockPersistanceStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 321F41D61B81707B00FD6A12 /* LWFMockPersistanceStrategy.m */; };
+		321F41E31B8183A500FD6A12 /* LWFSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 321F41DC1B8183A500FD6A12 /* LWFSoundPlayer.m */; };
+		321F41E41B8183A500FD6A12 /* LWFSoundPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 321F41DE1B8183A500FD6A12 /* LWFSoundPreferences.m */; };
+		321F41F11B81840700FD6A12 /* musicTypeMenu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 321F41ED1B81840700FD6A12 /* musicTypeMenu.mp3 */; };
+		321F41F21B81840700FD6A12 /* soundTypeGameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 321F41EF1B81840700FD6A12 /* soundTypeGameOver.mp3 */; };
+		321F41F31B81840700FD6A12 /* soundTypePickedGold.wav in Resources */ = {isa = PBXBuildFile; fileRef = 321F41F01B81840700FD6A12 /* soundTypePickedGold.wav */; };
 		322DB6AA1A229A0C0085AC68 /* LWFCreatureBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 322DB6A91A229A0C0085AC68 /* LWFCreatureBuilder.m */; };
 		323335FA1AA52F730088C4F6 /* item_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 323335F71AA52F730088C4F6 /* item_info.png */; };
 		323335FB1AA52F730088C4F6 /* item_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 323335F81AA52F730088C4F6 /* item_info@2x.png */; };
 		323335FC1AA52F730088C4F6 /* item_info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 323335F91AA52F730088C4F6 /* item_info@3x.png */; };
 		323D10931A9C0CB6000AB32D /* fog_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 323D10921A9C0CB6000AB32D /* fog_overlay.png */; };
 		324046811B719FF30001BEF6 /* LWFPieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 324046801B719FF30001BEF6 /* LWFPieView.m */; };
-		324046851B74419B0001BEF6 /* LWFSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 324046841B74419B0001BEF6 /* LWFSoundPlayer.m */; };
-		324046891B7443D30001BEF6 /* soundTypePickedGold.wav in Resources */ = {isa = PBXBuildFile; fileRef = 324046881B7443D30001BEF6 /* soundTypePickedGold.wav */; };
-		3240468B1B77CB8B0001BEF6 /* soundTypeGameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3240468A1B77CB8B0001BEF6 /* soundTypeGameOver.mp3 */; };
-		3240468D1B7D7CD10001BEF6 /* musicTypeMenu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3240468C1B7D7CD10001BEF6 /* musicTypeMenu.mp3 */; };
 		3240468F1B7EC3890001BEF6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3240468E1B7EC3890001BEF6 /* AVFoundation.framework */; };
 		324527831A4CEC6900AFF9A7 /* warrior_attacking_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527821A4CEC6900AFF9A7 /* warrior_attacking_right.atlas */; };
 		324527871A4DB5F400AFF9A7 /* warrior_standing_left.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527861A4DB5F400AFF9A7 /* warrior_standing_left.atlas */; };
@@ -74,7 +75,6 @@
 		3275C4111B606B2700813994 /* opened_chest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3275C4101B606B2700813994 /* opened_chest.png */; };
 		3275C4131B63136A00813994 /* GameOverButtons.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3275C4121B63136A00813994 /* GameOverButtons.xib */; };
 		3275C4161B6314C300813994 /* LWFGameOverButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 3275C4151B6314C300813994 /* LWFGameOverButtons.m */; };
-		32793D391B81273E00B2117F /* LWFSoundPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 32793D381B81273E00B2117F /* LWFSoundPreferences.m */; };
 		32793D3B1B81286800B2117F /* LWFSoundPreferencesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32793D3A1B81286800B2117F /* LWFSoundPreferencesTests.m */; };
 		32793D3E1B813CCC00B2117F /* LWFDictionaryConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 32793D3D1B813CCC00B2117F /* LWFDictionaryConverter.m */; };
 		32793D421B81682300B2117F /* LWFRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 32793D411B81682300B2117F /* LWFRepository.m */; };
@@ -294,6 +294,14 @@
 		321F41D51B81707B00FD6A12 /* LWFMockPersistanceStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFMockPersistanceStrategy.h; sourceTree = "<group>"; };
 		321F41D61B81707B00FD6A12 /* LWFMockPersistanceStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFMockPersistanceStrategy.m; sourceTree = "<group>"; };
 		321F41D91B81792C00FD6A12 /* NSDictionary+PrimitiveHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+PrimitiveHelpers.h"; sourceTree = "<group>"; };
+		321F41DB1B8183A500FD6A12 /* LWFSoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSoundPlayer.h; sourceTree = "<group>"; };
+		321F41DC1B8183A500FD6A12 /* LWFSoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFSoundPlayer.m; sourceTree = "<group>"; };
+		321F41DD1B8183A500FD6A12 /* LWFSoundPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSoundPreferences.h; sourceTree = "<group>"; };
+		321F41DE1B8183A500FD6A12 /* LWFSoundPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFSoundPreferences.m; sourceTree = "<group>"; };
+		321F41DF1B8183A500FD6A12 /* LWFSoundTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSoundTypes.h; sourceTree = "<group>"; };
+		321F41ED1B81840700FD6A12 /* musicTypeMenu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = musicTypeMenu.mp3; sourceTree = "<group>"; };
+		321F41EF1B81840700FD6A12 /* soundTypeGameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundTypeGameOver.mp3; sourceTree = "<group>"; };
+		321F41F01B81840700FD6A12 /* soundTypePickedGold.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundTypePickedGold.wav; sourceTree = "<group>"; };
 		322DB6A81A229A0C0085AC68 /* LWFCreatureBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFCreatureBuilder.h; sourceTree = "<group>"; };
 		322DB6A91A229A0C0085AC68 /* LWFCreatureBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFCreatureBuilder.m; sourceTree = "<group>"; };
 		323335F71AA52F730088C4F6 /* item_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_info.png; sourceTree = "<group>"; };
@@ -302,12 +310,6 @@
 		323D10921A9C0CB6000AB32D /* fog_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fog_overlay.png; sourceTree = "<group>"; };
 		3240467F1B719FF30001BEF6 /* LWFPieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPieView.h; sourceTree = "<group>"; };
 		324046801B719FF30001BEF6 /* LWFPieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPieView.m; sourceTree = "<group>"; };
-		324046831B74419B0001BEF6 /* LWFSoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSoundPlayer.h; sourceTree = "<group>"; };
-		324046841B74419B0001BEF6 /* LWFSoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFSoundPlayer.m; sourceTree = "<group>"; };
-		324046871B7442210001BEF6 /* LWFSoundTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSoundTypes.h; sourceTree = "<group>"; };
-		324046881B7443D30001BEF6 /* soundTypePickedGold.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundTypePickedGold.wav; sourceTree = "<group>"; };
-		3240468A1B77CB8B0001BEF6 /* soundTypeGameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundTypeGameOver.mp3; sourceTree = "<group>"; };
-		3240468C1B7D7CD10001BEF6 /* musicTypeMenu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = musicTypeMenu.mp3; sourceTree = "<group>"; };
 		3240468E1B7EC3890001BEF6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		324527821A4CEC6900AFF9A7 /* warrior_attacking_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_attacking_right.atlas; sourceTree = "<group>"; };
 		324527841A4DB5E600AFF9A7 /* warrior_walking_left.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_walking_left.atlas; sourceTree = "<group>"; };
@@ -353,8 +355,6 @@
 		3275C4121B63136A00813994 /* GameOverButtons.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameOverButtons.xib; sourceTree = "<group>"; };
 		3275C4141B6314C300813994 /* LWFGameOverButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFGameOverButtons.h; sourceTree = "<group>"; };
 		3275C4151B6314C300813994 /* LWFGameOverButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFGameOverButtons.m; sourceTree = "<group>"; };
-		32793D371B81273E00B2117F /* LWFSoundPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSoundPreferences.h; sourceTree = "<group>"; };
-		32793D381B81273E00B2117F /* LWFSoundPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFSoundPreferences.m; sourceTree = "<group>"; };
 		32793D3A1B81286800B2117F /* LWFSoundPreferencesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFSoundPreferencesTests.m; sourceTree = "<group>"; };
 		32793D3C1B813CCC00B2117F /* LWFDictionaryConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFDictionaryConverter.h; sourceTree = "<group>"; };
 		32793D3D1B813CCC00B2117F /* LWFDictionaryConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFDictionaryConverter.m; sourceTree = "<group>"; };
@@ -708,19 +708,43 @@
 			path = Decorations;
 			sourceTree = "<group>";
 		};
-		324046821B7441700001BEF6 /* Music */ = {
+		321F41DA1B8183A500FD6A12 /* SFX */ = {
 			isa = PBXGroup;
 			children = (
-				324046881B7443D30001BEF6 /* soundTypePickedGold.wav */,
-				324046831B74419B0001BEF6 /* LWFSoundPlayer.h */,
-				324046841B74419B0001BEF6 /* LWFSoundPlayer.m */,
-				324046871B7442210001BEF6 /* LWFSoundTypes.h */,
-				3240468C1B7D7CD10001BEF6 /* musicTypeMenu.mp3 */,
-				3240468A1B77CB8B0001BEF6 /* soundTypeGameOver.mp3 */,
-				32793D371B81273E00B2117F /* LWFSoundPreferences.h */,
-				32793D381B81273E00B2117F /* LWFSoundPreferences.m */,
+				321F41EB1B81840700FD6A12 /* Assets */,
+				321F41DB1B8183A500FD6A12 /* LWFSoundPlayer.h */,
+				321F41DC1B8183A500FD6A12 /* LWFSoundPlayer.m */,
+				321F41DD1B8183A500FD6A12 /* LWFSoundPreferences.h */,
+				321F41DE1B8183A500FD6A12 /* LWFSoundPreferences.m */,
+				321F41DF1B8183A500FD6A12 /* LWFSoundTypes.h */,
 			);
-			path = Music;
+			path = SFX;
+			sourceTree = "<group>";
+		};
+		321F41EB1B81840700FD6A12 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				321F41EC1B81840700FD6A12 /* Musics */,
+				321F41EE1B81840700FD6A12 /* Sounds */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		321F41EC1B81840700FD6A12 /* Musics */ = {
+			isa = PBXGroup;
+			children = (
+				321F41ED1B81840700FD6A12 /* musicTypeMenu.mp3 */,
+			);
+			path = Musics;
+			sourceTree = "<group>";
+		};
+		321F41EE1B81840700FD6A12 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				321F41EF1B81840700FD6A12 /* soundTypeGameOver.mp3 */,
+				321F41F01B81840700FD6A12 /* soundTypePickedGold.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		324B2C101B3F7FF5005CAF81 /* Potions */ = {
@@ -1291,8 +1315,8 @@
 		A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */ = {
 			isa = PBXGroup;
 			children = (
+				321F41DA1B8183A500FD6A12 /* SFX */,
 				32793D3F1B8166BD00B2117F /* Persistence */,
-				324046821B7441700001BEF6 /* Music */,
 				A75046131B59DF9100EF5A2F /* Game Over */,
 				32DB3B171B477B9B0016E8B7 /* Chests */,
 				328F5FD51B3B6FA600D136BA /* Creatures */,
@@ -1451,7 +1475,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3240468B1B77CB8B0001BEF6 /* soundTypeGameOver.mp3 in Resources */,
 				3206A3E11A7D9D7F00D08893 /* item_preview_middle.png in Resources */,
 				32FB7DB51AA0004B00AA4C7F /* thumb@2x.png in Resources */,
 				32BEBFFD1A470B68000C77AA /* warrior_standing_right.png in Resources */,
@@ -1495,11 +1518,10 @@
 				32DFD2A11AAFD7E400FB554B /* popup_bg@3x.png in Resources */,
 				3275C4131B63136A00813994 /* GameOverButtons.xib in Resources */,
 				3209763D1B4A0BBD0022B331 /* closed_chest.png in Resources */,
-				3240468D1B7D7CD10001BEF6 /* musicTypeMenu.mp3 in Resources */,
 				328F5F4E1B3B69B900D136BA /* Imported Layers@2x.png in Resources */,
 				32BEB1361ABE4EFA008950C0 /* Lifebar@2x.png in Resources */,
 				32E2E6A41ACA2E5300EA88DD /* inventory.png in Resources */,
-				324046891B7443D30001BEF6 /* soundTypePickedGold.wav in Resources */,
+				321F41F21B81840700FD6A12 /* soundTypeGameOver.mp3 in Resources */,
 				328F5F621B3B6A8700D136BA /* ItemDescription.xib in Resources */,
 				32E2E6C11ACCCB7C00EA88DD /* poop.jpg in Resources */,
 				32E2E6AC1ACA31E800EA88DD /* button_yellow@3x.png in Resources */,
@@ -1531,6 +1553,7 @@
 				325373B91AF1B25C00BF0E43 /* weapon_empty@2x.png in Resources */,
 				32DFD2AA1AAFD7FC00FB554B /* button_green@3x.png in Resources */,
 				32FB7DAF1AA0004B00AA4C7F /* bg@3x.png in Resources */,
+				321F41F31B81840700FD6A12 /* soundTypePickedGold.wav in Resources */,
 				32938A381AFC42FA00BBE745 /* special_attack_icon.png in Resources */,
 				32BEC0051A470F5F000C77AA /* warrior_walking_right.atlas in Resources */,
 				32FB7DB91AA0004B00AA4C7F /* thumb_money@3x.png in Resources */,
@@ -1546,6 +1569,7 @@
 				3275C40D1B60694C00813994 /* opening_chest.atlas in Resources */,
 				32E2E6B51ACB6BAA00EA88DD /* poop_thrower_rat_dying_right.atlas in Resources */,
 				32BEB13A1ABE4EFA008950C0 /* portrait@3x.png in Resources */,
+				321F41F11B81840700FD6A12 /* musicTypeMenu.mp3 in Resources */,
 				328F5F871B3B6B8E00D136BA /* loot_chances.json in Resources */,
 				325373AF1AF1B25C00BF0E43 /* armor_empty.png in Resources */,
 				324527831A4CEC6900AFF9A7 /* warrior_attacking_right.atlas in Resources */,
@@ -1655,6 +1679,7 @@
 				32DB3B1A1B477BB90016E8B7 /* LWFChest.m in Sources */,
 				328F5F991B3B6BC200D136BA /* LWFLogger.m in Sources */,
 				328F5F901B3B6B8E00D136BA /* LWFLootChanceFactory.m in Sources */,
+				321F41E41B8183A500FD6A12 /* LWFSoundPreferences.m in Sources */,
 				A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */,
 				A7D46D831B5C01A300EBA942 /* LWFGameOverTitle.m in Sources */,
 				328F5F671B3B6A8700D136BA /* LWFNewItemDescription.m in Sources */,
@@ -1662,6 +1687,7 @@
 				328F5F3B1B37893500D136BA /* LWFOTEPoison.m in Sources */,
 				328F5F4F1B3B69B900D136BA /* LWFAnimationArrowInventory.m in Sources */,
 				328F5FEA1B3B6FA600D136BA /* LWFCreature.m in Sources */,
+				321F41E31B8183A500FD6A12 /* LWFSoundPlayer.m in Sources */,
 				A7F5BB9A1A16EFBC005BAB63 /* LWFAppDelegate.m in Sources */,
 				328F5F881B3B6B8E00D136BA /* LWFEquipment.m in Sources */,
 				3293698B1A5058DD00ECF705 /* LWFRect.m in Sources */,
@@ -1718,7 +1744,6 @@
 				32FFE83E1A2C0BDD003D02A4 /* LWFAttack.m in Sources */,
 				32A9E2D41B155E2C003D37FD /* LWFPotionIdentifierMatcher.m in Sources */,
 				328F5FEC1B3B6FA600D136BA /* LWFPlayer.m in Sources */,
-				324046851B74419B0001BEF6 /* LWFSoundPlayer.m in Sources */,
 				A7F5BBA01A16EFBD005BAB63 /* LWFViewController.m in Sources */,
 				32F09E2C1A48E6B4000B8797 /* LWFCombatOutput.m in Sources */,
 				3275C4161B6314C300813994 /* LWFGameOverButtons.m in Sources */,
@@ -1728,7 +1753,6 @@
 				A78443AC1A1EEF7B0029995D /* LWFHumbleBeeFindPath.m in Sources */,
 				32F831341A96A96B007174F1 /* LWFAttackQueue.m in Sources */,
 				328F5F661B3B6A8700D136BA /* LWFItemDescription.m in Sources */,
-				32793D391B81273E00B2117F /* LWFSoundPreferences.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
