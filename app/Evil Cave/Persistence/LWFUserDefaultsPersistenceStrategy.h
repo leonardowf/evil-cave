@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LWFPersistenceStrategy.h"
 
-@interface LWFUserDefaultsPersistenceStrategy : NSObject
+@interface LWFUserDefaultsPersistenceStrategy : NSObject <LWFPersistenceStrategy>
+
+- (void)saveDictionary:(NSDictionary *)dictionary atKey:(NSString *)key;
+- (void)saveString:(NSString *)string atKey:(NSString *)key;
+
+- (NSDictionary *)loadDictionaryAtKey:(NSString *)key;
+- (NSString *)loadStringAtKey:(NSString *)key;
 
 @end

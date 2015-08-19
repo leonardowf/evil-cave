@@ -9,6 +9,10 @@
 #import "LWFSoundPlayer.h"
 #import "LWFMyScene.h"
 #import <AVFoundation/AVFoundation.h>
+#import "LWFSoundPreferences.h"
+#import "LWFRepository.h"
+#import "LWFPersistenceStrategy.h"
+#import "LWFUserDefaultsPersistenceStrategy.h"
 
 #define PLAY_SOUND_NOTIFICATION             @"NotificationPlaySound"
 #define PLAY_MUSIC_NOTIFICATION             @"NotificationPlayMusic"
@@ -24,6 +28,9 @@
     NSDictionary *_preloadedMusic;
     
     AVAudioPlayer *_currentPlayingMusic;
+    
+    LWFSoundPreferences *_soundPreferences;
+    LWFRepository *_repository;
 }
 @end
 
@@ -34,6 +41,9 @@
     self = [super init];
     if (self) {
         _scene = scene;
+        
+        LWFUserDefaultsPersistenceStrategy *persistanceStrategy = [[LWFUserDefaultsPersistenceStrategy alloc]init];
+        _repository = [[LWFRepository alloc]initWithPersistenceStrategy:persistanceStrategy];
         
         [self registerForNotifications];
         [self preloadAudioFiles];
@@ -100,8 +110,6 @@
 + (void)decreaseMusicVolume {
     
 }
-
-
 
 - (void)preloadAudioFiles {
     NSMutableDictionary *dictionary = [NSMutableDictionary new];
@@ -171,14 +179,14 @@
  *  Salva localmente informações sobre mute e volumes
  */
 - (void)savePreferences {
-    
+    [_repository saveSoundPreferences:_soundPreferences];
 }
 
 /**
  *  Carrega informações de mute e volumes
  */
 - (void)loadPreferences {
-    
+    _soundPreferences = [_repository loadSoundPreferences];
 }
 
 + (AVAudioPlayer *)audioPlayerForMusicFileName:(NSString *)musicFileName {
