@@ -35,6 +35,10 @@
 - (LWFSoundPreferences *)loadSoundPreferences {
     NSDictionary *dict = [_strategy loadDictionaryAtKey:SOUND_PREFERENCES_KEY];
     
+    if (dict == nil) {
+        return nil;
+    }
+    
     return [[LWFSoundPreferences alloc]initWithDictionary:dict];
 }
 

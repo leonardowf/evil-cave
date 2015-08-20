@@ -45,6 +45,8 @@
         LWFUserDefaultsPersistenceStrategy *persistanceStrategy = [[LWFUserDefaultsPersistenceStrategy alloc]init];
         _repository = [[LWFRepository alloc]initWithPersistenceStrategy:persistanceStrategy];
         
+        [self loadPreferences];
+        
         [self registerForNotifications];
         [self preloadAudioFiles];
     }
@@ -154,6 +156,8 @@
         
         NSString *fileName = (NSString *)[notification object];
         _currentPlayingMusic = [_preloadedMusic objectForKey:fileName];
+        
+        _currentPlayingMusic.volume = _soundPreferences.musicVolume;
 
         [_currentPlayingMusic play];
     }
@@ -187,6 +191,10 @@
  */
 - (void)loadPreferences {
     _soundPreferences = [_repository loadSoundPreferences];
+    
+    if (_soundPreferences == nil) {
+        _soundPreferences = [[LWFSoundPreferences alloc]init];
+    }
 }
 
 + (AVAudioPlayer *)audioPlayerForMusicFileName:(NSString *)musicFileName {

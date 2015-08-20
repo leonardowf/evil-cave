@@ -31,7 +31,7 @@
 
 - (void)testIfSoundPreferencesConvertsCorrectly {
     LWFSoundPreferences *soundPreferences = [LWFSoundPreferences new];
-    soundPreferences.volume = 0.5;
+    soundPreferences.musicVolume = 0.5;
     soundPreferences.musicMuted = true;
     soundPreferences.soundMuted = true;
     
@@ -39,7 +39,7 @@
     
     LWFSoundPreferences *loadedSoundPreferences = [[LWFSoundPreferences alloc]initWithDictionary:dict];
     
-    XCTAssertEqual(soundPreferences.volume, loadedSoundPreferences.volume);
+    XCTAssertEqual(soundPreferences.musicVolume, loadedSoundPreferences.musicVolume);
     XCTAssertEqual(soundPreferences.soundMuted, loadedSoundPreferences.soundMuted);
     XCTAssertEqual(soundPreferences.musicMuted, loadedSoundPreferences.musicMuted);
 }
@@ -47,13 +47,13 @@
 - (void)testRepositoryPersistence {
     LWFRepository *repository = [[LWFRepository alloc]initWithPersistenceStrategy:[LWFMockPersistanceStrategy new]];
     LWFSoundPreferences *soundPreferences = [LWFSoundPreferences new];
-    soundPreferences.volume = 0.5;
+    soundPreferences.musicVolume = 0.5;
     
     [repository saveSoundPreferences:soundPreferences];
     
     LWFSoundPreferences *loadedSoundPreferences = [repository loadSoundPreferences];
     
-    XCTAssertEqual(soundPreferences.volume, loadedSoundPreferences.volume);
+    XCTAssertEqual(soundPreferences.musicVolume, loadedSoundPreferences.musicVolume);
     XCTAssertEqual(soundPreferences.soundMuted, loadedSoundPreferences.soundMuted);
     XCTAssertEqual(soundPreferences.musicMuted, loadedSoundPreferences.musicMuted);
 }

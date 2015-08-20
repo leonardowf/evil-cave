@@ -12,10 +12,21 @@
 
 @implementation LWFSoundPreferences
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.musicVolume = 1.0;
+        self.soundVolume = 1.0;
+    }
+    return self;
+}
+
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (self) {
-        self.volume = [dictionary floatForKey:@"volume"];
+        self.musicVolume = [dictionary floatForKey:@"musicVolume"];
+        self.soundVolume = [dictionary floatForKey:@"soundVolume"];
         self.soundMuted = [dictionary booleanForKey:@"soundMuted"];
         self.musicMuted = [dictionary booleanForKey:@"musicMuted"];
     }

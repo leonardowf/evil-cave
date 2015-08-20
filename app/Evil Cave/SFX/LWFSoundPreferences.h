@@ -10,7 +10,8 @@
 
 @interface LWFSoundPreferences : NSObject
 
-@property (nonatomic) CGFloat volume;
+@property (nonatomic) CGFloat soundVolume;
+@property (nonatomic) CGFloat musicVolume;
 @property (nonatomic) BOOL soundMuted;
 @property (nonatomic) BOOL musicMuted;
 
