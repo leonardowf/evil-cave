@@ -98,7 +98,8 @@
 }
 
 + (void)muteMusic {
-    
+    [[NSNotificationCenter defaultCenter]postNotificationName:MUTE_MUSIC_NOTIFICATION
+                                                       object:nil];
 }
 
 + (void)muteSound {
@@ -106,11 +107,13 @@
 }
 
 + (void)increaseMusicVolume {
-    
+    [[NSNotificationCenter defaultCenter]postNotificationName:INCREASE_MUSIC_VOLUME_NOTIFICATION
+                                                       object:nil];
 }
 
 + (void)decreaseMusicVolume {
-    
+    [[NSNotificationCenter defaultCenter]postNotificationName:DECREASE_MUSIC_VOLUME_NOTIFICATION
+                                                       object:nil];
 }
 
 - (void)preloadAudioFiles {
@@ -168,15 +171,23 @@
 }
 
 - (void)didReceiveMuteMusicRequest {
-    
+    _currentPlayingMusic.volume = 0.0;
 }
 
 - (void)didReceiveDecreaseMusicVolumeRequest {
+    if (_currentPlayingMusic.volume == 0.0) {
+        return;
+    }
     
+    _currentPlayingMusic.volume = _currentPlayingMusic.volume - 0.1;
 }
 
 - (void)didReceiveIncreaseMusicVolumeRequest {
+    if (_currentPlayingMusic.volume == 1.0) {
+        return;
+    }
     
+    _currentPlayingMusic.volume = _currentPlayingMusic.volume + 0.1;
 }
 
 /**
