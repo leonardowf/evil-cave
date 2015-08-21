@@ -18,6 +18,7 @@
 #define PLAY_MUSIC_NOTIFICATION             @"NotificationPlayMusic"
 #define STOP_MUSIC_NOTIFICATION             @"NotificationStopMusic"
 #define MUTE_MUSIC_NOTIFICATION             @"NotificationMuteMusic"
+#define MUTE_SOUND_NOTIFICATION             @"NotificationMuteSound"
 #define DECREASE_MUSIC_VOLUME_NOTIFICATION  @"NotificationDecreaseMusicVolume"
 #define INCREASE_MUSIC_VOLUME_NOTIFICATION  @"NotificationIncreaseMusicVolume"
 
@@ -65,6 +66,7 @@
                                               PLAY_MUSIC_NOTIFICATION:              @"didReceivePlayMusicRequest:",
                                               STOP_MUSIC_NOTIFICATION:              @"didReceiveStopMusicRequest",
                                               MUTE_MUSIC_NOTIFICATION:              @"didReceiveMuteMusicRequest",
+                                              MUTE_SOUND_NOTIFICATION:              @"didReceiveMuteSoundRequest",
                                               DECREASE_MUSIC_VOLUME_NOTIFICATION:   @"didReceiveDecreaseMusicVolumeRequest",
                                               INCREASE_MUSIC_VOLUME_NOTIFICATION:   @"didReceiveIncreaseMusicVolumeRequest"
                                               };
@@ -103,6 +105,8 @@
 }
 
 + (void)muteSound {
+    [[NSNotificationCenter defaultCenter]postNotificationName:MUTE_SOUND_NOTIFICATION
+                                                       object:nil];
     
 }
 
@@ -172,6 +176,11 @@
 
 - (void)didReceiveMuteMusicRequest {
     _currentPlayingMusic.volume = 0.0;
+    [self savePreferences];
+}
+
+- (void)didReceiveMuteSoundRequest {
+    // TODO: refactor to use AVAUDIO instead of SKACTION
 }
 
 - (void)didReceiveDecreaseMusicVolumeRequest {
@@ -180,6 +189,8 @@
     }
     
     _currentPlayingMusic.volume = _currentPlayingMusic.volume - 0.1;
+    
+    [self savePreferences];
 }
 
 - (void)didReceiveIncreaseMusicVolumeRequest {
@@ -188,6 +199,8 @@
     }
     
     _currentPlayingMusic.volume = _currentPlayingMusic.volume + 0.1;
+    
+    [self savePreferences];
 }
 
 /**
