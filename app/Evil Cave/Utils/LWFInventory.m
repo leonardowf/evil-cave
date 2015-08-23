@@ -76,7 +76,7 @@ SINGLETON_FOR_CLASS(Inventory)
     opacityAnimation.beginTime = CACurrentMediaTime() + 0.1;
     [_viewController.viewInventoryContainer.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
     
-    _viewController.labelGold.text = [NSString stringWithFormat:@"%ld", (long)self.money];
+    _viewController.labelGold.text = [NSString stringWithFormat:@"%ld gold", (long)self.money];
 }
 
 - (BOOL)isEquipped:(LWFEquipment *)equipment {
@@ -229,7 +229,7 @@ SINGLETON_FOR_CLASS(Inventory)
         [_imageViewHolders addObject:imageViewHolder];
     }
     
-    
+    UITapGestureRecognizer *tapClose = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapClose)];
     UITapGestureRecognizer *tapArmor = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapArmor)];
     UITapGestureRecognizer *tapBoots = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapBoots)];
     UITapGestureRecognizer *tapAccessory = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapAccessory)];
@@ -246,6 +246,12 @@ SINGLETON_FOR_CLASS(Inventory)
     
     [viewController.imageViewAccessory setUserInteractionEnabled:YES];
     [viewController.imageViewAccessory addGestureRecognizer:tapAccessory];
+    
+    [viewController.imageViewButtonClose addGestureRecognizer:tapClose];
+}
+
+- (void)didTapClose {
+    [self hide];
 }
 
 - (void)didTapWeapon {
