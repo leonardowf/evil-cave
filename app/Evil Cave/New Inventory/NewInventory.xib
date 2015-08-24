@@ -5,12 +5,44 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LWFNewInventory"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LWFNewInventory">
+            <connections>
+                <outlet property="containerView" destination="Ulg-Kc-onT" id="WAV-tC-rax"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ulg-Kc-onT" userLabel="Container View">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="t9o-Qh-BDH">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="t9o-Qh-BDH" secondAttribute="centerX" id="EZ3-Xe-pak"/>
+                        <constraint firstAttribute="centerY" secondItem="t9o-Qh-BDH" secondAttribute="centerY" id="ZGV-bR-1Qh"/>
+                        <constraint firstItem="t9o-Qh-BDH" firstAttribute="width" secondItem="Ulg-Kc-onT" secondAttribute="width" id="d58-Pj-Ved"/>
+                        <constraint firstItem="t9o-Qh-BDH" firstAttribute="height" secondItem="Ulg-Kc-onT" secondAttribute="height" id="mx4-uH-Gce"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Ulg-Kc-onT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2KS-by-cuK"/>
+                <constraint firstAttribute="trailing" secondItem="Ulg-Kc-onT" secondAttribute="trailing" id="2Vh-4a-PVI"/>
+                <constraint firstAttribute="bottom" secondItem="Ulg-Kc-onT" secondAttribute="bottom" id="a5R-HJ-jpY"/>
+                <constraint firstItem="Ulg-Kc-onT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mVL-61-BfZ"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="711" y="415"/>
         </view>
     </objects>
+    <resources>
+        <image name="bg.png" width="320" height="568"/>
+    </resources>
 </document>
