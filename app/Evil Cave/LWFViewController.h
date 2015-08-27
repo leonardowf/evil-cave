@@ -47,6 +47,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewButtonClose;
 
+@property (weak, nonatomic) IBOutlet LWFImageViewInventoryItem *item0;
 @property (weak, nonatomic) IBOutlet LWFImageViewInventoryItem *item1;
 @property (weak, nonatomic) IBOutlet LWFImageViewInventoryItem *item2;
 @property (weak, nonatomic) IBOutlet LWFImageViewInventoryItem *item3;
