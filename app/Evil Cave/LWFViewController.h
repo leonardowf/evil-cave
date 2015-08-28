@@ -77,4 +77,6 @@
 @property (weak, nonatomic) IBOutlet UIView *viewSpecialAttackButton;
 @property (nonatomic, strong) LWFPieView *pieView;
 
+- (void)updatePieView:(NSInteger)turnsLeft forTotalTurns:(NSInteger)totalTurns;
+
 @end

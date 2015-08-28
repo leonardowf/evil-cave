@@ -97,13 +97,20 @@ SINGLETON_FOR_CLASS(GameOver)
     LWFGameController *gameController = [self getGameController];
     LWFViewController *rootController = gameController.rootController;
     LWFHudLifebar *hudLifebar = [LWFHudLifebar sharedHudLifeBar];
+    LWFInventory *inventory = [LWFInventory sharedInventory];
     
     // TODO: Animações
     
     rootController.viewSpecialAttackButton.hidden = YES;
     rootController.viewInventoryButton.hidden = YES;
     rootController.viewLogContainer.hidden = YES;
+    
+    [rootController updatePieView:0 forTotalTurns:0];
+    
     hudLifebar.containerView.hidden = YES;
+    
+    [inventory hideItemDescriptionIfNeeded];
+    [inventory hide];
 }
 
 - (void)addGameOverTitle {

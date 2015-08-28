@@ -215,13 +215,6 @@
 - (void)notify:(LWFOTE *)ote turnsLeftChangedTo:(NSInteger)newTurnsLeft {
     NSLog(@"cooldown do spinning mudou para: %d", newTurnsLeft);
     
-    if (newTurnsLeft == 0) {
-        self.labelSpecialAttackCooldown.text = @"";
-    } else {
-        [self updatePieView:newTurnsLeft forTotalTurns:ote.numberOfTurns];
-        self.labelSpecialAttackCooldown.text = [NSString stringWithFormat:@"%d", newTurnsLeft];
-    }
-    
     [self updatePieView:newTurnsLeft forTotalTurns:ote.numberOfTurns];
 }
 
@@ -232,13 +225,16 @@
  */
 - (void)updatePieView:(NSInteger)turnsLeft forTotalTurns:(NSInteger)totalTurns {
     
+    BOOL playerIsAlive = [[LWFPlayer sharedPlayer] isAlive];
+    
     if (turnsLeft == 0) {
         [self.pieView removeFromSuperview];
         self.pieView = nil;
+        self.labelSpecialAttackCooldown.text = @"";
         return;
     }
     
-    if (self.pieView == nil) {
+    if (self.pieView == nil && playerIsAlive) {
         CGRect specialButtonFrame = self.viewSpecialAttackButton.frame;
         CGRect pieFrame = CGRectMake(30, 30, specialButtonFrame.size.width + 30, specialButtonFrame.size.height + 30);
         
@@ -252,6 +248,10 @@
 
         [self.viewSpecialAttackButton addSubview:self.pieView];
         [self.viewSpecialAttackButton bringSubviewToFront:self.labelSpecialAttackCooldown];
+    }
+    
+    if (playerIsAlive) {
+       self.labelSpecialAttackCooldown.text = [NSString stringWithFormat:@"%ld", (long)turnsLeft];
     }
     
     CGFloat progress = 1.0 - (float)turnsLeft / (float)totalTurns;
