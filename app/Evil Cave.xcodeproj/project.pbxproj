@@ -31,13 +31,8 @@
 		3217226E1B8E89F6002B3816 /* red_potion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 321722681B8E89F6002B3816 /* red_potion@2x.png */; };
 		3217226F1B8E89F6002B3816 /* red_potion@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 321722691B8E89F6002B3816 /* red_potion@3x.png */; };
 		3219AB4B1A8ECEB600FE544C /* LWFSpinningAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 3219AB4A1A8ECEB600FE544C /* LWFSpinningAttack.m */; };
-		321A415A1B89589C009D9D91 /* NewInventory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 321A41591B89589C009D9D91 /* NewInventory.xib */; };
-		321A415D1B8958B1009D9D91 /* LWFNewInventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A415C1B8958B1009D9D91 /* LWFNewInventory.m */; };
 		321A60601A6354DF0060517E /* door_open.png in Resources */ = {isa = PBXBuildFile; fileRef = 321A605F1A6354DF0060517E /* door_open.png */; };
 		321A60631A635DA50060517E /* blood.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 321A60621A635DA50060517E /* blood.atlas */; };
-		321E3A7E1B8A1FB6001668B8 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 321E3A7B1B8A1FB6001668B8 /* bg.png */; };
-		321E3A7F1B8A1FB6001668B8 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 321E3A7C1B8A1FB6001668B8 /* bg@2x.png */; };
-		321E3A801B8A1FB6001668B8 /* bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 321E3A7D1B8A1FB6001668B8 /* bg@3x.png */; };
 		321E3A841B8A2B56001668B8 /* button_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 321E3A811B8A2B56001668B8 /* button_close.png */; };
 		321E3A851B8A2B56001668B8 /* button_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 321E3A821B8A2B56001668B8 /* button_close@2x.png */; };
 		321E3A861B8A2B56001668B8 /* button_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 321E3A831B8A2B56001668B8 /* button_close@3x.png */; };
@@ -313,14 +308,8 @@
 		321722691B8E89F6002B3816 /* red_potion@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_potion@3x.png"; sourceTree = "<group>"; };
 		3219AB491A8ECEB600FE544C /* LWFSpinningAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSpinningAttack.h; sourceTree = "<group>"; };
 		3219AB4A1A8ECEB600FE544C /* LWFSpinningAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFSpinningAttack.m; sourceTree = "<group>"; };
-		321A41591B89589C009D9D91 /* NewInventory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewInventory.xib; sourceTree = "<group>"; };
-		321A415B1B8958B1009D9D91 /* LWFNewInventory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFNewInventory.h; sourceTree = "<group>"; };
-		321A415C1B8958B1009D9D91 /* LWFNewInventory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFNewInventory.m; sourceTree = "<group>"; };
 		321A605F1A6354DF0060517E /* door_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door_open.png; sourceTree = "<group>"; };
 		321A60621A635DA50060517E /* blood.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = blood.atlas; sourceTree = "<group>"; };
-		321E3A7B1B8A1FB6001668B8 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
-		321E3A7C1B8A1FB6001668B8 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
-		321E3A7D1B8A1FB6001668B8 /* bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@3x.png"; sourceTree = "<group>"; };
 		321E3A811B8A2B56001668B8 /* button_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_close.png; sourceTree = "<group>"; };
 		321E3A821B8A2B56001668B8 /* button_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_close@2x.png"; sourceTree = "<group>"; };
 		321E3A831B8A2B56001668B8 /* button_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_close@3x.png"; sourceTree = "<group>"; };
@@ -736,19 +725,6 @@
 				3209763A1B4A0A980022B331 /* closed_chest.atlas */,
 			);
 			path = Chest;
-			sourceTree = "<group>";
-		};
-		321A41581B89588C009D9D91 /* New Inventory */ = {
-			isa = PBXGroup;
-			children = (
-				321E3A7B1B8A1FB6001668B8 /* bg.png */,
-				321E3A7C1B8A1FB6001668B8 /* bg@2x.png */,
-				321E3A7D1B8A1FB6001668B8 /* bg@3x.png */,
-				321A41591B89589C009D9D91 /* NewInventory.xib */,
-				321A415B1B8958B1009D9D91 /* LWFNewInventory.h */,
-				321A415C1B8958B1009D9D91 /* LWFNewInventory.m */,
-			);
-			path = "New Inventory";
 			sourceTree = "<group>";
 		};
 		321A60611A635DA50060517E /* Decorations */ = {
@@ -1381,7 +1357,6 @@
 		A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */ = {
 			isa = PBXGroup;
 			children = (
-				321A41581B89588C009D9D91 /* New Inventory */,
 				321F41DA1B8183A500FD6A12 /* SFX */,
 				32793D3F1B8166BD00B2117F /* Persistence */,
 				A75046131B59DF9100EF5A2F /* Game Over */,
@@ -1553,12 +1528,9 @@
 				32BEBFF91A470B68000C77AA /* radioactive_rat_standing_left.png in Resources */,
 				32BEC00F1A4714DC000C77AA /* rat_standing_right.atlas in Resources */,
 				A7D46D801B5C011B00EBA942 /* GameOverTitle.xib in Resources */,
-				321E3A801B8A1FB6001668B8 /* bg@3x.png in Resources */,
 				324527981A4DF83A00AFF9A7 /* rat_dying_left.atlas in Resources */,
 				32E2E6B81ACB6BAA00EA88DD /* poop_thrower_rat_standing_right.atlas in Resources */,
-				321A415A1B89589C009D9D91 /* NewInventory.xib in Resources */,
 				32938A391AFC42FA00BBE745 /* special_attack_icon@2x.png in Resources */,
-				321E3A7F1B8A1FB6001668B8 /* bg@2x.png in Resources */,
 				32FB7DB31AA0004B00AA4C7F /* inventory.png in Resources */,
 				324B2C161B3F7FF5005CAF81 /* red_potion.png in Resources */,
 				A7F5BB941A16EFBC005BAB63 /* InfoPlist.strings in Resources */,
@@ -1587,7 +1559,6 @@
 				325373B61AF1B25C00BF0E43 /* ring_empty@2x.png in Resources */,
 				32BEC0141A48A7C4000C77AA /* creature_stats.json in Resources */,
 				32E2E6B61ACB6BAA00EA88DD /* poop_thrower_rat_standing_left.atlas in Resources */,
-				321E3A7E1B8A1FB6001668B8 /* bg.png in Resources */,
 				32DFD2A11AAFD7E400FB554B /* popup_bg@3x.png in Resources */,
 				3275C4131B63136A00813994 /* GameOverButtons.xib in Resources */,
 				3209763D1B4A0BBD0022B331 /* closed_chest.png in Resources */,
@@ -1814,7 +1785,6 @@
 				32BEBFB91A42476D000C77AA /* LWFGameController.m in Sources */,
 				322DB6AA1A229A0C0085AC68 /* LWFCreatureBuilder.m in Sources */,
 				328F5FF01B3B6FA600D136BA /* LWFStats.m in Sources */,
-				321A415D1B8958B1009D9D91 /* LWFNewInventory.m in Sources */,
 				32A9E2D11B12B36B003D37FD /* LWFPotionFactory.m in Sources */,
 				328F5FA31B3B6CF800D136BA /* LWFItemComparison.m in Sources */,
 				A7D8BEE41A1988BC005B0599 /* LWFCaveGeneratorConstants.m in Sources */,
