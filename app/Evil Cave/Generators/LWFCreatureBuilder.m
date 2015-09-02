@@ -94,8 +94,8 @@
             creature.stats = stats;
         }
         
-        [creature build];
         creature.map = _map;
+        [creature build];
         creature.movementManager = _movementManager;
         creature.attackManager = _attackManager;
         creature.turnList = _turnList;

@@ -163,6 +163,7 @@
 		32B5AADF1A87F66D00E6523A /* item_gold.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32B5AADE1A87F66D00E6523A /* item_gold.atlas */; };
 		32B5AAE71A87FCD900E6523A /* item_gold.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B5AAE61A87FCD900E6523A /* item_gold.png */; };
 		32BCDF791A50455E004A2993 /* LWFDartDungeonGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDF781A50455E004A2993 /* LWFDartDungeonGenerator.m */; };
+		32BEA46B1B95314B0026F15B /* LWFTextDisplayQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BEA46A1B95314B0026F15B /* LWFTextDisplayQueue.m */; };
 		32BEB1351ABE4EFA008950C0 /* Lifebar.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEB12F1ABE4EFA008950C0 /* Lifebar.png */; };
 		32BEB1361ABE4EFA008950C0 /* Lifebar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEB1301ABE4EFA008950C0 /* Lifebar@2x.png */; };
 		32BEB1371ABE4EFA008950C0 /* Lifebar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BEB1311ABE4EFA008950C0 /* Lifebar@3x.png */; };
@@ -508,6 +509,8 @@
 		32B5AAE61A87FCD900E6523A /* item_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_gold.png; sourceTree = "<group>"; };
 		32BCDF771A50455E004A2993 /* LWFDartDungeonGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFDartDungeonGenerator.h; sourceTree = "<group>"; };
 		32BCDF781A50455E004A2993 /* LWFDartDungeonGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFDartDungeonGenerator.m; sourceTree = "<group>"; };
+		32BEA4691B95314B0026F15B /* LWFTextDisplayQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFTextDisplayQueue.h; sourceTree = "<group>"; };
+		32BEA46A1B95314B0026F15B /* LWFTextDisplayQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFTextDisplayQueue.m; sourceTree = "<group>"; };
 		32BEB12F1ABE4EFA008950C0 /* Lifebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lifebar.png; sourceTree = "<group>"; };
 		32BEB1301ABE4EFA008950C0 /* Lifebar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lifebar@2x.png"; sourceTree = "<group>"; };
 		32BEB1311ABE4EFA008950C0 /* Lifebar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lifebar@3x.png"; sourceTree = "<group>"; };
@@ -1250,6 +1253,8 @@
 				32793D3C1B813CCC00B2117F /* LWFDictionaryConverter.h */,
 				32793D3D1B813CCC00B2117F /* LWFDictionaryConverter.m */,
 				321F41D91B81792C00FD6A12 /* NSDictionary+PrimitiveHelpers.h */,
+				32BEA4691B95314B0026F15B /* LWFTextDisplayQueue.h */,
+				32BEA46A1B95314B0026F15B /* LWFTextDisplayQueue.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1751,6 +1756,7 @@
 				32826C311AEDB296007400AD /* LWFOTE.m in Sources */,
 				32DB3B141B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.m in Sources */,
 				3219AB4B1A8ECEB600FE544C /* LWFSpinningAttack.m in Sources */,
+				32BEA46B1B95314B0026F15B /* LWFTextDisplayQueue.m in Sources */,
 				A78443B01A1EEFCC0029995D /* PathFindNode.m in Sources */,
 				328F5F9F1B3B6C2F00D136BA /* LWFDifficultyManager.m in Sources */,
 				A7D8BEED1A1AB909005B0599 /* LWFRoom.m in Sources */,

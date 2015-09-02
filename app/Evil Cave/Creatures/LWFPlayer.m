@@ -22,11 +22,13 @@
 #import "LWFGold.h"
 #import "LWFGameOver.h"
 #import "LWFSoundPlayer.h"
+#import "LWFTextDisplayQueue.h"
 
 @interface LWFPlayer () {
     LWFCreature *_lockedTarget;
     
     BOOL _shouldExecuteSpecialAttackNextTurn;
+    LWFTextDisplayQueue *_textDisplayQueue;
 }
 @end
 
@@ -38,6 +40,7 @@ SINGLETON_FOR_CLASS(Player)
     [super build];
     
     self.inventory = [LWFInventory sharedInventory];
+    _textDisplayQueue = [[LWFTextDisplayQueue alloc]initWithMap:self.map];
 }
 
 - (void)moveCameraToTile:(LWFTile *)tile {
@@ -189,17 +192,7 @@ SINGLETON_FOR_CLASS(Player)
         
         SKLabelNode *label = [gold getLabel];
         
-        label.position = self.currentTile.position;
-        
-        [self.map addChild:label];
-        
-        SKAction *action = [SKAction moveByX:0 y:70 duration:1.2];
-        [label runAction:action completion:^{
-            SKAction *action = [SKAction fadeAlphaTo:0 duration:0.2];
-            [label runAction:action completion:^{
-            }];
-            
-        }];
+        [_textDisplayQueue displayLabel:label atPosition:self.currentTile.position];
         
         self.inventory.money = self.inventory.money + item.quantity;
         [LWFLogger logGold:item.quantity];
