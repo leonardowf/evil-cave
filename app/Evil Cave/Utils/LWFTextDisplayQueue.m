@@ -58,27 +58,27 @@
 }
 
 - (void)produce:(SKLabelNode *)label {
-    dispatch_async(_serialQueue, ^{
-        [_producedItems addObject:label];
-    });
+    [_producedItems addObject:label];
 }
 
 - (void)consume {
     dispatch_async(_serialQueue, ^{
+        dispatch_semaphore_t sem = dispatch_semaphore_create(0);
         
         SKLabelNode *first = [_producedItems firstObject];
         [_producedItems removeObject:first];
-
+        
         [_map addChild:first];
-
-        SKAction *action = [SKAction moveByX:0 y:70 duration:1.2];
-        [first runAction:action completion:^{
-            SKAction *action = [SKAction fadeAlphaTo:0 duration:0.2];
-            [first runAction:action completion:^{
-                
-            }];
-            
+        
+        SKAction *moveAction = [SKAction moveByX:0 y:70 duration:1.2];
+        SKAction *fadeAction = [SKAction fadeAlphaTo:0 duration:0.2];
+        SKAction *sequenceAction = [SKAction sequence:@[moveAction, fadeAction]];
+        
+        [first runAction:sequenceAction completion:^{
+            dispatch_semaphore_signal(sem);
         }];
+        
+        dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
     });
 }
 
