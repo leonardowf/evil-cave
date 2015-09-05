@@ -70,11 +70,20 @@
         
         [_map addChild:first];
         
+        
+        SKAction *wait = [SKAction waitForDuration:0.6];
+        
         SKAction *moveAction = [SKAction moveByX:0 y:70 duration:1.2];
         SKAction *fadeAction = [SKAction fadeAlphaTo:0 duration:0.2];
         SKAction *sequenceAction = [SKAction sequence:@[moveAction, fadeAction]];
         
         [first runAction:sequenceAction completion:^{
+            
+            
+            
+        }];
+        
+        [first runAction:wait completion:^{
             dispatch_semaphore_signal(sem);
         }];
         
