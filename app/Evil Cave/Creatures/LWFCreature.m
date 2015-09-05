@@ -33,13 +33,13 @@
 #import "LWFOTEPoison.h"
 
 #import "LWFNodeCompletionWithKeyCategory.h"
+#import "LWFTextDisplayQueue.h"
 
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
     NSUInteger _failedMovements;
     id<LWFLifeDisplayer> _lifeBar;
     NSArray *_lootChances;
-
 }
 @end
 
@@ -166,6 +166,8 @@
         ((LWFLifeBar *)_lifeBar).alpha = 0.0;
         [self addChild:(LWFLifeBar *)_lifeBar];
     }
+    
+    self.textDisplayQueue = [[LWFTextDisplayQueue alloc]initWithMap:self.map andCreature:self];
 }
 
 - (id<LWFLifeDisplayer>)getLifeBar {
@@ -555,19 +557,7 @@
 - (void)displayDamageForCombatOutput:(LWFCombatOutput *)combatOutput {
     SKLabelNode *label = [combatOutput getLabel];
     
-    label.position = self.currentTile.position;
-    
-    [self.map addChild:label];
-    
-    SKAction *action = [SKAction moveByX:0 y:70 duration:1.2];
-    [label runAction:action completion:^{
-        SKAction *action = [SKAction fadeAlphaTo:0 duration:0.2];
-        [label runAction:action completion:^{
-            
-            
-        }];
-        
-    }];
+    [self.textDisplayQueue displayLabel:label];
 }
 
 - (LWFStats *)getStats {

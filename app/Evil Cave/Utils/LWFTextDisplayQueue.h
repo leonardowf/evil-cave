@@ -12,7 +12,7 @@
 
 @interface LWFTextDisplayQueue : NSObject
 
-- (instancetype)initWithMap:(LWFMap *)map;
-- (void)displayLabel:(SKLabelNode *)label atPosition:(CGPoint)position;
+- (void)displayLabel:(SKLabelNode *)label;
+- (instancetype)initWithMap:(LWFMap *)map andCreature:(LWFCreature *)creature;
 
 @end

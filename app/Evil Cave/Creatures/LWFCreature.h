@@ -22,6 +22,8 @@
 @class LWFStats;
 @class LWFEquips;
 
+@class LWFTextDisplayQueue;
+
 @class LWFMovementManager;
 @class LWFAttackManager;
 @class LWFOTEQueue;
@@ -49,6 +51,8 @@
 @property (nonatomic, strong) LWFCreature *nextCreature;
 
 @property (nonatomic, strong) NSArray *lootChances;
+
+@property (nonatomic, strong) LWFTextDisplayQueue *textDisplayQueue;
 
 - (void)build;
 

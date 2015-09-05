@@ -8,50 +8,32 @@
 
 #import "LWFTextDisplayQueue.h"
 #import "LWFMap.h"
+#import "LWFCreature.h"
 
 @interface LWFTextDisplayQueue () {
     LWFMap *_map;
     NSMutableArray *_producedItems;
+    LWFCreature *_creature;
     dispatch_queue_t _serialQueue;
 }
 @end
 
 @implementation LWFTextDisplayQueue
 
-- (instancetype)initWithMap:(LWFMap *)map {
+- (instancetype)initWithMap:(LWFMap *)map andCreature:(LWFCreature *)creature {
     self = [super init];
     if (self) {
         _map = map;
         _producedItems = [NSMutableArray new];
+        _creature = creature;
         
         _serialQueue = dispatch_queue_create("com.example.CriticalTaskQueue", NULL);
     }
     return self;
 }
 
-//- (void)displayLabel:(SKLabelNode *)label atPosition:(CGPoint)position {
-//    [_queue addObject:label];
-//    
-//    @synchronized(_queue) {
-//        SKLabelNode *first = [_queue firstObject];
-//        
-//        first.position = position;
-//        
-//        [_map addChild:first];
-//        
-//        SKAction *action = [SKAction moveByX:0 y:70 duration:1.2];
-//        [first runAction:action completion:^{
-//            SKAction *action = [SKAction fadeAlphaTo:0 duration:0.2];
-//            [first runAction:action completion:^{
-//                [_queue removeObject:first];
-//            }];
-//            
-//        }];
-//    }
-//}
-
-- (void)displayLabel:(SKLabelNode *)label atPosition:(CGPoint)position {
-    label.position = position;
+- (void)displayLabel:(SKLabelNode *)label {
+    label.position = _creature.position;
     
     [self produce:label];
     [self consume];
@@ -71,7 +53,7 @@
         [_map addChild:first];
         
         
-        SKAction *wait = [SKAction waitForDuration:0.6];
+        SKAction *wait = [SKAction waitForDuration:0.4];
         
         SKAction *moveAction = [SKAction moveByX:0 y:70 duration:1.2];
         SKAction *fadeAction = [SKAction fadeAlphaTo:0 duration:0.2];

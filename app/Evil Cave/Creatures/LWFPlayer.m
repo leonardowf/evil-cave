@@ -28,7 +28,7 @@
     LWFCreature *_lockedTarget;
     
     BOOL _shouldExecuteSpecialAttackNextTurn;
-    LWFTextDisplayQueue *_textDisplayQueue;
+
 }
 @end
 
@@ -40,7 +40,6 @@ SINGLETON_FOR_CLASS(Player)
     [super build];
     
     self.inventory = [LWFInventory sharedInventory];
-    _textDisplayQueue = [[LWFTextDisplayQueue alloc]initWithMap:self.map];
 }
 
 - (void)moveCameraToTile:(LWFTile *)tile {
@@ -192,7 +191,7 @@ SINGLETON_FOR_CLASS(Player)
         
         SKLabelNode *label = [gold getLabel];
         
-        [_textDisplayQueue displayLabel:label atPosition:self.currentTile.position];
+        [self.textDisplayQueue displayLabel:label];
         
         self.inventory.money = self.inventory.money + item.quantity;
         [LWFLogger logGold:item.quantity];
