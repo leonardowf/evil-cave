@@ -9,6 +9,10 @@
 typedef enum : NSUInteger {
     LWFSoundTypePickedGold,
     LWFSoundTypeGameOver,
+    LWFSoundTypeStep,
+    LWFSoundTypeUIOpenInventory,
+    LWFSoundTypeUISpecialAttack,
+    LWFSoundTypePlayerHit,
     LWFSoundTypeCount
 } LWFSoundType;
 
