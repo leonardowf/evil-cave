@@ -7,6 +7,7 @@
 //
 
 #import "LWFCreature.h"
+#import "LWFSoundEmitter.h"
 
 @interface LWFRat : LWFCreature
 

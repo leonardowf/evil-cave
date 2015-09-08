@@ -20,6 +20,7 @@
 #import "LWFCombatOutput.h"
 #import "LWFStats.h"
 #import "LWFLifeBar.h"
+#import "LWFSoundPlayer.h"
 
 #import "LWFItemPrototype.h"
 #import "LWFItemPrototypeFactory.h"
@@ -535,8 +536,18 @@
     
     [self displayDamageForCombatOutput:combatOutput];
     
+    [self playHitSound];
+    
     [self runAction: pulseRed completion:someBlock];
     
+}
+
+- (void)playHitSound {
+    [LWFSoundPlayer play:LWFSoundTypePlayerHit withSoundEmitter:self];
+}
+
+- (NSString *)getSoundName:(LWFSoundType)soundType {
+    return nil;
 }
 
 - (void)receveidDamageLog:(NSInteger)damage fromCreature:(LWFCreature *)creature {

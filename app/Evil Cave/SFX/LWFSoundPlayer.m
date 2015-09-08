@@ -87,6 +87,15 @@
                                                        object:soundFileName];
 }
 
++ (void)play:(LWFSoundType)soundType withSoundEmitter:(id<LWFSoundEmitter>)soundEmitter {
+    NSString *soundFileName = [soundEmitter getSoundName:soundType];
+    
+    if (soundFileName != nil) {
+        [[NSNotificationCenter defaultCenter]postNotificationName:PLAY_SOUND_NOTIFICATION
+                                                           object:soundFileName];
+    }
+}
+
 + (void)playMusic:(LWFMusicType)musicType {
     NSString *musicFileName = [self musicFileNameForMusicType:musicType];
     
@@ -251,7 +260,7 @@
         break;
         
         default:
-            return @"notFound";
+            return @"notFound.wav";
         break;
     }
 }

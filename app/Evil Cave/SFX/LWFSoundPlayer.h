@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "LWFSoundTypes.h"
+#import "LWFSoundEmitter.h"
+
 @class LWFMyScene;
 
 @interface LWFSoundPlayer : NSObject
@@ -15,6 +17,7 @@
 - (instancetype)initWithScene:(LWFMyScene *)scene;
 
 + (void)play:(LWFSoundType)soundType;
++ (void)play:(LWFSoundType)soundType withSoundEmitter:(id<LWFSoundEmitter>)soundEmitter;
 + (void)playMusic:(LWFMusicType)musicType;
 + (void)stopMusic;
 + (void)muteMusic;
