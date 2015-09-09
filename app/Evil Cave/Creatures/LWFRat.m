@@ -34,7 +34,7 @@
 }
 
 - (NSString *)getSoundName:(LWFSoundType)soundType {
-    return @"soundTypeGameOver.mp3";
+    return @"ratHit.wav";
 }
 
 

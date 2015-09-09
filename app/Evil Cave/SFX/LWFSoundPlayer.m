@@ -138,6 +138,9 @@
         [dictionary setObject:action forKey:fileName];
     }
     
+    SKAction *actionRat = [LWFSoundPlayer actionForAudioWithName:@"ratHit.wav" isMusic:NO];
+    [dictionary setObject:actionRat forKey:@"ratHit.wav"];
+    
     _preloadedAudios = dictionary;
     
     dictionary = [NSMutableDictionary new];

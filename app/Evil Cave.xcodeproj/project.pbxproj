@@ -41,6 +41,7 @@
 		321E3A8B1B8A3166001668B8 /* gold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 321E3A881B8A3166001668B8 /* gold@2x.png */; };
 		321E3A8C1B8A3166001668B8 /* gold@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 321E3A891B8A3166001668B8 /* gold@3x.png */; };
 		321EC9A71A26A5C400F06B77 /* LWFTurnList.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EC9A61A26A5C400F06B77 /* LWFTurnList.m */; };
+		321F2C471B9FC128003EF0CA /* ratHit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 321F2C461B9FC128003EF0CA /* ratHit.wav */; };
 		321F41D41B816B8E00FD6A12 /* LWFUserDefaultsPersistenceStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 321F41D31B816B8E00FD6A12 /* LWFUserDefaultsPersistenceStrategy.m */; };
 		321F41D71B81707B00FD6A12 /* LWFMockPersistanceStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 321F41D61B81707B00FD6A12 /* LWFMockPersistanceStrategy.m */; };
 		321F41E31B8183A500FD6A12 /* LWFSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 321F41DC1B8183A500FD6A12 /* LWFSoundPlayer.m */; };
@@ -322,6 +323,7 @@
 		321E3A891B8A3166001668B8 /* gold@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gold@3x.png"; sourceTree = "<group>"; };
 		321EC9A51A26A5C400F06B77 /* LWFTurnList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFTurnList.h; sourceTree = "<group>"; };
 		321EC9A61A26A5C400F06B77 /* LWFTurnList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFTurnList.m; sourceTree = "<group>"; };
+		321F2C461B9FC128003EF0CA /* ratHit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ratHit.wav; sourceTree = "<group>"; };
 		321F41D11B816A2E00FD6A12 /* LWFPersistenceStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPersistenceStrategy.h; sourceTree = "<group>"; };
 		321F41D21B816B8E00FD6A12 /* LWFUserDefaultsPersistenceStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFUserDefaultsPersistenceStrategy.h; sourceTree = "<group>"; };
 		321F41D31B816B8E00FD6A12 /* LWFUserDefaultsPersistenceStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFUserDefaultsPersistenceStrategy.m; sourceTree = "<group>"; };
@@ -776,6 +778,7 @@
 		321F41EE1B81840700FD6A12 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				321F2C461B9FC128003EF0CA /* ratHit.wav */,
 				321D33781B9E5E49000DBE44 /* notFound.wav */,
 				321F41EF1B81840700FD6A12 /* soundTypeGameOver.mp3 */,
 				321F41F01B81840700FD6A12 /* soundTypePickedGold.wav */,
@@ -1588,6 +1591,7 @@
 				3245279A1A4EEF5500AFF9A7 /* creature_lifebar.png in Resources */,
 				32FB7DB21AA0004B00AA4C7F /* hero_portrait@3x.png in Resources */,
 				32BEB1381ABE4EFA008950C0 /* portrait.png in Resources */,
+				321F2C471B9FC128003EF0CA /* ratHit.wav in Resources */,
 				32FB7DB61AA0004B00AA4C7F /* thumb@3x.png in Resources */,
 				32BEC0121A472DA8000C77AA /* radioactive_rat_standing_right.png in Resources */,
 				321E3A8C1B8A3166001668B8 /* gold@3x.png in Resources */,
