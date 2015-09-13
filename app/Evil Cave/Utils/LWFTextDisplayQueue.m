@@ -15,6 +15,7 @@
     NSMutableArray *_producedItems;
     LWFCreature *_creature;
     dispatch_queue_t _serialQueue;
+    dispatch_semaphore_t _sem;
 }
 @end
 
@@ -28,6 +29,7 @@
         _creature = creature;
         
         _serialQueue = dispatch_queue_create("com.example.CriticalTaskQueue", NULL);
+        _sem = dispatch_semaphore_create(0);
     }
     return self;
 }
@@ -36,6 +38,7 @@
     label.position = _creature.position;
     
     [self produce:label];
+    
     [self consume];
 }
 
@@ -45,31 +48,27 @@
 
 - (void)consume {
     dispatch_async(_serialQueue, ^{
-        dispatch_semaphore_t sem = dispatch_semaphore_create(0);
-        
         SKLabelNode *first = [_producedItems firstObject];
         [_producedItems removeObject:first];
+        first.alpha = 0.0;
+        
+        first.position = _creature.position;
         
         [_map addChild:first];
         
-        
         SKAction *wait = [SKAction waitForDuration:0.4];
-        
+        SKAction *appear = [SKAction fadeInWithDuration:0.1];
         SKAction *moveAction = [SKAction moveByX:0 y:70 duration:1.2];
         SKAction *fadeAction = [SKAction fadeAlphaTo:0 duration:0.2];
-        SKAction *sequenceAction = [SKAction sequence:@[moveAction, fadeAction]];
+        SKAction *sequenceAction = [SKAction sequence:@[appear, moveAction, fadeAction]];
         
-        [first runAction:sequenceAction completion:^{
-            
-            
-            
-        }];
-        
+        [first runAction:sequenceAction];
+
         [first runAction:wait completion:^{
-            dispatch_semaphore_signal(sem);
+            dispatch_semaphore_signal(_sem);
         }];
         
-        dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+        dispatch_semaphore_wait(_sem, DISPATCH_TIME_FOREVER);
     });
 }
 

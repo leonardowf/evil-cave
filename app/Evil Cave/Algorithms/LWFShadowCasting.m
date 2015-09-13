@@ -38,8 +38,6 @@
     return self;
 }
 
-
-
 - (void)createMultArray {
     NSArray *c0 = @[@1,  @0,  @0, @-1, @-1,  @0,  @0,  @1];
     NSArray *c1 = @[@0,  @1, @-1,  @0,  @0, @-1,  @1,  @0];
@@ -196,7 +194,7 @@
 }
 
 - (BOOL)shouldExecuteAsync {
-    return YES;
+    return NO;
 }
 
 @end
