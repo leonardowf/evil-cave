@@ -1,0 +1,34 @@
+{
+  "warrior": {
+      "strength": 1000,
+      "chance_to_hit": 80,
+      "chance_to_evade": 100,
+      "base_armor": 0,
+      "max_hp" : 10,
+      "action_points": 1
+    },
+    "rat": {
+      "strength": 100,
+      "chance_to_hit": 50,
+      "chance_to_evade": 30,
+      "base_armor": 0,
+      "max_hp" : 10,
+      "action_points": 1
+    },
+    "radioactive_rat": {
+        "strength": 200,
+        "chance_to_hit": 80,
+        "chance_to_evade": 50,
+        "base_armor": 0,
+        "max_hp" : 15,
+        "action_points": 1
+    },
+    "poop_thrower_rat": {
+        "strength": 200,
+        "chance_to_hit": 80,
+        "chance_to_evade": 50,
+        "base_armor": 0,
+        "max_hp" : 15,
+        "action_points": 1
+    }
+}
