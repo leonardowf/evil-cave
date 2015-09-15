@@ -83,6 +83,10 @@
 		325373B91AF1B25C00BF0E43 /* weapon_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 325373AD1AF1B25C00BF0E43 /* weapon_empty@2x.png */; };
 		325373BA1AF1B25C00BF0E43 /* weapon_empty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 325373AE1AF1B25C00BF0E43 /* weapon_empty@3x.png */; };
 		3254E6D71A5CB49400BD7D13 /* door.png in Resources */ = {isa = PBXBuildFile; fileRef = 3254E6D61A5CB49400BD7D13 /* door.png */; };
+		325C10CD1BA7B1250082F85D /* LWFRatKing.m in Sources */ = {isa = PBXBuildFile; fileRef = 325C10CC1BA7B1250082F85D /* LWFRatKing.m */; };
+		325C10CF1BA7B5D40082F85D /* LWFAtlasSpriteLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 325C10CE1BA7B5D40082F85D /* LWFAtlasSpriteLoaderTests.m */; };
+		325C10D21BA7B63D0082F85D /* LWFAtlasSpriteLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 325C10D11BA7B63D0082F85D /* LWFAtlasSpriteLoader.m */; };
+		325C10D31BA7B63D0082F85D /* LWFAtlasSpriteLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 325C10D11BA7B63D0082F85D /* LWFAtlasSpriteLoader.m */; };
 		326524EF1A75406B00EEA4B2 /* item_fine_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 326524ED1A75406B00EEA4B2 /* item_fine_sword.png */; };
 		326524F71A75ABAF00EEA4B2 /* item_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 326524F61A75ABAF00EEA4B2 /* item_sword.png */; };
 		3275C4031B5C9C4800813994 /* LWFChartboostHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3275C4021B5C9C4800813994 /* LWFChartboostHandler.m */; };
@@ -377,6 +381,11 @@
 		325373AD1AF1B25C00BF0E43 /* weapon_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weapon_empty@2x.png"; sourceTree = "<group>"; };
 		325373AE1AF1B25C00BF0E43 /* weapon_empty@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weapon_empty@3x.png"; sourceTree = "<group>"; };
 		3254E6D61A5CB49400BD7D13 /* door.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door.png; sourceTree = "<group>"; };
+		325C10CB1BA7B1250082F85D /* LWFRatKing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRatKing.h; sourceTree = "<group>"; };
+		325C10CC1BA7B1250082F85D /* LWFRatKing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRatKing.m; sourceTree = "<group>"; };
+		325C10CE1BA7B5D40082F85D /* LWFAtlasSpriteLoaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAtlasSpriteLoaderTests.m; sourceTree = "<group>"; };
+		325C10D01BA7B63D0082F85D /* LWFAtlasSpriteLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAtlasSpriteLoader.h; sourceTree = "<group>"; };
+		325C10D11BA7B63D0082F85D /* LWFAtlasSpriteLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAtlasSpriteLoader.m; sourceTree = "<group>"; };
 		326524ED1A75406B00EEA4B2 /* item_fine_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_fine_sword.png; sourceTree = "<group>"; };
 		326524F61A75ABAF00EEA4B2 /* item_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_sword.png; sourceTree = "<group>"; };
 		3275C4011B5C9C4800813994 /* LWFChartboostHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFChartboostHandler.h; sourceTree = "<group>"; };
@@ -998,6 +1007,8 @@
 				328F5FE61B3B6FA600D136BA /* LWFRat.m */,
 				328F5FE71B3B6FA600D136BA /* LWFStats.h */,
 				328F5FE81B3B6FA600D136BA /* LWFStats.m */,
+				325C10CB1BA7B1250082F85D /* LWFRatKing.h */,
+				325C10CC1BA7B1250082F85D /* LWFRatKing.m */,
 			);
 			path = Creatures;
 			sourceTree = "<group>";
@@ -1221,6 +1232,8 @@
 			isa = PBXGroup;
 			children = (
 				328F5FA11B3B6CF800D136BA /* LWFItemComparison.h */,
+				325C10D01BA7B63D0082F85D /* LWFAtlasSpriteLoader.h */,
+				325C10D11BA7B63D0082F85D /* LWFAtlasSpriteLoader.m */,
 				328F5FA21B3B6CF800D136BA /* LWFItemComparison.m */,
 				32D08C8C1AAA731900441A51 /* LWFImageViewHolder.h */,
 				32D08C8D1AAA731900441A51 /* LWFImageViewHolder.m */,
@@ -1425,6 +1438,7 @@
 				A7F5BBB41A16EFBF005BAB63 /* Supporting Files */,
 				321F41D51B81707B00FD6A12 /* LWFMockPersistanceStrategy.h */,
 				321F41D61B81707B00FD6A12 /* LWFMockPersistanceStrategy.m */,
+				325C10CE1BA7B5D40082F85D /* LWFAtlasSpriteLoaderTests.m */,
 			);
 			path = "Evil CaveTests";
 			sourceTree = "<group>";
@@ -1770,6 +1784,7 @@
 				A78443B01A1EEFCC0029995D /* PathFindNode.m in Sources */,
 				328F5F9F1B3B6C2F00D136BA /* LWFDifficultyManager.m in Sources */,
 				A7D8BEED1A1AB909005B0599 /* LWFRoom.m in Sources */,
+				325C10CD1BA7B1250082F85D /* LWFRatKing.m in Sources */,
 				328F5F8B1B3B6B8E00D136BA /* LWFItemFactory.m in Sources */,
 				328F5F361B36476000D136BA /* LWFAcidPotion.m in Sources */,
 				328F5F641B3B6A8700D136BA /* LWFHudLifebar.m in Sources */,
@@ -1825,6 +1840,7 @@
 				A78443AC1A1EEF7B0029995D /* LWFHumbleBeeFindPath.m in Sources */,
 				32F831341A96A96B007174F1 /* LWFAttackQueue.m in Sources */,
 				328F5F661B3B6A8700D136BA /* LWFItemDescription.m in Sources */,
+				325C10D21BA7B63D0082F85D /* LWFAtlasSpriteLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1837,8 +1853,10 @@
 				32DB3B161B477B260016E8B7 /* LWFChestsTests.m in Sources */,
 				32793D3B1B81286800B2117F /* LWFSoundPreferencesTests.m in Sources */,
 				32938A1E1AFAED4600BBE745 /* LWFItemsTests.m in Sources */,
+				325C10CF1BA7B5D40082F85D /* LWFAtlasSpriteLoaderTests.m in Sources */,
 				32938A1C1AF99A7E00BBE745 /* LWFPotionsTests.m in Sources */,
 				A7F5BBBA1A16EFBF005BAB63 /* Evil_CaveTests.m in Sources */,
+				325C10D31BA7B63D0082F85D /* LWFAtlasSpriteLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,6 +35,7 @@
 
 #import "LWFNodeCompletionWithKeyCategory.h"
 #import "LWFTextDisplayQueue.h"
+#import "LWFAtlasSpriteLoader.h"
 
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
@@ -46,6 +47,8 @@
 
 @implementation LWFCreature
 
+#pragma mark - Construction
+
 - (instancetype)init
 {
     self = [super init];
@@ -55,6 +58,34 @@
     }
     return self;
 }
+
+- (void)build {
+    SKTexture *texture = [self getTexture];
+    [self setTexture:texture];
+    [self setSize:CGSizeMake(32, 32)];
+    
+    _lifeBar = [self getLifeBar];
+    [_lifeBar setStats:self.stats];
+    
+    LWFLootChanceFactory *lootChanceFactory = [LWFLootChanceFactory sharedLootChanceFactory];
+    _lootChances = [lootChanceFactory getLootChancesForKey:self.spriteImageName];
+    
+    if ([_lifeBar isKindOfClass:[LWFLifeBar class]]) {
+        ((LWFLifeBar *)_lifeBar).alpha = 0.0;
+        [self addChild:(LWFLifeBar *)_lifeBar];
+    }
+    
+    self.textDisplayQueue = [[LWFTextDisplayQueue alloc]initWithMap:self.map andCreature:self];
+}
+
+- (id<LWFLifeDisplayer>)getLifeBar {
+    LWFLifeBar *lifeBar = [[LWFLifeBar alloc]init];
+    [lifeBar setPosition:CGPointMake(-16, 30)];
+    
+    return lifeBar;
+}
+
+#pragma mark - Moveable Cycle
 
 - (void)willMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y; {
     LWFTile *nextTile = tile;
@@ -94,23 +125,16 @@
     
 }
 
-- (void)light {
-    SKAction *action = [SKAction fadeAlphaTo:1.0 duration:0.3];
-    [self runAction:action];
-    ((LWFLifeBar *)_lifeBar).alpha = 1.0;
-}
-
-- (void)dark {
-    self.alpha = 0.0;
-    ((LWFLifeBar *)_lifeBar).alpha = 0.0;
-}
-
-- (void)notifyMovementFailure {
-    NSLog(@"Criatura falhou na hora de mover");
-}
-
-- (BOOL)shouldFinishTurnOnFailedMovement {
-    return YES;
+- (void)moveToTile:(LWFTile *)tile completion:(void(^)(void))someBlock {
+    CGFloat movementDuration = 0.3;
+    
+    [self startWalkingAnimation:^{
+        [self startStandingAnimation];
+    }];
+    
+    SKAction *moveAction = [SKAction moveTo:tile.position duration:movementDuration];
+    
+    [self runAction:moveAction withKey:@"move_action" completion:someBlock];
 }
 
 - (void)moveableToTile:(LWFTile *)tile {
@@ -132,6 +156,14 @@
     
 }
 
+- (void)notifyMovementFailure {
+    NSLog(@"Criatura falhou na hora de mover");
+}
+
+- (BOOL)shouldFinishTurnOnFailedMovement {
+    return YES;
+}
+
 - (void)updateCurrentTile:(LWFTile *)currentTile {
     LWFTile *previousTile = self.currentTile;
     previousTile.creatureOnTile = nil;
@@ -140,42 +172,15 @@
     currentTile.creatureOnTile = self;
 }
 
-- (void)moveToTile:(LWFTile *)tile completion:(void(^)(void))someBlock {
-    CGFloat movementDuration = 0.3;
-    
-    [self startWalkingAnimation:^{
-        [self startStandingAnimation];
-    }];
-    
-    SKAction *moveAction = [SKAction moveTo:tile.position duration:movementDuration];
-    
-    [self runAction:moveAction withKey:@"move_action" completion:someBlock];
+- (void)light {
+    SKAction *action = [SKAction fadeAlphaTo:1.0 duration:0.3];
+    [self runAction:action];
+    ((LWFLifeBar *)_lifeBar).alpha = 1.0;
 }
 
-- (void)build {
-    SKTexture *texture = [self getTexture];
-    [self setTexture:texture];
-    [self setSize:CGSizeMake(32, 32)];
-    
-    _lifeBar = [self getLifeBar];
-    [_lifeBar setStats:self.stats];
-    
-    LWFLootChanceFactory *lootChanceFactory = [LWFLootChanceFactory sharedLootChanceFactory];
-    _lootChances = [lootChanceFactory getLootChancesForKey:self.spriteImageName];
-    
-    if ([_lifeBar isKindOfClass:[LWFLifeBar class]]) {
-        ((LWFLifeBar *)_lifeBar).alpha = 0.0;
-        [self addChild:(LWFLifeBar *)_lifeBar];
-    }
-    
-    self.textDisplayQueue = [[LWFTextDisplayQueue alloc]initWithMap:self.map andCreature:self];
-}
-
-- (id<LWFLifeDisplayer>)getLifeBar {
-    LWFLifeBar *lifeBar = [[LWFLifeBar alloc]init];
-    [lifeBar setPosition:CGPointMake(-16, 30)];
-    
-    return lifeBar;
+- (void)dark {
+    self.alpha = 0.0;
+    ((LWFLifeBar *)_lifeBar).alpha = 0.0;
 }
 
 - (SKTexture *)getTexture {
@@ -618,19 +623,8 @@
 }
 
 - (NSArray *)getDyingFramesAnimation {
-    NSMutableArray *dyingAtlasArray = [NSMutableArray array];
     NSString *dyingAtlasName = [NSString stringWithFormat:@"%@_dying_%@", self.spriteImageName, self.currentFacingDirection];
-    SKTextureAtlas *dyingAtlas = [SKTextureAtlas atlasNamed:dyingAtlasName];
-    
-    NSUInteger numImages = dyingAtlas.textureNames.count;
-    for (int i=1; i <= numImages; i++) {
-        NSString *textureName = [NSString stringWithFormat:@"%@_%d", dyingAtlasName, i];
-        SKTexture *texture = [dyingAtlas textureNamed:textureName];
-        texture.filteringMode = SKTextureFilteringNearest;
-        [dyingAtlasArray addObject:texture];
-    }
-    
-    return dyingAtlasArray;
+    return [LWFAtlasSpriteLoader spritesWithAtlasName:dyingAtlasName];
 }
 
 - (void)diedWithCompletion:(void(^)(void))someBlock {
