@@ -227,52 +227,21 @@
 }
 
 - (NSArray *)getWalkingFramesAnimation {
-    NSMutableArray *walkingAtlasArray = [NSMutableArray array];
     NSString *walkingAtlasName = [NSString stringWithFormat:@"%@_walking_%@", self.spriteImageName, self.currentFacingDirection];
-    SKTextureAtlas *walkingAtlas = [SKTextureAtlas atlasNamed:walkingAtlasName];
     
-    NSUInteger numImages = walkingAtlas.textureNames.count;
-    for (int i=1; i <= numImages; i++) {
-        NSString *textureName = [NSString stringWithFormat:@"%@_%d", walkingAtlasName, i];
-        SKTexture *texture = [walkingAtlas textureNamed:textureName];
-        texture.filteringMode = SKTextureFilteringNearest;
-        [walkingAtlasArray addObject:texture];
-    }
-    
-    return walkingAtlasArray;
+    return [LWFAtlasSpriteLoader spritesWithAtlasName:walkingAtlasName];
 }
 
 - (NSArray *)getAttackingFramesAnimation {
-    NSMutableArray *attackingAtlasArray = [NSMutableArray array];
     NSString *attackingAtlasName = [NSString stringWithFormat:@"%@_attacking_%@", self.spriteImageName, self.currentFacingDirection];
-    SKTextureAtlas *attackingAtlas = [SKTextureAtlas atlasNamed:attackingAtlasName];
     
-    NSUInteger numImages = attackingAtlas.textureNames.count;
-    for (int i=1; i <= numImages; i++) {
-        NSString *textureName = [NSString stringWithFormat:@"%@_%d", attackingAtlasName, i];
-        SKTexture *texture = [attackingAtlas textureNamed:textureName];
-        texture.filteringMode = SKTextureFilteringNearest;
-        [attackingAtlasArray addObject:texture];
-    }
-    
-    return attackingAtlasArray;
+    return [LWFAtlasSpriteLoader spritesWithAtlasName:attackingAtlasName];
 }
 
 - (NSArray *)getStandingFramesAnimation {
-    NSMutableArray *standingAtlasArray = [NSMutableArray array];
-    
     NSString *standingAtlasName = [NSString stringWithFormat:@"%@_standing_%@", self.spriteImageName, self.currentFacingDirection];
     
-    SKTextureAtlas *standingAtlas = [SKTextureAtlas atlasNamed:standingAtlasName];
-    
-    NSUInteger numImages = standingAtlas.textureNames.count;
-    for (int i=1; i <= numImages; i++) {
-        NSString *textureName = [NSString stringWithFormat:@"%@_%d", standingAtlasName, i];
-        SKTexture *texture = [standingAtlas textureNamed:textureName];
-        texture.filteringMode = SKTextureFilteringNearest;
-        [standingAtlasArray addObject:texture];
-    }
-    return standingAtlasArray;
+    return [LWFAtlasSpriteLoader spritesWithAtlasName:standingAtlasName];
 }
 
 - (void)processTurn {
