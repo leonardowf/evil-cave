@@ -85,6 +85,71 @@
     return lifeBar;
 }
 
+#pragma mark - Turn Cycle
+- (void)processTurn {
+    [self turnBegun];
+}
+
+- (void)turnBegun {
+    if ([self isDead]) {
+        [self finishTurn];
+        return;
+    }
+    
+    [self.oteQueue process];
+    
+    if ([self isDead]) {
+        [self finishTurn];
+        return;
+    }
+    
+    [self processAIBehavior];
+}
+
+- (void)processAIBehavior {
+    LWFAttack *melee = [self.attacks firstObject];
+    
+    if ([melee isCreature:_player inRangeOfTile:self.currentTile]) {
+    }
+    
+    if ([self shouldFollowPlayer]) {
+        if ([self isAdjacentToPlayer]) {
+            // por ataque melee
+            [self attackPlayerWithMelee];
+            
+            return;
+        } else {
+            if ([self.player isSurrounded]) {
+                [self finishTurn];
+                return;
+            }
+        }
+        
+        LWFTile *closestTile = [self closestNeighborToPlayer];
+        if (closestTile != nil) {
+            [self buildPathToTile:closestTile];
+            
+            if (self.tilePath == nil || self.tilePath.count == 0) {
+                [self finishTurn];
+                return;
+            } else {
+                [self walkToExistingPath];
+            }
+            return;
+        } else {
+            [self finishTurn];
+            return;
+        }
+    } else if (self.tilePath == nil || [self.tilePath count] == 0) {
+    }
+    
+    [self finishTurn];
+}
+
+- (void)finishTurn {
+    [self.nextCreature processTurn];
+}
+
 #pragma mark - Moveable Cycle
 
 - (void)willMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y; {
@@ -108,7 +173,6 @@
     } else if (nextTile.x > self.currentTile.x) { // tá movendo pra direita
         self.currentFacingDirection = @"right";
     }
-    
     
     if (![nextTile isPassable] && nextTile.cellType != CaveCellTypeEnd) {
         if ([self shouldFinishTurnOnFailedMovement]) {
@@ -242,70 +306,6 @@
     NSString *standingAtlasName = [NSString stringWithFormat:@"%@_standing_%@", self.spriteImageName, self.currentFacingDirection];
     
     return [LWFAtlasSpriteLoader spritesWithAtlasName:standingAtlasName];
-}
-
-- (void)processTurn {
-    [self turnBegun];
-}
-
-- (void)turnBegun {
-    if ([self isDead]) {
-        [self finishTurn];
-        return;
-    }
-    
-    [self.oteQueue process];
-    
-    if ([self isDead]) {
-        [self finishTurn];
-        return;
-    }
-    
-    [self processAIBehavior];
-}
-
-- (void)processAIBehavior {
-    LWFAttack *melee = [self.attacks firstObject];
-    
-    if ([melee isCreature:_player inRangeOfTile:self.currentTile]) {
-    }
-    
-    if ([self shouldFollowPlayer]) {
-        if ([self isAdjacentToPlayer]) {
-            // por ataque melee
-            [self attackPlayerWithMelee];
-            
-            return;
-        } else {
-            if ([self.player isSurrounded]) {
-                [self finishTurn];
-                return;
-            }
-        }
-        
-        LWFTile *closestTile = [self closestNeighborToPlayer];
-        if (closestTile != nil) {
-            [self buildPathToTile:closestTile];
-            
-            if (self.tilePath == nil || self.tilePath.count == 0) {
-                [self finishTurn];
-                return;
-            } else {
-                [self walkToExistingPath];
-            }
-            return;
-        } else {
-            [self finishTurn];
-            return;
-        }
-    } else if (self.tilePath == nil || [self.tilePath count] == 0) {
-    }
-    
-    [self finishTurn];
-}
-
-- (void)finishTurn {
-    [self.nextCreature processTurn];
 }
 
 - (void)walkToExistingPath {
