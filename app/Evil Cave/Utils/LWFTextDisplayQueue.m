@@ -52,7 +52,7 @@
         [_producedItems removeObject:first];
         first.alpha = 0.0;
         
-        first.position = _creature.position;
+        first.position = _creature.currentTile.position;
         
         [_map addChild:first];
         
