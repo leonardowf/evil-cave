@@ -40,6 +40,8 @@
         return [self radioactiveRatAttacks];
     } else if (creatureType == LWFCreatureTypeWarrior) {
         return [self warriorAttacks];
+    } else if (creatureType == LWFCreatureTypeRatKing) {
+        return [self radioactiveRatAttacks];
     }
     
     return attacks;

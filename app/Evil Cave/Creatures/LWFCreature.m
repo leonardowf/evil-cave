@@ -78,6 +78,10 @@
     self.textDisplayQueue = [[LWFTextDisplayQueue alloc]initWithMap:self.map andCreature:self];
 }
 
+- (void)didBuild {
+    
+}
+
 - (id<LWFLifeDisplayer>)getLifeBar {
     LWFLifeBar *lifeBar = [[LWFLifeBar alloc]init];
     [lifeBar setPosition:CGPointMake(-16, 30)];

@@ -22,7 +22,6 @@
 
 - (void)build {
     [super build];
-    
 }
 
 - (NSArray *)getWalkingFramesAnimation {

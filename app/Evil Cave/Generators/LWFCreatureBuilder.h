@@ -21,7 +21,8 @@ typedef enum : NSUInteger {
     LWFCreatureTypePoopThrowerRat,
     LWFCreatureTypeSpider,
     LWFCreatureTypeGoblin,
-    LWFCreatureTypeRadioactiveRat
+    LWFCreatureTypeRadioactiveRat,
+    LWFCreatureTypeRatKing
 } LWFCreatureType;
 
 @interface LWFCreatureBuilder : NSObject

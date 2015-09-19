@@ -30,5 +30,13 @@
         "base_armor": 0,
         "max_hp" : 15,
         "action_points": 1
+    },
+    "rat_king": {
+        "strength": 400,
+        "chance_to_hit": 80,
+        "chance_to_evade": 100,
+        "base_armor": 30,
+        "max_hp" : 100,
+        "action_points": 1
     }
 }

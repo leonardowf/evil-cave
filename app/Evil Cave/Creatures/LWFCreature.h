@@ -56,6 +56,7 @@
 @property (nonatomic, strong) LWFTextDisplayQueue *textDisplayQueue;
 
 - (void)build;
+- (void)didBuild;
 
 - (void)processTurn;
 - (void)turnBegun;

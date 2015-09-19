@@ -13,6 +13,7 @@
 #import "LWFRat.h"
 #import "LWFRadioactiveRat.h"
 #import "LWFPoopThrowerRat.h"
+#import "LWFRatKing.h"
 
 #import "LWFMapDimension.h"
 #import "LWFTurnList.h"
@@ -83,6 +84,8 @@
     } else if (creatureType == LWFCreatureTypeWarrior) {
         creature = [LWFPlayer sharedPlayer];
         creature.spriteImageName = @"warrior";
+    } else if (creatureType == LWFCreatureTypeRatKing) {
+        creature = [[LWFRatKing alloc]init];
     }
     
     if (creature != nil) {
@@ -109,6 +112,8 @@
         }
         
         creature.alpha = 0.0;
+        
+        [creature didBuild];
     }
     
     return creature;
@@ -131,6 +136,8 @@
         creatureStatsDictionary = [_creatureStats objectForKey:@"rat"];
     } else if (creatureType == LWFCreatureTypeRadioactiveRat) {
         creatureStatsDictionary = [_creatureStats objectForKey:@"radioactive_rat"];
+    } else if (creatureType == LWFCreatureTypeRatKing) {
+       creatureStatsDictionary = [_creatureStats objectForKey:@"rat_king"]; 
     }
 
     return [self statsForDictionary:creatureStatsDictionary];

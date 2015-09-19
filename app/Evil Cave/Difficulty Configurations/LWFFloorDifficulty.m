@@ -8,6 +8,7 @@
 
 #import "LWFFloorDifficulty.h"
 #import "LWFCreatureBuilder.h"
+#import "LWFRatKing.h"
 
 @interface LWFFloorDifficulty () {
     LWFCreatureBuilder *_builder;
@@ -26,17 +27,21 @@
 - (void)buildFloor1 {
     NSMutableArray *creatures = [NSMutableArray array];
     
-    for (NSInteger i = 0; i < self.floor + 2; i++) {
-        LWFCreature *creature = [_builder buildWithType:LWFCreatureTypeRat];
-        [creatures addObject:creature];
-    }
+//    for (NSInteger i = 0; i < self.floor + 2; i++) {
+//        LWFCreature *creature = [_builder buildWithType:LWFCreatureTypeRat];
+//        [creatures addObject:creature];
+//    }
+//    
+//    LWFCreature *poop = [_builder buildWithType:LWFCreatureTypePoopThrowerRat];
+//    
+//    LWFCreature *radioctive = [_builder buildWithType:LWFCreatureTypeRadioactiveRat];
+//    
+////    [creatures addObjects:poop];
+//    [creatures addObject:radioctive];
     
-    LWFCreature *poop = [_builder buildWithType:LWFCreatureTypePoopThrowerRat];
+    LWFCreature *ratKing = [_builder buildWithType:LWFCreatureTypeRatKing];
     
-    LWFCreature *radioctive = [_builder buildWithType:LWFCreatureTypeRadioactiveRat];
-    
-//    [creatures addObjects:poop];
-    [creatures addObject:radioctive];
+    [creatures addObject:ratKing];
     
     self.creatures = creatures;
 }
