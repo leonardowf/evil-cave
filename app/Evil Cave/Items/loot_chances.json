@@ -8,12 +8,12 @@
     {
       "name": "health_potion",
       "quantity": 1,
-      "chance": 30
+      "chance": 100
     },
     {
       "name": "acid_potion",
       "quantity": 1,
-      "chance": 30
+      "chance": 100
     },
     {
         "name": "poison_potion",
@@ -23,17 +23,17 @@
     {
       "name": "gold",
       "quantity": 20,
-      "chance": 10
+      "chance": 100
     },
     {
       "name": "fine_sword",
       "quantity": 1,
-      "chance": 5
+      "chance": 50
     },
     {
       "name": "motherfucking_sword",
       "quantity": 1,
-      "chance": 3
+      "chance": 30
     }
   ],
   "radioactive_rat": [

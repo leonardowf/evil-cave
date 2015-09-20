@@ -20,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[Mint sharedInstance] initAndStartSession:@"6195a731"];
+//    [[Mint sharedInstance] initAndStartSession:@"6195a731"];
     _chartBoostHandler = [[LWFChartboostHandler alloc]init];
     
     return YES;
