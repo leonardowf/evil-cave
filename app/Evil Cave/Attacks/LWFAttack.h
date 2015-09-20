@@ -7,8 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-@class LWFTile;
-@class LWFTileMap;
+#import "LWFPointObject.h"
+#import "LWFTile.h"
+#import "LWFPointObject.h"
+#import "LWFTileMap.h"
+#import "LWFGameController.h"
+#import "LWFVisibilityShadowCasting.h"
+#import "LWFCreature.h"
+
 @class LWFGameController;
 @class LWFCreature;
 

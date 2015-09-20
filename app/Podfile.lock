@@ -1,7 +1,7 @@
 PODS:
-  - ChartboostSDK (5.5.0)
+  - ChartboostSDK (5.5.3)
   - FLAnimatedImage (1.0.8)
-  - pop (1.0.7)
+  - pop (1.0.8)
   - SplunkMint-iOS (4.2)
   - SpriteKit-Easing (0.1.0)
 
@@ -20,17 +20,17 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   pop:
-    :commit: 27793516fc16079843e8683cf3abcd8b73b5475d
+    :commit: b1b1ca2c5da35548357fe1b3aa901d7e5094532f
     :git: https://github.com/facebook/pop.git
   SpriteKit-Easing:
     :commit: ad34d3ebcf04a047fde9a01f35f76149fd4321a0
     :git: https://github.com/leonardowf/SpriteKit-Easing.git
 
 SPEC CHECKSUMS:
-  ChartboostSDK: ffb7e0b6657a9c3188f870558dcf4da42ea12dd2
+  ChartboostSDK: 9bf9427b4c306773ea9f7d8cf974b4a3a0f1e61e
   FLAnimatedImage: f9422f796135aff80d8c00b2afc48015bb746e24
-  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
+  pop: bb773ae2c791ca2629de13b347e7a8b450fa6a57
   SplunkMint-iOS: 058e5297f7cc8d335aea3dcaa8111eeb0f657371
-  SpriteKit-Easing: 869759e6c847b9d6c43eaad86c1d52c846e1a766
+  SpriteKit-Easing: c0d9462d0546b6fac55be20f7a8e443ed74c7607
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.38.2

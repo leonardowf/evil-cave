@@ -7,13 +7,6 @@
 //
 
 #import "LWFAttack.h"
-#import "LWFPointObject.h"
-#import "LWFTile.h"
-#import "LWFPointObject.h"
-#import "LWFTileMap.h"
-#import "LWFGameController.h"
-#import "LWFVisibilityShadowCasting.h"
-#import "LWFCreature.h"
 
 @interface LWFAttack () {
     LWFGameController *_gameController;

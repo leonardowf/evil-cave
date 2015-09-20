@@ -111,11 +111,6 @@
 }
 
 - (void)processAIBehavior {
-    LWFAttack *melee = [self.attacks firstObject];
-    
-    if ([melee isCreature:_player inRangeOfTile:self.currentTile]) {
-    }
-    
     if ([self shouldFollowPlayer]) {
         if ([self isAdjacentToPlayer]) {
             // por ataque melee

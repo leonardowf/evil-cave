@@ -199,6 +199,7 @@
 		32C4A58F1AA7E81B00BA5087 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32EDF5981A7C5FCC0007EA36 /* QuartzCore.framework */; };
 		32C511F31A37A5DB00F0B955 /* LWFGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C511F21A37A5DB00F0B955 /* LWFGeometry.m */; };
 		32CCF02F1B4230C100AA133D /* LWFCaveGeneratorResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CCF02E1B4230C100AA133D /* LWFCaveGeneratorResult.m */; };
+		32D0444B1BADF94A006CC6B0 /* LWFSummonRatAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0444A1BADF94A006CC6B0 /* LWFSummonRatAttack.m */; };
 		32D08C8E1AAA731900441A51 /* LWFImageViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D08C8D1AAA731900441A51 /* LWFImageViewHolder.m */; };
 		32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */; };
 		32D50BD31A3DFDF3002D3098 /* LWFPointObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */; };
@@ -562,6 +563,8 @@
 		32C511F21A37A5DB00F0B955 /* LWFGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFGeometry.m; sourceTree = "<group>"; };
 		32CCF02D1B4230C100AA133D /* LWFCaveGeneratorResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFCaveGeneratorResult.h; sourceTree = "<group>"; };
 		32CCF02E1B4230C100AA133D /* LWFCaveGeneratorResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFCaveGeneratorResult.m; sourceTree = "<group>"; };
+		32D044491BADF94A006CC6B0 /* LWFSummonRatAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSummonRatAttack.h; sourceTree = "<group>"; };
+		32D0444A1BADF94A006CC6B0 /* LWFSummonRatAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFSummonRatAttack.m; sourceTree = "<group>"; };
 		32D08C8C1AAA731900441A51 /* LWFImageViewHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFImageViewHolder.h; sourceTree = "<group>"; };
 		32D08C8D1AAA731900441A51 /* LWFImageViewHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFImageViewHolder.m; sourceTree = "<group>"; };
 		32D0BE6E1A2D13D8000EC0E1 /* LWFAttackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttackManager.h; sourceTree = "<group>"; };
@@ -1249,6 +1252,8 @@
 				3219AB4A1A8ECEB600FE544C /* LWFSpinningAttack.m */,
 				32E2E6BD1ACCC1D900EA88DD /* LWFPoopThrowAttack.h */,
 				32E2E6BE1ACCC1D900EA88DD /* LWFPoopThrowAttack.m */,
+				32D044491BADF94A006CC6B0 /* LWFSummonRatAttack.h */,
+				32D0444A1BADF94A006CC6B0 /* LWFSummonRatAttack.m */,
 			);
 			path = Attacks;
 			sourceTree = "<group>";
@@ -1784,6 +1789,7 @@
 				32826C341AEDB2A8007400AD /* LWFOTEQueue.m in Sources */,
 				32793D421B81682300B2117F /* LWFRepository.m in Sources */,
 				328F5F8D1B3B6B8E00D136BA /* LWFItemPrototypeFactory.m in Sources */,
+				32D0444B1BADF94A006CC6B0 /* LWFSummonRatAttack.m in Sources */,
 				328F5FED1B3B6FA600D136BA /* LWFPoopThrowerRat.m in Sources */,
 				32E2E6C41ACF5ED500EA88DD /* LWFVisibilityShadowCasting.m in Sources */,
 				32CCF02F1B4230C100AA133D /* LWFCaveGeneratorResult.m in Sources */,
@@ -2007,6 +2013,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Evil Cave/Evil Cave-Prefix.pch";
 				INFOPLIST_FILE = "Evil Cave/Evil Cave-Info.plist";
@@ -2023,6 +2030,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Evil Cave/Evil Cave-Prefix.pch";
 				INFOPLIST_FILE = "Evil Cave/Evil Cave-Info.plist";
