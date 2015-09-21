@@ -220,7 +220,10 @@ SINGLETON_FOR_CLASS(Inventory)
     
     for (NSInteger i = 0; i <= STORED_ITEMS_LIMIT; i++) {
         NSString *imageViewToGet = [NSString stringWithFormat:@"item%ld", i];
-        id imageView = [viewController valueForKey:imageViewToGet];
+        UIImageView * imageView = (UIImageView *)[viewController valueForKey:imageViewToGet];
+        [imageView.layer setMagnificationFilter:kCAFilterNearest];
+        [imageView.layer setMinificationFilter:kCAFilterNearest];
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
         
         [self addGestureRecognizesToImageView:imageView];
         

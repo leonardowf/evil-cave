@@ -19,7 +19,8 @@
 {
     self = [super init];
     if (self) {
-        LWFItemPrototypeFactory *itemPrototypeFactory = [LWFItemPrototypeFactory sharedItemPrototypeFactory];
+        LWFItemPrototypeFactory *itemPrototypeFactory = [LWFItemPrototypeFactory
+                                                         sharedItemPrototypeFactory];
         
         NSString *nameString = [dict objectForKey:@"name"];
         NSNumber *quantityNumber = [dict objectForKey:@"quantity"];
