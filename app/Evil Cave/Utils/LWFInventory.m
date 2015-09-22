@@ -221,9 +221,7 @@ SINGLETON_FOR_CLASS(Inventory)
     for (NSInteger i = 0; i <= STORED_ITEMS_LIMIT; i++) {
         NSString *imageViewToGet = [NSString stringWithFormat:@"item%ld", i];
         UIImageView * imageView = (UIImageView *)[viewController valueForKey:imageViewToGet];
-        [imageView.layer setMagnificationFilter:kCAFilterNearest];
-        [imageView.layer setMinificationFilter:kCAFilterNearest];
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        [self configurePixelImageView:imageView];
         
         [self addGestureRecognizesToImageView:imageView];
         
@@ -251,6 +249,19 @@ SINGLETON_FOR_CLASS(Inventory)
     [viewController.imageViewAccessory addGestureRecognizer:tapAccessory];
     
     [viewController.imageViewButtonClose addGestureRecognizer:tapClose];
+    
+    NSArray *imageViewEquips = @[viewController.imageViewWeapon, viewController.imageViewArmor,
+                            viewController.imageViewBoots, viewController.imageViewAccessory];
+    
+    for (UIImageView *imageView in imageViewEquips) {
+        [self configurePixelImageView:imageView];
+    }
+}
+
+- (void)configurePixelImageView:(UIImageView *)imageView {
+    [imageView.layer setMagnificationFilter:kCAFilterNearest];
+    [imageView.layer setMinificationFilter:kCAFilterNearest];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)didTapClose {
