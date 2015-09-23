@@ -10,7 +10,6 @@
 #import "LWFMelee.h"
 #import "LWFPoopThrowAttack.h"
 #import "LWFGameController.h"
-#import "LWFSummonRatAttack.h"
 
 @interface LWFAttacksBuilder () {
     LWFGameController *_gameController;
@@ -85,9 +84,7 @@
 }
 
 - (NSMutableArray *)ratKingAttacks {
-    LWFAttack *attack = [LWFSummonRatAttack new];
-    
-    return [NSMutableArray arrayWithObjects:attack, nil];
+    return nil;
 }
 
 - (NSMutableArray *)goblinAttacks {
