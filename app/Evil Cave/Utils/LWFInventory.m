@@ -92,7 +92,7 @@ SINGLETON_FOR_CLASS(Inventory)
         }
     }
     
-    if (self.items.count >= STORED_ITEMS_LIMIT) {
+    if (self.items.count > STORED_ITEMS_LIMIT) {
         return NO;
     }
     
