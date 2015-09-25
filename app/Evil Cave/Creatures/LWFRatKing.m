@@ -7,6 +7,12 @@
 //
 
 #import "LWFRatKing.h"
+#import "LWFGameController.h"
+#import "LWFMap.h"
+#import "LWFCreatureBuilder.h"
+#import "LWFRat.h"
+#import "LWFPlayer.h"
+#import "LWFTileMap.h"
 
 @implementation LWFRatKing
 
@@ -22,6 +28,32 @@
 
 - (void)build {
     [super build];
+}
+
+- (void)processAIBehavior {
+    LWFGameController *gc = [LWFGameController sharedGameController];
+    LWFMap *map = gc.map;
+    LWFCreatureBuilder *cb = map.creatureBuilder;
+    
+    LWFRat *rat = [cb buildWithType:LWFCreatureTypeRat];
+    LWFPlayer *player = [LWFPlayer sharedPlayer];
+
+    NSArray *tiles = [map.tileMap neighborsForTile:self.currentTile];
+    for (LWFTile *tile in tiles) {
+        if (tile.creatureOnTile == nil) {
+            rat.nextCreature = player.nextCreature;
+            player.nextCreature = rat;
+            
+            rat.currentTile = tile;
+            tile.creatureOnTile = rat;
+            rat.position = tile.position;
+            [map addChild:rat];
+            
+            break;
+        }
+    }
+    
+    [self finishTurn];
 }
 
 - (void)didBuild {

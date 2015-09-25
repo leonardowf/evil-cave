@@ -15,6 +15,7 @@
 @class LWFMovementManager;
 @class LWFAttackManager;
 @class LWFItemRange;
+@class LWFCreatureBuilder;
 
 @interface LWFMap : SKNode
 
@@ -24,6 +25,7 @@
 @property (nonatomic, strong) LWFMovementManager *movementManager;
 @property (nonatomic, strong) LWFAttackManager *attackManager;
 @property (nonatomic, strong) LWFItemRange *currentItemRange;
+@property (nonatomic, strong) LWFCreatureBuilder *creatureBuilder;
 @property (nonatomic) NSInteger floor;
 
 - (instancetype)initWithScreenSize:(CGSize)size andFloor:(NSInteger)floor;

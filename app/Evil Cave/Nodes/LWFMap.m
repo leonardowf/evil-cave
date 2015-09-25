@@ -26,7 +26,6 @@
 
 @interface LWFMap () {
     LWFTurnList *_turnList;
-    LWFCreatureBuilder *_creatureBuilder;
     
     BOOL _blockUserInteraction;
     LWFPointObject *_touchQueue;
@@ -65,7 +64,7 @@
     
     _attackManager = [[LWFAttackManager alloc]initWithTileMap:_tileMap];
     
-    _creatureBuilder = [[LWFCreatureBuilder alloc]initWithMap:self movementManager:_movementManager andMapDimension:_mapDimension andTurnList:_turnList andAttackManager:_attackManager];
+    self.creatureBuilder = [[LWFCreatureBuilder alloc]initWithMap:self movementManager:_movementManager andMapDimension:_mapDimension andTurnList:_turnList andAttackManager:_attackManager];
     
 }
 
