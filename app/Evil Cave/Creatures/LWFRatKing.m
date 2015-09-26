@@ -13,6 +13,8 @@
 #import "LWFRat.h"
 #import "LWFPlayer.h"
 #import "LWFTileMap.h"
+#import "LWFRatSummonSickness.h"
+#import "LWFOTEQueue.h"
 
 @implementation LWFRatKing
 
@@ -37,10 +39,17 @@
     
     LWFRat *rat = [cb buildWithType:LWFCreatureTypeRat];
     LWFPlayer *player = [LWFPlayer sharedPlayer];
+    
+    NSArray *oteWithSameKind = [self.oteQueue oteWithSameClass:[LWFRatSummonSickness class]];
+    
+    if ([oteWithSameKind count] > 0) {
+        [self finishTurn];
+        return;
+    }
 
     NSArray *tiles = [map.tileMap neighborsForTile:self.currentTile];
     for (LWFTile *tile in tiles) {
-        if (tile.creatureOnTile == nil) {
+        if (tile.creatureOnTile == nil && [tile isPassable]) {
             rat.nextCreature = player.nextCreature;
             player.nextCreature = rat;
             
@@ -48,6 +57,15 @@
             tile.creatureOnTile = rat;
             rat.position = tile.position;
             [map addChild:rat];
+            
+            if (tile.isLit) {
+                [rat light];
+            } else {
+                [rat dark];
+            }
+            
+            LWFRatSummonSickness *summonSickness = [LWFRatSummonSickness new];
+            [self.oteQueue addOTE:summonSickness];
             
             break;
         }

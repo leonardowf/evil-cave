@@ -15,4 +15,5 @@
 - (NSArray *)oteWithSameKind:(LWFOTE *)ote;
 - (void)addOTE:(LWFOTE *)ote;
 - (void)removeAll;
+- (NSArray *)oteWithSameClass:(Class)clazz;
 @end

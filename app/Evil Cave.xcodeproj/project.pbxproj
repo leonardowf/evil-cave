@@ -199,6 +199,7 @@
 		32CCF02F1B4230C100AA133D /* LWFCaveGeneratorResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CCF02E1B4230C100AA133D /* LWFCaveGeneratorResult.m */; };
 		32D08C8E1AAA731900441A51 /* LWFImageViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D08C8D1AAA731900441A51 /* LWFImageViewHolder.m */; };
 		32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */; };
+		32D20C6C1BB6234700CF8A8B /* LWFRatSummonSickness.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D20C6B1BB6234700CF8A8B /* LWFRatSummonSickness.m */; settings = {ASSET_TAGS = (); }; };
 		32D50BD31A3DFDF3002D3098 /* LWFPointObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */; };
 		32DB3B141B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DB3B131B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.m */; };
 		32DB3B161B477B260016E8B7 /* LWFChestsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DB3B151B477B260016E8B7 /* LWFChestsTests.m */; };
@@ -562,6 +563,8 @@
 		32D08C8D1AAA731900441A51 /* LWFImageViewHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFImageViewHolder.m; sourceTree = "<group>"; };
 		32D0BE6E1A2D13D8000EC0E1 /* LWFAttackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAttackManager.h; sourceTree = "<group>"; };
 		32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAttackManager.m; sourceTree = "<group>"; };
+		32D20C6A1BB6234700CF8A8B /* LWFRatSummonSickness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRatSummonSickness.h; sourceTree = "<group>"; };
+		32D20C6B1BB6234700CF8A8B /* LWFRatSummonSickness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRatSummonSickness.m; sourceTree = "<group>"; };
 		32D50BD11A3DFDF3002D3098 /* LWFPointObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPointObject.h; sourceTree = "<group>"; };
 		32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPointObject.m; sourceTree = "<group>"; };
 		32DB3B121B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFNodeCompletionWithKeyCategory.h; sourceTree = "<group>"; };
@@ -895,6 +898,8 @@
 				325373871AF064FA00BF0E43 /* LWFOTESpinningCooldown.m */,
 				328F5F391B37893500D136BA /* LWFOTEPoison.h */,
 				328F5F3A1B37893500D136BA /* LWFOTEPoison.m */,
+				32D20C6A1BB6234700CF8A8B /* LWFRatSummonSickness.h */,
+				32D20C6B1BB6234700CF8A8B /* LWFRatSummonSickness.m */,
 			);
 			path = "Overtime Effects";
 			sourceTree = "<group>";
@@ -1833,6 +1838,7 @@
 				321EC9A71A26A5C400F06B77 /* LWFTurnList.m in Sources */,
 				325373881AF064FA00BF0E43 /* LWFOTESpinningCooldown.m in Sources */,
 				328F5F8F1B3B6B8E00D136BA /* LWFLootChance.m in Sources */,
+				32D20C6C1BB6234700CF8A8B /* LWFRatSummonSickness.m in Sources */,
 				32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */,
 				32F09E291A48C947000B8797 /* LWFCombatSystem.m in Sources */,
 				320976191B498D730022B331 /* LWFChestChance.m in Sources */,

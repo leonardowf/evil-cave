@@ -57,10 +57,14 @@
 }
 
 - (NSArray *)oteWithSameKind:(LWFOTE *)ote {
+    return [self oteWithSameClass:[ote class]];
+}
+
+- (NSArray *)oteWithSameClass:(Class)clazz {
     NSMutableArray *foundOTES = [NSMutableArray array];
     
     for (LWFOTE *anOte in _OTEs) {
-        if ([anOte isKindOfClass:[ote class]]) {
+        if ([anOte isKindOfClass:clazz]) {
             [foundOTES addObject:anOte];
         }
     }
