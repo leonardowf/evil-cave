@@ -46,7 +46,7 @@
         [self summonRat];
         [self finishTurn];
     } else {
-        [self runAway];
+        [self runAwayIfCan];
     }
 }
 
@@ -60,7 +60,7 @@
     return true;
 }
 
-- (void)runAway {
+- (void)runAwayIfCan {
     NSArray *tiles = [_map.tileMap neighborsForTile:self.currentTile];
     NSInteger highestDistance = 0;
     LWFTile *highestDistanceTile = nil;
@@ -76,10 +76,17 @@
             highestDistance = distance;
             highestDistanceTile = tile;
         }
+        
+        if (distance == highestDistance && tile.cellType == CaveCellTypeDoor) {
+            highestDistance = distance;
+            highestDistanceTile = tile;
+        }
     }
     
     if (highestDistanceTile != nil) {
          [self willMoveToTile:highestDistanceTile atX:highestDistanceTile.x andY:highestDistanceTile.y];
+    } else {
+        [super processAIBehavior];
     }
     
 }

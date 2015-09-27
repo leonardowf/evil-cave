@@ -84,7 +84,12 @@
 }
 
 - (NSMutableArray *)ratKingAttacks {
-    return nil;
+    LWFMelee *melee = [[LWFMelee alloc]init];
+    
+    NSMutableArray *attacks = [NSMutableArray array];
+    [attacks addObject:melee];
+    
+    return attacks;
 }
 
 - (NSMutableArray *)goblinAttacks {

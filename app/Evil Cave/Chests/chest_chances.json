@@ -3,7 +3,7 @@
 	"chance": 100,
 	"quantity": 5,
 	"loot_chances": [
-        { "name": "sword", "chance": 100, "quantity": 1 },
+        { "name": "sword", "chance": 10, "quantity": 1 },
         { "name": "gold", "chance": 100, "quantity": 30 },
         { "name": "gold", "chance": 100, "quantity": 30 },
         { "name": "gold", "chance": 100, "quantity": 30 },
@@ -13,7 +13,7 @@
         { "name": "gold", "chance": 100, "quantity": 30 },
         { "name": "gold", "chance": 100, "quantity": 30 },
         { "name": "gold", "chance": 100, "quantity": 30 },
-        { "name": "health_potion", "chance": 100, "quantity": 30 }
+        { "name": "health_potion", "chance": 10, "quantity": 1 }
 	]
 },
 {
@@ -30,6 +30,6 @@
 	"quantity": 2,
 	"loot_chances": [
 		{ "name": "motherfucking_sword", "chance": 10, "quantity": 1 },
-		{ "name": "gold", "chance": 100, "quantity": 1000 }
+		{ "name": "gold", "chance": 100, "quantity": 100 }
 	]
 }]

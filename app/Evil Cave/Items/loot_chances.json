@@ -3,37 +3,37 @@
     {
       "name": "sword",
       "quantity": 1,
-      "chance": 100
+      "chance": 20
     },
     {
       "name": "health_potion",
       "quantity": 1,
-      "chance": 100
+      "chance": 10
     },
     {
       "name": "acid_potion",
       "quantity": 1,
-      "chance": 100
+      "chance": 10
     },
     {
         "name": "poison_potion",
         "quantity": 1,
-        "chance": 100
+        "chance": 10
     },
     {
       "name": "gold",
       "quantity": 20,
-      "chance": 100
+      "chance": 40
     },
     {
       "name": "fine_sword",
       "quantity": 1,
-      "chance": 50
+      "chance": 5
     },
     {
       "name": "motherfucking_sword",
       "quantity": 1,
-      "chance": 30
+      "chance": 1
     }
   ],
   "radioactive_rat": [
@@ -50,7 +50,7 @@
     {
       "name": "motherfucking_sword",
       "quantity": 1,
-      "chance": 6
+      "chance": 2
     }
 
   ]

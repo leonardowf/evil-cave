@@ -1,10 +1,10 @@
 {
   "warrior": {
-      "strength": 1000,
+      "strength": 100,
       "chance_to_hit": 60,
       "chance_to_evade": 100,
       "base_armor": 0,
-      "max_hp" : 1000,
+      "max_hp" : 200,
       "action_points": 1
     },
     "rat": {
@@ -32,11 +32,11 @@
         "action_points": 1
     },
     "rat_king": {
-        "strength": 400,
+        "strength": 200,
         "chance_to_hit": 80,
         "chance_to_evade": 100,
-        "base_armor": 30,
-        "max_hp" : 100,
+        "base_armor": 15,
+        "max_hp" : 50,
         "action_points": 1
     }
 }
