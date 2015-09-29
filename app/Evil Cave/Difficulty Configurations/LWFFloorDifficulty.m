@@ -21,28 +21,33 @@
 - (void)buildCreaturesWithBuilder:(LWFCreatureBuilder *)builder {
     _builder = builder;
     
-    [self buildFloor1];
+    if (self.floor == 3) {
+        [self buildBossRoom];
+    } else {
+        [self buildFloor1];
+    }
+    
 }
 
 - (void)buildFloor1 {
     NSMutableArray *creatures = [NSMutableArray array];
-//    
-//    for (NSInteger i = 0; i < self.floor + 2; i++) {
-//        LWFCreature *creature = [_builder buildWithType:LWFCreatureTypeRat];
-//        [creatures addObject:creature];
-//    }
-//
-//    LWFCreature *poop = [_builder buildWithType:LWFCreatureTypePoopThrowerRat];
-//    
-//    LWFCreature *radioctive = [_builder buildWithType:LWFCreatureTypeRadioactiveRat];
-//    
-////    [creatures addObjects:poop];
-//    [creatures addObject:radioctive];
     
+    for (NSInteger i = 0; i < self.floor + 2; i++) {
+        LWFCreature *creature = [_builder buildWithType:LWFCreatureTypeRat];
+        [creatures addObject:creature];
+    }
+    
+    LWFCreature *radioctive = [_builder buildWithType:LWFCreatureTypeRadioactiveRat];
+    [creatures addObject:radioctive];
+    
+    self.creatures = creatures;
+}
+
+- (void)buildBossRoom {
+    NSMutableArray *creatures = [NSMutableArray array];
     LWFCreature *ratKing = [_builder buildWithType:LWFCreatureTypeRatKing];
     
     [creatures addObject:ratKing];
-    
     self.creatures = creatures;
 }
 
