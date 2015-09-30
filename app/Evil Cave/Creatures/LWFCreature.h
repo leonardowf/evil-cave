@@ -71,8 +71,10 @@
 - (LWFMelee *)getMelee;
 - (BOOL)isDead;
 - (BOOL)isAlive;
+- (BOOL)isAdjacentToPlayer;
 - (void)receveidDamageLog:(NSInteger)damage fromCreature:(LWFCreature *)creature;
 - (void)light;
 - (void)dark;
+- (void)attackPlayerWithMelee;
 
 @end

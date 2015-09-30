@@ -15,6 +15,7 @@
 #import "LWFTileMap.h"
 #import "LWFRatSummonSickness.h"
 #import "LWFOTEQueue.h"
+#import "LWFStats.h"
 
 @interface LWFRatKing () {
     LWFGameController *_gameController;
@@ -42,12 +43,36 @@
 }
 
 - (void)processAIBehavior {
+    if (![self isAwake]) {
+        [self finishTurn];
+        return;
+    }
+    
+    if ([self isAdjacentToPlayer]) {
+        if (self.stats.currentHP < self.stats.maxHP / 2) {
+            [self runAwayIfCan];
+            return;
+        }
+        
+        [self attackPlayerWithMelee];
+        return;
+    }
+    
     if ([self canSummon]) {
         [self summonRat];
         [self finishTurn];
     } else {
         [self runAwayIfCan];
     }
+}
+
+- (BOOL)isAwake {
+    NSUInteger distanceToPlayer = [self.currentTile distanceToTile:self.player.currentTile];
+    if (distanceToPlayer < 5) {
+        return YES;
+    }
+    
+    return NO;
 }
 
 - (BOOL)canSummon {

@@ -35,7 +35,7 @@
         "strength": 200,
         "chance_to_hit": 80,
         "chance_to_evade": 100,
-        "base_armor": 15,
+        "base_armor": 5,
         "max_hp" : 50,
         "action_points": 1
     }
