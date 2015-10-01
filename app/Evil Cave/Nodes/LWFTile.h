@@ -34,6 +34,7 @@
 - (void)diedOnTile:(LWFCreature *)creature;
 - (void)addLoot:(NSArray *)loot animated:(BOOL)animated;
 - (NSArray *)groupItemsForLoot:(NSArray *)loot;
+- (NSString *)toString;
 
 - (void)light;
 - (void)displayFog;

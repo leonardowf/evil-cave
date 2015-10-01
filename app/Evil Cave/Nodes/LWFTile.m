@@ -231,4 +231,8 @@
     
 }
 
+- (NSString *)toString {
+    return [NSString stringWithFormat:@"%d-%d", self.x, self.y];
+}
+
 @end

@@ -78,6 +78,14 @@
     [someBlock invoke];
 }
 
+- (void)groupByTiles:(NSArray *)tiles items:(NSArray *)items {
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+    
+    for (LWFTile *tile in tiles) {
+        dictionary[[tile toString]] = [NSMutableArray array];
+    }
+}
+
 - (SKAction *)getExplosionAnimation:(SKSpriteNode *)item destinationTile:(LWFTile *)tile {
     LWFRandomUtils *randomUtils = [LWFRandomUtils new];
     CGFloat rotateCoefficient = [randomUtils randomFloatBetween:0 and:0.8];
