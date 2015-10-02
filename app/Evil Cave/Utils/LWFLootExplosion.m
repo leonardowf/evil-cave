@@ -39,51 +39,77 @@
     NSMutableArray *tilesInOrder = [NSMutableArray array];
     LWFRandomUtils *randomUtils = [LWFRandomUtils new];
     LWFMap *map = _gameController.map;
-    NSMutableArray *itemClones = [NSMutableArray array];
     
-    NSMutableArray *actions = [NSMutableArray array];
-    
-    for (LWFItem *item in _items) {
+    for (NSInteger i = 0; i < _items.count; i++) {
         NSInteger randomIndex = [randomUtils randomIntegerBetween:1 and:tilesToLoot.count];
         
         LWFTile *tile = [tilesToLoot objectAtIndex:randomIndex];
         [tilesInOrder addObject:tile];
-        
-        SKSpriteNode *itemClone = [SKSpriteNode spriteNodeWithTexture:item.texture];
-        itemClone.size = CGSizeMake(TILE_SIZE, TILE_SIZE);
-        
-        itemClone.position = _tile.position;
-        [map addChild:itemClone];
-        
-        [itemClones addObject:itemClone];
-        
-        SKAction *action = [self getExplosionAnimation:itemClone destinationTile:tile];
-        
-        [actions addObject:action];
     }
-
-    for (NSInteger i = 0; i < tilesInOrder.count; i++) {
-        LWFTile *tile = [tilesInOrder objectAtIndex:i];
-        SKAction *action = [actions objectAtIndex:i];
-        LWFItem *item = [_items objectAtIndex:i];
-        SKSpriteNode *itemClone = [itemClones objectAtIndex:i];
-        
-        [itemClone runAction:action completion:^{
-            [tile addLoot:@[item] animated:NO];
-            [itemClone removeFromParent];
+    
+    NSDictionary *itemsGroupedByTile = [self groupByTiles:tilesInOrder items:_items];
+    
+    NSSet *tilesSet = [NSSet setWithArray:tilesInOrder];
+    
+    for (LWFTile *tile in tilesSet) {
+        NSArray *items = itemsGroupedByTile[[tile toString]];
+        for (LWFItem *item in items) {
+            SKSpriteNode *itemClone = [self itemClone:item];
+            [map addChild:itemClone];
             
-        }];
+            SKAction *action = [self getExplosionAnimation:itemClone destinationTile:tile];
+            
+            [itemClone runAction:action completion:^{
+                [tile addLoot:@[item] animated:NO];
+                [itemClone removeFromParent];
+            }];
+        }
     }
     
     [someBlock invoke];
 }
 
-- (void)groupByTiles:(NSArray *)tiles items:(NSArray *)items {
+- (SKSpriteNode *)itemClone:(LWFItem *)item {
+    SKSpriteNode *itemClone = [SKSpriteNode spriteNodeWithTexture:item.texture];
+    itemClone.size = CGSizeMake(TILE_SIZE, TILE_SIZE);
+    
+    itemClone.position = _tile.position;
+    
+    return itemClone;
+}
+
+- (NSDictionary *)groupByTiles:(NSArray *)tiles items:(NSArray *)items {
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
     
     for (LWFTile *tile in tiles) {
         dictionary[[tile toString]] = [NSMutableArray array];
     }
+    
+    for (NSInteger i = 0; i < tiles.count; i++) {
+        LWFTile *tile = tiles[i];
+        LWFItem *item = items[i];
+        NSMutableArray *array = dictionary[[tile toString]];
+        
+        LWFItem *itemToStack = [self findWithSameKindOfItem:item inArray:array];
+        
+        if (itemToStack == nil) {
+            [array addObject:item];
+        } else {
+            itemToStack.quantity += item.quantity;
+        }
+    }
+    
+    return dictionary;
+}
+
+- (LWFItem *)findWithSameKindOfItem:(LWFItem *)item inArray:(NSArray *)array {
+    for (LWFItem *itemInArray in array) {
+        if ([itemInArray canStackWith:item]) {
+            return itemInArray;
+        }
+    }
+    
+    return nil;
 }
 
 - (SKAction *)getExplosionAnimation:(SKSpriteNode *)item destinationTile:(LWFTile *)tile {

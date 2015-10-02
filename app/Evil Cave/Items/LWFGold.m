@@ -27,4 +27,8 @@
     return label;
 }
 
+- (BOOL)canStackWith:(LWFItem *)item {
+    return [item isGold];
+}
+
 @end
