@@ -51,4 +51,11 @@
     [LWFLogger log:message];
 }
 
++ (void)cleanLog {
+    [LWFLogger log:@""];
+    [LWFLogger log:@""];
+    [LWFLogger log:@""];
+    [LWFLogger log:@""];
+}
+
 @end

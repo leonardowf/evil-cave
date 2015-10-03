@@ -19,5 +19,6 @@
 + (void)logPickedItem:(LWFItem *)item;
 + (void)logDrankPotion:(LWFPotion *)potion;
 + (void)logThrewPotion:(LWFPotion *)potion;
++ (void)cleanLog;
 
 @end

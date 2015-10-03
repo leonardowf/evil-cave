@@ -258,6 +258,8 @@ SINGLETON_FOR_CLASS(GameOver)
     _gameOverButtons = nil;
     _gameOverStats = nil;
     
+    [LWFLogger cleanLog];
+    
     [self showHudElements];
     
     NSLog(@"restartando");
