@@ -87,7 +87,18 @@
         equipmentToCompare = self.weapon;
     }
     
-    // .... TODO
+    if ([equipment isArmor]) {
+        equipmentToCompare = self.armor;
+    }
+    
+    if ([equipment isBoots]) {
+        equipmentToCompare = self.boots;
+    }
+    
+    if ([equipment isAccessory]) {
+        equipmentToCompare = self.accessory;
+    }
+    
     return [LWFItemComparison compare:equipment withEquipment:equipmentToCompare];
 }
 

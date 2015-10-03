@@ -25,6 +25,8 @@
 #import "LWFInventory.h"
 #import "LWFPotionFactory.h"
 #import "LWFSoundPlayer.h"
+#import <POPAnimation.h>
+#import <POPBasicAnimation.h>
 
 @interface LWFGameOver () {
     LWFGameOverTitle *_title;
@@ -94,23 +96,56 @@ SINGLETON_FOR_CLASS(GameOver)
 }
 
 - (void)removeHUDElements {
+    LWFInventory *inventory = [LWFInventory sharedInventory];
+    
+    [self animateRemovalOfUIElements];
+
+    [inventory hideItemDescriptionIfNeeded];
+    [inventory hide];
+}
+
+- (void)animateRemovalOfUIElements {
     LWFGameController *gameController = [self getGameController];
     LWFViewController *rootController = gameController.rootController;
     LWFHudLifebar *hudLifebar = [LWFHudLifebar sharedHudLifeBar];
-    LWFInventory *inventory = [LWFInventory sharedInventory];
     
-    // TODO: Animações
+    POPBasicAnimation *anim = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
+    anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    anim.fromValue = @(1.0);
+    anim.toValue = @(0.0);
+    anim.duration = 2.0;
     
-    rootController.viewSpecialAttackButton.hidden = YES;
-    rootController.viewInventoryButton.hidden = YES;
-    rootController.viewLogContainer.hidden = YES;
+    NSArray *viewsToAnimate = @[rootController.viewSpecialAttackButton,
+                                rootController.viewInventoryButton,
+                                rootController.viewLogContainer,
+                                hudLifebar.containerView];
+    
+    for (UIView *view in viewsToAnimate) {
+        [view pop_addAnimation:anim forKey:@"fade"];
+    }
     
     [rootController updatePieView:0 forTotalTurns:0];
+}
+
+- (void)animateAditionOfUIElements {    
+    LWFGameController *gameController = [self getGameController];
+    LWFViewController *rootController = gameController.rootController;
+    LWFHudLifebar *hudLifebar = [LWFHudLifebar sharedHudLifeBar];
     
-    hudLifebar.containerView.hidden = YES;
+    POPBasicAnimation *anim = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
+    anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    anim.fromValue = @(0.0);
+    anim.toValue = @(1.0);
+    anim.duration = 2.0;
     
-    [inventory hideItemDescriptionIfNeeded];
-    [inventory hide];
+    NSArray *viewsToAnimate = @[rootController.viewSpecialAttackButton,
+                                rootController.viewInventoryButton,
+                                rootController.viewLogContainer,
+                                hudLifebar.containerView];
+    
+    for (UIView *view in viewsToAnimate) {
+        [view pop_addAnimation:anim forKey:@"fade"];
+    }
 }
 
 - (void)addGameOverTitle {
@@ -199,16 +234,7 @@ SINGLETON_FOR_CLASS(GameOver)
 }
 
 - (void)showHudElements {
-    LWFGameController *gameController = [self getGameController];
-    LWFViewController *rootController = gameController.rootController;
-    LWFHudLifebar *hudLifebar = [LWFHudLifebar sharedHudLifeBar];
-    
-    // TODO: Animações
-    
-    rootController.viewSpecialAttackButton.hidden = NO;
-    rootController.viewInventoryButton.hidden = NO;
-    rootController.viewLogContainer.hidden = NO;
-    hudLifebar.containerView.hidden = NO;
+    [self animateAditionOfUIElements];
 }
 
 #pragma mark - Actions
