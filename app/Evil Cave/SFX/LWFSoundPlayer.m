@@ -177,6 +177,9 @@
         _currentPlayingMusic = [_preloadedMusic objectForKey:fileName];
         
         _currentPlayingMusic.volume = _soundPreferences.musicVolume;
+        
+        // Repete indefinidamente
+        _currentPlayingMusic.numberOfLoops = -1;
 
         [_currentPlayingMusic play];
     }
@@ -242,8 +245,8 @@
 + (NSString *)musicFileNameForMusicType:(LWFMusicType)musicType {
     
     switch (musicType) {
-        case LWFMusicTypeMenu:
-            return @"musicTypeMenu.mp3";
+        case LWFMusicTypeGame:
+            return @"badasswolfshirt-famouser.mp3";
         break;
         default:
             return nil;
