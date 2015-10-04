@@ -262,7 +262,8 @@ SINGLETON_FOR_CLASS(GameOver)
     
     [self showHudElements];
     
-    NSLog(@"restartando");
+    [LWFSoundPlayer playMusic:LWFMusicTypeGame];
+    
     [[NSNotificationCenter defaultCenter]postNotificationName:@"notificationRestartGame" object:nil];
 }
 - (void)showSkillTree {

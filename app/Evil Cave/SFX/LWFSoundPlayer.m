@@ -187,6 +187,8 @@
 
 - (void)didReceiveStopMusicRequest {
     [_currentPlayingMusic stop];
+    _currentPlayingMusic.currentTime = 0;
+    _currentPlayingMusic = nil;
 }
 
 - (void)didReceiveMuteMusicRequest {
