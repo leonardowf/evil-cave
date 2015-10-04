@@ -50,11 +50,15 @@
                     tile = [LWFTile spriteNodeWithTexture:texture];
                     [tile setWalkable:YES];
                 } else if (cell.cellType == CaveCellTypeStart) {
-                    tile = [[LWFTile alloc]initWithColor:[UIColor redColor] size:mapDimension.tileSize];
+                    SKTexture *texture = [SKTexture textureWithImageNamed:@"stairway_up"];
+                    texture.filteringMode = SKTextureFilteringNearest;
+                    tile = [LWFTile spriteNodeWithTexture:texture];
                     [tile setWalkable:NO];
                     self.startTile = tile;
                 } else if (cell.cellType == CaveCellTypeEnd) {
-                    tile = [[LWFTile alloc]initWithColor:[UIColor greenColor] size:mapDimension.tileSize];
+                    SKTexture *texture = [SKTexture textureWithImageNamed:@"stairway_down"];
+                    texture.filteringMode = SKTextureFilteringNearest;
+                    tile = [LWFTile spriteNodeWithTexture:texture];
                     [tile setWalkable:NO];
                     self.endTile = tile;
                     

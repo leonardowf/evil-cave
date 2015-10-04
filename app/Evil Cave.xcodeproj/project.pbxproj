@@ -70,6 +70,8 @@
 		325373B91AF1B25C00BF0E43 /* weapon_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 325373AD1AF1B25C00BF0E43 /* weapon_empty@2x.png */; };
 		325373BA1AF1B25C00BF0E43 /* weapon_empty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 325373AE1AF1B25C00BF0E43 /* weapon_empty@3x.png */; };
 		3254E6D71A5CB49400BD7D13 /* door.png in Resources */ = {isa = PBXBuildFile; fileRef = 3254E6D61A5CB49400BD7D13 /* door.png */; };
+		32560FBE1BC1DF1C001FE33B /* stairway_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 32560FBC1BC1DF1C001FE33B /* stairway_down.png */; settings = {ASSET_TAGS = (); }; };
+		32560FBF1BC1DF1C001FE33B /* stairway_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 32560FBD1BC1DF1C001FE33B /* stairway_up.png */; settings = {ASSET_TAGS = (); }; };
 		325C10CD1BA7B1250082F85D /* LWFRatKing.m in Sources */ = {isa = PBXBuildFile; fileRef = 325C10CC1BA7B1250082F85D /* LWFRatKing.m */; };
 		325C10CF1BA7B5D40082F85D /* LWFAtlasSpriteLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 325C10CE1BA7B5D40082F85D /* LWFAtlasSpriteLoaderTests.m */; };
 		325C10D21BA7B63D0082F85D /* LWFAtlasSpriteLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 325C10D11BA7B63D0082F85D /* LWFAtlasSpriteLoader.m */; };
@@ -373,6 +375,8 @@
 		325373AD1AF1B25C00BF0E43 /* weapon_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weapon_empty@2x.png"; sourceTree = "<group>"; };
 		325373AE1AF1B25C00BF0E43 /* weapon_empty@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weapon_empty@3x.png"; sourceTree = "<group>"; };
 		3254E6D61A5CB49400BD7D13 /* door.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door.png; sourceTree = "<group>"; };
+		32560FBC1BC1DF1C001FE33B /* stairway_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stairway_down.png; sourceTree = "<group>"; };
+		32560FBD1BC1DF1C001FE33B /* stairway_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stairway_up.png; sourceTree = "<group>"; };
 		325C10CB1BA7B1250082F85D /* LWFRatKing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRatKing.h; sourceTree = "<group>"; };
 		325C10CC1BA7B1250082F85D /* LWFRatKing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRatKing.m; sourceTree = "<group>"; };
 		325C10CE1BA7B5D40082F85D /* LWFAtlasSpriteLoaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAtlasSpriteLoaderTests.m; sourceTree = "<group>"; };
@@ -1075,6 +1079,8 @@
 				321A605F1A6354DF0060517E /* door_open.png */,
 				3254E6D61A5CB49400BD7D13 /* door.png */,
 				32F1CDCB1A57603800A0D9F5 /* wall.png */,
+				32560FBC1BC1DF1C001FE33B /* stairway_down.png */,
+				32560FBD1BC1DF1C001FE33B /* stairway_up.png */,
 				32B3E1B21B082A6B00CF2EA2 /* grass_tile.png */,
 				32B3E1B31B082A6B00CF2EA2 /* water_tile.png */,
 				32BEBFEE1A470AAB000C77AA /* rock_tile.png */,
@@ -1576,6 +1582,7 @@
 				32BEBFF91A470B68000C77AA /* radioactive_rat_standing_left.png in Resources */,
 				32BEC00F1A4714DC000C77AA /* rat_standing_right.atlas in Resources */,
 				A7D46D801B5C011B00EBA942 /* GameOverTitle.xib in Resources */,
+				32560FBE1BC1DF1C001FE33B /* stairway_down.png in Resources */,
 				324527981A4DF83A00AFF9A7 /* rat_dying_left.atlas in Resources */,
 				32E2E6B81ACB6BAA00EA88DD /* poop_thrower_rat_standing_right.atlas in Resources */,
 				32938A391AFC42FA00BBE745 /* special_attack_icon@2x.png in Resources */,
@@ -1622,6 +1629,7 @@
 				32FB7DB01AA0004B00AA4C7F /* hero_portrait.png in Resources */,
 				328F5F861B3B6B8E00D136BA /* item_prototypes.json in Resources */,
 				321E3A8A1B8A3166001668B8 /* gold.png in Resources */,
+				32560FBF1BC1DF1C001FE33B /* stairway_up.png in Resources */,
 				32C575321BAF15960022D54B /* purple_potion@2x.png in Resources */,
 				32E2E6AB1ACA31E800EA88DD /* button_yellow@2x.png in Resources */,
 				3245279A1A4EEF5500AFF9A7 /* creature_lifebar.png in Resources */,
