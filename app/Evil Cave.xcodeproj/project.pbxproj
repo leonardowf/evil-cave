@@ -36,7 +36,6 @@
 		321F41D71B81707B00FD6A12 /* LWFMockPersistanceStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 321F41D61B81707B00FD6A12 /* LWFMockPersistanceStrategy.m */; };
 		321F41E31B8183A500FD6A12 /* LWFSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 321F41DC1B8183A500FD6A12 /* LWFSoundPlayer.m */; };
 		321F41E41B8183A500FD6A12 /* LWFSoundPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 321F41DE1B8183A500FD6A12 /* LWFSoundPreferences.m */; };
-		321F41F11B81840700FD6A12 /* musicTypeMenu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 321F41ED1B81840700FD6A12 /* musicTypeMenu.mp3 */; };
 		321F41F21B81840700FD6A12 /* soundTypeGameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 321F41EF1B81840700FD6A12 /* soundTypeGameOver.mp3 */; };
 		321F41F31B81840700FD6A12 /* soundTypePickedGold.wav in Resources */ = {isa = PBXBuildFile; fileRef = 321F41F01B81840700FD6A12 /* soundTypePickedGold.wav */; };
 		322DB6AA1A229A0C0085AC68 /* LWFCreatureBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 322DB6A91A229A0C0085AC68 /* LWFCreatureBuilder.m */; };
@@ -152,6 +151,7 @@
 		32938A3A1AFC42FA00BBE745 /* special_attack_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32938A371AFC42FA00BBE745 /* special_attack_icon@3x.png */; };
 		32938A3C1AFC563500BBE745 /* item_sword.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32938A3B1AFC563500BBE745 /* item_sword.atlas */; };
 		32938A3E1AFFA33100BBE745 /* warrior_spinning_attack_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32938A3D1AFFA33100BBE745 /* warrior_spinning_attack_right.atlas */; };
+		32A1D93D1BC0BDFF006F4C3B /* badasswolfshirt-famouser.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32A1D93C1BC0BDFF006F4C3B /* badasswolfshirt-famouser.mp3 */; settings = {ASSET_TAGS = (); }; };
 		32A9E2CB1B0AC398003D37FD /* LWFInventoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2CA1B0AC398003D37FD /* LWFInventoryTests.m */; };
 		32A9E2CE1B12AA1B003D37FD /* LWFHealthPotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2CD1B12AA1B003D37FD /* LWFHealthPotion.m */; };
 		32A9E2D11B12B36B003D37FD /* LWFPotionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2D01B12B36B003D37FD /* LWFPotionFactory.m */; };
@@ -238,7 +238,6 @@
 		32FB7DB01AA0004B00AA4C7F /* hero_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DA31AA0004B00AA4C7F /* hero_portrait.png */; };
 		32FB7DB11AA0004B00AA4C7F /* hero_portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DA41AA0004B00AA4C7F /* hero_portrait@2x.png */; };
 		32FB7DB21AA0004B00AA4C7F /* hero_portrait@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DA51AA0004B00AA4C7F /* hero_portrait@3x.png */; };
-		32FB7DB31AA0004B00AA4C7F /* inventory.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DA61AA0004B00AA4C7F /* inventory.png */; };
 		32FB7DB41AA0004B00AA4C7F /* thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DA71AA0004B00AA4C7F /* thumb.png */; };
 		32FB7DB51AA0004B00AA4C7F /* thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DA81AA0004B00AA4C7F /* thumb@2x.png */; };
 		32FB7DB61AA0004B00AA4C7F /* thumb@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FB7DA91AA0004B00AA4C7F /* thumb@3x.png */; };
@@ -335,7 +334,6 @@
 		321F41DD1B8183A500FD6A12 /* LWFSoundPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSoundPreferences.h; sourceTree = "<group>"; };
 		321F41DE1B8183A500FD6A12 /* LWFSoundPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFSoundPreferences.m; sourceTree = "<group>"; };
 		321F41DF1B8183A500FD6A12 /* LWFSoundTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSoundTypes.h; sourceTree = "<group>"; };
-		321F41ED1B81840700FD6A12 /* musicTypeMenu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = musicTypeMenu.mp3; sourceTree = "<group>"; };
 		321F41EF1B81840700FD6A12 /* soundTypeGameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundTypeGameOver.mp3; sourceTree = "<group>"; };
 		321F41F01B81840700FD6A12 /* soundTypePickedGold.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundTypePickedGold.wav; sourceTree = "<group>"; };
 		322DB6A81A229A0C0085AC68 /* LWFCreatureBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFCreatureBuilder.h; sourceTree = "<group>"; };
@@ -506,6 +504,7 @@
 		32938A371AFC42FA00BBE745 /* special_attack_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "special_attack_icon@3x.png"; sourceTree = "<group>"; };
 		32938A3B1AFC563500BBE745 /* item_sword.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = item_sword.atlas; sourceTree = "<group>"; };
 		32938A3D1AFFA33100BBE745 /* warrior_spinning_attack_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_spinning_attack_right.atlas; sourceTree = "<group>"; };
+		32A1D93C1BC0BDFF006F4C3B /* badasswolfshirt-famouser.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "badasswolfshirt-famouser.mp3"; sourceTree = "<group>"; };
 		32A9E2CA1B0AC398003D37FD /* LWFInventoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFInventoryTests.m; sourceTree = "<group>"; };
 		32A9E2CC1B12AA1B003D37FD /* LWFHealthPotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFHealthPotion.h; sourceTree = "<group>"; };
 		32A9E2CD1B12AA1B003D37FD /* LWFHealthPotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFHealthPotion.m; sourceTree = "<group>"; };
@@ -614,7 +613,6 @@
 		32FB7DA31AA0004B00AA4C7F /* hero_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero_portrait.png; sourceTree = "<group>"; };
 		32FB7DA41AA0004B00AA4C7F /* hero_portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hero_portrait@2x.png"; sourceTree = "<group>"; };
 		32FB7DA51AA0004B00AA4C7F /* hero_portrait@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hero_portrait@3x.png"; sourceTree = "<group>"; };
-		32FB7DA61AA0004B00AA4C7F /* inventory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inventory.png; sourceTree = "<group>"; };
 		32FB7DA71AA0004B00AA4C7F /* thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb.png; sourceTree = "<group>"; };
 		32FB7DA81AA0004B00AA4C7F /* thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb@2x.png"; sourceTree = "<group>"; };
 		32FB7DA91AA0004B00AA4C7F /* thumb@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb@3x.png"; sourceTree = "<group>"; };
@@ -790,7 +788,7 @@
 		321F41EC1B81840700FD6A12 /* Musics */ = {
 			isa = PBXGroup;
 			children = (
-				321F41ED1B81840700FD6A12 /* musicTypeMenu.mp3 */,
+				32A1D93C1BC0BDFF006F4C3B /* badasswolfshirt-famouser.mp3 */,
 			);
 			path = Musics;
 			sourceTree = "<group>";
@@ -1225,7 +1223,6 @@
 				32FB7DA31AA0004B00AA4C7F /* hero_portrait.png */,
 				32FB7DA41AA0004B00AA4C7F /* hero_portrait@2x.png */,
 				32FB7DA51AA0004B00AA4C7F /* hero_portrait@3x.png */,
-				32FB7DA61AA0004B00AA4C7F /* inventory.png */,
 				32FB7DA71AA0004B00AA4C7F /* thumb.png */,
 				32FB7DA81AA0004B00AA4C7F /* thumb@2x.png */,
 				32FB7DA91AA0004B00AA4C7F /* thumb@3x.png */,
@@ -1582,7 +1579,6 @@
 				324527981A4DF83A00AFF9A7 /* rat_dying_left.atlas in Resources */,
 				32E2E6B81ACB6BAA00EA88DD /* poop_thrower_rat_standing_right.atlas in Resources */,
 				32938A391AFC42FA00BBE745 /* special_attack_icon@2x.png in Resources */,
-				32FB7DB31AA0004B00AA4C7F /* inventory.png in Resources */,
 				A7F5BB941A16EFBC005BAB63 /* InfoPlist.strings in Resources */,
 				325C10FD1BACE7C80082F85D /* rat_king_standing_right.atlas in Resources */,
 				325373B21AF1B25C00BF0E43 /* boot_empty.png in Resources */,
@@ -1659,6 +1655,7 @@
 				32C575281BAF14350022D54B /* item_motherfucking_sword@2x.png in Resources */,
 				325C10FC1BACE7C80082F85D /* rat_king_standing_left.png in Resources */,
 				32DFD2AA1AAFD7FC00FB554B /* button_green@3x.png in Resources */,
+				32A1D93D1BC0BDFF006F4C3B /* badasswolfshirt-famouser.mp3 in Resources */,
 				321F41F31B81840700FD6A12 /* soundTypePickedGold.wav in Resources */,
 				32938A381AFC42FA00BBE745 /* special_attack_icon.png in Resources */,
 				32BEC0051A470F5F000C77AA /* warrior_walking_right.atlas in Resources */,
@@ -1675,7 +1672,6 @@
 				3275C40D1B60694C00813994 /* opening_chest.atlas in Resources */,
 				32E2E6B51ACB6BAA00EA88DD /* poop_thrower_rat_dying_right.atlas in Resources */,
 				32BEB13A1ABE4EFA008950C0 /* portrait@3x.png in Resources */,
-				321F41F11B81840700FD6A12 /* musicTypeMenu.mp3 in Resources */,
 				328F5F871B3B6B8E00D136BA /* loot_chances.json in Resources */,
 				32C5751A1BAF0CF40022D54B /* item_sword.png in Resources */,
 				325373AF1AF1B25C00BF0E43 /* armor_empty.png in Resources */,
