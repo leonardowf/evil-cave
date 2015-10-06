@@ -14,14 +14,14 @@
 
 @interface LWFSoundPlayer : NSObject
 
-- (instancetype)initWithScene:(LWFMyScene *)scene;
-
 + (void)play:(LWFSoundType)soundType;
 + (void)play:(LWFSoundType)soundType withSoundEmitter:(id<LWFSoundEmitter>)soundEmitter;
 + (void)playMusic:(LWFMusicType)musicType;
 + (void)stopMusic;
 + (void)muteMusic;
 + (void)muteSound;
++ (void)unmuteMusic;
++ (void)unmuteSound;
 + (void)increaseMusicVolume;
 + (void)decreaseMusicVolume;
 

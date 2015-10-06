@@ -5,7 +5,6 @@
 //  Created by Leonardo Wistuba de França on 8/6/15.
 //  Copyright (c) 2015 leonardowistuba. All rights reserved.
 //
-#import <SpriteKit/SpriteKit.h>
 #import "LWFSoundPlayer.h"
 #import "LWFMyScene.h"
 #import <AVFoundation/AVFoundation.h>
@@ -19,12 +18,12 @@
 #define STOP_MUSIC_NOTIFICATION             @"NotificationStopMusic"
 #define MUTE_MUSIC_NOTIFICATION             @"NotificationMuteMusic"
 #define MUTE_SOUND_NOTIFICATION             @"NotificationMuteSound"
+#define UNMUTE_MUSIC_NOTIFICATION           @"NotificationUnmuteMusic"
+#define UNMUTE_SOUND_NOTIFICATION           @"NotificationUnmuteSound"
 #define DECREASE_MUSIC_VOLUME_NOTIFICATION  @"NotificationDecreaseMusicVolume"
 #define INCREASE_MUSIC_VOLUME_NOTIFICATION  @"NotificationIncreaseMusicVolume"
 
 @interface LWFSoundPlayer () {
-    LWFMyScene *_scene;
-    
     NSDictionary *_preloadedAudios;
     NSDictionary *_preloadedMusic;
     
@@ -37,12 +36,10 @@
 
 @implementation LWFSoundPlayer
 
-- (instancetype)initWithScene:(LWFMyScene *)scene
+- (instancetype)init
 {
     self = [super init];
-    if (self) {
-        _scene = scene;
-        
+    if (self) {        
         LWFUserDefaultsPersistenceStrategy *persistanceStrategy = [[LWFUserDefaultsPersistenceStrategy alloc]init];
         _repository = [[LWFRepository alloc]initWithPersistenceStrategy:persistanceStrategy];
         
@@ -67,6 +64,8 @@
                                               STOP_MUSIC_NOTIFICATION:              @"didReceiveStopMusicRequest",
                                               MUTE_MUSIC_NOTIFICATION:              @"didReceiveMuteMusicRequest",
                                               MUTE_SOUND_NOTIFICATION:              @"didReceiveMuteSoundRequest",
+                                              UNMUTE_MUSIC_NOTIFICATION:            @"didReceiveUnmuteMusicRequest",
+                                              UNMUTE_SOUND_NOTIFICATION:            @"didReceiveUnmuteSoundRequest",
                                               DECREASE_MUSIC_VOLUME_NOTIFICATION:   @"didReceiveDecreaseMusicVolumeRequest",
                                               INCREASE_MUSIC_VOLUME_NOTIFICATION:   @"didReceiveIncreaseMusicVolumeRequest"
                                               };
@@ -119,6 +118,17 @@
     
 }
 
++ (void)unmuteMusic {
+    [[NSNotificationCenter defaultCenter]postNotificationName:UNMUTE_MUSIC_NOTIFICATION
+                                                       object:nil];
+}
+
++ (void)unmuteSound {
+    [[NSNotificationCenter defaultCenter]postNotificationName:UNMUTE_SOUND_NOTIFICATION
+                                                       object:nil];
+    
+}
+
 + (void)increaseMusicVolume {
     [[NSNotificationCenter defaultCenter]postNotificationName:INCREASE_MUSIC_VOLUME_NOTIFICATION
                                                        object:nil];
@@ -134,14 +144,11 @@
     
     for (NSUInteger i = 0; i < LWFSoundTypeCount; i++) {
         NSString *fileName = [LWFSoundPlayer soundFileNameForSoundType:i];
-        SKAction *action = [LWFSoundPlayer actionForAudioWithName:fileName isMusic:NO];
-        [dictionary setObject:action forKey:fileName];
+        AVAudioPlayer *audioPlayer = [LWFSoundPlayer audioPlayerForMusicFileName: fileName];
+        [dictionary setObject:audioPlayer forKey:fileName];
     }
     
-    SKAction *actionRat = [LWFSoundPlayer actionForAudioWithName:@"ratHit.wav" isMusic:NO];
-    [dictionary setObject:actionRat forKey:@"ratHit.wav"];
-    
-    _preloadedAudios = dictionary;
+    [self preloadOtherAudiosIntoDictionary:dictionary];
     
     dictionary = [NSMutableDictionary new];
     
@@ -153,19 +160,25 @@
     
     _preloadedMusic = dictionary;
 }
-                            
-+ (SKAction *)actionForAudioWithName:(NSString *)fileName isMusic:(BOOL)music {
-    SKAction *action = [SKAction playSoundFileNamed:fileName waitForCompletion:music];
-    return action;
+
+- (void)preloadOtherAudiosIntoDictionary:(NSMutableDictionary *)dictionary {
+    AVAudioPlayer *audioPlayer = [LWFSoundPlayer audioPlayerForMusicFileName:@"ratHit.wav"];
+    [dictionary setObject:audioPlayer forKey:@"ratHit.wav"];
+    
+    _preloadedAudios = dictionary;
 }
 
 - (void)didReceivePlayRequest:(NSNotification *)notification {
     if ([notification.object isKindOfClass:[NSString class]]) {
         NSString *fileName = (NSString *)[notification object];
         
-        SKAction *action = [_preloadedAudios objectForKey:fileName];
+        AVAudioPlayer *audioPlayer = [_preloadedAudios objectForKey:fileName];
         
-        [_scene runAction: action];
+        audioPlayer.volume = _soundPreferences.soundVolume;
+        
+        if (!_soundPreferences.soundMuted) {
+            [audioPlayer play];
+        }
     }
 }
 
@@ -181,7 +194,10 @@
         // Repete indefinidamente
         _currentPlayingMusic.numberOfLoops = -1;
 
-        [_currentPlayingMusic play];
+        
+        if (!_soundPreferences.musicMuted) {
+            [_currentPlayingMusic play];
+        }
     }
 }
 
@@ -193,11 +209,24 @@
 
 - (void)didReceiveMuteMusicRequest {
     _currentPlayingMusic.volume = 0.0;
+    _soundPreferences.musicMuted = YES;
     [self savePreferences];
 }
 
 - (void)didReceiveMuteSoundRequest {
-    // TODO: refactor to use AVAUDIO instead of SKACTION
+    _soundPreferences.soundMuted = YES;
+    [self savePreferences];
+}
+
+- (void)didReceiveUnmuteSoundRequest {
+    _soundPreferences.soundMuted = NO;
+    [self savePreferences];
+}
+
+- (void)didReceiveUnmuteMusicRequest {
+    _soundPreferences.musicMuted = NO;
+    _currentPlayingMusic.volume = _soundPreferences.musicVolume;
+    [self savePreferences];
 }
 
 - (void)didReceiveDecreaseMusicVolumeRequest {
