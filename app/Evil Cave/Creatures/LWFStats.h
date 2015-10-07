@@ -13,7 +13,7 @@
 
 @interface LWFStats : NSObject
 
-@property NSInteger maxHP;
+@property (nonatomic) NSInteger maxHP;
 @property NSInteger actionPoints;
 @property NSInteger strength;
 @property NSInteger chanceToHit;

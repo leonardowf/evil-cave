@@ -8,6 +8,7 @@
 
 #import "LWFStats.h"
 #import "LWFCombatOutput.h"
+#import "LWFEquips.h"
 
 @implementation LWFStats
 
@@ -40,6 +41,14 @@
     [self.killable statsChanged];
 }
 
-
+- (NSInteger)maxHP {
+    LWFEquips *equips = [self.killable getEquips];
+    
+    if (equips == nil) {
+        return _maxHP;
+    }
+    
+    return _maxHP + [equips totalHP];
+}
 
 @end

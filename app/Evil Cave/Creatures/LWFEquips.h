@@ -26,6 +26,7 @@
 - (NSInteger)totalMinDamage;
 - (NSInteger)totalMaxDamage;
 - (NSInteger)totalArmor;
+- (NSInteger)totalHP;
 - (BOOL)isEquiped:(LWFEquipment *)item;
 
 @end

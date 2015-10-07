@@ -22,6 +22,7 @@
 #import "LWFItemRange.h"
 #import "LWFMap.h"
 #import "LWFGameController.h"
+#import "LWFStats.h"
 
 @interface LWFInventory () {
     LWFViewController *_viewController;
@@ -41,6 +42,7 @@
         self.money = 0;
         self.items = [NSMutableArray array];
         self.equips = [[LWFEquips alloc]init];
+        self.player = [LWFPlayer sharedPlayer];
     }
     return self;
 }
@@ -303,7 +305,11 @@ SINGLETON_FOR_CLASS(Inventory)
         return;
     }
     
+    NSInteger beforeEquipMaxHp = _player.stats.maxHP;
     LWFEquipment *replaced = [self.equips equip:equipment];
+    NSInteger afterEquipMaxHP = _player.stats.maxHP;
+    
+    [self updateHPWithNewMax:afterEquipMaxHP andOldMax:beforeEquipMaxHp];
     
     LWFImageViewHolder *viewHolder = [self viewHolderForItem:equipment];
     
@@ -326,6 +332,21 @@ SINGLETON_FOR_CLASS(Inventory)
     if (replaced != nil) {
         [_items addObject:replaced];        
     }
+}
+
+- (void)updateHPWithNewMax:(NSInteger)newMax andOldMax:(NSInteger)oldMax {
+    CGFloat propotion = (float)newMax / (float)oldMax;
+    
+    CGFloat newHP = _player.stats.currentHP * propotion;
+    NSInteger newHPRounded = newHP + 0.5;
+    
+    _player.stats.currentHP = newHPRounded;
+    
+    if (_player.stats.currentHP > _player.stats.maxHP) {
+        _player.stats.currentHP = _player.stats.maxHP;
+    }
+    
+    [_player statsChanged];
 }
 
 - (void)changeEquipsContainerFor:(LWFEquipment *)equipment withAction:(BOOL)equipping {
@@ -354,7 +375,12 @@ SINGLETON_FOR_CLASS(Inventory)
 }
 
 - (void)unequip:(LWFEquipment *)equipment {
+    
+    NSInteger beforeUnequipMaxHp = _player.stats.maxHP;
     [_equips unequip:equipment];
+    NSInteger afterUnequipMaxHP = _player.stats.maxHP;
+    
+    [self updateHPWithNewMax:afterUnequipMaxHP andOldMax:beforeUnequipMaxHp];
     
     [self changeEquipsContainerFor:equipment withAction:NO];
     
@@ -374,7 +400,11 @@ SINGLETON_FOR_CLASS(Inventory)
         
         if ([item isEquipment]) {
             LWFEquipment *equipment = (LWFEquipment *)item;
+            
+            NSInteger beforeDropMaxHP = _player.stats.maxHP;
             [self dropEquippedItem:equipment];
+            NSInteger afterDropMaxHp = _player.stats.maxHP;
+            [self updateHPWithNewMax:afterDropMaxHp andOldMax:beforeDropMaxHP];
         }
     }
     

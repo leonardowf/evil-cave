@@ -143,4 +143,13 @@
     return total;
 }
 
+- (NSInteger)totalHP {
+    NSInteger total = [self.weapon.HP integerValue];
+    total += [self.armor.HP integerValue];
+    total += [self.boots.HP integerValue];
+    total += [self.accessory.HP integerValue];
+    
+    return total;
+}
+
 @end
