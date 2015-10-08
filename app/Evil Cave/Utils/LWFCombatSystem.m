@@ -23,8 +23,6 @@
                                    target:(id<LWFAttackable>)target
                                withAttack:(LWFAttack *)attack {
     
-    // TODO: por equips
-    
     LWFCombatOutput *combatOutput = nil;
     
     if ([LWFCombatSystem attacker:attacker didHitTarget:target withAttack:attack]) {
@@ -91,6 +89,8 @@
 // Attacker's Accuracy / ( Attacker's Accuracy + ((Defender's Evasion / 4) ^ 0.8) )
 + (CGFloat)attacker:(id<LWFAttackable>)attacker chanceToHitTarget:(id<LWFAttackable>)target
          withAttack:(LWFAttack *)attack {
+    
+    // TODO: Implementar chance to hit nos equips
     
     LWFStats *attackerStats = [attacker getStats];
     LWFEquips *attackerEquips = [attacker getEquips];

@@ -300,10 +300,7 @@
 }
 
 - (void)addJunction:(LWFPointObject *)pos {
-    // TODO: portas
-    
     self.stage[pos.x][pos.y] = [LWFCaveGeneratorCell cellForX:pos.x y:pos.y andType:CaveCellTypeDoor];
-    
 }
 
 - (void)growMazeForX:(NSInteger)x y:(NSUInteger)y {

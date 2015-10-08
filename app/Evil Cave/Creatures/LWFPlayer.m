@@ -43,7 +43,7 @@ SINGLETON_FOR_CLASS(Player)
 }
 
 - (void)moveCameraToTile:(LWFTile *)tile {
-    [self.map moveCameraToTile:tile];
+    [self.map moveCameraToTile:tile completion:nil];
 }
 
 - (BOOL)shouldFinishTurnOnFailedMovement {

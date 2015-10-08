@@ -35,7 +35,6 @@
 - (void)addPlayer:(LWFPlayer *)player;
 - (LWFTile *)tileForPoint:(CGPoint)point;
 - (void)userTouchedPoint:(CGPoint)point;
-- (void)moveCameraToTile:(LWFTile *)tile;
 
 - (void)newTurnCycleStarted;
 - (void)loadGame;

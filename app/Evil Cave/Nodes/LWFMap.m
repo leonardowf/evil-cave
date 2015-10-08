@@ -292,18 +292,6 @@
     }
 }
 
-- (void)moveCameraToTile:(LWFTile *)tile {
-    SKScene *scene = [self scene];
-    float xScale = self.xScale;
-    
-    CGPoint calculatedPosition = CGPointMake((-(xScale*tile.position.x-(scene.size.width/2))), (-(xScale*tile.position.y-(scene.size.height/2))));
-    CGPoint newCameraPosition = calculatedPosition;
-    
-    SKAction *moveCameraAction = [SKAction moveTo:newCameraPosition duration:0.3];
-    [self runAction:moveCameraAction];
-}
-
-
 // TODO: REPETIDO!!!
 - (void)moveCameraToTile:(LWFTile *)tile completion:(void(^)(void))someBlock {
     SKScene *scene = [self scene];
