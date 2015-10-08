@@ -61,12 +61,6 @@
     return range;
 }
 
-// TODO: Esse valor é definido no cooldown, ver se podemos remover
-// OVERTIME: COOLDOWN
-- (NSInteger)numberOfTurns {
-    return 1;
-}
-
 - (void)overtimeNotInEffectAnymore {
     
 }

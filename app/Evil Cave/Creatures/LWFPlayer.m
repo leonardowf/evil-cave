@@ -199,7 +199,6 @@ SINGLETON_FOR_CLASS(Player)
         
         
     } else {
-        // TODO: Potion
         [self.inventory takeItem:item];
         
         // Esse é um dos comportamentos mais bizarros que já na minha experiên-
