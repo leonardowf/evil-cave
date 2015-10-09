@@ -154,6 +154,8 @@
 		32938A3C1AFC563500BBE745 /* item_sword.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32938A3B1AFC563500BBE745 /* item_sword.atlas */; };
 		32938A3E1AFFA33100BBE745 /* warrior_spinning_attack_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 32938A3D1AFFA33100BBE745 /* warrior_spinning_attack_right.atlas */; };
 		32A1D93D1BC0BDFF006F4C3B /* badasswolfshirt-famouser.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32A1D93C1BC0BDFF006F4C3B /* badasswolfshirt-famouser.mp3 */; settings = {ASSET_TAGS = (); }; };
+		32A6F8CE1BC74861000058B9 /* spinningAttack.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32A6F8CD1BC74861000058B9 /* spinningAttack.wav */; settings = {ASSET_TAGS = (); }; };
+		32A6F8D01BC74A29000058B9 /* UIClick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32A6F8CF1BC74A29000058B9 /* UIClick.wav */; settings = {ASSET_TAGS = (); }; };
 		32A9E2CB1B0AC398003D37FD /* LWFInventoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2CA1B0AC398003D37FD /* LWFInventoryTests.m */; };
 		32A9E2CE1B12AA1B003D37FD /* LWFHealthPotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2CD1B12AA1B003D37FD /* LWFHealthPotion.m */; };
 		32A9E2D11B12B36B003D37FD /* LWFPotionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2D01B12B36B003D37FD /* LWFPotionFactory.m */; };
@@ -509,6 +511,8 @@
 		32938A3B1AFC563500BBE745 /* item_sword.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = item_sword.atlas; sourceTree = "<group>"; };
 		32938A3D1AFFA33100BBE745 /* warrior_spinning_attack_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = warrior_spinning_attack_right.atlas; sourceTree = "<group>"; };
 		32A1D93C1BC0BDFF006F4C3B /* badasswolfshirt-famouser.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "badasswolfshirt-famouser.mp3"; sourceTree = "<group>"; };
+		32A6F8CD1BC74861000058B9 /* spinningAttack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = spinningAttack.wav; sourceTree = "<group>"; };
+		32A6F8CF1BC74A29000058B9 /* UIClick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = UIClick.wav; sourceTree = "<group>"; };
 		32A9E2CA1B0AC398003D37FD /* LWFInventoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFInventoryTests.m; sourceTree = "<group>"; };
 		32A9E2CC1B12AA1B003D37FD /* LWFHealthPotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFHealthPotion.h; sourceTree = "<group>"; };
 		32A9E2CD1B12AA1B003D37FD /* LWFHealthPotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFHealthPotion.m; sourceTree = "<group>"; };
@@ -800,6 +804,8 @@
 		321F41EE1B81840700FD6A12 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				32A6F8CF1BC74A29000058B9 /* UIClick.wav */,
+				32A6F8CD1BC74861000058B9 /* spinningAttack.wav */,
 				321F2C461B9FC128003EF0CA /* ratHit.wav */,
 				321D33781B9E5E49000DBE44 /* notFound.wav */,
 				321F41EF1B81840700FD6A12 /* soundTypeGameOver.mp3 */,
@@ -1613,6 +1619,7 @@
 				325373B61AF1B25C00BF0E43 /* ring_empty@2x.png in Resources */,
 				32BEC0141A48A7C4000C77AA /* creature_stats.json in Resources */,
 				32E2E6B61ACB6BAA00EA88DD /* poop_thrower_rat_standing_left.atlas in Resources */,
+				32A6F8CE1BC74861000058B9 /* spinningAttack.wav in Resources */,
 				32DFD2A11AAFD7E400FB554B /* popup_bg@3x.png in Resources */,
 				3275C4131B63136A00813994 /* GameOverButtons.xib in Resources */,
 				3209763D1B4A0BBD0022B331 /* closed_chest.png in Resources */,
@@ -1683,6 +1690,7 @@
 				328F5F871B3B6B8E00D136BA /* loot_chances.json in Resources */,
 				32C5751A1BAF0CF40022D54B /* item_sword.png in Resources */,
 				325373AF1AF1B25C00BF0E43 /* armor_empty.png in Resources */,
+				32A6F8D01BC74A29000058B9 /* UIClick.wav in Resources */,
 				324527831A4CEC6900AFF9A7 /* warrior_attacking_right.atlas in Resources */,
 				A7F5BBA71A16EFBE005BAB63 /* Images.xcassets in Resources */,
 				325C10DB1BABA1AE0082F85D /* bg@2x.png in Resources */,

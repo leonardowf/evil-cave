@@ -251,6 +251,8 @@ SINGLETON_FOR_CLASS(Player)
         return;
     }
     
+    [LWFSoundPlayer play: LWFSoundTypeSpinningAttack];
+    
     [self animateSpecialAttack];
 }
 

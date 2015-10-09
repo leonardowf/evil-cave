@@ -23,6 +23,7 @@
 #import "LWFMap.h"
 #import "LWFGameController.h"
 #import "LWFStats.h"
+#import "LWFSoundPlayer.h"
 
 @interface LWFInventory () {
     LWFViewController *_viewController;
@@ -148,6 +149,8 @@ SINGLETON_FOR_CLASS(Inventory)
 - (void)didTap:(id)sender {
     [self hideItemDescriptionIfNeeded];
     
+    [LWFSoundPlayer play:LWFSoundTypeUIClick];
+    
     UIImageView *imageView = (UIImageView *)[sender view];
     LWFImageViewHolder *viewHolder = [self viewHolderForImageView:imageView];
     
@@ -267,6 +270,7 @@ SINGLETON_FOR_CLASS(Inventory)
 }
 
 - (void)didTapClose {
+    [LWFSoundPlayer play:LWFSoundTypeUIClick];
     [self hide];
 }
 

@@ -26,6 +26,7 @@
 #import <pop/POP.h>
 #import "LWFTutorial.h"
 #import "LWFPieView.h"
+#import "LWFSoundPlayer.h"
 
 @implementation LWFViewController
 
@@ -143,6 +144,8 @@
 - (IBAction)didTapInventoryButton:(UITapGestureRecognizer *)sender {
     UIView *view = (UIView *)sender.view;
     
+    [LWFSoundPlayer play:LWFSoundTypeUIClick];
+    
     [self animateOnPressButton:view completion:^{
         LWFInventory *inventory = [LWFInventory sharedInventory];
         [inventory show];
@@ -192,6 +195,9 @@
     
     if (!cooldownOn) {
         [player.oteQueue addOTE:ote];
+        
+        [LWFSoundPlayer play:LWFSoundTypeUIClick];
+        
         [self animateOnPressButton:view completion:^{
             [player requestSpecialAttack];
         }];

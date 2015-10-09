@@ -13,6 +13,8 @@ typedef enum : NSUInteger {
     LWFSoundTypeUIOpenInventory,
     LWFSoundTypeUISpecialAttack,
     LWFSoundTypePlayerHit,
+    LWFSoundTypeSpinningAttack,
+    LWFSoundTypeUIClick,
     LWFSoundTypeCount
 } LWFSoundType;
 

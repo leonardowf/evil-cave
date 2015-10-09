@@ -295,6 +295,14 @@
         case LWFSoundTypeGameOver:
             return @"soundTypeGameOver.mp3";
         break;
+            
+        case LWFSoundTypeSpinningAttack:
+            return @"spinningAttack.wav";
+            break;
+            
+        case LWFSoundTypeUIClick:
+            return @"UIClick.wav";
+            break;
         
         default:
             return @"notFound.wav";
