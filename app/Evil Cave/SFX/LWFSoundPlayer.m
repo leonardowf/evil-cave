@@ -286,7 +286,7 @@
     
     switch (musicType) {
         case LWFMusicTypeGame:
-            return @"badasswolfshirt-famouser.mp3";
+            return @"badasswolfshirt-famouser-normalized.mp3";
         break;
         default:
             return nil;
