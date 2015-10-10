@@ -23,6 +23,7 @@
 #import "LWFGameOver.h"
 #import "LWFSoundPlayer.h"
 #import "LWFTextDisplayQueue.h"
+#import "LWFRandomUtils.h"
 
 @interface LWFPlayer () {
     LWFCreature *_lockedTarget;
@@ -98,9 +99,9 @@ SINGLETON_FOR_CLASS(Player)
 }
 
 - (void)moveToTile:(LWFTile *)tile completion:(void(^)(void))someBlock {
+    [LWFSoundPlayer play:LWFSoundTypeStep withSoundEmitter:self];
     [super moveToTile:tile completion:someBlock];
     [self moveCameraToTile:tile];
-
 }
 
 - (void)didMoveToTile:(LWFTile *)tile atX:(NSUInteger)x andY:(NSUInteger)y {
@@ -311,5 +312,18 @@ SINGLETON_FOR_CLASS(Player)
     [self walkToExistingPath];
 }
 
+#pragma mark - Sound Emitter
+- (NSString *)getSoundName:(LWFSoundType)soundType {
+    if (soundType == LWFSoundTypeStep) {
+        LWFRandomUtils *randomUtil = [LWFRandomUtils new];
+        NSInteger stepNumber = [randomUtil randomIntegerBetween:1 and:3];
+        
+        NSString *fileName = [NSString stringWithFormat:@"step-%d.wav", stepNumber];
+        
+        return fileName;
+    }
+    
+    return nil;
+}
 
 @end

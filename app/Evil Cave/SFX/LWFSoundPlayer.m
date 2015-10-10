@@ -165,6 +165,15 @@
     AVAudioPlayer *audioPlayer = [LWFSoundPlayer audioPlayerForMusicFileName:@"ratHit.wav"];
     [dictionary setObject:audioPlayer forKey:@"ratHit.wav"];
     
+    audioPlayer = [LWFSoundPlayer audioPlayerForMusicFileName:@"step-1.wav"];
+    [dictionary setObject:audioPlayer forKey:@"step-1.wav"];
+    
+    audioPlayer = [LWFSoundPlayer audioPlayerForMusicFileName:@"step-2.wav"];
+    [dictionary setObject:audioPlayer forKey:@"step-2.wav"];
+    
+    audioPlayer = [LWFSoundPlayer audioPlayerForMusicFileName:@"step-3.wav"];
+    [dictionary setObject:audioPlayer forKey:@"step-3.wav"];
+    
     _preloadedAudios = dictionary;
 }
 

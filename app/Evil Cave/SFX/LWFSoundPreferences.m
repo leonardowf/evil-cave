@@ -16,8 +16,8 @@
 {
     self = [super init];
     if (self) {
-        self.musicVolume = 0.1;
-        self.soundVolume = 0.5;
+        self.musicVolume = 0.0;
+        self.soundVolume = 0.3;
     }
     return self;
 }

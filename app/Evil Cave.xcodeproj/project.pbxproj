@@ -160,6 +160,9 @@
 		32A9E2CE1B12AA1B003D37FD /* LWFHealthPotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2CD1B12AA1B003D37FD /* LWFHealthPotion.m */; };
 		32A9E2D11B12B36B003D37FD /* LWFPotionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2D01B12B36B003D37FD /* LWFPotionFactory.m */; };
 		32A9E2D41B155E2C003D37FD /* LWFPotionIdentifierMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9E2D31B155E2C003D37FD /* LWFPotionIdentifierMatcher.m */; };
+		32A9F46A1BC8B20C00CBFE64 /* step-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32A9F4671BC8B20C00CBFE64 /* step-1.wav */; settings = {ASSET_TAGS = (); }; };
+		32A9F46B1BC8B20C00CBFE64 /* step-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32A9F4681BC8B20C00CBFE64 /* step-2.wav */; settings = {ASSET_TAGS = (); }; };
+		32A9F46C1BC8B20C00CBFE64 /* step-3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32A9F4691BC8B20C00CBFE64 /* step-3.wav */; settings = {ASSET_TAGS = (); }; };
 		32ACD05F1A7B062600970F69 /* item_motherfucking_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */; };
 		32B3E1B11B06DA3B00CF2EA2 /* tutorial1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 32B3E1B01B06DA3B00CF2EA2 /* tutorial1.gif */; };
 		32B3E1B41B082A6B00CF2EA2 /* grass_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B3E1B21B082A6B00CF2EA2 /* grass_tile.png */; };
@@ -520,6 +523,9 @@
 		32A9E2D01B12B36B003D37FD /* LWFPotionFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPotionFactory.m; sourceTree = "<group>"; };
 		32A9E2D21B155E2C003D37FD /* LWFPotionIdentifierMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPotionIdentifierMatcher.h; sourceTree = "<group>"; };
 		32A9E2D31B155E2C003D37FD /* LWFPotionIdentifierMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPotionIdentifierMatcher.m; sourceTree = "<group>"; };
+		32A9F4671BC8B20C00CBFE64 /* step-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "step-1.wav"; sourceTree = "<group>"; };
+		32A9F4681BC8B20C00CBFE64 /* step-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "step-2.wav"; sourceTree = "<group>"; };
+		32A9F4691BC8B20C00CBFE64 /* step-3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "step-3.wav"; sourceTree = "<group>"; };
 		32ACD05E1A7B062600970F69 /* item_motherfucking_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_motherfucking_sword.png; sourceTree = "<group>"; };
 		32B3E1B01B06DA3B00CF2EA2 /* tutorial1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tutorial1.gif; sourceTree = "<group>"; };
 		32B3E1B21B082A6B00CF2EA2 /* grass_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass_tile.png; sourceTree = "<group>"; };
@@ -804,6 +810,9 @@
 		321F41EE1B81840700FD6A12 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				32A9F4671BC8B20C00CBFE64 /* step-1.wav */,
+				32A9F4681BC8B20C00CBFE64 /* step-2.wav */,
+				32A9F4691BC8B20C00CBFE64 /* step-3.wav */,
 				32A6F8CF1BC74A29000058B9 /* UIClick.wav */,
 				32A6F8CD1BC74861000058B9 /* spinningAttack.wav */,
 				321F2C461B9FC128003EF0CA /* ratHit.wav */,
@@ -1612,6 +1621,7 @@
 				32C575261BAF142C0022D54B /* item_gold@2x.png in Resources */,
 				3245278B1A4DCBFB00AFF9A7 /* warrior_attacking_left.atlas in Resources */,
 				32E2E6B71ACB6BAA00EA88DD /* poop_thrower_rat_standing_left.png in Resources */,
+				32A9F46B1BC8B20C00CBFE64 /* step-2.wav in Resources */,
 				3275C4081B5F25AF00813994 /* GameOverStats.xib in Resources */,
 				32F09E311A48F4FA000B8797 /* Munro.ttf in Resources */,
 				328F5F631B3B6A8700D136BA /* Lifebar.xib in Resources */,
@@ -1641,6 +1651,7 @@
 				32E2E6AB1ACA31E800EA88DD /* button_yellow@2x.png in Resources */,
 				3245279A1A4EEF5500AFF9A7 /* creature_lifebar.png in Resources */,
 				32FB7DB21AA0004B00AA4C7F /* hero_portrait@3x.png in Resources */,
+				32A9F46A1BC8B20C00CBFE64 /* step-1.wav in Resources */,
 				32BEB1381ABE4EFA008950C0 /* portrait.png in Resources */,
 				321F2C471B9FC128003EF0CA /* ratHit.wav in Resources */,
 				32FB7DB61AA0004B00AA4C7F /* thumb@3x.png in Resources */,
@@ -1683,6 +1694,7 @@
 				32FB7DB71AA0004B00AA4C7F /* thumb_money.png in Resources */,
 				325373B51AF1B25C00BF0E43 /* ring_empty.png in Resources */,
 				325373B71AF1B25C00BF0E43 /* ring_empty@3x.png in Resources */,
+				32A9F46C1BC8B20C00CBFE64 /* step-3.wav in Resources */,
 				321A60631A635DA50060517E /* blood.atlas in Resources */,
 				3275C40D1B60694C00813994 /* opening_chest.atlas in Resources */,
 				32E2E6B51ACB6BAA00EA88DD /* poop_thrower_rat_dying_right.atlas in Resources */,
