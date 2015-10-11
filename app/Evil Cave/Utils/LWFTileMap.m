@@ -9,6 +9,7 @@
 #import "LWFTileMap.h"
 #import "LWFMapDimension.h"
 #import "LWFTile.h"
+#import "LWFEndTile.h"
 #import "LWFCaveGenerator.h"
 #import "LWFRandomUtils.h"
 #import "LWFCaveGeneratorResult.h"
@@ -58,7 +59,7 @@
                 } else if (cell.cellType == CaveCellTypeEnd) {
                     SKTexture *texture = [SKTexture textureWithImageNamed:@"stairway_down"];
                     texture.filteringMode = SKTextureFilteringNearest;
-                    tile = [LWFTile spriteNodeWithTexture:texture];
+                    tile = [LWFEndTile spriteNodeWithTexture:texture];
                     [tile setWalkable:NO];
                     self.endTile = tile;
                     

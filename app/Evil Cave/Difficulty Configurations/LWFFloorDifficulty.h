@@ -16,6 +16,7 @@
 @property (nonatomic) NSInteger floor;
 @property (nonatomic) NSInteger numberTilesVertical;
 @property (nonatomic) NSInteger numberTilesHorizontal;
+@property (nonatomic, strong) NSArray *nextFloorRequisites;
 
 - (void)buildCreaturesWithBuilder:(LWFCreatureBuilder *)builder;
 

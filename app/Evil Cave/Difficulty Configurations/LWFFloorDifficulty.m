@@ -9,6 +9,7 @@
 #import "LWFFloorDifficulty.h"
 #import "LWFCreatureBuilder.h"
 #import "LWFRatKing.h"
+#import "LWFCreatureDeadRequisite.h"
 
 @interface LWFFloorDifficulty () {
     LWFCreatureBuilder *_builder;
@@ -18,10 +19,19 @@
 
 @implementation LWFFloorDifficulty
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.nextFloorRequisites = [NSArray new];
+    }
+    return self;
+}
+
 - (void)buildCreaturesWithBuilder:(LWFCreatureBuilder *)builder {
     _builder = builder;
     
-    if (self.floor == 3) {
+    if (self.floor == 1) {
         [self buildBossRoom];
     } else {
         [self buildFloor1];
@@ -49,6 +59,10 @@
     
     [creatures addObject:ratKing];
     self.creatures = creatures;
+    
+    LWFCreatureDeadRequisite *requisite = [[LWFCreatureDeadRequisite alloc]initWithCreature:ratKing];
+    
+    self.nextFloorRequisites = [NSArray arrayWithObject:requisite];
 }
 
 @end

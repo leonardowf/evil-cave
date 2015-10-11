@@ -10,7 +10,10 @@
 
 #import "LWFMapDimension.h"
 #import "LWFTileMap.h"
+
 #import "LWFTile.h"
+#import "LWFEndTile.h"
+
 #import "LWFPlayer.h"
 #import "LWFHumbleBeeFindPath.h"
 #import "LWFTurnList.h"
@@ -23,6 +26,7 @@
 #import "LWFDifficultyManager.h"
 #import "LWFFloorDifficulty.h"
 #import "LWFChest.h"
+#import "LWFRequisite.h"
 
 @interface LWFMap () {
     LWFTurnList *_turnList;
@@ -201,7 +205,12 @@
             [self.player cancelPreExistingActions];
             [self.player requestTakeItem];
         } else if (tile.cellType == CaveCellTypeEnd) {
-            [_player willMoveToTile:tile atX:tile.x andY:tile.y];
+            
+            LWFEndTile *endTile = (LWFEndTile *)tile;
+            
+            if ([endTile walkRequisitesAreMet]) {
+                [_player willMoveToTile:tile atX:tile.x andY:tile.y];
+            }
         }
     }
 }
@@ -231,6 +240,7 @@
     [self createCreatures];
     [self chooseCreaturePositions];
     [self chooseChestsPositions];
+    [self addEndTileRequisites];
     [_player doFov];
 }
 
@@ -251,6 +261,14 @@
         [self addChild:chest];
         [chest startAnimation:LWFChestAnimationTypeClosed completion:nil];
     }
+}
+
+- (void)addEndTileRequisites {
+    LWFEndTile *endTile = (LWFEndTile *)self.tileMap.endTile;
+    
+    endTile.walkRequisite = [LWFRequisite new];
+    
+    [endTile.walkRequisite.andRequisites addObjectsFromArray:_floorDifficulty.nextFloorRequisites];
 }
 
 - (void)createCreatures {
@@ -292,7 +310,6 @@
     }
 }
 
-// TODO: REPETIDO!!!
 - (void)moveCameraToTile:(LWFTile *)tile completion:(void(^)(void))someBlock {
     SKScene *scene = [self scene];
     float xScale = self.xScale;
