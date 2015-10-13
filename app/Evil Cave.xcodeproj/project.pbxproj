@@ -43,6 +43,7 @@
 		323335FB1AA52F730088C4F6 /* item_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 323335F81AA52F730088C4F6 /* item_info@2x.png */; };
 		323335FC1AA52F730088C4F6 /* item_info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 323335F91AA52F730088C4F6 /* item_info@3x.png */; };
 		323D10931A9C0CB6000AB32D /* fog_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 323D10921A9C0CB6000AB32D /* fog_overlay.png */; };
+		323D7C561BCC84BA00B96EA2 /* LWFSkillTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 323D7C551BCC84BA00B96EA2 /* LWFSkillTree.m */; settings = {ASSET_TAGS = (); }; };
 		324046811B719FF30001BEF6 /* LWFPieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 324046801B719FF30001BEF6 /* LWFPieView.m */; };
 		3240468F1B7EC3890001BEF6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3240468E1B7EC3890001BEF6 /* AVFoundation.framework */; };
 		324527831A4CEC6900AFF9A7 /* warrior_attacking_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 324527821A4CEC6900AFF9A7 /* warrior_attacking_right.atlas */; };
@@ -352,6 +353,8 @@
 		323335F81AA52F730088C4F6 /* item_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item_info@2x.png"; sourceTree = "<group>"; };
 		323335F91AA52F730088C4F6 /* item_info@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item_info@3x.png"; sourceTree = "<group>"; };
 		323D10921A9C0CB6000AB32D /* fog_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fog_overlay.png; sourceTree = "<group>"; };
+		323D7C541BCC84BA00B96EA2 /* LWFSkillTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSkillTree.h; sourceTree = "<group>"; };
+		323D7C551BCC84BA00B96EA2 /* LWFSkillTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFSkillTree.m; sourceTree = "<group>"; };
 		3240467F1B719FF30001BEF6 /* LWFPieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPieView.h; sourceTree = "<group>"; };
 		324046801B719FF30001BEF6 /* LWFPieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPieView.m; sourceTree = "<group>"; };
 		3240468E1B7EC3890001BEF6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -830,6 +833,15 @@
 				321F41F01B81840700FD6A12 /* soundTypePickedGold.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		323D7C501BCC846300B96EA2 /* Skill Tree */ = {
+			isa = PBXGroup;
+			children = (
+				323D7C541BCC84BA00B96EA2 /* LWFSkillTree.h */,
+				323D7C551BCC84BA00B96EA2 /* LWFSkillTree.m */,
+			);
+			path = "Skill Tree";
 			sourceTree = "<group>";
 		};
 		324B2C101B3F7FF5005CAF81 /* Potions */ = {
@@ -1444,6 +1456,7 @@
 		A7F5BB8F1A16EFBC005BAB63 /* Evil Cave */ = {
 			isa = PBXGroup;
 			children = (
+				323D7C501BCC846300B96EA2 /* Skill Tree */,
 				329AB8FC1BCAC7C8003036A5 /* Requisites */,
 				321F41DA1B8183A500FD6A12 /* SFX */,
 				32793D3F1B8166BD00B2117F /* Persistence */,
@@ -1821,6 +1834,7 @@
 				32BCDF791A50455E004A2993 /* LWFDartDungeonGenerator.m in Sources */,
 				328F5FEF1B3B6FA600D136BA /* LWFRat.m in Sources */,
 				328F5FE91B3B6FA600D136BA /* LWFAttacksBuilder.m in Sources */,
+				323D7C561BCC84BA00B96EA2 /* LWFSkillTree.m in Sources */,
 				32C511F31A37A5DB00F0B955 /* LWFGeometry.m in Sources */,
 				A7D8BEE71A198C67005B0599 /* LWFCaveGeneratorCell.m in Sources */,
 				A7D8BEE11A19883A005B0599 /* LWFCaveGenerator.m in Sources */,
