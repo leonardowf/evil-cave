@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0943A68276D0B954BA961482 /* libPods-Evil Cave.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08256F3125610C5AFC2900D2 /* libPods-Evil Cave.a */; };
 		3204AC091B16A6D500DEE14D /* NSMutableArray_Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3204AC081B16A6D500DEE14D /* NSMutableArray_Shuffling.m */; };
+		3205597B1BD0818C00C7E5FB /* LWFProgressionFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3205597A1BD0818C00C7E5FB /* LWFProgressionFunction.m */; settings = {ASSET_TAGS = (); }; };
+		3205597E1BD083F100C7E5FB /* LWFProgressionFunctionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3205597D1BD083F100C7E5FB /* LWFProgressionFunctionFactory.m */; settings = {ASSET_TAGS = (); }; };
+		320559811BD0893800C7E5FB /* LWFPriceFunctionHpPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = 320559801BD0893800C7E5FB /* LWFPriceFunctionHpPlus.m */; settings = {ASSET_TAGS = (); }; };
+		320559831BD08BC400C7E5FB /* LWFProgressionFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 320559821BD08BC400C7E5FB /* LWFProgressionFunctionTests.m */; settings = {ASSET_TAGS = (); }; };
 		3206A3DD1A7D9B6200D08893 /* item_preview_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 3206A3DA1A7D9B6200D08893 /* item_preview_bottom.png */; };
 		3206A3DF1A7D9B6200D08893 /* item_preview_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 3206A3DC1A7D9B6200D08893 /* item_preview_top.png */; };
 		3206A3E11A7D9D7F00D08893 /* item_preview_middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3206A3E01A7D9D7F00D08893 /* item_preview_middle.png */; };
@@ -306,6 +310,13 @@
 		08256F3125610C5AFC2900D2 /* libPods-Evil Cave.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Evil Cave.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3204AC071B16A6D500DEE14D /* NSMutableArray_Shuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMutableArray_Shuffling.h; sourceTree = "<group>"; };
 		3204AC081B16A6D500DEE14D /* NSMutableArray_Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableArray_Shuffling.m; sourceTree = "<group>"; };
+		320559791BD0818C00C7E5FB /* LWFProgressionFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFProgressionFunction.h; sourceTree = "<group>"; };
+		3205597A1BD0818C00C7E5FB /* LWFProgressionFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFProgressionFunction.m; sourceTree = "<group>"; };
+		3205597C1BD083F100C7E5FB /* LWFProgressionFunctionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFProgressionFunctionFactory.h; sourceTree = "<group>"; };
+		3205597D1BD083F100C7E5FB /* LWFProgressionFunctionFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFProgressionFunctionFactory.m; sourceTree = "<group>"; };
+		3205597F1BD0893800C7E5FB /* LWFPriceFunctionHpPlus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPriceFunctionHpPlus.h; sourceTree = "<group>"; };
+		320559801BD0893800C7E5FB /* LWFPriceFunctionHpPlus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPriceFunctionHpPlus.m; sourceTree = "<group>"; };
+		320559821BD08BC400C7E5FB /* LWFProgressionFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFProgressionFunctionTests.m; sourceTree = "<group>"; };
 		3206A3DA1A7D9B6200D08893 /* item_preview_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_preview_bottom.png; sourceTree = "<group>"; };
 		3206A3DC1A7D9B6200D08893 /* item_preview_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_preview_top.png; sourceTree = "<group>"; };
 		3206A3E01A7D9D7F00D08893 /* item_preview_middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_preview_middle.png; sourceTree = "<group>"; };
@@ -743,6 +754,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		320559781BD0817700C7E5FB /* Progression Functions */ = {
+			isa = PBXGroup;
+			children = (
+				320559791BD0818C00C7E5FB /* LWFProgressionFunction.h */,
+				3205597A1BD0818C00C7E5FB /* LWFProgressionFunction.m */,
+				3205597C1BD083F100C7E5FB /* LWFProgressionFunctionFactory.h */,
+				3205597D1BD083F100C7E5FB /* LWFProgressionFunctionFactory.m */,
+				3205597F1BD0893800C7E5FB /* LWFPriceFunctionHpPlus.h */,
+				320559801BD0893800C7E5FB /* LWFPriceFunctionHpPlus.m */,
+			);
+			path = "Progression Functions";
+			sourceTree = "<group>";
+		};
 		3206A3D91A7D9B3800D08893 /* HUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -838,6 +862,7 @@
 		323D7C501BCC846300B96EA2 /* Skill Tree */ = {
 			isa = PBXGroup;
 			children = (
+				320559781BD0817700C7E5FB /* Progression Functions */,
 				323D7C541BCC84BA00B96EA2 /* LWFSkillTree.h */,
 				323D7C551BCC84BA00B96EA2 /* LWFSkillTree.m */,
 			);
@@ -1515,6 +1540,7 @@
 				321F41D51B81707B00FD6A12 /* LWFMockPersistanceStrategy.h */,
 				321F41D61B81707B00FD6A12 /* LWFMockPersistanceStrategy.m */,
 				325C10CE1BA7B5D40082F85D /* LWFAtlasSpriteLoaderTests.m */,
+				320559821BD08BC400C7E5FB /* LWFProgressionFunctionTests.m */,
 			);
 			path = "Evil CaveTests";
 			sourceTree = "<group>";
@@ -1833,6 +1859,7 @@
 				328F5F891B3B6B8E00D136BA /* LWFGold.m in Sources */,
 				32BCDF791A50455E004A2993 /* LWFDartDungeonGenerator.m in Sources */,
 				328F5FEF1B3B6FA600D136BA /* LWFRat.m in Sources */,
+				320559811BD0893800C7E5FB /* LWFPriceFunctionHpPlus.m in Sources */,
 				328F5FE91B3B6FA600D136BA /* LWFAttacksBuilder.m in Sources */,
 				323D7C561BCC84BA00B96EA2 /* LWFSkillTree.m in Sources */,
 				32C511F31A37A5DB00F0B955 /* LWFGeometry.m in Sources */,
@@ -1870,12 +1897,14 @@
 				32826C311AEDB296007400AD /* LWFOTE.m in Sources */,
 				32DB3B141B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.m in Sources */,
 				3219AB4B1A8ECEB600FE544C /* LWFSpinningAttack.m in Sources */,
+				3205597B1BD0818C00C7E5FB /* LWFProgressionFunction.m in Sources */,
 				32BEA46B1B95314B0026F15B /* LWFTextDisplayQueue.m in Sources */,
 				A78443B01A1EEFCC0029995D /* PathFindNode.m in Sources */,
 				328F5F9F1B3B6C2F00D136BA /* LWFDifficultyManager.m in Sources */,
 				A7D8BEED1A1AB909005B0599 /* LWFRoom.m in Sources */,
 				325C10CD1BA7B1250082F85D /* LWFRatKing.m in Sources */,
 				328F5F8B1B3B6B8E00D136BA /* LWFItemFactory.m in Sources */,
+				3205597E1BD083F100C7E5FB /* LWFProgressionFunctionFactory.m in Sources */,
 				328F5F361B36476000D136BA /* LWFAcidPotion.m in Sources */,
 				328F5F641B3B6A8700D136BA /* LWFHudLifebar.m in Sources */,
 				3204AC091B16A6D500DEE14D /* NSMutableArray_Shuffling.m in Sources */,
@@ -1949,6 +1978,7 @@
 				32938A1E1AFAED4600BBE745 /* LWFItemsTests.m in Sources */,
 				325C10CF1BA7B5D40082F85D /* LWFAtlasSpriteLoaderTests.m in Sources */,
 				32938A1C1AF99A7E00BBE745 /* LWFPotionsTests.m in Sources */,
+				320559831BD08BC400C7E5FB /* LWFProgressionFunctionTests.m in Sources */,
 				A7F5BBBA1A16EFBF005BAB63 /* Evil_CaveTests.m in Sources */,
 				325C10D31BA7B63D0082F85D /* LWFAtlasSpriteLoader.m in Sources */,
 			);

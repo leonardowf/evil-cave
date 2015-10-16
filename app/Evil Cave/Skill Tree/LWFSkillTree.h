@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum : NSUInteger {
+    LWFSkillTypeHPPlus,
+    LWFSkillTypeStrengthPlus,
+    LWFSkillTypeSpinningAttackLevelUp,
+    LWFSkillTypeLootPlus,
+    LWFSkillTypePotionEffectUp,
+    LWFSkillTypeArmorUp
+} LWFSkillType;
+
 @interface LWFSkillTree : NSObject
 
 + (id)sharedSkillTree;

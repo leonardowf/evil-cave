@@ -8,15 +8,6 @@
 
 #import "LWFSkillTree.h"
 
-typedef enum : NSUInteger {
-    LWFSkillTypeHPPlus,
-    LWFSkillTypeStrengthPlus,
-    LWFSkillTypeSpinningAttackLevelUp,
-    LWFSkillTypeLootPlus,
-    LWFSkillTypePotionEffectUp,
-    LWFSkillTypeArmorUp
-} LWFSkillType;
-
 @implementation LWFSkillTree
 
 SINGLETON_FOR_CLASS(SkillTree)
