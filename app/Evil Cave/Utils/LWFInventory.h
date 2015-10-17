@@ -16,7 +16,7 @@
 @class LWFItem;
 @class LWFPotion;
 
-static NSInteger const STORED_ITEMS_LIMIT = 15;
+static NSInteger const STORED_ITEMS_LIMIT = 16;
 
 @interface LWFInventory : SKSpriteNode <LWFItemRangeProtocol>
 
