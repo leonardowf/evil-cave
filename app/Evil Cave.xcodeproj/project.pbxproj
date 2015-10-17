@@ -13,6 +13,11 @@
 		3205597E1BD083F100C7E5FB /* LWFProgressionFunctionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3205597D1BD083F100C7E5FB /* LWFProgressionFunctionFactory.m */; settings = {ASSET_TAGS = (); }; };
 		320559811BD0893800C7E5FB /* LWFPriceFunctionHpPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = 320559801BD0893800C7E5FB /* LWFPriceFunctionHpPlus.m */; settings = {ASSET_TAGS = (); }; };
 		320559831BD08BC400C7E5FB /* LWFProgressionFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 320559821BD08BC400C7E5FB /* LWFProgressionFunctionTests.m */; settings = {ASSET_TAGS = (); }; };
+		320559861BD1DE5A00C7E5FB /* LWFPriceFunctionStrengthPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = 320559851BD1DE5A00C7E5FB /* LWFPriceFunctionStrengthPlus.m */; settings = {ASSET_TAGS = (); }; };
+		320559891BD1DE9900C7E5FB /* LWFPriceFunctionSpinningAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 320559881BD1DE9900C7E5FB /* LWFPriceFunctionSpinningAttack.m */; settings = {ASSET_TAGS = (); }; };
+		3205598C1BD1DEB600C7E5FB /* LWFPriceFunctionLootPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3205598B1BD1DEB600C7E5FB /* LWFPriceFunctionLootPlus.m */; settings = {ASSET_TAGS = (); }; };
+		3205598F1BD1DED600C7E5FB /* LWFPriceFunctionPotionEffectUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3205598E1BD1DED600C7E5FB /* LWFPriceFunctionPotionEffectUp.m */; settings = {ASSET_TAGS = (); }; };
+		320559921BD1DEFD00C7E5FB /* LWFPriceFunctionArmorUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 320559911BD1DEFD00C7E5FB /* LWFPriceFunctionArmorUp.m */; settings = {ASSET_TAGS = (); }; };
 		3206A3DD1A7D9B6200D08893 /* item_preview_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 3206A3DA1A7D9B6200D08893 /* item_preview_bottom.png */; };
 		3206A3DF1A7D9B6200D08893 /* item_preview_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 3206A3DC1A7D9B6200D08893 /* item_preview_top.png */; };
 		3206A3E11A7D9D7F00D08893 /* item_preview_middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3206A3E01A7D9D7F00D08893 /* item_preview_middle.png */; };
@@ -317,6 +322,17 @@
 		3205597F1BD0893800C7E5FB /* LWFPriceFunctionHpPlus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPriceFunctionHpPlus.h; sourceTree = "<group>"; };
 		320559801BD0893800C7E5FB /* LWFPriceFunctionHpPlus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPriceFunctionHpPlus.m; sourceTree = "<group>"; };
 		320559821BD08BC400C7E5FB /* LWFProgressionFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFProgressionFunctionTests.m; sourceTree = "<group>"; };
+		320559841BD1DE5A00C7E5FB /* LWFPriceFunctionStrengthPlus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPriceFunctionStrengthPlus.h; sourceTree = "<group>"; };
+		320559851BD1DE5A00C7E5FB /* LWFPriceFunctionStrengthPlus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPriceFunctionStrengthPlus.m; sourceTree = "<group>"; };
+		320559871BD1DE9900C7E5FB /* LWFPriceFunctionSpinningAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPriceFunctionSpinningAttack.h; sourceTree = "<group>"; };
+		320559881BD1DE9900C7E5FB /* LWFPriceFunctionSpinningAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPriceFunctionSpinningAttack.m; sourceTree = "<group>"; };
+		3205598A1BD1DEB600C7E5FB /* LWFPriceFunctionLootPlus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPriceFunctionLootPlus.h; sourceTree = "<group>"; };
+		3205598B1BD1DEB600C7E5FB /* LWFPriceFunctionLootPlus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPriceFunctionLootPlus.m; sourceTree = "<group>"; };
+		3205598D1BD1DED600C7E5FB /* LWFPriceFunctionPotionEffectUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPriceFunctionPotionEffectUp.h; sourceTree = "<group>"; };
+		3205598E1BD1DED600C7E5FB /* LWFPriceFunctionPotionEffectUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPriceFunctionPotionEffectUp.m; sourceTree = "<group>"; };
+		320559901BD1DEFD00C7E5FB /* LWFPriceFunctionArmorUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPriceFunctionArmorUp.h; sourceTree = "<group>"; };
+		320559911BD1DEFD00C7E5FB /* LWFPriceFunctionArmorUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPriceFunctionArmorUp.m; sourceTree = "<group>"; };
+		320559931BD1E12500C7E5FB /* LWFProgressFunctionsUmbrellaHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFProgressFunctionsUmbrellaHeader.h; sourceTree = "<group>"; };
 		3206A3DA1A7D9B6200D08893 /* item_preview_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_preview_bottom.png; sourceTree = "<group>"; };
 		3206A3DC1A7D9B6200D08893 /* item_preview_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_preview_top.png; sourceTree = "<group>"; };
 		3206A3E01A7D9D7F00D08893 /* item_preview_middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_preview_middle.png; sourceTree = "<group>"; };
@@ -757,12 +773,23 @@
 		320559781BD0817700C7E5FB /* Progression Functions */ = {
 			isa = PBXGroup;
 			children = (
+				3205597D1BD083F100C7E5FB /* LWFProgressionFunctionFactory.m */,
+				3205597C1BD083F100C7E5FB /* LWFProgressionFunctionFactory.h */,
 				320559791BD0818C00C7E5FB /* LWFProgressionFunction.h */,
 				3205597A1BD0818C00C7E5FB /* LWFProgressionFunction.m */,
-				3205597C1BD083F100C7E5FB /* LWFProgressionFunctionFactory.h */,
-				3205597D1BD083F100C7E5FB /* LWFProgressionFunctionFactory.m */,
 				3205597F1BD0893800C7E5FB /* LWFPriceFunctionHpPlus.h */,
 				320559801BD0893800C7E5FB /* LWFPriceFunctionHpPlus.m */,
+				320559841BD1DE5A00C7E5FB /* LWFPriceFunctionStrengthPlus.h */,
+				320559851BD1DE5A00C7E5FB /* LWFPriceFunctionStrengthPlus.m */,
+				320559871BD1DE9900C7E5FB /* LWFPriceFunctionSpinningAttack.h */,
+				320559881BD1DE9900C7E5FB /* LWFPriceFunctionSpinningAttack.m */,
+				3205598A1BD1DEB600C7E5FB /* LWFPriceFunctionLootPlus.h */,
+				3205598B1BD1DEB600C7E5FB /* LWFPriceFunctionLootPlus.m */,
+				3205598D1BD1DED600C7E5FB /* LWFPriceFunctionPotionEffectUp.h */,
+				3205598E1BD1DED600C7E5FB /* LWFPriceFunctionPotionEffectUp.m */,
+				320559901BD1DEFD00C7E5FB /* LWFPriceFunctionArmorUp.h */,
+				320559911BD1DEFD00C7E5FB /* LWFPriceFunctionArmorUp.m */,
+				320559931BD1E12500C7E5FB /* LWFProgressFunctionsUmbrellaHeader.h */,
 			);
 			path = "Progression Functions";
 			sourceTree = "<group>";
@@ -1892,6 +1919,7 @@
 				321F41E31B8183A500FD6A12 /* LWFSoundPlayer.m in Sources */,
 				A7F5BB9A1A16EFBC005BAB63 /* LWFAppDelegate.m in Sources */,
 				328F5F881B3B6B8E00D136BA /* LWFEquipment.m in Sources */,
+				320559891BD1DE9900C7E5FB /* LWFPriceFunctionSpinningAttack.m in Sources */,
 				3293698B1A5058DD00ECF705 /* LWFRect.m in Sources */,
 				328F5F691B3B6A8700D136BA /* LWFTutorial.m in Sources */,
 				32826C311AEDB296007400AD /* LWFOTE.m in Sources */,
@@ -1933,6 +1961,7 @@
 				32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */,
 				32F09E291A48C947000B8797 /* LWFCombatSystem.m in Sources */,
 				320976191B498D730022B331 /* LWFChestChance.m in Sources */,
+				320559861BD1DE5A00C7E5FB /* LWFPriceFunctionStrengthPlus.m in Sources */,
 				A7D8BEF01A1ABAFC005B0599 /* LWFRoomBuilder.m in Sources */,
 				32BEBFB91A42476D000C77AA /* LWFGameController.m in Sources */,
 				322DB6AA1A229A0C0085AC68 /* LWFCreatureBuilder.m in Sources */,
@@ -1958,11 +1987,14 @@
 				32F09E2C1A48E6B4000B8797 /* LWFCombatOutput.m in Sources */,
 				3275C4161B6314C300813994 /* LWFGameOverButtons.m in Sources */,
 				A7F5BBD11A16F831005BAB63 /* LWFMap.m in Sources */,
+				3205598C1BD1DEB600C7E5FB /* LWFPriceFunctionLootPlus.m in Sources */,
+				3205598F1BD1DED600C7E5FB /* LWFPriceFunctionPotionEffectUp.m in Sources */,
 				A75046161B59DFB800EF5A2F /* LWFGameOver.m in Sources */,
 				32D50BD31A3DFDF3002D3098 /* LWFPointObject.m in Sources */,
 				A78443AC1A1EEF7B0029995D /* LWFHumbleBeeFindPath.m in Sources */,
 				32F831341A96A96B007174F1 /* LWFAttackQueue.m in Sources */,
 				328F5F661B3B6A8700D136BA /* LWFItemDescription.m in Sources */,
+				320559921BD1DEFD00C7E5FB /* LWFPriceFunctionArmorUp.m in Sources */,
 				325C10D21BA7B63D0082F85D /* LWFAtlasSpriteLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
