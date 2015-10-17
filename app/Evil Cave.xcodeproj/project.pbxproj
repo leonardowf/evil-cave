@@ -1557,6 +1557,7 @@
 		A7F5BBB31A16EFBF005BAB63 /* Evil CaveTests */ = {
 			isa = PBXGroup;
 			children = (
+				320559821BD08BC400C7E5FB /* LWFProgressionFunctionTests.m */,
 				32938A1B1AF99A7E00BBE745 /* LWFPotionsTests.m */,
 				32793D3A1B81286800B2117F /* LWFSoundPreferencesTests.m */,
 				A7F5BBB91A16EFBF005BAB63 /* Evil_CaveTests.m */,
@@ -1567,7 +1568,6 @@
 				321F41D51B81707B00FD6A12 /* LWFMockPersistanceStrategy.h */,
 				321F41D61B81707B00FD6A12 /* LWFMockPersistanceStrategy.m */,
 				325C10CE1BA7B5D40082F85D /* LWFAtlasSpriteLoaderTests.m */,
-				320559821BD08BC400C7E5FB /* LWFProgressionFunctionTests.m */,
 			);
 			path = "Evil CaveTests";
 			sourceTree = "<group>";
@@ -1646,6 +1646,9 @@
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = leonardowistuba;
 				TargetAttributes = {
+					A7F5BB831A16EFBC005BAB63 = {
+						DevelopmentTeam = TB6KWKFD2B;
+					};
 					A7F5BBAB1A16EFBF005BAB63 = {
 						TestTargetID = A7F5BB831A16EFBC005BAB63;
 					};

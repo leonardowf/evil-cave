@@ -10,34 +10,34 @@
 #import "LWFProgressionFunctionFactory.h"
 #import "LWFProgressFunctionsUmbrellaHeader.h"
 
+@interface LWFProgressionFunctionFactory () {
+    NSArray *_proxy;
+}
+@end
+
 @implementation LWFProgressionFunctionFactory
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        NSMutableArray *proxy = [NSMutableArray arrayWithCapacity:LWFSkillTypeCount];
+        
+        [proxy insertObject:[LWFPriceFunctionHpPlus new] atIndex:LWFSkillTypeHPPlus];
+        [proxy insertObject:[LWFPriceFunctionStrengthPlus new] atIndex:LWFSkillTypeStrengthPlus];
+        [proxy insertObject:[LWFPriceFunctionSpinningAttack new] atIndex:LWFSkillTypeSpinningAttackLevelUp];
+        [proxy insertObject:[LWFPriceFunctionLootPlus new] atIndex:LWFSkillTypeLootPlus];
+        [proxy insertObject:[LWFPriceFunctionPotionEffectUp new] atIndex:LWFSkillTypePotionEffectUp];
+        [proxy insertObject:[LWFPriceFunctionArmorUp new] atIndex:LWFSkillTypeArmorUp];
+        
+        _proxy = proxy;
+    }
+    return self;
+}
+
+
 - (LWFProgressionFunction *)priceFunctionForSkillType:(LWFSkillType)skillType {
-    if (skillType == LWFSkillTypeHPPlus) {
-        return [LWFPriceFunctionHpPlus new];
-    }
-    
-    if (skillType == LWFSkillTypeStrengthPlus) {
-        return [LWFPriceFunctionStrengthPlus new];
-    }
-    
-    if (skillType == LWFSkillTypeSpinningAttackLevelUp) {
-        return [LWFPriceFunctionSpinningAttack new];
-    }
-    
-    if (skillType == LWFSkillTypeLootPlus) {
-        return [LWFPriceFunctionLootPlus new];
-    }
-    
-    if (skillType == LWFSkillTypePotionEffectUp) {
-        return [LWFPriceFunctionPotionEffectUp new];
-    }
-    
-    if (skillType == LWFSkillTypeArmorUp) {
-        return [LWFPriceFunctionArmorUp new];
-    }
-    
-    return nil;
+    return [_proxy objectAtIndex:skillType];
 }
 
 - (LWFProgressionFunction *)statGrowthFunctionForSkillType:(LWFSkillType)skillType {

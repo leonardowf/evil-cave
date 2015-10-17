@@ -14,11 +14,21 @@ typedef enum : NSUInteger {
     LWFSkillTypeSpinningAttackLevelUp,
     LWFSkillTypeLootPlus,
     LWFSkillTypePotionEffectUp,
-    LWFSkillTypeArmorUp
+    LWFSkillTypeArmorUp,
+    LWFSkillTypeCount
 } LWFSkillType;
 
 @interface LWFSkillTree : NSObject
 
 + (id)sharedSkillTree;
+
+@property (nonatomic) NSInteger HPLevel;
+@property (nonatomic) NSInteger strengthLevel;
+@property (nonatomic) NSInteger spinningAttackLevel;
+@property (nonatomic) NSInteger lootLevel;
+@property (nonatomic) NSInteger potionLevel;
+@property (nonatomic) NSInteger armorLevel;
+
+- (NSInteger)nextHPPrice;
 
 @end

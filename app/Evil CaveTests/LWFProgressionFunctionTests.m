@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 
+#import "LWFSkillTree.h"
 #import "LWFPriceFunctionHpPlus.h"
 
 @interface LWFProgressionFunctionTests : XCTestCase
@@ -29,6 +30,15 @@
     LWFPriceFunctionHpPlus *hpPriceFunction = [LWFPriceFunctionHpPlus new];
     
     XCTAssertEqual([hpPriceFunction calculateForInput:2], 200);
+}
+
+- (void)testHpPriceSkillTree {
+    LWFSkillTree *skillTree = [LWFSkillTree sharedSkillTree];
+    LWFPriceFunctionHpPlus *hpPriceFunction = [LWFPriceFunctionHpPlus new];
+    
+    NSInteger nextHpPrice = [skillTree nextHPPrice];
+    
+    XCTAssertEqual(nextHpPrice, [hpPriceFunction calculateForInput:1]);
 }
 
 @end
