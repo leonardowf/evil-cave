@@ -889,9 +889,9 @@
 		323D7C501BCC846300B96EA2 /* Skill Tree */ = {
 			isa = PBXGroup;
 			children = (
-				320559781BD0817700C7E5FB /* Progression Functions */,
-				323D7C541BCC84BA00B96EA2 /* LWFSkillTree.h */,
 				323D7C551BCC84BA00B96EA2 /* LWFSkillTree.m */,
+				323D7C541BCC84BA00B96EA2 /* LWFSkillTree.h */,
+				320559781BD0817700C7E5FB /* Progression Functions */,
 			);
 			path = "Skill Tree";
 			sourceTree = "<group>";
