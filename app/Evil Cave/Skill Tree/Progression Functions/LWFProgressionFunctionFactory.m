@@ -11,7 +11,9 @@
 #import "LWFProgressFunctionsUmbrellaHeader.h"
 
 @interface LWFProgressionFunctionFactory () {
-    NSArray *_proxy;
+    NSArray *_priceFunctionsProxy;
+    NSArray *_growthFunctionsProxy;
+    
 }
 @end
 
@@ -21,27 +23,45 @@
 {
     self = [super init];
     if (self) {
-        NSMutableArray *proxy = [NSMutableArray arrayWithCapacity:LWFSkillTypeCount];
-        
-        [proxy insertObject:[LWFPriceFunctionHpPlus new] atIndex:LWFSkillTypeHPPlus];
-        [proxy insertObject:[LWFPriceFunctionStrengthPlus new] atIndex:LWFSkillTypeStrengthPlus];
-        [proxy insertObject:[LWFPriceFunctionSpinningAttack new] atIndex:LWFSkillTypeSpinningAttackLevelUp];
-        [proxy insertObject:[LWFPriceFunctionLootPlus new] atIndex:LWFSkillTypeLootPlus];
-        [proxy insertObject:[LWFPriceFunctionPotionEffectUp new] atIndex:LWFSkillTypePotionEffectUp];
-        [proxy insertObject:[LWFPriceFunctionArmorUp new] atIndex:LWFSkillTypeArmorUp];
-        
-        _proxy = proxy;
+        _priceFunctionsProxy = [self loadPriceFunctions];
+        _growthFunctionsProxy = [self loadGrowthFunctions];
     }
     return self;
 }
 
+- (NSArray *)loadPriceFunctions {
+    NSMutableArray *proxy = [NSMutableArray arrayWithCapacity:LWFSkillTypeCount];
+    
+    [proxy insertObject:[LWFPriceFunctionHpPlus new] atIndex:LWFSkillTypeHPPlus];
+    [proxy insertObject:[LWFPriceFunctionStrengthPlus new] atIndex:LWFSkillTypeStrengthPlus];
+    [proxy insertObject:[LWFPriceFunctionSpinningAttack new] atIndex:LWFSkillTypeSpinningAttackLevelUp];
+    [proxy insertObject:[LWFPriceFunctionLootPlus new] atIndex:LWFSkillTypeLootPlus];
+    [proxy insertObject:[LWFPriceFunctionPotionEffectUp new] atIndex:LWFSkillTypePotionEffectUp];
+    [proxy insertObject:[LWFPriceFunctionArmorUp new] atIndex:LWFSkillTypeArmorUp];
+    
+    return proxy;
+}
+
+- (NSArray *)loadGrowthFunctions {
+    NSMutableArray *proxy = [NSMutableArray arrayWithCapacity:LWFSkillTypeCount];
+    
+    [proxy insertObject:[LWFGrowthFunctionHpPlus new] atIndex:LWFSkillTypeHPPlus];
+    [proxy insertObject:[LWFGrowthFunctionStrenghtPlus new] atIndex:LWFSkillTypeStrengthPlus];
+    [proxy insertObject:[LWFGrowthFunctionSpinningAttack new] atIndex:LWFSkillTypeSpinningAttackLevelUp];
+    [proxy insertObject:[LWFGrowthFunctionLootPlus new] atIndex:LWFSkillTypeLootPlus];
+    [proxy insertObject:[LWFGrowthFunctionPotionEffectUp new] atIndex:LWFSkillTypePotionEffectUp];
+    [proxy insertObject:[LWFGrowthFunctionArmorUp new] atIndex:LWFSkillTypeArmorUp];
+    
+    return proxy;
+}
+
 
 - (LWFProgressionFunction *)priceFunctionForSkillType:(LWFSkillType)skillType {
-    return [_proxy objectAtIndex:skillType];
+    return [_priceFunctionsProxy objectAtIndex:skillType];
 }
 
 - (LWFProgressionFunction *)statGrowthFunctionForSkillType:(LWFSkillType)skillType {
-    return nil;
+    return [_growthFunctionsProxy objectAtIndex:skillType];
 }
 
 @end

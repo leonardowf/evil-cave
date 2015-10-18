@@ -87,6 +87,22 @@ SINGLETON_FOR_CLASS(SkillTree)
     return YES;
 }
 
+- (NSInteger)bonusForSkillType:(LWFSkillType)skillType {
+    NSInteger currentLevel = [self currentLevelForSkillType:skillType];
+    
+    LWFProgressionFunction *growthFunction = [_factory statGrowthFunctionForSkillType:skillType];
+    
+    return [growthFunction calculateForInput:currentLevel];
+}
+
+- (NSInteger)nextBonusForSkillType:(LWFSkillType)skillType {
+    NSInteger currentLevel = [self currentLevelForSkillType:skillType] + 1;
+    
+    LWFProgressionFunction *growthFunction = [_factory statGrowthFunctionForSkillType:skillType];
+    
+    return [growthFunction calculateForInput:currentLevel];
+}
+
 - (NSInteger)currentLevelForSkillType:(LWFSkillType)skillType {
     switch (skillType) {
         case LWFSkillTypeArmorUp:
