@@ -36,6 +36,7 @@
 #import "LWFNodeCompletionWithKeyCategory.h"
 #import "LWFTextDisplayQueue.h"
 #import "LWFAtlasSpriteLoader.h"
+#import "LWFSkillTree.h"
 
 @interface LWFCreature () {
     LWFHumbleBeeFindPath *_pathFinder;
@@ -568,6 +569,11 @@
     [someBlock invoke];
     
 }
+
+- (LWFSkillTree *)getSkillTree {
+    return nil;
+}
+
 
 - (void)isDyingWithCompletion:(void(^)(void))someBlock {
     NSArray *dyingFramesAnimation = [self getDyingFramesAnimation];

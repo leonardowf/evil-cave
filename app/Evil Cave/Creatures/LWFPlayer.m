@@ -24,6 +24,7 @@
 #import "LWFSoundPlayer.h"
 #import "LWFTextDisplayQueue.h"
 #import "LWFRandomUtils.h"
+#import "LWFSkillTree.h"
 
 @interface LWFPlayer () {
     LWFCreature *_lockedTarget;
@@ -324,6 +325,10 @@ SINGLETON_FOR_CLASS(Player)
     }
     
     return nil;
+}
+
+- (LWFSkillTree *)getSkillTree {
+    return [LWFSkillTree sharedSkillTree];
 }
 
 @end

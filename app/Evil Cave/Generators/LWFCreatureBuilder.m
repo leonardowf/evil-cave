@@ -91,7 +91,8 @@
     if (creature != nil) {
         
         if (creature.stats == nil) {
-            LWFStats *stats = [self statsForCreatureType:creatureType];
+            NSDictionary *statsDictionary = [self dictionaryStatsForCreatureType:creatureType];
+            LWFStats *stats = [self statsForDictionary:statsDictionary andKillable:creature];
             stats.killable = creature;
             
             creature.stats = stats;
@@ -125,7 +126,7 @@
     return creature;
 }
 
-- (LWFStats *)statsForCreatureType:(LWFCreatureType)creatureType {
+- (NSDictionary *)dictionaryStatsForCreatureType:(LWFCreatureType)creatureType {
     NSDictionary *creatureStatsDictionary = nil;
     
     if (creatureType == LWFCreatureTypePoopThrowerRat) {
@@ -137,14 +138,14 @@
     } else if (creatureType == LWFCreatureTypeRadioactiveRat) {
         creatureStatsDictionary = [_creatureStats objectForKey:@"radioactive_rat"];
     } else if (creatureType == LWFCreatureTypeRatKing) {
-       creatureStatsDictionary = [_creatureStats objectForKey:@"rat_king"]; 
+        creatureStatsDictionary = [_creatureStats objectForKey:@"rat_king"];
     }
-
-    return [self statsForDictionary:creatureStatsDictionary];
+    
+    return creatureStatsDictionary;
 }
 
-- (LWFStats *)statsForDictionary:(NSDictionary *)dictionary {
-    LWFStats *stats = [[LWFStats alloc]initWithDictionary:dictionary];
+- (LWFStats *)statsForDictionary:(NSDictionary *)dictionary andKillable:(id<LWFKillable>)killable {
+    LWFStats *stats = [[LWFStats alloc]initWithDictionary:dictionary andKilladble:killable];
     
     return stats;
 }

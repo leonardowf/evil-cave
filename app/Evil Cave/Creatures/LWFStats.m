@@ -9,13 +9,18 @@
 #import "LWFStats.h"
 #import "LWFCombatOutput.h"
 #import "LWFEquips.h"
+#import "LWFSkillTree.h"
+#import "LWFKillable.h"
 
 @implementation LWFStats
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
+                      andKilladble:(id<LWFKillable>) killable
 {
     self = [super init];
     if (self) {
+        self.killable = killable;
+        
         NSNumber *maxHP = [dictionary objectForKey:@"max_hp"];
         NSNumber *actionPoints = [dictionary objectForKey:@"action_points"];
         NSNumber *strength = [dictionary objectForKey:@"strength"];
@@ -31,6 +36,13 @@
         self.chanceToEvade = [chanceToEvade unsignedIntegerValue];
         
         self.currentActions = self.actionPoints;
+        
+        LWFSkillTree *skillTree = [killable getSkillTree];
+        
+        if (skillTree != nil) {
+            self.maxHP = self.maxHP + [skillTree bonusForSkillType:LWFSkillTypeHPPlus];
+        }
+
         self.currentHP = self.maxHP;
     }
     return self;
@@ -43,12 +55,13 @@
 
 - (NSInteger)maxHP {
     LWFEquips *equips = [self.killable getEquips];
+    NSInteger bonusHp = 0;
     
-    if (equips == nil) {
-        return _maxHP;
+    if (equips != nil) {
+        bonusHp = [equips totalHP];
     }
     
-    return _maxHP + [equips totalHP];
+    return _maxHP + bonusHp;
 }
 
 @end

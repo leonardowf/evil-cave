@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @class LWFEquips;
+@class LWFSkillTree;
 @protocol LWFKillable <NSObject>
 
 - (void)statsChanged;
@@ -16,5 +17,6 @@
 - (void)diedWithCompletion:(void(^)(void))someBlock;
 - (LWFEquips *)getEquips;
 - (NSArray *)getDyingFramesAnimation;
+- (LWFSkillTree *)getSkillTree;
 
 @end

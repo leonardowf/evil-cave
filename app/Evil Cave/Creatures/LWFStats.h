@@ -25,6 +25,7 @@
 
 @property (nonatomic, strong) id<LWFKillable> killable;
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+                      andKilladble:(id<LWFKillable>) killable;
 - (void)receivesCombatOutput:(LWFCombatOutput *)combatOutput;
 @end
