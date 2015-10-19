@@ -506,14 +506,25 @@
                                               [SKAction waitForDuration:0.1],
                                               [SKAction colorizeWithColorBlendFactor:0.0 duration:0.15]]];
     
+    if (combatOutput.damage > 0) {
+        [self playHitSound];
+        
+        [self runAction: pulseRed completion:someBlock];
+        
+        if ([self shouldShakeOnHit]) {
+            [self.map shake:3];
+        }
+    } else {
+        someBlock();
+    }
+    
     [self.stats receivesCombatOutput:combatOutput];
     
     [self displayDamageForCombatOutput:combatOutput];
-    
-    [self playHitSound];
-    
-    [self runAction: pulseRed completion:someBlock];
-    
+}
+
+- (BOOL)shouldShakeOnHit {
+    return NO;
 }
 
 - (void)playHitSound {

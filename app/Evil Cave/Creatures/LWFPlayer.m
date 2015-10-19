@@ -172,6 +172,10 @@ SINGLETON_FOR_CLASS(Player)
 
 }
 
+- (BOOL)shouldShakeOnHit {
+    return YES;
+}
+
 - (NSArray *)getDyingFramesAnimation {
     return nil;
 }
@@ -254,7 +258,7 @@ SINGLETON_FOR_CLASS(Player)
     }
     
     [LWFSoundPlayer play: LWFSoundTypeSpinningAttack];
-    
+    [self.map shake:65];
     [self animateSpecialAttack];
 }
 

@@ -76,5 +76,6 @@
 - (void)light;
 - (void)dark;
 - (void)attackPlayerWithMelee;
+- (BOOL)shouldShakeOnHit;
 
 @end

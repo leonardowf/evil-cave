@@ -321,6 +321,27 @@
     [self runAction:moveCameraAction completion:someBlock];
 }
 
+-(void)shake:(NSInteger)times {
+    CGPoint initialPoint = self.position;
+    NSInteger amplitudeX = 12;
+    NSInteger amplitudeY = 3;
+    NSMutableArray * randomActions = [NSMutableArray array];
+    for (int i=0; i<times; i++) {
+        NSInteger randX = self.position.x+arc4random() % amplitudeX - amplitudeX/2;
+        NSInteger randY = self.position.y+arc4random() % amplitudeY - amplitudeY/2;
+        SKAction *action = [SKAction moveTo:CGPointMake(randX, randY) duration:0.015];
+        [randomActions addObject:action];
+    }
+    
+    SKAction *moveToInitial = [SKAction moveTo:initialPoint duration:0.015];
+    [randomActions addObject:moveToInitial];
+    
+    SKAction *rep = [SKAction sequence:randomActions];
+    
+    [self runAction:rep completion:^{
+        self.position = initialPoint;
+    }];
+}
 
 - (void)printPoint:(CGPoint)point withPrefix:(NSString *)prefix {
     NSLog(@"\n%@ --- x: %0.f y: %0.f", prefix, point.x, point.y);

@@ -49,4 +49,6 @@
 - (void)unblockUserInteraction;
 - (void)resetTouchQueue;
 
+-(void)shake:(NSInteger)times;
+
 @end
