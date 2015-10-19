@@ -515,7 +515,8 @@
             [self.map shake:3];
         }
     } else {
-        someBlock();
+        SKAction *wait = [SKAction waitForDuration:0.55];
+        [self runAction:wait completion:someBlock];
     }
     
     [self.stats receivesCombatOutput:combatOutput];

@@ -18,6 +18,8 @@
     if (self) {
         self.musicVolume = 0.1;
         self.soundVolume = 0.5;
+        
+        self.musicMuted = YES;
     }
     return self;
 }
