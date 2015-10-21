@@ -25,6 +25,7 @@
 #import "LWFInventory.h"
 #import "LWFPotionFactory.h"
 #import "LWFSoundPlayer.h"
+#import "LWFSkillTreeController.h"
 #import <POPAnimation.h>
 #import <POPBasicAnimation.h>
 
@@ -240,7 +241,7 @@ SINGLETON_FOR_CLASS(GameOver)
 #pragma mark - Actions
 
 - (void)didClickSkillTree {
-    
+    [self showSkillTree];
 }
 
 - (void)didClickMainMenu {
@@ -267,7 +268,13 @@ SINGLETON_FOR_CLASS(GameOver)
     [[NSNotificationCenter defaultCenter]postNotificationName:@"notificationRestartGame" object:nil];
 }
 - (void)showSkillTree {
+    LWFGameController *gameController = [self getGameController];
+    LWFViewController *rootController = gameController.rootController;
     
+    LWFSkillTreeController *skillTreeController = [[LWFSkillTreeController alloc]initWithNibName:@"LWFSkillTreeController" bundle:nil];
+    
+    [rootController presentViewController:skillTreeController animated:true completion:nil];
+
 }
 - (void)share {
     

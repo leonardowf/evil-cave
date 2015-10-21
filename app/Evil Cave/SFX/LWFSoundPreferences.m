@@ -20,6 +20,7 @@
         self.soundVolume = 0.5;
         
         self.musicMuted = YES;
+        self.soundMuted = YES;
     }
     return self;
 }

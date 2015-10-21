@@ -254,6 +254,10 @@
 		32E84CBD1BD323FB00548D66 /* LWFGrowthFunctionLootPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E84CBC1BD323FB00548D66 /* LWFGrowthFunctionLootPlus.m */; settings = {ASSET_TAGS = (); }; };
 		32E84CC01BD3241200548D66 /* LWFGrowthFunctionPotionEffectUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E84CBF1BD3241200548D66 /* LWFGrowthFunctionPotionEffectUp.m */; settings = {ASSET_TAGS = (); }; };
 		32E84CC31BD3242600548D66 /* LWFGrowthFunctionArmorUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E84CC21BD3242600548D66 /* LWFGrowthFunctionArmorUp.m */; settings = {ASSET_TAGS = (); }; };
+		32E84CC71BD5B7BF00548D66 /* LWFSkillTreeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E84CC51BD5B7BF00548D66 /* LWFSkillTreeController.m */; settings = {ASSET_TAGS = (); }; };
+		32E84CC81BD5B7BF00548D66 /* LWFSkillTreeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32E84CC61BD5B7BF00548D66 /* LWFSkillTreeController.xib */; settings = {ASSET_TAGS = (); }; };
+		32E84CCD1BD7128300548D66 /* LWFSkillView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E84CCC1BD7128300548D66 /* LWFSkillView.m */; settings = {ASSET_TAGS = (); }; };
+		32E84CCF1BD712A400548D66 /* LWFSkillView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32E84CCE1BD712A400548D66 /* LWFSkillView.xib */; settings = {ASSET_TAGS = (); }; };
 		32F09E291A48C947000B8797 /* LWFCombatSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F09E281A48C947000B8797 /* LWFCombatSystem.m */; };
 		32F09E2C1A48E6B4000B8797 /* LWFCombatOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F09E2B1A48E6B4000B8797 /* LWFCombatOutput.m */; };
 		32F09E311A48F4FA000B8797 /* Munro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32F09E301A48EFBC000B8797 /* Munro.ttf */; };
@@ -668,6 +672,12 @@
 		32E84CBF1BD3241200548D66 /* LWFGrowthFunctionPotionEffectUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFGrowthFunctionPotionEffectUp.m; sourceTree = "<group>"; };
 		32E84CC11BD3242600548D66 /* LWFGrowthFunctionArmorUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFGrowthFunctionArmorUp.h; sourceTree = "<group>"; };
 		32E84CC21BD3242600548D66 /* LWFGrowthFunctionArmorUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFGrowthFunctionArmorUp.m; sourceTree = "<group>"; };
+		32E84CC41BD5B7BF00548D66 /* LWFSkillTreeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSkillTreeController.h; sourceTree = "<group>"; };
+		32E84CC51BD5B7BF00548D66 /* LWFSkillTreeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFSkillTreeController.m; sourceTree = "<group>"; };
+		32E84CC61BD5B7BF00548D66 /* LWFSkillTreeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LWFSkillTreeController.xib; sourceTree = "<group>"; };
+		32E84CCB1BD7128300548D66 /* LWFSkillView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSkillView.h; sourceTree = "<group>"; };
+		32E84CCC1BD7128300548D66 /* LWFSkillView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFSkillView.m; sourceTree = "<group>"; };
+		32E84CCE1BD712A400548D66 /* LWFSkillView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LWFSkillView.xib; sourceTree = "<group>"; };
 		32EDF5981A7C5FCC0007EA36 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		32F09E271A48C947000B8797 /* LWFCombatSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFCombatSystem.h; sourceTree = "<group>"; };
 		32F09E281A48C947000B8797 /* LWFCombatSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFCombatSystem.m; sourceTree = "<group>"; };
@@ -922,6 +932,12 @@
 				323D7C551BCC84BA00B96EA2 /* LWFSkillTree.m */,
 				323D7C541BCC84BA00B96EA2 /* LWFSkillTree.h */,
 				320559781BD0817700C7E5FB /* Progression Functions */,
+				32E84CC41BD5B7BF00548D66 /* LWFSkillTreeController.h */,
+				32E84CC51BD5B7BF00548D66 /* LWFSkillTreeController.m */,
+				32E84CC61BD5B7BF00548D66 /* LWFSkillTreeController.xib */,
+				32E84CCB1BD7128300548D66 /* LWFSkillView.h */,
+				32E84CCC1BD7128300548D66 /* LWFSkillView.m */,
+				32E84CCE1BD712A400548D66 /* LWFSkillView.xib */,
 			);
 			path = "Skill Tree";
 			sourceTree = "<group>";
@@ -1764,6 +1780,7 @@
 				321F41F21B81840700FD6A12 /* soundTypeGameOver.mp3 in Resources */,
 				328F5F621B3B6A8700D136BA /* ItemDescription.xib in Resources */,
 				32E2E6C11ACCCB7C00EA88DD /* poop.jpg in Resources */,
+				32E84CCF1BD712A400548D66 /* LWFSkillView.xib in Resources */,
 				32E2E6AC1ACA31E800EA88DD /* button_yellow@3x.png in Resources */,
 				32FB7DB01AA0004B00AA4C7F /* hero_portrait.png in Resources */,
 				328F5F861B3B6B8E00D136BA /* item_prototypes.json in Resources */,
@@ -1853,6 +1870,7 @@
 				32C575241BAF141C0022D54B /* item_fine_sword@2x.png in Resources */,
 				324527871A4DB5F400AFF9A7 /* warrior_standing_left.atlas in Resources */,
 				321E3A8B1B8A3166001668B8 /* gold@2x.png in Resources */,
+				32E84CC81BD5B7BF00548D66 /* LWFSkillTreeController.xib in Resources */,
 				324527941A4DEEF100AFF9A7 /* rat_dying_right.atlas in Resources */,
 				3275C4111B606B2700813994 /* opened_chest.png in Resources */,
 				32938A3E1AFFA33100BBE745 /* warrior_spinning_attack_right.atlas in Resources */,
@@ -1985,6 +2003,7 @@
 				A7F5BB961A16EFBC005BAB63 /* main.m in Sources */,
 				328F5F8E1B3B6B8E00D136BA /* LWFItemRange.m in Sources */,
 				328F5F981B3B6BC200D136BA /* LWFHudLogger.m in Sources */,
+				32E84CCD1BD7128300548D66 /* LWFSkillView.m in Sources */,
 				32E84CBD1BD323FB00548D66 /* LWFGrowthFunctionLootPlus.m in Sources */,
 				328F5F911B3B6B8E00D136BA /* LWFPotion.m in Sources */,
 				328F5FEB1B3B6FA600D136BA /* LWFEquips.m in Sources */,
@@ -1992,6 +2011,7 @@
 				321EC9A71A26A5C400F06B77 /* LWFTurnList.m in Sources */,
 				325373881AF064FA00BF0E43 /* LWFOTESpinningCooldown.m in Sources */,
 				328F5F8F1B3B6B8E00D136BA /* LWFLootChance.m in Sources */,
+				32E84CC71BD5B7BF00548D66 /* LWFSkillTreeController.m in Sources */,
 				32D20C6C1BB6234700CF8A8B /* LWFRatSummonSickness.m in Sources */,
 				32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */,
 				32F09E291A48C947000B8797 /* LWFCombatSystem.m in Sources */,
