@@ -10,4 +10,6 @@
 
 @interface LWFSkillTreeController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *skillViewContainer;
+
 @end

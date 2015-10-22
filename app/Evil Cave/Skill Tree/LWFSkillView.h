@@ -11,5 +11,8 @@
 @interface LWFSkillView : UIView
 
 @property (strong, nonatomic) IBOutlet UIView *view;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *levelLabel;
+
 
 @end
