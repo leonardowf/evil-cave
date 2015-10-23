@@ -29,6 +29,9 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJ8-FB-AWh">
                             <rect key="frame" x="10" y="18" width="25" height="25"/>
                             <state key="normal" image="button_close.png"/>
+                            <connections>
+                                <action selector="didTapClose:" destination="-1" eventType="touchUpInside" id="0sf-5r-Gfc"/>
+                            </connections>
                         </button>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ty1-au-ip8">
                             <rect key="frame" x="0.0" y="40" width="320" height="890"/>

@@ -271,7 +271,7 @@ SINGLETON_FOR_CLASS(GameOver)
     LWFGameController *gameController = [self getGameController];
     LWFViewController *rootController = gameController.rootController;
     
-    LWFSkillTreeController *skillTreeController = [[LWFSkillTreeController alloc]initWithNibName:@"LWFSkillTreeController" bundle:nil];
+    LWFSkillTreeController *skillTreeController = [[LWFSkillTreeController alloc] init];
     
     [rootController presentViewController:skillTreeController animated:true completion:nil];
 
