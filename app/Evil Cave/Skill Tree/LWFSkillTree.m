@@ -34,12 +34,12 @@ SINGLETON_FOR_CLASS(SkillTree)
 - (NSArray *)loadMaximumLevel {
     NSMutableArray *maximumLevel = [NSMutableArray arrayWithCapacity:LWFSkillTypeCount];
     
-    maximumLevel[LWFSkillTypeHPPlus] = @10;
-    maximumLevel[LWFSkillTypeStrengthPlus] = @10;
-    maximumLevel[LWFSkillTypeSpinningAttackLevelUp] = @10;
-    maximumLevel[LWFSkillTypeLootPlus] = @10;
-    maximumLevel[LWFSkillTypePotionEffectUp] = @10;
-    maximumLevel[LWFSkillTypeArmorUp] = @10;
+    maximumLevel[LWFSkillTypeHPPlus] = @1;
+    maximumLevel[LWFSkillTypeStrengthPlus] = @2;
+    maximumLevel[LWFSkillTypeSpinningAttackLevelUp] = @3;
+    maximumLevel[LWFSkillTypeLootPlus] = @4;
+    maximumLevel[LWFSkillTypePotionEffectUp] = @5;
+    maximumLevel[LWFSkillTypeArmorUp] = @6;
     
     return maximumLevel;
 }
@@ -85,6 +85,13 @@ SINGLETON_FOR_CLASS(SkillTree)
     }
     
     return YES;
+}
+
+- (NSInteger)maximumSkillLevel:(LWFSkillType)skillType {
+    NSNumber *maximumLevelNumber = _maximumLevel[skillType];
+    NSInteger maximumLevel = [maximumLevelNumber integerValue];
+    
+    return maximumLevel;
 }
 
 - (NSInteger)bonusForSkillType:(LWFSkillType)skillType {

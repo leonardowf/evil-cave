@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LWFSkillView.h"
 
-@interface LWFSkillTreeController : UIViewController
+@interface LWFSkillTreeController : UIViewController <LWFSkillViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *skillViewContainer;
 

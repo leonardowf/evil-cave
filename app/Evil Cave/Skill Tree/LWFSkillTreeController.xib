@@ -181,6 +181,9 @@
                                     <state key="normal" title="$">
                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="didTapBuy:" destination="-1" eventType="touchUpInside" id="1ee-BN-XU4"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" red="0.15294117647058825" green="0.2196078431372549" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>

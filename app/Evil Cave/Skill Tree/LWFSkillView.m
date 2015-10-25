@@ -31,9 +31,24 @@
     return self;
 }
 
+- (void)awakeFromNib {
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didInteract)];
+    
+    [self addGestureRecognizer:tapGesture];
+}
+
+- (void)didInteract {
+    [self.delegate didTapSkillWithType:self.skillType];
+}
+
+- (void)setAsUnavailable {
+    self.view.backgroundColor = [UIColor purpleColor];
+}
+
 - (void)render {
     NSInteger level = [_skillTree currentLevelForSkillType:self.skillType];
-    self.levelLabel.text = [NSString stringWithFormat:@"%d", level];
+    NSInteger maximumLevel = [_skillTree maximumSkillLevel:self.skillType];
+    self.levelLabel.text = [NSString stringWithFormat:@"%d / %d", level, maximumLevel];
 }
 
 @end

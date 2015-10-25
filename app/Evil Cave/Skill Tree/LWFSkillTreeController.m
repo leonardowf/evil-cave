@@ -8,10 +8,11 @@
 
 #import "LWFSkillTreeController.h"
 #import "LWFSkillTree.h"
-#import "LWFSkillView.h"
 
 @interface LWFSkillTreeController () {
     NSArray *_skillViews;
+    LWFSkillTree *_skillTree;
+    LWFSkillType _currentSelectedSkillType;
 }
 @end
 
@@ -23,6 +24,7 @@
     for (NSInteger i = 1; i <= LWFSkillTypeCount; i++) {
         LWFSkillView *skillView = (LWFSkillView *)[self.skillViewContainer viewWithTag:i];
         skillView.skillType = i-1;
+        skillView.delegate = self;
         
         [views addObject:skillView];
     }
@@ -33,6 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _skillViews = [self loadSkillViews];
+    _skillTree = [LWFSkillTree sharedSkillTree];
     
     [self render];
 }
@@ -43,8 +46,24 @@
     }
 }
 
+- (void)renderDescription:(LWFSkillType)skillType {
+    
+}
+
+- (IBAction)didTapBuy:(UIButton *)sender {
+    [_skillTree raiseSkill:_currentSelectedSkillType];
+    
+    [self render];
+}
+
 - (IBAction)didTapClose:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
+}
+
+- (void)didTapSkillWithType:(LWFSkillType)skillType {
+    _currentSelectedSkillType = skillType;
+    
+    [self renderDescription:skillType];
 }
 
 
