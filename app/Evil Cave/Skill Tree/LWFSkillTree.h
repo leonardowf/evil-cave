@@ -40,5 +40,6 @@ typedef enum : NSUInteger {
 - (void)raiseSkill:(LWFSkillType)skillType;
 - (NSInteger)bonusForSkillType:(LWFSkillType)skillType;
 - (NSInteger)nextBonusForSkillType:(LWFSkillType)skillType;
+- (NSInteger)currentLevelForSkillType:(LWFSkillType)skillType;
 
 @end

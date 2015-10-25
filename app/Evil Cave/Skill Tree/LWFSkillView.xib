@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LWFSkillView">
             <connections>
+                <outlet property="levelLabel" destination="w2u-3x-DzA" id="b4q-Th-khR"/>
                 <outlet property="view" destination="iN0-l3-epB" id="SKi-jX-hBs"/>
             </connections>
         </placeholder>

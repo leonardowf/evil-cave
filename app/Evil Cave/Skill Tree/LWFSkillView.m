@@ -7,6 +7,12 @@
 //
 
 #import "LWFSkillView.h"
+#import "LWFSkillTree.h"
+
+@interface LWFSkillView () {
+    LWFSkillTree *_skillTree;
+}
+@end
 
 @implementation LWFSkillView
 
@@ -19,8 +25,15 @@
         self.view.frame = self.bounds;
         
         [self addSubview:self.view];
+        
+        _skillTree = [LWFSkillTree sharedSkillTree];
     }
     return self;
+}
+
+- (void)render {
+    NSInteger level = [_skillTree currentLevelForSkillType:self.skillType];
+    self.levelLabel.text = [NSString stringWithFormat:@"%d", level];
 }
 
 @end

@@ -22,6 +22,7 @@
     
     for (NSInteger i = 1; i <= LWFSkillTypeCount; i++) {
         LWFSkillView *skillView = (LWFSkillView *)[self.skillViewContainer viewWithTag:i];
+        skillView.skillType = i-1;
         
         [views addObject:skillView];
     }
@@ -31,6 +32,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _skillViews = [self loadSkillViews];
+    
+    [self render];
+}
+
+- (void)render {
+    for (LWFSkillView *skillView in _skillViews) {
+        [skillView render];
+    }
 }
 
 - (IBAction)didTapClose:(id)sender {
