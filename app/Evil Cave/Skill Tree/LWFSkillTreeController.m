@@ -23,7 +23,7 @@
     
     for (NSInteger i = 1; i <= LWFSkillTypeCount; i++) {
         LWFSkillView *skillView = (LWFSkillView *)[self.skillViewContainer viewWithTag:i];
-        skillView.skillType = i-1;
+        skillView.skillType = i - 1;
         skillView.delegate = self;
         
         [views addObject:skillView];
@@ -34,6 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _skillViews = [self loadSkillViews];
     _skillTree = [LWFSkillTree sharedSkillTree];
     
@@ -48,6 +49,10 @@
 
 - (void)renderDescription:(LWFSkillType)skillType {
     
+    
+    self.skillDescriptionLabel.text = [_skillTree descriptionForSkill:_currentSelectedSkillType];
+    
+    self.skillNameLabel.text = [_skillTree nameForSkill:_currentSelectedSkillType];
 }
 
 - (IBAction)didTapBuy:(UIButton *)sender {

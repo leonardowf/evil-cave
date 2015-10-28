@@ -37,13 +37,15 @@
     
     LWFGameController *gameController = [LWFGameController sharedGameController];
     gameController.rootController = self;
+    
+    [self tutorialFinished];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
 //    [self.viewTutorial showTutorialIfNeeded];
-    [self tutorialFinished];
+
 }
 
 - (void)tutorialFinished {

@@ -12,5 +12,7 @@
 @interface LWFSkillTreeController : UIViewController <LWFSkillViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *skillViewContainer;
+@property (weak, nonatomic) IBOutlet UILabel *skillNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *skillDescriptionLabel;
 
 @end

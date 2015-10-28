@@ -34,7 +34,7 @@ SINGLETON_FOR_CLASS(SkillTree)
 - (NSArray *)loadMaximumLevel {
     NSMutableArray *maximumLevel = [NSMutableArray arrayWithCapacity:LWFSkillTypeCount];
     
-    maximumLevel[LWFSkillTypeHPPlus] = @1;
+    maximumLevel[LWFSkillTypeHPPlus] = @99;
     maximumLevel[LWFSkillTypeStrengthPlus] = @2;
     maximumLevel[LWFSkillTypeSpinningAttackLevelUp] = @3;
     maximumLevel[LWFSkillTypeLootPlus] = @4;
@@ -157,6 +157,32 @@ SINGLETON_FOR_CLASS(SkillTree)
         case LWFSkillTypeCount:
             NSLog(@"noop");
     }
+}
+
+- (NSString *)nameForSkill:(LWFSkillType)skillType {
+    NSMutableArray *skillNames = [NSMutableArray arrayWithCapacity:LWFSkillTypeCount];
+    
+    [skillNames insertObject:@"HP Level Up" atIndex:LWFSkillTypeHPPlus];
+    [skillNames insertObject:@"Strength Level Up" atIndex:LWFSkillTypeStrengthPlus];
+    [skillNames insertObject:@"Special Attack Level Up" atIndex:LWFSkillTypeSpinningAttackLevelUp];
+    [skillNames insertObject:@"Loot Chance Level Up" atIndex:LWFSkillTypeLootPlus];
+    [skillNames insertObject:@"Potion Effect Level Up" atIndex:LWFSkillTypePotionEffectUp];
+    [skillNames insertObject:@"Armor Level Up" atIndex:LWFSkillTypeArmorUp];
+    
+    return [skillNames objectAtIndex:skillType];
+}
+
+- (NSString *)descriptionForSkill:(LWFSkillType)skillType {
+    NSMutableArray *skillNames = [NSMutableArray arrayWithCapacity:LWFSkillTypeCount];
+    
+    [skillNames insertObject:@"HP Level Up" atIndex:LWFSkillTypeHPPlus];
+    [skillNames insertObject:@"Strength Level Up" atIndex:LWFSkillTypeStrengthPlus];
+    [skillNames insertObject:@"Special Attack Level Up" atIndex:LWFSkillTypeSpinningAttackLevelUp];
+    [skillNames insertObject:@"Loot Chance Level Up" atIndex:LWFSkillTypeLootPlus];
+    [skillNames insertObject:@"Potion Effect Level Up" atIndex:LWFSkillTypePotionEffectUp];
+    [skillNames insertObject:@"Armor Level Up" atIndex:LWFSkillTypeArmorUp];
+    
+    return [skillNames objectAtIndex:skillType];
 }
 
 @end
