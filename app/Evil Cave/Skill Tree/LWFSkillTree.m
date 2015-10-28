@@ -51,28 +51,10 @@ SINGLETON_FOR_CLASS(SkillTree)
     return [progressFunction calculateForInput:newLevel];
 }
 
-- (NSInteger)nextHPPrice {
-    return [self nextPriceForSkill:LWFSkillTypeHPPlus atCurrentLevel:self.HPLevel];
-}
-
-- (NSInteger)nextStrengthPrice {
-    return [self nextPriceForSkill:LWFSkillTypeStrengthPlus atCurrentLevel:self.strengthLevel + 1];
-}
-
-- (NSInteger)nextSpinningAttackPrice {
-    return [self nextPriceForSkill:LWFSkillTypeSpinningAttackLevelUp atCurrentLevel:self.spinningAttackLevel + 1];
-}
-
-- (NSInteger)nextLootPrice {
-    return [self nextPriceForSkill:LWFSkillTypeLootPlus atCurrentLevel:self.lootLevel + 1];
-}
-
-- (NSInteger)nextPotionPrice {
-    return [self nextPriceForSkill:LWFSkillTypePotionEffectUp atCurrentLevel:self.potionLevel + 1];
-}
-
-- (NSInteger)nextArmorPrice {
-    return [self nextPriceForSkill:LWFSkillTypeArmorUp atCurrentLevel:self.armorLevel + 1];
+- (NSInteger)nextPriceForSkillType:(LWFSkillType)skillType {
+    NSInteger currentLevel = [self currentLevelForSkillType:skillType];
+    
+    return [self nextPriceForSkill:skillType atCurrentLevel:currentLevel + 1];
 }
 
 - (BOOL)canRaiseSkill:(LWFSkillType)skillType {

@@ -29,13 +29,6 @@ typedef enum : NSUInteger {
 @property (nonatomic) NSInteger potionLevel;
 @property (nonatomic) NSInteger armorLevel;
 
-- (NSInteger)nextHPPrice;
-- (NSInteger)nextStrengthPrice;
-- (NSInteger)nextSpinningAttackPrice;
-- (NSInteger)nextLootPrice;
-- (NSInteger)nextPotionPrice;
-- (NSInteger)nextArmorPrice;
-
 - (BOOL)canRaiseSkill:(LWFSkillType)skillType;
 - (void)raiseSkill:(LWFSkillType)skillType;
 
@@ -43,6 +36,7 @@ typedef enum : NSUInteger {
 - (NSInteger)nextBonusForSkillType:(LWFSkillType)skillType;
 - (NSInteger)currentLevelForSkillType:(LWFSkillType)skillType;
 - (NSInteger)maximumSkillLevel:(LWFSkillType)skillType;
+- (NSInteger)nextPriceForSkillType:(LWFSkillType)skillType;
 
 - (NSString *)nameForSkill:(LWFSkillType)skillType;
 - (NSString *)descriptionForSkill:(LWFSkillType)skillType;

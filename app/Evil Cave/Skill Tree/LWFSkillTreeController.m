@@ -8,11 +8,13 @@
 
 #import "LWFSkillTreeController.h"
 #import "LWFSkillTree.h"
+#import "LWFInventory.h"
 
 @interface LWFSkillTreeController () {
     NSArray *_skillViews;
     LWFSkillTree *_skillTree;
     LWFSkillType _currentSelectedSkillType;
+    LWFInventory *_inventory;
 }
 @end
 
@@ -37,6 +39,7 @@
     
     _skillViews = [self loadSkillViews];
     _skillTree = [LWFSkillTree sharedSkillTree];
+    _inventory = [LWFInventory sharedInventory];
     
     [self render];
 }
@@ -45,11 +48,11 @@
     for (LWFSkillView *skillView in _skillViews) {
         [skillView render];
     }
+    
+    self.goldLabel.text = [NSString stringWithFormat:@"Gold: %d", _inventory.money];
 }
 
 - (void)renderDescription:(LWFSkillType)skillType {
-    
-    
     self.skillDescriptionLabel.text = [_skillTree descriptionForSkill:_currentSelectedSkillType];
     
     self.skillNameLabel.text = [_skillTree nameForSkill:_currentSelectedSkillType];

@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIView *skillViewContainer;
 @property (weak, nonatomic) IBOutlet UILabel *skillNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *skillDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *goldLabel;
 
 @end

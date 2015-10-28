@@ -36,7 +36,7 @@
     LWFSkillTree *skillTree = [LWFSkillTree sharedSkillTree];
     LWFPriceFunctionHpPlus *hpPriceFunction = [LWFPriceFunctionHpPlus new];
     
-    NSInteger nextHpPrice = [skillTree nextHPPrice];
+    NSInteger nextHpPrice = [skillTree nextPriceForSkillType:LWFSkillTypeHPPlus];
     
     XCTAssertEqual(nextHpPrice, [hpPriceFunction calculateForInput:1]);
 }
