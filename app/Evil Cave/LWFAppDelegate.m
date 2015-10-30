@@ -10,6 +10,9 @@
 #import <SplunkMint-iOS/SplunkMint-iOS.h>
 #import "LWFChartboostHandler.h"
 
+#import "LWFRepository.h"
+#import "LWFUserDefaultsPersistenceStrategy.h"
+
 @interface LWFAppDelegate () {
     LWFChartboostHandler *_chartBoostHandler;
 }
@@ -23,9 +26,17 @@
 //    [[Mint sharedInstance] initAndStartSession:@"6195a731"];
     _chartBoostHandler = [[LWFChartboostHandler alloc]init];
     
+    [self loadPersistedData];
+    
     return YES;
 }
-							
+
+- (void)loadPersistedData {
+    LWFUserDefaultsPersistenceStrategy *persistanceStrategy = [[LWFUserDefaultsPersistenceStrategy alloc]init];
+    LWFRepository *repository = [[LWFRepository alloc]initWithPersistenceStrategy:persistanceStrategy];
+    [repository loadSkillTree];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

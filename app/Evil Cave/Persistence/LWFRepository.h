@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "LWFPersistenceStrategy.h"
 @class LWFSoundPreferences;
+@class LWFSkillTree;
+
 
 @interface LWFRepository : NSObject
 
@@ -16,4 +18,6 @@
 - (void)saveSoundPreferences:(LWFSoundPreferences *)soundPreferences;
 - (LWFSoundPreferences *)loadSoundPreferences;
 
+- (LWFSkillTree *)loadSkillTree;
+- (void)saveSkillTree:(LWFSkillTree *)skillTree;
 @end

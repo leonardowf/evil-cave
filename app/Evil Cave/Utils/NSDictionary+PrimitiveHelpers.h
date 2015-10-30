@@ -11,6 +11,7 @@
 @interface NSDictionary (PrimitiveHelpers)
 - (CGFloat)floatForKey:(NSString *)key;
 - (BOOL)booleanForKey:(NSString *)key;
+- (NSInteger)integerForKey:(NSString *)key;
 @end
 
 @implementation NSDictionary (PrimitiveHelpers)
@@ -22,6 +23,11 @@
 - (BOOL)booleanForKey:(NSString *)key {
     NSNumber *booleanNumber = [self objectForKey:key];
     return [booleanNumber boolValue];
+}
+
+- (NSInteger)integerForKey:(NSString *)key {
+    NSNumber *booleanNumber = [self objectForKey:key];
+    return [booleanNumber integerValue];
 }
 
 @end

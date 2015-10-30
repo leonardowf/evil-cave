@@ -10,10 +10,15 @@
 
 #import "LWFProgressionFunctionFactory.h"
 #import "LWFProgressionFunction.h"
+#import "NSDictionary+PrimitiveHelpers.h"
+#import "LWFDictionaryConverter.h"
+#import "LWFRepository.h"
+#import "LWFUserDefaultsPersistenceStrategy.h"
 
 @interface LWFSkillTree () {
     LWFProgressionFunctionFactory *_factory;
     NSArray *_maximumLevel;
+    LWFRepository *_repository;
 }
 @end
 
@@ -27,8 +32,24 @@ SINGLETON_FOR_CLASS(SkillTree)
     if (self) {
         _factory = [LWFProgressionFunctionFactory new];
         _maximumLevel = [self loadMaximumLevel];
+        
+        LWFUserDefaultsPersistenceStrategy *persistanceStrategy = [[LWFUserDefaultsPersistenceStrategy alloc]init];
+        _repository = [[LWFRepository alloc]initWithPersistenceStrategy:persistanceStrategy];
     }
     return self;
+}
+
+- (NSDictionary *)toDictionary {
+    return [NSDictionary dictionaryWithPropertiesOfObject:self];
+}
+
+- (void)loadFromDictionary:(NSDictionary *)dictionary {
+    self.HPLevel = [dictionary integerForKey:@"HPLevel"];
+    self.strengthLevel = [dictionary integerForKey:@"strengthLevel"];
+    self.spinningAttackLevel = [dictionary integerForKey:@"spinningAttackLevel"];
+    self.lootLevel = [dictionary integerForKey:@"lootLevel"];
+    self.potionLevel = [dictionary integerForKey:@"potionLevel"];
+    self.armorLevel = [dictionary integerForKey:@"armorLevel"];
 }
 
 - (NSArray *)loadMaximumLevel {
@@ -149,6 +170,8 @@ SINGLETON_FOR_CLASS(SkillTree)
         case LWFSkillTypeCount:
             NSLog(@"noop");
     }
+    
+    [_repository saveSkillTree:self];
 }
 
 - (NSString *)nameForSkill:(LWFSkillType)skillType {
