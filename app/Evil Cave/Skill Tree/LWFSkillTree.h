@@ -30,6 +30,8 @@ typedef enum : NSUInteger {
 @property (nonatomic) NSInteger armorLevel;
 
 - (BOOL)canRaiseSkill:(LWFSkillType)skillType;
+- (BOOL)canRaiseSkill:(LWFSkillType)skillType withTotalMoney:(NSInteger)money;
+
 - (void)raiseSkill:(LWFSkillType)skillType;
 
 - (NSInteger)bonusForSkillType:(LWFSkillType)skillType;

@@ -37,6 +37,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // usamos a última posição do enum de tipo de skill como nil
+    _currentSelectedSkillType = LWFSkillTypeCount;
+    
     _skillViews = [self loadSkillViews];
     _skillTree = [LWFSkillTree sharedSkillTree];
     _inventory = [LWFInventory sharedInventory];
@@ -49,7 +52,25 @@
         [skillView render];
     }
     
+    if ([self shouldHideBuyButton]) {
+        self.buyButton.hidden = YES;
+    } else {
+        self.buyButton.hidden = NO;
+    }
+    
     self.goldLabel.text = [NSString stringWithFormat:@"Gold: %d", _inventory.money];
+}
+
+- (BOOL)shouldHideBuyButton {
+    if (_currentSelectedSkillType == LWFSkillTypeCount) {
+        return YES;
+    }
+    
+    if ([_skillTree canRaiseSkill:_currentSelectedSkillType withTotalMoney:_inventory.money]) {
+        return NO;
+    }
+    
+    return YES;
 }
 
 - (void)renderDescription:(LWFSkillType)skillType {
@@ -59,7 +80,14 @@
 }
 
 - (IBAction)didTapBuy:(UIButton *)sender {
-    [_skillTree raiseSkill:_currentSelectedSkillType];
+    if ([_skillTree canRaiseSkill:_currentSelectedSkillType withTotalMoney:_inventory.money]) {
+        
+        NSInteger nextPrice = [_skillTree nextPriceForSkillType:_currentSelectedSkillType];
+        
+        [_skillTree raiseSkill:_currentSelectedSkillType];
+        
+        _inventory.money -= nextPrice;
+    }
     
     [self render];
 }
@@ -71,6 +99,7 @@
 - (void)didTapSkillWithType:(LWFSkillType)skillType {
     _currentSelectedSkillType = skillType;
     
+    [self render];
     [self renderDescription:skillType];
 }
 

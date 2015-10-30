@@ -57,6 +57,16 @@ SINGLETON_FOR_CLASS(SkillTree)
     return [self nextPriceForSkill:skillType atCurrentLevel:currentLevel + 1];
 }
 
+- (BOOL)canRaiseSkill:(LWFSkillType)skillType withTotalMoney:(NSInteger)money {
+    NSInteger nextPrice = [self nextPriceForSkillType:skillType];
+    
+    if (money >= nextPrice) {
+        return [self canRaiseSkill:skillType];
+    }
+    
+    return NO;
+}
+
 - (BOOL)canRaiseSkill:(LWFSkillType)skillType {
     
     NSNumber *maximumLevelNumber = _maximumLevel[skillType];

@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *skillNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *skillDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *goldLabel;
+@property (weak, nonatomic) IBOutlet UIButton *buyButton;
 
 @end
