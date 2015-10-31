@@ -12,7 +12,12 @@
 
 - (instancetype)init
 {
-    NSInteger numberOfTurns = 3;
+    LWFSkillTree *skillTree = [LWFSkillTree sharedSkillTree];
+    NSInteger removedCoolDown = [skillTree bonusForSkillType:LWFSkillTypeSpinningAttackLevelUp];
+    NSInteger numberOfTurns = 20 - removedCoolDown;
+    if (numberOfTurns < 0) {
+        return 0;
+    }
     
     self = [super initWithNumberOfTurns:numberOfTurns];
     if (self) {

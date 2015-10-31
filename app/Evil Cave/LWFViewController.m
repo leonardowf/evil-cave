@@ -44,8 +44,15 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    self.viewSpecialAttackButton.hidden = ![self shouldShowSkillTree];
+    
 //    [self.viewTutorial showTutorialIfNeeded];
 
+}
+
+- (BOOL)shouldShowSkillTree {
+    LWFSkillTree *skillTree = [LWFSkillTree sharedSkillTree];
+    return [skillTree currentLevelForSkillType:LWFSkillTypeSpinningAttackLevelUp] > 0;
 }
 
 - (void)tutorialFinished {

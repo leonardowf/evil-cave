@@ -37,15 +37,19 @@
         
         self.currentActions = self.actionPoints;
         
-        LWFSkillTree *skillTree = [killable getSkillTree];
-        
-        if (skillTree != nil) {
-            self.maxHP = self.maxHP + [skillTree bonusForSkillType:LWFSkillTypeHPPlus];
-        }
+        [self reloadStats];
 
         self.currentHP = self.maxHP;
     }
     return self;
+}
+
+- (void)reloadStats {
+    LWFSkillTree *skillTree = [self.killable getSkillTree];
+    
+    if (skillTree != nil) {
+        self.maxHP = self.maxHP + [skillTree bonusForSkillType:LWFSkillTypeHPPlus];
+    }
 }
 
 - (void)receivesCombatOutput:(LWFCombatOutput *)combatOutput {

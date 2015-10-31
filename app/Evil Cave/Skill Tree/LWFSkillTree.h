@@ -31,6 +31,7 @@ typedef enum : NSUInteger {
 
 - (void)raiseSkill:(LWFSkillType)skillType;
 - (void)loadFromDictionary:(NSDictionary *)dictionary;
+- (void)clear;
 
 - (BOOL)canRaiseSkill:(LWFSkillType)skillType;
 - (BOOL)canRaiseSkill:(LWFSkillType)skillType withTotalMoney:(NSInteger)money;

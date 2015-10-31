@@ -28,4 +28,6 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
                       andKilladble:(id<LWFKillable>) killable;
 - (void)receivesCombatOutput:(LWFCombatOutput *)combatOutput;
+- (void)reloadStats;
+
 @end

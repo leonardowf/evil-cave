@@ -11,7 +11,7 @@
 @implementation LWFPriceFunctionHpPlus
 
 - (NSInteger)calculateForInput:(NSInteger)input {
-    return 100 * input;
+    return 1 * input;
 }
 
 @end

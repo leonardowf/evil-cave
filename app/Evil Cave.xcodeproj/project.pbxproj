@@ -803,6 +803,7 @@
 		320559781BD0817700C7E5FB /* Progression Functions */ = {
 			isa = PBXGroup;
 			children = (
+				320559931BD1E12500C7E5FB /* LWFProgressFunctionsUmbrellaHeader.h */,
 				3205597D1BD083F100C7E5FB /* LWFProgressionFunctionFactory.m */,
 				3205597C1BD083F100C7E5FB /* LWFProgressionFunctionFactory.h */,
 				320559791BD0818C00C7E5FB /* LWFProgressionFunction.h */,
@@ -819,7 +820,6 @@
 				3205598E1BD1DED600C7E5FB /* LWFPriceFunctionPotionEffectUp.m */,
 				320559901BD1DEFD00C7E5FB /* LWFPriceFunctionArmorUp.h */,
 				320559911BD1DEFD00C7E5FB /* LWFPriceFunctionArmorUp.m */,
-				320559931BD1E12500C7E5FB /* LWFProgressFunctionsUmbrellaHeader.h */,
 				32E84CB21BD3239500548D66 /* LWFGrowthFunctionHpPlus.h */,
 				32E84CB31BD3239500548D66 /* LWFGrowthFunctionHpPlus.m */,
 				32E84CB51BD323AC00548D66 /* LWFGrowthFunctionStrenghtPlus.h */,

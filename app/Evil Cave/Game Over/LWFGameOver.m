@@ -224,6 +224,8 @@ SINGLETON_FOR_CLASS(GameOver)
 
 - (void)resetGame {
     LWFPlayer *player = [LWFPlayer sharedPlayer];
+    
+    [player.stats reloadStats];
     player.stats.currentHP = player.stats.maxHP;
     [player statsChanged];
     

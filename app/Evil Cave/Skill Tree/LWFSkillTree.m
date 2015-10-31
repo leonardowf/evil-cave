@@ -57,7 +57,7 @@ SINGLETON_FOR_CLASS(SkillTree)
     
     maximumLevel[LWFSkillTypeHPPlus] = @99;
     maximumLevel[LWFSkillTypeStrengthPlus] = @2;
-    maximumLevel[LWFSkillTypeSpinningAttackLevelUp] = @3;
+    maximumLevel[LWFSkillTypeSpinningAttackLevelUp] = @20;
     maximumLevel[LWFSkillTypeLootPlus] = @4;
     maximumLevel[LWFSkillTypePotionEffectUp] = @5;
     maximumLevel[LWFSkillTypeArmorUp] = @6;
@@ -198,6 +198,19 @@ SINGLETON_FOR_CLASS(SkillTree)
     [skillNames insertObject:@"Armor Level Up" atIndex:LWFSkillTypeArmorUp];
     
     return [skillNames objectAtIndex:skillType];
+}
+
+- (void)clear {
+    NSDictionary *dictionary = [self toDictionary];
+    NSMutableDictionary *mutable = [NSMutableDictionary dictionaryWithDictionary:dictionary];
+    
+    for (NSString* key in mutable.allKeys) {
+        mutable[key] = @0;
+    }
+    
+    [self loadFromDictionary:mutable];
+    
+    [_repository saveSkillTree:self];
 }
 
 @end
