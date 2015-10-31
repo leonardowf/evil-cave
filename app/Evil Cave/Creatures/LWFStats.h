@@ -14,11 +14,11 @@
 @interface LWFStats : NSObject
 
 @property (nonatomic) NSInteger maxHP;
-@property NSInteger actionPoints;
-@property NSInteger strength;
-@property NSInteger chanceToHit;
-@property NSInteger baseArmor;
-@property NSInteger chanceToEvade;
+@property (nonatomic) NSInteger actionPoints;
+@property (nonatomic) NSInteger strength;
+@property (nonatomic) NSInteger chanceToHit;
+@property (nonatomic) NSInteger baseArmor;
+@property (nonatomic) NSInteger chanceToEvade;
 
 @property (nonatomic) NSInteger currentHP;
 @property (nonatomic) NSInteger currentActions;

@@ -42,4 +42,9 @@
     XCTAssertEqual(skillTree.HPLevel, testHPLevel);
 }
 
+- (void)testCleareance {
+    LWFSkillTree *skillTree = [LWFSkillTree sharedSkillTree];
+    [skillTree clear];
+}
+
 @end

@@ -26,19 +26,4 @@
     [super tearDown];
 }
 
-- (void)testHpPrice {
-    LWFPriceFunctionHpPlus *hpPriceFunction = [LWFPriceFunctionHpPlus new];
-    
-    XCTAssertEqual([hpPriceFunction calculateForInput:2], 200);
-}
-
-- (void)testHpPriceSkillTree {
-    LWFSkillTree *skillTree = [LWFSkillTree sharedSkillTree];
-    LWFPriceFunctionHpPlus *hpPriceFunction = [LWFPriceFunctionHpPlus new];
-    
-    NSInteger nextHpPrice = [skillTree nextPriceForSkillType:LWFSkillTypeHPPlus];
-    
-    XCTAssertEqual(nextHpPrice, [hpPriceFunction calculateForInput:1]);
-}
-
 @end

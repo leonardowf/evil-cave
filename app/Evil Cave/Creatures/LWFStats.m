@@ -68,4 +68,24 @@
     return _maxHP + bonusHp;
 }
 
+- (NSInteger)strength {
+    LWFSkillTree *skillTree = [self.killable getSkillTree];
+    
+    if (skillTree == nil) {
+        return _strength;
+    }
+    
+    return _strength + [skillTree bonusForSkillType:LWFSkillTypeStrengthPlus];
+}
+
+- (NSInteger)baseArmor {
+    LWFSkillTree *skillTree = [self.killable getSkillTree];
+    
+    if (skillTree == nil) {
+        return _baseArmor;
+    }
+    
+    return _baseArmor + [skillTree bonusForSkillType:LWFSkillTypeArmorUp];
+}
+
 @end

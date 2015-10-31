@@ -10,4 +10,8 @@
 
 @implementation LWFGrowthFunctionStrenghtPlus
 
+- (NSInteger)calculateForInput:(NSInteger)input {
+    return 1000 * input;
+}
+
 @end

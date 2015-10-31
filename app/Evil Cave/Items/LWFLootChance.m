@@ -39,6 +39,11 @@
 - (NSInteger)amountDropped {
     LWFRandomUtils *randomUtils = [[LWFRandomUtils alloc]init];
     float randomFloat = [randomUtils randomFloatBetween:0.0 and:100.0];
+    
+    LWFSkillTree *skillTree = [LWFSkillTree sharedSkillTree];
+    float lootBonusInPercent = [skillTree bonusForSkillType:LWFSkillTypeLootPlus];
+    randomFloat = randomFloat - lootBonusInPercent;
+    
     if (randomFloat > self.chance) {
         return 0;
     }

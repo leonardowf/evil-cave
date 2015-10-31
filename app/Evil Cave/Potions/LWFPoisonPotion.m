@@ -25,6 +25,7 @@
     }
     
     LWFOTEPoison *poison = [[LWFOTEPoison alloc]init];
+    poison.damage = 1 + [self baseModifier];
     [poison addObserver:creature];
     [creature.oteQueue addOTE:poison];
 }

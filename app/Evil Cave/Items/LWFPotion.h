@@ -14,5 +14,6 @@
 - (void)applyEffectOn:(LWFCreature *)creature;
 - (void)setPotionIdentifierMatcher:(LWFPotionIdentifierMatcher *)potionIdentifierMatcher;
 - (BOOL)isKnow;
+- (NSInteger)baseModifier;
 
 @end

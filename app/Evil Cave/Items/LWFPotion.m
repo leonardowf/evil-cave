@@ -71,4 +71,9 @@
     }
 }
 
+- (NSInteger)baseModifier {
+    LWFSkillTree *skillTree = [LWFSkillTree sharedSkillTree];
+    return [skillTree bonusForSkillType:LWFSkillTypePotionEffectUp];
+}
+
 @end

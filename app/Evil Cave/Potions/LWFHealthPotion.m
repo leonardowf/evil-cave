@@ -38,7 +38,7 @@
 }
 
 - (NSInteger)getHealingQuantity {
-    return 20;
+    return 20 + [self baseModifier];
 }
 
 - (NSString *)identifier {
