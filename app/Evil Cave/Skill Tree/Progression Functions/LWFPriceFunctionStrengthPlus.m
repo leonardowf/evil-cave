@@ -10,4 +10,12 @@
 
 @implementation LWFPriceFunctionStrengthPlus
 
+- (NSInteger)calculateForInput:(NSInteger)input {
+    if (input <= 0) {
+        return 0;
+    }
+    
+    return input * 30 + [self calculateForInput:input - 3];
+}
+
 @end

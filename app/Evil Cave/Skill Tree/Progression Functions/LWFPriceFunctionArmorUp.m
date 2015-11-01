@@ -10,4 +10,12 @@
 
 @implementation LWFPriceFunctionArmorUp
 
+- (NSInteger)calculateForInput:(NSInteger)input {
+    if (input <= 0) {
+        return 0;
+    }
+    
+    return input * 50 + [self calculateForInput:input - 3];
+}
+
 @end

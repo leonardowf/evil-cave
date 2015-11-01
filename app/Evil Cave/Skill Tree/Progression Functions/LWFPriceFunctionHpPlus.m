@@ -11,7 +11,11 @@
 @implementation LWFPriceFunctionHpPlus
 
 - (NSInteger)calculateForInput:(NSInteger)input {
-    return 1 * input;
+    if (input <= 0) {
+        return 0;
+    }
+    
+    return input * 20 + [self calculateForInput:input - 3];
 }
 
 @end

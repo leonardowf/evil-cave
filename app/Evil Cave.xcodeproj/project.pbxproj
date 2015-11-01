@@ -808,30 +808,8 @@
 				3205597C1BD083F100C7E5FB /* LWFProgressionFunctionFactory.h */,
 				320559791BD0818C00C7E5FB /* LWFProgressionFunction.h */,
 				3205597A1BD0818C00C7E5FB /* LWFProgressionFunction.m */,
-				3205597F1BD0893800C7E5FB /* LWFPriceFunctionHpPlus.h */,
-				320559801BD0893800C7E5FB /* LWFPriceFunctionHpPlus.m */,
-				320559841BD1DE5A00C7E5FB /* LWFPriceFunctionStrengthPlus.h */,
-				320559851BD1DE5A00C7E5FB /* LWFPriceFunctionStrengthPlus.m */,
-				320559871BD1DE9900C7E5FB /* LWFPriceFunctionSpinningAttack.h */,
-				320559881BD1DE9900C7E5FB /* LWFPriceFunctionSpinningAttack.m */,
-				3205598A1BD1DEB600C7E5FB /* LWFPriceFunctionLootPlus.h */,
-				3205598B1BD1DEB600C7E5FB /* LWFPriceFunctionLootPlus.m */,
-				3205598D1BD1DED600C7E5FB /* LWFPriceFunctionPotionEffectUp.h */,
-				3205598E1BD1DED600C7E5FB /* LWFPriceFunctionPotionEffectUp.m */,
-				320559901BD1DEFD00C7E5FB /* LWFPriceFunctionArmorUp.h */,
-				320559911BD1DEFD00C7E5FB /* LWFPriceFunctionArmorUp.m */,
-				32E84CB21BD3239500548D66 /* LWFGrowthFunctionHpPlus.h */,
-				32E84CB31BD3239500548D66 /* LWFGrowthFunctionHpPlus.m */,
-				32E84CB51BD323AC00548D66 /* LWFGrowthFunctionStrenghtPlus.h */,
-				32E84CB61BD323AC00548D66 /* LWFGrowthFunctionStrenghtPlus.m */,
-				32E84CB81BD323E600548D66 /* LWFGrowthFunctionSpinningAttack.h */,
-				32E84CB91BD323E600548D66 /* LWFGrowthFunctionSpinningAttack.m */,
-				32E84CBB1BD323FB00548D66 /* LWFGrowthFunctionLootPlus.h */,
-				32E84CBC1BD323FB00548D66 /* LWFGrowthFunctionLootPlus.m */,
-				32E84CBE1BD3241200548D66 /* LWFGrowthFunctionPotionEffectUp.h */,
-				32E84CBF1BD3241200548D66 /* LWFGrowthFunctionPotionEffectUp.m */,
-				32E84CC11BD3242600548D66 /* LWFGrowthFunctionArmorUp.h */,
-				32E84CC21BD3242600548D66 /* LWFGrowthFunctionArmorUp.m */,
+				323466DD1BE643C800D26609 /* Price */,
+				323466DC1BE643A700D26609 /* Growth */,
 			);
 			path = "Progression Functions";
 			sourceTree = "<group>";
@@ -926,6 +904,44 @@
 				321F41F01B81840700FD6A12 /* soundTypePickedGold.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		323466DC1BE643A700D26609 /* Growth */ = {
+			isa = PBXGroup;
+			children = (
+				32E84CB21BD3239500548D66 /* LWFGrowthFunctionHpPlus.h */,
+				32E84CB31BD3239500548D66 /* LWFGrowthFunctionHpPlus.m */,
+				32E84CB51BD323AC00548D66 /* LWFGrowthFunctionStrenghtPlus.h */,
+				32E84CB61BD323AC00548D66 /* LWFGrowthFunctionStrenghtPlus.m */,
+				32E84CB81BD323E600548D66 /* LWFGrowthFunctionSpinningAttack.h */,
+				32E84CB91BD323E600548D66 /* LWFGrowthFunctionSpinningAttack.m */,
+				32E84CBB1BD323FB00548D66 /* LWFGrowthFunctionLootPlus.h */,
+				32E84CBC1BD323FB00548D66 /* LWFGrowthFunctionLootPlus.m */,
+				32E84CBE1BD3241200548D66 /* LWFGrowthFunctionPotionEffectUp.h */,
+				32E84CBF1BD3241200548D66 /* LWFGrowthFunctionPotionEffectUp.m */,
+				32E84CC11BD3242600548D66 /* LWFGrowthFunctionArmorUp.h */,
+				32E84CC21BD3242600548D66 /* LWFGrowthFunctionArmorUp.m */,
+			);
+			name = Growth;
+			sourceTree = "<group>";
+		};
+		323466DD1BE643C800D26609 /* Price */ = {
+			isa = PBXGroup;
+			children = (
+				3205597F1BD0893800C7E5FB /* LWFPriceFunctionHpPlus.h */,
+				320559801BD0893800C7E5FB /* LWFPriceFunctionHpPlus.m */,
+				320559841BD1DE5A00C7E5FB /* LWFPriceFunctionStrengthPlus.h */,
+				320559851BD1DE5A00C7E5FB /* LWFPriceFunctionStrengthPlus.m */,
+				320559871BD1DE9900C7E5FB /* LWFPriceFunctionSpinningAttack.h */,
+				320559881BD1DE9900C7E5FB /* LWFPriceFunctionSpinningAttack.m */,
+				3205598A1BD1DEB600C7E5FB /* LWFPriceFunctionLootPlus.h */,
+				3205598B1BD1DEB600C7E5FB /* LWFPriceFunctionLootPlus.m */,
+				3205598D1BD1DED600C7E5FB /* LWFPriceFunctionPotionEffectUp.h */,
+				3205598E1BD1DED600C7E5FB /* LWFPriceFunctionPotionEffectUp.m */,
+				320559901BD1DEFD00C7E5FB /* LWFPriceFunctionArmorUp.h */,
+				320559911BD1DEFD00C7E5FB /* LWFPriceFunctionArmorUp.m */,
+			);
+			name = Price;
 			sourceTree = "<group>";
 		};
 		323D7C501BCC846300B96EA2 /* Skill Tree */ = {

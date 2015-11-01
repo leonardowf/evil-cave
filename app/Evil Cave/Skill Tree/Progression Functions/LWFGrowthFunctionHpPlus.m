@@ -10,4 +10,8 @@
 
 @implementation LWFGrowthFunctionHpPlus
 
+- (NSInteger)calculateForInput:(NSInteger)input {
+    return input * 10;
+}
+
 @end

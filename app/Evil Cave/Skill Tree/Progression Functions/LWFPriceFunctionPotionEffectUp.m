@@ -10,4 +10,12 @@
 
 @implementation LWFPriceFunctionPotionEffectUp
 
+- (NSInteger)calculateForInput:(NSInteger)input {
+    if (input <= 0) {
+        return 0;
+    }
+    
+    return input * 150 + [self calculateForInput:input - 2];
+}
+
 @end

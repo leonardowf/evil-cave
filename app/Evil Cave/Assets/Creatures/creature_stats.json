@@ -1,10 +1,10 @@
 {
   "warrior": {
-      "strength": 1000,
+      "strength": 50,
       "chance_to_hit": 60,
       "chance_to_evade": 100,
       "base_armor": 0,
-      "max_hp" : 1,
+      "max_hp" : 30,
       "action_points": 1
     },
     "rat": {

@@ -11,7 +11,10 @@
 @implementation LWFPriceFunctionSpinningAttack
 
 - (NSInteger)calculateForInput:(NSInteger)input {
-    return 10 * input;
+    if (input <= 0) {
+        return 0;
+    }
+    
+    return input * 50 + [self calculateForInput:input - 3];
 }
-
 @end

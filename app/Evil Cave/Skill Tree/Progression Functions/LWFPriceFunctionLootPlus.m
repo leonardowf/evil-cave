@@ -10,4 +10,12 @@
 
 @implementation LWFPriceFunctionLootPlus
 
+- (NSInteger)calculateForInput:(NSInteger)input {
+    if (input <= 0) {
+        return 0;
+    }
+    
+    return input * 150 + [self calculateForInput:input - 3];
+}
+
 @end
