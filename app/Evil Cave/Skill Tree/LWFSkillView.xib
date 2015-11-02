@@ -37,13 +37,13 @@
                         <constraint firstItem="3Kl-KH-12g" firstAttribute="leading" secondItem="Te2-MC-8q5" secondAttribute="leading" constant="5" id="jOR-8h-xO8"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eQZ-CL-2Wt" userLabel="Border">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQZ-CL-2Wt" userLabel="Border">
                     <rect key="frame" x="45" y="62" width="45" height="29"/>
                     <subviews>
-                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CvM-wv-O4p" userLabel="Background">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CvM-wv-O4p" userLabel="Background">
                             <rect key="frame" x="5" y="5" width="35" height="19"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2u-3x-DzA">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2u-3x-DzA">
                                     <rect key="frame" x="2" y="2" width="31" height="15"/>
                                     <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="15"/>
                                     <color key="textColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

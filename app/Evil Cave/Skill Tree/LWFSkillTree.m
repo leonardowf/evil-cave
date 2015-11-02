@@ -179,7 +179,7 @@ SINGLETON_FOR_CLASS(SkillTree)
     
     [skillNames insertObject:@"HP Level Up" atIndex:LWFSkillTypeHPPlus];
     [skillNames insertObject:@"Strength Level Up" atIndex:LWFSkillTypeStrengthPlus];
-    [skillNames insertObject:@"Special Attack Level Up" atIndex:LWFSkillTypeSpinningAttackLevelUp];
+    [skillNames insertObject:@"Spinning Attack Level Up" atIndex:LWFSkillTypeSpinningAttackLevelUp];
     [skillNames insertObject:@"Loot Chance Level Up" atIndex:LWFSkillTypeLootPlus];
     [skillNames insertObject:@"Potion Effect Level Up" atIndex:LWFSkillTypePotionEffectUp];
     [skillNames insertObject:@"Armor Level Up" atIndex:LWFSkillTypeArmorUp];
@@ -190,12 +190,18 @@ SINGLETON_FOR_CLASS(SkillTree)
 - (NSString *)descriptionForSkill:(LWFSkillType)skillType {
     NSMutableArray *skillNames = [NSMutableArray arrayWithCapacity:LWFSkillTypeCount];
     
-    [skillNames insertObject:@"HP Level Up" atIndex:LWFSkillTypeHPPlus];
-    [skillNames insertObject:@"Strength Level Up" atIndex:LWFSkillTypeStrengthPlus];
-    [skillNames insertObject:@"Special Attack Level Up" atIndex:LWFSkillTypeSpinningAttackLevelUp];
-    [skillNames insertObject:@"Loot Chance Level Up" atIndex:LWFSkillTypeLootPlus];
-    [skillNames insertObject:@"Potion Effect Level Up" atIndex:LWFSkillTypePotionEffectUp];
-    [skillNames insertObject:@"Armor Level Up" atIndex:LWFSkillTypeArmorUp];
+    [skillNames insertObject:@"Gives the player a +10 hp bonus" atIndex:LWFSkillTypeHPPlus];
+    [skillNames insertObject:@"Gives the player a +10 str bonus" atIndex:LWFSkillTypeStrengthPlus];
+    
+    if ([self currentLevelForSkillType:LWFSkillTypeSpinningAttackLevelUp] == 0) {
+        [skillNames insertObject:@"Unlock Spinning Attack" atIndex:LWFSkillTypeSpinningAttackLevelUp];
+    } else {
+        [skillNames insertObject:@"Decreases the number of turns of the cooldown by 1" atIndex:LWFSkillTypeSpinningAttackLevelUp];
+    }
+    
+    [skillNames insertObject:@"Increases the chance of getting loot from monsters and chests by 1%" atIndex:LWFSkillTypeLootPlus];
+    [skillNames insertObject:@"Increases the effects of the players' potion by 1" atIndex:LWFSkillTypePotionEffectUp];
+    [skillNames insertObject:@"Gives the player a +1 def bonus" atIndex:LWFSkillTypeArmorUp];
     
     return [skillNames objectAtIndex:skillType];
 }
