@@ -16,4 +16,5 @@
     #import "LWFConstants.h"
     #import "LWFLogger.h"
     #import "LWFSkillTree.h"
+    #import "LWFZPositions.h"
 #endif

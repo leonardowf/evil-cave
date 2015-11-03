@@ -246,6 +246,7 @@
 
 - (void)createPlayer {       
     LWFPlayer *player = (LWFPlayer *)[_creatureBuilder buildWithType:LWFCreatureTypeWarrior];
+    player.zPosition = ZPOSITION_CREATURE;
     [self addPlayer:player];
     [player statsChanged];
     [player startStandingAnimation];
@@ -303,7 +304,7 @@
             tile.creatureOnTile = creature;
             creature.position = tile.position;
             creature.currentTile = tile;
-            
+            creature.zPosition = ZPOSITION_CREATURE;
             [self addChild:creature];
             [creature startStandingAnimation];
         }

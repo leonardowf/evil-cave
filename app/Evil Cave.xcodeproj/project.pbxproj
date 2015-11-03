@@ -394,6 +394,7 @@
 		323335F91AA52F730088C4F6 /* item_info@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item_info@3x.png"; sourceTree = "<group>"; };
 		323466E21BE7F2D800D26609 /* BloodSpill.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BloodSpill.sks; sourceTree = "<group>"; };
 		323466E31BE7F2D800D26609 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		323466E61BE9730800D26609 /* LWFZPositions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFZPositions.h; sourceTree = "<group>"; };
 		323D10921A9C0CB6000AB32D /* fog_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fog_overlay.png; sourceTree = "<group>"; };
 		323D7C541BCC84BA00B96EA2 /* LWFSkillTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSkillTree.h; sourceTree = "<group>"; };
 		323D7C551BCC84BA00B96EA2 /* LWFSkillTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFSkillTree.m; sourceTree = "<group>"; };
@@ -1471,6 +1472,7 @@
 				321F41D91B81792C00FD6A12 /* NSDictionary+PrimitiveHelpers.h */,
 				32BEA4691B95314B0026F15B /* LWFTextDisplayQueue.h */,
 				32BEA46A1B95314B0026F15B /* LWFTextDisplayQueue.m */,
+				323466E61BE9730800D26609 /* LWFZPositions.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";

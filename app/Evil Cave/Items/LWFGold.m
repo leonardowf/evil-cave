@@ -16,6 +16,7 @@
 
 - (SKLabelNode *)getLabel {
     SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"Munro"];
+    label.zPosition = ZPOSITION_LABELS;
     label.fontSize = 20;
 
     UIColor *labelColor;

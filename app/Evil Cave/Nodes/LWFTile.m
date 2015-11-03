@@ -105,7 +105,7 @@
     NSArray *removedGrouped = [self groupItemsForLoot:loot];
     
     for (LWFItem *item in removedGrouped) {
-        
+        item.zPosition = ZPOSITION_LOOT;
         if (animated) {
             [self addChild:item];
         } else {
@@ -170,6 +170,8 @@
     
     SKSpriteNode *bloodNode = [SKSpriteNode spriteNodeWithTexture:texture];
     
+    bloodNode.zPosition = ZPOSITION_BLOOD;
+    
     [self addChild:bloodNode];
     
 }
@@ -223,6 +225,7 @@
     SKSpriteNode *_preLoadedFog = [SKSpriteNode spriteNodeWithImageNamed:@"fog_overlay"];
     _preLoadedFog.size = CGSizeMake(2.5 * TILE_SIZE, 2.5 * TILE_SIZE);
     _preLoadedFog.position = self.position;
+    _preLoadedFog.zPosition = ZPOSITION_FOG;
     
     [_map addChild:_preLoadedFog];
     self.fog = _preLoadedFog;
