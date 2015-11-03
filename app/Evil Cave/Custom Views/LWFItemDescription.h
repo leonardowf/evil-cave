@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
-@property (weak, nonatomic) IBOutlet UILabel *labelDescription;
 @property (weak, nonatomic) IBOutlet UILabel *labelMinDamage;
 @property (weak, nonatomic) IBOutlet UILabel *labelMaxDamage;
 @property (weak, nonatomic) IBOutlet UILabel *labelStrength;
