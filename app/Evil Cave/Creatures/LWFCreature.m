@@ -511,6 +511,10 @@
         
         [self runAction: pulseRed completion:someBlock];
         
+        if ([self shouldSpillBlood]) {
+            [self spillBlood];
+        }
+        
         if ([self shouldShakeOnHit]) {
             [self.map shake:3];
         }
@@ -524,8 +528,19 @@
     [self displayDamageForCombatOutput:combatOutput];
 }
 
+- (BOOL)shouldSpillBlood {
+    return YES;
+}
+
 - (BOOL)shouldShakeOnHit {
     return NO;
+}
+
+- (void)spillBlood {
+    NSString *myParticlePath = [[NSBundle mainBundle] pathForResource:@"BloodSpill" ofType:@"sks"];
+    SKEmitterNode *myParticle = [NSKeyedUnarchiver unarchiveObjectWithFile:myParticlePath];
+    
+    [self addChild:myParticle];
 }
 
 - (void)playHitSound {
