@@ -41,6 +41,8 @@
 
 - (void)displayPotionInfo {
     self.labelPotionName.text = [NSString stringWithFormat:@"%@ [x%d]", [_potion getName], _potion.quantity];
+    
+    self.labelPotionDescription.text = [_potion getUseDescription];
 }
 
 

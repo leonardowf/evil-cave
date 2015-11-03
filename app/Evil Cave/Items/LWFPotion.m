@@ -71,6 +71,22 @@
     }
 }
 
+- (NSString *)getUseDescription {
+    if ([self isKnow]) {
+        return [self useDescription];
+    } else {
+        return [self unknowUseDescription];
+    }
+}
+
+- (NSString *)useDescription {
+    return @"";
+}
+
+- (NSString *)unknowUseDescription {
+    return @"Use at your own risk.";
+}
+
 - (NSInteger)baseModifier {
     LWFSkillTree *skillTree = [LWFSkillTree sharedSkillTree];
     return [skillTree bonusForSkillType:LWFSkillTypePotionEffectUp];

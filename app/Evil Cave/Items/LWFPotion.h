@@ -11,9 +11,15 @@
 
 @interface LWFPotion : LWFItem
 
+- (NSString *)getUseDescription;
+- (NSString *)useDescription;
+- (NSString *)unknowUseDescription;
+
+- (NSInteger)baseModifier;
+
+- (BOOL)isKnow;
+
 - (void)applyEffectOn:(LWFCreature *)creature;
 - (void)setPotionIdentifierMatcher:(LWFPotionIdentifierMatcher *)potionIdentifierMatcher;
-- (BOOL)isKnow;
-- (NSInteger)baseModifier;
 
 @end
