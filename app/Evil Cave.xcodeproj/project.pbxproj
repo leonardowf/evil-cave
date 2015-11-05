@@ -53,6 +53,8 @@
 		323335FC1AA52F730088C4F6 /* item_info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 323335F91AA52F730088C4F6 /* item_info@3x.png */; };
 		323466E41BE7F2D800D26609 /* BloodSpill.sks in Resources */ = {isa = PBXBuildFile; fileRef = 323466E21BE7F2D800D26609 /* BloodSpill.sks */; settings = {ASSET_TAGS = (); }; };
 		323466E51BE7F2D800D26609 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 323466E31BE7F2D800D26609 /* spark.png */; settings = {ASSET_TAGS = (); }; };
+		323466E81BEAD02700D26609 /* PlayerStats.xib in Resources */ = {isa = PBXBuildFile; fileRef = 323466E71BEAD02700D26609 /* PlayerStats.xib */; settings = {ASSET_TAGS = (); }; };
+		323466EE1BEAD08600D26609 /* LWFPlayerStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 323466ED1BEAD08600D26609 /* LWFPlayerStats.m */; settings = {ASSET_TAGS = (); }; };
 		323D10931A9C0CB6000AB32D /* fog_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 323D10921A9C0CB6000AB32D /* fog_overlay.png */; };
 		323D7C561BCC84BA00B96EA2 /* LWFSkillTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 323D7C551BCC84BA00B96EA2 /* LWFSkillTree.m */; settings = {ASSET_TAGS = (); }; };
 		324046811B719FF30001BEF6 /* LWFPieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 324046801B719FF30001BEF6 /* LWFPieView.m */; };
@@ -395,6 +397,9 @@
 		323466E21BE7F2D800D26609 /* BloodSpill.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BloodSpill.sks; sourceTree = "<group>"; };
 		323466E31BE7F2D800D26609 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		323466E61BE9730800D26609 /* LWFZPositions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFZPositions.h; sourceTree = "<group>"; };
+		323466E71BEAD02700D26609 /* PlayerStats.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerStats.xib; sourceTree = "<group>"; };
+		323466EC1BEAD08600D26609 /* LWFPlayerStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPlayerStats.h; sourceTree = "<group>"; };
+		323466ED1BEAD08600D26609 /* LWFPlayerStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPlayerStats.m; sourceTree = "<group>"; };
 		323D10921A9C0CB6000AB32D /* fog_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fog_overlay.png; sourceTree = "<group>"; };
 		323D7C541BCC84BA00B96EA2 /* LWFSkillTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSkillTree.h; sourceTree = "<group>"; };
 		323D7C551BCC84BA00B96EA2 /* LWFSkillTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFSkillTree.m; sourceTree = "<group>"; };
@@ -1109,6 +1114,9 @@
 				328F5F611B3B6A8700D136BA /* Tutorial.xib */,
 				3240467F1B719FF30001BEF6 /* LWFPieView.h */,
 				324046801B719FF30001BEF6 /* LWFPieView.m */,
+				323466E71BEAD02700D26609 /* PlayerStats.xib */,
+				323466EC1BEAD08600D26609 /* LWFPlayerStats.h */,
+				323466ED1BEAD08600D26609 /* LWFPlayerStats.m */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -1777,6 +1785,7 @@
 				32B3E1B11B06DA3B00CF2EA2 /* tutorial1.gif in Resources */,
 				3206A3DD1A7D9B6200D08893 /* item_preview_bottom.png in Resources */,
 				32DFD2A91AAFD7FC00FB554B /* button_green@2x.png in Resources */,
+				323466E81BEAD02700D26609 /* PlayerStats.xib in Resources */,
 				32B3E1B41B082A6B00CF2EA2 /* grass_tile.png in Resources */,
 				32E2E6AA1ACA31E800EA88DD /* button_yellow.png in Resources */,
 				32BEB1371ABE4EFA008950C0 /* Lifebar@3x.png in Resources */,
@@ -1991,6 +2000,7 @@
 				328F5F901B3B6B8E00D136BA /* LWFLootChanceFactory.m in Sources */,
 				321F41E41B8183A500FD6A12 /* LWFSoundPreferences.m in Sources */,
 				A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */,
+				323466EE1BEAD08600D26609 /* LWFPlayerStats.m in Sources */,
 				A7D46D831B5C01A300EBA942 /* LWFGameOverTitle.m in Sources */,
 				328F5F671B3B6A8700D136BA /* LWFNewItemDescription.m in Sources */,
 				328F5F921B3B6B8E00D136BA /* LWFProjectile.m in Sources */,

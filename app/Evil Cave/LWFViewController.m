@@ -26,6 +26,7 @@
 #import <pop/POP.h>
 #import "LWFTutorial.h"
 #import "LWFPieView.h"
+#import "LWFPlayerStats.h"
 #import "LWFSoundPlayer.h"
 
 @implementation LWFViewController
@@ -79,6 +80,34 @@
 
     LWFHudLifebar *lifebar = [LWFHudLifebar sharedHudLifeBar];
     [lifebar addToView:self.view];
+    
+    lifebar.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapLifeBar)];
+    [lifebar.containerView addGestureRecognizer:tapGesture];
+}
+
+- (void)didTapLifeBar {
+    NSLog(@"didTapLifeBar");
+    
+    [self openPlayerStats];
+}
+
+- (void)openPlayerStats {
+    LWFPlayerStats *playerStatsView = [[LWFPlayerStats alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+
+        playerStatsView.translatesAutoresizingMaskIntoConstraints = YES;
+    
+        [self.view addSubview:playerStatsView];
+
+
+    
+    NSLayoutConstraint *constraintCenterX = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:playerStatsView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
+    
+    NSLayoutConstraint *constraintCenterY = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:playerStatsView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0];
+    
+    
+    [self.view addConstraints:@[constraintCenterX, constraintCenterY]];
+
 }
 
 - (void)configureEvents {
