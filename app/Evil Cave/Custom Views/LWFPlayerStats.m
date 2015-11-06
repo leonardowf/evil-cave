@@ -7,6 +7,8 @@
 //
 
 #import "LWFPlayerStats.h"
+#import "LWFPlayer.h"
+#import "LWFStats.h"
 
 @implementation LWFPlayerStats
 
@@ -18,8 +20,25 @@
         
         self.view.frame = self.bounds;
         [self addSubview:self.view];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapClose)];
+        
+        [self.buttonCloseImageView addGestureRecognizer:tap];
     }
     return self;
+}
+
+- (void)didTapClose {
+    NSLog(@"pegou evento");
+    
+    [self removeFromSuperview];
+}
+
+- (void)render {
+    LWFPlayer *player = [LWFPlayer sharedPlayer];
+    LWFStats *stats = player.stats;
+    
+    self.hpLabel.text = [NSString stringWithFormat:@"%d/%d", stats.currentHP, stats.maxHP];
 }
 
 @end

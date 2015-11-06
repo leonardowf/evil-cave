@@ -95,18 +95,27 @@
 - (void)openPlayerStats {
     LWFPlayerStats *playerStatsView = [[LWFPlayerStats alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
 
-        playerStatsView.translatesAutoresizingMaskIntoConstraints = YES;
+        playerStatsView.translatesAutoresizingMaskIntoConstraints = NO;
     
-        [self.view addSubview:playerStatsView];
+    [self.view addSubview:playerStatsView];
 
-
-    
     NSLayoutConstraint *constraintCenterX = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:playerStatsView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
     
-    NSLayoutConstraint *constraintCenterY = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:playerStatsView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0];
+    NSLayoutConstraint *constraintCenterY = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:playerStatsView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:-100.0];
     
     
     [self.view addConstraints:@[constraintCenterX, constraintCenterY]];
+    
+    [self.view bringSubviewToFront:playerStatsView];
+    
+    [playerStatsView render];
+    
+    POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayoutConstraintConstant];
+    animation.springBounciness = 4;
+    
+    animation.toValue = @0;
+    
+    [constraintCenterY pop_addAnimation:animation forKey:@"size"];
 
 }
 
