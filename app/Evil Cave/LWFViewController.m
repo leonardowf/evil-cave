@@ -320,6 +320,10 @@
     
 }
 
+- (void)notifyAdditionOf:(LWFOTE *)ote {
+    
+}
+
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }

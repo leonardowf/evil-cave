@@ -47,6 +47,7 @@
 
 - (void)addObserver:(id<LWFOTEObserver>)observer {
     [_oteObservers addObject:observer];
+    [observer notifyAdditionOf:self];
 }
 
 @end

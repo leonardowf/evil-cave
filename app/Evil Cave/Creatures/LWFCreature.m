@@ -503,9 +503,16 @@
     
     SKAction *pulseRed = [SKAction sequence:@[
                                               [SKAction colorizeWithColor:[SKColor redColor] colorBlendFactor:0.3 duration:0.15],
-                                              [SKAction waitForDuration:0.1],
-                                              [SKAction colorizeWithColorBlendFactor:0.0 duration:0.15]]];
+                                              [SKAction waitForDuration:0.1]
+                                              ]];
     
+    if ([self shouldPulseGreen]) {
+        SKAction *pulseGreen = [SKAction colorizeWithColor:[SKColor greenColor] colorBlendFactor:0.15 duration:0.15];
+        pulseRed = [SKAction sequence:@[pulseRed, pulseGreen]];
+    } else {
+        pulseRed = [SKAction sequence:@[pulseRed, [SKAction colorizeWithColorBlendFactor:0.0 duration:0.15]]];
+    }
+
     if (combatOutput.damage > 0) {
         [self playHitSound];
         
@@ -518,6 +525,8 @@
         if ([self shouldShakeOnHit]) {
             [self.map shake:3];
         }
+        
+
     } else {
         SKAction *wait = [SKAction waitForDuration:0.55];
         [self runAction:wait completion:someBlock];
@@ -526,6 +535,18 @@
     [self.stats receivesCombatOutput:combatOutput];
     
     [self displayDamageForCombatOutput:combatOutput];
+}
+
+- (BOOL)shouldPulseGreen {
+    NSArray *otes = [self.oteQueue oteWithSameClass:[LWFOTEPoison class]];
+    return otes.count > 0;
+}
+
+- (void)pulseGreen {
+    SKAction *pulseGreen = [SKAction colorizeWithColor:[SKColor greenColor]
+                                      colorBlendFactor:0.3 duration:0.15];
+    
+    [self runAction:pulseGreen];
 }
 
 - (BOOL)shouldSpillBlood {
@@ -671,12 +692,21 @@
 }
 
 # pragma - mark LWFOTEObserver
+- (void)notifyAdditionOf:(LWFOTE *)ote {
+    if ([ote isKindOfClass:[LWFOTEPoison class]]) {
+        [self pulseGreen];
+    }
+}
+
 - (void)notify:(LWFOTE *)ote turnsLeftChangedTo:(NSInteger)newTurnsLeft {
 
 }
 
 - (void)notifyRemovalOf:(LWFOTE *)ote {
-    
+    if ([ote isKindOfClass:[LWFOTEPoison class]] && ![self shouldPulseGreen]) {
+        SKAction *resetColor = [SKAction colorizeWithColorBlendFactor:0.0 duration:0.15];
+        [self runAction:resetColor];
+    }
 }
 
 - (void)notifyOTEActivated:(LWFOTE *)ote {

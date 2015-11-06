@@ -11,6 +11,7 @@
 
 @protocol LWFOTEObserver <NSObject>
 
+- (void)notifyAdditionOf:(LWFOTE *)ote;
 - (void)notify:(LWFOTE *)ote turnsLeftChangedTo:(NSInteger)newTurnsLeft;
 - (void)notifyRemovalOf:(LWFOTE *)ote;
 - (void)notifyOTEActivated:(LWFOTE *)ote;
