@@ -12,6 +12,12 @@
 #import "LWFSkillTree.h"
 #import "LWFKillable.h"
 
+@interface LWFStats () {
+    NSInteger _baseMaxHP;
+}
+
+@end
+
 @implementation LWFStats
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
@@ -22,6 +28,7 @@
         self.killable = killable;
         
         NSNumber *maxHP = [dictionary objectForKey:@"max_hp"];
+        
         NSNumber *actionPoints = [dictionary objectForKey:@"action_points"];
         NSNumber *strength = [dictionary objectForKey:@"strength"];
         NSNumber *chanceToHit = [dictionary objectForKey:@"chance_to_hit"];
@@ -29,6 +36,7 @@
         NSNumber *chanceToEvade = [dictionary objectForKey:@"chance_to_evade"];
         
         self.maxHP = [maxHP unsignedIntegerValue];
+        _baseMaxHP = [maxHP integerValue];
         self.actionPoints = [actionPoints unsignedIntegerValue];
         self.strength = [strength unsignedIntegerValue];
         self.chanceToHit = [chanceToHit unsignedIntegerValue];
@@ -48,7 +56,7 @@
     LWFSkillTree *skillTree = [self.killable getSkillTree];
     
     if (skillTree != nil) {
-        self.maxHP = self.maxHP + [skillTree bonusForSkillType:LWFSkillTypeHPPlus];
+        self.maxHP = _baseMaxHP + [skillTree bonusForSkillType:LWFSkillTypeHPPlus];
     }
 }
 

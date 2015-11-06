@@ -69,7 +69,7 @@
     loadingNode.position = CGPointMake(_size.width/2, _size.height/2);
     loadingNode.alpha = 0.0;
     SKAction *fadeaction = [SKAction fadeAlphaTo:1 duration:0.5];
-    [loadingNode setZPosition:1000];
+    [loadingNode setZPosition:ZPOSITION_LOADING_OVERLAY];
     [loadingNode runAction:fadeaction completion:^{
         CGFloat yScale;
         CGFloat xScale = yScale = 1.0;

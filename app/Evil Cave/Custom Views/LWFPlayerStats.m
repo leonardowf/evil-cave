@@ -37,8 +37,13 @@
 - (void)render {
     LWFPlayer *player = [LWFPlayer sharedPlayer];
     LWFStats *stats = player.stats;
+    LWFSkillTree *skillTree = [LWFSkillTree sharedSkillTree];
     
     self.hpLabel.text = [NSString stringWithFormat:@"%d/%d", stats.currentHP, stats.maxHP];
+    self.strengthLabel.text = [NSString stringWithFormat:@"%d", stats.strength];
+    self.armorLabel.text = [NSString stringWithFormat:@"%d", stats.baseArmor];
+    self.potionEffectLabel.text = [NSString stringWithFormat:@"+%d%%", [skillTree bonusForSkillType:LWFSkillTypePotionEffectUp]];
+    self.lootChanceLabel.text = [NSString stringWithFormat:@"+%d%%", [skillTree bonusForSkillType:LWFSkillTypeLootPlus]];
 }
 
 @end
