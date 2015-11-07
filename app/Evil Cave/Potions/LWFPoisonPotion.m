@@ -25,13 +25,29 @@
     }
     
     LWFOTEPoison *poison = [[LWFOTEPoison alloc]init];
-    poison.damage = 1 + [self baseModifier];
+    poison.damage = [self poisonDamage];
     [poison addObserver:creature];
     [creature.oteQueue addOTE:poison];
+}
+
+- (NSInteger)poisonDamage {
+    return 1 + [self baseModifier];
+}
+
+- (NSInteger)numberOfTurns {
+    LWFOTEPoison *poison = [[LWFOTEPoison alloc]init];
+    
+    return poison.numberOfTurns - 1;
 }
 
 - (NSString *)identifier {
     return @"poison_potion";
 }
+
+- (NSString *)useDescription {
+    return [NSString stringWithFormat:@"When consumed, this potion will poison the player. This causes %dHP of damage per turn, for %d turns. It can be thrown against enemies.", [self poisonDamage], [self numberOfTurns]];
+}
+
+
 
 @end

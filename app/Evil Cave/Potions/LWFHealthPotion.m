@@ -45,4 +45,8 @@
     return @"health_potion";
 }
 
+- (NSString *)useDescription {
+    return [NSString stringWithFormat:@"When consumed, this potion will restore %dHP of the player. It also can be thrown against enemies if you're stupid enough.", [self getHealingQuantity]];
+}
+
 @end

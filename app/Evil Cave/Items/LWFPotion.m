@@ -84,7 +84,7 @@
 }
 
 - (NSString *)unknowUseDescription {
-    return @"Use at your own risk.";
+    return @"You've never seen this potion before, who knows what effects it may cause?";
 }
 
 - (NSInteger)baseModifier {

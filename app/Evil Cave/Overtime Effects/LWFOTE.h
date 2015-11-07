@@ -19,6 +19,7 @@
 - (void)activate;
 - (void)turnsLeftChanged;
 - (void)willBeRemoved;
+- (void)wasRemoved;
 
 - (void)addObserver:(id<LWFOTEObserver>)observer;
 

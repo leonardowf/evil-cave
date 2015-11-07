@@ -709,6 +709,10 @@
     }
 }
 
+- (void)notifyWillBeRemoved:(LWFOTE *)ote {
+    
+}
+
 - (void)notifyOTEActivated:(LWFOTE *)ote {
     if ([ote isKindOfClass:[LWFOTEPoison class]]) {
         LWFOTEPoison *poison = (LWFOTEPoison *)ote;

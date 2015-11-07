@@ -13,6 +13,7 @@
 
 - (void)notifyAdditionOf:(LWFOTE *)ote;
 - (void)notify:(LWFOTE *)ote turnsLeftChangedTo:(NSInteger)newTurnsLeft;
+- (void)notifyWillBeRemoved:(LWFOTE *)ote;
 - (void)notifyRemovalOf:(LWFOTE *)ote;
 - (void)notifyOTEActivated:(LWFOTE *)ote;
 

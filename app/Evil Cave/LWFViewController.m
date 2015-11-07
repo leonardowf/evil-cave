@@ -271,7 +271,6 @@
     [self updatePieView:newTurnsLeft forTotalTurns:ote.numberOfTurns];
 }
 
-
 /**
  pieView é a view indicadora de progresso do ataque especial
  esse método calcula o progresso/adiciona/remove
@@ -321,6 +320,10 @@
 }
 
 - (void)notifyAdditionOf:(LWFOTE *)ote {
+    
+}
+
+- (void)notifyWillBeRemoved:(LWFOTE *)ote {
     
 }
 

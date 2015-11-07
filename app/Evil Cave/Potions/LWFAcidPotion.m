@@ -48,4 +48,8 @@
     return @"acid_potion";
 }
 
+- (NSString *)useDescription {
+    return [NSString stringWithFormat:@"When consumed, this potion will cause %dHP of damage. It can be thrown against enemies.", [self getDamageQuantity]];
+}
+
 @end

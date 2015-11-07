@@ -54,6 +54,10 @@
     }
     
     [_OTEs removeObjectsInArray:toRemove];
+    
+    for (LWFOTE *ote in toRemove) {
+        [ote wasRemoved];
+    }
 }
 
 - (NSArray *)oteWithSameKind:(LWFOTE *)ote {

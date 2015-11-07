@@ -41,6 +41,12 @@
 
 - (void)willBeRemoved {
     for (id<LWFOTEObserver> observer in _oteObservers) {
+        [observer notifyWillBeRemoved:self];
+    }
+}
+
+- (void)wasRemoved {
+    for (id<LWFOTEObserver> observer in _oteObservers) {
         [observer notifyRemovalOf:self];
     }
 }
