@@ -128,6 +128,7 @@
             rat.currentTile = tile;
             tile.creatureOnTile = rat;
             rat.position = tile.position;
+            rat.zPosition = ZPOSITION_CREATURE;
             [_map addChild:rat];
             
             if (tile.isLit) {

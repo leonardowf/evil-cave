@@ -30,4 +30,8 @@
     return false;
 }
 
+- (NSString *)toMetDescription {
+    return [NSString stringWithFormat:@"You must kill the %@", self.creature.name];
+}
+
 @end

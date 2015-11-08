@@ -42,7 +42,20 @@
     }
     
     return YES;
+}
+
+- (NSString *)toMetDescription {
+    NSMutableString *toMetDescription = [NSMutableString string];
     
+    for (LWFRequisite *requisite in self.andRequisites) {
+        [toMetDescription appendString:[requisite toMetDescription]];
+        
+        if ([self.andRequisites lastObject] != requisite) {
+            [toMetDescription appendString:@", "];
+        }
+    }
+    
+    return toMetDescription;
 }
 
 @end

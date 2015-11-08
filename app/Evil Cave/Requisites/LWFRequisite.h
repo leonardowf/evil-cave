@@ -14,5 +14,6 @@
 @property (nonatomic, strong) NSMutableArray *orRequisites;
 
 - (BOOL)isMet;
+- (NSString *)toMetDescription;
 
 @end

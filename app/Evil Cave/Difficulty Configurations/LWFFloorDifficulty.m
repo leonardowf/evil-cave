@@ -31,7 +31,7 @@
 - (void)buildCreaturesWithBuilder:(LWFCreatureBuilder *)builder {
     _builder = builder;
     
-    if (self.floor == 5) {
+    if (self.floor == 1) {
         [self buildBossRoom];
     } else {
         [self buildFloor1];

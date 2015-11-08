@@ -210,6 +210,8 @@
             
             if ([endTile walkRequisitesAreMet]) {
                 [_player willMoveToTile:tile atX:tile.x andY:tile.y];
+            } else {
+                NSLog(@"%@", [endTile.walkRequisite toMetDescription]);
             }
         }
     }
