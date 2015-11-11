@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LWFViewController.h"
+#import "LWFRequisite.h"
 
 @interface LWFAlertRequisite : UIView
 
 @property (strong, nonatomic) IBOutlet UIView *view;
 
 @end
+
+@interface LWFViewController()
+@property (nonatomic, strong) LWFAlertRequisite *alertRequisite;
+@end
+
+@interface LWFViewController (AlertRequisite)
+- (void)openAlertForRequisite:(LWFRequisite *)requisite;
+@end
+

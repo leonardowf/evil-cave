@@ -28,6 +28,7 @@
 #import "LWFPieView.h"
 #import "LWFPlayerStats.h"
 #import "LWFSoundPlayer.h"
+#import "LWFAlertRequisite.h"
 
 @implementation LWFViewController
 
