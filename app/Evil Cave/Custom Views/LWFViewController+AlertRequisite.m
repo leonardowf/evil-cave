@@ -20,7 +20,7 @@ NSString * const alertRequisitePropertyKey = @"alertRequisitePropertyKey";
 
 - (void)openAlertForRequisite:(LWFRequisite *)requisite {
     if (self.alertRequisite != nil) {
-        [self.alertRequisite removeFromSuperview];
+        [self.alertRequisite.view removeFromSuperview];
         self.alertRequisite = nil;
     }
     
