@@ -265,6 +265,7 @@
 		32E84CCF1BD712A400548D66 /* LWFSkillView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32E84CCE1BD712A400548D66 /* LWFSkillView.xib */; settings = {ASSET_TAGS = (); }; };
 		32E8FDB91BF179BC00CA314F /* AlertRequisite.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32E8FDB81BF179BC00CA314F /* AlertRequisite.xib */; settings = {ASSET_TAGS = (); }; };
 		32E8FDBC1BF179D300CA314F /* LWFAlertRequisite.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E8FDBB1BF179D300CA314F /* LWFAlertRequisite.m */; settings = {ASSET_TAGS = (); }; };
+		32E8FDBF1BF40A1B00CA314F /* LWFViewController+AlertRequisite.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E8FDBE1BF40A1B00CA314F /* LWFViewController+AlertRequisite.m */; settings = {ASSET_TAGS = (); }; };
 		32F09E291A48C947000B8797 /* LWFCombatSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F09E281A48C947000B8797 /* LWFCombatSystem.m */; };
 		32F09E2C1A48E6B4000B8797 /* LWFCombatOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F09E2B1A48E6B4000B8797 /* LWFCombatOutput.m */; };
 		32F09E311A48F4FA000B8797 /* Munro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32F09E301A48EFBC000B8797 /* Munro.ttf */; };
@@ -695,6 +696,8 @@
 		32E8FDB81BF179BC00CA314F /* AlertRequisite.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertRequisite.xib; sourceTree = "<group>"; };
 		32E8FDBA1BF179D300CA314F /* LWFAlertRequisite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFAlertRequisite.h; sourceTree = "<group>"; };
 		32E8FDBB1BF179D300CA314F /* LWFAlertRequisite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAlertRequisite.m; sourceTree = "<group>"; };
+		32E8FDBD1BF40A1B00CA314F /* LWFViewController+AlertRequisite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LWFViewController+AlertRequisite.h"; sourceTree = "<group>"; };
+		32E8FDBE1BF40A1B00CA314F /* LWFViewController+AlertRequisite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LWFViewController+AlertRequisite.m"; sourceTree = "<group>"; };
 		32EDF5981A7C5FCC0007EA36 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		32F09E271A48C947000B8797 /* LWFCombatSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFCombatSystem.h; sourceTree = "<group>"; };
 		32F09E281A48C947000B8797 /* LWFCombatSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFCombatSystem.m; sourceTree = "<group>"; };
@@ -1125,6 +1128,8 @@
 				32E8FDB81BF179BC00CA314F /* AlertRequisite.xib */,
 				32E8FDBA1BF179D300CA314F /* LWFAlertRequisite.h */,
 				32E8FDBB1BF179D300CA314F /* LWFAlertRequisite.m */,
+				32E8FDBD1BF40A1B00CA314F /* LWFViewController+AlertRequisite.h */,
+				32E8FDBE1BF40A1B00CA314F /* LWFViewController+AlertRequisite.m */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -2055,6 +2060,7 @@
 				32E84CCD1BD7128300548D66 /* LWFSkillView.m in Sources */,
 				32E84CBD1BD323FB00548D66 /* LWFGrowthFunctionLootPlus.m in Sources */,
 				328F5F911B3B6B8E00D136BA /* LWFPotion.m in Sources */,
+				32E8FDBF1BF40A1B00CA314F /* LWFViewController+AlertRequisite.m in Sources */,
 				328F5FEB1B3B6FA600D136BA /* LWFEquips.m in Sources */,
 				320976161B48BBD80022B331 /* LWFChestFactory.m in Sources */,
 				321EC9A71A26A5C400F06B77 /* LWFTurnList.m in Sources */,

@@ -11,6 +11,7 @@
 #import "LWFOTEObserver.h"
 #import "LWFTutorial.h"
 #import "LWFImageViewInventoryItem.h"
+#import "LWFAlertRequisite.h"
 
 @class LWFTutorial;
 @class LWFPieView;

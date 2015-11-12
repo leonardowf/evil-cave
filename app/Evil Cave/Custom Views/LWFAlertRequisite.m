@@ -7,7 +7,6 @@
 //
 
 #import "LWFAlertRequisite.h"
-#import <pop/POP.h>
 
 @implementation LWFAlertRequisite
 
@@ -34,43 +33,27 @@
     
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapClose)];
+    
+    [self.buttonCloseImageView addGestureRecognizer:tap];
+    
     [self addSubview:self.view];
 }
 
-- (void)render {
+- (void)didTapClose {
+    NSLog(@"pegou evento");
     
+    [self.view removeFromSuperview];
 }
 
-@end
+- (void)render {
+    self.descriptionLabel.text = [self.requisite toMetDescription];
+}
 
-@implementation LWFViewController (AlertRequisite)
-
-- (void)openAlertForRequisite:(LWFRequisite *)requisite {
-    LWFAlertRequisite *alertRequisite = [[LWFAlertRequisite alloc]initWithFrame:CGRectZero];
+- (void)setRequisite:(LWFRequisite *)requisite {
+    _requisite = requisite;
     
-    UIView *alertRequisiteView = alertRequisite.view;
-    
-    alertRequisiteView.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [self.view addSubview:alertRequisiteView];
-    
-    NSLayoutConstraint *constraintCenterX = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:alertRequisiteView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
-    
-    NSLayoutConstraint *constraintCenterY = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:alertRequisiteView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:-100.0];
-    
-    
-    [self.view addConstraints:@[constraintCenterX, constraintCenterY]];
-    
-    [self.view bringSubviewToFront:alertRequisiteView];
-    
-    [alertRequisite render];
-    
-    POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayoutConstraintConstant];
-    animation.springBounciness = 4;
-    
-    animation.toValue = @0;
-    
-    [constraintCenterY pop_addAnimation:animation forKey:@"size"];
+    [self render];
 }
 
 @end

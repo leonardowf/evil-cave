@@ -13,14 +13,12 @@
 @interface LWFAlertRequisite : UIView
 
 @property (strong, nonatomic) IBOutlet UIView *view;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *buttonCloseImageView;
+
+@property (nonatomic, strong) LWFRequisite *requisite;
+
+- (void)render;
 
 @end
-
-@interface LWFViewController()
-@property (nonatomic, strong) LWFAlertRequisite *alertRequisite;
-@end
-
-@interface LWFViewController (AlertRequisite)
-- (void)openAlertForRequisite:(LWFRequisite *)requisite;
-@end
-

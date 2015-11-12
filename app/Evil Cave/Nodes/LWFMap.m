@@ -27,6 +27,9 @@
 #import "LWFFloorDifficulty.h"
 #import "LWFChest.h"
 #import "LWFRequisite.h"
+#import "LWFGameController.h"
+#import "LWFViewController.h"
+#import "LWFViewController+AlertRequisite.h"
 
 @interface LWFMap () {
     LWFTurnList *_turnList;
@@ -212,9 +215,17 @@
                 [_player willMoveToTile:tile atX:tile.x andY:tile.y];
             } else {
                 NSLog(@"%@", [endTile.walkRequisite toMetDescription]);
+                [self showRequisiteNotMetAlert:endTile.walkRequisite];
             }
         }
     }
+}
+
+- (void)showRequisiteNotMetAlert:(LWFRequisite *)requisite {
+    LWFGameController *gameController = [LWFGameController sharedGameController];
+    LWFViewController *viewController = gameController.rootController;
+    
+    [viewController openAlertForRequisite:requisite];
 }
 
 - (void)checkItemRangeInteractionForTile:(LWFTile *)tile {
