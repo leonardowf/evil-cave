@@ -238,6 +238,15 @@
 		32DFD2AB1AAFD7FC00FB554B /* button_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD2A51AAFD7FC00FB554B /* button_red.png */; };
 		32DFD2AC1AAFD7FC00FB554B /* button_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD2A61AAFD7FC00FB554B /* button_red@2x.png */; };
 		32DFD2AD1AAFD7FC00FB554B /* button_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD2A71AAFD7FC00FB554B /* button_red@3x.png */; };
+		32E1A2AC1BF6B688009C5EC9 /* LWFMainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E1A2AB1BF6B688009C5EC9 /* LWFMainMenuScene.m */; settings = {ASSET_TAGS = (); }; };
+		32E1A2B61BF6C062009C5EC9 /* bg_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E1A2AE1BF6C062009C5EC9 /* bg_menu.png */; settings = {ASSET_TAGS = (); }; };
+		32E1A2B71BF6C062009C5EC9 /* btn-continue.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E1A2AF1BF6C062009C5EC9 /* btn-continue.png */; settings = {ASSET_TAGS = (); }; };
+		32E1A2B81BF6C062009C5EC9 /* btn-continue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E1A2B01BF6C062009C5EC9 /* btn-continue@2x.png */; settings = {ASSET_TAGS = (); }; };
+		32E1A2B91BF6C062009C5EC9 /* btn-continue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E1A2B11BF6C062009C5EC9 /* btn-continue@3x.png */; settings = {ASSET_TAGS = (); }; };
+		32E1A2BA1BF6C062009C5EC9 /* btn-new-game.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E1A2B21BF6C062009C5EC9 /* btn-new-game.png */; settings = {ASSET_TAGS = (); }; };
+		32E1A2BB1BF6C062009C5EC9 /* btn-new-game@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E1A2B31BF6C062009C5EC9 /* btn-new-game@2x.png */; settings = {ASSET_TAGS = (); }; };
+		32E1A2BC1BF6C062009C5EC9 /* btn-new-game@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E1A2B41BF6C062009C5EC9 /* btn-new-game@3x.png */; settings = {ASSET_TAGS = (); }; };
+		32E1A2BD1BF6C062009C5EC9 /* logo_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E1A2B51BF6C062009C5EC9 /* logo_menu.png */; settings = {ASSET_TAGS = (); }; };
 		32E2E6A41ACA2E5300EA88DD /* inventory.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E2E6A11ACA2E5300EA88DD /* inventory.png */; };
 		32E2E6A51ACA2E5300EA88DD /* inventory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E2E6A21ACA2E5300EA88DD /* inventory@2x.png */; };
 		32E2E6A61ACA2E5300EA88DD /* inventory@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E2E6A31ACA2E5300EA88DD /* inventory@3x.png */; };
@@ -658,6 +667,16 @@
 		32DFD2A51AAFD7FC00FB554B /* button_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_red.png; sourceTree = "<group>"; };
 		32DFD2A61AAFD7FC00FB554B /* button_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_red@2x.png"; sourceTree = "<group>"; };
 		32DFD2A71AAFD7FC00FB554B /* button_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_red@3x.png"; sourceTree = "<group>"; };
+		32E1A2AA1BF6B688009C5EC9 /* LWFMainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFMainMenuScene.h; sourceTree = "<group>"; };
+		32E1A2AB1BF6B688009C5EC9 /* LWFMainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFMainMenuScene.m; sourceTree = "<group>"; };
+		32E1A2AE1BF6C062009C5EC9 /* bg_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_menu.png; sourceTree = "<group>"; };
+		32E1A2AF1BF6C062009C5EC9 /* btn-continue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-continue.png"; sourceTree = "<group>"; };
+		32E1A2B01BF6C062009C5EC9 /* btn-continue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-continue@2x.png"; sourceTree = "<group>"; };
+		32E1A2B11BF6C062009C5EC9 /* btn-continue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-continue@3x.png"; sourceTree = "<group>"; };
+		32E1A2B21BF6C062009C5EC9 /* btn-new-game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-new-game.png"; sourceTree = "<group>"; };
+		32E1A2B31BF6C062009C5EC9 /* btn-new-game@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-new-game@2x.png"; sourceTree = "<group>"; };
+		32E1A2B41BF6C062009C5EC9 /* btn-new-game@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-new-game@3x.png"; sourceTree = "<group>"; };
+		32E1A2B51BF6C062009C5EC9 /* logo_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_menu.png; sourceTree = "<group>"; };
 		32E2E6A11ACA2E5300EA88DD /* inventory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inventory.png; sourceTree = "<group>"; };
 		32E2E6A21ACA2E5300EA88DD /* inventory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inventory@2x.png"; sourceTree = "<group>"; };
 		32E2E6A31ACA2E5300EA88DD /* inventory@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inventory@3x.png"; sourceTree = "<group>"; };
@@ -1348,6 +1367,7 @@
 		32D50BC81A3D1FE9002D3098 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				32E1A2AD1BF6C05B009C5EC9 /* Main Menu */,
 				3275C3FC1B588FB700813994 /* Particles */,
 				320976391B4A0A980022B331 /* Chest */,
 				32B3E1AF1B06DA3B00CF2EA2 /* Tutorial */,
@@ -1375,6 +1395,21 @@
 				320976181B498D730022B331 /* LWFChestChance.m */,
 			);
 			path = Chests;
+			sourceTree = "<group>";
+		};
+		32E1A2AD1BF6C05B009C5EC9 /* Main Menu */ = {
+			isa = PBXGroup;
+			children = (
+				32E1A2AE1BF6C062009C5EC9 /* bg_menu.png */,
+				32E1A2AF1BF6C062009C5EC9 /* btn-continue.png */,
+				32E1A2B01BF6C062009C5EC9 /* btn-continue@2x.png */,
+				32E1A2B11BF6C062009C5EC9 /* btn-continue@3x.png */,
+				32E1A2B21BF6C062009C5EC9 /* btn-new-game.png */,
+				32E1A2B31BF6C062009C5EC9 /* btn-new-game@2x.png */,
+				32E1A2B41BF6C062009C5EC9 /* btn-new-game@3x.png */,
+				32E1A2B51BF6C062009C5EC9 /* logo_menu.png */,
+			);
+			path = "Main Menu";
 			sourceTree = "<group>";
 		};
 		32E2E6AD1ACB6BA900EA88DD /* Poop Thrower Rat */ = {
@@ -1629,6 +1664,8 @@
 				A7F5BB9F1A16EFBD005BAB63 /* LWFViewController.m */,
 				A7F5BBA11A16EFBE005BAB63 /* LWFMyScene.h */,
 				A7F5BBA21A16EFBE005BAB63 /* LWFMyScene.m */,
+				32E1A2AA1BF6B688009C5EC9 /* LWFMainMenuScene.h */,
+				32E1A2AB1BF6B688009C5EC9 /* LWFMainMenuScene.m */,
 				A7F5BBA61A16EFBE005BAB63 /* Images.xcassets */,
 				A7F5BB901A16EFBC005BAB63 /* Supporting Files */,
 			);
@@ -1777,6 +1814,7 @@
 				32BEBFFD1A470B68000C77AA /* warrior_standing_right.png in Resources */,
 				323335FC1AA52F730088C4F6 /* item_info@3x.png in Resources */,
 				3206A3E71A7DA8B400D08893 /* get_button.png in Resources */,
+				32E1A2BC1BF6C062009C5EC9 /* btn-new-game@3x.png in Resources */,
 				321D33791B9E5E49000DBE44 /* notFound.wav in Resources */,
 				325373B41AF1B25C00BF0E43 /* boot_empty@3x.png in Resources */,
 				3206A3E41A7DA8A800D08893 /* next_button.png in Resources */,
@@ -1799,6 +1837,7 @@
 				3206A3DD1A7D9B6200D08893 /* item_preview_bottom.png in Resources */,
 				32DFD2A91AAFD7FC00FB554B /* button_green@2x.png in Resources */,
 				323466E81BEAD02700D26609 /* PlayerStats.xib in Resources */,
+				32E1A2B91BF6C062009C5EC9 /* btn-continue@3x.png in Resources */,
 				32B3E1B41B082A6B00CF2EA2 /* grass_tile.png in Resources */,
 				32E2E6AA1ACA31E800EA88DD /* button_yellow.png in Resources */,
 				32BEB1371ABE4EFA008950C0 /* Lifebar@3x.png in Resources */,
@@ -1837,8 +1876,10 @@
 				321E3A8A1B8A3166001668B8 /* gold.png in Resources */,
 				32560FBF1BC1DF1C001FE33B /* stairway_up.png in Resources */,
 				32C575321BAF15960022D54B /* purple_potion@2x.png in Resources */,
+				32E1A2BA1BF6C062009C5EC9 /* btn-new-game.png in Resources */,
 				32E2E6AB1ACA31E800EA88DD /* button_yellow@2x.png in Resources */,
 				3245279A1A4EEF5500AFF9A7 /* creature_lifebar.png in Resources */,
+				32E1A2B61BF6C062009C5EC9 /* bg_menu.png in Resources */,
 				32FB7DB21AA0004B00AA4C7F /* hero_portrait@3x.png in Resources */,
 				32A9F46A1BC8B20C00CBFE64 /* step-1.wav in Resources */,
 				32BEB1381ABE4EFA008950C0 /* portrait.png in Resources */,
@@ -1846,6 +1887,7 @@
 				32FB7DB61AA0004B00AA4C7F /* thumb@3x.png in Resources */,
 				32BEC0121A472DA8000C77AA /* radioactive_rat_standing_right.png in Resources */,
 				321E3A8C1B8A3166001668B8 /* gold@3x.png in Resources */,
+				32E1A2B71BF6C062009C5EC9 /* btn-continue.png in Resources */,
 				324B2C141B3F7FF5005CAF81 /* green_potion.png in Resources */,
 				32A9F4701BC8BB1500CBFE64 /* badasswolfshirt-famouser-normalized.mp3 in Resources */,
 				325C10FB1BACE7C80082F85D /* rat_king_standing_left.atlas in Resources */,
@@ -1862,6 +1904,7 @@
 				32BEB1351ABE4EFA008950C0 /* Lifebar.png in Resources */,
 				32B5AAE71A87FCD900E6523A /* item_gold.png in Resources */,
 				324527891A4DB60800AFF9A7 /* warrior_standing_right.atlas in Resources */,
+				32E1A2BB1BF6C062009C5EC9 /* btn-new-game@2x.png in Resources */,
 				32B3E1B51B082A6B00CF2EA2 /* water_tile.png in Resources */,
 				32BEB1391ABE4EFA008950C0 /* portrait@2x.png in Resources */,
 				323466E51BE7F2D800D26609 /* spark.png in Resources */,
@@ -1882,6 +1925,7 @@
 				328F5F4C1B3B69B900D136BA /* arrow-flipped@2x.png in Resources */,
 				32FB7DB81AA0004B00AA4C7F /* thumb_money@2x.png in Resources */,
 				32FB7DB71AA0004B00AA4C7F /* thumb_money.png in Resources */,
+				32E1A2BD1BF6C062009C5EC9 /* logo_menu.png in Resources */,
 				325373B51AF1B25C00BF0E43 /* ring_empty.png in Resources */,
 				325373B71AF1B25C00BF0E43 /* ring_empty@3x.png in Resources */,
 				32A9F46C1BC8B20C00CBFE64 /* step-3.wav in Resources */,
@@ -1909,6 +1953,7 @@
 				32E2E6A61ACA2E5300EA88DD /* inventory@3x.png in Resources */,
 				3254E6D71A5CB49400BD7D13 /* door.png in Resources */,
 				32DFD2AD1AAFD7FC00FB554B /* button_red@3x.png in Resources */,
+				32E1A2B81BF6C062009C5EC9 /* btn-continue@2x.png in Resources */,
 				321A60601A6354DF0060517E /* door_open.png in Resources */,
 				32DFD2A81AAFD7FC00FB554B /* button_green.png in Resources */,
 				32BEC0071A470FFD000C77AA /* warrior_walking_left.atlas in Resources */,
@@ -2105,6 +2150,7 @@
 				A75046161B59DFB800EF5A2F /* LWFGameOver.m in Sources */,
 				32D50BD31A3DFDF3002D3098 /* LWFPointObject.m in Sources */,
 				A78443AC1A1EEF7B0029995D /* LWFHumbleBeeFindPath.m in Sources */,
+				32E1A2AC1BF6B688009C5EC9 /* LWFMainMenuScene.m in Sources */,
 				32F831341A96A96B007174F1 /* LWFAttackQueue.m in Sources */,
 				328F5F661B3B6A8700D136BA /* LWFItemDescription.m in Sources */,
 				320559921BD1DEFD00C7E5FB /* LWFPriceFunctionArmorUp.m in Sources */,

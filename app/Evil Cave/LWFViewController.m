@@ -8,6 +8,7 @@
 
 #import "LWFViewController.h"
 #import "LWFMyScene.h"
+#import "LWFMainMenuScene.h"
 #import "LWFPlayer.h"
 #import "LWFInventory.h"
 #import "LWFHudLogger.h"
@@ -34,21 +35,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.viewTutorial setDelegate:self];
     
-    LWFGameController *gameController = [LWFGameController sharedGameController];
-    gameController.rootController = self;
-    
-    [self tutorialFinished];
+    [self.viewTutorial removeFromSuperview];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    self.viewSpecialAttackButton.hidden = ![self shouldShowSkillTree];
-    
-//    [self.viewTutorial showTutorialIfNeeded];
-
+    [self startMainMenuScene];
 }
 
 - (BOOL)shouldShowSkillTree {
@@ -58,32 +52,52 @@
 
 - (void)tutorialFinished {
     [self.viewTutorial removeFromSuperview];
-    SKView * skView = (SKView *)self.view;
-    
-//     Create and configure the scene.
-    SKScene * scene = [LWFMyScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+    [self startGameScene];
+}
 
+- (void)startMainMenuScene {
+    SKView *skView = (SKView *)self.view;
+    
+    SKScene *scene = [LWFMainMenuScene sceneWithSize:skView.bounds.size];
+    scene.scaleMode = SKSceneScaleModeAspectFill;
+    
+    [skView presentScene:scene];
+}
+
+- (void)startGameScene {
+    SKView *skView = (SKView *)self.view;
+    
+    SKScene *scene = [LWFMyScene sceneWithSize:skView.bounds.size];
+    scene.scaleMode = SKSceneScaleModeAspectFill;
+    
     // Present the scene.
     [skView presentScene:scene];
-
+    
     [self configureEvents];
-
+    
     LWFInventory *inventory = [LWFInventory sharedInventory];
     [inventory inject:self];
-
+    
     LWFHudLogger *hugLogger = [LWFHudLogger sharedHudLogger];
     [hugLogger inject:self];
-
+    
     [self.imageViewWeapon.layer setMinificationFilter:kCAFilterTrilinear];
     [self.imageViewWeapon.layer setMagnificationFilter:kCAFilterTrilinear];
-
+    
     LWFHudLifebar *lifebar = [LWFHudLifebar sharedHudLifeBar];
     [lifebar addToView:self.view];
     
     lifebar.userInteractionEnabled = YES;
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapLifeBar)];
     [lifebar.containerView addGestureRecognizer:tapGesture];
+    
+    [self.viewTutorial setDelegate:self];
+    
+    LWFGameController *gameController = [LWFGameController sharedGameController];
+    gameController.rootController = self;
+    
+    [self.viewTutorial removeFromSuperview];
+    self.viewSpecialAttackButton.hidden = ![self shouldShowSkillTree];
 }
 
 - (void)didTapLifeBar {
