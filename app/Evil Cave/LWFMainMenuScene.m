@@ -9,33 +9,41 @@
 
 #import "LWFMainMenuScene.h"
 
+@interface LWFMainMenuScene () {
+    SKSpriteNode *_newGameButton;
+    SKSpriteNode *_continueButton;
+    SKSpriteNode *_logo;
+    SKSpriteNode *_background;
+}
+@end
+
 @implementation LWFMainMenuScene
 
 - (instancetype)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         self.backgroundColor = [UIColor purpleColor];
         
-        SKSpriteNode *node = [[SKSpriteNode alloc]initWithImageNamed:@"bg_menu"];
-        node.size = size;
-        node.position = CGPointZero;
+        _background = [[SKSpriteNode alloc]initWithImageNamed:@"bg_menu"];
+        _background.size = size;
+        _background.position = CGPointZero;
         
-        SKSpriteNode *newGameButton = [self newGameButton];
-        SKSpriteNode *continueButton = [self continueButton];
-        SKSpriteNode *logo = [self logo];
+        _newGameButton = [self newGameButton];
+        _continueButton = [self continueButton];
+        _logo = [self logo];
         
         self.anchorPoint = CGPointMake(0.5, 0.5);
         
-        [self addChild:node];
-        [self addChild:newGameButton];
-        [self addChild:continueButton];
-        [self addChild:logo];
+        [self addChild:_background];
+        [self addChild:_newGameButton];
+        [self addChild:_continueButton];
+        [self addChild:_logo];
         
-        logo.size = CGSizeMake(200, 200);
+        _logo.size = CGSizeMake(200, 200);
         
-        logo.position = CGPointMake(0, 135);
-        newGameButton.position = CGPointMake(newGameButton.position.x, newGameButton.position.y - 20);
+        _logo.position = CGPointMake(0, 135);
+        _newGameButton.position = CGPointMake(_newGameButton.position.x, _newGameButton.position.y - 20);
         
-        continueButton.position = CGPointMake(continueButton.position.x, newGameButton.position.y - newGameButton.size.height - 20);
+        _continueButton.position = CGPointMake(_continueButton.position.x, _newGameButton.position.y - _newGameButton.size.height - 20);
         
     }
     return self;
@@ -54,6 +62,32 @@
 - (SKSpriteNode *)logo {
     SKSpriteNode *logoNode = [[SKSpriteNode alloc]initWithImageNamed:@"logo_menu"];
     return logoNode;
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    CGPoint pointInScene = [touch locationInNode:self];
+    
+    SKSpriteNode *nodeAtPoint = [self nodeAtPoint:pointInScene];
+    
+    if (nodeAtPoint == _newGameButton) {
+        [self didTapNewGame];
+        return;
+    }
+    
+    
+    if (nodeAtPoint == _continueButton) {
+        [self didTapContinueGame];
+        return;
+    }
+}
+
+- (void)didTapNewGame {
+    NSLog(@"New Game");
+}
+
+- (void)didTapContinueGame {
+    NSLog(@"Continue");
 }
 
 @end
