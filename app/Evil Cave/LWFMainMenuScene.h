@@ -7,7 +7,10 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+@class LWFViewController;
 
 @interface LWFMainMenuScene : SKScene
+
+@property (nonatomic, strong) LWFViewController *rootViewController;
 
 @end

@@ -8,6 +8,7 @@
 //
 
 #import "LWFMainMenuScene.h"
+#import "LWFViewController.h"
 
 @interface LWFMainMenuScene () {
     SKSpriteNode *_newGameButton;
@@ -21,7 +22,7 @@
 
 - (instancetype)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        self.backgroundColor = [UIColor purpleColor];
+        self.backgroundColor = [UIColor blackColor];
         
         _background = [[SKSpriteNode alloc]initWithImageNamed:@"bg_menu"];
         _background.size = size;
@@ -68,7 +69,7 @@
     UITouch *touch = [touches anyObject];
     CGPoint pointInScene = [touch locationInNode:self];
     
-    SKSpriteNode *nodeAtPoint = [self nodeAtPoint:pointInScene];
+    SKNode *nodeAtPoint = [self nodeAtPoint:pointInScene];
     
     if (nodeAtPoint == _newGameButton) {
         [self didTapNewGame];
@@ -84,6 +85,8 @@
 
 - (void)didTapNewGame {
     NSLog(@"New Game");
+    
+    [self.rootViewController startGameSceneAnimated:true];
 }
 
 - (void)didTapContinueGame {

@@ -79,5 +79,6 @@
 @property (nonatomic, strong) LWFPieView *pieView;
 
 - (void)updatePieView:(NSInteger)turnsLeft forTotalTurns:(NSInteger)totalTurns;
+- (void)startGameSceneAnimated:(BOOL)animated;
 
 @end

@@ -48,8 +48,8 @@
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
-                                    <exclude reference="Zi8-oK-2OE"/>
                                     <exclude reference="7Wd-5K-hHY"/>
+                                    <exclude reference="Zi8-oK-2OE"/>
                                 </mask>
                             </variation>
                         </imageView>

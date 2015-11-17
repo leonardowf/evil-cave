@@ -37,12 +37,13 @@
     [super viewDidLoad];
     
     [self.viewTutorial removeFromSuperview];
+    self.viewSpecialAttackButton.hidden = YES;
+    self.viewInventoryButton.hidden = YES;
+    [self startMainMenuScene];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    [self startMainMenuScene];
 }
 
 - (BOOL)shouldShowSkillTree {
@@ -52,26 +53,35 @@
 
 - (void)tutorialFinished {
     [self.viewTutorial removeFromSuperview];
-    [self startGameScene];
+    [self startGameSceneAnimated:true];
 }
 
 - (void)startMainMenuScene {
     SKView *skView = (SKView *)self.view;
     
-    SKScene *scene = [LWFMainMenuScene sceneWithSize:skView.bounds.size];
+    LWFMainMenuScene *scene = [LWFMainMenuScene sceneWithSize:skView.bounds.size];
+    
+    scene.rootViewController = self;
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     [skView presentScene:scene];
 }
 
-- (void)startGameScene {
+- (void)startGameSceneAnimated:(BOOL)animated {
     SKView *skView = (SKView *)self.view;
     
     SKScene *scene = [LWFMyScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
-    [skView presentScene:scene];
+    
+    if (animated) {
+        SKTransition *transition = [SKTransition doorsOpenHorizontalWithDuration:0.6];
+        [skView presentScene:scene transition:transition];
+        
+    } else {
+        [skView presentScene:scene];
+    }
     
     [self configureEvents];
     
@@ -98,6 +108,7 @@
     
     [self.viewTutorial removeFromSuperview];
     self.viewSpecialAttackButton.hidden = ![self shouldShowSkillTree];
+    self.viewInventoryButton.hidden = NO;
 }
 
 - (void)didTapLifeBar {
