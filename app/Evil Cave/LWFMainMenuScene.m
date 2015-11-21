@@ -36,7 +36,7 @@
         
         [self addChild:_background];
         [self addChild:_newGameButton];
-        [self addChild:_continueButton];
+//        [self addChild:_continueButton];
         [self addChild:_logo];
         
         _logo.size = CGSizeMake(200, 200);
