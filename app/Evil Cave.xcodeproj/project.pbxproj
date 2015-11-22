@@ -262,6 +262,9 @@
 		32E2E6BF1ACCC1D900EA88DD /* LWFPoopThrowAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2E6BE1ACCC1D900EA88DD /* LWFPoopThrowAttack.m */; };
 		32E2E6C11ACCCB7C00EA88DD /* poop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E2E6C01ACCCB7C00EA88DD /* poop.jpg */; };
 		32E2E6C41ACF5ED500EA88DD /* LWFVisibilityShadowCasting.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2E6C31ACF5ED500EA88DD /* LWFVisibilityShadowCasting.m */; };
+		32E7B9801C0148F1004C2259 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E7B97D1C0148F1004C2259 /* settings.png */; settings = {ASSET_TAGS = (); }; };
+		32E7B9811C0148F1004C2259 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E7B97E1C0148F1004C2259 /* settings@2x.png */; settings = {ASSET_TAGS = (); }; };
+		32E7B9821C0148F1004C2259 /* settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E7B97F1C0148F1004C2259 /* settings@3x.png */; settings = {ASSET_TAGS = (); }; };
 		32E84CB41BD3239500548D66 /* LWFGrowthFunctionHpPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E84CB31BD3239500548D66 /* LWFGrowthFunctionHpPlus.m */; settings = {ASSET_TAGS = (); }; };
 		32E84CB71BD323AC00548D66 /* LWFGrowthFunctionStrenghtPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E84CB61BD323AC00548D66 /* LWFGrowthFunctionStrenghtPlus.m */; settings = {ASSET_TAGS = (); }; };
 		32E84CBA1BD323E600548D66 /* LWFGrowthFunctionSpinningAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E84CB91BD323E600548D66 /* LWFGrowthFunctionSpinningAttack.m */; settings = {ASSET_TAGS = (); }; };
@@ -694,6 +697,9 @@
 		32E2E6C01ACCCB7C00EA88DD /* poop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = poop.jpg; sourceTree = "<group>"; };
 		32E2E6C21ACF5ED500EA88DD /* LWFVisibilityShadowCasting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFVisibilityShadowCasting.h; sourceTree = "<group>"; };
 		32E2E6C31ACF5ED500EA88DD /* LWFVisibilityShadowCasting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFVisibilityShadowCasting.m; sourceTree = "<group>"; };
+		32E7B97D1C0148F1004C2259 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		32E7B97E1C0148F1004C2259 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		32E7B97F1C0148F1004C2259 /* settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@3x.png"; sourceTree = "<group>"; };
 		32E84CB21BD3239500548D66 /* LWFGrowthFunctionHpPlus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFGrowthFunctionHpPlus.h; sourceTree = "<group>"; };
 		32E84CB31BD3239500548D66 /* LWFGrowthFunctionHpPlus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFGrowthFunctionHpPlus.m; sourceTree = "<group>"; };
 		32E84CB51BD323AC00548D66 /* LWFGrowthFunctionStrenghtPlus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFGrowthFunctionStrenghtPlus.h; sourceTree = "<group>"; };
@@ -1400,6 +1406,9 @@
 		32E1A2AD1BF6C05B009C5EC9 /* Main Menu */ = {
 			isa = PBXGroup;
 			children = (
+				32E7B97D1C0148F1004C2259 /* settings.png */,
+				32E7B97E1C0148F1004C2259 /* settings@2x.png */,
+				32E7B97F1C0148F1004C2259 /* settings@3x.png */,
 				32E1A2AE1BF6C062009C5EC9 /* bg_menu.png */,
 				32E1A2AF1BF6C062009C5EC9 /* btn-continue.png */,
 				32E1A2B01BF6C062009C5EC9 /* btn-continue@2x.png */,
@@ -1814,6 +1823,7 @@
 				32BEBFFD1A470B68000C77AA /* warrior_standing_right.png in Resources */,
 				323335FC1AA52F730088C4F6 /* item_info@3x.png in Resources */,
 				3206A3E71A7DA8B400D08893 /* get_button.png in Resources */,
+				32E7B9811C0148F1004C2259 /* settings@2x.png in Resources */,
 				32E1A2BC1BF6C062009C5EC9 /* btn-new-game@3x.png in Resources */,
 				321D33791B9E5E49000DBE44 /* notFound.wav in Resources */,
 				325373B41AF1B25C00BF0E43 /* boot_empty@3x.png in Resources */,
@@ -1881,6 +1891,7 @@
 				3245279A1A4EEF5500AFF9A7 /* creature_lifebar.png in Resources */,
 				32E1A2B61BF6C062009C5EC9 /* bg_menu.png in Resources */,
 				32FB7DB21AA0004B00AA4C7F /* hero_portrait@3x.png in Resources */,
+				32E7B9821C0148F1004C2259 /* settings@3x.png in Resources */,
 				32A9F46A1BC8B20C00CBFE64 /* step-1.wav in Resources */,
 				32BEB1381ABE4EFA008950C0 /* portrait.png in Resources */,
 				321F2C471B9FC128003EF0CA /* ratHit.wav in Resources */,
@@ -1962,6 +1973,7 @@
 				325373B81AF1B25C00BF0E43 /* weapon_empty.png in Resources */,
 				32BEC00E1A4714DC000C77AA /* rat_standing_left.png in Resources */,
 				32FB7DB11AA0004B00AA4C7F /* hero_portrait@2x.png in Resources */,
+				32E7B9801C0148F1004C2259 /* settings.png in Resources */,
 				A7F5BB9D1A16EFBD005BAB63 /* Main.storyboard in Resources */,
 				32C575241BAF141C0022D54B /* item_fine_sword@2x.png in Resources */,
 				324527871A4DB5F400AFF9A7 /* warrior_standing_left.atlas in Resources */,

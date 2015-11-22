@@ -15,6 +15,7 @@
     SKSpriteNode *_continueButton;
     SKSpriteNode *_logo;
     SKSpriteNode *_background;
+    SKSpriteNode *_settingsButton;
 }
 @end
 
@@ -31,6 +32,7 @@
         _newGameButton = [self newGameButton];
         _continueButton = [self continueButton];
         _logo = [self logo];
+        _settingsButton = [self settingsButton];
         
         self.anchorPoint = CGPointMake(0.5, 0.5);
         
@@ -38,6 +40,7 @@
         [self addChild:_newGameButton];
 //        [self addChild:_continueButton];
         [self addChild:_logo];
+        [self addChild:_settingsButton];
         
         _logo.size = CGSizeMake(200, 200);
         
@@ -45,6 +48,8 @@
         _newGameButton.position = CGPointMake(_newGameButton.position.x, _newGameButton.position.y - 20);
         
         _continueButton.position = CGPointMake(_continueButton.position.x, _newGameButton.position.y - _newGameButton.size.height - 20);
+        
+        _settingsButton.position = CGPointMake(self.frame.size.width / 2 - (_settingsButton.frame.size.width / 2.0), self.frame.size.height / 2 - (_settingsButton.frame.size.height /2.0));
         
     }
     return self;
@@ -58,6 +63,11 @@
 - (SKSpriteNode *)continueButton {
     SKSpriteNode *continueButtonNode = [[SKSpriteNode alloc]initWithImageNamed:@"btn-continue"];
     return continueButtonNode;
+}
+
+- (SKSpriteNode *)settingsButton {
+    SKSpriteNode *settingsButtonNode = [[SKSpriteNode alloc]initWithImageNamed:@"settings"];
+    return settingsButtonNode;
 }
 
 - (SKSpriteNode *)logo {
@@ -76,9 +86,13 @@
         return;
     }
     
-    
     if (nodeAtPoint == _continueButton) {
         [self didTapContinueGame];
+        return;
+    }
+    
+    if (nodeAtPoint == _settingsButton) {
+        [self didTapSettings];
         return;
     }
 }
@@ -91,6 +105,10 @@
 
 - (void)didTapContinueGame {
     NSLog(@"Continue");
+}
+
+- (void)didTapSettings {
+    NSLog(@"Settings");
 }
 
 @end
