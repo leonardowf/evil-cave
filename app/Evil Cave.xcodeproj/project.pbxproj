@@ -225,6 +225,8 @@
 		32D08C8E1AAA731900441A51 /* LWFImageViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D08C8D1AAA731900441A51 /* LWFImageViewHolder.m */; };
 		32D0BE701A2D13D8000EC0E1 /* LWFAttackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */; };
 		32D20C6C1BB6234700CF8A8B /* LWFRatSummonSickness.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D20C6B1BB6234700CF8A8B /* LWFRatSummonSickness.m */; settings = {ASSET_TAGS = (); }; };
+		32D286731C068CF1009B41C4 /* Settings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D286721C068CF1009B41C4 /* Settings.xib */; settings = {ASSET_TAGS = (); }; };
+		32D286761C068D12009B41C4 /* LWFSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D286751C068D12009B41C4 /* LWFSettingsView.m */; settings = {ASSET_TAGS = (); }; };
 		32D50BD31A3DFDF3002D3098 /* LWFPointObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */; };
 		32DB3B141B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DB3B131B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.m */; };
 		32DB3B161B477B260016E8B7 /* LWFChestsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DB3B151B477B260016E8B7 /* LWFChestsTests.m */; };
@@ -654,6 +656,9 @@
 		32D0BE6F1A2D13D8000EC0E1 /* LWFAttackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFAttackManager.m; sourceTree = "<group>"; };
 		32D20C6A1BB6234700CF8A8B /* LWFRatSummonSickness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFRatSummonSickness.h; sourceTree = "<group>"; };
 		32D20C6B1BB6234700CF8A8B /* LWFRatSummonSickness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFRatSummonSickness.m; sourceTree = "<group>"; };
+		32D286721C068CF1009B41C4 /* Settings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Settings.xib; sourceTree = "<group>"; };
+		32D286741C068D12009B41C4 /* LWFSettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSettingsView.h; sourceTree = "<group>"; };
+		32D286751C068D12009B41C4 /* LWFSettingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFSettingsView.m; sourceTree = "<group>"; };
 		32D50BD11A3DFDF3002D3098 /* LWFPointObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFPointObject.h; sourceTree = "<group>"; };
 		32D50BD21A3DFDF3002D3098 /* LWFPointObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFPointObject.m; sourceTree = "<group>"; };
 		32DB3B121B461C890016E8B7 /* LWFNodeCompletionWithKeyCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFNodeCompletionWithKeyCategory.h; sourceTree = "<group>"; };
@@ -1155,6 +1160,9 @@
 				32E8FDBB1BF179D300CA314F /* LWFAlertRequisite.m */,
 				32E8FDBD1BF40A1B00CA314F /* LWFViewController+AlertRequisite.h */,
 				32E8FDBE1BF40A1B00CA314F /* LWFViewController+AlertRequisite.m */,
+				32D286721C068CF1009B41C4 /* Settings.xib */,
+				32D286741C068D12009B41C4 /* LWFSettingsView.h */,
+				32D286751C068D12009B41C4 /* LWFSettingsView.m */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -1988,6 +1996,7 @@
 				32B5AAD91A878A1B00E6523A /* warrior_standing_left.png in Resources */,
 				32F1CDCC1A57603800A0D9F5 /* wall.png in Resources */,
 				32C5752E1BAF15660022D54B /* red_potion@2x.png in Resources */,
+				32D286731C068CF1009B41C4 /* Settings.xib in Resources */,
 				3206A3E51A7DA8A800D08893 /* previous_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2072,6 +2081,7 @@
 				321F41E41B8183A500FD6A12 /* LWFSoundPreferences.m in Sources */,
 				A70387591A17BC620053A9E6 /* LWFMapDimension.m in Sources */,
 				323466EE1BEAD08600D26609 /* LWFPlayerStats.m in Sources */,
+				32D286761C068D12009B41C4 /* LWFSettingsView.m in Sources */,
 				A7D46D831B5C01A300EBA942 /* LWFGameOverTitle.m in Sources */,
 				328F5F671B3B6A8700D136BA /* LWFNewItemDescription.m in Sources */,
 				328F5F921B3B6B8E00D136BA /* LWFProjectile.m in Sources */,
