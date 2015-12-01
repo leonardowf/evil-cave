@@ -8,29 +8,30 @@
         <mutableArray key="Munro.ttf">
             <string>Munro</string>
             <string>Munro</string>
+            <string>Munro</string>
         </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="346" height="148"/>
+            <rect key="frame" x="0.0" y="0.0" width="351" height="148"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Qo-Lm-Aw0">
-                    <rect key="frame" x="5" y="5" width="336" height="138"/>
+                    <rect key="frame" x="5" y="5" width="341" height="138"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fg-6V-Ndc">
-                            <rect key="frame" x="10" y="87" width="316" height="41"/>
+                            <rect key="frame" x="10" y="87" width="321" height="41"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWh-ip-jgN">
-                                    <rect key="frame" x="0.0" y="13.5" width="35.5" height="14.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWh-ip-jgN">
+                                    <rect key="frame" x="0.0" y="13.5" width="31" height="14.5"/>
                                     <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="15"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Feh-9C-aCk">
-                                    <rect key="frame" x="262" y="5" width="51" height="31"/>
+                                    <rect key="frame" x="267" y="5" width="51" height="31"/>
                                 </switch>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -51,7 +52,7 @@
                             </variation>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlz-z8-2ry">
-                            <rect key="frame" x="10" y="46" width="316" height="41"/>
+                            <rect key="frame" x="10" y="46" width="321" height="41"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3i-UI-ZFO">
                                     <rect key="frame" x="0.0" y="13.5" width="35.5" height="14.5"/>
@@ -60,7 +61,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H2E-KP-UAh">
-                                    <rect key="frame" x="262" y="5" width="51" height="31"/>
+                                    <rect key="frame" x="267" y="5" width="51" height="31"/>
                                 </switch>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -75,19 +76,45 @@
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
-                                    <exclude reference="q3t-IS-Yg3"/>
                                     <exclude reference="cuN-XP-fzm"/>
+                                    <exclude reference="q3t-IS-Yg3"/>
                                 </mask>
                             </variation>
                         </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7n-le-sfC">
+                            <rect key="frame" x="138.5" y="10" width="64.5" height="28"/>
+                            <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_close.png" translatesAutoresizingMaskIntoConstraints="NO" id="spg-d8-Dio">
+                            <rect key="frame" x="-15" y="-15" width="75" height="75"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="0c0-uu-Yq3"/>
+                                <constraint firstAttribute="width" constant="75" id="3ri-lm-i8d"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="Sfj-FN-fE8"/>
+                                <constraint firstAttribute="height" constant="75" id="UmS-Cn-fwu"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="0c0-uu-Yq3"/>
+                                    <exclude reference="Sfj-FN-fE8"/>
+                                </mask>
+                            </variation>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.1529411765" green="0.21960784310000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="spg-d8-Dio" firstAttribute="leading" secondItem="7Qo-Lm-Aw0" secondAttribute="leading" constant="-15" id="Adq-KL-7FC"/>
+                        <constraint firstItem="G7n-le-sfC" firstAttribute="centerX" secondItem="7Qo-Lm-Aw0" secondAttribute="centerX" id="G6H-mg-WNf"/>
                         <constraint firstItem="hlz-z8-2ry" firstAttribute="leading" secondItem="7fg-6V-Ndc" secondAttribute="leading" id="JGd-4n-TJX"/>
+                        <constraint firstItem="G7n-le-sfC" firstAttribute="top" secondItem="7Qo-Lm-Aw0" secondAttribute="top" constant="10" id="JqW-Ap-3bd"/>
+                        <constraint firstItem="hlz-z8-2ry" firstAttribute="top" secondItem="G7n-le-sfC" secondAttribute="bottom" constant="8" id="QUX-Ke-Dzx"/>
                         <constraint firstItem="7fg-6V-Ndc" firstAttribute="top" secondItem="hlz-z8-2ry" secondAttribute="bottom" id="XGL-uL-Nhg"/>
                         <constraint firstItem="7fg-6V-Ndc" firstAttribute="leading" secondItem="7Qo-Lm-Aw0" secondAttribute="leading" constant="10" id="amb-26-53z"/>
                         <constraint firstAttribute="bottom" secondItem="7fg-6V-Ndc" secondAttribute="bottom" constant="10" id="fZM-3o-v97"/>
                         <constraint firstAttribute="trailing" secondItem="7fg-6V-Ndc" secondAttribute="trailing" constant="10" id="hp2-h9-gXP"/>
+                        <constraint firstItem="spg-d8-Dio" firstAttribute="top" secondItem="7Qo-Lm-Aw0" secondAttribute="top" constant="-15" id="o5d-DX-RX6"/>
                         <constraint firstItem="hlz-z8-2ry" firstAttribute="trailing" secondItem="7fg-6V-Ndc" secondAttribute="trailing" id="wyx-Wz-tJn"/>
                     </constraints>
                 </view>
@@ -100,7 +127,10 @@
                 <constraint firstAttribute="bottom" secondItem="7Qo-Lm-Aw0" secondAttribute="bottom" constant="5" id="a9D-kt-zso"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="531" y="545"/>
+            <point key="canvasLocation" x="533.5" y="545"/>
         </view>
     </objects>
+    <resources>
+        <image name="button_close.png" width="25" height="25"/>
+    </resources>
 </document>
