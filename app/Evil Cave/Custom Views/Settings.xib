@@ -12,7 +12,12 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LWFSettingsView">
+            <connections>
+                <outlet property="buttonCloseImageView" destination="spg-d8-Dio" id="awD-ks-1Hf"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Q2v-zv-tLY"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="351" height="148"/>

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LWFSettingsView : LWFView
+@interface LWFSettingsView : UIView
+
+@property (strong, nonatomic) IBOutlet UIView *view;
+@property (weak, nonatomic) IBOutlet UIImageView *buttonCloseImageView;
 
 @end
