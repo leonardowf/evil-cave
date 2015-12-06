@@ -7,6 +7,13 @@
 //
 
 #import "LWFSettingsView.h"
+#import "LWFSoundPlayer.h"
+
+@interface LWFSettingsView () {
+    LWFSoundPlayer *_soundPlayer;
+}
+
+@end
 
 @implementation LWFSettingsView
 
@@ -28,6 +35,10 @@
     return self;
 }
 
+- (void)render {
+    
+}
+
 - (void)setup {
     [[NSBundle mainBundle] loadNibNamed:@"Settings" owner:self options:nil];
     
@@ -44,6 +55,22 @@
     NSLog(@"pegou evento");
     
     [self.view removeFromSuperview];
+}
+
+- (IBAction)didChangeMusicSwitch:(UISwitch *)sender {
+    if (sender.on) {
+        [LWFSoundPlayer unmuteMusic];
+    } else {
+        [LWFSoundPlayer muteMusic];
+    }
+}
+
+- (IBAction)didChangeSoundSwitch:(UISwitch *)sender {
+    if (sender.on) {
+        [LWFSoundPlayer unmuteSound];
+    } else {
+        [LWFSoundPlayer muteSound];
+    }
 }
 
 @end

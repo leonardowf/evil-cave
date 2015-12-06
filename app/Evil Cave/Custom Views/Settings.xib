@@ -37,6 +37,9 @@
                                 </label>
                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Feh-9C-aCk">
                                     <rect key="frame" x="267" y="5" width="51" height="31"/>
+                                    <connections>
+                                        <action selector="didChangeMusicSwitch:" destination="-1" eventType="valueChanged" id="VBR-BM-aYG"/>
+                                    </connections>
                                 </switch>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -67,6 +70,9 @@
                                 </label>
                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H2E-KP-UAh">
                                     <rect key="frame" x="267" y="5" width="51" height="31"/>
+                                    <connections>
+                                        <action selector="didChangeSoundSwitch:" destination="-1" eventType="valueChanged" id="Xs7-0X-0VF"/>
+                                    </connections>
                                 </switch>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
