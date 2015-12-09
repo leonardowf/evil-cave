@@ -29,6 +29,7 @@
 		320976191B498D730022B331 /* LWFChestChance.m in Sources */ = {isa = PBXBuildFile; fileRef = 320976181B498D730022B331 /* LWFChestChance.m */; };
 		3209763B1B4A0A980022B331 /* closed_chest.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3209763A1B4A0A980022B331 /* closed_chest.atlas */; };
 		3209763D1B4A0BBD0022B331 /* closed_chest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3209763C1B4A0BBD0022B331 /* closed_chest.png */; };
+		320E106A1C17BC7200258D8E /* LWFViewController+SettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 320E10691C17BC7200258D8E /* LWFViewController+SettingsView.m */; settings = {ASSET_TAGS = (); }; };
 		3219AB4B1A8ECEB600FE544C /* LWFSpinningAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 3219AB4A1A8ECEB600FE544C /* LWFSpinningAttack.m */; };
 		321A60601A6354DF0060517E /* door_open.png in Resources */ = {isa = PBXBuildFile; fileRef = 321A605F1A6354DF0060517E /* door_open.png */; };
 		321A60631A635DA50060517E /* blood.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 321A60621A635DA50060517E /* blood.atlas */; };
@@ -378,6 +379,8 @@
 		320976181B498D730022B331 /* LWFChestChance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFChestChance.m; sourceTree = "<group>"; };
 		3209763A1B4A0A980022B331 /* closed_chest.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = closed_chest.atlas; sourceTree = "<group>"; };
 		3209763C1B4A0BBD0022B331 /* closed_chest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closed_chest.png; sourceTree = "<group>"; };
+		320E10681C17BC7200258D8E /* LWFViewController+SettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LWFViewController+SettingsView.h"; sourceTree = "<group>"; };
+		320E10691C17BC7200258D8E /* LWFViewController+SettingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LWFViewController+SettingsView.m"; sourceTree = "<group>"; };
 		3219AB491A8ECEB600FE544C /* LWFSpinningAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWFSpinningAttack.h; sourceTree = "<group>"; };
 		3219AB4A1A8ECEB600FE544C /* LWFSpinningAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWFSpinningAttack.m; sourceTree = "<group>"; };
 		321A605F1A6354DF0060517E /* door_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door_open.png; sourceTree = "<group>"; };
@@ -1160,6 +1163,8 @@
 				32E8FDBB1BF179D300CA314F /* LWFAlertRequisite.m */,
 				32E8FDBD1BF40A1B00CA314F /* LWFViewController+AlertRequisite.h */,
 				32E8FDBE1BF40A1B00CA314F /* LWFViewController+AlertRequisite.m */,
+				320E10681C17BC7200258D8E /* LWFViewController+SettingsView.h */,
+				320E10691C17BC7200258D8E /* LWFViewController+SettingsView.m */,
 				32D286721C068CF1009B41C4 /* Settings.xib */,
 				32D286741C068D12009B41C4 /* LWFSettingsView.h */,
 				32D286751C068D12009B41C4 /* LWFSettingsView.m */,
@@ -2167,6 +2172,7 @@
 				3275C4161B6314C300813994 /* LWFGameOverButtons.m in Sources */,
 				A7F5BBD11A16F831005BAB63 /* LWFMap.m in Sources */,
 				3205598C1BD1DEB600C7E5FB /* LWFPriceFunctionLootPlus.m in Sources */,
+				320E106A1C17BC7200258D8E /* LWFViewController+SettingsView.m in Sources */,
 				32E84CB71BD323AC00548D66 /* LWFGrowthFunctionStrenghtPlus.m in Sources */,
 				3205598F1BD1DED600C7E5FB /* LWFPriceFunctionPotionEffectUp.m in Sources */,
 				A75046161B59DFB800EF5A2F /* LWFGameOver.m in Sources */,
