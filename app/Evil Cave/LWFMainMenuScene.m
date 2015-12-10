@@ -9,6 +9,7 @@
 
 #import "LWFMainMenuScene.h"
 #import "LWFViewController.h"
+#import "LWFViewController+SettingsView.h"
 
 @interface LWFMainMenuScene () {
     SKSpriteNode *_newGameButton;
@@ -109,6 +110,8 @@
 
 - (void)didTapSettings {
     NSLog(@"Settings");
+    
+    [self.rootViewController showSettingsView];
 }
 
 @end

@@ -46,6 +46,7 @@
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="aWh-ip-jgN" secondAttribute="bottom" id="28X-ZV-gR6"/>
                                 <constraint firstItem="Feh-9C-aCk" firstAttribute="top" secondItem="7fg-6V-Ndc" secondAttribute="top" constant="5" id="4oj-Dt-g8p"/>
+                                <constraint firstItem="Feh-9C-aCk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aWh-ip-jgN" secondAttribute="trailing" constant="50" id="5Pj-Nv-Snf"/>
                                 <constraint firstItem="aWh-ip-jgN" firstAttribute="top" secondItem="7fg-6V-Ndc" secondAttribute="top" id="QR1-GT-wmI"/>
                                 <constraint firstAttribute="trailing" secondItem="Feh-9C-aCk" secondAttribute="trailing" constant="5" id="Uin-l8-rzC"/>
                                 <constraint firstAttribute="bottom" secondItem="Feh-9C-aCk" secondAttribute="bottom" constant="5" id="ew7-yK-7mP"/>
@@ -84,6 +85,7 @@
                                 <constraint firstAttribute="trailing" secondItem="H2E-KP-UAh" secondAttribute="trailing" constant="5" id="pxt-iS-UFx"/>
                                 <constraint firstAttribute="bottom" secondItem="J3i-UI-ZFO" secondAttribute="bottom" id="q3t-IS-Yg3"/>
                                 <constraint firstItem="J3i-UI-ZFO" firstAttribute="centerY" secondItem="hlz-z8-2ry" secondAttribute="centerY" id="rZS-If-7ix"/>
+                                <constraint firstItem="H2E-KP-UAh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="J3i-UI-ZFO" secondAttribute="trailing" constant="50" id="sI6-F2-35v"/>
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
