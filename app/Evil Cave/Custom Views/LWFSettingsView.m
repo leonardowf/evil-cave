@@ -73,8 +73,4 @@
     }
 }
 
-- (void)addToView:(UIView *)view {
-    
-}
-
 @end

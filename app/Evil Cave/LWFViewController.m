@@ -7,6 +7,7 @@
 //
 
 #import "LWFViewController.h"
+#import "LWFViewController+SettingsView.h"
 #import "LWFMyScene.h"
 #import "LWFMainMenuScene.h"
 #import "LWFPlayer.h"
@@ -287,6 +288,11 @@
     LWFInventory *inventory = [LWFInventory sharedInventory];
     [inventory hideItemDescriptionIfNeeded];
 }
+
+- (IBAction)didTapSettingsButton:(id)sender {
+    [self showSettingsView];
+}
+
 
 # pragma - mark: LWFOTEObserver
 

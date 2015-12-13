@@ -161,8 +161,8 @@
                                     <outletCollection property="gestureRecognizers" destination="cdQ-2N-2DM" appends="YES" id="TUD-La-V3l"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8q5-Rk-klS" userLabel="Tutorial View" customClass="LWFTutorial">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8q5-Rk-klS" userLabel="Tutorial View" customClass="LWFTutorial">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cw0-2s-On6" userLabel="Inventory Container">
                                 <rect key="frame" x="0.0" y="540" width="60" height="60"/>
@@ -418,20 +418,20 @@
                                             <constraint firstItem="rbu-zV-DH0" firstAttribute="leading" secondItem="RKX-C2-ut7" secondAttribute="leading" id="sso-T3-xur"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkq-VW-v15" userLabel="Row 2">
-                                        <rect key="frame" x="20" y="166.5" width="520" height="90.5"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gkq-VW-v15" userLabel="Row 2">
+                                        <rect key="frame" x="20" y="166" width="520" height="90"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWE-1Y-nBj">
-                                                <rect key="frame" x="0.0" y="0.0" width="130" height="90.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="90"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="GKS-M2-d4G">
-                                                        <rect key="frame" x="40" y="20" width="50" height="50"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="GKS-M2-d4G">
+                                                        <rect key="frame" x="40" y="19" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="GKS-M2-d4G" secondAttribute="height" multiplier="1:1" id="652-48-ASc"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NbF-fH-2cS" customClass="LWFImageViewInventoryItem">
-                                                        <rect key="frame" x="40" y="20" width="50" height="50"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NbF-fH-2cS" customClass="LWFImageViewInventoryItem">
+                                                        <rect key="frame" x="40" y="19" width="50" height="50"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
@@ -444,16 +444,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qci-fj-mwf">
-                                                <rect key="frame" x="130" y="0.0" width="130" height="90.5"/>
+                                                <rect key="frame" x="130" y="0.0" width="130" height="90"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="b1y-Pr-BLg">
-                                                        <rect key="frame" x="40" y="20" width="50" height="50"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="b1y-Pr-BLg">
+                                                        <rect key="frame" x="40" y="19" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="b1y-Pr-BLg" secondAttribute="height" multiplier="1:1" id="nUF-HQ-2VF"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qL7-ge-89A" customClass="LWFImageViewInventoryItem">
-                                                        <rect key="frame" x="40" y="20" width="50" height="50"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qL7-ge-89A" customClass="LWFImageViewInventoryItem">
+                                                        <rect key="frame" x="40" y="19" width="50" height="50"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
@@ -466,16 +466,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TMu-Cc-Dub">
-                                                <rect key="frame" x="260" y="0.0" width="130" height="90.5"/>
+                                                <rect key="frame" x="260" y="0.0" width="130" height="90"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="wWx-6R-CdZ">
-                                                        <rect key="frame" x="40" y="20" width="50" height="50"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="wWx-6R-CdZ">
+                                                        <rect key="frame" x="40" y="19" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="wWx-6R-CdZ" secondAttribute="height" multiplier="1:1" id="zWC-wF-kFn"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DVs-2A-MOk" customClass="LWFImageViewInventoryItem">
-                                                        <rect key="frame" x="40" y="20" width="50" height="50"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVs-2A-MOk" customClass="LWFImageViewInventoryItem">
+                                                        <rect key="frame" x="40" y="19" width="50" height="50"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
@@ -488,16 +488,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4xl-Uu-hlw">
-                                                <rect key="frame" x="390" y="0.0" width="130" height="90.5"/>
+                                                <rect key="frame" x="390" y="0.0" width="130" height="90"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="WRI-7T-NPH">
-                                                        <rect key="frame" x="40" y="20" width="50" height="50"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="WRI-7T-NPH">
+                                                        <rect key="frame" x="40" y="19" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="WRI-7T-NPH" secondAttribute="height" multiplier="1:1" id="Zkj-mr-18w"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G71-CA-wLB" customClass="LWFImageViewInventoryItem">
-                                                        <rect key="frame" x="40" y="20" width="50" height="50"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G71-CA-wLB" customClass="LWFImageViewInventoryItem">
+                                                        <rect key="frame" x="40" y="19" width="50" height="50"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
@@ -529,20 +529,20 @@
                                             <constraint firstItem="qci-fj-mwf" firstAttribute="width" secondItem="TMu-Cc-Dub" secondAttribute="width" id="zi9-VM-aJy"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0v4-cr-YqR" userLabel="Row 3">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0v4-cr-YqR" userLabel="Row 3">
                                         <rect key="frame" x="20" y="257" width="520" height="89.5"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="chm-Zj-reM">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chm-Zj-reM">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="89.5"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="6co-5i-ppJ">
-                                                        <rect key="frame" x="40" y="20.5" width="50" height="50"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="6co-5i-ppJ">
+                                                        <rect key="frame" x="40" y="21" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="6co-5i-ppJ" secondAttribute="height" multiplier="1:1" id="gGf-6g-lrN"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RDP-tQ-Nde" customClass="LWFImageViewInventoryItem">
-                                                        <rect key="frame" x="40" y="20.5" width="50" height="50"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RDP-tQ-Nde" customClass="LWFImageViewInventoryItem">
+                                                        <rect key="frame" x="40" y="21" width="50" height="50"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
@@ -554,17 +554,17 @@
                                                     <constraint firstItem="RDP-tQ-Nde" firstAttribute="leading" secondItem="6co-5i-ppJ" secondAttribute="leading" id="e4v-eA-WgX"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r2c-tp-L7S">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r2c-tp-L7S">
                                                 <rect key="frame" x="130" y="0.0" width="130" height="89.5"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="UI6-Uo-M4K">
-                                                        <rect key="frame" x="40" y="20.5" width="50" height="50"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="UI6-Uo-M4K">
+                                                        <rect key="frame" x="40" y="21" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="UI6-Uo-M4K" secondAttribute="height" multiplier="1:1" id="K2y-hy-bDL"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EuN-Id-wBi" customClass="LWFImageViewInventoryItem">
-                                                        <rect key="frame" x="40" y="20.5" width="50" height="50"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EuN-Id-wBi" customClass="LWFImageViewInventoryItem">
+                                                        <rect key="frame" x="40" y="21" width="50" height="50"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
@@ -576,17 +576,17 @@
                                                     <constraint firstAttribute="centerY" secondItem="UI6-Uo-M4K" secondAttribute="centerY" id="wx0-3N-2xc"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gS0-6h-6gd">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gS0-6h-6gd">
                                                 <rect key="frame" x="260" y="0.0" width="130" height="89.5"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="daA-Z8-AiG">
-                                                        <rect key="frame" x="40" y="20.5" width="50" height="50"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="daA-Z8-AiG">
+                                                        <rect key="frame" x="40" y="21" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="daA-Z8-AiG" secondAttribute="height" multiplier="1:1" id="Wpg-fP-BI5"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="znf-kT-JPC" customClass="LWFImageViewInventoryItem">
-                                                        <rect key="frame" x="40" y="20.5" width="50" height="50"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="znf-kT-JPC" customClass="LWFImageViewInventoryItem">
+                                                        <rect key="frame" x="40" y="21" width="50" height="50"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
@@ -598,17 +598,17 @@
                                                     <constraint firstAttribute="centerY" secondItem="daA-Z8-AiG" secondAttribute="centerY" id="zEX-0w-4WX"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kgC-WS-qaA">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgC-WS-qaA">
                                                 <rect key="frame" x="390" y="0.0" width="130" height="89.5"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="sDW-aj-DUc">
-                                                        <rect key="frame" x="40" y="20.5" width="50" height="50"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="sDW-aj-DUc">
+                                                        <rect key="frame" x="40" y="21" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="sDW-aj-DUc" secondAttribute="height" multiplier="1:1" id="8GR-LE-Myo"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8wn-p6-7te" customClass="LWFImageViewInventoryItem">
-                                                        <rect key="frame" x="40" y="20.5" width="50" height="50"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8wn-p6-7te" customClass="LWFImageViewInventoryItem">
+                                                        <rect key="frame" x="40" y="21" width="50" height="50"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
@@ -640,17 +640,17 @@
                                             <constraint firstItem="gS0-6h-6gd" firstAttribute="top" secondItem="kgC-WS-qaA" secondAttribute="top" id="sa0-lz-hby"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stored Items" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1V-iI-mkB">
-                                        <rect key="frame" x="236" y="145.5" width="88" height="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Stored Items" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1V-iI-mkB">
+                                        <rect key="frame" x="236" y="145" width="88" height="16"/>
                                         <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCS-g0-RNG" userLabel="Row 4">
-                                        <rect key="frame" x="20" y="348" width="520" height="90.5"/>
+                                        <rect key="frame" x="20" y="348" width="520" height="90"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7jt-IC-QEc">
-                                                <rect key="frame" x="0.0" y="0.0" width="130" height="90.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="90"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="5nn-Sy-Slv">
                                                         <rect key="frame" x="40" y="20" width="50" height="50"/>
@@ -678,7 +678,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4qd-6W-Qdl">
-                                                <rect key="frame" x="130" y="0.0" width="130" height="90.5"/>
+                                                <rect key="frame" x="130" y="0.0" width="130" height="90"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="oZH-Xw-qdL">
                                                         <rect key="frame" x="40" y="20" width="50" height="50"/>
@@ -706,7 +706,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HSm-0P-WB6">
-                                                <rect key="frame" x="260" y="0.0" width="130" height="90.5"/>
+                                                <rect key="frame" x="260" y="0.0" width="130" height="90"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="dqe-Yr-gBr">
                                                         <rect key="frame" x="40" y="20" width="50" height="50"/>
@@ -734,7 +734,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fJ-b4-uhP">
-                                                <rect key="frame" x="390" y="0.0" width="130" height="90.5"/>
+                                                <rect key="frame" x="390" y="0.0" width="130" height="90"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="3G8-Qc-o2b">
                                                         <rect key="frame" x="40" y="20" width="50" height="50"/>
@@ -788,7 +788,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="90"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="lvd-xF-s3a">
-                                                        <rect key="frame" x="40" y="20.5" width="50" height="50"/>
+                                                        <rect key="frame" x="40" y="20" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="lvd-xF-s3a" secondAttribute="height" multiplier="1:1" id="1zF-bS-QVi"/>
                                                         </constraints>
@@ -797,7 +797,7 @@
                                                         </variation>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="95N-Ta-yek" customClass="LWFImageViewInventoryItem">
-                                                        <rect key="frame" x="40" y="20.5" width="50" height="50"/>
+                                                        <rect key="frame" x="40" y="20" width="50" height="50"/>
                                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                                             <rect key="frame" x="65" y="19" width="50" height="50"/>
                                                         </variation>
@@ -816,7 +816,7 @@
                                                 <rect key="frame" x="130" y="0.0" width="130" height="90"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="TXO-UC-uAT">
-                                                        <rect key="frame" x="40" y="20.5" width="50" height="50"/>
+                                                        <rect key="frame" x="40" y="20" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="TXO-UC-uAT" secondAttribute="height" multiplier="1:1" id="IE5-Sh-3IZ"/>
                                                         </constraints>
@@ -825,7 +825,7 @@
                                                         </variation>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a4R-MK-S85" customClass="LWFImageViewInventoryItem">
-                                                        <rect key="frame" x="40" y="20.5" width="50" height="50"/>
+                                                        <rect key="frame" x="40" y="20" width="50" height="50"/>
                                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                                             <rect key="frame" x="65" y="19" width="50" height="50"/>
                                                         </variation>
@@ -844,7 +844,7 @@
                                                 <rect key="frame" x="260" y="0.0" width="130" height="90"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="UWS-My-odd">
-                                                        <rect key="frame" x="40" y="20.5" width="50" height="50"/>
+                                                        <rect key="frame" x="40" y="20" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="UWS-My-odd" secondAttribute="height" multiplier="1:1" id="cR8-xU-trs"/>
                                                         </constraints>
@@ -853,7 +853,7 @@
                                                         </variation>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3rB-gp-d7U" customClass="LWFImageViewInventoryItem">
-                                                        <rect key="frame" x="40" y="20.5" width="50" height="50"/>
+                                                        <rect key="frame" x="40" y="20" width="50" height="50"/>
                                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                                             <rect key="frame" x="65" y="19" width="50" height="50"/>
                                                         </variation>
@@ -872,7 +872,7 @@
                                                 <rect key="frame" x="390" y="0.0" width="130" height="90"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="PYT-4p-gbO">
-                                                        <rect key="frame" x="40" y="20.5" width="50" height="50"/>
+                                                        <rect key="frame" x="40" y="20" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="PYT-4p-gbO" secondAttribute="height" multiplier="1:1" id="gUF-yB-lMh"/>
                                                         </constraints>
@@ -881,7 +881,7 @@
                                                         </variation>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FJf-PU-3cp" customClass="LWFImageViewInventoryItem">
-                                                        <rect key="frame" x="40" y="20.5" width="50" height="50"/>
+                                                        <rect key="frame" x="40" y="20" width="50" height="50"/>
                                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                                             <rect key="frame" x="65" y="19" width="50" height="50"/>
                                                         </variation>
@@ -930,13 +930,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gold" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBg-TX-YmC">
-                                        <rect key="frame" x="476.5" y="529.5" width="23.5" height="13.5"/>
+                                        <rect key="frame" x="476" y="529" width="23.5" height="13.5"/>
                                         <fontDescription key="fontDescription" name="Munro" family="Munro" pointSize="14"/>
                                         <color key="textColor" red="1" green="0.84313725490196079" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gold.png" translatesAutoresizingMaskIntoConstraints="NO" id="3UM-5y-7Pw">
-                                        <rect key="frame" x="446.5" y="521.5" width="25" height="31"/>
+                                        <rect key="frame" x="446" y="521" width="25" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="2ku-Ea-dlx"/>
                                         </constraints>
@@ -983,6 +983,13 @@
                                     <outletCollection property="gestureRecognizers" destination="nBq-iN-EvB" appends="YES" id="qFm-BI-hpV"/>
                                 </connections>
                             </view>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings.png" translatesAutoresizingMaskIntoConstraints="NO" id="cGn-bH-9fq">
+                                <rect key="frame" x="561" y="20" width="39" height="39"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Eb4-0U-qA8" appends="YES" id="EqZ-LP-5pL"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1009,6 +1016,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="gfA-Uw-d4k" secondAttribute="trailing" id="VKV-8K-hbd"/>
                             <constraint firstAttribute="trailing" secondItem="8q5-Rk-klS" secondAttribute="trailing" id="XVz-v6-9VN"/>
                             <constraint firstItem="lmD-T8-41z" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leading" id="ZZt-iE-XL1"/>
+                            <constraint firstAttribute="trailing" secondItem="cGn-bH-9fq" secondAttribute="trailing" id="f5p-zs-z9k"/>
                             <constraint firstItem="lmD-T8-41z" firstAttribute="top" secondItem="TvN-0d-DFh" secondAttribute="bottom" constant="-50" id="gW1-1a-0UK"/>
                             <constraint firstItem="aVg-JY-jeM" firstAttribute="top" secondItem="8q5-Rk-klS" secondAttribute="bottom" id="i0g-b5-CPa"/>
                             <constraint firstItem="Pgk-fA-6RV" firstAttribute="top" secondItem="cw0-2s-On6" secondAttribute="top" id="j6I-Hr-hWD"/>
@@ -1020,6 +1028,7 @@
                             <constraint firstItem="FgX-lQ-npQ" firstAttribute="leading" secondItem="yOv-0K-4OW" secondAttribute="trailing" constant="6" id="r4K-Jc-jY2"/>
                             <constraint firstItem="Pgk-fA-6RV" firstAttribute="bottom" secondItem="cw0-2s-On6" secondAttribute="bottom" id="x5R-0k-k9I"/>
                             <constraint firstAttribute="trailing" secondItem="lmD-T8-41z" secondAttribute="trailing" id="xVU-4j-wiX"/>
+                            <constraint firstItem="cGn-bH-9fq" firstAttribute="top" secondItem="TvN-0d-DFh" secondAttribute="bottom" id="z23-cI-vUL"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -1123,6 +1132,11 @@
                         <action selector="didTapInventoryContainer:" destination="LVB-YS-i5n" id="CkP-vV-MyR"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="Eb4-0U-qA8">
+                    <connections>
+                        <action selector="didTapSettingsButton:" destination="LVB-YS-i5n" id="v20-Ok-ylW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-48.75" y="312.67605633802816"/>
         </scene>
@@ -1142,6 +1156,7 @@
         <image name="next_button.png" width="40" height="15"/>
         <image name="previous_button.png" width="40" height="15"/>
         <image name="ring_empty.png" width="50" height="50"/>
+        <image name="settings.png" width="39" height="39"/>
         <image name="special_attack_icon@3x.png" width="144" height="144"/>
         <image name="thumb.png" width="50" height="50"/>
         <image name="weapon_empty.png" width="50" height="50"/>
