@@ -12,5 +12,9 @@
 
 @property (strong, nonatomic) IBOutlet UIView *view;
 @property (weak, nonatomic) IBOutlet UIImageView *buttonCloseImageView;
+@property (weak, nonatomic) IBOutlet UISwitch *soundSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *musicSwitch;
+
+- (void)render;
 
 @end

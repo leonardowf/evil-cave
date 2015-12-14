@@ -47,6 +47,8 @@ NSString * const propertyKey = @"SettingsView";
     [constraintCenterY pop_addAnimation:animation forKey:@"size"];
     
     [self setSettingsView:settingsView];
+    
+    [settingsView render];
 }
 
 - (void)hideSettingsView {

@@ -8,9 +8,13 @@
 
 #import "LWFSettingsView.h"
 #import "LWFSoundPlayer.h"
+#import "LWFSoundPreferences.h"
+#import "LWFRepository.h"
+#import "LWFUserDefaultsPersistenceStrategy.h"
 
 @interface LWFSettingsView () {
     LWFSoundPlayer *_soundPlayer;
+    LWFSoundPreferences *_soundPreferences;
 }
 
 @end
@@ -36,10 +40,20 @@
 }
 
 - (void)render {
-    
+    [self.soundSwitch setOn:!_soundPreferences.soundMuted];
+    [self.musicSwitch setOn:!_soundPreferences.musicMuted];
 }
 
 - (void)setup {
+    LWFUserDefaultsPersistenceStrategy *persistanceStrategy = [[LWFUserDefaultsPersistenceStrategy alloc]init];
+    LWFRepository *repository = [[LWFRepository alloc]initWithPersistenceStrategy:persistanceStrategy];
+    
+    _soundPreferences = [repository loadSoundPreferences];
+    
+    if (_soundPreferences == nil) {
+        _soundPreferences = [[LWFSoundPreferences alloc]init];
+    }
+    
     [[NSBundle mainBundle] loadNibNamed:@"Settings" owner:self options:nil];
     
     self.view.translatesAutoresizingMaskIntoConstraints = NO;

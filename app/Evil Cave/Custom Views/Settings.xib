@@ -15,6 +15,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LWFSettingsView">
             <connections>
                 <outlet property="buttonCloseImageView" destination="spg-d8-Dio" id="awD-ks-1Hf"/>
+                <outlet property="musicSwitch" destination="Feh-9C-aCk" id="KbC-Rl-3XC"/>
+                <outlet property="soundSwitch" destination="H2E-KP-UAh" id="9NF-iS-jup"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Q2v-zv-tLY"/>
             </connections>
         </placeholder>
