@@ -203,7 +203,6 @@
         // Repete indefinidamente
         _currentPlayingMusic.numberOfLoops = -1;
 
-        
         if (!_soundPreferences.musicMuted) {
             [_currentPlayingMusic play];
         }
