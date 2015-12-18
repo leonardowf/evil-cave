@@ -22,6 +22,7 @@
 #define UNMUTE_SOUND_NOTIFICATION           @"NotificationUnmuteSound"
 #define DECREASE_MUSIC_VOLUME_NOTIFICATION  @"NotificationDecreaseMusicVolume"
 #define INCREASE_MUSIC_VOLUME_NOTIFICATION  @"NotificationIncreaseMusicVolume"
+#define SET_MUSIC_VOLUME_NOTIFICATION  @"NotificationSetMusicVolume"
 
 @interface LWFSoundPlayer () {
     NSDictionary *_preloadedAudios;
@@ -67,7 +68,8 @@
                                               UNMUTE_MUSIC_NOTIFICATION:            @"didReceiveUnmuteMusicRequest",
                                               UNMUTE_SOUND_NOTIFICATION:            @"didReceiveUnmuteSoundRequest",
                                               DECREASE_MUSIC_VOLUME_NOTIFICATION:   @"didReceiveDecreaseMusicVolumeRequest",
-                                              INCREASE_MUSIC_VOLUME_NOTIFICATION:   @"didReceiveIncreaseMusicVolumeRequest"
+                                              INCREASE_MUSIC_VOLUME_NOTIFICATION:   @"didReceiveIncreaseMusicVolumeRequest",
+                                              SET_MUSIC_VOLUME_NOTIFICATION:        @"didReceiveSetMusicVolumeNotification:"
                                               };
     
     for (NSString* key in notificationsDictionary) {
@@ -139,6 +141,15 @@
                                                        object:nil];
 }
 
++ (void)setMusicVolume:(NSInteger)volume withMaximumVolume:(NSInteger)maximumVolume {
+    
+    double musicProportion = volume / maximumVolume;
+    NSNumber *newVolume = [NSNumber numberWithDouble:musicProportion];
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:SET_MUSIC_VOLUME_NOTIFICATION
+                                                       object:newVolume];
+}
+
 - (void)preloadAudioFiles {
     NSMutableDictionary *dictionary = [NSMutableDictionary new];
     
@@ -207,6 +218,10 @@
             [_currentPlayingMusic play];
         }
     }
+}
+
+- (void)didReceiveSetMusicVolumeNotification:(NSNotification *)notification {
+    
 }
 
 - (void)didReceiveStopMusicRequest {

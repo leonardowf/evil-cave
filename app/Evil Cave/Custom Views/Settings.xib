@@ -118,11 +118,14 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8KR-t3-7Ih">
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="8KR-t3-7Ih">
                             <rect key="frame" x="121" y="129" width="104" height="81.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="zrE-ec-iXW"/>
                             </constraints>
+                            <connections>
+                                <action selector="musicVolumeSwitchChanged:" destination="-1" eventType="valueChanged" id="6NT-fU-b4i"/>
+                            </connections>
                         </slider>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Music Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CR3-0f-ttQ">
                             <rect key="frame" x="157.5" y="214.5" width="31" height="14.5"/>

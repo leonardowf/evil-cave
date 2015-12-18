@@ -87,4 +87,9 @@
     }
 }
 
+- (IBAction)musicVolumeSwitchChanged:(id)sender {
+    [LWFSoundPlayer muteSound];
+}
+
+
 @end

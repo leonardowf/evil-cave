@@ -24,5 +24,6 @@
 + (void)unmuteSound;
 + (void)increaseMusicVolume;
 + (void)decreaseMusicVolume;
++ (void)setMusicVolume:(NSInteger)volume withMaximumVolume:(NSInteger)maximumVolume;
 
 @end
