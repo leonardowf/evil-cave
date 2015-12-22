@@ -22,7 +22,7 @@
 #define UNMUTE_SOUND_NOTIFICATION           @"NotificationUnmuteSound"
 #define DECREASE_MUSIC_VOLUME_NOTIFICATION  @"NotificationDecreaseMusicVolume"
 #define INCREASE_MUSIC_VOLUME_NOTIFICATION  @"NotificationIncreaseMusicVolume"
-#define SET_MUSIC_VOLUME_NOTIFICATION  @"NotificationSetMusicVolume"
+#define SET_MUSIC_VOLUME_NOTIFICATION       @"NotificationSetMusicVolume"
 
 @interface LWFSoundPlayer () {
     NSDictionary *_preloadedAudios;
@@ -143,7 +143,7 @@
 
 + (void)setMusicVolume:(NSInteger)volume withMaximumVolume:(NSInteger)maximumVolume {
     
-    double musicProportion = volume / maximumVolume;
+    double musicProportion = (double)volume / (double)maximumVolume;
     NSNumber *newVolume = [NSNumber numberWithDouble:musicProportion];
     
     [[NSNotificationCenter defaultCenter]postNotificationName:SET_MUSIC_VOLUME_NOTIFICATION
@@ -221,7 +221,13 @@
 }
 
 - (void)didReceiveSetMusicVolumeNotification:(NSNotification *)notification {
-    
+    if ([notification.object isKindOfClass:[NSNumber class]]) {
+        NSNumber *newVolume = notification.object;
+        
+        [_currentPlayingMusic setVolume:[newVolume floatValue]];
+        _soundPreferences.musicVolume = [newVolume floatValue];
+        [self savePreferences];
+    }
 }
 
 - (void)didReceiveStopMusicRequest {

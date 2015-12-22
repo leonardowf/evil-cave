@@ -17,6 +17,7 @@
             <connections>
                 <outlet property="buttonCloseImageView" destination="spg-d8-Dio" id="awD-ks-1Hf"/>
                 <outlet property="musicSwitch" destination="Feh-9C-aCk" id="KbC-Rl-3XC"/>
+                <outlet property="musicVolumeSlider" destination="8KR-t3-7Ih" id="jSm-FU-Vuk"/>
                 <outlet property="soundSwitch" destination="H2E-KP-UAh" id="9NF-iS-jup"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Q2v-zv-tLY"/>
             </connections>
@@ -125,6 +126,7 @@
                             </constraints>
                             <connections>
                                 <action selector="musicVolumeSwitchChanged:" destination="-1" eventType="valueChanged" id="6NT-fU-b4i"/>
+                                <action selector="sliderMusicVolumeChanged:" destination="-1" eventType="valueChanged" id="4yo-SK-wsX"/>
                             </connections>
                         </slider>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Music Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CR3-0f-ttQ">

@@ -40,11 +40,17 @@
 }
 
 - (void)render {
+    [self loadSoundPreferences];
+    
     [self.soundSwitch setOn:!_soundPreferences.soundMuted];
     [self.musicSwitch setOn:!_soundPreferences.musicMuted];
+    
+    NSInteger newValue = (double)self.musicVolumeSlider.maximumValue * _soundPreferences.musicVolume;
+    
+    [self.musicVolumeSlider setValue:newValue animated:YES];
 }
 
-- (void)setup {
+- (void)loadSoundPreferences {
     LWFUserDefaultsPersistenceStrategy *persistanceStrategy = [[LWFUserDefaultsPersistenceStrategy alloc]init];
     LWFRepository *repository = [[LWFRepository alloc]initWithPersistenceStrategy:persistanceStrategy];
     
@@ -53,6 +59,10 @@
     if (_soundPreferences == nil) {
         _soundPreferences = [[LWFSoundPreferences alloc]init];
     }
+}
+
+- (void)setup {
+    [self loadSoundPreferences];
     
     [[NSBundle mainBundle] loadNibNamed:@"Settings" owner:self options:nil];
     
@@ -91,5 +101,8 @@
     [LWFSoundPlayer muteSound];
 }
 
+- (IBAction)sliderMusicVolumeChanged:(UISlider *)sender {
+    [LWFSoundPlayer setMusicVolume:sender.value withMaximumVolume:sender.maximumValue];
+}
 
 @end
