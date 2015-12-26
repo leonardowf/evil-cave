@@ -54,9 +54,6 @@
                                                      name:@"notificationRestartGame"
                                                    object:nil];
         
-        _soundPlayer = [[LWFSoundPlayer alloc]init];
-        [LWFSoundPlayer playMusic:LWFMusicTypeGame];
-        
     }
     return self;
 }

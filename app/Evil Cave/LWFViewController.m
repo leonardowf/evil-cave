@@ -31,6 +31,12 @@
 #import "LWFPlayerStats.h"
 #import "LWFSoundPlayer.h"
 
+@interface LWFViewController () {
+    LWFSoundPlayer *_soundPlayer;
+}
+
+@end
+
 @implementation LWFViewController
 
 - (void)viewDidLoad
@@ -41,6 +47,9 @@
     self.viewSpecialAttackButton.hidden = YES;
     self.viewInventoryButton.hidden = YES;
     [self startMainMenuScene];
+    
+    _soundPlayer = [[LWFSoundPlayer alloc]init];
+    [LWFSoundPlayer playMusic:LWFMusicTypeGame];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
